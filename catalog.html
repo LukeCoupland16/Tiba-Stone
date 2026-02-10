@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection | TIBA STONE</title>
+  <meta name="description" content="Explore the Tiba Stone collection of bespoke marble washbasins, bathtubs, furniture, and accessories. Each piece is handcrafted from the world's finest stone.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       1. CUSTOM PROPERTIES
+    ============================================ */
+    :root {
+      /* Brand Colors */
+      --color-stone: #222323;
+      --color-ivory: #FFFFFF;
+      --color-sunset: #925638;
+      --color-river-green: #A3996A;
+      --color-dusk-blue: #153647;
+      --color-moss: #3E402B;
+      --color-sand: #F5F5F5;
+
+      /* Typography */
+      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
+      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+      /* Type Scale */
+      --text-hero: clamp(2.75rem, 5vw, 4.5rem);
+      --text-h1: clamp(2rem, 3.5vw, 3.25rem);
+      --text-h2: clamp(1.625rem, 2.5vw, 2.25rem);
+      --text-h3: clamp(1.25rem, 1.8vw, 1.5rem);
+      --text-subtitle: clamp(0.6875rem, 1vw, 0.8125rem);
+      --text-body: clamp(0.9375rem, 1.1vw, 1.0625rem);
+      --text-small: clamp(0.6875rem, 0.9vw, 0.8125rem);
+
+      /* Letter Spacing */
+      --ls-wide: 0.2em;
+      --ls-medium: 0.12em;
+      --ls-slight: 0.03em;
+
+      /* Line Heights */
+      --lh-heading: 1.2;
+      --lh-body: 1.8;
+
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 4rem;
+      --space-xl: 6rem;
+      --space-2xl: 8rem;
+      --space-3xl: 10rem;
+
+      /* Layout */
+      --container-max: 1320px;
+      --container-narrow: 780px;
+      --container-pad: clamp(1.5rem, 4vw, 3rem);
+      --grid-gap: clamp(1.5rem, 3vw, 2.5rem);
+
+      /* Transitions */
+      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --duration-fast: 0.3s;
+      --duration-medium: 0.6s;
+      --duration-slow: 1s;
+    }
+
+    /* ============================================
+       2. RESET & BASE
+    ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: var(--lh-body);
+      font-size: var(--text-body);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      line-height: var(--lh-heading);
+    }
+
+    a {
+      color: var(--color-stone);
+      text-decoration: none;
+    }
+
+    button {
+      font-family: var(--font-body);
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    input, textarea {
+      font-family: var(--font-body);
+    }
+
+    /* ============================================
+       3. UTILITIES
+    ============================================ */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .container--narrow {
+      max-width: var(--container-narrow);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .uppercase {
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+    }
+
+    .accent-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--color-sunset);
+      margin: 1.5rem auto;
+    }
+
+    .section-divider {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      height: 1px;
+      background: rgba(34, 35, 35, 0.1);
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ============================================
+       4. SCROLL REVEAL
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity var(--duration-medium) var(--ease-smooth),
+                  transform var(--duration-medium) var(--ease-smooth);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+    .reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
+    .reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.2s; }
+    .reveal-stagger > .reveal:nth-child(4) { transition-delay: 0.3s; }
+    .reveal-stagger > .reveal:nth-child(5) { transition-delay: 0.4s; }
+    .reveal-stagger > .reveal:nth-child(6) { transition-delay: 0.5s; }
+    .reveal-stagger > .reveal:nth-child(7) { transition-delay: 0.6s; }
+    .reveal-stagger > .reveal:nth-child(8) { transition-delay: 0.7s; }
+    .reveal-stagger > .reveal:nth-child(9) { transition-delay: 0.8s; }
+    .reveal-stagger > .reveal:nth-child(10) { transition-delay: 0.9s; }
+    .reveal-stagger > .reveal:nth-child(n+11) { transition-delay: 1s; }
+
+    /* ============================================
+       5. BUTTONS
+    ============================================ */
+    .btn-primary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      border: 1px solid var(--color-stone);
+      color: var(--color-stone);
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background var(--duration-fast) var(--ease-smooth),
+                  color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-stone);
+      color: var(--color-ivory);
+    }
+
+    .btn-primary--light {
+      border-color: var(--color-ivory);
+      color: var(--color-ivory);
+    }
+
+    .btn-primary--light:hover {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-stone);
+      text-decoration: none;
+      padding-bottom: 2px;
+      position: relative;
+    }
+
+    .btn-secondary::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-stone);
+      transform: scaleX(1);
+      transition: background var(--duration-fast) var(--ease-smooth);
+    }
+
+    .btn-secondary:hover {
+      color: var(--color-sunset);
+    }
+
+    .btn-secondary:hover::after {
+      background: var(--color-sunset);
+    }
+
+    /* ============================================
+       6. HEADER
+    ============================================ */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.25rem 0;
+      transition: background var(--duration-fast) var(--ease-smooth),
+                  border-color var(--duration-fast) var(--ease-smooth),
+                  padding var(--duration-fast) var(--ease-smooth);
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header.is-scrolled {
+      background: var(--color-ivory);
+      border-bottom-color: rgba(34, 35, 35, 0.1);
+      padding: 0.875rem 0;
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .header__logo-img {
+      height: 30px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      transition: filter var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__logo-img {
+      filter: none;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 2.75rem;
+    }
+
+    .header__nav-link {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-ivory);
+      text-decoration: none;
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__nav-link {
+      color: var(--color-stone);
+    }
+
+    .header__nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-sunset);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .header__nav-link:hover::after,
+    .header__nav-link--active::after {
+      transform: scaleX(1);
+    }
+
+    /* Hamburger */
+    .header__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0.5rem;
+      z-index: 2;
+    }
+
+    .header__hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--color-ivory);
+      transition: background var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__hamburger span {
+      background: var(--color-stone);
+    }
+
+    /* Mobile Menu Overlay */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--color-ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--duration-fast) var(--ease-smooth);
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: var(--color-stone);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0.5rem;
+    }
+
+    .mobile-menu__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .mobile-menu__link {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      color: var(--color-stone);
+      text-decoration: none;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .mobile-menu__link:hover {
+      color: var(--color-sunset);
+    }
+
+    /* ============================================
+       7. CATALOG HERO
+    ============================================ */
+    .catalog-hero {
+      position: relative;
+      height: 60vh;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .catalog-hero__bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .catalog-hero__bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+      will-change: transform;
+    }
+
+    .catalog-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(34, 35, 35, 0.25) 0%,
+        rgba(34, 35, 35, 0.5) 100%
+      );
+    }
+
+    .catalog-hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 var(--container-pad);
+    }
+
+    .catalog-hero__title {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      color: var(--color-ivory);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .catalog-hero__subtitle {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 400;
+    }
+
+    /* ============================================
+       8. EDITORIAL SPLIT
+    ============================================ */
+    .editorial-split {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--grid-gap);
+      align-items: start;
+    }
+
+    .editorial-split__media {
+      overflow: hidden;
+    }
+
+    .editorial-split__img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .editorial-split__media:hover .editorial-split__img {
+      transform: scale(1.03);
+    }
+
+    .editorial-split__content {
+      padding-top: clamp(3rem, 8vw, 7rem);
+      padding-left: clamp(1rem, 3vw, 2.5rem);
+    }
+
+    .editorial-split__label {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    .editorial-split__heading {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      line-height: var(--lh-heading);
+      margin-bottom: 1.5rem;
+    }
+
+    .editorial-split__text {
+      font-weight: 300;
+      line-height: var(--lh-body);
+      margin-bottom: 2rem;
+      max-width: 420px;
+    }
+
+    /* Reversed: image right, text left */
+    .editorial-split--img-right {
+      grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .editorial-split--img-right .editorial-split__media {
+      order: 2;
+    }
+
+    .editorial-split--img-right .editorial-split__content {
+      order: 1;
+      padding-left: 0;
+      padding-right: clamp(1rem, 3vw, 2.5rem);
+    }
+
+    /* ============================================
+       9. FEATURED PRODUCTS
+    ============================================ */
+    .featured-product {
+      padding: var(--space-2xl) 0;
+    }
+
+    .featured-product--sand {
+      background: var(--color-sand);
+    }
+
+    .featured-product__meta {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    /* ============================================
+       10. FEATURED COLLECTIONS
+    ============================================ */
+    .featured-collections {
+      padding: var(--space-2xl) 0;
+    }
+
+    .featured-collection {
+      margin-bottom: var(--space-xl);
+    }
+
+    .featured-collection:last-child {
+      margin-bottom: 0;
+    }
+
+    .featured-collection__header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    .featured-collection__title {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+
+    .featured-collection__description {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      font-weight: 300;
+      line-height: var(--lh-body);
+      color: var(--color-river-green);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* ============================================
+       11. PRODUCT CARDS
+    ============================================ */
+    .product-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--grid-gap);
+    }
+
+    .product-card {
+      text-decoration: none;
+      color: var(--color-stone);
+      display: block;
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .product-card__media {
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-card__img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .product-card:hover .product-card__img {
+      transform: scale(1.03);
+    }
+
+    .product-card__info {
+      padding-top: 0;
+    }
+
+    .product-card__name {
+      font-family: var(--font-display);
+      font-size: var(--text-h3);
+      margin-bottom: 0.375rem;
+    }
+
+    .product-card__category {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .product-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-stone);
+      text-decoration: none;
+      padding-bottom: 2px;
+      position: relative;
+    }
+
+    .product-card__cta::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-stone);
+      transform: scaleX(1);
+      transition: background var(--duration-fast) var(--ease-smooth);
+    }
+
+    .product-card:hover .product-card__cta {
+      color: var(--color-sunset);
+    }
+
+    .product-card:hover .product-card__cta::after {
+      background: var(--color-sunset);
+    }
+
+    .product-card.is-hidden {
+      display: none;
+    }
+
+    /* ============================================
+       12. FILTER TABS
+    ============================================ */
+    .full-product-grid {
+      padding: var(--space-2xl) 0;
+      background: var(--color-sand);
+    }
+
+    .full-product-grid__header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    .filter-tabs__btn {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .filter-tabs__btn::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-sunset);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .filter-tabs__btn--active,
+    .filter-tabs__btn:hover {
+      color: var(--color-stone);
+    }
+
+    .filter-tabs__btn--active::after,
+    .filter-tabs__btn:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* ============================================
+       13. TAILOR-MADE CTA
+    ============================================ */
+    .tailor-made-cta {
+      padding: var(--space-2xl) 0;
+    }
+
+    .tailor-made-cta__content {
+      text-align: center;
+      max-width: var(--container-narrow);
+      margin: 0 auto;
+    }
+
+    .tailor-made-cta__text {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      font-weight: 300;
+      line-height: var(--lh-body);
+      color: var(--color-stone);
+      max-width: 580px;
+      margin: 0 auto 2rem;
+    }
+
+    /* ============================================
+       14. THREE PILLARS
+    ============================================ */
+    .three-pillars {
+      padding: var(--space-2xl) 0;
+      background: var(--color-sand);
+    }
+
+    .three-pillars__header {
+      margin-bottom: var(--space-lg);
+    }
+
+    .three-pillars__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--grid-gap);
+    }
+
+    .pillar-card {
+      text-align: center;
+    }
+
+    .pillar-card__media {
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .pillar-card__img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .pillar-card:hover .pillar-card__img {
+      transform: scale(1.03);
+    }
+
+    .pillar-card__heading {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1rem;
+    }
+
+    .pillar-card__text {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      font-weight: 300;
+      line-height: var(--lh-body);
+      color: var(--color-stone);
+      margin-bottom: 2rem;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============================================
+       15. FOOTER
+    ============================================ */
+    .site-footer {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+      padding: var(--space-2xl) 0 var(--space-lg);
+      border-top: 1px solid rgba(34, 35, 35, 0.1);
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: var(--grid-gap);
+    }
+
+    .footer__logo {
+      height: 70px;
+      width: auto;
+      margin-bottom: 1rem;
+    }
+
+    .footer__tagline {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer__social a {
+      color: var(--color-river-green);
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .footer__social a:hover {
+      color: var(--color-stone);
+    }
+
+    .footer__social svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .footer__col-title {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: var(--color-stone);
+    }
+
+    .footer__link {
+      display: block;
+      color: var(--color-river-green);
+      font-size: var(--text-body);
+      font-weight: 300;
+      margin-bottom: 0.75rem;
+      text-decoration: none;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .footer__link:hover {
+      color: var(--color-stone);
+    }
+
+    .footer__contact-info p {
+      color: var(--color-river-green);
+      font-size: var(--text-body);
+      font-weight: 300;
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+
+    .footer__contact-info a {
+      color: var(--color-river-green);
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .footer__contact-info a:hover {
+      color: var(--color-stone);
+    }
+
+    /* Footer Form */
+    .footer-form__input,
+    .footer-form__textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--color-river-green);
+      color: var(--color-stone);
+      padding: 0.75rem 0;
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 300;
+      margin-bottom: 1rem;
+      transition: border-color var(--duration-fast) var(--ease-smooth);
+      outline: none;
+      resize: none;
+    }
+
+    .footer-form__input::placeholder,
+    .footer-form__textarea::placeholder {
+      color: var(--color-river-green);
+      font-weight: 300;
+    }
+
+    .footer-form__input:focus,
+    .footer-form__textarea:focus {
+      border-color: var(--color-stone);
+    }
+
+    .footer-form .btn-primary {
+      width: 100%;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .footer__bottom {
+      margin-top: var(--space-xl);
+      padding-top: var(--space-md);
+      border-top: 1px solid rgba(34, 35, 35, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: var(--text-small);
+      color: var(--color-river-green);
+    }
+
+    .footer__legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer__legal a {
+      color: var(--color-river-green);
+      text-decoration: none;
+      font-size: var(--text-small);
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .footer__legal a:hover {
+      color: var(--color-stone);
+    }
+
+    /* ============================================
+       16. RESPONSIVE — TABLET
+    ============================================ */
+    @media (max-width: 1023px) {
+      .editorial-split {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .editorial-split--img-right {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .editorial-split__content {
+        padding-top: clamp(2rem, 5vw, 4rem);
+      }
+
+      .product-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .three-pillars__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .three-pillars__grid .pillar-card:last-child {
+        grid-column: span 2;
+        max-width: 50%;
+        margin: 0 auto;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg) var(--grid-gap);
+      }
+
+      .catalog-hero {
+        height: 70vh;
+      }
+    }
+
+    /* ============================================
+       17. RESPONSIVE — MOBILE
+    ============================================ */
+    @media (max-width: 767px) {
+      .header__nav {
+        display: none;
+      }
+
+      .header__hamburger {
+        display: flex;
+      }
+
+      .catalog-hero {
+        height: 60vh;
+        min-height: 400px;
+      }
+
+      .editorial-split,
+      .editorial-split--img-right {
+        grid-template-columns: 1fr;
+      }
+
+      .editorial-split__content {
+        padding-top: 2rem;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .editorial-split--img-right .editorial-split__media {
+        order: 0;
+      }
+
+      .editorial-split--img-right .editorial-split__content {
+        order: 0;
+        padding-right: 0;
+      }
+
+      .editorial-split__img {
+        aspect-ratio: 3 / 4;
+      }
+
+      .product-card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .three-pillars__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .three-pillars__grid .pillar-card:last-child {
+        grid-column: auto;
+        max-width: 100%;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .featured-product,
+      .featured-collections,
+      .full-product-grid,
+      .tailor-made-cta,
+      .three-pillars {
+        padding: var(--space-xl) 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header__inner container">
+      <a href="index.html" class="header__logo">
+        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).png" alt="TIBA Stone" class="header__logo-img">
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="index.html" class="header__nav-link">Home</a>
+        <a href="craft.html" class="header__nav-link">Craft</a>
+        <a href="catalog.html" class="header__nav-link header__nav-link--active">Catalog</a>
+        <a href="contact.html" class="header__nav-link">Contact</a>
+      </nav>
+      <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <nav class="mobile-menu__nav">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="craft.html" class="mobile-menu__link">Craft</a>
+      <a href="catalog.html" class="mobile-menu__link">Catalog</a>
+      <a href="contact.html" class="mobile-menu__link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ============================================
+       CATALOG HERO
+  ============================================ -->
+  <section class="catalog-hero" id="catalogHero">
+    <div class="catalog-hero__bg">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1920&q=80"
+           alt="Sunlit marble showroom featuring curated Tiba Stone pieces"
+           class="catalog-hero__bg-img"
+           loading="eager"
+           fetchpriority="high">
+    </div>
+    <div class="catalog-hero__overlay"></div>
+    <div class="catalog-hero__content">
+      <h1 class="catalog-hero__title">Tiba Stone Collection</h1>
+      <p class="catalog-hero__subtitle">Bespoke Marble for Discerning Spaces</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FEATURED PRODUCTS (5 Products)
+  ============================================ -->
+
+  <!-- Featured Product 1: Image LEFT, White background -->
+  <section class="featured-product">
+    <div class="container">
+      <div class="editorial-split">
+        <div class="editorial-split__media reveal">
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80"
+               alt="Forma Bath sculptural freestanding bathtub in Carrara marble"
+               class="editorial-split__img"
+               loading="lazy">
+        </div>
+        <div class="editorial-split__content reveal">
+          <span class="editorial-split__label">Signature Piece</span>
+          <h2 class="editorial-split__heading">Forma Bath</h2>
+          <p class="editorial-split__text">A sculptural freestanding bathtub carved from a single block of Carrara marble, where the natural veining becomes the art. Every curve follows the stone's inherent beauty.</p>
+          <span class="featured-product__meta">Freestanding Bathtub</span>
+          <a href="catalog/forma-bath.html" class="btn-primary">Discover More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Product 2: Image RIGHT, Sand background -->
+  <section class="featured-product featured-product--sand">
+    <div class="container">
+      <div class="editorial-split editorial-split--img-right">
+        <div class="editorial-split__media reveal">
+          <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1200&q=80"
+               alt="Colonna Basin cylindrical freestanding washbasin in marble"
+               class="editorial-split__img"
+               loading="lazy">
+        </div>
+        <div class="editorial-split__content reveal">
+          <span class="editorial-split__label">Signature Piece</span>
+          <h2 class="editorial-split__heading">Colonna Basin</h2>
+          <p class="editorial-split__text">A cylindrical washbasin where timeless form meets contemporary function. Rising from its pedestal with quiet authority, it transforms the ritual of cleansing into contemplation.</p>
+          <span class="featured-product__meta">Freestanding Washbasin</span>
+          <a href="catalog/colonna-basin.html" class="btn-primary">Discover More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Product 3: Image LEFT, White background -->
+  <section class="featured-product">
+    <div class="container">
+      <div class="editorial-split">
+        <div class="editorial-split__media reveal">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80"
+               alt="Terra Console monolithic marble console in architectural setting"
+               class="editorial-split__img"
+               loading="lazy">
+        </div>
+        <div class="editorial-split__content reveal">
+          <span class="editorial-split__label">Signature Piece</span>
+          <h2 class="editorial-split__heading">Terra Console</h2>
+          <p class="editorial-split__text">A monolithic marble console suspended in geometric equilibrium. Its mass defies expectation, floating against the wall with the visual lightness of a brushstroke.</p>
+          <span class="featured-product__meta">Wall Console</span>
+          <a href="catalog/terra-console.html" class="btn-primary">Discover More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Product 4: Image RIGHT, Sand background -->
+  <section class="featured-product featured-product--sand">
+    <div class="container">
+      <div class="editorial-split editorial-split--img-right">
+        <div class="editorial-split__media reveal">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80"
+               alt="Luna Vessel organic marble basin with moon-like curves"
+               class="editorial-split__img"
+               loading="lazy">
+        </div>
+        <div class="editorial-split__content reveal">
+          <span class="editorial-split__label">Signature Piece</span>
+          <h2 class="editorial-split__heading">Luna Vessel</h2>
+          <p class="editorial-split__text">An organic basin sculpted to capture the moon's gentle curves. Soft edges embrace water as naturally as a riverbed, inviting hands to linger in its hollows.</p>
+          <span class="featured-product__meta">Countertop Basin</span>
+          <a href="catalog/luna-vessel.html" class="btn-primary">Discover More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Product 5: Image LEFT, White background -->
+  <section class="featured-product">
+    <div class="container">
+      <div class="editorial-split">
+        <div class="editorial-split__media reveal">
+          <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=1200&q=80"
+               alt="Obelisco Lamp illuminated marble column casting ambient light"
+               class="editorial-split__img"
+               loading="lazy">
+        </div>
+        <div class="editorial-split__content reveal">
+          <span class="editorial-split__label">Signature Piece</span>
+          <h2 class="editorial-split__heading">Obelisco Lamp</h2>
+          <p class="editorial-split__text">An illuminated marble column casting warm ambient light through its translucent veins. Ancient geometry meets modern luminescence in a piece that breathes life into stone.</p>
+          <span class="featured-product__meta">Floor Lamp</span>
+          <a href="catalog/obelisco-lamp.html" class="btn-primary">Discover More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       FEATURED COLLECTIONS (3 Collections)
+  ============================================ -->
+  <section class="featured-collections">
+    <div class="container">
+
+      <!-- Collection A: Calacatta Elegance (6 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Calacatta Elegance</h2>
+          <p class="featured-collection__description">Pieces crafted from the legendary Calacatta marble, prized for its warm gold veining and luminous white ground.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+          <a href="catalog/calacatta-tray.html" class="product-card reveal" data-collection="collection-a">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"
+                   alt="Calacatta Tray decorative marble serving tray"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Calacatta Tray</h3>
+              <span class="product-card__category">Decorative Tray</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/calacatta-vanity-basin.html" class="product-card reveal" data-collection="collection-a">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"
+                   alt="Calacatta Vanity Basin integrated marble washbasin"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Calacatta Vanity Basin</h3>
+              <span class="product-card__category">Integrated Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/calacatta-side-table.html" class="product-card reveal" data-collection="collection-a">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=80"
+                   alt="Calacatta Side Table sculptural marble accent table"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Calacatta Side Table</h3>
+              <span class="product-card__category">Accent Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/calacatta-wall-shelf.html" class="product-card reveal" data-collection="collection-a">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80"
+                   alt="Calacatta Wall Shelf floating marble shelf"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Calacatta Wall Shelf</h3>
+              <span class="product-card__category">Floating Shelf</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/calacatta-soap-dispenser.html" class="product-card reveal" data-collection="collection-a">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&q=80"
+                   alt="Calacatta Soap Dispenser minimalist marble accessory"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Calacatta Soap Dispenser</h3>
+              <span class="product-card__category">Bath Accessory</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/calacatta-pedestal.html" class="product-card reveal" data-collection="collection-a">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+                   alt="Calacatta Pedestal sculptural display column"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Calacatta Pedestal</h3>
+              <span class="product-card__category">Display Column</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Collection B: Modern Minimal (6 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Modern Minimal</h2>
+          <p class="featured-collection__description">Clean lines and architectural forms for contemporary interiors. Where geometry meets geology in perfect restraint.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+          <a href="catalog/linear-basin.html" class="product-card reveal" data-collection="collection-b">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=800&q=80"
+                   alt="Linear Basin geometric wall-mounted washbasin"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Linear Basin</h3>
+              <span class="product-card__category">Wall-Mounted Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/cube-bath.html" class="product-card reveal" data-collection="collection-b">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"
+                   alt="Cube Bath geometric freestanding bathtub"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Cube Bath</h3>
+              <span class="product-card__category">Freestanding Bathtub</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/plane-console.html" class="product-card reveal" data-collection="collection-b">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
+                   alt="Plane Console minimalist floating vanity"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Plane Console</h3>
+              <span class="product-card__category">Floating Vanity</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/edge-shelf.html" class="product-card reveal" data-collection="collection-b">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80"
+                   alt="Edge Shelf angular wall-mounted shelf"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Edge Shelf</h3>
+              <span class="product-card__category">Wall Shelf</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/block-vessel.html" class="product-card reveal" data-collection="collection-b">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80"
+                   alt="Block Vessel cubic countertop basin"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Block Vessel</h3>
+              <span class="product-card__category">Countertop Basin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/frame-mirror.html" class="product-card reveal" data-collection="collection-b">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&q=80"
+                   alt="Frame Mirror marble-framed wall mirror"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Frame Mirror</h3>
+              <span class="product-card__category">Wall Mirror</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Collection C: Heritage Series (3 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Heritage Series</h2>
+          <p class="featured-collection__description">Timeless silhouettes inspired by classical antiquity. These pieces carry centuries of sculptural tradition into the present.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+          <a href="catalog/heritage-fountain.html" class="product-card reveal" data-collection="collection-c">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+                   alt="Heritage Fountain classical marble water feature"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Heritage Fountain</h3>
+              <span class="product-card__category">Water Feature</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/heritage-urn.html" class="product-card reveal" data-collection="collection-c">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80"
+                   alt="Heritage Urn classical marble decorative vessel"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Heritage Urn</h3>
+              <span class="product-card__category">Decorative Vessel</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/heritage-pillar.html" class="product-card reveal" data-collection="collection-c">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80"
+                   alt="Heritage Pillar classical fluted marble column"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Heritage Pillar</h3>
+              <span class="product-card__category">Architectural Column</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/heritage-plinth.html" class="product-card reveal" data-collection="collection-c">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80"
+                   alt="Heritage Plinth classical marble display base"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Heritage Plinth</h3>
+              <span class="product-card__category">Display Base</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/heritage-bowl.html" class="product-card reveal" data-collection="collection-c">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800&q=80"
+                   alt="Heritage Bowl classical marble vessel bowl"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Heritage Bowl</h3>
+              <span class="product-card__category">Decorative Bowl</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="catalog/heritage-fireplace.html" class="product-card reveal" data-collection="collection-c">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80"
+                   alt="Heritage Fireplace classical marble mantelpiece"
+                   class="product-card__img"
+                   loading="lazy">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Heritage Fireplace</h3>
+              <span class="product-card__category">Fireplace Surround</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       FULL PRODUCT GRID WITH FILTERS
+  ============================================ -->
+  <section class="full-product-grid">
+    <div class="container">
+
+      <div class="full-product-grid__header reveal">
+        <div class="accent-rule"></div>
+        <h2 class="section-title">Complete Collection</h2>
+      </div>
+
+      <div class="filter-tabs reveal">
+        <button class="filter-tabs__btn filter-tabs__btn--active" data-filter="all">All</button>
+        <button class="filter-tabs__btn" data-filter="featured">Featured</button>
+        <button class="filter-tabs__btn" data-filter="collection-a">Calacatta Elegance</button>
+        <button class="filter-tabs__btn" data-filter="collection-b">Modern Minimal</button>
+        <button class="filter-tabs__btn" data-filter="collection-c">Heritage Series</button>
+      </div>
+
+      <div class="product-card-grid reveal-stagger" id="productGrid">
+
+        <!-- FEATURED PRODUCTS (5) -->
+        <a href="catalog/forma-bath.html" class="product-card reveal" data-collection="featured">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80"
+                 alt="Forma Bath sculptural freestanding bathtub"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Forma Bath</h3>
+            <span class="product-card__category">Freestanding Bathtub</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/colonna-basin.html" class="product-card reveal" data-collection="featured">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&q=80"
+                 alt="Colonna Basin cylindrical freestanding washbasin"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Colonna Basin</h3>
+            <span class="product-card__category">Freestanding Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/terra-console.html" class="product-card reveal" data-collection="featured">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"
+                 alt="Terra Console monolithic marble console"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Terra Console</h3>
+            <span class="product-card__category">Wall Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/luna-vessel.html" class="product-card reveal" data-collection="featured">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
+                 alt="Luna Vessel organic marble basin"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Luna Vessel</h3>
+            <span class="product-card__category">Countertop Basin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/obelisco-lamp.html" class="product-card reveal" data-collection="featured">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&q=80"
+                 alt="Obelisco Lamp illuminated marble column"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Obelisco Lamp</h3>
+            <span class="product-card__category">Floor Lamp</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <!-- COLLECTION A: CALACATTA ELEGANCE (6) -->
+        <a href="catalog/calacatta-tray.html" class="product-card reveal" data-collection="collection-a">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"
+                 alt="Calacatta Tray decorative marble serving tray"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Calacatta Tray</h3>
+            <span class="product-card__category">Decorative Tray</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/calacatta-vanity-basin.html" class="product-card reveal" data-collection="collection-a">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"
+                 alt="Calacatta Vanity Basin integrated marble washbasin"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Calacatta Vanity Basin</h3>
+            <span class="product-card__category">Integrated Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/calacatta-side-table.html" class="product-card reveal" data-collection="collection-a">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=80"
+                 alt="Calacatta Side Table sculptural marble accent table"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Calacatta Side Table</h3>
+            <span class="product-card__category">Accent Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/calacatta-wall-shelf.html" class="product-card reveal" data-collection="collection-a">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80"
+                 alt="Calacatta Wall Shelf floating marble shelf"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Calacatta Wall Shelf</h3>
+            <span class="product-card__category">Floating Shelf</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/calacatta-soap-dispenser.html" class="product-card reveal" data-collection="collection-a">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&q=80"
+                 alt="Calacatta Soap Dispenser minimalist marble accessory"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Calacatta Soap Dispenser</h3>
+            <span class="product-card__category">Bath Accessory</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/calacatta-pedestal.html" class="product-card reveal" data-collection="collection-a">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+                 alt="Calacatta Pedestal sculptural display column"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Calacatta Pedestal</h3>
+            <span class="product-card__category">Display Column</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <!-- COLLECTION B: MODERN MINIMAL (6) -->
+        <a href="catalog/linear-basin.html" class="product-card reveal" data-collection="collection-b">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=800&q=80"
+                 alt="Linear Basin geometric wall-mounted washbasin"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Linear Basin</h3>
+            <span class="product-card__category">Wall-Mounted Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/cube-bath.html" class="product-card reveal" data-collection="collection-b">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"
+                 alt="Cube Bath geometric freestanding bathtub"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Cube Bath</h3>
+            <span class="product-card__category">Freestanding Bathtub</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/plane-console.html" class="product-card reveal" data-collection="collection-b">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
+                 alt="Plane Console minimalist floating vanity"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Plane Console</h3>
+            <span class="product-card__category">Floating Vanity</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/edge-shelf.html" class="product-card reveal" data-collection="collection-b">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80"
+                 alt="Edge Shelf angular wall-mounted shelf"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Edge Shelf</h3>
+            <span class="product-card__category">Wall Shelf</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/block-vessel.html" class="product-card reveal" data-collection="collection-b">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80"
+                 alt="Block Vessel cubic countertop basin"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Block Vessel</h3>
+            <span class="product-card__category">Countertop Basin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/frame-mirror.html" class="product-card reveal" data-collection="collection-b">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&q=80"
+                 alt="Frame Mirror marble-framed wall mirror"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Frame Mirror</h3>
+            <span class="product-card__category">Wall Mirror</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <!-- COLLECTION C: HERITAGE SERIES (3) -->
+        <a href="catalog/heritage-fountain.html" class="product-card reveal" data-collection="collection-c">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+                 alt="Heritage Fountain classical marble water feature"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Heritage Fountain</h3>
+            <span class="product-card__category">Water Feature</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/heritage-urn.html" class="product-card reveal" data-collection="collection-c">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80"
+                 alt="Heritage Urn classical marble decorative vessel"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Heritage Urn</h3>
+            <span class="product-card__category">Decorative Vessel</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/heritage-pillar.html" class="product-card reveal" data-collection="collection-c">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80"
+                 alt="Heritage Pillar classical fluted marble column"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Heritage Pillar</h3>
+            <span class="product-card__category">Architectural Column</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/heritage-plinth.html" class="product-card reveal" data-collection="collection-c">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80"
+                 alt="Heritage Plinth classical marble display base"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Heritage Plinth</h3>
+            <span class="product-card__category">Display Base</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/heritage-bowl.html" class="product-card reveal" data-collection="collection-c">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800&q=80"
+                 alt="Heritage Bowl classical marble vessel bowl"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Heritage Bowl</h3>
+            <span class="product-card__category">Decorative Bowl</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="catalog/heritage-fireplace.html" class="product-card reveal" data-collection="collection-c">
+          <div class="product-card__media">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80"
+                 alt="Heritage Fireplace classical marble mantelpiece"
+                 class="product-card__img"
+                 loading="lazy">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Heritage Fireplace</h3>
+            <span class="product-card__category">Fireplace Surround</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       TAILOR-MADE CTA
+  ============================================ -->
+  <section class="tailor-made-cta">
+    <div class="container">
+      <div class="tailor-made-cta__content reveal">
+        <span class="section-label">Bespoke Service</span>
+        <div class="accent-rule"></div>
+        <h2 class="section-title">Made Entirely for You</h2>
+        <p class="tailor-made-cta__text">Every dimension, material, and finish can be customized. We work directly with architects and designers to realize pieces that are uniquely yours &mdash; from initial sketch through installation.</p>
+        <a href="contact.html" class="btn-primary">Begin Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       THREE PILLARS
+  ============================================ -->
+  <section class="three-pillars">
+    <div class="container">
+      <div class="three-pillars__header text-center">
+        <div class="accent-rule reveal"></div>
+        <h2 class="section-title reveal">What Defines Us</h2>
+      </div>
+      <div class="three-pillars__grid reveal-stagger">
+
+        <div class="pillar-card reveal">
+          <div class="pillar-card__media">
+            <img src="https://images.unsplash.com/photo-503387762-592deb58ef4e?w=800&q=80"
+                 alt="Architectural marble design drawings in warm studio light"
+                 class="pillar-card__img"
+                 loading="lazy">
+          </div>
+          <h3 class="pillar-card__heading">Design</h3>
+          <p class="pillar-card__text">Every line, curve, and proportion is considered &mdash; conceived in dialogue with the space it will inhabit and the stone from which it will emerge.</p>
+          <a href="catalog.html" class="btn-primary">Explore the Collection</a>
+        </div>
+
+        <div class="pillar-card reveal">
+          <div class="pillar-card__media">
+            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80"
+                 alt="Artisan hands shaping marble with traditional tools"
+                 class="pillar-card__img"
+                 loading="lazy">
+          </div>
+          <h3 class="pillar-card__heading">Craftsmanship</h3>
+          <p class="pillar-card__text">Generations of knowledge guide every cut and polish. Our artisans work with a patience that honours the material and a precision that defines our standard.</p>
+          <a href="contact.html" class="btn-primary">Begin Your Project</a>
+        </div>
+
+        <div class="pillar-card reveal">
+          <div class="pillar-card__media">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80"
+                 alt="Close-up of raw marble revealing natural veining and warm tones"
+                 class="pillar-card__img"
+                 loading="lazy">
+          </div>
+          <h3 class="pillar-card__heading">Materiality</h3>
+          <p class="pillar-card__text">We source only stone of extraordinary character &mdash; each block selected for the uniqueness of its veining, the warmth of its tone, and the depth of its surface.</p>
+          <a href="craft.html" class="btn-primary">Discover More</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand Column -->
+        <div class="footer__brand">
+          <img src="TIBA_FINAL_LOGO_PORTRAIT (2).png" alt="TIBA Stone" class="footer__logo">
+          <p class="footer__tagline">Bespoke Marble Atelier</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sitemap Column -->
+        <div class="footer__sitemap">
+          <h4 class="footer__col-title">Navigate</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="craft.html" class="footer__link">Craft</a>
+          <a href="catalog.html" class="footer__link">Catalog</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="footer__contact-info">
+          <h4 class="footer__col-title">Visit</h4>
+          <p>Tiba Stone Atelier<br>Via Roma 42, Milano<br>Italy</p>
+          <p><a href="mailto:info@tibastone.com">info@tibastone.com</a></p>
+          <p><a href="tel:+39021234567">+39 02 123 4567</a></p>
+        </div>
+
+        <!-- Compact Inquiry Form Column -->
+        <div class="footer__form">
+          <h4 class="footer__col-title">Inquire</h4>
+          <form class="footer-form" id="footerForm">
+            <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+            <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+            <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+            <button type="submit" class="btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ------------------------------------------
+         1. HEADER SCROLL TRANSITION
+      ------------------------------------------ */
+      var header = document.getElementById('siteHeader');
+      var catalogHero = document.getElementById('catalogHero');
+
+      function updateHeader() {
+        var threshold = catalogHero.offsetHeight * 0.12;
+        if (window.scrollY > threshold) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+
+      /* ------------------------------------------
+         2. MOBILE MENU
+      ------------------------------------------ */
+      var hamburger = document.getElementById('hamburgerBtn');
+      var mobileMenu = document.getElementById('mobileMenu');
+      var mobileClose = document.getElementById('mobileMenuClose');
+
+      function openMenu() {
+        mobileMenu.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openMenu);
+      mobileClose.addEventListener('click', closeMenu);
+
+      mobileMenu.querySelectorAll('.mobile-menu__link').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      /* ------------------------------------------
+         3. SCROLL REVEAL (Intersection Observer)
+      ------------------------------------------ */
+      var revealElements = document.querySelectorAll('.reveal');
+
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(function (el) {
+        revealObserver.observe(el);
+      });
+
+      /* ------------------------------------------
+         4. HERO PARALLAX (subtle)
+      ------------------------------------------ */
+      var heroBgImg = document.querySelector('.catalog-hero__bg-img');
+
+      function heroParallax() {
+        var scrollY = window.scrollY;
+        var heroHeight = catalogHero.offsetHeight;
+        if (scrollY <= heroHeight) {
+          var offset = scrollY * 0.2;
+          heroBgImg.style.transform = 'translateY(' + offset + 'px) scale(1.05)';
+        }
+      }
+
+      window.addEventListener('scroll', heroParallax, { passive: true });
+
+      /* ------------------------------------------
+         5. PROGRESSIVE IMAGE FADE-IN
+      ------------------------------------------ */
+      var fadeImages = document.querySelectorAll(
+        '.editorial-split__img, .product-card__img, .pillar-card__img'
+      );
+
+      fadeImages.forEach(function (img) {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.8s ease';
+
+        function showImage() {
+          img.style.opacity = '1';
+        }
+
+        if (img.complete && img.naturalHeight !== 0) {
+          showImage();
+        } else {
+          img.addEventListener('load', showImage);
+        }
+      });
+
+      /* Hero image separate — always eager loaded */
+      var heroImg = document.querySelector('.catalog-hero__bg-img');
+      heroImg.style.opacity = '0';
+      heroImg.style.transition = 'opacity 1.2s ease';
+
+      function showHero() {
+        heroImg.style.opacity = '1';
+      }
+
+      if (heroImg.complete && heroImg.naturalHeight !== 0) {
+        showHero();
+      } else {
+        heroImg.addEventListener('load', showHero);
+      }
+
+      /* ------------------------------------------
+         6. FILTER TABS
+      ------------------------------------------ */
+      var filterBtns = document.querySelectorAll('.filter-tabs__btn');
+      var productCards = document.querySelectorAll('#productGrid .product-card');
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var filter = this.getAttribute('data-filter');
+
+          // Update active button
+          filterBtns.forEach(function (b) {
+            b.classList.remove('filter-tabs__btn--active');
+          });
+          this.classList.add('filter-tabs__btn--active');
+
+          // Show/hide products
+          productCards.forEach(function (card) {
+            var cardCollection = card.getAttribute('data-collection');
+            if (filter === 'all' || cardCollection === filter) {
+              card.classList.remove('is-hidden');
+            } else {
+              card.classList.add('is-hidden');
+            }
+          });
+        });
+      });
+
+      /* ------------------------------------------
+         7. FOOTER FORM HANDLER
+      ------------------------------------------ */
+      document.getElementById('footerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = e.target;
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn.textContent;
+        btn.textContent = 'Thank You';
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+        setTimeout(function () {
+          form.reset();
+          btn.textContent = originalText;
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }, 3000);
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
