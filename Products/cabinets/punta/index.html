@@ -949,6 +949,50 @@
     }
 
     /* ============================================
+       INQUIRY IMAGE PREVIEW
+    ============================================ */
+    .inquiry-preview {
+      background: var(--color-sand);
+      padding: var(--space-xl) 0 0;
+    }
+
+    .inquiry-preview__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .inquiry-preview__label {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      margin-bottom: 1.25rem;
+    }
+
+    .inquiry-preview__main {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .inquiry-preview__img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: opacity 0.2s ease;
+    }
+
+    .inquiry-preview__thumbs {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      padding-bottom: var(--space-xl);
+    }
+
+    /* ============================================
        16. FOOTER
     ============================================ */
     .site-footer {
@@ -1187,7 +1231,7 @@
   <header class="site-header" id="siteHeader">
     <div class="header__inner container">
       <a href="/" class="header__logo">
-        <img src="../../TIBA_FINAL_LOGO_LANDSCAPE (3) (13).png" alt="TIBA Stone" class="header__logo-img">
+        <img src="../../../TIBA_FINAL_LOGO_LANDSCAPE (3) (13).png" alt="TIBA Stone" class="header__logo-img">
       </a>
       <nav class="header__nav">
         <a href="/" class="header__nav-link">Home</a>
@@ -1226,18 +1270,6 @@
         <p class="product-hero__description reveal">
           Geometry carved in stone. The Punta transforms Nero Marquina into something closer to architecture — each door panel sculpted into angular facets that fragment and redirect light, shifting from matte to mirror as you move.
         </p>
-      </div>
-      <div class="product-hero__thumbs reveal">
-        <img src="punta_01_editorial.png"
-             alt="Interior setting" class="hero-thumb is-active" data-index="0">
-        <img src="punta_02_human.png"
-             alt="Scale reference" class="hero-thumb" data-index="1">
-        <img src="punta_12_catalogue.png"
-             alt="Studio view" class="hero-thumb" data-index="2">
-        <img src="punta_03_closeup_veining.png"
-             alt="Faceted marble surface" class="hero-thumb" data-index="3">
-        <img src="punta_04_closeup_edge.png"
-             alt="Brass edge detail" class="hero-thumb" data-index="4">
       </div>
     </div>
     <div class="product-hero__media">
@@ -1471,6 +1503,35 @@
   </section>
 
   <!-- ============================================
+       IMAGE SELECTOR (above inquiry)
+  ============================================ -->
+  <div class="inquiry-preview">
+    <div class="container">
+      <div class="inquiry-preview__inner reveal">
+        <p class="inquiry-preview__label">Your Selected View</p>
+        <div class="inquiry-preview__main">
+          <img src="punta_01_editorial.png"
+               alt="Selected view"
+               class="inquiry-preview__img"
+               id="inquiryPreviewImg">
+        </div>
+        <div class="inquiry-preview__thumbs">
+          <img src="punta_01_editorial.png"
+               alt="Interior setting" class="hero-thumb is-active" data-index="0">
+          <img src="punta_02_human.png"
+               alt="Scale reference" class="hero-thumb" data-index="1">
+          <img src="punta_12_catalogue.png"
+               alt="Studio view" class="hero-thumb" data-index="2">
+          <img src="punta_03_closeup_veining.png"
+               alt="Faceted marble surface" class="hero-thumb" data-index="3">
+          <img src="punta_04_closeup_edge.png"
+               alt="Brass edge detail" class="hero-thumb" data-index="4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
        INQUIRY
   ============================================ -->
   <section class="inquiry-section" id="inquiry">
@@ -1521,7 +1582,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <img src="../../TIBA_FINAL_LOGO_PORTRAIT (2).png" alt="TIBA Stone" class="footer__logo">
+          <img src="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png" alt="TIBA Stone" class="footer__logo">
           <p class="footer__tagline">Bespoke Marble Atelier</p>
           <div class="footer__social">
             <a href="#" aria-label="Instagram">
@@ -1612,9 +1673,10 @@
 
       revealEls.forEach(function (el) { revealObserver.observe(el); });
 
-      // Hero thumbnail switcher
+      // Thumbnail switcher — updates hero image and inquiry preview
       var heroThumbs = document.querySelectorAll('.hero-thumb');
       var heroMainImg = document.getElementById('heroMainImg');
+      var inquiryPreviewImg = document.getElementById('inquiryPreviewImg');
       var heroImages = [
         'punta_01_editorial.png',
         'punta_02_human.png',
@@ -1629,11 +1691,12 @@
           this.classList.add('is-active');
           var idx = parseInt(this.dataset.index, 10);
           heroMainImg.style.opacity = '0';
+          inquiryPreviewImg.style.opacity = '0';
           setTimeout(function () {
             heroMainImg.src = heroImages[idx];
-            heroMainImg.onload = function () {
-              heroMainImg.style.opacity = '1';
-            };
+            inquiryPreviewImg.src = heroImages[idx];
+            heroMainImg.onload = function () { heroMainImg.style.opacity = '1'; };
+            inquiryPreviewImg.onload = function () { inquiryPreviewImg.style.opacity = '1'; };
           }, 200);
         });
       });
