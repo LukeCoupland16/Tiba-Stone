@@ -710,7 +710,7 @@
 
     .footer__grid {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
       gap: var(--grid-gap);
     }
 
@@ -789,6 +789,41 @@
 
     .footer__contact-info a:hover {
       color: var(--color-stone);
+    }
+
+    /* Footer Form */
+    .footer-form__input,
+    .footer-form__textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--color-river-green);
+      color: var(--color-stone);
+      padding: 0.75rem 0;
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 300;
+      margin-bottom: 1rem;
+      transition: border-color var(--duration-fast) var(--ease-smooth);
+      outline: none;
+      resize: none;
+    }
+
+    .footer-form__input::placeholder,
+    .footer-form__textarea::placeholder {
+      color: var(--color-river-green);
+      font-weight: 300;
+    }
+
+    .footer-form__input:focus,
+    .footer-form__textarea:focus {
+      border-color: var(--color-stone);
+    }
+
+    .footer-form .btn-primary {
+      width: 100%;
+      text-align: center;
+      margin-top: 0.5rem;
     }
 
     .footer__bottom {
@@ -1045,6 +1080,17 @@
           <p><a href="mailto:info@tibastone.com">info@tibastone.com</a></p>
           <p><a href="tel:+6281239442648">+62 81239442648</a></p>
         </div>
+
+        <!-- Compact Inquiry Form Column -->
+        <div class="footer__form">
+          <h4 class="footer__col-title">Inquire</h4>
+          <form class="footer-form" id="footerForm">
+            <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+            <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+            <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+            <button type="submit" class="btn-primary">Send</button>
+          </form>
+        </div>
       </div>
 
       <div class="footer__bottom">
@@ -1219,6 +1265,23 @@
         }
       }
 
+      /* ------------------------------------------
+         5. FOOTER FORM
+      ------------------------------------------ */
+      var footerForm = document.getElementById('footerForm');
+      if (footerForm) {
+        footerForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var btn = footerForm.querySelector('.btn-primary');
+          btn.textContent = 'Sent';
+          btn.disabled = true;
+          setTimeout(function () {
+            footerForm.reset();
+            btn.textContent = 'Send';
+            btn.disabled = false;
+          }, 3000);
+        });
+      }
 
     })();
   </script>

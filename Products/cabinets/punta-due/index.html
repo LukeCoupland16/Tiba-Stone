@@ -960,7 +960,7 @@
 
     .footer__grid {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
       gap: var(--grid-gap);
     }
 
@@ -1015,7 +1015,7 @@
 
     .footer__link:hover { color: var(--color-stone); }
 
-    .footer__contact p {
+    .footer__contact-info p {
       color: var(--color-river-green);
       font-size: var(--text-body);
       font-weight: 300;
@@ -1023,12 +1023,47 @@
       line-height: 1.5;
     }
 
-    .footer__contact a {
+    .footer__contact-info a {
       color: var(--color-river-green);
       transition: color var(--duration-fast);
     }
 
-    .footer__contact a:hover { color: var(--color-stone); }
+    .footer__contact-info a:hover { color: var(--color-stone); }
+
+    /* Footer Form */
+    .footer-form__input,
+    .footer-form__textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--color-river-green);
+      color: var(--color-stone);
+      padding: 0.75rem 0;
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 300;
+      margin-bottom: 1rem;
+      transition: border-color var(--duration-fast);
+      outline: none;
+      resize: none;
+    }
+
+    .footer-form__input::placeholder,
+    .footer-form__textarea::placeholder {
+      color: var(--color-river-green);
+      font-weight: 300;
+    }
+
+    .footer-form__input:focus,
+    .footer-form__textarea:focus {
+      border-color: var(--color-stone);
+    }
+
+    .footer-form .btn-primary {
+      width: 100%;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
 
     .footer__bottom {
       margin-top: var(--space-xl);
@@ -1531,25 +1566,27 @@
             </a>
           </div>
         </div>
-        <div>
+                <div class="footer__sitemap">
           <h4 class="footer__col-title">Navigate</h4>
           <a href="/" class="footer__link">Home</a>
           <a href="/craft" class="footer__link">Craft</a>
           <a href="/catalog" class="footer__link">Catalog</a>
           <a href="/contact" class="footer__link">Contact</a>
         </div>
-        <div>
-          <h4 class="footer__col-title">Products</h4>
-          <a href="/catalog" class="footer__link">Coffee Tables</a>
-          <a href="/catalog" class="footer__link">Side Tables</a>
-          <a href="/catalog" class="footer__link">Cabinets</a>
-          <a href="/catalog" class="footer__link">Vases &amp; Objects</a>
-        </div>
-        <div class="footer__contact">
-          <h4 class="footer__col-title">Contact</h4>
+        <div class="footer__contact-info">
+          <h4 class="footer__col-title">Visit</h4>
           <p>Tiba Stone Atelier</p>
           <p><a href="mailto:info@tibastone.com">info@tibastone.com</a></p>
           <p><a href="tel:+6281239442648">+62 81239442648</a></p>
+        </div>
+        <div class="footer__form">
+          <h4 class="footer__col-title">Inquire</h4>
+          <form class="footer-form" id="footerForm">
+            <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+            <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+            <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+            <button type="submit" class="btn-primary">Send</button>
+          </form>
         </div>
       </div>
       <div class="footer__bottom">
