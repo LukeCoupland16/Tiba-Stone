@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empire Side Table | TIBA STONE</title>
+  <meta name="description" content="The Empire Side Table — a monolithic column of Emperador Brown marble, carved from a single block. Weight, presence, and restraint in one sculptural form. Bespoke stone furniture by Tiba Stone.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       1. CUSTOM PROPERTIES
+    ============================================ */
+    :root {
+      --color-stone: #222323;
+      --color-ivory: #FFFFFF;
+      --color-sunset: #925638;
+      --color-river-green: #A3996A;
+      --color-dusk-blue: #153647;
+      --color-moss: #3E402B;
+      --color-sand: #F5F5F5;
+      --color-warm-bg: #E8E2DA;
+
+      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
+      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+      --text-hero: clamp(2.25rem, 4vw, 3.5rem);
+      --text-h1: clamp(1.875rem, 3vw, 2.75rem);
+      --text-h2: clamp(1.5rem, 2.25vw, 2rem);
+      --text-h3: clamp(1.125rem, 1.5vw, 1.375rem);
+      --text-subtitle: clamp(0.625rem, 0.9vw, 0.75rem);
+      --text-body: clamp(0.875rem, 1vw, 1rem);
+      --text-small: clamp(0.6875rem, 0.85vw, 0.8125rem);
+      --text-xs: clamp(0.5625rem, 0.7vw, 0.6875rem);
+
+      --ls-wide: 0.2em;
+      --ls-medium: 0.12em;
+
+      --lh-heading: 1.25;
+      --lh-body: 1.85;
+
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 4rem;
+      --space-xl: 6rem;
+      --space-2xl: 8rem;
+      --space-3xl: 12rem;
+
+      --container-max: 1400px;
+      --container-narrow: 800px;
+      --container-pad: clamp(1.5rem, 5vw, 4rem);
+      --grid-gap: clamp(1.5rem, 3vw, 2.5rem);
+
+      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --duration-fast: 0.3s;
+      --duration-medium: 0.6s;
+      --duration-slow: 1s;
+    }
+
+    /* ============================================
+       2. RESET & BASE
+    ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: var(--lh-body);
+      font-size: var(--text-body);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      line-height: var(--lh-heading);
+    }
+
+    a {
+      color: var(--color-stone);
+      text-decoration: none;
+    }
+
+    button {
+      font-family: var(--font-body);
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    /* ============================================
+       3. UTILITIES
+    ============================================ */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .section-divider {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      height: 1px;
+      background: rgba(34, 35, 35, 0.08);
+    }
+
+    /* ============================================
+       4. SCROLL REVEAL
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity var(--duration-medium) var(--ease-smooth),
+                  transform var(--duration-medium) var(--ease-smooth);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       5. BUTTONS
+    ============================================ */
+    .btn-primary {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      border: 1px solid var(--color-stone);
+      color: var(--color-stone);
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      cursor: pointer;
+      transition: background var(--duration-fast) var(--ease-smooth),
+                  color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-stone);
+      color: var(--color-ivory);
+    }
+
+    .btn-text {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      position: relative;
+      padding-bottom: 2px;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .btn-text::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .btn-text:hover {
+      color: var(--color-stone);
+    }
+
+    .btn-text:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* ============================================
+       6. HEADER
+    ============================================ */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.25rem 0;
+      background: var(--color-ivory);
+      border-bottom: 1px solid rgba(34, 35, 35, 0.08);
+      transition: padding var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled {
+      padding: 0.875rem 0;
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo-img {
+      height: 28px;
+      width: auto;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .header__nav-link {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-stone);
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .header__nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-sunset);
+      transform: scaleX(0);
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .header__nav-link:hover::after,
+    .header__nav-link--active::after {
+      transform: scaleX(1);
+    }
+
+    .header__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 0.5rem;
+    }
+
+    .header__hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--color-stone);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--color-ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--duration-fast) var(--ease-smooth);
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 1.75rem;
+      color: var(--color-stone);
+    }
+
+    .mobile-menu__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .mobile-menu__link {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      color: var(--color-stone);
+    }
+
+    /* ============================================
+       7. PRODUCT HERO — Serafini Exact
+    ============================================ */
+    .product-hero {
+      padding-top: 80px;
+      display: grid;
+      grid-template-columns: 0.35fr 0.65fr;
+      min-height: 100vh;
+    }
+
+    .product-hero__info {
+      background: #E8E2DA;
+      padding: clamp(3rem, 6vh, 5rem) clamp(2rem, 3.5vw, 3rem) clamp(2rem, 4vh, 3rem) var(--container-pad);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-hero__content {
+      padding-top: clamp(2rem, 8vh, 6rem);
+    }
+
+    .product-hero__category {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .product-hero__title {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      line-height: 1.1;
+      color: var(--color-stone);
+      margin-bottom: 0.25rem;
+    }
+
+    .product-hero__subtitle {
+      font-family: var(--font-display);
+      font-size: var(--text-body);
+      font-style: italic;
+      color: var(--color-river-green);
+      font-weight: 400;
+      margin-bottom: 1.75rem;
+    }
+
+    .product-hero__rule {
+      width: 36px;
+      height: 1px;
+      background: rgba(34, 35, 35, 0.25);
+      margin-bottom: 1.75rem;
+    }
+
+    .product-hero__description {
+      font-size: var(--text-body);
+      line-height: var(--lh-body);
+      color: var(--color-stone);
+      max-width: 320px;
+    }
+
+    /* Thumbnails row anchored at bottom of info panel */
+    .product-hero__thumbs {
+      display: flex;
+      gap: 0.5rem;
+      padding-top: var(--space-lg);
+    }
+
+    .hero-thumb {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity var(--duration-fast) var(--ease-smooth),
+                  outline-color var(--duration-fast) var(--ease-smooth);
+      outline: 1.5px solid transparent;
+      outline-offset: 2px;
+    }
+
+    .hero-thumb:hover {
+      opacity: 0.85;
+    }
+
+    .hero-thumb.is-active {
+      opacity: 1;
+      outline-color: var(--color-stone);
+    }
+
+    /* Hero image */
+    .product-hero__media {
+      position: relative;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+
+    .product-hero__img {
+      width: 100%;
+      height: 100%;
+      min-height: calc(100vh - 80px);
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ============================================
+       8. GALLERY GRID (warm sand bar)
+    ============================================ */
+    .gallery-strip {
+      background: var(--color-warm-bg);
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+    }
+
+    .gallery-strip__scroll {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(0.75rem, 1.5vw, 1.25rem);
+      padding: 0 var(--container-pad);
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .gallery-strip__item {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-strip__img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .gallery-strip__item:hover .gallery-strip__img {
+      transform: scale(1.04);
+    }
+
+    /* ============================================
+       9. EDITORIAL — Right-aligned text blocks
+    ============================================ */
+    .editorial-section {
+      padding: var(--space-2xl) 0;
+    }
+
+    .editorial__split {
+      display: grid;
+      grid-template-columns: 0.5fr 0.5fr;
+      gap: var(--space-xl);
+    }
+
+    .editorial__image-col {
+      overflow: hidden;
+    }
+
+    .editorial__image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .editorial__image-col:hover img {
+      transform: scale(1.03);
+    }
+
+    .editorial__text-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--space-md) 0;
+    }
+
+    .editorial__block {
+      margin-bottom: var(--space-lg);
+    }
+
+    .editorial__block:last-child {
+      margin-bottom: 0;
+    }
+
+    .editorial__heading {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      margin-bottom: 1rem;
+      line-height: 1.35;
+    }
+
+    .editorial__heading em {
+      font-style: italic;
+    }
+
+    .editorial__text {
+      font-weight: 300;
+      line-height: var(--lh-body);
+      max-width: 480px;
+    }
+
+    .editorial__label {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    /* ============================================
+       10. MATERIALS SECTION
+    ============================================ */
+    .materials-section {
+      padding: var(--space-2xl) 0;
+      background: var(--color-sand);
+    }
+
+    .materials__inner {
+      display: grid;
+      grid-template-columns: 0.55fr 0.45fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .materials__media {
+      overflow: hidden;
+    }
+
+    .materials__media img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .materials__media:hover img {
+      transform: scale(1.03);
+    }
+
+    .materials__content {
+      padding: var(--space-md) 0;
+    }
+
+    .materials__label {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      margin-bottom: 0.75rem;
+    }
+
+    .materials__title {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      margin-bottom: 1.25rem;
+    }
+
+    .materials__text {
+      font-weight: 300;
+      line-height: var(--lh-body);
+      margin-bottom: var(--space-md);
+      max-width: 400px;
+    }
+
+    .materials__swatches {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      text-align: center;
+      cursor: pointer;
+      transition: opacity var(--duration-fast);
+    }
+
+    .swatch:hover { opacity: 0.8; }
+
+    .swatch.is-active .swatch__img {
+      outline: 2px solid var(--color-stone);
+      outline-offset: 3px;
+    }
+
+    .swatch__img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      margin-bottom: 0.375rem;
+    }
+
+    .swatch__name {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-stone);
+    }
+
+    /* ============================================
+       12. TECHNICAL SPECIFICATIONS
+    ============================================ */
+    .specs-section {
+      padding: var(--space-2xl) 0;
+    }
+
+    .specs__header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .specs__title {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-stone);
+    }
+
+    .specs__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .specs__drawing {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: var(--space-md);
+    }
+
+    .specs__drawing img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      display: block;
+    }
+
+    .specs__table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .specs__table tr {
+      border-bottom: 1px solid rgba(34, 35, 35, 0.1);
+    }
+
+    .specs__table td {
+      padding: 1rem 0;
+      font-weight: 300;
+      font-size: var(--text-body);
+    }
+
+    .specs__table td:first-child {
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      font-weight: 500;
+      width: 170px;
+    }
+
+    /* ============================================
+       13. RELATED PRODUCTS
+    ============================================ */
+    .related-section {
+      padding: var(--space-2xl) 0;
+      background: var(--color-sand);
+    }
+
+    .related__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .related__title {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+    }
+
+    .related__filters {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      background: transparent;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all var(--duration-fast);
+    }
+
+    .filter-btn:hover { color: var(--color-stone); }
+
+    .filter-btn.is-active {
+      color: var(--color-stone);
+      border-color: var(--color-stone);
+    }
+
+    .related__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--grid-gap);
+    }
+
+    .product-card {
+      text-decoration: none;
+      color: var(--color-stone);
+    }
+
+    .product-card__media {
+      overflow: hidden;
+      background: var(--color-ivory);
+      margin-bottom: 0.875rem;
+    }
+
+    .product-card__img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      padding: 1rem;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .product-card:hover .product-card__img {
+      transform: scale(1.05);
+    }
+
+    .product-card__name {
+      font-family: var(--font-display);
+      font-size: var(--text-h3);
+      margin-bottom: 0.125rem;
+    }
+
+    .product-card__type {
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+    }
+
+    /* ============================================
+       14. FAQ
+    ============================================ */
+    .faq-section {
+      padding: var(--space-xl) 0 var(--space-2xl);
+    }
+
+    .faq__header {
+      margin-bottom: var(--space-lg);
+    }
+
+    .faq__title {
+      font-family: var(--font-display);
+      font-size: var(--text-h3);
+    }
+
+    .faq__list {
+      max-width: 700px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(34, 35, 35, 0.08);
+    }
+
+    .faq-item__question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      font-weight: 400;
+      text-align: left;
+      cursor: pointer;
+      transition: color var(--duration-fast);
+    }
+
+    .faq-item__question:hover {
+      color: var(--color-sunset);
+    }
+
+    .faq-item__icon {
+      font-size: 1.25rem;
+      font-weight: 300;
+      transition: transform var(--duration-fast);
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .faq-item.is-open .faq-item__icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-item__answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--duration-fast), padding var(--duration-fast);
+    }
+
+    .faq-item.is-open .faq-item__answer {
+      max-height: 400px;
+      padding-bottom: 1.25rem;
+    }
+
+    .faq-item__answer p {
+      font-weight: 300;
+      line-height: var(--lh-body);
+      color: var(--color-river-green);
+    }
+
+    /* ============================================
+       15. INQUIRY
+    ============================================ */
+    .inquiry-section {
+      padding: var(--space-2xl) 0;
+      background: var(--color-sand);
+    }
+
+    .inquiry__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .inquiry__label {
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      margin-bottom: 0.75rem;
+    }
+
+    .inquiry__heading {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      margin-bottom: 1rem;
+    }
+
+    .inquiry__text {
+      font-weight: 300;
+      margin-bottom: var(--space-lg);
+    }
+
+    .inquiry__form {
+      text-align: left;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group--full {
+      grid-column: span 2;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 0.875rem 0;
+      border: none;
+      border-bottom: 1px solid var(--color-river-green);
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      font-weight: 300;
+      color: var(--color-stone);
+      outline: none;
+      transition: border-color var(--duration-fast);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--color-river-green);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--color-stone);
+    }
+
+    .form-textarea {
+      resize: none;
+      min-height: 100px;
+    }
+
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .form-consent input {
+      width: 16px;
+      height: 16px;
+      margin-top: 3px;
+      accent-color: var(--color-stone);
+    }
+
+    .form-consent label {
+      font-size: var(--text-small);
+      color: var(--color-river-green);
+      line-height: 1.5;
+    }
+
+    .form-consent a {
+      color: var(--color-stone);
+      text-decoration: underline;
+    }
+
+    .inquiry__form .btn-primary {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    /* ============================================
+       INQUIRY IMAGE PREVIEW
+    ============================================ */
+    .inquiry-preview {
+      background: var(--color-sand);
+      padding: var(--space-xl) 0 0;
+    }
+
+    .inquiry-preview__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .inquiry-preview__label {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      margin-bottom: 1.25rem;
+    }
+
+    .inquiry-preview__main {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .inquiry-preview__img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: opacity 0.2s ease;
+    }
+
+    .inquiry-preview__thumbs {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      padding-bottom: var(--space-xl);
+    }
+
+    /* ============================================
+       16. FOOTER
+    ============================================ */
+    .site-footer {
+      background: var(--color-ivory);
+      padding: var(--space-2xl) 0 var(--space-lg);
+      border-top: 1px solid rgba(34, 35, 35, 0.08);
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: var(--grid-gap);
+    }
+
+    .footer__logo {
+      height: 60px;
+      width: auto;
+      margin-bottom: 1rem;
+    }
+
+    .footer__tagline {
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer__social a {
+      color: var(--color-river-green);
+      transition: color var(--duration-fast);
+    }
+
+    .footer__social a:hover { color: var(--color-stone); }
+
+    .footer__social svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .footer__col-title {
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer__link {
+      display: block;
+      color: var(--color-river-green);
+      font-size: var(--text-body);
+      font-weight: 300;
+      margin-bottom: 0.625rem;
+      transition: color var(--duration-fast);
+    }
+
+    .footer__link:hover { color: var(--color-stone); }
+
+    .footer__contact p {
+      color: var(--color-river-green);
+      font-size: var(--text-body);
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .footer__contact a {
+      color: var(--color-river-green);
+      transition: color var(--duration-fast);
+    }
+
+    .footer__contact a:hover { color: var(--color-stone); }
+
+    .footer__bottom {
+      margin-top: var(--space-xl);
+      padding-top: var(--space-md);
+      border-top: 1px solid rgba(34, 35, 35, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: var(--text-small);
+      color: var(--color-river-green);
+    }
+
+    .footer__legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer__legal a {
+      color: var(--color-river-green);
+      font-size: var(--text-small);
+      transition: color var(--duration-fast);
+    }
+
+    .footer__legal a:hover { color: var(--color-stone); }
+
+    /* ============================================
+       17. RESPONSIVE — TABLET
+    ============================================ */
+    @media (max-width: 1023px) {
+      .product-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .product-hero__info {
+        order: 2;
+        padding: var(--space-lg) var(--container-pad);
+      }
+
+      .product-hero__content {
+        padding-top: 0;
+      }
+
+      .product-hero__media {
+        order: 1;
+      }
+
+      .product-hero__img {
+        min-height: 55vh;
+      }
+
+      .product-hero__thumbs {
+        padding-top: var(--space-md);
+      }
+
+      .gallery-strip__scroll {
+        gap: 0.625rem;
+      }
+
+      .editorial__split {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+
+      .editorial__image-col img {
+        aspect-ratio: 16 / 9;
+      }
+
+      .materials__inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+
+      .specs__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .related__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg);
+      }
+    }
+
+    /* ============================================
+       18. RESPONSIVE — MOBILE
+    ============================================ */
+    @media (max-width: 767px) {
+      .header__nav { display: none; }
+      .header__hamburger { display: flex; }
+
+      .product-hero__img {
+        min-height: 45vh;
+      }
+
+      .hero-thumb {
+        width: 48px;
+        height: 48px;
+      }
+
+      .gallery-strip__scroll {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+      }
+
+      .dual-images__grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
+      .materials__swatches {
+        gap: 0.75rem;
+      }
+
+      .swatch__img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .related__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .related__filters {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group--full {
+        grid-column: span 1;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header__inner container">
+      <a href="/" class="header__logo">
+        <img src="../../../TIBA_FINAL_LOGO_LANDSCAPE (3) (13).png" alt="TIBA Stone" class="header__logo-img">
+      </a>
+      <nav class="header__nav">
+        <a href="/" class="header__nav-link">Home</a>
+        <a href="/craft" class="header__nav-link">Craft</a>
+        <a href="/catalog" class="header__nav-link header__nav-link--active">Catalog</a>
+        <a href="/contact" class="header__nav-link">Contact</a>
+      </nav>
+      <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileMenuClose">&times;</button>
+    <nav class="mobile-menu__nav">
+      <a href="/" class="mobile-menu__link">Home</a>
+      <a href="/craft" class="mobile-menu__link">Craft</a>
+      <a href="/catalog" class="mobile-menu__link">Catalog</a>
+      <a href="/contact" class="mobile-menu__link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ============================================
+       PRODUCT HERO
+       Left: title, subtitle, rule, description, thumbnail row
+       Right: large studio hero image
+  ============================================ -->
+  <section class="product-hero">
+    <div class="product-hero__info">
+      <div class="product-hero__content">
+        <p class="product-hero__category reveal">Stone Furniture</p>
+        <h1 class="product-hero__title reveal">Empire</h1>
+        <p class="product-hero__subtitle reveal">marble side table</p>
+        <div class="product-hero__rule reveal"></div>
+        <p class="product-hero__description reveal">
+          Carved from a single monolithic block. The Empire is a side table that refuses to disappear — an architectural column of stone that commands presence far beyond its scale, anchoring a room with quiet, immovable authority.
+        </p>
+      </div>
+      <div class="product-hero__thumbs">
+        <img src="empire_01_editorial.png"
+             alt="Empire side table — interior setting"
+             class="hero-thumb is-active" data-index="0">
+        <img src="empire_02_human.png"
+             alt="Empire side table — scale reference"
+             class="hero-thumb" data-index="1">
+        <img src="empire_12_catalogue.png"
+             alt="Empire side table — catalogue view"
+             class="hero-thumb" data-index="2">
+        <img src="empire_03_closeup_veining.png"
+             alt="Marble veining detail"
+             class="hero-thumb" data-index="3">
+        <img src="empire_04_closeup_edge.png"
+             alt="Edge and base detail"
+             class="hero-thumb" data-index="4">
+      </div>
+    </div>
+    <div class="product-hero__media">
+      <img src="empire_01_editorial.png"
+           alt="Empire side table — monolithic Emperador Brown marble column"
+           class="product-hero__img"
+           id="heroMainImg"
+           loading="eager"
+           fetchpriority="high">
+    </div>
+  </section>
+
+  <!-- ============================================
+       GALLERY STRIP — warm sand background
+  ============================================ -->
+  <div class="gallery-strip">
+    <div class="gallery-strip__scroll">
+      <div class="gallery-strip__item">
+        <img src="empire_02_human.png"
+             alt="Hand resting on the Empire side table — the warmth and mass of Emperador Brown" class="gallery-strip__img" loading="lazy">
+      </div>
+      <div class="gallery-strip__item">
+        <img src="empire_03_closeup_veining.png"
+             alt="Extreme closeup of Emperador Brown marble veining" class="gallery-strip__img" loading="lazy">
+      </div>
+      <div class="gallery-strip__item">
+        <img src="empire_04_closeup_edge.png"
+             alt="Honed marble edge — the precision of the Empire's base" class="gallery-strip__img" loading="lazy">
+      </div>
+      <div class="gallery-strip__item">
+        <img src="empire_05_closeup_surface.png"
+             alt="Top surface of the Empire side table — warmly lit Emperador marble" class="gallery-strip__img" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       EDITORIAL — Left image + right text
+  ============================================ -->
+  <section class="editorial-section">
+    <div class="container">
+      <div class="editorial__split">
+        <div class="editorial__image-col reveal">
+          <img src="empire_02_human.png"
+               alt="Empire side table — the scale of a single marble block"
+               loading="lazy">
+        </div>
+        <div class="editorial__text-col reveal">
+          <div class="editorial__block">
+            <span class="editorial__label">The Monolithic Form</span>
+            <h2 class="editorial__heading">A Single Block, <em>Uninterrupted</em></h2>
+            <p class="editorial__text">
+              Most stone furniture is assembled — panels glued, frames bolted, surfaces applied. The Empire is not. It is cut from a single quarry block: top, body, and base in one continuous piece of marble. There are no seams, no joints, no apologies. The grain runs unbroken from floor to surface.
+            </p>
+          </div>
+          <div class="editorial__block">
+            <h2 class="editorial__heading">Weight as <em>Luxury</em></h2>
+            <p class="editorial__text">
+              In a world of hollow furniture, the Empire's mass is its statement. At 65 kilograms, it does not move unless you intend it to. It does not vibrate, shift, or flex. It simply is — solid, permanent, and entirely present. This is what stone has always offered, and what no other material can replicate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       MATERIALS — Image + content split
+  ============================================ -->
+  <section class="materials-section">
+    <div class="container">
+      <div class="materials__inner">
+        <div class="materials__media reveal">
+          <img src="empire_05_closeup_surface.png"
+               alt="Emperador Brown marble surface — the deep warmth of the Empire's primary stone"
+               loading="lazy">
+        </div>
+        <div class="materials__content reveal">
+          <span class="materials__label">Available in four stones</span>
+          <h2 class="materials__title">Stone &amp; Finish</h2>
+          <p class="materials__text">
+            The Empire is offered in four marble selections, each transforming the monolithic form differently. Emperador Brown's deep walnut tones bring warmth and depth. Nero Marquina renders the column as pure shadow. Bianco Carrara and Calacatta Gold open the form to light, making the same mass feel almost weightless. Each is finished honed or polished on request.
+          </p>
+          <div class="materials__swatches" id="materialSelector">
+            <div class="swatch is-active" data-material="emperador">
+              <img src="empire_03_closeup_veining.png"
+                   alt="Emperador Brown" class="swatch__img">
+              <span class="swatch__name">Emperador</span>
+            </div>
+            <div class="swatch" data-material="nero">
+              <img src="../../coffee tables/gesto/gesto_08_studio_noir.png"
+                   alt="Nero Marquina" class="swatch__img">
+              <span class="swatch__name">Nero</span>
+            </div>
+            <div class="swatch" data-material="carrara">
+              <img src="../../coffee tables/crystal/crystal_03_closeup_veining.png"
+                   alt="Bianco Carrara" class="swatch__img">
+              <span class="swatch__name">Carrara</span>
+            </div>
+            <div class="swatch" data-material="calacatta">
+              <img src="../../coffee tables/gesto/gesto_07_studio_calacatta.png"
+                   alt="Calacatta Gold" class="swatch__img">
+              <span class="swatch__name">Calacatta</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TECHNICAL SPECIFICATIONS
+  ============================================ -->
+  <section class="specs-section" id="specs">
+    <div class="container">
+      <div class="specs__header reveal">
+        <h2 class="specs__title">Technical Specifications</h2>
+      </div>
+      <div class="specs__grid">
+        <div class="specs__drawing reveal">
+          <img src="empire_11_technical.png"
+               alt="Empire side table technical drawing — front elevation 450 × 550 mm, top plan 450 × 450 mm">
+        </div>
+        <div class="specs__table-wrap reveal">
+          <table class="specs__table">
+            <tr><td>Dimensions</td><td>45 × 45 × 55 cm (W × D × H)</td></tr>
+            <tr><td>Weight</td><td>Approx. 65 kg</td></tr>
+            <tr><td>Materials</td><td>Emperador Brown, Nero Marquina, Bianco Carrara, Calacatta Gold</td></tr>
+            <tr><td>Construction</td><td>Single monolithic block — no joints or adhesives</td></tr>
+            <tr><td>Finish</td><td>Honed (standard) or polished (on request)</td></tr>
+            <tr><td>Custom Sizing</td><td>Available on request</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       FAQ
+  ============================================ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq__header reveal">
+        <h2 class="faq__title">You have questions? Contact us</h2>
+      </div>
+      <div class="faq__list reveal">
+        <div class="faq-item">
+          <button class="faq-item__question">
+            <span>Is the Empire truly carved from a single block?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Yes. The Empire is cut from a single quarry block — top surface, body, and base are one continuous piece of stone with no joins, adhesives, or hidden armatures. The grain runs unbroken from the floor contact to the tabletop. This is what distinguishes it from assembled stone furniture, and why no two Empire tables are exactly alike.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question">
+            <span>Can I choose between a honed and polished finish?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Yes. The Empire is offered in both honed (matte, velvety, fingerprint-resistant) and polished (mirror-bright, reflective, deepens the stone's colour). Honed is the standard finish and suits most residential and hospitality contexts. Polished is recommended when the stone's veining is particularly dramatic and you wish to amplify it.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question">
+            <span>What floor types can the Empire be placed on?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>The Empire's base is fitted with recessed felt pads to protect all floor types, including hardwood, marble, and polished concrete. Given its weight, we recommend consulting your flooring specialist for use on raised floors or historic timber. We can also supply a custom stone or leather base disc on request.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question">
+            <span>Do you offer white-glove delivery?</span>
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>Yes. Every Empire is delivered by our specialist handling team. Due to the weight and monolithic nature of the piece, professional placement is included as standard — not optional. Installation includes final positioning, levelling, and surface inspection. We operate worldwide through certified art and fine furniture logistics partners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       RELATED PRODUCTS
+  ============================================ -->
+  <section class="related-section">
+    <div class="container">
+      <div class="related__header reveal">
+        <h2 class="related__title">Discover other Tiba Stone products</h2>
+        <div class="related__filters">
+          <button class="filter-btn is-active">All</button>
+          <button class="filter-btn">Side Tables</button>
+        </div>
+      </div>
+      <div class="related__grid reveal">
+        <a href="../anti/index.html" class="product-card">
+          <div class="product-card__media">
+            <img src="../anti/anti_12_catalogue.png"
+                 alt="Anti Side Table" class="product-card__img" loading="lazy">
+          </div>
+          <h3 class="product-card__name">Anti</h3>
+          <span class="product-card__type">Marble Side Table</span>
+        </a>
+        <a href="../arthur/index.html" class="product-card">
+          <div class="product-card__media">
+            <img src="../arthur/arthur_12_catalogue.png"
+                 alt="Arthur Side Table" class="product-card__img" loading="lazy">
+          </div>
+          <h3 class="product-card__name">Arthur</h3>
+          <span class="product-card__type">Marble Side Table</span>
+        </a>
+        <a href="../morphe/index.html" class="product-card">
+          <div class="product-card__media">
+            <img src="../morphe/morphe_12_catalogue.png"
+                 alt="Morphe Side Table" class="product-card__img" loading="lazy">
+          </div>
+          <h3 class="product-card__name">Morphe</h3>
+          <span class="product-card__type">Marble Side Table</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       IMAGE SELECTOR (above inquiry)
+  ============================================ -->
+  <div class="inquiry-preview">
+    <div class="container">
+      <div class="inquiry-preview__inner reveal">
+        <p class="inquiry-preview__label">Your Selected View</p>
+        <div class="inquiry-preview__main">
+          <img src="empire_01_editorial.png"
+               alt="Selected view"
+               class="inquiry-preview__img"
+               id="inquiryPreviewImg">
+        </div>
+        <div class="inquiry-preview__thumbs">
+          <img src="empire_01_editorial.png"
+               alt="Interior setting" class="hero-thumb is-active" data-index="0">
+          <img src="empire_02_human.png"
+               alt="Scale reference" class="hero-thumb" data-index="1">
+          <img src="empire_12_catalogue.png"
+               alt="Catalogue view" class="hero-thumb" data-index="2">
+          <img src="empire_03_closeup_veining.png"
+               alt="Marble veining" class="hero-thumb" data-index="3">
+          <img src="empire_04_closeup_edge.png"
+               alt="Edge detail" class="hero-thumb" data-index="4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       INQUIRY
+  ============================================ -->
+  <section class="inquiry-section" id="inquiry">
+    <div class="container">
+      <div class="inquiry__inner reveal">
+        <p class="inquiry__label">Made to Order</p>
+        <h2 class="inquiry__heading">Commission your Empire</h2>
+        <p class="inquiry__text">
+          Every Empire is made to order from a single selected block. Inquire to begin a conversation about stone selection, finish, dimensions, and delivery.
+        </p>
+        <form class="inquiry__form" id="inquiryForm">
+          <input type="hidden" name="product" value="Empire Side Table">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" name="firstName" class="form-input" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+              <input type="text" name="lastName" class="form-input" placeholder="Last Name" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="email" name="email" class="form-input" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" name="phone" class="form-input" placeholder="Phone">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group form-group--full">
+              <textarea name="message" class="form-textarea" placeholder="Your message..." rows="4"></textarea>
+            </div>
+          </div>
+          <div class="form-consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I agree to the <a href="#">Privacy Policy</a> and consent to being contacted about my inquiry.</label>
+          </div>
+          <button type="submit" class="btn-primary">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png" alt="TIBA Stone" class="footer__logo">
+          <p class="footer__tagline">Bespoke Marble Atelier</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Navigate</h4>
+          <a href="/" class="footer__link">Home</a>
+          <a href="/craft" class="footer__link">Craft</a>
+          <a href="/catalog" class="footer__link">Catalog</a>
+          <a href="/contact" class="footer__link">Contact</a>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Products</h4>
+          <a href="/catalog" class="footer__link">Coffee Tables</a>
+          <a href="/catalog" class="footer__link">Side Tables</a>
+          <a href="/catalog" class="footer__link">Cabinets</a>
+          <a href="/catalog" class="footer__link">Vases &amp; Objects</a>
+        </div>
+        <div class="footer__contact">
+          <h4 class="footer__col-title">Contact</h4>
+          <p>Tiba Stone Atelier<br>Via Roma 42, Milano</p>
+          <p><a href="mailto:info@tibastone.com">info@tibastone.com</a></p>
+          <p><a href="tel:+39021234567">+39 02 123 4567</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      // Header scroll
+      var header = document.getElementById('siteHeader');
+      window.addEventListener('scroll', function () {
+        header.classList.toggle('is-scrolled', window.scrollY > 50);
+      }, { passive: true });
+
+      // Mobile menu
+      var hamburger = document.getElementById('hamburgerBtn');
+      var mobileMenu = document.getElementById('mobileMenu');
+      var mobileClose = document.getElementById('mobileMenuClose');
+
+      hamburger.addEventListener('click', function () {
+        mobileMenu.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      function closeMobile() {
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      mobileClose.addEventListener('click', closeMobile);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMobile();
+      });
+
+      // Scroll reveal
+      var revealEls = document.querySelectorAll('.reveal');
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+      // Thumbnail switcher — updates hero image and inquiry preview
+      var heroThumbs = document.querySelectorAll('.hero-thumb');
+      var heroMainImg = document.getElementById('heroMainImg');
+      var inquiryPreviewImg = document.getElementById('inquiryPreviewImg');
+      var heroImages = [
+        'empire_01_editorial.png',
+        'empire_02_human.png',
+        'empire_12_catalogue.png',
+        'empire_03_closeup_veining.png',
+        'empire_04_closeup_edge.png'
+      ];
+
+      heroThumbs.forEach(function (thumb) {
+        thumb.addEventListener('click', function () {
+          heroThumbs.forEach(function (t) { t.classList.remove('is-active'); });
+          this.classList.add('is-active');
+          var idx = parseInt(this.dataset.index, 10);
+          heroMainImg.style.opacity = '0';
+          inquiryPreviewImg.style.opacity = '0';
+          setTimeout(function () {
+            heroMainImg.src = heroImages[idx];
+            inquiryPreviewImg.src = heroImages[idx];
+            heroMainImg.onload = function () { heroMainImg.style.opacity = '1'; };
+            inquiryPreviewImg.onload = function () { inquiryPreviewImg.style.opacity = '1'; };
+          }, 200);
+        });
+      });
+
+      // Material swatch selector
+      var swatches = document.querySelectorAll('.swatch');
+      swatches.forEach(function (s) {
+        s.addEventListener('click', function () {
+          swatches.forEach(function (sw) { sw.classList.remove('is-active'); });
+          this.classList.add('is-active');
+        });
+      });
+
+      // Filter buttons
+      var filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) { b.classList.remove('is-active'); });
+          this.classList.add('is-active');
+        });
+      });
+
+      // FAQ accordion
+      var faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(function (item) {
+        item.querySelector('.faq-item__question').addEventListener('click', function () {
+          var isOpen = item.classList.contains('is-open');
+          faqItems.forEach(function (i) { i.classList.remove('is-open'); });
+          if (!isOpen) item.classList.add('is-open');
+        });
+      });
+
+      // Form handler
+      var inquiryForm = document.getElementById('inquiryForm');
+      inquiryForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = this;
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        setTimeout(function () {
+          btn.textContent = 'Thank You';
+          setTimeout(function () {
+            form.reset();
+            btn.textContent = originalText;
+            btn.disabled = false;
+          }, 2000);
+        }, 1000);
+      });
+
+      // Progressive image fade
+      document.querySelectorAll('.product-hero__img, .gallery-strip__img, .editorial__image-col img, .dual-images__img, .materials__media img, .product-card__img').forEach(function (img) {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.6s ease';
+
+        function show() { img.style.opacity = '1'; }
+        if (img.complete && img.naturalHeight !== 0) show();
+        else img.addEventListener('load', show);
+      });
+
+    })();
+  </script>
+
+</body>
+</html>

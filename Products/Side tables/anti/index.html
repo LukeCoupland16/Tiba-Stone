@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forma Bath | TIBA STONE</title>
-  <meta name="description" content="The Forma Bath — a sculptural freestanding bathtub carved from a single block of Calacatta Viola marble. Handcrafted by Tiba Stone's master artisans.">
+  <title>Anti Side Table | TIBA STONE</title>
+  <meta name="description" content="The Anti Side Table — a monolithic stone slab suspended on a hand-forged iron pin. Marble that refuses the weight of marble. Bespoke stone furniture by Tiba Stone.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -408,7 +408,7 @@
     .product-hero__media {
       position: relative;
       overflow: hidden;
-      background: #D8D2CA;
+      background: #1a1a1a;
     }
 
     .product-hero__img {
@@ -645,8 +645,15 @@
     .specs__drawing {
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: var(--space-lg);
+      align-items: flex-start;
+      padding: var(--space-md);
+    }
+
+    .specs__drawing img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      display: block;
     }
 
     .specs__table {
@@ -942,6 +949,50 @@
     }
 
     /* ============================================
+       INQUIRY IMAGE PREVIEW
+    ============================================ */
+    .inquiry-preview {
+      background: var(--color-sand);
+      padding: var(--space-xl) 0 0;
+    }
+
+    .inquiry-preview__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .inquiry-preview__label {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      margin-bottom: 1.25rem;
+    }
+
+    .inquiry-preview__main {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .inquiry-preview__img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: opacity 0.2s ease;
+    }
+
+    .inquiry-preview__thumbs {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      padding-bottom: var(--space-xl);
+    }
+
+    /* ============================================
        16. FOOTER
     ============================================ */
     .site-footer {
@@ -1180,7 +1231,7 @@
   <header class="site-header" id="siteHeader">
     <div class="header__inner container">
       <a href="/" class="header__logo">
-        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).png" alt="TIBA Stone" class="header__logo-img">
+        <img src="../../../TIBA_FINAL_LOGO_LANDSCAPE (3) (13).png" alt="TIBA Stone" class="header__logo-img">
       </a>
       <nav class="header__nav">
         <a href="/" class="header__nav-link">Home</a>
@@ -1205,37 +1256,37 @@
   </div>
 
   <!-- ============================================
-       PRODUCT HERO — Serafini Pattern
+       PRODUCT HERO
        Left: title, subtitle, rule, description, thumbnail row
-       Right: large environmental hero image
+       Right: large studio hero image
   ============================================ -->
   <section class="product-hero">
     <div class="product-hero__info">
       <div class="product-hero__content">
-        <p class="product-hero__category reveal">Freestanding Bathtub</p>
-        <h1 class="product-hero__title reveal">Forma bath</h1>
-        <p class="product-hero__subtitle reveal">marble bathtub</p>
+        <p class="product-hero__category reveal">Stone Furniture</p>
+        <h1 class="product-hero__title reveal">Anti</h1>
+        <p class="product-hero__subtitle reveal">marble side table</p>
         <div class="product-hero__rule reveal"></div>
         <p class="product-hero__description reveal">
-          A sculptural expression of design and carving. Conceived as a monolithic vessel, the Forma Bath is carved from a single block of Calacatta Viola marble.
+          A slab of stone that appears to hover. The Anti contradicts everything marble is expected to be — imposing reduced to elemental, mass dissolved into line. One monolithic top, one precise iron pin. Nothing more is needed.
         </p>
       </div>
-      <div class="product-hero__thumbs reveal">
-        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=150&q=80"
-             alt="Front view" class="hero-thumb is-active" data-index="0">
-        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=150&q=80"
-             alt="Aerial view" class="hero-thumb" data-index="1">
-        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=150&q=80"
-             alt="Three quarter" class="hero-thumb" data-index="2">
-        <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=150&q=80"
-             alt="Detail" class="hero-thumb" data-index="3">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=150&q=80"
-             alt="Marble swatch" class="hero-thumb" data-index="4">
+      <div class="product-hero__thumbs">
+        <img src="anti_01_editorial.png"
+             alt="Anti side table editorial view" class="hero-thumb is-active" data-index="0">
+        <img src="anti_02_human.png"
+             alt="Anti side table with human scale" class="hero-thumb" data-index="1">
+        <img src="anti_12_catalogue.png"
+             alt="Anti side table catalogue view" class="hero-thumb" data-index="2">
+        <img src="anti_03_closeup_veining.png"
+             alt="Marble veining detail" class="hero-thumb" data-index="3">
+        <img src="anti_04_closeup_edge.png"
+             alt="Edge profile detail" class="hero-thumb" data-index="4">
       </div>
     </div>
     <div class="product-hero__media">
-      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80"
-           alt="Forma Bath in architectural interior with arched doorway"
+      <img src="anti_01_editorial.png"
+           alt="Anti side table — monolithic marble slab on hand-forged iron pin"
            class="product-hero__img"
            id="heroMainImg"
            loading="eager"
@@ -1249,47 +1300,47 @@
   <div class="gallery-strip">
     <div class="gallery-strip__scroll">
       <div class="gallery-strip__item">
-        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80"
-             alt="Forma Bath in warm-toned bathroom" class="gallery-strip__img" loading="lazy">
+        <img src="anti_02_human.png"
+             alt="Anti side table shown beside an armchair — scale and proportion" class="gallery-strip__img" loading="lazy">
       </div>
       <div class="gallery-strip__item">
-        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80"
-             alt="Forma Bath marble detail" class="gallery-strip__img" loading="lazy">
+        <img src="anti_03_closeup_veining.png"
+             alt="Extreme closeup of marble veining on the Anti tabletop" class="gallery-strip__img" loading="lazy">
       </div>
       <div class="gallery-strip__item">
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
-             alt="Forma Bath in dramatic setting" class="gallery-strip__img" loading="lazy">
+        <img src="anti_04_closeup_edge.png"
+             alt="Refined edge profile of the Anti — hand-honed stone" class="gallery-strip__img" loading="lazy">
       </div>
       <div class="gallery-strip__item">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
-             alt="Forma Bath sculptural silhouette" class="gallery-strip__img" loading="lazy">
+        <img src="anti_06_closeup_joint.png"
+             alt="Iron pin joint where the stem meets the marble top" class="gallery-strip__img" loading="lazy">
       </div>
     </div>
   </div>
 
   <!-- ============================================
-       EDITORIAL — Right-aligned text + left image
+       EDITORIAL — Left image + right text
   ============================================ -->
   <section class="editorial-section">
     <div class="container">
       <div class="editorial__split">
         <div class="editorial__image-col reveal">
-          <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1000&q=80"
-               alt="Forma Bath aerial view showing marble veining"
+          <img src="anti_02_human.png"
+               alt="Anti side table — a hand resting on the marble surface"
                loading="lazy">
         </div>
         <div class="editorial__text-col reveal">
           <div class="editorial__block">
-            <span class="editorial__label">Designed for Wellness</span>
-            <h2 class="editorial__heading">Wrapped in Marble: A Bathtub Designed for <em>Wellness</em></h2>
+            <span class="editorial__label">The Concept</span>
+            <h2 class="editorial__heading">Stone <em>Against</em> Itself</h2>
             <p class="editorial__text">
-              The Forma Bath transforms the daily ritual of bathing into an act of contemplation. Its generous interior dimensions and ergonomic contours are the result of extensive research into the relationship between body, water, and stone.
+              Marble carries centuries of expectation: heavy pedestals, ornate columns, the weight of antiquity. The Anti refuses all of it. The top is a single unbroken slab, its edges honed to a knife-thin profile that makes the stone appear to float. The stem disappears beneath it — present only as a shadow on the floor.
             </p>
           </div>
           <div class="editorial__block">
-            <h2 class="editorial__heading">Handcrafted Marble Bathtub made in Italy by Tiba Stone</h2>
+            <h2 class="editorial__heading">Iron as <em>Argument</em></h2>
             <p class="editorial__text">
-              Each Forma is sculpted by master artisans in our Carrara atelier using processes that combine advanced manufacturing with generations of craft knowledge. The exterior retains a subtle honed texture; the interior is polished to a mirror finish.
+              The hand-forged iron stem is not a support — it is a statement. Dark, slender, almost aggressive in its simplicity, it holds the stone in quiet opposition. Two materials that should not agree — and yet they do, precisely because neither makes any concession to the other.
             </p>
           </div>
         </div>
@@ -1304,41 +1355,36 @@
     <div class="container">
       <div class="materials__inner">
         <div class="materials__media reveal">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1000&q=80"
-               alt="Calacatta Viola marble veining detail"
+          <img src="anti_05_closeup_surface.png"
+               alt="Anti side table — marble surface texture and light interaction"
                loading="lazy">
         </div>
         <div class="materials__content reveal">
-          <span class="materials__label">Available in five marbles</span>
-          <h2 class="materials__title">Marble Design Table</h2>
+          <span class="materials__label">Available in four stones</span>
+          <h2 class="materials__title">Stone &amp; Iron</h2>
           <p class="materials__text">
-            Carrara Marble bathtubs are crafted through processes that combine advanced manufacturing techniques with artisan craftsmanship. Each block is hand-selected for its veining character.
+            The Anti is offered in four marble selections, each altering the tension of the form. Nero Marquina makes the table a void — a dark floating plane. Bianco Carrara dissolves it into light. Emperador gives the stone a warmth that softens the iron's severity. Each is paired with a hand-forged blackened iron stem.
           </p>
           <div class="materials__swatches" id="materialSelector">
-            <div class="swatch is-active" data-material="calacatta">
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=200&q=80"
-                   alt="Calacatta Viola" class="swatch__img">
-              <span class="swatch__name">Calacatta</span>
-            </div>
-            <div class="swatch" data-material="statuario">
-              <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=200&q=80"
-                   alt="Statuario" class="swatch__img">
-              <span class="swatch__name">Statuario</span>
-            </div>
-            <div class="swatch" data-material="nero">
-              <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=200&q=80"
+            <div class="swatch is-active" data-material="nero">
+              <img src="anti_03_closeup_veining.png"
                    alt="Nero Marquina" class="swatch__img">
               <span class="swatch__name">Nero</span>
             </div>
-            <div class="swatch" data-material="travertine">
-              <img src="https://images.unsplash.com/photo-1600573472591-ee6c563aaec3?w=200&q=80"
-                   alt="Travertine" class="swatch__img">
-              <span class="swatch__name">Travertine</span>
+            <div class="swatch" data-material="carrara">
+              <img src="../../coffee tables/empire/empire_10_studio_travertine.png"
+                   alt="Bianco Carrara" class="swatch__img">
+              <span class="swatch__name">Carrara</span>
             </div>
-            <div class="swatch" data-material="arabescato">
-              <img src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=200&q=80"
-                   alt="Arabescato" class="swatch__img">
-              <span class="swatch__name">Arabescato</span>
+            <div class="swatch" data-material="emperador">
+              <img src="anti_03_closeup_veining.png"
+                   alt="Emperador" class="swatch__img">
+              <span class="swatch__name">Emperador</span>
+            </div>
+            <div class="swatch" data-material="verde">
+              <img src="../../coffee tables/gesto/gesto_09_studio_verde.png"
+                   alt="Verde Alpi" class="swatch__img">
+              <span class="swatch__name">Verde Alpi</span>
             </div>
           </div>
         </div>
@@ -1356,29 +1402,16 @@
       </div>
       <div class="specs__grid">
         <div class="specs__drawing reveal">
-          <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 380px;">
-            <path d="M50 180 Q50 120 80 100 L320 100 Q350 120 350 180 L350 200 L50 200 Z"
-                  stroke="#222323" stroke-width="1" fill="none"/>
-            <path d="M70 175 Q70 130 95 115 L305 115 Q330 130 330 175"
-                  stroke="#222323" stroke-width="0.5" fill="none" stroke-dasharray="4,2"/>
-            <line x1="50" y1="230" x2="350" y2="230" stroke="#A3996A" stroke-width="0.5"/>
-            <line x1="50" y1="225" x2="50" y2="235" stroke="#A3996A" stroke-width="0.5"/>
-            <line x1="350" y1="225" x2="350" y2="235" stroke="#A3996A" stroke-width="0.5"/>
-            <text x="200" y="245" text-anchor="middle" font-family="Montserrat" font-size="10" fill="#A3996A">180 cm</text>
-            <line x1="380" y1="100" x2="380" y2="200" stroke="#A3996A" stroke-width="0.5"/>
-            <line x1="375" y1="100" x2="385" y2="100" stroke="#A3996A" stroke-width="0.5"/>
-            <line x1="375" y1="200" x2="385" y2="200" stroke="#A3996A" stroke-width="0.5"/>
-            <text x="390" y="155" text-anchor="start" font-family="Montserrat" font-size="10" fill="#A3996A">58 cm</text>
-            <text x="200" y="85" text-anchor="middle" font-family="Montserrat" font-size="9" fill="#A3996A">W: 85 cm</text>
-          </svg>
+          <img src="anti_11_technical.png"
+               alt="Anti side table technical drawing — top view and elevation with dimensions">
         </div>
         <div class="specs__table-wrap reveal">
           <table class="specs__table">
-            <tr><td>Dimensions</td><td>180 × 85 × 58 cm (L × W × H)</td></tr>
-            <tr><td>Weight</td><td>Approx. 420 kg</td></tr>
-            <tr><td>Materials</td><td>Calacatta, Statuario, Nero Marquina, Travertine, Arabescato</td></tr>
-            <tr><td>Finish</td><td>Interior polished / Exterior honed</td></tr>
-            <tr><td>Installation</td><td>Freestanding, integrated drain</td></tr>
+            <tr><td>Dimensions</td><td>45 × 45 × 55 cm (W × D × H)</td></tr>
+            <tr><td>Weight</td><td>Approx. 38 kg</td></tr>
+            <tr><td>Top</td><td>Nero Marquina, Bianco Carrara, Emperador, Verde Alpi</td></tr>
+            <tr><td>Top Thickness</td><td>3 cm, hand-honed edge</td></tr>
+            <tr><td>Stem</td><td>Hand-forged blackened iron</td></tr>
             <tr><td>Custom Sizing</td><td>Available on request</td></tr>
           </table>
         </div>
@@ -1399,38 +1432,38 @@
       <div class="faq__list reveal">
         <div class="faq-item">
           <button class="faq-item__question">
-            <span>Can I customize the dimensions?</span>
+            <span>How is the floating effect achieved?</span>
             <span class="faq-item__icon">+</span>
           </button>
           <div class="faq-item__answer">
-            <p>Yes. All pieces can be made to bespoke dimensions. Share your requirements and we will advise on feasibility and provide a tailored quote.</p>
+            <p>The Anti's top is honed to a 3 cm thickness with an inward-chamfered underside that shadows the stem connection from most viewing angles. The iron stem is positioned off-centre and finished in a near-matte black that absorbs rather than reflects light, allowing the stone slab to read as self-supporting.</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-item__question">
-            <span>What marble options are available?</span>
+            <span>Can the iron stem finish be customised?</span>
             <span class="faq-item__icon">+</span>
           </button>
           <div class="faq-item__answer">
-            <p>The Forma Bath is available in Calacatta Viola, Statuario, Nero Marquina, Travertine, and Arabescato. We also source rare stones upon request.</p>
+            <p>Yes. The standard finish is blackened iron with a wax seal. We also offer raw iron (which will develop a natural patina), brushed iron, and — for lighter marble selections — polished brass and bronze. Each metal is hand-forged in-house and finished individually.</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-item__question">
-            <span>What is the lead time?</span>
+            <span>Is the marble top sealed against staining?</span>
             <span class="faq-item__icon">+</span>
           </button>
           <div class="faq-item__answer">
-            <p>Production typically takes 12–16 weeks from order confirmation. Delivery timelines vary by destination. We offer white-glove delivery worldwide.</p>
+            <p>Every Anti top leaves our atelier with a professional impregnating sealer applied and buffed into the stone. This does not alter the appearance — honed marble retains its natural matte quality — but provides meaningful protection against liquids. We recommend reapplying a maintenance sealer annually, and supply a care kit with each piece.</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-item__question">
-            <span>Do you offer installation?</span>
+            <span>Do you offer white-glove delivery?</span>
             <span class="faq-item__icon">+</span>
           </button>
           <div class="faq-item__answer">
-            <p>Yes. We offer professional installation through certified partners in major markets, and detailed guidance for other locations.</p>
+            <p>Yes. Every Anti is delivered by our specialist handling team, who manage the piece from our atelier to its final position. Installation includes placement, levelling, and a final inspection of the stone and stem connection. We operate worldwide through certified partners.</p>
           </div>
         </div>
       </div>
@@ -1448,38 +1481,66 @@
         <h2 class="related__title">Discover other Tiba Stone products</h2>
         <div class="related__filters">
           <button class="filter-btn is-active">All</button>
-          <button class="filter-btn">Bathtubs</button>
-          <button class="filter-btn">Washbasins</button>
+          <button class="filter-btn">Side Tables</button>
         </div>
       </div>
       <div class="related__grid reveal">
-        <a href="#" class="product-card">
+        <a href="../arthur/index.html" class="product-card">
           <div class="product-card__media">
-            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=500&q=80"
-                 alt="Colonna Basin" class="product-card__img" loading="lazy">
+            <img src="../arthur/arthur_12_catalogue.png"
+                 alt="Arthur Side Table" class="product-card__img" loading="lazy">
           </div>
-          <h3 class="product-card__name">Colonna</h3>
-          <span class="product-card__type">Freestanding Basin</span>
+          <h3 class="product-card__name">Arthur</h3>
+          <span class="product-card__type">Marble Side Table</span>
         </a>
-        <a href="#" class="product-card">
+        <a href="../icaro/index.html" class="product-card">
           <div class="product-card__media">
-            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=500&q=80"
-                 alt="Ondine Bath" class="product-card__img" loading="lazy">
+            <img src="../icaro/icaro_12_catalogue.png"
+                 alt="Icaro Side Table" class="product-card__img" loading="lazy">
           </div>
-          <h3 class="product-card__name">Ondine</h3>
-          <span class="product-card__type">Freestanding Bathtub</span>
+          <h3 class="product-card__name">Icaro</h3>
+          <span class="product-card__type">Marble Side Table</span>
         </a>
-        <a href="#" class="product-card">
+        <a href="../empire/index.html" class="product-card">
           <div class="product-card__media">
-            <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=500&q=80"
-                 alt="Pietra Console" class="product-card__img" loading="lazy">
+            <img src="../empire/empire_12_catalogue.png"
+                 alt="Empire Side Table" class="product-card__img" loading="lazy">
           </div>
-          <h3 class="product-card__name">Pietra</h3>
-          <span class="product-card__type">Vanity Console</span>
+          <h3 class="product-card__name">Empire</h3>
+          <span class="product-card__type">Marble Side Table</span>
         </a>
       </div>
     </div>
   </section>
+
+  <!-- ============================================
+       IMAGE SELECTOR (above inquiry)
+  ============================================ -->
+  <div class="inquiry-preview">
+    <div class="container">
+      <div class="inquiry-preview__inner reveal">
+        <p class="inquiry-preview__label">Your Selected View</p>
+        <div class="inquiry-preview__main">
+          <img src="anti_01_editorial.png"
+               alt="Selected view"
+               class="inquiry-preview__img"
+               id="inquiryPreviewImg">
+        </div>
+        <div class="inquiry-preview__thumbs">
+          <img src="anti_01_editorial.png"
+               alt="Interior setting" class="hero-thumb is-active" data-index="0">
+          <img src="anti_02_human.png"
+               alt="Scale reference" class="hero-thumb" data-index="1">
+          <img src="anti_12_catalogue.png"
+               alt="Catalogue view" class="hero-thumb" data-index="2">
+          <img src="anti_03_closeup_veining.png"
+               alt="Marble veining" class="hero-thumb" data-index="3">
+          <img src="anti_04_closeup_edge.png"
+               alt="Edge profile" class="hero-thumb" data-index="4">
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ============================================
        INQUIRY
@@ -1487,12 +1548,13 @@
   <section class="inquiry-section" id="inquiry">
     <div class="container">
       <div class="inquiry__inner reveal">
-        <h2 class="inquiry__heading">Have you ever got in touch with us, or want a leaflet of a product?</h2>
+        <p class="inquiry__label">Made to Order</p>
+        <h2 class="inquiry__heading">Commission your Anti</h2>
         <p class="inquiry__text">
-          Fill in the form and receive a catalogue and a free leaflet of the product. Every Tiba Stone piece is made to order.
+          Every Anti is made to order. Inquire to begin a conversation about stone selection, dimensions, and delivery.
         </p>
         <form class="inquiry__form" id="inquiryForm">
-          <input type="hidden" name="product" value="Forma Bath">
+          <input type="hidden" name="product" value="Anti Side Table">
           <div class="form-row">
             <div class="form-group">
               <input type="text" name="firstName" class="form-input" placeholder="First Name" required>
@@ -1531,7 +1593,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <img src="TIBA_FINAL_LOGO_PORTRAIT (2).png" alt="TIBA Stone" class="footer__logo">
+          <img src="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png" alt="TIBA Stone" class="footer__logo">
           <p class="footer__tagline">Bespoke Marble Atelier</p>
           <div class="footer__social">
             <a href="#" aria-label="Instagram">
@@ -1554,10 +1616,10 @@
         </div>
         <div>
           <h4 class="footer__col-title">Products</h4>
-          <a href="#" class="footer__link">Bathtubs</a>
-          <a href="#" class="footer__link">Washbasins</a>
-          <a href="#" class="footer__link">Furniture</a>
-          <a href="#" class="footer__link">Accessories</a>
+          <a href="/catalog" class="footer__link">Coffee Tables</a>
+          <a href="/catalog" class="footer__link">Side Tables</a>
+          <a href="/catalog" class="footer__link">Cabinets</a>
+          <a href="/catalog" class="footer__link">Vases &amp; Objects</a>
         </div>
         <div class="footer__contact">
           <h4 class="footer__col-title">Contact</h4>
@@ -1622,15 +1684,16 @@
 
       revealEls.forEach(function (el) { revealObserver.observe(el); });
 
-      // Hero thumbnail switcher
+      // Thumbnail switcher — updates hero image and inquiry preview
       var heroThumbs = document.querySelectorAll('.hero-thumb');
       var heroMainImg = document.getElementById('heroMainImg');
+      var inquiryPreviewImg = document.getElementById('inquiryPreviewImg');
       var heroImages = [
-        'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1600&q=80',
-        'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1600&q=80',
-        'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600&q=80',
-        'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1600&q=80',
-        'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1600&q=80'
+        'anti_01_editorial.png',
+        'anti_02_human.png',
+        'anti_12_catalogue.png',
+        'anti_03_closeup_veining.png',
+        'anti_04_closeup_edge.png'
       ];
 
       heroThumbs.forEach(function (thumb) {
@@ -1639,11 +1702,12 @@
           this.classList.add('is-active');
           var idx = parseInt(this.dataset.index, 10);
           heroMainImg.style.opacity = '0';
+          inquiryPreviewImg.style.opacity = '0';
           setTimeout(function () {
             heroMainImg.src = heroImages[idx];
-            heroMainImg.onload = function () {
-              heroMainImg.style.opacity = '1';
-            };
+            inquiryPreviewImg.src = heroImages[idx];
+            heroMainImg.onload = function () { heroMainImg.style.opacity = '1'; };
+            inquiryPreviewImg.onload = function () { inquiryPreviewImg.style.opacity = '1'; };
           }, 200);
         });
       });
@@ -1677,9 +1741,11 @@
       });
 
       // Form handler
-      document.getElementById('inquiryForm').addEventListener('submit', function (e) {
+      var inquiryForm = document.getElementById('inquiryForm');
+      inquiryForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        var btn = this.querySelector('button[type="submit"]');
+        var form = this;
+        var btn = form.querySelector('button[type="submit"]');
         var originalText = btn.textContent;
         btn.textContent = 'Sending...';
         btn.disabled = true;
@@ -1687,7 +1753,7 @@
         setTimeout(function () {
           btn.textContent = 'Thank You';
           setTimeout(function () {
-            e.target.reset();
+            form.reset();
             btn.textContent = originalText;
             btn.disabled = false;
           }, 2000);

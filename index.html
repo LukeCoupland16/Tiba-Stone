@@ -419,17 +419,67 @@
       overflow: hidden;
     }
 
-    .hero__bg {
+    /* Hero Slideshow */
+    .hero__slides {
       position: absolute;
       inset: 0;
     }
 
-    .hero__bg-img {
+    .hero__slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero__slide.is-active {
+      opacity: 1;
+    }
+
+    .hero__slide-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(1.1);
       will-change: transform;
+    }
+
+    .hero__slide.is-active .hero__slide-img {
+      animation: heroKenBurns 8s ease-out forwards;
+    }
+
+    @keyframes heroKenBurns {
+      from { transform: scale(1.0); }
+      to   { transform: scale(1.08); }
+    }
+
+    .hero__dots {
+      position: absolute;
+      bottom: 6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.625rem;
+      z-index: 3;
+    }
+
+    .hero__dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.4s ease, transform 0.4s ease;
+    }
+
+    .hero__dot.is-active {
+      background: var(--color-ivory);
+      transform: scale(1.5);
+    }
+
+    .hero__dot:hover {
+      background: rgba(255, 255, 255, 0.65);
     }
 
     .hero__overlay {
@@ -1121,17 +1171,50 @@
        HERO
   ============================================ -->
   <section class="hero" id="hero">
-    <div class="hero__bg">
-      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80"
-           alt="Sunlit marble interior with warm natural light"
-           class="hero__bg-img"
-           loading="eager"
-           fetchpriority="high">
+    <div class="hero__slides">
+      <div class="hero__slide is-active">
+        <img src="Products/coffee tables/lavanche/lavanche_01_editorial.png"
+             alt="Lavanche coffee table — stone arrested mid-movement in warm light"
+             class="hero__slide-img"
+             loading="eager"
+             fetchpriority="high">
+      </div>
+      <div class="hero__slide">
+        <img src="Products/cabinets/aida/aida_01_editorial.png"
+             alt="Aida cabinet — four bookmatched marble panels in architectural light"
+             class="hero__slide-img"
+             loading="lazy">
+      </div>
+      <div class="hero__slide">
+        <img src="Products/Side tables/icaro/icaro_01_editorial.png"
+             alt="Icaro side table — marble disc balanced on a slender stone column"
+             class="hero__slide-img"
+             loading="lazy">
+      </div>
+      <div class="hero__slide">
+        <img src="Products/Vases/doge-tall/doge-tall_01_editorial.png"
+             alt="Doge Tall vase — classical vessel silhouette in pure white stone"
+             class="hero__slide-img"
+             loading="lazy">
+      </div>
+      <div class="hero__slide">
+        <img src="Products/coffee tables/gesto/gesto_01_editorial.png"
+             alt="Gesto coffee table — stone caught in a single expressive gesture"
+             class="hero__slide-img"
+             loading="lazy">
+      </div>
     </div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
       <h1 class="hero__title">Sculpted by Nature,<br>Shaped by Hand</h1>
       <a href="/catalog" class="btn-primary btn-primary--light">Explore the Collection</a>
+    </div>
+    <div class="hero__dots" role="tablist" aria-label="Slideshow navigation">
+      <button class="hero__dot is-active" aria-label="Slide 1" aria-selected="true" role="tab"></button>
+      <button class="hero__dot" aria-label="Slide 2" aria-selected="false" role="tab"></button>
+      <button class="hero__dot" aria-label="Slide 3" aria-selected="false" role="tab"></button>
+      <button class="hero__dot" aria-label="Slide 4" aria-selected="false" role="tab"></button>
+      <button class="hero__dot" aria-label="Slide 5" aria-selected="false" role="tab"></button>
     </div>
     <div class="hero__scroll-indicator">
       <span class="hero__scroll-text">Scroll</span>
@@ -1163,8 +1246,8 @@
     <div class="container">
       <div class="editorial-split editorial-split--img-left">
         <div class="editorial-split__media reveal">
-          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80"
-               alt="Elegant marble showroom with curated stone pieces in warm light"
+          <img src="Products/coffee tables/lavanche/lavanche_02_human.png"
+               alt="Lavanche coffee table in architectural interior — stone in context"
                class="editorial-split__img"
                loading="lazy">
         </div>
@@ -1191,26 +1274,26 @@
         <h2 class="exclusive-creations__title reveal">Signature Pieces</h2>
       </div>
       <div class="creations-grid reveal-stagger">
-        <a href="/catalog/forma-bath" class="creation-card reveal">
+        <a href="Products/coffee tables/terra/index.html" class="creation-card reveal">
           <div class="creation-card__media">
-            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1000&q=80"
-                 alt="Sculptural marble bathtub in a dramatic gallery-lit space"
+            <img src="Products/coffee tables/terra/terra_01_editorial.png"
+                 alt="Terra Coffee Table — monolithic Travertino Romano slab on solid stone legs"
                  class="creation-card__img"
                  loading="lazy">
           </div>
-          <h3 class="creation-card__name">Forma Bath</h3>
-          <span class="creation-card__type">Freestanding Bathtub</span>
+          <h3 class="creation-card__name">Terra</h3>
+          <span class="creation-card__type">Coffee Table</span>
           <span class="btn-secondary">Discover More &rarr;</span>
         </a>
-        <a href="/catalog/colonna-basin" class="creation-card reveal">
+        <a href="Products/cabinets/aida/index.html" class="creation-card reveal">
           <div class="creation-card__media">
-            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1000&q=80"
-                 alt="Minimalist marble washbasin on a stone pedestal"
+            <img src="Products/cabinets/aida/aida_02_human.png"
+                 alt="Aida Cabinet — stone-fronted bespoke cabinet with considered joinery"
                  class="creation-card__img"
                  loading="lazy">
           </div>
-          <h3 class="creation-card__name">Colonna Basin</h3>
-          <span class="creation-card__type">Freestanding Washbasin</span>
+          <h3 class="creation-card__name">Aida</h3>
+          <span class="creation-card__type">Cabinet</span>
           <span class="btn-secondary">Discover More &rarr;</span>
         </a>
       </div>
@@ -1225,25 +1308,47 @@
   <section class="category-teasers">
     <div class="container">
       <div class="category-teasers__grid reveal-stagger">
-        <a href="/catalog?category=bath" class="category-card reveal">
-          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=80"
-               alt="Luxury marble bathtub in architectural setting"
+        <a href="/catalog" class="category-card reveal">
+          <img src="Products/coffee tables/terra/terra_01_editorial.png"
+               alt="Terra Coffee Table — monolithic stone slab in a refined interior"
                class="category-card__bg"
                loading="lazy">
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
-            <h2 class="category-card__title">Bath</h2>
+            <h2 class="category-card__title">Coffee Tables</h2>
             <span class="btn-primary btn-primary--light">Explore</span>
           </div>
         </a>
-        <a href="/catalog?category=living" class="category-card reveal">
-          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80"
-               alt="Refined living space with marble surfaces and warm light"
+        <a href="/catalog" class="category-card reveal">
+          <img src="Products/Side tables/icaro/icaro_01_editorial.png"
+               alt="Icaro Side Table — marble disc balanced on a slender stone column"
                class="category-card__bg"
                loading="lazy">
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
-            <h2 class="category-card__title">Living</h2>
+            <h2 class="category-card__title">Side Tables</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+        <a href="/catalog" class="category-card reveal">
+          <img src="Products/cabinets/aida/aida_02_human.png"
+               alt="Aida Cabinet — stone-fronted bespoke cabinet in architectural setting"
+               class="category-card__bg"
+               loading="lazy">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Cabinets</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+        <a href="/catalog" class="category-card reveal">
+          <img src="Products/Vases/doge-tall/doge-tall_01_editorial.png"
+               alt="Doge Tall Vase — classical vessel silhouette in pure stone"
+               class="category-card__bg"
+               loading="lazy">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Vases</h2>
             <span class="btn-primary btn-primary--light">Explore</span>
           </div>
         </a>
@@ -1260,8 +1365,8 @@
     <div class="container">
       <div class="editorial-split editorial-split--img-right">
         <div class="editorial-split__media reveal">
-          <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&q=80"
-               alt="Artisan hands carefully shaping marble in a sunlit workshop"
+          <img src="Products/coffee tables/gesto/gesto_03_closeup_veining.png"
+               alt="Gesto coffee table — close detail of marble veining and surface quality"
                class="editorial-split__img"
                loading="lazy">
         </div>
@@ -1284,8 +1389,8 @@
     <div class="container">
       <div class="editorial-split editorial-split--img-left">
         <div class="editorial-split__media reveal">
-          <img src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=1200&q=80"
-               alt="Curated selection of marble samples and material swatches"
+          <img src="Products/coffee tables/empire/empire_07_studio_calacatta.png"
+               alt="Empire coffee table in Calacatta — one of four bespoke marble selections"
                class="editorial-split__img"
                loading="lazy">
         </div>
@@ -1298,26 +1403,26 @@
       </div>
       <div class="marble-strip reveal">
         <div class="marble-strip__item">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=300&q=80"
-               alt="Calacatta marble close-up showing warm veining"
+          <img src="Products/coffee tables/gesto/gesto_07_studio_calacatta.png"
+               alt="Gesto coffee table in Calacatta — warm white with gold veining"
                loading="lazy">
           <span>Calacatta</span>
         </div>
         <div class="marble-strip__item">
-          <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=300&q=80"
-               alt="Statuario marble with fine grey veining"
+          <img src="Products/coffee tables/morphe/morphe_03_closeup_veining.png"
+               alt="Morphe coffee table — marble veining detail in Statuario"
                loading="lazy">
           <span>Statuario</span>
         </div>
         <div class="marble-strip__item">
-          <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=300&q=80"
-               alt="Nero Marquina dark marble texture"
+          <img src="Products/coffee tables/gesto/gesto_08_studio_noir.png"
+               alt="Gesto coffee table in Nero Marquina — deep black with white veins"
                loading="lazy">
           <span>Nero Marquina</span>
         </div>
         <div class="marble-strip__item">
-          <img src="https://images.unsplash.com/photo-1600573472591-ee6c563aaec3?w=300&q=80"
-               alt="Travertine warm beige stone surface"
+          <img src="Products/coffee tables/empire/empire_10_studio_travertine.png"
+               alt="Empire coffee table in Travertine — warm beige linear texture"
                loading="lazy">
           <span>Travertine</span>
         </div>
@@ -1473,20 +1578,55 @@
       });
 
       /* ------------------------------------------
-         4. HERO PARALLAX (subtle)
+         4. HERO SLIDESHOW
       ------------------------------------------ */
-      var heroBgImg = document.querySelector('.hero__bg-img');
+      (function () {
+        var slides = document.querySelectorAll('.hero__slide');
+        var dots   = document.querySelectorAll('.hero__dot');
+        var current = 0;
+        var timer;
+        var INTERVAL = 6000; // 5 s hold + 1.2 s crossfade
 
-      function heroParallax() {
-        var scrollY = window.scrollY;
-        var heroHeight = hero.offsetHeight;
-        if (scrollY <= heroHeight) {
-          var offset = scrollY * 0.25;
-          heroBgImg.style.transform = 'translateY(' + offset + 'px) scale(1.1)';
+        function resetKenBurns(slide) {
+          var img = slide.querySelector('.hero__slide-img');
+          img.style.animation = 'none';
+          void img.offsetHeight; // force reflow
+          img.style.animation = '';
         }
-      }
 
-      window.addEventListener('scroll', heroParallax, { passive: true });
+        function goTo(index) {
+          slides[current].classList.remove('is-active');
+          dots[current].classList.remove('is-active');
+          dots[current].setAttribute('aria-selected', 'false');
+          current = index;
+          resetKenBurns(slides[current]);
+          slides[current].classList.add('is-active');
+          dots[current].classList.add('is-active');
+          dots[current].setAttribute('aria-selected', 'true');
+        }
+
+        function startTimer() {
+          clearInterval(timer);
+          timer = setInterval(function () { goTo((current + 1) % slides.length); }, INTERVAL);
+        }
+
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function () { goTo(i); startTimer(); });
+        });
+
+        /* Fade in first slide on load */
+        var firstImg = slides[0].querySelector('.hero__slide-img');
+        firstImg.style.opacity = '0';
+        firstImg.style.transition = 'opacity 1.4s ease';
+        function showFirstSlide() { firstImg.style.opacity = '1'; }
+        if (firstImg.complete && firstImg.naturalHeight !== 0) {
+          showFirstSlide();
+        } else {
+          firstImg.addEventListener('load', showFirstSlide);
+        }
+
+        startTimer();
+      })();
 
       /* ------------------------------------------
          5. PROGRESSIVE IMAGE FADE-IN
@@ -1509,21 +1649,6 @@
           img.addEventListener('load', showImage);
         }
       });
-
-      /* Hero image separate — always eager loaded */
-      var heroImg = document.querySelector('.hero__bg-img');
-      heroImg.style.opacity = '0';
-      heroImg.style.transition = 'opacity 1.2s ease';
-
-      function showHero() {
-        heroImg.style.opacity = '1';
-      }
-
-      if (heroImg.complete && heroImg.naturalHeight !== 0) {
-        showHero();
-      } else {
-        heroImg.addEventListener('load', showHero);
-      }
 
       /* ------------------------------------------
          6. FOOTER FORM HANDLER
