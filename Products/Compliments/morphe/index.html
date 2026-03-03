@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="/Products/coffee tables/gesto/">
+  <base href="/Products/Compliments/morphe/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gesto Coffee Table | TIBA STONE</title>
-  <meta name="description" content="The Gesto coffee table — a single sweeping gesture in stone. A resolved horizontal plane, its proportions calibrated to feel generous without heaviness. Available in Calacatta Gold, Nero Marquina, Verde Alpi, or Travertine Roman. Bespoke stone furniture handcrafted by Tiba Stone.">
+  <title>Morphe | Compliments Collection | TIBA STONE</title>
+  <meta name="description" content="Morphe — a composed marble object from the Compliments Collection. Two pieces of stone, met and fixed. The joint that would elsewhere be hidden is here the subject. Bespoke marble objects by Tiba Stone.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -247,12 +247,13 @@
     .header__nav-link::after {
       content: '';
       position: absolute;
-      bottom: -2px;
+      bottom: 0;
       left: 0;
-      width: 100%;
+      right: 0;
       height: 1px;
       background: var(--color-sunset);
       transform: scaleX(0);
+      transform-origin: left;
       transition: transform var(--duration-fast) var(--ease-smooth);
     }
 
@@ -265,27 +266,32 @@
       display: none;
       flex-direction: column;
       gap: 5px;
-      padding: 0.5rem;
+      width: 24px;
+      cursor: pointer;
     }
 
     .header__hamburger span {
       display: block;
-      width: 22px;
-      height: 1.5px;
+      height: 1px;
       background: var(--color-stone);
+      transition: all var(--duration-fast);
     }
 
+    /* ============================================
+       7. MOBILE MENU
+    ============================================ */
     .mobile-menu {
       position: fixed;
       inset: 0;
       background: var(--color-ivory);
+      z-index: 200;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      z-index: 2000;
       opacity: 0;
       pointer-events: none;
-      transition: opacity var(--duration-fast) var(--ease-smooth);
+      transition: opacity var(--duration-medium) var(--ease-smooth);
     }
 
     .mobile-menu.is-open {
@@ -296,142 +302,139 @@
     .mobile-menu__close {
       position: absolute;
       top: 1.5rem;
-      right: 1.5rem;
-      font-size: 1.75rem;
+      right: var(--container-pad);
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 1;
       color: var(--color-stone);
     }
 
     .mobile-menu__nav {
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 2rem;
+      text-align: center;
     }
 
     .mobile-menu__link {
       font-family: var(--font-display);
-      font-size: 1.75rem;
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
       color: var(--color-stone);
+      transition: color var(--duration-fast);
+    }
+
+    .mobile-menu__link:hover {
+      color: var(--color-sunset);
     }
 
     /* ============================================
-       7. PRODUCT HERO — Serafini Exact
+       8. PRODUCT HERO
     ============================================ */
     .product-hero {
-      padding-top: 80px;
       display: grid;
-      grid-template-columns: 0.35fr 0.65fr;
+      grid-template-columns: 1fr 1.1fr;
       min-height: 100vh;
+      padding-top: 80px;
     }
 
     .product-hero__info {
-      background: #E8E2DA;
-      padding: clamp(3rem, 6vh, 5rem) clamp(2rem, 3.5vw, 3rem) clamp(2rem, 4vh, 3rem) var(--container-pad);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: var(--space-xl) var(--container-pad) var(--space-lg);
     }
 
     .product-hero__content {
-      padding-top: clamp(2rem, 8vh, 6rem);
+      padding-top: var(--space-lg);
     }
 
     .product-hero__category {
-      font-family: var(--font-body);
       font-size: var(--text-subtitle);
       font-weight: 500;
       letter-spacing: var(--ls-wide);
       text-transform: uppercase;
       color: var(--color-river-green);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .product-hero__title {
-      font-family: var(--font-display);
       font-size: var(--text-hero);
+      font-weight: 400;
       line-height: 1.1;
-      color: var(--color-stone);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.375rem;
     }
 
     .product-hero__subtitle {
-      font-family: var(--font-display);
-      font-size: var(--text-body);
-      font-style: italic;
+      font-size: var(--text-small);
+      font-weight: 300;
+      letter-spacing: var(--ls-medium);
+      text-transform: uppercase;
       color: var(--color-river-green);
-      font-weight: 400;
-      margin-bottom: 1.75rem;
+      margin-bottom: var(--space-md);
     }
 
     .product-hero__rule {
-      width: 36px;
+      width: 48px;
       height: 1px;
-      background: rgba(34, 35, 35, 0.25);
-      margin-bottom: 1.75rem;
+      background: var(--color-sunset);
+      margin-bottom: var(--space-md);
     }
 
     .product-hero__description {
       font-size: var(--text-body);
+      font-weight: 300;
       line-height: var(--lh-body);
-      color: var(--color-stone);
-      max-width: 320px;
+      max-width: 420px;
     }
 
-    /* Thumbnails row anchored at bottom of info panel */
     .product-hero__thumbs {
       display: flex;
-      gap: 0.5rem;
-      padding-top: var(--space-lg);
+      gap: 0.625rem;
+      align-items: flex-end;
     }
 
     .hero-thumb {
-      width: 52px;
-      height: 52px;
+      width: 56px;
+      height: 56px;
       object-fit: cover;
       cursor: pointer;
       opacity: 0.5;
-      transition: opacity var(--duration-fast) var(--ease-smooth),
-                  outline-color var(--duration-fast) var(--ease-smooth);
-      outline: 1.5px solid transparent;
-      outline-offset: 2px;
+      transition: opacity var(--duration-fast);
+      border: 1px solid transparent;
     }
 
+    .hero-thumb.is-active,
     .hero-thumb:hover {
-      opacity: 0.85;
-    }
-
-    .hero-thumb.is-active {
       opacity: 1;
-      outline-color: var(--color-stone);
+      border-color: var(--color-stone);
     }
 
-    /* Hero image */
     .product-hero__media {
       position: relative;
       overflow: hidden;
-      background: #D8D2CA;
+      background: var(--color-sand);
     }
 
     .product-hero__img {
       width: 100%;
       height: 100%;
-      min-height: calc(100vh - 80px);
       object-fit: cover;
-      object-position: center;
+      transition: opacity var(--duration-medium) var(--ease-smooth);
     }
 
     /* ============================================
-       8. GALLERY GRID (warm sand bar)
+       9. GALLERY STRIP
     ============================================ */
     .gallery-strip {
       background: var(--color-warm-bg);
-      padding: clamp(2.5rem, 5vw, 4rem) 0;
+      padding: var(--space-lg) 0;
+      overflow: hidden;
     }
 
     .gallery-strip__scroll {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(0.75rem, 1.5vw, 1.25rem);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
       padding: 0 var(--container-pad);
       max-width: var(--container-max);
       margin: 0 auto;
@@ -439,12 +442,11 @@
 
     .gallery-strip__item {
       overflow: hidden;
-      position: relative;
     }
 
     .gallery-strip__img {
       width: 100%;
-      aspect-ratio: 3 / 2;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
       transition: transform var(--duration-slow) var(--ease-smooth);
     }
@@ -454,7 +456,7 @@
     }
 
     /* ============================================
-       9. EDITORIAL — Right-aligned text blocks
+       10. EDITORIAL SPLIT
     ============================================ */
     .editorial-section {
       padding: var(--space-2xl) 0;
@@ -462,71 +464,52 @@
 
     .editorial__split {
       display: grid;
-      grid-template-columns: 0.5fr 0.5fr;
-      gap: var(--space-xl);
-    }
-
-    .editorial__image-col {
-      overflow: hidden;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+      align-items: center;
     }
 
     .editorial__image-col img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
-      aspect-ratio: 4 / 5;
-      transition: transform var(--duration-slow) var(--ease-smooth);
-    }
-
-    .editorial__image-col:hover img {
-      transform: scale(1.03);
     }
 
     .editorial__text-col {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: var(--space-md) 0;
+      gap: var(--space-lg);
     }
 
-    .editorial__block {
-      margin-bottom: var(--space-lg);
-    }
-
-    .editorial__block:last-child {
-      margin-bottom: 0;
+    .editorial__label {
+      display: block;
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      margin-bottom: 0.75rem;
     }
 
     .editorial__heading {
       font-family: var(--font-display);
       font-size: var(--text-h2);
       margin-bottom: 1rem;
-      line-height: 1.35;
     }
 
     .editorial__heading em {
       font-style: italic;
+      color: var(--color-sunset);
     }
 
     .editorial__text {
       font-weight: 300;
       line-height: var(--lh-body);
-      max-width: 480px;
-    }
-
-    .editorial__label {
-      font-family: var(--font-body);
-      font-size: var(--text-xs);
-      font-weight: 500;
-      letter-spacing: var(--ls-wide);
-      text-transform: uppercase;
-      color: var(--color-river-green);
-      margin-bottom: 0.75rem;
-      display: block;
+      color: var(--color-stone);
     }
 
     /* ============================================
-       10. MATERIALS SECTION
+       11. MATERIALS
     ============================================ */
     .materials-section {
       padding: var(--space-2xl) 0;
@@ -535,32 +518,19 @@
 
     .materials__inner {
       display: grid;
-      grid-template-columns: 0.55fr 0.45fr;
-      gap: var(--space-xl);
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
       align-items: center;
-    }
-
-    .materials__media {
-      overflow: hidden;
     }
 
     .materials__media img {
       width: 100%;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
-      transition: transform var(--duration-slow) var(--ease-smooth);
-    }
-
-    .materials__media:hover img {
-      transform: scale(1.03);
-    }
-
-    .materials__content {
-      padding: var(--space-md) 0;
     }
 
     .materials__label {
-      font-family: var(--font-body);
+      display: block;
       font-size: var(--text-subtitle);
       font-weight: 500;
       letter-spacing: var(--ls-wide);
@@ -572,89 +542,73 @@
     .materials__title {
       font-family: var(--font-display);
       font-size: var(--text-h2);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .materials__text {
       font-weight: 300;
       line-height: var(--lh-body);
       margin-bottom: var(--space-md);
-      max-width: 400px;
     }
 
     .materials__swatches {
       display: flex;
-      gap: 1.25rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
 
     .swatch {
-      text-align: center;
       cursor: pointer;
-      transition: opacity var(--duration-fast);
-    }
-
-    .swatch:hover { opacity: 0.8; }
-
-    .swatch.is-active .swatch__img {
-      outline: 2px solid var(--color-stone);
-      outline-offset: 3px;
+      text-align: center;
     }
 
     .swatch__img {
-      width: 64px;
-      height: 64px;
+      width: 60px;
+      height: 60px;
       object-fit: cover;
-      margin-bottom: 0.375rem;
+      border: 2px solid transparent;
+      transition: border-color var(--duration-fast);
+    }
+
+    .swatch.is-active .swatch__img,
+    .swatch:hover .swatch__img {
+      border-color: var(--color-stone);
     }
 
     .swatch__name {
+      display: block;
       font-size: var(--text-xs);
       text-transform: uppercase;
       letter-spacing: var(--ls-medium);
-      color: var(--color-stone);
+      color: var(--color-river-green);
+      margin-top: 0.375rem;
     }
 
     /* ============================================
-       11. TECHNICAL SPECIFICATIONS
+       12. TECHNICAL SPECS
     ============================================ */
     .specs-section {
       padding: var(--space-2xl) 0;
     }
 
     .specs__header {
-      text-align: center;
-      margin-bottom: var(--space-xl);
+      margin-bottom: var(--space-lg);
     }
 
     .specs__title {
-      font-family: var(--font-body);
-      font-size: var(--text-subtitle);
-      font-weight: 500;
-      letter-spacing: var(--ls-wide);
-      text-transform: uppercase;
-      color: var(--color-stone);
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
     }
 
     .specs__grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: var(--space-xl);
+      gap: var(--space-2xl);
       align-items: start;
-    }
-
-    .specs__drawing {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: var(--space-md);
     }
 
     .specs__drawing img {
       width: 100%;
-      max-width: 480px;
-      height: auto;
-      display: block;
     }
 
     .specs__table {
@@ -663,39 +617,38 @@
     }
 
     .specs__table tr {
-      border-bottom: 1px solid rgba(34, 35, 35, 0.1);
+      border-bottom: 1px solid rgba(34, 35, 35, 0.08);
     }
 
     .specs__table td {
       padding: 1rem 0;
-      font-weight: 300;
       font-size: var(--text-body);
+      font-weight: 300;
+      vertical-align: top;
     }
 
     .specs__table td:first-child {
-      font-size: var(--text-small);
+      font-weight: 500;
       text-transform: uppercase;
       letter-spacing: var(--ls-medium);
+      font-size: var(--text-small);
       color: var(--color-river-green);
-      font-weight: 500;
-      width: 170px;
+      width: 40%;
+      padding-right: 1.5rem;
     }
 
     /* ============================================
-       12. RELATED PRODUCTS
+       13. RELATED PRODUCTS
     ============================================ */
     .related-section {
       padding: var(--space-2xl) 0;
-      background: var(--color-sand);
     }
 
     .related__header {
       display: flex;
+      align-items: flex-end;
       justify-content: space-between;
-      align-items: center;
       margin-bottom: var(--space-lg);
-      flex-wrap: wrap;
-      gap: 1rem;
     }
 
     .related__title {
@@ -770,7 +723,7 @@
     }
 
     /* ============================================
-       13. FAQ
+       14. FAQ
     ============================================ */
     .faq-section {
       padding: var(--space-xl) 0 var(--space-2xl);
@@ -841,7 +794,7 @@
     }
 
     /* ============================================
-       14. INQUIRY
+       15. INQUIRY
     ============================================ */
     .inquiry-section {
       padding: var(--space-2xl) 0;
@@ -892,10 +845,10 @@
     .form-input,
     .form-textarea {
       width: 100%;
-      background: transparent;
+      padding: 0.875rem 0;
       border: none;
-      border-bottom: 1px solid rgba(34, 35, 35, 0.2);
-      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--color-river-green);
+      background: transparent;
       font-family: var(--font-body);
       font-size: var(--text-body);
       font-weight: 300;
@@ -950,10 +903,53 @@
     }
 
     /* ============================================
-       15. FOOTER
+       INQUIRY IMAGE PREVIEW
+    ============================================ */
+    .inquiry-preview {
+      background: var(--color-sand);
+      padding: var(--space-xl) 0 0;
+    }
+
+    .inquiry-preview__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .inquiry-preview__label {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      margin-bottom: 1.25rem;
+    }
+
+    .inquiry-preview__main {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .inquiry-preview__img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: opacity 0.2s ease;
+    }
+
+    .inquiry-preview__thumbs {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      padding-bottom: var(--space-xl);
+    }
+
+    /* ============================================
+       16. FOOTER
     ============================================ */
     .site-footer {
-      background: var(--color-ivory);
       padding: var(--space-2xl) 0 var(--space-lg);
       border-top: 1px solid rgba(34, 35, 35, 0.08);
     }
@@ -1051,7 +1047,6 @@
     .footer-form__input::placeholder,
     .footer-form__textarea::placeholder {
       color: var(--color-river-green);
-      font-weight: 300;
     }
 
     .footer-form__input:focus,
@@ -1090,7 +1085,7 @@
     .footer__legal a:hover { color: var(--color-stone); }
 
     /* ============================================
-       16. RESPONSIVE — TABLET
+       17. RESPONSIVE — TABLET
     ============================================ */
     @media (max-width: 1023px) {
       .product-hero {
@@ -1152,7 +1147,7 @@
     }
 
     /* ============================================
-       17. RESPONSIVE — MOBILE
+       18. RESPONSIVE — MOBILE
     ============================================ */
     @media (max-width: 767px) {
       .header__nav { display: none; }
@@ -1250,30 +1245,30 @@
   <section class="product-hero">
     <div class="product-hero__info">
       <div class="product-hero__content">
-        <p class="product-hero__category reveal">Stone Furniture</p>
-        <h1 class="product-hero__title reveal">Gesto</h1>
-        <p class="product-hero__subtitle reveal">marble coffee table</p>
+        <p class="product-hero__category reveal">Compliments Collection</p>
+        <h1 class="product-hero__title reveal">Morphe</h1>
+        <p class="product-hero__subtitle reveal">bespoke marble object</p>
         <div class="product-hero__rule reveal"></div>
         <p class="product-hero__description reveal">
-          A single sweeping gesture in stone. Gesto's resolved horizontal plane extends beyond expectation — its mass calibrated to feel generous without heaviness, its surface a slowly revealed exhibition of marble's internal world.
+          From the Greek for form — the thing before it has a name. Morphe is a composed marble object: two pieces of stone, met and fixed in permanent relationship. The joint that would elsewhere be hidden is here the subject — the precise line where stone meets stone, where the atelier's hand is most legible.
         </p>
       </div>
-      <div class="product-hero__thumbs reveal">
-        <img src="gesto_01_editorial.png"
-             alt="Interior setting" class="hero-thumb is-active" data-index="0">
-        <img src="gesto_02_human.png"
-             alt="Scale reference" class="hero-thumb" data-index="1">
-        <img src="gesto_12_catalogue.png"
-             alt="Studio view" class="hero-thumb" data-index="2">
-        <img src="gesto_03_closeup_veining.png"
-             alt="Veining detail" class="hero-thumb" data-index="3">
-        <img src="gesto_04_closeup_edge.png"
-             alt="Edge detail" class="hero-thumb" data-index="4">
+      <div class="product-hero__thumbs">
+        <img src="morphe_01_editorial.png"
+             alt="Morphe — interior setting" class="hero-thumb is-active" data-index="0">
+        <img src="morphe_02_human.png"
+             alt="Morphe — scale reference" class="hero-thumb" data-index="1">
+        <img src="morphe_12_catalogue.png"
+             alt="Morphe — studio view" class="hero-thumb" data-index="2">
+        <img src="morphe_03_closeup_veining.png"
+             alt="Marble veining detail" class="hero-thumb" data-index="3">
+        <img src="morphe_04_closeup_edge.png"
+             alt="Edge and joint detail" class="hero-thumb" data-index="4">
       </div>
     </div>
     <div class="product-hero__media">
-      <img src="gesto_01_editorial.png"
-           alt="Gesto coffee table — a sweeping horizontal plane of stone in an architectural living space"
+      <img src="morphe_01_editorial.png"
+           alt="Morphe marble object — a composed stone form in a refined interior setting"
            class="product-hero__img"
            id="heroMainImg"
            loading="eager"
@@ -1287,20 +1282,20 @@
   <div class="gallery-strip">
     <div class="gallery-strip__scroll">
       <div class="gallery-strip__item">
-        <img src="gesto_02_human.png"
-             alt="Gesto table at human scale, conveying its generous proportions" class="gallery-strip__img" loading="lazy">
+        <img src="morphe_02_human.png"
+             alt="Hand beside Morphe — the object's proportion at human scale" class="gallery-strip__img" loading="lazy">
       </div>
       <div class="gallery-strip__item">
-        <img src="gesto_05_closeup_surface.png"
-             alt="Polished stone surface — directional veining that reads like a brushstroke" class="gallery-strip__img" loading="lazy">
+        <img src="morphe_03_closeup_veining.png"
+             alt="Close-up of marble veining — mineral movement across the composed form" class="gallery-strip__img" loading="lazy">
       </div>
       <div class="gallery-strip__item">
-        <img src="gesto_04_closeup_edge.png"
-             alt="Hand-finished edge profile — refined and precise" class="gallery-strip__img" loading="lazy">
+        <img src="morphe_04_closeup_edge.png"
+             alt="Edge detail — precision-cut stone at the object's perimeter" class="gallery-strip__img" loading="lazy">
       </div>
       <div class="gallery-strip__item">
-        <img src="gesto_06_closeup_joint.png"
-             alt="Precision stone joint, evidence of the atelier's craft" class="gallery-strip__img" loading="lazy">
+        <img src="morphe_06_closeup_joint.png"
+             alt="The joint — where the two pieces of marble meet and are fixed" class="gallery-strip__img" loading="lazy">
       </div>
     </div>
   </div>
@@ -1312,22 +1307,22 @@
     <div class="container">
       <div class="editorial__split">
         <div class="editorial__image-col reveal">
-          <img src="gesto_03_closeup_veining.png"
-               alt="Close-up of stone veining on the Gesto table — directional energy captured in marble"
+          <img src="morphe_02_human.png"
+               alt="Morphe — held at human scale, the joint visible between the two pieces of stone"
                loading="lazy">
         </div>
         <div class="editorial__text-col reveal">
           <div class="editorial__block">
-            <span class="editorial__label">Stone Character</span>
-            <h2 class="editorial__heading">The Stone<br><em>in Motion</em></h2>
+            <span class="editorial__label">The Joint</span>
+            <h2 class="editorial__heading">Where Stone <em>Meets Stone</em></h2>
             <p class="editorial__text">
-              Gesto is selected for the directional energy of its veining — lines that cross the slab like brushstrokes, giving the table an innate sense of movement even at rest. Each slab is personally reviewed at the quarry face. No two pieces share the same composition.
+              In most objects, the joint is the thing to be concealed — the place where craft falls short of perfection. In Morphe, it is reversed. The line where two pieces of marble are brought into contact becomes the object's central statement: a seam of absolute precision, held without adhesive, relying entirely on the flatness of the cut and the weight of the stone. To look closely at the joint is to understand how Morphe was made.
             </p>
           </div>
           <div class="editorial__block">
-            <h2 class="editorial__heading">The Minimum<br><em>A Table Can Be</em></h2>
+            <h2 class="editorial__heading">Form Before <em>Function</em></h2>
             <p class="editorial__text">
-              The design arrives from a single restraint: what is the minimum a coffee table can be? Gesto's answer is a resolved horizontal plane, its thickness calibrated to feel generous without heaviness. The result reads as effortless — which means the work was entirely in the proportions.
+              Morphe takes its name from the Greek — not the word for beautiful, or for useful, or for old, but simply for form: the shape of something prior to any description of what it is. This object resists categorisation in the same way. It is not a tray, not a paperweight, not a bookend — though it may quietly serve as any of these. It is, first and entirely, a composed form in stone.
             </p>
           </div>
         </div>
@@ -1342,36 +1337,31 @@
     <div class="container">
       <div class="materials__inner">
         <div class="materials__media reveal">
-          <img src="gesto_07_studio_calacatta.png"
-               alt="Gesto table in Calacatta Gold marble — warm ivory ground with amber and taupe veining"
+          <img src="morphe_05_closeup_surface.png"
+               alt="Morphe surface detail — the stone's texture and character under close light"
                loading="lazy">
         </div>
         <div class="materials__content reveal">
-          <span class="materials__label">Available in four stones</span>
-          <h2 class="materials__title">Select Your Stone</h2>
+          <span class="materials__label">Available in three stones</span>
+          <h2 class="materials__title">Stone &amp; Surface</h2>
           <p class="materials__text">
-            The Gesto is offered in four marble selections, each hand-chosen for the quality and direction of its veining. The choice of stone is the design — each option yields a fundamentally different object, from the warm luminosity of Calacatta to the commanding depth of Nero Marquina.
+            Morphe is offered in Bianco Carrara, Calacatta, and Nero Marquina. The stone selection determines the character of the joint: on Carrara, the veining reads continuously across both pieces, as though the form were always whole. On Calacatta, the bold movement of the mineral creates a dramatic interruption at the seam. On Nero Marquina, the joint nearly disappears into the dark ground — present only to those who look closely. Each stone makes a different object.
           </p>
           <div class="materials__swatches" id="materialSelector">
-            <div class="swatch is-active" data-material="calacatta">
-              <img src="gesto_07_studio_calacatta.png"
-                   alt="Calacatta Gold" class="swatch__img">
+            <div class="swatch is-active" data-material="carrara">
+              <img src="morphe_03_closeup_veining.png"
+                   alt="Bianco Carrara" class="swatch__img">
+              <span class="swatch__name">Carrara</span>
+            </div>
+            <div class="swatch" data-material="calacatta">
+              <img src="../../coffee tables/gesto/gesto_07_studio_calacatta.png"
+                   alt="Calacatta" class="swatch__img">
               <span class="swatch__name">Calacatta</span>
             </div>
-            <div class="swatch" data-material="noir">
-              <img src="gesto_08_studio_noir.png"
+            <div class="swatch" data-material="nero">
+              <img src="../../coffee tables/gesto/gesto_08_studio_noir.png"
                    alt="Nero Marquina" class="swatch__img">
               <span class="swatch__name">Nero</span>
-            </div>
-            <div class="swatch" data-material="verde">
-              <img src="gesto_09_studio_verde.png"
-                   alt="Verde Alpi" class="swatch__img">
-              <span class="swatch__name">Verde Alpi</span>
-            </div>
-            <div class="swatch" data-material="travertine">
-              <img src="gesto_10_studio_travertine.png"
-                   alt="Travertine Roman" class="swatch__img">
-              <span class="swatch__name">Travertine</span>
             </div>
           </div>
         </div>
@@ -1389,19 +1379,18 @@
       </div>
       <div class="specs__grid">
         <div class="specs__drawing reveal">
-          <img src="gesto_11_technical.png"
-               alt="Gesto coffee table technical drawing — plan and elevation with dimensions">
+          <img src="morphe_11_technical.png"
+               alt="Morphe technical drawing — elevation and plan with dimensions">
         </div>
         <div class="specs__table-wrap reveal">
           <table class="specs__table">
-            <tr><td>Dimensions</td><td>130 &times; 65 &times; 36 cm (L &times; W &times; H)</td></tr>
-            <tr><td>Weight</td><td>Approx. 195 kg</td></tr>
-            <tr><td>Materials</td><td>Calacatta Gold, Nero Marquina, Verde Alpi, Travertine Roman</td></tr>
-            <tr><td>Surface Finish</td><td>Polished / Honed / Brushed</td></tr>
-            <tr><td>Edge Treatment</td><td>Hand-finished, refined straight profile</td></tr>
-            <tr><td>Installation</td><td>Freestanding</td></tr>
-            <tr><td>Custom Sizing</td><td>Available on request</td></tr>
-            <tr><td>Lead Time</td><td>8&ndash;14 weeks</td></tr>
+            <tr><td>Dimensions</td><td>Standard sizing available; bespoke dimensions on request</td></tr>
+            <tr><td>Materials</td><td>Bianco Carrara, Calacatta, Nero Marquina</td></tr>
+            <tr><td>Finish</td><td>Honed (standard); polished on request</td></tr>
+            <tr><td>Construction</td><td>Two precision-cut marble pieces, dry-joined</td></tr>
+            <tr><td>Use</td><td>Sculptural surface object; decorative accent</td></tr>
+            <tr><td>Collection</td><td>Compliments — small marble objects</td></tr>
+            <tr><td>Custom Sizing</td><td>Available on request; matched stone pairs welcome</td></tr>
           </table>
         </div>
       </div>
@@ -1419,57 +1408,42 @@
         <h2 class="faq__title">You have questions? Contact us</h2>
       </div>
       <div class="faq__list reveal">
-
         <div class="faq-item">
           <button class="faq-item__question">
-            <span>Can the Gesto be commissioned in custom dimensions?</span>
+            <span>Are the two pieces matched from the same slab?</span>
             <span class="faq-item__icon">+</span>
           </button>
           <div class="faq-item__answer">
-            <p>Yes. The standard Gesto is 130 &times; 65 &times; 36 cm, but we regularly produce pieces to client-specified dimensions. Share your requirements in your inquiry and our design team will advise on feasibility and the structural implications of the stone selected.</p>
+            <p>By default, both pieces of Morphe are selected from the same slab, so that the veining reads continuously across the joint — a single geological event, interrupted and reassembled. On request, we can select contrasting slabs for the two pieces, creating an object where the joint becomes a dialogue between two distinct moments in stone. Both approaches are available; the choice depends on the effect you want the joint to produce.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-item__question">
-            <span>Which surface finishes are available for the Gesto?</span>
+            <span>Is Morphe held together with adhesive?</span>
             <span class="faq-item__icon">+</span>
           </button>
           <div class="faq-item__answer">
-            <p>The Gesto is offered in polished, honed, and brushed finishes. Calacatta Gold and Nero Marquina are available in all three. Verde Alpi is typically offered honed to preserve its colour depth. Travertine Roman is most characterful honed, with its natural voids left open. We can arrange sample dispatch to assist your selection.</p>
+            <p>The standard Morphe is dry-joined — the two pieces rest on each other through weight alone, held by the precision of the cut surfaces. This is a traditional lapidary approach and one that we consider part of the object's character: the joint holds because it is flat and true, not because it has been glued. For clients who prefer a permanently fixed form — for instance for a high-traffic setting — we can bond the pieces with a coloured stone adhesive matched to your selected material.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-item__question">
-            <span>How do I care for the marble surface?</span>
+            <span>Can Morphe be used as a functional object?</span>
             <span class="faq-item__icon">+</span>
           </button>
           <div class="faq-item__answer">
-            <p>For everyday care, wipe with a damp cloth and a pH-neutral cleaner. Avoid acidic substances such as wine, citrus, or vinegar, which can etch polished stone. We recommend sealing the surface annually with an impregnating stone sealer. Detailed care instructions are included with every piece.</p>
+            <p>Morphe is designed primarily as a sculptural presence, but it lends itself naturally to quiet secondary uses: a small catchall on a desk or console, a counterweight for papers or books, a thing to hold while thinking. The honed finish is durable and easily maintained. We include a stone care card with every piece, covering routine cleaning and the periodic resealing that any natural marble benefits from.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-item__question">
-            <span>Can I receive a material sample before ordering?</span>
+            <span>Does the veining vary between pieces?</span>
             <span class="faq-item__icon">+</span>
           </button>
           <div class="faq-item__answer">
-            <p>Absolutely. We can dispatch hand-cut material samples to your studio or home. Include your address and preferred stones in your inquiry. We encourage clients to experience the marble firsthand — the difference between screen and stone is significant.</p>
+            <p>Yes — natural marble is never repeated. Before cutting, we photograph the candidate slab sections and share them with you for approval. This is particularly meaningful for Morphe, where the relationship between veining and joint is central to the object's reading. We will present the sections in context so you can see how the mineral movement will behave at the seam before any stone is cut.</p>
           </div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-item__question">
-            <span>Do you offer white-glove delivery and installation?</span>
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <p>Yes. Every Gesto is crated, insured, and delivered by specialist stone logistics partners worldwide. White-glove installation — including placement, levelling, and final inspection — is available upon request and strongly recommended given the piece's weight.</p>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -1482,40 +1456,70 @@
   <section class="related-section">
     <div class="container">
       <div class="related__header reveal">
-        <h2 class="related__title">Discover other Tiba Stone products</h2>
+        <h2 class="related__title">Explore the Compliments Collection</h2>
         <div class="related__filters">
           <button class="filter-btn is-active">All</button>
-          <button class="filter-btn">Coffee Tables</button>
+          <button class="filter-btn">Compliments</button>
+          <button class="filter-btn">Vessels</button>
         </div>
       </div>
       <div class="related__grid reveal">
-        <a href="/Products/coffee tables/empire/" class="product-card">
+        <a href="/Products/Compliments/aime/" class="product-card">
           <div class="product-card__media">
-            <img src="../empire/empire_12_catalogue.png"
-                 alt="Empire Coffee Table" class="product-card__img" loading="lazy">
+            <img src="../aime/aime_12_catalogue.png"
+                 alt="Aime" class="product-card__img" loading="lazy">
           </div>
-          <h3 class="product-card__name">Empire</h3>
-          <span class="product-card__type">Marble Coffee Table</span>
+          <h3 class="product-card__name">Aime</h3>
+          <span class="product-card__type">Marble Compliment</span>
         </a>
-        <a href="/Products/coffee tables/lavanche/" class="product-card">
+        <a href="/Products/Compliments/ana/" class="product-card">
           <div class="product-card__media">
-            <img src="../lavanche/lavanche_12_catalogue.png"
-                 alt="Lavanche Coffee Table" class="product-card__img" loading="lazy">
+            <img src="../ana/ana_12_catalogue.png"
+                 alt="Ana" class="product-card__img" loading="lazy">
           </div>
-          <h3 class="product-card__name">Lavanche</h3>
-          <span class="product-card__type">Marble Coffee Table</span>
+          <h3 class="product-card__name">Ana</h3>
+          <span class="product-card__type">Marble Compliment</span>
         </a>
-        <a href="/Products/coffee tables/morphe/" class="product-card">
+        <a href="/Products/Compliments/cono/" class="product-card">
           <div class="product-card__media">
-            <img src="../morphe/morphe_12_catalogue.png"
-                 alt="Morphe Coffee Table" class="product-card__img" loading="lazy">
+            <img src="../cono/cono_12_catalogue.png"
+                 alt="Cono" class="product-card__img" loading="lazy">
           </div>
-          <h3 class="product-card__name">Morphe</h3>
-          <span class="product-card__type">Marble Coffee Table</span>
+          <h3 class="product-card__name">Cono</h3>
+          <span class="product-card__type">Marble Compliment</span>
         </a>
       </div>
     </div>
   </section>
+
+  <!-- ============================================
+       IMAGE SELECTOR (above inquiry)
+  ============================================ -->
+  <div class="inquiry-preview">
+    <div class="container">
+      <div class="inquiry-preview__inner reveal">
+        <p class="inquiry-preview__label">Your Selected View</p>
+        <div class="inquiry-preview__main">
+          <img src="morphe_01_editorial.png"
+               alt="Selected view"
+               class="inquiry-preview__img"
+               id="inquiryPreviewImg">
+        </div>
+        <div class="inquiry-preview__thumbs">
+          <img src="morphe_01_editorial.png"
+               alt="Interior setting" class="hero-thumb is-active" data-index="0">
+          <img src="morphe_02_human.png"
+               alt="Scale reference" class="hero-thumb" data-index="1">
+          <img src="morphe_12_catalogue.png"
+               alt="Studio view" class="hero-thumb" data-index="2">
+          <img src="morphe_03_closeup_veining.png"
+               alt="Marble veining" class="hero-thumb" data-index="3">
+          <img src="morphe_04_closeup_edge.png"
+               alt="Edge detail" class="hero-thumb" data-index="4">
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ============================================
        INQUIRY
@@ -1524,12 +1528,12 @@
     <div class="container">
       <div class="inquiry__inner reveal">
         <p class="inquiry__label">Made to Order</p>
-        <h2 class="inquiry__heading">Commission your Gesto</h2>
+        <h2 class="inquiry__heading">Commission your Morphe</h2>
         <p class="inquiry__text">
-          Every Gesto is made to order. Inquire to begin a conversation about stone selection, dimensions, and delivery.
+          Every Morphe begins with a slab selection — photographed, shared, and approved before a single cut is made. Inquire to discuss stone, finish, whether the pieces are matched or contrasting, and any bespoke requirements for your space.
         </p>
         <form class="inquiry__form" id="inquiryForm">
-          <input type="hidden" name="product" value="Gesto Coffee Table">
+          <input type="hidden" name="product" value="Morphe — Compliments Collection">
           <div class="form-row">
             <div class="form-group">
               <input type="text" name="firstName" class="form-input" placeholder="First Name" required>
@@ -1661,15 +1665,16 @@
 
       revealEls.forEach(function (el) { revealObserver.observe(el); });
 
-      // Hero thumbnail switcher
+      // Thumbnail switcher — updates hero image and inquiry preview
       var heroThumbs = document.querySelectorAll('.hero-thumb');
       var heroMainImg = document.getElementById('heroMainImg');
+      var inquiryPreviewImg = document.getElementById('inquiryPreviewImg');
       var heroImages = [
-        'gesto_01_editorial.png',
-        'gesto_02_human.png',
-        'gesto_12_catalogue.png',
-        'gesto_03_closeup_veining.png',
-        'gesto_04_closeup_edge.png'
+        'morphe_01_editorial.png',
+        'morphe_02_human.png',
+        'morphe_12_catalogue.png',
+        'morphe_03_closeup_veining.png',
+        'morphe_04_closeup_edge.png'
       ];
 
       heroThumbs.forEach(function (thumb) {
@@ -1678,12 +1683,12 @@
           this.classList.add('is-active');
           var idx = parseInt(this.dataset.index, 10);
           heroMainImg.style.opacity = '0';
-          heroMainImg.style.transition = 'opacity 0.2s ease';
+          inquiryPreviewImg.style.opacity = '0';
           setTimeout(function () {
             heroMainImg.src = heroImages[idx];
-            heroMainImg.onload = function () {
-              heroMainImg.style.opacity = '1';
-            };
+            inquiryPreviewImg.src = heroImages[idx];
+            heroMainImg.onload = function () { heroMainImg.style.opacity = '1'; };
+            inquiryPreviewImg.onload = function () { inquiryPreviewImg.style.opacity = '1'; };
           }, 200);
         });
       });
@@ -1727,13 +1732,13 @@
         btn.disabled = true;
 
         setTimeout(function () {
-          btn.textContent = 'Thank You';
+          btn.textContent = 'Inquiry Sent';
+          form.reset();
           setTimeout(function () {
-            form.reset();
             btn.textContent = originalText;
             btn.disabled = false;
-          }, 2000);
-        }, 1000);
+          }, 3000);
+        }, 1200);
       });
 
       // Footer form handler
@@ -1748,25 +1753,15 @@
 
         setTimeout(function () {
           btn.textContent = 'Sent';
+          form.reset();
           setTimeout(function () {
-            form.reset();
             btn.textContent = originalText;
             btn.disabled = false;
-          }, 2000);
-        }, 1000);
+          }, 3000);
+        }, 1200);
       });
 
-      // Progressive image fade
-      document.querySelectorAll('.product-hero__img, .gallery-strip__img, .editorial__image-col img, .materials__media img, .product-card__img').forEach(function (img) {
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.6s ease';
-
-        function show() { img.style.opacity = '1'; }
-        if (img.complete && img.naturalHeight !== 0) show();
-        else img.addEventListener('load', show);
-      });
-
-    })();
+    }());
   </script>
 
 </body>
