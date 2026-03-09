@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/Products/Dining Tables/bronze/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bronze | Dining Tables | TIBA STONE</title>
+  <meta name="description" content="Bronze — a stone dining table of mineral depth and warm authority. Bespoke marble dining tables by Tiba Stone.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-stone: #222323; --color-ivory: #FFFFFF; --color-sunset: #925638;
+      --color-river-green: #A3996A; --color-dusk-blue: #153647; --color-moss: #3E402B;
+      --color-sand: #F5F5F5; --color-warm-bg: #E8E2DA;
+      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
+      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      --text-hero: clamp(2.25rem, 4vw, 3.5rem); --text-h1: clamp(1.875rem, 3vw, 2.75rem);
+      --text-h2: clamp(1.5rem, 2.25vw, 2rem); --text-h3: clamp(1.125rem, 1.5vw, 1.375rem);
+      --text-subtitle: clamp(0.625rem, 0.9vw, 0.75rem); --text-body: clamp(0.875rem, 1vw, 1rem);
+      --text-small: clamp(0.6875rem, 0.85vw, 0.8125rem); --text-xs: clamp(0.5625rem, 0.7vw, 0.6875rem);
+      --ls-wide: 0.2em; --ls-medium: 0.12em; --lh-heading: 1.25; --lh-body: 1.85;
+      --space-xs: 0.5rem; --space-sm: 1rem; --space-md: 2rem; --space-lg: 4rem;
+      --space-xl: 6rem; --space-2xl: 8rem; --space-3xl: 12rem;
+      --container-max: 1400px; --container-narrow: 800px;
+      --container-pad: clamp(1.5rem, 5vw, 4rem); --grid-gap: clamp(1.5rem, 3vw, 2.5rem);
+      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --duration-fast: 0.3s; --duration-medium: 0.6s; --duration-slow: 1s;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body { background: var(--color-ivory); color: var(--color-stone); font-family: var(--font-body); font-weight: 300; line-height: var(--lh-body); }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-pad); }
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem var(--container-pad); display: flex; align-items: center; justify-content: space-between; transition: background var(--duration-fast), box-shadow var(--duration-fast); }
+    .site-header.is-scrolled { background: var(--color-ivory); box-shadow: 0 1px 0 rgba(34,35,35,0.06); }
+    .header__logo img { height: 36px; width: auto; }
+    .header__nav { display: flex; gap: 2.5rem; align-items: center; }
+    .header__nav a { font-size: var(--text-small); font-weight: 500; letter-spacing: var(--ls-medium); text-transform: uppercase; color: var(--color-stone); transition: color var(--duration-fast); }
+    .header__nav a:hover, .header__nav a.is-active { color: var(--color-sunset); }
+    .header__inquire { padding: 0.6rem 1.5rem; border: 1px solid var(--color-stone); font-size: var(--text-small); font-weight: 500; letter-spacing: var(--ls-medium); text-transform: uppercase; transition: background var(--duration-fast), color var(--duration-fast); }
+    .header__inquire:hover { background: var(--color-stone); color: var(--color-ivory); }
+    .header__hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .header__hamburger span { display: block; width: 24px; height: 1px; background: var(--color-stone); }
+    .mobile-menu { position: fixed; inset: 0; background: var(--color-ivory); z-index: 200; display: flex; flex-direction: column; padding: 2rem var(--container-pad); transform: translateX(100%); transition: transform var(--duration-medium) var(--ease-smooth); }
+    .mobile-menu.is-open { transform: translateX(0); }
+    .mobile-menu__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2xl); }
+    .mobile-menu__close { background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--color-stone); }
+    .mobile-menu__nav { display: flex; flex-direction: column; gap: var(--space-md); }
+    .mobile-menu__nav a { font-family: var(--font-display); font-size: var(--text-h2); color: var(--color-stone); transition: color var(--duration-fast); }
+    .mobile-menu__nav a:hover { color: var(--color-sunset); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity var(--duration-medium) var(--ease-smooth), transform var(--duration-medium) var(--ease-smooth); }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .product-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; padding-top: 80px; }
+    .product-hero__info { padding: var(--space-2xl) var(--container-pad); display: flex; flex-direction: column; justify-content: space-between; }
+    .product-hero__content { max-width: 480px; padding-top: var(--space-lg); }
+    .product-hero__category { font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); margin-bottom: 0.75rem; }
+    .product-hero__title { font-family: var(--font-display); font-size: var(--text-hero); line-height: var(--lh-heading); margin-bottom: 0.375rem; }
+    .product-hero__subtitle { font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-river-green); margin-bottom: var(--space-md); }
+    .product-hero__rule { width: 40px; height: 1px; background: var(--color-sunset); margin-bottom: var(--space-md); }
+    .product-hero__description { font-size: var(--text-body); line-height: var(--lh-body); font-weight: 300; max-width: 420px; }
+    .product-hero__thumbs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .hero-thumb { width: 64px; height: 64px; object-fit: cover; cursor: pointer; opacity: 0.5; transition: opacity var(--duration-fast); border: 1px solid transparent; }
+    .hero-thumb.is-active { opacity: 1; border-color: var(--color-stone); }
+    .hero-thumb:hover { opacity: 0.8; }
+    .product-hero__media { overflow: hidden; background: var(--color-sand); }
+    .product-hero__img { width: 100%; height: 100%; object-fit: cover; transition: opacity var(--duration-medium) var(--ease-smooth); }
+    .gallery-strip { background: var(--color-warm-bg); padding: var(--space-md) 0; overflow: hidden; }
+    .gallery-strip__scroll { display: flex; gap: 0.75rem; padding: 0 var(--container-pad); overflow-x: auto; scrollbar-width: none; }
+    .gallery-strip__scroll::-webkit-scrollbar { display: none; }
+    .gallery-strip__item { flex-shrink: 0; }
+    .gallery-strip__img { height: 280px; width: auto; object-fit: cover; }
+    .editorial-section { padding: var(--space-2xl) 0; }
+    .editorial__split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
+    .editorial__image-col img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+    .editorial__text-col { display: flex; flex-direction: column; gap: var(--space-lg); }
+    .editorial__block { display: flex; flex-direction: column; gap: var(--space-sm); }
+    .editorial__label { font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); }
+    .editorial__heading { font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-heading); }
+    .editorial__heading em { font-style: italic; color: var(--color-sunset); }
+    .editorial__text { font-weight: 300; line-height: var(--lh-body); }
+    .materials-section { padding: var(--space-2xl) 0; background: var(--color-sand); }
+    .materials__inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
+    .materials__media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .materials__label { font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); margin-bottom: 0.75rem; }
+    .materials__title { font-family: var(--font-display); font-size: var(--text-h2); margin-bottom: var(--space-sm); }
+    .materials__text { font-weight: 300; line-height: var(--lh-body); margin-bottom: var(--space-md); }
+    .materials__swatches { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .swatch { display: flex; flex-direction: column; align-items: center; cursor: pointer; opacity: 0.55; transition: opacity var(--duration-fast); }
+    .swatch:hover, .swatch.is-active { opacity: 1; }
+    .swatch__img { width: 60px; height: 60px; object-fit: cover; border: 1px solid transparent; margin-bottom: 0.375rem; transition: border-color var(--duration-fast); }
+    .swatch.is-active .swatch__img { border-color: var(--color-stone); }
+    .swatch__name { display: block; font-size: var(--text-xs); letter-spacing: var(--ls-medium); text-transform: uppercase; }
+    .specs-section { padding: var(--space-2xl) 0; }
+    .specs__header { margin-bottom: var(--space-lg); }
+    .specs__title { font-family: var(--font-display); font-size: var(--text-h2); }
+    .specs__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start; }
+    .specs__drawing img { width: 100%; }
+    .specs__table { width: 100%; border-collapse: collapse; }
+    .specs__table tr { border-bottom: 1px solid rgba(34,35,35,0.08); }
+    .specs__table td { padding: 1rem 0; font-size: var(--text-body); vertical-align: top; }
+    .specs__table td:first-child { font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-river-green); width: 40%; padding-right: 1rem; }
+    .section-divider { height: 1px; background: rgba(34,35,35,0.06); margin: 0 var(--container-pad); }
+    .inquiry-preview { padding: var(--space-xl) 0 var(--space-lg); }
+    .inquiry-preview__inner { display: flex; flex-direction: column; align-items: center; gap: var(--space-md); }
+    .inquiry-preview__label { font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); }
+    .inquiry-preview__main { width: 100%; max-width: 560px; overflow: hidden; }
+    .inquiry-preview__img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: opacity var(--duration-medium) var(--ease-smooth); }
+    .inquiry-preview__thumbs { display: flex; gap: 0.625rem; }
+    .related-section { padding: var(--space-xl) 0 var(--space-2xl); }
+    .related__header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-lg); flex-wrap: wrap; gap: 1rem; }
+    .related__title { font-family: var(--font-display); font-size: var(--text-h2); }
+    .related__filters { display: flex; gap: 0.5rem; }
+    .filter-btn { padding: 0.5rem 1rem; font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-river-green); background: transparent; border: 1px solid transparent; cursor: pointer; transition: all var(--duration-fast); }
+    .filter-btn:hover { color: var(--color-stone); }
+    .filter-btn.is-active { color: var(--color-stone); border-color: var(--color-stone); }
+    .related__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); }
+    .product-card { text-decoration: none; color: var(--color-stone); }
+    .product-card__media { overflow: hidden; background: var(--color-sand); margin-bottom: 0.875rem; }
+    .product-card__img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; padding: 1rem; transition: transform var(--duration-slow) var(--ease-smooth); }
+    .product-card:hover .product-card__img { transform: scale(1.05); }
+    .product-card__name { font-family: var(--font-display); font-size: var(--text-h3); margin-bottom: 0.125rem; }
+    .product-card__type { font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-river-green); }
+    .faq-section { padding: var(--space-xl) 0 var(--space-2xl); }
+    .faq__header { margin-bottom: var(--space-lg); }
+    .faq__title { font-family: var(--font-display); font-size: var(--text-h3); }
+    .faq__list { max-width: 700px; }
+    .faq-item { border-bottom: 1px solid rgba(34,35,35,0.08); }
+    .faq-item__question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; font-family: var(--font-body); font-size: var(--text-body); font-weight: 400; text-align: left; cursor: pointer; background: none; border: none; color: var(--color-stone); transition: color var(--duration-fast); }
+    .faq-item__question:hover { color: var(--color-sunset); }
+    .faq-item__icon { font-size: 1.25rem; font-weight: 300; transition: transform var(--duration-fast); flex-shrink: 0; margin-left: 1rem; }
+    .faq-item.is-open .faq-item__icon { transform: rotate(45deg); }
+    .faq-item__answer { max-height: 0; overflow: hidden; transition: max-height var(--duration-fast), padding var(--duration-fast); }
+    .faq-item.is-open .faq-item__answer { max-height: 400px; padding-bottom: 1.25rem; }
+    .faq-item__answer p { font-weight: 300; line-height: var(--lh-body); color: var(--color-river-green); }
+    .inquiry-section { padding: var(--space-2xl) 0; background: var(--color-sand); }
+    .inquiry__inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .inquiry__label { font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); margin-bottom: 0.75rem; }
+    .inquiry__heading { font-family: var(--font-display); font-size: var(--text-h2); margin-bottom: 1rem; }
+    .inquiry__text { font-weight: 300; margin-bottom: var(--space-lg); }
+    .inquiry__form { text-align: left; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+    .form-group--full { grid-column: span 2; }
+    .form-input, .form-textarea { width: 100%; padding: 0.875rem 0; border: none; border-bottom: 1px solid var(--color-river-green); background: transparent; font-family: var(--font-body); font-size: var(--text-body); font-weight: 300; color: var(--color-stone); outline: none; transition: border-color var(--duration-fast); }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(34,35,35,0.35); }
+    .form-input:focus, .form-textarea:focus { border-bottom-color: var(--color-stone); }
+    .form-textarea { resize: vertical; min-height: 100px; }
+    .form-consent { display: flex; align-items: flex-start; gap: 0.75rem; margin: 1.5rem 0; font-size: var(--text-small); font-weight: 300; color: var(--color-river-green); }
+    .form-consent input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; accent-color: var(--color-stone); }
+    .form-consent a { color: var(--color-stone); text-decoration: underline; text-underline-offset: 2px; }
+    .btn-primary { display: inline-block; padding: 1rem 2.5rem; background: var(--color-stone); color: var(--color-ivory); font-family: var(--font-body); font-size: var(--text-small); font-weight: 500; letter-spacing: var(--ls-medium); text-transform: uppercase; border: none; cursor: pointer; transition: background var(--duration-fast); }
+    .btn-primary:hover { background: var(--color-sunset); }
+    .site-footer { padding: var(--space-2xl) 0 var(--space-lg); border-top: 1px solid rgba(34,35,35,0.08); }
+    .footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: var(--grid-gap); }
+    .footer__logo { height: 60px; width: auto; margin-bottom: 1rem; }
+    .footer__tagline { font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-river-green); margin-bottom: 1.25rem; }
+    .footer__social { display: flex; gap: 1rem; }
+    .footer__social a { color: var(--color-river-green); transition: color var(--duration-fast); }
+    .footer__social a:hover { color: var(--color-stone); }
+    .footer__social svg { width: 16px; height: 16px; fill: currentColor; }
+    .footer__col-title { font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--ls-wide); font-weight: 500; margin-bottom: 1.25rem; }
+    .footer__link { display: block; color: var(--color-river-green); font-size: var(--text-body); font-weight: 300; margin-bottom: 0.625rem; transition: color var(--duration-fast); }
+    .footer__link:hover { color: var(--color-stone); }
+    .footer__contact-info p { color: var(--color-river-green); font-size: var(--text-body); font-weight: 300; margin-bottom: 0.5rem; line-height: 1.5; }
+    .footer__contact-info a { color: var(--color-river-green); transition: color var(--duration-fast); }
+    .footer__contact-info a:hover { color: var(--color-stone); }
+    .footer-form__input, .footer-form__textarea { background: transparent; border: none; border-bottom: 1px solid var(--color-river-green); color: var(--color-stone); padding: 0.75rem 0; width: 100%; font-family: var(--font-body); font-size: var(--text-small); font-weight: 300; margin-bottom: 1rem; transition: border-color var(--duration-fast); outline: none; resize: none; }
+    .footer-form__input::placeholder, .footer-form__textarea::placeholder { color: var(--color-river-green); font-weight: 300; }
+    .footer-form__input:focus, .footer-form__textarea:focus { border-color: var(--color-stone); }
+    .footer-form .btn-primary { width: 100%; text-align: center; margin-top: 0.5rem; }
+    .footer__bottom { margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid rgba(34,35,35,0.08); display: flex; justify-content: space-between; align-items: center; font-size: var(--text-small); color: var(--color-river-green); }
+    .footer__legal { display: flex; gap: 1.5rem; }
+    .footer__legal a { color: var(--color-river-green); font-size: var(--text-small); transition: color var(--duration-fast); }
+    .footer__legal a:hover { color: var(--color-stone); }
+    @media (max-width: 1023px) {
+      .product-hero { grid-template-columns: 1fr; min-height: auto; }
+      .product-hero__info { order: 2; padding: var(--space-lg) var(--container-pad); }
+      .product-hero__content { padding-top: 0; }
+      .product-hero__media { order: 1; }
+      .product-hero__img { min-height: 55vh; }
+      .editorial__split, .materials__inner, .specs__grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+      .editorial__image-col img { aspect-ratio: 16 / 9; }
+      .related__grid { grid-template-columns: repeat(2, 1fr); }
+      .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+      .header__nav { display: none; }
+      .header__hamburger { display: flex; }
+    }
+    @media (max-width: 767px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-group--full { grid-column: span 1; }
+      .related__grid, .footer__grid { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <a href="/" class="header__logo">
+      <img src="../../../TIBA_FINAL_LOGO_LANDSCAPE (3) (13).png" alt="TIBA Stone">
+    </a>
+    <nav class="header__nav">
+      <a href="/">Home</a>
+      <a href="/craft">Craft</a>
+      <a href="/catalog" class="is-active">Collection</a>
+      <a href="/contact" class="header__inquire">Inquire</a>
+    </nav>
+    <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <div class="mobile-menu__top">
+      <a href="/"><img src="../../../TIBA_FINAL_LOGO_LANDSCAPE (3) (13).png" alt="TIBA Stone" style="height:36px;width:auto;"></a>
+      <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="mobile-menu__nav">
+      <a href="/">Home</a><a href="/craft">Craft</a><a href="/catalog">Collection</a><a href="/contact">Inquire</a>
+    </nav>
+  </div>
+
+  <section class="product-hero">
+    <div class="product-hero__info">
+      <div class="product-hero__content">
+        <p class="product-hero__category reveal">Dining Tables</p>
+        <h1 class="product-hero__title reveal">Bronze</h1>
+        <p class="product-hero__subtitle reveal">bespoke stone dining table</p>
+        <div class="product-hero__rule reveal"></div>
+        <p class="product-hero__description reveal">
+          Bronze takes its name from the warm mineral depth that certain stones carry — that quality of age and weight that makes a piece feel as though it has always been in the room. A dining table of quiet gravitas, designed to anchor and endure.
+        </p>
+      </div>
+      <div class="product-hero__thumbs">
+        <img src="bronze_01_editorial.png" alt="Bronze — interior setting" class="hero-thumb is-active" data-index="0">
+        <img src="bronze_02_human.png" alt="Bronze — scale reference" class="hero-thumb" data-index="1">
+        <img src="bronze_12_catalogue.png" alt="Bronze — studio view" class="hero-thumb" data-index="2">
+        <img src="bronze_03_closeup_veining.png" alt="Marble veining detail" class="hero-thumb" data-index="3">
+        <img src="bronze_04_closeup_edge.png" alt="Edge detail" class="hero-thumb" data-index="4">
+      </div>
+    </div>
+    <div class="product-hero__media">
+      <img src="bronze_01_editorial.png" alt="Bronze — a stone dining table of warm mineral depth" class="product-hero__img" id="heroMainImg" loading="eager" fetchpriority="high">
+    </div>
+  </section>
+
+  <div class="gallery-strip">
+    <div class="gallery-strip__scroll">
+      <div class="gallery-strip__item"><img src="bronze_02_human.png" alt="Bronze at human scale" class="gallery-strip__img" loading="lazy"></div>
+      <div class="gallery-strip__item"><img src="bronze_03_closeup_veining.png" alt="Marble veining — the mineral depth that names this table" class="gallery-strip__img" loading="lazy"></div>
+      <div class="gallery-strip__item"><img src="bronze_04_closeup_edge.png" alt="Bronze edge detail — the finished perimeter" class="gallery-strip__img" loading="lazy"></div>
+      <div class="gallery-strip__item"><img src="bronze_06_closeup_joint.png" alt="Stone meeting stone — base and surface connection" class="gallery-strip__img" loading="lazy"></div>
+    </div>
+  </div>
+
+  <section class="editorial-section">
+    <div class="container">
+      <div class="editorial__split">
+        <div class="editorial__image-col reveal">
+          <img src="bronze_02_human.png" alt="Bronze in a dining setting — the table as anchor" loading="lazy">
+        </div>
+        <div class="editorial__text-col reveal">
+          <div class="editorial__block">
+            <span class="editorial__label">The Table</span>
+            <h2 class="editorial__heading">Weight, Warmth, <em>Authority</em></h2>
+            <p class="editorial__text">
+              Bronze is a table you feel before you sit at it. The stone has a presence in the room that other materials rarely achieve — a quality of permanence, of having always been there. It is generous in proportion and deeply calm in character, inviting long meals and unhurried conversation without demanding attention.
+            </p>
+          </div>
+          <div class="editorial__block">
+            <h2 class="editorial__heading">The Character of <em>Deep Stone</em></h2>
+            <p class="editorial__text">
+              The stone selections for Bronze were chosen for their depth — veining that carries warmth and mineral complexity. This is not a table for the cool and clinical. It suits rooms that have lived in them, walls that have absorbed years of light. Bronze improves the longer it is used; the surface gathers the subtle patina of gathered life.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="materials-section">
+    <div class="container">
+      <div class="materials__inner">
+        <div class="materials__media reveal">
+          <img src="bronze_05_closeup_surface.png" alt="Bronze surface detail — the warm mineral depth of the stone" loading="lazy">
+        </div>
+        <div class="materials__content reveal">
+          <span class="materials__label">Available in three stones</span>
+          <h2 class="materials__title">Stone &amp; Surface</h2>
+          <p class="materials__text">
+            Bronze is offered in Travertino Noce, Emperador Dark, and Calacatta Oro. Each carries the warm mineral depth the table is named for — though each expresses it differently. We share slab photographs before any cut is made, so that the precise stone chosen is exactly what arrives.
+          </p>
+          <div class="materials__swatches" id="materialSelector">
+            <div class="swatch is-active" data-material="travertino">
+              <img src="bronze_03_closeup_veining.png" alt="Travertino Noce" class="swatch__img">
+              <span class="swatch__name">Travertino</span>
+            </div>
+            <div class="swatch" data-material="calacatta">
+              <img src="../../coffee tables/gesto/gesto_07_studio_calacatta.png" alt="Calacatta Oro" class="swatch__img">
+              <span class="swatch__name">Calacatta</span>
+            </div>
+            <div class="swatch" data-material="nero">
+              <img src="../../coffee tables/gesto/gesto_08_studio_noir.png" alt="Emperador Dark" class="swatch__img">
+              <span class="swatch__name">Emperador</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="specs-section" id="specs">
+    <div class="container">
+      <div class="specs__header reveal"><h2 class="specs__title">Technical Specifications</h2></div>
+      <div class="specs__grid">
+        <div class="specs__drawing reveal"><img src="bronze_11_technical.png" alt="Bronze technical drawing — plan and elevation with dimensions"></div>
+        <div class="specs__table-wrap reveal">
+          <table class="specs__table">
+            <tr><td>Dimensions</td><td>Standard dining proportion; bespoke sizing available on request</td></tr>
+            <tr><td>Materials</td><td>Travertino Noce, Calacatta Oro, Emperador Dark</td></tr>
+            <tr><td>Finish</td><td>Honed (standard); polished on request</td></tr>
+            <tr><td>Base</td><td>Solid stone; metal base options available on request</td></tr>
+            <tr><td>Collection</td><td>Dining Tables</td></tr>
+            <tr><td>Lead Time</td><td>Typically 10–14 weeks from slab confirmation</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq__header reveal"><h2 class="faq__title">You have questions? Contact us</h2></div>
+      <div class="faq__list reveal">
+        <div class="faq-item">
+          <button class="faq-item__question"><span>What makes Bronze different from other dining table designs?</span><span class="faq-item__icon">+</span></button>
+          <div class="faq-item__answer"><p>Bronze is selected specifically for stones with warm, deep mineral character — veining that reads as ancient and layered rather than purely graphic. Where some of our dining tables lean architectural, Bronze leans residential and warm. The proportions are generous, the form unhurried. It suits spaces where the dining table is meant to feel like the heart of the home.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question"><span>Can I see the slab before it is cut?</span><span class="faq-item__icon">+</span></button>
+          <div class="faq-item__answer"><p>Yes, always. We photograph available slab sections and share them before any cutting begins. For dining tables, where the full surface will be seen every day, slab selection is especially important — and we spend time on it with every client. You confirm the veining, the pattern, the specific character of your piece before work begins.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question"><span>How is the surface treated for dining use?</span><span class="faq-item__icon">+</span></button>
+          <div class="faq-item__answer"><p>All dining surfaces are sealed before delivery. A honed finish is recommended for its durability and ease of maintenance. We provide a comprehensive stone care guide — routine wiping, avoidance of acids, and periodic resealing to maintain the surface over time. The stone improves with use; a dining table does not need to be precious.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-item__question"><span>What are the delivery and installation requirements?</span><span class="faq-item__icon">+</span></button>
+          <div class="faq-item__answer"><p>Stone dining tables require careful logistics — we coordinate white-glove delivery and installation as part of every order. A site survey is conducted before delivery to confirm access and floor structure. Our team handles placement and levelling; the table arrives ready for use.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="related-section">
+    <div class="container">
+      <div class="related__header reveal">
+        <h2 class="related__title">Explore the Dining Collection</h2>
+        <div class="related__filters">
+          <button class="filter-btn is-active">All</button>
+          <button class="filter-btn">Dining Tables</button>
+          <button class="filter-btn">Coffee Tables</button>
+        </div>
+      </div>
+      <div class="related__grid reveal">
+        <a href="/Products/Dining Tables/animo/" class="product-card">
+          <div class="product-card__media"><img src="../animo/animo_12_catalogue.png" alt="Animo Dining Table" class="product-card__img" loading="lazy"></div>
+          <h3 class="product-card__name">Animo</h3><span class="product-card__type">Dining Table</span>
+        </a>
+        <a href="/Products/Dining Tables/eclipse/" class="product-card">
+          <div class="product-card__media"><img src="../eclipse/eclipse_12_catalogue.png" alt="Eclipse Dining Table" class="product-card__img" loading="lazy"></div>
+          <h3 class="product-card__name">Eclipse</h3><span class="product-card__type">Dining Table</span>
+        </a>
+        <a href="/Products/Dining Tables/empire/" class="product-card">
+          <div class="product-card__media"><img src="../empire/empire_12_catalogue.png" alt="Empire Dining Table" class="product-card__img" loading="lazy"></div>
+          <h3 class="product-card__name">Empire</h3><span class="product-card__type">Dining Table</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="inquiry-preview">
+    <div class="container">
+      <div class="inquiry-preview__inner reveal">
+        <p class="inquiry-preview__label">Your Selected View</p>
+        <div class="inquiry-preview__main"><img src="bronze_01_editorial.png" alt="Selected view" class="inquiry-preview__img" id="inquiryPreviewImg"></div>
+        <div class="inquiry-preview__thumbs">
+          <img src="bronze_01_editorial.png" alt="Interior setting" class="hero-thumb is-active" data-index="0">
+          <img src="bronze_02_human.png" alt="Scale reference" class="hero-thumb" data-index="1">
+          <img src="bronze_12_catalogue.png" alt="Studio view" class="hero-thumb" data-index="2">
+          <img src="bronze_03_closeup_veining.png" alt="Marble veining" class="hero-thumb" data-index="3">
+          <img src="bronze_04_closeup_edge.png" alt="Edge detail" class="hero-thumb" data-index="4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="inquiry-section" id="inquiry">
+    <div class="container">
+      <div class="inquiry__inner reveal">
+        <p class="inquiry__label">Made to Order</p>
+        <h2 class="inquiry__heading">Commission your Bronze</h2>
+        <p class="inquiry__text">Every Bronze begins with a conversation about dimensions, stone, and the space the table will inhabit. Inquire to begin.</p>
+        <form class="inquiry__form" id="inquiryForm">
+          <input type="hidden" name="product" value="Bronze — Dining Table">
+          <div class="form-row">
+            <div class="form-group"><input type="text" name="firstName" class="form-input" placeholder="First Name" required></div>
+            <div class="form-group"><input type="text" name="lastName" class="form-input" placeholder="Last Name" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><input type="email" name="email" class="form-input" placeholder="Email" required></div>
+            <div class="form-group"><input type="tel" name="phone" class="form-input" placeholder="Phone"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group form-group--full"><textarea name="message" class="form-textarea" placeholder="Your message..." rows="4"></textarea></div>
+          </div>
+          <div class="form-consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I agree to the <a href="#">Privacy Policy</a> and consent to being contacted about my inquiry.</label>
+          </div>
+          <button type="submit" class="btn-primary">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png" alt="TIBA Stone" class="footer__logo">
+          <p class="footer__tagline">Bespoke Marble Atelier</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.999 23.227 23.999 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__sitemap">
+          <h4 class="footer__col-title">Navigate</h4>
+          <a href="/" class="footer__link">Home</a><a href="/craft" class="footer__link">Craft</a><a href="/catalog" class="footer__link">Catalog</a><a href="/contact" class="footer__link">Contact</a>
+        </div>
+        <div class="footer__contact-info">
+          <h4 class="footer__col-title">Visit</h4>
+          <p>Tiba Stone Atelier</p><p><a href="mailto:info@tibastone.com">info@tibastone.com</a></p><p><a href="tel:+6281239442648">+62 81239442648</a></p>
+        </div>
+        <div class="footer__form">
+          <h4 class="footer__col-title">Inquire</h4>
+          <form class="footer-form" id="footerForm">
+            <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+            <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+            <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+            <button type="submit" class="btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+        <div class="footer__legal"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var header = document.getElementById('siteHeader');
+      window.addEventListener('scroll', function () { header.classList.toggle('is-scrolled', window.scrollY > 50); }, { passive: true });
+      var hamburger = document.getElementById('hamburgerBtn'), mobileMenu = document.getElementById('mobileMenu'), mobileClose = document.getElementById('mobileMenuClose');
+      hamburger.addEventListener('click', function () { mobileMenu.classList.add('is-open'); document.body.style.overflow = 'hidden'; });
+      function closeMobile() { mobileMenu.classList.remove('is-open'); document.body.style.overflow = ''; }
+      mobileClose.addEventListener('click', closeMobile);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobile(); });
+      var revealEls = document.querySelectorAll('.reveal');
+      var ro = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); ro.unobserve(e.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function (el) { ro.observe(el); });
+      var heroThumbs = document.querySelectorAll('.hero-thumb'), heroMainImg = document.getElementById('heroMainImg'), inquiryPreviewImg = document.getElementById('inquiryPreviewImg');
+      var heroImages = ['bronze_01_editorial.png', 'bronze_02_human.png', 'bronze_12_catalogue.png', 'bronze_03_closeup_veining.png', 'bronze_04_closeup_edge.png'];
+      heroThumbs.forEach(function (thumb) {
+        thumb.addEventListener('click', function () {
+          heroThumbs.forEach(function (t) { t.classList.remove('is-active'); }); this.classList.add('is-active');
+          var idx = parseInt(this.dataset.index, 10); heroMainImg.style.opacity = '0'; if (inquiryPreviewImg) inquiryPreviewImg.style.opacity = '0';
+          setTimeout(function () { heroMainImg.src = heroImages[idx]; heroMainImg.onload = function () { heroMainImg.style.opacity = '1'; }; if (inquiryPreviewImg) { inquiryPreviewImg.src = heroImages[idx]; inquiryPreviewImg.onload = function () { inquiryPreviewImg.style.opacity = '1'; }; } }, 200);
+        });
+      });
+      document.querySelectorAll('.swatch').forEach(function (s) { s.addEventListener('click', function () { document.querySelectorAll('.swatch').forEach(function (sw) { sw.classList.remove('is-active'); }); this.classList.add('is-active'); }); });
+      document.querySelectorAll('.filter-btn').forEach(function (btn) { btn.addEventListener('click', function () { document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('is-active'); }); this.classList.add('is-active'); }); });
+      document.querySelectorAll('.faq-item').forEach(function (item) { item.querySelector('.faq-item__question').addEventListener('click', function () { var o = item.classList.contains('is-open'); document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('is-open'); }); if (!o) item.classList.add('is-open'); }); });
+      var inquiryForm = document.getElementById('inquiryForm');
+      inquiryForm.addEventListener('submit', function (e) { e.preventDefault(); var btn = this.querySelector('button[type="submit"]'), orig = btn.textContent; btn.textContent = 'Sending...'; btn.disabled = true; setTimeout(function () { btn.textContent = 'Inquiry Sent'; inquiryForm.reset(); setTimeout(function () { btn.textContent = orig; btn.disabled = false; }, 3000); }, 1200); });
+      var footerForm = document.getElementById('footerForm');
+      footerForm.addEventListener('submit', function (e) { e.preventDefault(); var btn = this.querySelector('button[type="submit"]'), orig = btn.textContent; btn.textContent = 'Sending...'; btn.disabled = true; setTimeout(function () { btn.textContent = 'Sent'; footerForm.reset(); setTimeout(function () { btn.textContent = orig; btn.disabled = false; }, 3000); }, 1200); });
+    }());
+  </script>
+</body>
+</html>
