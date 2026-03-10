@@ -238,6 +238,8 @@
     .reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.15s; }
     .reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.3s; }
     .reveal-stagger > .reveal:nth-child(4) { transition-delay: 0.45s; }
+    .reveal-stagger > .reveal:nth-child(5) { transition-delay: 0.6s; }
+    .reveal-stagger > .reveal:nth-child(6) { transition-delay: 0.75s; }
 
     /* ============================================
        5. BUTTONS
@@ -632,7 +634,7 @@
        8. BRAND INTRODUCTION
     ============================================ */
     .brand-intro {
-      padding: var(--space-3xl) 0;
+      padding: clamp(4.5rem, 7vw, 6.5rem) 0;
     }
 
     .brand-intro__name {
@@ -741,9 +743,9 @@
        Image bleeds to viewport edge; text fills opposite side
     ============================================ */
     .editorial-split--full-bleed {
-      grid-template-columns: 58vw 1fr;
+      grid-template-columns: 56vw 1fr;
       gap: 0;
-      min-height: 88vh;
+      min-height: 72vh;
       align-items: stretch;
     }
 
@@ -754,14 +756,13 @@
     .editorial-split--full-bleed .editorial-split__img {
       aspect-ratio: unset;
       height: 100%;
-      min-height: 88vh;
+      min-height: 72vh;
       width: 100%;
       object-fit: cover;
     }
 
     .editorial-split--full-bleed .editorial-split__content {
-      padding: clamp(4rem, 8vw, 9rem) clamp(3rem, 5vw, 7rem);
-      padding-top: clamp(5rem, 10vw, 11rem);
+      padding: clamp(3rem, 5vw, 5.5rem) clamp(2.5rem, 4vw, 5rem);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -769,14 +770,12 @@
 
     /* Full-bleed, image on right */
     .editorial-split--full-bleed.editorial-split--img-right {
-      grid-template-columns: 1fr 58vw;
+      grid-template-columns: 1fr 56vw;
     }
 
     .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content {
-      padding-left: clamp(4rem, 7vw, 10rem);
-      padding-right: clamp(2rem, 3vw, 4rem);
-      padding-top: clamp(5rem, 10vw, 11rem);
-      padding-bottom: clamp(4rem, 8vw, 9rem);
+      padding: clamp(3rem, 5vw, 5.5rem) clamp(2.5rem, 4vw, 5rem);
+      padding-left: clamp(3rem, 5vw, 6rem);
     }
 
     /* ============================================
@@ -791,11 +790,11 @@
        11. EXCLUSIVE CREATIONS
     ============================================ */
     .exclusive-creations {
-      padding: var(--space-2xl) 0;
+      padding: clamp(3.5rem, 6vw, 5.5rem) 0;
     }
 
     .exclusive-creations__header {
-      margin-bottom: var(--space-lg);
+      margin-bottom: clamp(2rem, 4vw, 3rem);
     }
 
     .exclusive-creations__label {
@@ -835,7 +834,7 @@
 
     .creation-card__img {
       width: 100%;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 5 / 4;
       object-fit: cover;
       transition: transform var(--duration-slow) var(--ease-smooth);
     }
@@ -879,7 +878,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 16 / 9;
       overflow: hidden;
       text-decoration: none;
     }
@@ -951,14 +950,14 @@
        14. CUSTOMIZATION CALLOUT
     ============================================ */
     .custom-callout {
-      padding: 0 0 var(--space-2xl);
+      padding: 0 0 clamp(3rem, 5vw, 5rem);
       background: var(--color-sand);
     }
 
     .marble-strip {
       display: flex;
       gap: 2rem;
-      margin-top: var(--space-xl);
+      margin-top: clamp(2.5rem, 4vw, 4rem);
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -968,8 +967,8 @@
     }
 
     .marble-strip__item img {
-      width: 140px;
-      height: 140px;
+      width: 120px;
+      height: 120px;
       object-fit: cover;
     }
 
@@ -989,7 +988,7 @@
     ============================================ */
     .advice-banner {
       background: var(--color-dusk-blue);
-      padding: var(--space-xl) 0;
+      padding: clamp(3rem, 5vw, 4.5rem) 0;
     }
 
     .advice-banner__text {
@@ -1009,7 +1008,7 @@
     .site-footer {
       background: var(--color-ivory);
       color: var(--color-stone);
-      padding: var(--space-2xl) 0 var(--space-lg);
+      padding: clamp(3rem, 5vw, 5rem) 0 var(--space-lg);
       border-top: 1px solid rgba(34, 35, 35, 0.1);
     }
 
@@ -1197,12 +1196,12 @@
       }
 
       .brand-intro {
-        padding: var(--space-2xl) 0;
+        padding: clamp(3rem, 5vw, 5rem) 0;
       }
 
       .marble-strip__item img {
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px;
       }
     }
 
@@ -1261,7 +1260,7 @@
 
       .editorial-split__img,
       .editorial-split--full-bleed .editorial-split__img {
-        aspect-ratio: 3 / 4;
+        aspect-ratio: 4 / 3;
         min-height: auto;
       }
 
@@ -1302,11 +1301,11 @@
       .custom-callout,
       .exclusive-creations,
       .category-teasers {
-        padding: var(--space-xl) 0;
+        padding: var(--space-lg) 0;
       }
 
       .advice-banner {
-        padding: var(--space-md) 0;
+        padding: var(--space-lg) 0;
       }
     }
   </style>
@@ -1527,6 +1526,28 @@
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
             <h2 class="category-card__title">Vases</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+        <a href="/catalog" class="category-card reveal">
+          <img src="Products/Dining Tables/animo/animo_01_editorial.webp"
+               alt="Animo Dining Table — sculptural stone form as the centrepiece of a dining room"
+               class="category-card__bg"
+               loading="lazy" decoding="async">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Dining Tables</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+        <a href="/catalog" class="category-card reveal">
+          <img src="Products/Compliments/aime/aime_01_editorial.webp"
+               alt="Aime — refined stone complement object for considered interiors"
+               class="category-card__bg"
+               loading="lazy" decoding="async">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Complements</h2>
             <span class="btn-primary btn-primary--light">Explore</span>
           </div>
         </a>
