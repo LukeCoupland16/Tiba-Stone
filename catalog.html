@@ -20,7 +20,7 @@
       --color-river-green: #A3996A;
       --color-dusk-blue: #153647;
       --color-moss: #3E402B;
-      --color-sand: #F5F5F5;
+      --color-sand: #F0EBE3;
 
       /* Typography */
       --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
@@ -92,6 +92,19 @@
       overflow-x: hidden;
     }
 
+    /* Grain texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
     img {
       max-width: 100%;
       height: auto;
@@ -145,10 +158,10 @@
     }
 
     .accent-rule {
-      width: 60px;
+      width: 48px;
       height: 1px;
-      background: var(--color-sunset);
-      margin: 1.5rem auto;
+      background: linear-gradient(90deg, transparent, var(--color-sunset) 15%, var(--color-sunset) 85%, transparent);
+      margin: 1.75rem auto;
     }
 
     .section-divider {
@@ -177,13 +190,60 @@
     }
 
     /* ============================================
+       CUSTOM CURSOR
+    ============================================ */
+    @media (hover: hover) and (pointer: fine) {
+      html, html * { cursor: none !important; }
+    }
+
+    .cursor-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--color-stone);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      transition: width 0.22s ease, height 0.22s ease, opacity 0.2s ease;
+      will-change: left, top;
+    }
+
+    .cursor-ring {
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(34, 35, 35, 0.28);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99998;
+      transform: translate(-50%, -50%);
+      transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.3s ease,
+                  opacity 0.2s ease;
+      will-change: left, top;
+    }
+
+    .cursor-dot.is-hovering { width: 7px; height: 7px; }
+    .cursor-ring.is-hovering { width: 46px; height: 46px; border-color: rgba(34, 35, 35, 0.12); }
+
+    @media (pointer: coarse) {
+      .cursor-dot, .cursor-ring { display: none; }
+    }
+
+    /* ============================================
        4. SCROLL REVEAL
     ============================================ */
     .reveal {
       opacity: 0;
-      transform: translateY(40px);
-      transition: opacity var(--duration-medium) var(--ease-smooth),
-                  transform var(--duration-medium) var(--ease-smooth);
+      transform: translateY(28px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .reveal.is-visible {
@@ -219,13 +279,30 @@
       letter-spacing: var(--ls-medium);
       text-decoration: none;
       cursor: pointer;
-      transition: background var(--duration-fast) var(--ease-smooth),
-                  color var(--duration-fast) var(--ease-smooth);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transition: color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-stone);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .btn-primary:hover {
-      background: var(--color-stone);
       color: var(--color-ivory);
+      background: transparent;
+    }
+
+    .btn-primary:hover::before {
+      transform: scaleX(1);
     }
 
     .btn-primary--light {
@@ -233,8 +310,12 @@
       color: var(--color-ivory);
     }
 
-    .btn-primary--light:hover {
+    .btn-primary--light::before {
       background: var(--color-ivory);
+    }
+
+    .btn-primary--light:hover {
+      background: transparent;
       color: var(--color-stone);
     }
 
@@ -290,9 +371,11 @@
     }
 
     .site-header.is-scrolled {
-      background: var(--color-ivory);
-      border-bottom-color: rgba(34, 35, 35, 0.1);
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom-color: rgba(34, 35, 35, 0.08);
       padding: 0.875rem 0;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
 
     .header__inner {
@@ -1132,6 +1215,10 @@
   </style>
 </head>
 <body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
   <!-- ============================================
        HEADER
@@ -2447,6 +2534,55 @@
           });
         });
       });
+
+      /* ------------------------------------------
+         CUSTOM CURSOR
+      ------------------------------------------ */
+      (function () {
+        var dot  = document.getElementById('cursorDot');
+        var ring = document.getElementById('cursorRing');
+        if (!dot || !ring) return;
+
+        var mouseX = 0, mouseY = 0;
+        var ringX  = 0, ringY  = 0;
+
+        document.addEventListener('mousemove', function (e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          dot.style.left = mouseX + 'px';
+          dot.style.top  = mouseY + 'px';
+        });
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        (function animateRing() {
+          ringX = lerp(ringX, mouseX, 0.1);
+          ringY = lerp(ringY, mouseY, 0.1);
+          ring.style.left = ringX + 'px';
+          ring.style.top  = ringY + 'px';
+          requestAnimationFrame(animateRing);
+        })();
+
+        document.querySelectorAll('a, button, [role="tab"], input, textarea, label').forEach(function (el) {
+          el.addEventListener('mouseenter', function () {
+            dot.classList.add('is-hovering');
+            ring.classList.add('is-hovering');
+          });
+          el.addEventListener('mouseleave', function () {
+            dot.classList.remove('is-hovering');
+            ring.classList.remove('is-hovering');
+          });
+        });
+
+        document.addEventListener('mouseleave', function () {
+          dot.style.opacity  = '0';
+          ring.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', function () {
+          dot.style.opacity  = '1';
+          ring.style.opacity = '1';
+        });
+      })();
 
       /* ------------------------------------------
          7. FOOTER FORM HANDLER

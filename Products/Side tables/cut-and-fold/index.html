@@ -86,6 +86,19 @@
       overflow-x: hidden;
     }
 
+    /* Grain texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
     img {
       max-width: 100%;
       height: auto;
@@ -124,6 +137,53 @@
       margin: 0 auto;
       height: 1px;
       background: rgba(34, 35, 35, 0.08);
+    }
+
+    /* ============================================
+       CUSTOM CURSOR
+    ============================================ */
+    @media (hover: hover) and (pointer: fine) {
+      html, html * { cursor: none !important; }
+    }
+
+    .cursor-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--color-stone);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      transition: width 0.22s ease, height 0.22s ease, opacity 0.2s ease;
+      will-change: left, top;
+    }
+
+    .cursor-ring {
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(34, 35, 35, 0.28);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99998;
+      transform: translate(-50%, -50%);
+      transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.3s ease,
+                  opacity 0.2s ease;
+      will-change: left, top;
+    }
+
+    .cursor-dot.is-hovering { width: 7px; height: 7px; }
+    .cursor-ring.is-hovering { width: 46px; height: 46px; border-color: rgba(34, 35, 35, 0.12); }
+
+    @media (pointer: coarse) {
+      .cursor-dot, .cursor-ring { display: none; }
     }
 
     /* ============================================
@@ -215,6 +275,8 @@
 
     .site-header.is-scrolled {
       padding: 0.875rem 0;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
 
     .header__inner {
@@ -1264,6 +1326,10 @@
 <body>
 
   <!-- HEADER -->
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
   <header class="site-header" id="siteHeader">
     <div class="header__inner container">
       <a href="/" class="header__logo">
@@ -1391,36 +1457,40 @@
     <div class="container">
       <div class="materials__inner">
         <div class="materials__media reveal">
-          <img src="cut-and-fold_05_closeup_surface.png"
+          <img src="Product Variations/cut-and-fold_calacatta-viola.png"
                alt="Marble surface detail — Cut &amp; Fold side table honed finish"
                loading="lazy">
         </div>
         <div class="materials__content reveal">
-          <span class="materials__label">Available in four stones</span>
+          <span class="materials__label">Available in six stones</span>
           <h2 class="materials__title">Stone &amp; Finish</h2>
           <p class="materials__text">
-            The Cut &amp; Fold is offered in four stone selections, each reading the folded form differently. Calacatta's bold veining crosses the crease dramatically. Bianco Carrara dissolves it into something almost ethereal. Portoro's dark ground makes the ridge emerge like a fault line in obsidian. All surfaces are honed — a matte finish that keeps the geometry honest.
+            Cut &amp; Fold is offered in Calacatta Viola, Fendy Grey, Ice Age Onyx, Noir Aziza, Rosso Levanto, and Verde Patricia. Each stone brings its own character — from the dramatic veining of Calacatta Viola to the deep silence of Noir Aziza.
           </p>
           <div class="materials__swatches" id="materialSelector">
-            <div class="swatch is-active" data-material="calacatta">
-              <img src="cut-and-fold_03_closeup_veining.png"
-                   alt="Calacatta" class="swatch__img">
-              <span class="swatch__name">Calacatta</span>
+            <div class="swatch is-active" data-material="calacatta-viola" data-variant-img="Product Variations/cut-and-fold_calacatta-viola.png">
+              <img src="../../../Stone types/Calacatta Viola.jpeg" alt="Calacatta Viola" class="swatch__img">
+              <span class="swatch__name">Calacatta Viola</span>
             </div>
-            <div class="swatch" data-material="carrara">
-              <img src="../../coffee tables/crystal/crystal_03_closeup_veining.png"
-                   alt="Bianco Carrara" class="swatch__img">
-              <span class="swatch__name">Carrara</span>
+            <div class="swatch" data-material="fendy-grey" data-variant-img="Product Variations/cut-and-fold_fendy-grey.png">
+              <img src="../../../Stone types/Fendy-Grey.jpg" alt="Fendy Grey" class="swatch__img">
+              <span class="swatch__name">Fendy Grey</span>
             </div>
-            <div class="swatch" data-material="portoro">
-              <img src="../../coffee tables/gesto/gesto_08_studio_noir.png"
-                   alt="Portoro" class="swatch__img">
-              <span class="swatch__name">Portoro</span>
+            <div class="swatch" data-material="ice-age-onyx" data-variant-img="Product Variations/cut-and-fold_ice-age-onyx.png">
+              <img src="../../../Stone types/Ice-Age-Onyx-Texture.png" alt="Ice Age Onyx" class="swatch__img">
+              <span class="swatch__name">Ice Age Onyx</span>
             </div>
-            <div class="swatch" data-material="verde">
-              <img src="../../coffee tables/gesto/gesto_09_studio_verde.png"
-                   alt="Verde Alpi" class="swatch__img">
-              <span class="swatch__name">Verde Alpi</span>
+            <div class="swatch" data-material="noir-aziza" data-variant-img="Product Variations/cut-and-fold_noir-aziza.png">
+              <img src="../../../Stone types/Noir-Aziza Texture.jpg" alt="Noir Aziza" class="swatch__img">
+              <span class="swatch__name">Noir Aziza</span>
+            </div>
+            <div class="swatch" data-material="rosso-levanto" data-variant-img="Product Variations/cut-and-fold_rosso-levanto.png">
+              <img src="../../../Stone types/Roso-Levanto-texture.jpg" alt="Rosso Levanto" class="swatch__img">
+              <span class="swatch__name">Rosso Levanto</span>
+            </div>
+            <div class="swatch" data-material="verde-patricia" data-variant-img="Product Variations/cut-and-fold_verde-patricia.png">
+              <img src="../../../Stone types/Verde-Patricia-Texture.jpg" alt="Verde Patricia" class="swatch__img">
+              <span class="swatch__name">Verde Patricia</span>
             </div>
           </div>
         </div>
@@ -1752,10 +1822,19 @@
 
       // Material swatch selector
       var swatches = document.querySelectorAll('.swatch');
+      var materialsMainImg = document.querySelector('.materials__media img');
       swatches.forEach(function (s) {
         s.addEventListener('click', function () {
           swatches.forEach(function (sw) { sw.classList.remove('is-active'); });
           this.classList.add('is-active');
+          var variantImg = this.getAttribute('data-variant-img');
+          if (variantImg && materialsMainImg) {
+            materialsMainImg.style.opacity = '0';
+            setTimeout(function () {
+              materialsMainImg.src = variantImg;
+              materialsMainImg.style.opacity = '1';
+            }, 300);
+          }
         });
       });
 
@@ -1807,6 +1886,55 @@
         if (img.complete && img.naturalHeight !== 0) show();
         else img.addEventListener('load', show);
       });
+
+      /* ------------------------------------------
+         CUSTOM CURSOR
+      ------------------------------------------ */
+      (function () {
+        var dot  = document.getElementById('cursorDot');
+        var ring = document.getElementById('cursorRing');
+        if (!dot || !ring) return;
+
+        var mouseX = 0, mouseY = 0;
+        var ringX  = 0, ringY  = 0;
+
+        document.addEventListener('mousemove', function (e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          dot.style.left = mouseX + 'px';
+          dot.style.top  = mouseY + 'px';
+        });
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        (function animateRing() {
+          ringX = lerp(ringX, mouseX, 0.1);
+          ringY = lerp(ringY, mouseY, 0.1);
+          ring.style.left = ringX + 'px';
+          ring.style.top  = ringY + 'px';
+          requestAnimationFrame(animateRing);
+        })();
+
+        document.querySelectorAll('a, button, [role="tab"], input, textarea, label').forEach(function (el) {
+          el.addEventListener('mouseenter', function () {
+            dot.classList.add('is-hovering');
+            ring.classList.add('is-hovering');
+          });
+          el.addEventListener('mouseleave', function () {
+            dot.classList.remove('is-hovering');
+            ring.classList.remove('is-hovering');
+          });
+        });
+
+        document.addEventListener('mouseleave', function () {
+          dot.style.opacity  = '0';
+          ring.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', function () {
+          dot.style.opacity  = '1';
+          ring.style.opacity = '1';
+        });
+      })();
 
     })();
   </script>

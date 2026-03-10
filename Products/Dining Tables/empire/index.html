@@ -197,6 +197,10 @@
 </head>
 <body>
 
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
   <header class="site-header" id="siteHeader">
     <a href="/" class="header__logo"><img src="../../../TIBA_FINAL_LOGO_LANDSCAPE (3) (13).png" alt="TIBA Stone"></a>
     <nav class="header__nav">
@@ -276,26 +280,38 @@
     <div class="container">
       <div class="materials__inner">
         <div class="materials__media reveal">
-          <img src="empire_03_closeup_veining.png" alt="Empire surface detail — the mineral movement of the stone at full dining scale" loading="lazy">
+          <img src="Product Variations/empire_calacatta-viola.png" alt="Empire surface detail — the mineral movement of the stone at full dining scale" loading="lazy">
         </div>
         <div class="materials__content reveal">
-          <span class="materials__label">Available in three stones</span>
+          <span class="materials__label">Available in six stones</span>
           <h2 class="materials__title">Stone &amp; Surface</h2>
           <p class="materials__text">
-            Empire is offered in Calacatta, Nero Marquina, and Statuario. At dining table scale, the slab's full character is visible across the entire surface — veining that at smaller dimensions would be intimate becomes architectural here, a composition in itself. We select and photograph slabs with this in mind, and share the options before any work begins.
+            Empire is offered in Calacatta Viola, Fendy Grey, Ice Age Onyx, Noir Aziza, Rosso Levanto, and Verde Patricia. Each stone brings its own character — from the dramatic veining of Calacatta Viola to the deep silence of Noir Aziza.
           </p>
           <div class="materials__swatches" id="materialSelector">
-            <div class="swatch is-active" data-material="calacatta">
-              <img src="../../coffee tables/gesto/gesto_07_studio_calacatta.png" alt="Calacatta" class="swatch__img">
-              <span class="swatch__name">Calacatta</span>
+            <div class="swatch is-active" data-material="calacatta-viola" data-variant-img="Product Variations/empire_calacatta-viola.png">
+              <img src="../../../Stone types/Calacatta Viola.jpeg" alt="Calacatta Viola" class="swatch__img">
+              <span class="swatch__name">Calacatta Viola</span>
             </div>
-            <div class="swatch" data-material="nero">
-              <img src="../../coffee tables/gesto/gesto_08_studio_noir.png" alt="Nero Marquina" class="swatch__img">
-              <span class="swatch__name">Nero</span>
+            <div class="swatch" data-material="fendy-grey" data-variant-img="Product Variations/empire_fendy-grey.png">
+              <img src="../../../Stone types/Fendy-Grey.jpg" alt="Fendy Grey" class="swatch__img">
+              <span class="swatch__name">Fendy Grey</span>
             </div>
-            <div class="swatch" data-material="statuario">
-              <img src="empire_03_closeup_veining.png" alt="Statuario" class="swatch__img">
-              <span class="swatch__name">Statuario</span>
+            <div class="swatch" data-material="ice-age-onyx" data-variant-img="Product Variations/empire_ice-age-onyx.png">
+              <img src="../../../Stone types/Ice-Age-Onyx-Texture.png" alt="Ice Age Onyx" class="swatch__img">
+              <span class="swatch__name">Ice Age Onyx</span>
+            </div>
+            <div class="swatch" data-material="noir-aziza" data-variant-img="Product Variations/empire_noir-aziza.png">
+              <img src="../../../Stone types/Noir-Aziza Texture.jpg" alt="Noir Aziza" class="swatch__img">
+              <span class="swatch__name">Noir Aziza</span>
+            </div>
+            <div class="swatch" data-material="rosso-levanto" data-variant-img="Product Variations/empire_rosso-levanto.png">
+              <img src="../../../Stone types/Roso-Levanto-texture.jpg" alt="Rosso Levanto" class="swatch__img">
+              <span class="swatch__name">Rosso Levanto</span>
+            </div>
+            <div class="swatch" data-material="verde-patricia" data-variant-img="Product Variations/empire_verde-patricia.png">
+              <img src="../../../Stone types/Verde-Patricia-Texture.jpg" alt="Verde Patricia" class="swatch__img">
+              <span class="swatch__name">Verde Patricia</span>
             </div>
           </div>
         </div>
@@ -480,7 +496,22 @@
           setTimeout(function () { heroMainImg.src = heroImages[idx]; heroMainImg.onload = function () { heroMainImg.style.opacity = '1'; }; if (inquiryPreviewImg) { inquiryPreviewImg.src = heroImages[idx]; inquiryPreviewImg.onload = function () { inquiryPreviewImg.style.opacity = '1'; }; } }, 200);
         });
       });
-      document.querySelectorAll('.swatch').forEach(function (s) { s.addEventListener('click', function () { document.querySelectorAll('.swatch').forEach(function (sw) { sw.classList.remove('is-active'); }); this.classList.add('is-active'); }); });
+      var swatches = document.querySelectorAll('.swatch');
+      var materialsMainImg = document.querySelector('.materials__media img');
+      swatches.forEach(function (s) {
+        s.addEventListener('click', function () {
+          swatches.forEach(function (sw) { sw.classList.remove('is-active'); });
+          this.classList.add('is-active');
+          var variantImg = this.getAttribute('data-variant-img');
+          if (variantImg && materialsMainImg) {
+            materialsMainImg.style.opacity = '0';
+            setTimeout(function () {
+              materialsMainImg.src = variantImg;
+              materialsMainImg.style.opacity = '1';
+            }, 300);
+          }
+        });
+      });
       document.querySelectorAll('.filter-btn').forEach(function (btn) { btn.addEventListener('click', function () { document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('is-active'); }); this.classList.add('is-active'); }); });
       document.querySelectorAll('.faq-item').forEach(function (item) { item.querySelector('.faq-item__question').addEventListener('click', function () { var o = item.classList.contains('is-open'); document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('is-open'); }); if (!o) item.classList.add('is-open'); }); });
       var inquiryForm = document.getElementById('inquiryForm');
