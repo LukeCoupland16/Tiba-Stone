@@ -31,12 +31,12 @@
       --text-h1: clamp(1.875rem, 3vw, 2.75rem);
       --text-h2: clamp(1.5rem, 2.25vw, 2rem);
       --text-h3: clamp(1.125rem, 1.5vw, 1.375rem);
-      --text-subtitle: clamp(0.625rem, 0.9vw, 0.75rem);
-      --text-body: clamp(0.875rem, 1vw, 1rem);
-      --text-small: clamp(0.6875rem, 0.85vw, 0.8125rem);
-      --text-xs: clamp(0.5625rem, 0.7vw, 0.6875rem);
+      --text-subtitle: clamp(0.8125rem, 0.85vw, 0.875rem);
+      --text-body: clamp(1rem, 1.1vw, 1.125rem);
+      --text-small: clamp(0.8125rem, 0.9vw, 0.875rem);
+      --text-xs: clamp(0.6875rem, 0.75vw, 0.75rem);
 
-      --ls-wide: 0.2em;
+      --ls-wide: 0.16em;
       --ls-medium: 0.12em;
 
       --lh-heading: 1.25;
@@ -66,7 +66,7 @@
     ============================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
-    body { background: var(--color-ivory); color: var(--color-stone); font-family: var(--font-body); font-weight: 300; line-height: var(--lh-body); }
+    body { background: var(--color-ivory); color: var(--color-stone); font-family: var(--font-body); font-weight: 400; line-height: var(--lh-body); }
     img { display: block; max-width: 100%; }
     a { text-decoration: none; color: inherit; }
 
@@ -266,7 +266,7 @@
     .product-hero__description {
       font-size: var(--text-body);
       line-height: var(--lh-body);
-      font-weight: 300;
+      font-weight: 400;
       max-width: 420px;
     }
     .product-hero__thumbs {
@@ -342,7 +342,7 @@
       line-height: var(--lh-heading);
     }
     .editorial__heading em { font-style: italic; color: var(--color-sunset); }
-    .editorial__text { font-weight: 300; line-height: var(--lh-body); }
+    .editorial__text { font-weight: 400; line-height: var(--lh-body); }
 
     /* ============================================
        10. MATERIALS
@@ -368,7 +368,7 @@
       font-size: var(--text-h2);
       margin-bottom: var(--space-sm);
     }
-    .materials__text { font-weight: 300; line-height: var(--lh-body); margin-bottom: var(--space-md); }
+    .materials__text { font-weight: 400; line-height: var(--lh-body); margin-bottom: var(--space-md); }
     .materials__swatches { display: flex; gap: 1.25rem; flex-wrap: wrap; }
     .swatch { display: flex; flex-direction: column; align-items: center; cursor: pointer; opacity: 0.55; transition: opacity var(--duration-fast); }
     .swatch:hover { opacity: 1; }
@@ -440,11 +440,11 @@
     .faq-item { border-bottom: 1px solid rgba(34,35,35,0.08); }
     .faq-item__question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; font-family: var(--font-body); font-size: var(--text-body); font-weight: 400; text-align: left; cursor: pointer; background: none; border: none; color: var(--color-stone); transition: color var(--duration-fast); }
     .faq-item__question:hover { color: var(--color-sunset); }
-    .faq-item__icon { font-size: 1.25rem; font-weight: 300; transition: transform var(--duration-fast); flex-shrink: 0; margin-left: 1rem; }
+    .faq-item__icon { font-size: 1.25rem; font-weight: 400; transition: transform var(--duration-fast); flex-shrink: 0; margin-left: 1rem; }
     .faq-item.is-open .faq-item__icon { transform: rotate(45deg); }
     .faq-item__answer { max-height: 0; overflow: hidden; transition: max-height var(--duration-fast), padding var(--duration-fast); }
     .faq-item.is-open .faq-item__answer { max-height: 400px; padding-bottom: 1.25rem; }
-    .faq-item__answer p { font-weight: 300; line-height: var(--lh-body); color: var(--color-river-green); }
+    .faq-item__answer p { font-weight: 400; line-height: var(--lh-body); color: var(--color-river-green); }
 
     /* ============================================
        16. INQUIRY
@@ -453,15 +453,15 @@
     .inquiry__inner { max-width: 720px; margin: 0 auto; text-align: center; }
     .inquiry__label { font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); margin-bottom: 0.75rem; }
     .inquiry__heading { font-family: var(--font-display); font-size: var(--text-h2); margin-bottom: 1rem; }
-    .inquiry__text { font-weight: 300; margin-bottom: var(--space-lg); }
+    .inquiry__text { font-weight: 400; margin-bottom: var(--space-lg); }
     .inquiry__form { text-align: left; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
     .form-group--full { grid-column: span 2; }
-    .form-input, .form-textarea { width: 100%; padding: 0.875rem 0; border: none; border-bottom: 1px solid var(--color-river-green); background: transparent; font-family: var(--font-body); font-size: var(--text-body); font-weight: 300; color: var(--color-stone); outline: none; transition: border-color var(--duration-fast); }
+    .form-input, .form-textarea { width: 100%; padding: 0.875rem 0; border: none; border-bottom: 1px solid var(--color-river-green); background: transparent; font-family: var(--font-body); font-size: var(--text-body); font-weight: 400; color: var(--color-stone); outline: none; transition: border-color var(--duration-fast); }
     .form-input::placeholder, .form-textarea::placeholder { color: rgba(34,35,35,0.35); }
     .form-input:focus, .form-textarea:focus { border-bottom-color: var(--color-stone); }
     .form-textarea { resize: vertical; min-height: 100px; }
-    .form-consent { display: flex; align-items: flex-start; gap: 0.75rem; margin: 1.5rem 0; font-size: var(--text-small); font-weight: 300; color: var(--color-river-green); }
+    .form-consent { display: flex; align-items: flex-start; gap: 0.75rem; margin: 1.5rem 0; font-size: var(--text-small); font-weight: 400; color: var(--color-river-green); }
     .form-consent input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; accent-color: var(--color-stone); }
     .form-consent a { color: var(--color-stone); text-decoration: underline; text-underline-offset: 2px; }
     .btn-primary { display: inline-block; padding: 1rem 2.5rem; background: var(--color-stone); color: var(--color-ivory); font-family: var(--font-body); font-size: var(--text-small); font-weight: 500; letter-spacing: var(--ls-medium); text-transform: uppercase; border: none; cursor: pointer; transition: background var(--duration-fast); }
@@ -479,13 +479,13 @@
     .footer__social a:hover { color: var(--color-stone); }
     .footer__social svg { width: 16px; height: 16px; fill: currentColor; }
     .footer__col-title { font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--ls-wide); font-weight: 500; margin-bottom: 1.25rem; }
-    .footer__link { display: block; color: var(--color-river-green); font-size: var(--text-body); font-weight: 300; margin-bottom: 0.625rem; transition: color var(--duration-fast); }
+    .footer__link { display: block; color: var(--color-river-green); font-size: var(--text-body); font-weight: 400; margin-bottom: 0.625rem; transition: color var(--duration-fast); }
     .footer__link:hover { color: var(--color-stone); }
-    .footer__contact-info p { color: var(--color-river-green); font-size: var(--text-body); font-weight: 300; margin-bottom: 0.5rem; line-height: 1.5; }
+    .footer__contact-info p { color: var(--color-river-green); font-size: var(--text-body); font-weight: 400; margin-bottom: 0.5rem; line-height: 1.5; }
     .footer__contact-info a { color: var(--color-river-green); transition: color var(--duration-fast); }
     .footer__contact-info a:hover { color: var(--color-stone); }
-    .footer-form__input, .footer-form__textarea { background: transparent; border: none; border-bottom: 1px solid var(--color-river-green); color: var(--color-stone); padding: 0.75rem 0; width: 100%; font-family: var(--font-body); font-size: var(--text-small); font-weight: 300; margin-bottom: 1rem; transition: border-color var(--duration-fast); outline: none; resize: none; }
-    .footer-form__input::placeholder, .footer-form__textarea::placeholder { color: var(--color-river-green); font-weight: 300; }
+    .footer-form__input, .footer-form__textarea { background: transparent; border: none; border-bottom: 1px solid var(--color-river-green); color: var(--color-stone); padding: 0.75rem 0; width: 100%; font-family: var(--font-body); font-size: var(--text-small); font-weight: 400; margin-bottom: 1rem; transition: border-color var(--duration-fast); outline: none; resize: none; }
+    .footer-form__input::placeholder, .footer-form__textarea::placeholder { color: var(--color-river-green); font-weight: 400; }
     .footer-form__input:focus, .footer-form__textarea:focus { border-color: var(--color-stone); }
     .footer-form .btn-primary { width: 100%; text-align: center; margin-top: 0.5rem; }
     .footer__bottom { margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid rgba(34,35,35,0.08); display: flex; justify-content: space-between; align-items: center; font-size: var(--text-small); color: var(--color-river-green); }
