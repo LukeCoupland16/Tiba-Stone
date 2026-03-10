@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="/Products/coffee tables/terra/">
+  <base href="/Products/Coffee Tables/terra/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terra Coffee Table | TIBA STONE</title>
-  <meta name="description" content="The Terra Coffee Table — a monolithic slab of Travertino Romano on two solid stone legs. Natural voids, fossil traces, and the unfiltered memory of the earth. Bespoke stone furniture by Tiba Stone.">
+  <meta name="description" content="The Terra Coffee Table — quarried from Travertino Romano, its warm ivory surface marked by natural voids and fossil traces the earth left behind. Bespoke stone furniture by Tiba Stone.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="image" href="terra_02_human.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="terra_02_human.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     /* ============================================
@@ -27,20 +27,21 @@
       --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
       --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 
-      --text-hero: clamp(2.25rem, 4vw, 3.5rem);
-      --text-h1: clamp(1.875rem, 3vw, 2.75rem);
-      --text-h2: clamp(1.5rem, 2.25vw, 2rem);
-      --text-h3: clamp(1.125rem, 1.5vw, 1.375rem);
-      --text-subtitle: clamp(0.8125rem, 0.85vw, 0.875rem);
-      --text-body: clamp(1rem, 1.1vw, 1.125rem);
+      --text-hero: clamp(2.75rem, 5vw, 4.5rem);
+      --text-h1: clamp(2rem, 3.5vw, 3.25rem);
+      --text-h2: clamp(1.625rem, 2.5vw, 2.25rem);
+      --text-h3: clamp(1.25rem, 1.8vw, 1.5rem);
+      --text-subtitle: clamp(0.8125rem, 0.9vw, 0.875rem);
+      --text-body: clamp(1rem, 1.15vw, 1.125rem);
       --text-small: clamp(0.8125rem, 0.9vw, 0.875rem);
       --text-xs: clamp(0.6875rem, 0.75vw, 0.75rem);
 
       --ls-wide: 0.16em;
       --ls-medium: 0.12em;
+      --ls-slight: 0.03em;
 
-      --lh-heading: 1.25;
-      --lh-body: 1.85;
+      --lh-heading: 1.2;
+      --lh-body: 1.8;
 
       --space-xs: 0.5rem;
       --space-sm: 1rem;
@@ -48,14 +49,15 @@
       --space-lg: 4rem;
       --space-xl: 6rem;
       --space-2xl: 8rem;
-      --space-3xl: 12rem;
+      --space-3xl: 10rem;
 
-      --container-max: 1400px;
-      --container-narrow: 800px;
-      --container-pad: clamp(1.5rem, 5vw, 4rem);
+      --container-max: 1600px;
+      --container-narrow: 780px;
+      --container-pad: clamp(1.5rem, 5vw, 5rem);
       --grid-gap: clamp(1.5rem, 3vw, 2.5rem);
 
       --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
       --duration-fast: 0.3s;
       --duration-medium: 0.6s;
       --duration-slow: 1s;
@@ -64,30 +66,12 @@
     /* ============================================
        2. RESET & BASE
     ============================================ */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-    body {
-      background: var(--color-ivory);
-      color: var(--color-stone);
-      font-family: var(--font-body);
-      font-weight: 400;
-      line-height: var(--lh-body);
-      font-size: var(--text-body);
-      overflow-x: hidden;
-    }
+    body { background: var(--color-ivory); color: var(--color-stone); font-family: var(--font-body); font-weight: 400; line-height: var(--lh-body); font-size: var(--text-body); overflow-x: hidden; }
 
-    /* Grain texture overlay */
     body::before {
       content: '';
       position: fixed;
@@ -100,114 +84,76 @@
       background-size: 200px 200px;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      line-height: var(--lh-heading);
-    }
-
-    a {
-      color: var(--color-stone);
-      text-decoration: none;
-    }
-
-    button {
-      font-family: var(--font-body);
-      border: none;
-      background: none;
-      cursor: pointer;
-    }
+    img { max-width: 100%; height: auto; display: block; }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 400; line-height: var(--lh-heading); }
+    a { color: var(--color-stone); text-decoration: none; }
+    button { font-family: var(--font-body); border: none; background: none; cursor: pointer; }
+    input, textarea { font-family: var(--font-body); }
 
     /* ============================================
        3. UTILITIES
     ============================================ */
-    .container {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      padding: 0 var(--container-pad);
+    .container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-pad); }
+    .container--narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 var(--container-pad); }
+    .text-center { text-align: center; }
+
+    .accent-rule {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-sunset) 15%, var(--color-sunset) 85%, transparent);
     }
 
-    .section-divider {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      height: 1px;
-      background: rgba(34, 35, 35, 0.08);
-    }
+    .section-divider { max-width: var(--container-max); margin: 0 auto; height: 1px; background: rgba(34, 35, 35, 0.1); }
 
     /* ============================================
        CUSTOM CURSOR
     ============================================ */
-    @media (hover: hover) and (pointer: fine) {
-      html, html * { cursor: none !important; }
-    }
+    @media (hover: hover) and (pointer: fine) { html, html * { cursor: none !important; } }
 
     .cursor-dot {
-      width: 5px;
-      height: 5px;
-      background: var(--color-stone);
-      border-radius: 50%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 99999;
+      width: 5px; height: 5px; background: var(--color-stone); border-radius: 50%;
+      position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999;
       transform: translate(-50%, -50%);
       transition: width 0.22s ease, height 0.22s ease, opacity 0.2s ease;
       will-change: left, top;
     }
 
     .cursor-ring {
-      width: 30px;
-      height: 30px;
-      border: 1px solid rgba(34, 35, 35, 0.28);
-      border-radius: 50%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 99998;
+      width: 30px; height: 30px; border: 1px solid rgba(34, 35, 35, 0.28); border-radius: 50%;
+      position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99998;
       transform: translate(-50%, -50%);
-      transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.3s ease,
-                  opacity 0.2s ease;
+      transition: width 0.35s var(--ease-spring), height 0.35s var(--ease-spring), border-color 0.3s ease, opacity 0.2s ease;
       will-change: left, top;
     }
 
     .cursor-dot.is-hovering { width: 7px; height: 7px; }
     .cursor-ring.is-hovering { width: 46px; height: 46px; border-color: rgba(34, 35, 35, 0.12); }
 
-    @media (pointer: coarse) {
-      .cursor-dot, .cursor-ring { display: none; }
-    }
+    @media (pointer: coarse) { .cursor-dot, .cursor-ring { display: none; } }
 
     /* ============================================
        4. SCROLL REVEAL
     ============================================ */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity var(--duration-medium) var(--ease-smooth),
-                  transform var(--duration-medium) var(--ease-smooth);
+      transform: translateY(28px);
+      transition: opacity 0.85s var(--ease-spring), transform 0.85s var(--ease-spring);
     }
 
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+    .reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.15s; }
+    .reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.3s; }
+    .reveal-stagger > .reveal:nth-child(4) { transition-delay: 0.45s; }
+    .reveal-stagger > .reveal:nth-child(5) { transition-delay: 0.6s; }
 
     /* ============================================
        5. BUTTONS
     ============================================ */
     .btn-primary {
       display: inline-block;
-      padding: 0.875rem 2rem;
+      padding: 1rem 2.5rem;
       border: 1px solid var(--color-stone);
       color: var(--color-stone);
       background: transparent;
@@ -216,213 +162,169 @@
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: var(--ls-medium);
+      text-decoration: none;
       cursor: pointer;
-      transition: background var(--duration-fast) var(--ease-smooth),
-                  color var(--duration-fast) var(--ease-smooth);
-    }
-
-    .btn-primary:hover {
-      background: var(--color-stone);
-      color: var(--color-ivory);
-    }
-
-    .btn-text {
-      font-family: var(--font-body);
-      font-size: var(--text-small);
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: var(--ls-medium);
-      color: var(--color-river-green);
       position: relative;
-      padding-bottom: 2px;
-      transition: color var(--duration-fast) var(--ease-smooth);
+      overflow: hidden;
+      isolation: isolate;
+      transition: color 0.45s var(--ease-spring);
     }
 
-    .btn-text::after {
+    .btn-primary::before {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: currentColor;
+      inset: 0;
+      background: var(--color-stone);
+      z-index: -1;
       transform: scaleX(0);
-      transform-origin: left;
-      transition: transform var(--duration-fast) var(--ease-smooth);
+      transform-origin: left center;
+      transition: transform 0.45s var(--ease-spring);
     }
 
-    .btn-text:hover {
+    .btn-primary:hover { color: var(--color-ivory); }
+    .btn-primary:hover::before { transform: scaleX(1); }
+
+    .btn-primary--light { border-color: var(--color-ivory); color: var(--color-ivory); }
+    .btn-primary--light::before { background: var(--color-ivory); }
+    .btn-primary--light:hover { color: var(--color-stone); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
       color: var(--color-stone);
+      text-decoration: none;
+      padding-bottom: 2px;
+      position: relative;
     }
 
-    .btn-text:hover::after {
-      transform: scaleX(1);
+    .btn-secondary::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 1px;
+      background: var(--color-stone);
+      transition: background var(--duration-fast) var(--ease-smooth);
     }
+
+    .btn-secondary:hover { color: var(--color-sunset); }
+    .btn-secondary:hover::after { background: var(--color-sunset); }
 
     /* ============================================
        6. HEADER
     ============================================ */
     .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
       padding: 1.625rem 0;
-      background: var(--color-ivory);
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid rgba(34, 35, 35, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       transition: padding var(--duration-fast) var(--ease-smooth);
     }
 
-    .site-header.is-scrolled {
-      padding: 1.125rem 0;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
+    .site-header.is-scrolled { padding: 1.125rem 0; }
 
-    .header__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    .header__inner { display: flex; align-items: center; justify-content: space-between; }
+    .header__logo { position: relative; z-index: 2; flex-shrink: 0; }
+    .header__logo-img { height: 44px; width: auto; }
 
-    .header__logo-img {
-      height: 44px;
-      width: auto;
-    }
-
-    .header__nav {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-    }
+    .header__nav { display: flex; align-items: center; gap: 2.75rem; }
 
     .header__nav-link {
-      font-size: 0.875rem;
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: var(--ls-medium);
       color: var(--color-stone);
       position: relative;
       padding: 0.25rem 0;
+      transition: color var(--duration-fast) var(--ease-smooth);
     }
 
     .header__nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: var(--color-sunset);
-      transform: scaleX(0);
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 100%; height: 1px; background: var(--color-sunset);
+      transform: scaleX(0); transform-origin: center;
       transition: transform var(--duration-fast) var(--ease-smooth);
     }
 
-    .header__nav-link:hover::after,
-    .header__nav-link--active::after {
-      transform: scaleX(1);
-    }
+    .header__nav-link:hover::after, .header__nav-link--active::after { transform: scaleX(1); }
 
-    .header__hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      padding: 0.5rem;
-    }
-
-    .header__hamburger span {
-      display: block;
-      width: 22px;
-      height: 1.5px;
-      background: var(--color-stone);
-    }
+    .header__hamburger { display: none; flex-direction: column; gap: 6px; padding: 0.5rem; z-index: 2; }
+    .header__hamburger span { display: block; width: 24px; height: 1.5px; background: var(--color-stone); transition: background var(--duration-fast) var(--ease-smooth); }
 
     .mobile-menu {
-      position: fixed;
-      inset: 0;
-      background: var(--color-ivory);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      opacity: 0;
-      pointer-events: none;
+      position: fixed; inset: 0; background: var(--color-ivory);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2000; opacity: 0; pointer-events: none;
       transition: opacity var(--duration-fast) var(--ease-smooth);
     }
 
-    .mobile-menu.is-open {
-      opacity: 1;
-      pointer-events: all;
-    }
+    .mobile-menu.is-open { opacity: 1; pointer-events: all; }
 
     .mobile-menu__close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      font-size: 1.75rem;
-      color: var(--color-stone);
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem; color: var(--color-stone); background: none;
+      border: none; cursor: pointer; line-height: 1; padding: 0.5rem;
     }
 
-    .mobile-menu__nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
+    .mobile-menu__nav { display: flex; flex-direction: column; align-items: center; gap: 2.5rem; }
 
     .mobile-menu__link {
       font-family: var(--font-display);
-      font-size: 1.75rem;
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
       color: var(--color-stone);
+      transition: color var(--duration-fast) var(--ease-smooth);
     }
 
+    .mobile-menu__link:hover { color: var(--color-sunset); }
+
     /* ============================================
-       7. PRODUCT HERO — Serafini Split
+       7. PRODUCT HERO
     ============================================ */
     .product-hero {
       padding-top: 80px;
       display: grid;
-      grid-template-columns: 0.35fr 0.65fr;
+      grid-template-columns: 0.38fr 0.62fr;
       min-height: 100vh;
     }
 
     .product-hero__info {
-      background: #E8E2DA;
-      padding: clamp(3rem, 6vh, 5rem) clamp(2rem, 3.5vw, 3rem) clamp(2rem, 4vh, 3rem) var(--container-pad);
+      background: var(--color-warm-bg);
+      padding: clamp(2.5rem, 5vh, 4rem) clamp(2rem, 3.5vw, 3.5rem);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
     }
 
-    .product-hero__content {
-      padding-top: clamp(2rem, 8vh, 6rem);
-    }
-
-    .product-hero__breadcrumb {
+    .product-hero__back {
       font-family: var(--font-body);
       font-size: var(--text-xs);
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: var(--ls-medium);
       text-transform: uppercase;
       color: var(--color-river-green);
-      margin-bottom: 1.25rem;
-      display: flex;
+      text-decoration: none;
+      display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      transition: color var(--duration-fast) var(--ease-smooth);
     }
 
-    .product-hero__breadcrumb a {
-      color: var(--color-river-green);
-      transition: color var(--duration-fast);
-    }
+    .product-hero__back:hover { color: var(--color-stone); }
 
-    .product-hero__breadcrumb a:hover {
-      color: var(--color-stone);
-    }
-
-    .product-hero__breadcrumb-sep {
-      opacity: 0.4;
+    .product-hero__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 8vh, 6rem) 0 clamp(2rem, 4vh, 3rem);
     }
 
     .product-hero__category {
@@ -432,272 +334,164 @@
       letter-spacing: var(--ls-wide);
       text-transform: uppercase;
       color: var(--color-river-green);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .product-hero__title {
       font-family: var(--font-display);
-      font-size: var(--text-hero);
-      line-height: 1.1;
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      line-height: 1.0;
       color: var(--color-stone);
+      letter-spacing: -0.01em;
       margin-bottom: 0.25rem;
     }
 
     .product-hero__subtitle {
       font-family: var(--font-display);
-      font-size: var(--text-body);
       font-style: italic;
+      font-size: var(--text-body);
       color: var(--color-river-green);
-      font-weight: 400;
-      margin-bottom: 1.75rem;
+      margin-bottom: 0;
     }
 
     .product-hero__rule {
-      width: 36px;
+      width: 48px;
       height: 1px;
-      background: rgba(34, 35, 35, 0.25);
-      margin-bottom: 1.75rem;
+      background: linear-gradient(90deg, transparent, var(--color-sunset) 15%, var(--color-sunset) 85%, transparent);
+      margin: 1.75rem 0;
     }
 
     .product-hero__description {
       font-size: var(--text-body);
       line-height: var(--lh-body);
       color: var(--color-stone);
-      max-width: 320px;
-      margin-bottom: var(--space-lg);
-    }
-
-    .product-hero__ctas {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    /* Thumbnails row anchored at bottom of info panel */
-    .product-hero__thumbs {
-      display: flex;
-      gap: 0.5rem;
-      padding-top: var(--space-lg);
+      max-width: 340px;
+      margin-bottom: 2.5rem;
     }
 
     .hero-thumb {
-      width: 52px;
-      height: 52px;
-      object-fit: cover;
-      cursor: pointer;
-      opacity: 0.5;
-      transition: opacity var(--duration-fast) var(--ease-smooth),
-                  outline-color var(--duration-fast) var(--ease-smooth);
+      width: 56px; height: 56px; object-fit: cover; cursor: pointer;
+      opacity: 0.45;
+      transition: opacity var(--duration-fast) var(--ease-smooth), outline-color var(--duration-fast) var(--ease-smooth);
       outline: 1.5px solid transparent;
       outline-offset: 2px;
     }
 
-    .hero-thumb:hover {
-      opacity: 0.85;
-    }
+    .hero-thumb:hover { opacity: 0.8; }
+    .hero-thumb.is-active { opacity: 1; outline-color: var(--color-stone); }
 
-    .hero-thumb.is-active {
-      opacity: 1;
-      outline-color: var(--color-stone);
-    }
-
-    /* Hero image */
-    .product-hero__media {
-      position: relative;
-      overflow: hidden;
-      background: #D8D2CA;
-    }
+    .product-hero__media { position: relative; overflow: hidden; background: #D0CBC3; }
 
     .product-hero__img {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       min-height: calc(100vh - 80px);
-      object-fit: cover;
-      object-position: center;
-      transition: opacity var(--duration-medium) var(--ease-smooth);
-    }
-
-    /* Watermark */
-    .product-hero__watermark {
-      position: absolute;
-      right: -0.25em;
-      top: 50%;
-      transform: translateY(-50%) rotate(90deg);
-      font-family: var(--font-display);
-      font-size: clamp(4rem, 8vw, 7rem);
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.06);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      pointer-events: none;
-      user-select: none;
-      white-space: nowrap;
+      object-fit: cover; object-position: center;
+      transition: opacity 0.6s ease;
     }
 
     /* ============================================
-       8. GALLERY STRIP — warm sand background
+       8. GALLERY STRIP
     ============================================ */
-    .gallery-strip {
-      background: var(--color-warm-bg);
-      padding: clamp(2.5rem, 5vw, 4rem) 0;
-    }
+    .gallery-strip { background: var(--color-sand); padding: 0; }
 
-    .gallery-strip__scroll {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(0.75rem, 1.5vw, 1.25rem);
-      padding: 0 var(--container-pad);
-      max-width: var(--container-max);
-      margin: 0 auto;
-    }
+    .gallery-strip__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
 
-    .gallery-strip__item {
-      overflow: hidden;
-      position: relative;
-    }
+    .gallery-strip__item { overflow: hidden; position: relative; }
 
     .gallery-strip__img {
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      object-fit: cover;
+      width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
       transition: transform var(--duration-slow) var(--ease-smooth);
     }
 
-    .gallery-strip__item:hover .gallery-strip__img {
-      transform: scale(1.04);
-    }
+    .gallery-strip__item:hover .gallery-strip__img { transform: scale(1.04); }
 
     /* ============================================
-       9. EDITORIAL — Staggered text/image blocks
+       9. EDITORIAL SPLIT — full-bleed
     ============================================ */
-    .editorial-section {
-      padding: var(--space-2xl) 0;
-    }
-
-    .editorial__split {
+    .editorial-split {
       display: grid;
-      grid-template-columns: 0.5fr 0.5fr;
-      gap: var(--space-xl);
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--grid-gap);
+      align-items: start;
     }
 
-    .editorial__split--reversed {
-      direction: rtl;
-    }
+    .editorial-split__media { overflow: hidden; }
 
-    .editorial__split--reversed > * {
-      direction: ltr;
-    }
-
-    .editorial__image-col {
-      overflow: hidden;
-    }
-
-    .editorial__image-col img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      aspect-ratio: 4 / 5;
+    .editorial-split__img {
+      width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
       transition: transform var(--duration-slow) var(--ease-smooth);
     }
 
-    .editorial__image-col:hover img {
-      transform: scale(1.03);
+    .editorial-split__media:hover .editorial-split__img { transform: scale(1.03); }
+
+    .editorial-split__content {
+      padding-top: clamp(3rem, 8vw, 7rem);
+      padding-left: clamp(1rem, 3vw, 2.5rem);
     }
 
-    .editorial__text-col {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: var(--space-md) 0;
+    .editorial-split__label {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 1.25rem;
     }
 
-    .editorial__block {
-      margin-bottom: var(--space-lg);
-    }
-
-    .editorial__block:last-child {
-      margin-bottom: 0;
-    }
-
-    .editorial__heading {
+    .editorial-split__heading {
       font-family: var(--font-display);
       font-size: var(--text-h2);
-      margin-bottom: 1rem;
-      line-height: 1.35;
+      line-height: var(--lh-heading);
+      margin-bottom: 1.5rem;
     }
 
-    .editorial__heading em {
-      font-style: italic;
-    }
-
-    .editorial__text {
+    .editorial-split__text {
       font-weight: 400;
       line-height: var(--lh-body);
-      max-width: 480px;
+      margin-bottom: 2rem;
+      max-width: 420px;
     }
 
-    .editorial__label {
-      font-family: var(--font-body);
-      font-size: var(--text-xs);
-      font-weight: 500;
-      letter-spacing: var(--ls-wide);
-      text-transform: uppercase;
-      color: var(--color-river-green);
-      margin-bottom: 0.75rem;
-      display: block;
+    .editorial-split--img-right { grid-template-columns: 0.85fr 1.15fr; }
+    .editorial-split--img-right .editorial-split__media { order: 2; }
+    .editorial-split--img-right .editorial-split__content { order: 1; padding-left: 0; padding-right: clamp(1rem, 3vw, 2.5rem); }
+
+    .editorial-split--full-bleed {
+      grid-template-columns: 56vw 1fr;
+      gap: 0;
+      min-height: 72vh;
+      align-items: stretch;
     }
 
-    /* ============================================
-       10. DETAIL STRIP — staggered image gallery
-    ============================================ */
-    .detail-strip {
-      padding: var(--space-2xl) 0;
-      background: var(--color-sand);
-    }
+    .editorial-split--full-bleed .editorial-split__media { overflow: hidden; }
 
-    .detail-strip__label {
-      font-family: var(--font-body);
-      font-size: var(--text-subtitle);
-      font-weight: 500;
-      letter-spacing: var(--ls-wide);
-      text-transform: uppercase;
-      color: var(--color-river-green);
-      margin-bottom: var(--space-lg);
-      text-align: center;
-    }
-
-    .detail-strip__grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr 1fr;
-      gap: clamp(0.75rem, 1.5vw, 1.25rem);
-    }
-
-    .detail-strip__item {
-      overflow: hidden;
-    }
-
-    .detail-strip__item:nth-child(1) { margin-top: 0; }
-    .detail-strip__item:nth-child(2) { margin-top: clamp(2rem, 5vw, 4rem); }
-    .detail-strip__item:nth-child(3) { margin-top: 0; }
-
-    .detail-strip__img {
-      width: 100%;
-      aspect-ratio: 3 / 4;
+    .editorial-split--full-bleed .editorial-split__img {
+      aspect-ratio: unset;
+      height: 100%; min-height: 72vh; width: 100%;
       object-fit: cover;
-      transition: transform var(--duration-slow) var(--ease-smooth);
     }
 
-    .detail-strip__item:hover .detail-strip__img {
-      transform: scale(1.04);
+    .editorial-split--full-bleed .editorial-split__content {
+      padding: clamp(3rem, 5vw, 5.5rem) clamp(2.5rem, 4vw, 5rem);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+
+    .editorial-split--full-bleed .editorial-split__content .btn-primary,
+    .editorial-split--full-bleed .editorial-split__content .btn-secondary { align-self: flex-start; }
+
+    .editorial-split--full-bleed.editorial-split--img-right { grid-template-columns: 1fr 56vw; }
+
+    .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content {
+      padding: clamp(3rem, 5vw, 5.5rem) clamp(2.5rem, 4vw, 5rem);
+      padding-left: clamp(3rem, 5vw, 6rem);
     }
 
     /* ============================================
-       11. MATERIALS SECTION
+       10. MATERIALS SECTION
     ============================================ */
-    .materials-section {
-      padding: var(--space-2xl) 0;
-    }
+    .materials-section { padding: var(--space-2xl) 0; background: var(--color-sand); }
 
     .materials__inner {
       display: grid;
@@ -706,24 +500,16 @@
       align-items: center;
     }
 
-    .materials__media {
-      overflow: hidden;
-    }
+    .materials__media { overflow: hidden; }
 
     .materials__media img {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
+      width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
       transition: transform var(--duration-slow) var(--ease-smooth);
     }
 
-    .materials__media:hover img {
-      transform: scale(1.03);
-    }
+    .materials__media:hover img { transform: scale(1.03); }
 
-    .materials__content {
-      padding: var(--space-md) 0;
-    }
+    .materials__content { padding: var(--space-md) 0; }
 
     .materials__label {
       font-family: var(--font-body);
@@ -732,247 +518,103 @@
       letter-spacing: var(--ls-wide);
       text-transform: uppercase;
       color: var(--color-river-green);
+      display: block;
       margin-bottom: 0.75rem;
     }
 
-    .materials__title {
-      font-family: var(--font-display);
-      font-size: var(--text-h2);
-      margin-bottom: 1.25rem;
-    }
+    .materials__title { font-family: var(--font-display); font-size: var(--text-h2); margin-bottom: 1.25rem; }
 
-    .materials__text {
-      font-weight: 400;
-      line-height: var(--lh-body);
-      margin-bottom: var(--space-md);
-      max-width: 400px;
-    }
+    .materials__text { font-weight: 400; line-height: var(--lh-body); margin-bottom: var(--space-md); max-width: 400px; }
 
-    .materials__swatches {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-    }
+    .materials__swatches { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-bottom: var(--space-md); }
 
-    .swatch {
-      text-align: center;
-      cursor: pointer;
-      transition: opacity var(--duration-fast);
-    }
-
+    .swatch { text-align: center; cursor: pointer; transition: opacity var(--duration-fast); }
     .swatch:hover { opacity: 0.8; }
-
-    .swatch.is-active .swatch__img {
-      outline: 2px solid var(--color-stone);
-      outline-offset: 3px;
-    }
-
-    .swatch__img {
-      width: 64px;
-      height: 64px;
-      object-fit: cover;
-      margin-bottom: 0.375rem;
-    }
-
-    .swatch__name {
-      font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: var(--ls-medium);
-      color: var(--color-stone);
-    }
+    .swatch.is-active .swatch__img { outline: 2px solid var(--color-stone); outline-offset: 3px; }
+    .swatch__img { width: 64px; height: 64px; object-fit: cover; margin-bottom: 0.375rem; }
+    .swatch__name { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-stone); }
 
     /* ============================================
-       12. TECHNICAL SPECIFICATIONS
+       11. TECHNICAL SPECIFICATIONS
     ============================================ */
-    .specs-section {
-      padding: var(--space-2xl) 0;
-      background: var(--color-warm-bg);
-    }
+    .specs-section { padding: var(--space-2xl) 0; }
 
-    .specs__header {
-      text-align: center;
-      margin-bottom: var(--space-xl);
-    }
+    .specs__header { text-align: center; margin-bottom: var(--space-xl); }
 
-    .specs__title {
+    .specs__label {
       font-family: var(--font-body);
       font-size: var(--text-subtitle);
       font-weight: 500;
       letter-spacing: var(--ls-wide);
       text-transform: uppercase;
-      color: var(--color-stone);
-    }
-
-    .specs__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-xl);
-      align-items: start;
-    }
-
-    .specs__drawing {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: var(--space-md);
-    }
-
-    .specs__drawing img {
-      width: 100%;
-      max-width: 480px;
-      height: auto;
+      color: var(--color-river-green);
       display: block;
+      margin-bottom: 0.5rem;
     }
 
-    .specs__table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+    .specs__title { font-family: var(--font-display); font-size: var(--text-h2); }
 
-    .specs__table tr {
-      border-bottom: 1px solid rgba(34, 35, 35, 0.1);
-    }
+    .specs__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: start; }
 
-    .specs__table td {
-      padding: 1rem 0;
-      font-weight: 400;
-      font-size: var(--text-body);
-    }
+    .specs__drawing { display: flex; justify-content: center; align-items: flex-start; padding: var(--space-md); }
+    .specs__drawing img { width: 100%; max-width: 480px; height: auto; }
 
+    .specs__table { width: 100%; border-collapse: collapse; }
+    .specs__table tr { border-bottom: 1px solid rgba(34, 35, 35, 0.1); }
+    .specs__table td { padding: 1rem 0; font-weight: 400; font-size: var(--text-body); line-height: 1.5; }
     .specs__table td:first-child {
+      font-family: var(--font-body);
       font-size: var(--text-small);
       text-transform: uppercase;
       letter-spacing: var(--ls-medium);
       color: var(--color-river-green);
       font-weight: 500;
       width: 170px;
+      padding-right: 1.5rem;
     }
 
     /* ============================================
-       13. LIFESTYLE FULL-BLEED
+       12. ADVICE BANNER
     ============================================ */
-    .lifestyle-section {
-      overflow: hidden;
-      height: clamp(400px, 60vw, 700px);
-    }
+    .advice-banner { background: var(--color-dusk-blue); padding: clamp(3.5rem, 6vw, 5.5rem) 0; }
 
-    .lifestyle-section img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* ============================================
-       14. RELATED PRODUCTS
-    ============================================ */
-    .related-section {
-      padding: var(--space-2xl) 0;
-      background: var(--color-sand);
-    }
-
-    .related__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: var(--space-lg);
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .related__title {
+    .advice-banner__text {
       font-family: var(--font-display);
-      font-size: var(--text-h2);
+      font-style: italic;
+      font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+      color: var(--color-ivory);
+      line-height: 1.5;
+      max-width: 820px;
+      margin: 0 auto;
+      letter-spacing: 0.01em;
     }
 
-    .related__filters {
-      display: flex;
-      gap: 0.5rem;
-    }
+    /* ============================================
+       13. FAQ
+    ============================================ */
+    .faq-section { padding: var(--space-2xl) 0; }
 
-    .filter-btn {
-      padding: 0.5rem 1rem;
-      font-size: var(--text-small);
-      text-transform: uppercase;
-      letter-spacing: var(--ls-medium);
-      color: var(--color-river-green);
-      background: transparent;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: all var(--duration-fast);
-    }
-
-    .filter-btn:hover { color: var(--color-stone); }
-
-    .filter-btn.is-active {
-      color: var(--color-stone);
-      border-color: var(--color-stone);
-    }
-
-    .related__grid {
+    .faq__inner {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--grid-gap);
+      grid-template-columns: 1fr 1.5fr;
+      gap: var(--space-2xl);
+      align-items: start;
     }
 
-    .product-card {
-      text-decoration: none;
-      color: var(--color-stone);
-    }
-
-    .product-card__media {
-      overflow: hidden;
-      background: var(--color-ivory);
-      margin-bottom: 0.875rem;
-    }
-
-    .product-card__img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      transition: transform var(--duration-slow) var(--ease-smooth);
-    }
-
-    .product-card:hover .product-card__img {
-      transform: scale(1.05);
-    }
-
-    .product-card__name {
-      font-family: var(--font-display);
-      font-size: var(--text-h3);
-      margin-bottom: 0.125rem;
-    }
-
-    .product-card__type {
-      font-size: var(--text-small);
+    .faq__label {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
       text-transform: uppercase;
-      letter-spacing: var(--ls-medium);
       color: var(--color-river-green);
+      display: block;
+      margin-bottom: 1rem;
     }
 
-    /* ============================================
-       15. FAQ
-    ============================================ */
-    .faq-section {
-      padding: var(--space-xl) 0 var(--space-2xl);
-    }
+    .faq__title { font-family: var(--font-display); font-size: var(--text-h2); line-height: 1.3; margin-bottom: 2rem; }
 
-    .faq__header {
-      margin-bottom: var(--space-lg);
-    }
-
-    .faq__title {
-      font-family: var(--font-display);
-      font-size: var(--text-h3);
-    }
-
-    .faq__list {
-      max-width: 700px;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid rgba(34, 35, 35, 0.08);
-    }
+    .faq-item { border-bottom: 1px solid rgba(34, 35, 35, 0.08); }
 
     .faq-item__question {
       width: 100%;
@@ -988,201 +630,174 @@
       transition: color var(--duration-fast);
     }
 
-    .faq-item__question:hover {
-      color: var(--color-sunset);
-    }
+    .faq-item__question:hover { color: var(--color-sunset); }
 
     .faq-item__icon {
       font-size: 1.25rem;
-      font-weight: 400;
+      font-weight: 300;
       transition: transform var(--duration-fast);
       flex-shrink: 0;
       margin-left: 1rem;
     }
 
-    .faq-item.is-open .faq-item__icon {
-      transform: rotate(45deg);
-    }
+    .faq-item.is-open .faq-item__icon { transform: rotate(45deg); }
 
     .faq-item__answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height var(--duration-fast), padding var(--duration-fast);
+      transition: max-height 0.4s var(--ease-spring), padding var(--duration-fast);
     }
 
-    .faq-item.is-open .faq-item__answer {
-      max-height: 400px;
-      padding-bottom: 1.25rem;
-    }
+    .faq-item.is-open .faq-item__answer { max-height: 400px; padding-bottom: 1.25rem; }
 
-    .faq-item__answer p {
-      font-weight: 400;
-      line-height: var(--lh-body);
-      color: var(--color-river-green);
-    }
+    .faq-item__answer p { font-weight: 400; line-height: var(--lh-body); color: var(--color-river-green); }
 
     /* ============================================
-       16. INQUIRY
+       14. RELATED PRODUCTS
     ============================================ */
-    .inquiry-section {
-      padding: var(--space-2xl) 0;
-      background: var(--color-sand);
-    }
+    .related-section { padding: var(--space-2xl) 0; background: var(--color-sand); }
 
-    .inquiry__inner {
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: center;
-    }
+    .related__header { margin-bottom: clamp(2rem, 4vw, 3rem); }
 
-    .inquiry__label {
+    .related__label {
+      font-family: var(--font-body);
       font-size: var(--text-subtitle);
       font-weight: 500;
       letter-spacing: var(--ls-wide);
       text-transform: uppercase;
       color: var(--color-river-green);
-      margin-bottom: 0.75rem;
+      display: block;
+      margin-bottom: 0.5rem;
     }
 
-    .inquiry__heading {
-      font-family: var(--font-display);
-      font-size: var(--text-h2);
-      margin-bottom: 1rem;
+    .related__title { font-family: var(--font-display); font-size: var(--text-h1); }
+
+    .related__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); }
+
+    .creation-card { text-decoration: none; color: var(--color-stone); display: block; }
+
+    .creation-card__media { overflow: hidden; margin-bottom: 1.5rem; }
+
+    .creation-card__img {
+      width: 100%; aspect-ratio: 5 / 4; object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
     }
 
-    .inquiry__text {
-      font-weight: 400;
-      margin-bottom: var(--space-lg);
-    }
+    .creation-card:hover .creation-card__img { transform: scale(1.03); }
 
-    .inquiry__form {
-      text-align: left;
-    }
+    .creation-card__name { font-family: var(--font-display); font-size: var(--text-h3); margin-bottom: 0.375rem; }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .form-group--full {
-      grid-column: span 2;
-    }
-
-    .form-input,
-    .form-textarea {
-      width: 100%;
-      padding: 0.875rem 0;
-      border: none;
-      border-bottom: 1px solid var(--color-river-green);
-      background: transparent;
+    .creation-card__type {
       font-family: var(--font-body);
-      font-size: var(--text-body);
-      font-weight: 400;
-      color: var(--color-stone);
-      outline: none;
-      transition: border-color var(--duration-fast);
-    }
-
-    .form-input::placeholder,
-    .form-textarea::placeholder {
-      color: var(--color-river-green);
-    }
-
-    .form-input:focus,
-    .form-textarea:focus {
-      border-color: var(--color-stone);
-    }
-
-    .form-textarea {
-      resize: none;
-      min-height: 100px;
-    }
-
-    .form-consent {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin: 1.5rem 0;
-    }
-
-    .form-consent input {
-      width: 16px;
-      height: 16px;
-      margin-top: 3px;
-      accent-color: var(--color-stone);
-    }
-
-    .form-consent label {
-      font-size: var(--text-small);
-      color: var(--color-river-green);
-      line-height: 1.5;
-    }
-
-    .form-consent a {
-      color: var(--color-stone);
-      text-decoration: underline;
-    }
-
-    .inquiry__form .btn-primary {
-      width: 100%;
-      margin-top: 0.5rem;
-    }
-
-    /* ============================================
-       17. FOOTER
-    ============================================ */
-    .site-footer {
-      background: var(--color-ivory);
-      padding: var(--space-2xl) 0 var(--space-lg);
-      border-top: 1px solid rgba(34, 35, 35, 0.08);
-    }
-
-    .footer__grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
-      gap: var(--grid-gap);
-    }
-
-    .footer__logo {
-      height: 60px;
-      width: auto;
-      margin-bottom: 1rem;
-    }
-
-    .footer__tagline {
       font-size: var(--text-small);
       text-transform: uppercase;
       letter-spacing: var(--ls-medium);
       color: var(--color-river-green);
-      margin-bottom: 1.25rem;
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: 400;
     }
 
-    .footer__social {
-      display: flex;
-      gap: 1rem;
-    }
+    /* ============================================
+       15. INQUIRY
+    ============================================ */
+    .inquiry-section { padding: var(--space-2xl) 0; }
 
-    .footer__social a {
+    .inquiry__inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start; }
+
+    .inquiry__media-col { position: sticky; top: 120px; }
+
+    .inquiry__media-label {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
       color: var(--color-river-green);
-      transition: color var(--duration-fast);
+      display: block;
+      margin-bottom: 1rem;
     }
 
+    .inquiry__img-wrap { overflow: hidden; margin-bottom: 0.75rem; }
+
+    .inquiry__preview-img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: opacity 0.25s ease; }
+
+    .inquiry__thumbs { display: flex; gap: 0.5rem; }
+
+    .inquiry__label {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .inquiry__heading { font-family: var(--font-display); font-size: var(--text-h2); margin-bottom: 1rem; line-height: 1.3; }
+
+    .inquiry__text { font-weight: 400; line-height: var(--lh-body); margin-bottom: var(--space-lg); max-width: 440px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+    .form-group--full { grid-column: span 2; }
+
+    .form-input, .form-textarea {
+      width: 100%; padding: 0.875rem 0;
+      border: none; border-bottom: 1px solid rgba(163, 153, 106, 0.5);
+      background: transparent; font-family: var(--font-body);
+      font-size: var(--text-body); font-weight: 400;
+      color: var(--color-stone); outline: none;
+      transition: border-color var(--duration-fast);
+    }
+
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--color-river-green); }
+    .form-input:focus, .form-textarea:focus { border-bottom-color: var(--color-stone); }
+    .form-textarea { resize: none; min-height: 100px; }
+
+    .form-consent { display: flex; align-items: flex-start; gap: 0.75rem; margin: 1.5rem 0; }
+    .form-consent input { width: 16px; height: 16px; margin-top: 3px; accent-color: var(--color-stone); flex-shrink: 0; }
+    .form-consent label { font-size: var(--text-small); color: var(--color-river-green); line-height: 1.5; }
+    .form-consent a { color: var(--color-stone); text-decoration: underline; }
+
+    .inquiry__form .btn-primary { width: 100%; text-align: center; margin-top: 0.5rem; }
+
+    /* ============================================
+       16. FOOTER
+    ============================================ */
+    .site-footer {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+      padding: clamp(3rem, 5vw, 5rem) 0 var(--space-lg);
+      border-top: 1px solid rgba(34, 35, 35, 0.1);
+    }
+
+    .footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: var(--grid-gap); }
+    .footer__logo { height: 70px; width: auto; margin-bottom: 1rem; }
+
+    .footer__tagline {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__social { display: flex; gap: 1.25rem; }
+    .footer__social a { color: var(--color-river-green); transition: color var(--duration-fast) var(--ease-smooth); }
     .footer__social a:hover { color: var(--color-stone); }
-
-    .footer__social svg {
-      width: 16px;
-      height: 16px;
-      fill: currentColor;
-    }
+    .footer__social svg { width: 18px; height: 18px; fill: currentColor; }
 
     .footer__col-title {
+      font-family: var(--font-body);
       font-size: var(--text-small);
       text-transform: uppercase;
       letter-spacing: var(--ls-wide);
       font-weight: 500;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--color-stone);
     }
 
     .footer__link {
@@ -1190,243 +805,99 @@
       color: var(--color-river-green);
       font-size: var(--text-body);
       font-weight: 400;
-      margin-bottom: 0.625rem;
-      transition: color var(--duration-fast);
+      margin-bottom: 0.75rem;
+      transition: color var(--duration-fast) var(--ease-smooth);
     }
 
     .footer__link:hover { color: var(--color-stone); }
 
-    .footer__contact-info p {
-      color: var(--color-river-green);
-      font-size: var(--text-body);
-      font-weight: 400;
-      margin-bottom: 0.5rem;
-      line-height: 1.5;
-    }
-
-    .footer__contact-info a {
-      color: var(--color-river-green);
-      transition: color var(--duration-fast);
-    }
-
+    .footer__contact-info p { color: var(--color-river-green); font-size: var(--text-body); font-weight: 400; margin-bottom: 0.75rem; line-height: 1.6; }
+    .footer__contact-info a { color: var(--color-river-green); transition: color var(--duration-fast) var(--ease-smooth); }
     .footer__contact-info a:hover { color: var(--color-stone); }
 
-    /* Footer Form */
-    .footer-form__input,
-    .footer-form__textarea {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--color-river-green);
-      color: var(--color-stone);
-      padding: 0.75rem 0;
-      width: 100%;
-      font-family: var(--font-body);
-      font-size: var(--text-small);
-      font-weight: 400;
-      margin-bottom: 1rem;
-      transition: border-color var(--duration-fast);
-      outline: none;
-      resize: none;
+    .footer-form__input, .footer-form__textarea {
+      background: transparent; border: none; border-bottom: 1px solid var(--color-river-green);
+      color: var(--color-stone); padding: 0.75rem 0; width: 100%;
+      font-family: var(--font-body); font-size: var(--text-small); font-weight: 400;
+      margin-bottom: 1rem; transition: border-color var(--duration-fast); outline: none; resize: none;
     }
 
-    .footer-form__input::placeholder,
-    .footer-form__textarea::placeholder {
-      color: var(--color-river-green);
-      font-weight: 400;
-    }
-
-    .footer-form__input:focus,
-    .footer-form__textarea:focus {
-      border-color: var(--color-stone);
-    }
-
-    .footer-form .btn-primary {
-      width: 100%;
-      text-align: center;
-      margin-top: 0.5rem;
-    }
+    .footer-form__input::placeholder, .footer-form__textarea::placeholder { color: var(--color-river-green); font-weight: 400; }
+    .footer-form__input:focus, .footer-form__textarea:focus { border-color: var(--color-stone); }
+    .footer-form .btn-primary { width: 100%; text-align: center; margin-top: 0.5rem; }
 
     .footer__bottom {
       margin-top: var(--space-xl);
       padding-top: var(--space-md);
-      border-top: 1px solid rgba(34, 35, 35, 0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: var(--text-small);
-      color: var(--color-river-green);
+      border-top: 1px solid rgba(34, 35, 35, 0.1);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: var(--text-small); color: var(--color-river-green);
     }
 
-    .footer__legal {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer__legal a {
-      color: var(--color-river-green);
-      font-size: var(--text-small);
-      transition: color var(--duration-fast);
-    }
-
+    .footer__legal { display: flex; gap: 1.5rem; }
+    .footer__legal a { color: var(--color-river-green); font-size: var(--text-small); transition: color var(--duration-fast) var(--ease-smooth); }
     .footer__legal a:hover { color: var(--color-stone); }
 
     /* ============================================
-       18. RESPONSIVE — TABLET
+       17. RESPONSIVE — TABLET
     ============================================ */
     @media (max-width: 1023px) {
-      .product-hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
+      .product-hero { grid-template-columns: 1fr; min-height: auto; }
+      .product-hero__info { order: 2; padding: var(--space-lg) var(--container-pad); }
+      .product-hero__content { padding: var(--space-md) 0; justify-content: flex-start; }
+      .product-hero__media { order: 1; }
+      .product-hero__img { min-height: 60vh; }
 
-      .product-hero__info {
-        order: 2;
-        padding: var(--space-lg) var(--container-pad);
-      }
+      .gallery-strip__grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-strip__img { aspect-ratio: 16 / 9; }
 
-      .product-hero__content {
-        padding-top: 0;
-      }
+      .editorial-split--full-bleed, .editorial-split--full-bleed.editorial-split--img-right { grid-template-columns: 1fr 1fr; min-height: auto; }
+      .editorial-split--full-bleed .editorial-split__img { min-height: auto; aspect-ratio: 4 / 5; }
+      .editorial-split--full-bleed .editorial-split__content, .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content { padding: clamp(2rem, 4vw, 3.5rem); }
 
-      .product-hero__media {
-        order: 1;
-      }
-
-      .product-hero__img {
-        min-height: 55vh;
-      }
-
-      .product-hero__thumbs {
-        padding-top: var(--space-md);
-      }
-
-      .gallery-strip__scroll {
-        gap: 0.625rem;
-      }
-
-      .editorial__split {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-        direction: ltr;
-      }
-
-      .editorial__image-col img {
-        aspect-ratio: 16 / 9;
-      }
-
-      .detail-strip__grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .detail-strip__item:nth-child(3) {
-        display: none;
-      }
-
-      .detail-strip__item:nth-child(2) {
-        margin-top: clamp(1rem, 3vw, 2rem);
-      }
-
-      .materials__inner {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-      }
-
-      .specs__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .related__grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .footer__grid {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-lg);
-      }
+      .materials__inner { grid-template-columns: 1fr; gap: var(--space-lg); }
+      .specs__grid { grid-template-columns: 1fr; }
+      .faq__inner { grid-template-columns: 1fr; gap: var(--space-lg); }
+      .related__grid { grid-template-columns: repeat(2, 1fr); }
+      .inquiry__inner { grid-template-columns: 1fr; gap: var(--space-lg); }
+      .inquiry__media-col { position: static; }
+      .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
     }
 
     /* ============================================
-       19. RESPONSIVE — MOBILE
+       18. RESPONSIVE — MOBILE
     ============================================ */
     @media (max-width: 767px) {
       .header__nav { display: none; }
       .header__hamburger { display: flex; }
+      .product-hero__img { min-height: 50vh; }
+      .hero-thumb { width: 48px; height: 48px; }
+      .gallery-strip__grid { grid-template-columns: repeat(2, 1fr); }
 
-      .product-hero__img {
-        min-height: 45vh;
-      }
+      .editorial-split--full-bleed, .editorial-split--full-bleed.editorial-split--img-right { grid-template-columns: 1fr; min-height: auto; }
+      .editorial-split--full-bleed .editorial-split__media { order: 1; }
+      .editorial-split--full-bleed .editorial-split__img { aspect-ratio: 4 / 3; min-height: auto; }
+      .editorial-split--full-bleed .editorial-split__content { order: 2; padding: 2rem var(--container-pad); }
+      .editorial-split--full-bleed.editorial-split--img-right .editorial-split__media { order: 1; }
+      .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content { padding: 2rem var(--container-pad); }
 
-      .hero-thumb {
-        width: 48px;
-        height: 48px;
-      }
-
-      .gallery-strip__scroll {
-        grid-template-columns: 1fr 1fr;
-        gap: 0.5rem;
-      }
-
-      .detail-strip__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .detail-strip__item:nth-child(2),
-      .detail-strip__item:nth-child(3) {
-        display: block;
-        margin-top: 0;
-      }
-
-      .detail-strip__img {
-        aspect-ratio: 4 / 3;
-      }
-
-      .materials__swatches {
-        gap: 0.75rem;
-      }
-
-      .swatch__img {
-        width: 52px;
-        height: 52px;
-      }
-
-      .related__grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-      }
-
-      .related__filters {
-        width: 100%;
-        overflow-x: auto;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .form-group--full {
-        grid-column: span 1;
-      }
-
-      .footer__grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-      }
-
-      .footer__bottom {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
+      .materials__swatches { gap: 0.75rem; }
+      .swatch__img { width: 52px; height: 52px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-group--full { grid-column: span 1; }
+      .related__grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .footer__grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+      .footer__bottom { flex-direction: column; gap: 1rem; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <!-- Custom Cursor -->
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
+  <!-- HEADER -->
   <header class="site-header" id="siteHeader">
     <div class="header__inner container">
       <a href="/" class="header__logo">
@@ -1445,7 +916,7 @@
   </header>
 
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-menu__close" id="mobileMenuClose">&times;</button>
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
     <nav class="mobile-menu__nav">
       <a href="/" class="mobile-menu__link">Home</a>
       <a href="/craft" class="mobile-menu__link">Craft</a>
@@ -1454,272 +925,235 @@
     </nav>
   </div>
 
-  <!-- ============================================
-       PRODUCT HERO
-       Left: breadcrumb, category, title, description, thumbnails
-       Right: large editorial hero image + watermark
-  ============================================ -->
+  <!-- PRODUCT HERO -->
   <section class="product-hero">
     <div class="product-hero__info">
+      <a href="/catalog" class="product-hero__back">&#8592;&ensp;Collection</a>
       <div class="product-hero__content">
-        <p class="product-hero__breadcrumb reveal">
-          <a href="/catalog">Catalog</a>
-          <span class="product-hero__breadcrumb-sep">—</span>
-          <a href="/catalog#coffee-tables">Coffee Tables</a>
-        </p>
-        <p class="product-hero__category reveal">Stone Furniture</p>
-        <h1 class="product-hero__title reveal">Terra</h1>
-        <p class="product-hero__subtitle reveal">travertine coffee table</p>
-        <div class="product-hero__rule reveal"></div>
-        <p class="product-hero__description reveal">
+        <p class="product-hero__category">Stone Furniture</p>
+        <h1 class="product-hero__title">Terra</h1>
+        <p class="product-hero__subtitle">coffee table</p>
+        <div class="product-hero__rule"></div>
+        <p class="product-hero__description">
           Stone as it was found. The Terra table is quarried from Travertino Romano — its warm ivory surface marked by the natural voids and fossil traces the earth left behind. Not filled, not concealed. A surface that carries geological time.
         </p>
-        <div class="product-hero__ctas reveal">
-          <a href="#inquiry" class="btn-primary">Inquire About This Piece</a>
-          <a href="#specs" class="btn-text">View Technical Sheet</a>
-        </div>
+        <a href="#inquiry" class="btn-primary">Request a Quote</a>
       </div>
-      <div class="product-hero__thumbs reveal">
-        <img src="terra_02_human.webp"
-             alt="Terra table scale reference" class="hero-thumb is-active" data-index="0">
-        <img src="terra_01_editorial.webp"
-             alt="Terra in interior setting" class="hero-thumb" data-index="1">
-        <img src="terra_12_catalogue.webp"
-             alt="Terra studio view" class="hero-thumb" data-index="2">
-        <img src="terra_03_closeup_veining.webp"
-             alt="Travertino Romano veining detail" class="hero-thumb" data-index="3">
-        <img src="terra_04_closeup_edge.webp"
-             alt="Natural edge detail" class="hero-thumb" data-index="4">
+      <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+        <img src="terra_02_human.webp"            alt="Scale reference"        class="hero-thumb is-active" data-index="0" loading="lazy">
+        <img src="terra_01_editorial.webp"         alt="Interior setting"       class="hero-thumb"           data-index="1" loading="lazy">
+        <img src="terra_12_catalogue.webp"         alt="Studio view"            class="hero-thumb"           data-index="2" loading="lazy">
+        <img src="terra_03_closeup_veining.webp"   alt="Surface detail"         class="hero-thumb"           data-index="3" loading="lazy">
+        <img src="terra_04_closeup_edge.webp"      alt="Natural edge"           class="hero-thumb"           data-index="4" loading="lazy">
       </div>
     </div>
     <div class="product-hero__media">
       <img src="terra_02_human.webp"
-           alt="Terra coffee table — Travertino Romano slab on solid stone legs"
+           alt="Terra coffee table — in room with human scale"
            class="product-hero__img"
            id="heroMainImg"
            loading="eager"
            fetchpriority="high">
-      <span class="product-hero__watermark">Earth</span>
     </div>
   </section>
 
-  <!-- ============================================
-       GALLERY STRIP — warm sand background
-  ============================================ -->
-  <div class="gallery-strip">
-    <div class="gallery-strip__scroll">
+  <!-- GALLERY STRIP -->
+  <section class="gallery-strip">
+    <div class="gallery-strip__grid">
       <div class="gallery-strip__item">
+        <img src="terra_01_editorial.webp" alt="Terra in warm interior" class="gallery-strip__img" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-strip__item">
+        <img src="terra_03_closeup_veining.webp" alt="Travertino Romano void detail" class="gallery-strip__img" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-strip__item">
+        <img src="terra_05_closeup_surface.webp" alt="Honed surface texture" class="gallery-strip__img" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-strip__item">
+        <img src="terra_04_closeup_edge.webp" alt="Natural stone edge unfilled" class="gallery-strip__img" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL SPLIT 1 — Travertino Romano, image left -->
+  <section>
+    <div class="editorial-split editorial-split--full-bleed">
+      <div class="editorial-split__media reveal">
         <img src="terra_01_editorial.webp"
-             alt="Terra coffee table in warm architectural interior" class="gallery-strip__img" loading="lazy" decoding="async">
+             alt="Terra coffee table in a considered interior setting"
+             class="editorial-split__img"
+             loading="lazy" decoding="async">
       </div>
-      <div class="gallery-strip__item">
+      <div class="editorial-split__content reveal">
+        <span class="editorial-split__label">Travertino Romano</span>
+        <h2 class="editorial-split__heading">Ancient Stone,<br><em>Living Surface</em></h2>
+        <p class="editorial-split__text">Travertino Romano forms over millennia as mineral-rich spring water deposits layer upon layer of calcium carbonate. The voids and channels that run through each slab are not imperfections — they are the record of that slow, unwitnessed making. The Terra preserves them intact.</p>
+        <a href="#inquiry" class="btn-secondary">Begin Your Project &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL SPLIT 2 — The Architecture of Weight, image right -->
+  <section>
+    <div class="editorial-split editorial-split--full-bleed editorial-split--img-right">
+      <div class="editorial-split__content reveal">
+        <span class="editorial-split__label">Form &amp; Mass</span>
+        <h2 class="editorial-split__heading">The Architecture<br>of Weight</h2>
+        <p class="editorial-split__text">A single slab rests on two solid stone legs — no adhesive, no hidden hardware. The weight of the stone holds everything in place, as it has for centuries in the buildings of ancient Rome. Low, wide, and entirely present in a room.</p>
+        <a href="/craft" class="btn-secondary">Discover Our Craft &rarr;</a>
+      </div>
+      <div class="editorial-split__media reveal">
         <img src="terra_03_closeup_veining.webp"
-             alt="Travertino Romano natural voids and veining close-up" class="gallery-strip__img" loading="lazy" decoding="async">
-      </div>
-      <div class="gallery-strip__item">
-        <img src="terra_04_closeup_edge.webp"
-             alt="Natural stone edge with organic texture" class="gallery-strip__img" loading="lazy" decoding="async">
-      </div>
-      <div class="gallery-strip__item">
-        <img src="terra_06_closeup_joint.webp"
-             alt="Table top and leg junction — stone on stone" class="gallery-strip__img" loading="lazy" decoding="async">
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================
-       EDITORIAL — Left image + right text
-  ============================================ -->
-  <section class="editorial-section">
-    <div class="container">
-      <div class="editorial__split">
-        <div class="editorial__image-col reveal">
-          <img src="terra_01_editorial.webp"
-               alt="Terra coffee table in situ — warm interior with natural light"
-               loading="lazy" decoding="async">
-        </div>
-        <div class="editorial__text-col reveal">
-          <div class="editorial__block">
-            <span class="editorial__label">Travertino Romano</span>
-            <h2 class="editorial__heading">Ancient Stone, <em>Living Surface</em></h2>
-            <p class="editorial__text">
-              Every Terra carries the memory of the sea. Travertino Romano forms over millennia as calcium-rich thermal waters deposit layer upon layer of mineral sediment. The natural voids left by organic matter are not filled, not concealed. They are the point — a surface that breathes, that holds shadow, that changes with every angle of light.
-            </p>
-          </div>
-          <div class="editorial__block">
-            <h2 class="editorial__heading">The Architecture of Weight</h2>
-            <p class="editorial__text">
-              The Terra's form is deliberately monolithic. Two solid stone legs carry a thick, wide slab — no metal, no composite, no concealed hardware. Stone on stone, joined with precision. It sits low to the ground, unhurried, occupying its space with the quiet confidence of something that has always been there.
-            </p>
-          </div>
-        </div>
+             alt="Terra surface detail — natural travertine voids and fossil traces"
+             class="editorial-split__img"
+             loading="lazy" decoding="async">
       </div>
     </div>
   </section>
 
-  <!-- ============================================
-       DETAIL STRIP — staggered close-up gallery
-  ============================================ -->
-  <section class="detail-strip">
-    <div class="container">
-      <p class="detail-strip__label reveal">Details</p>
-      <div class="detail-strip__grid">
-        <div class="detail-strip__item reveal">
-          <img src="terra_05_closeup_surface.webp"
-               alt="Travertino Romano surface texture — honed finish with natural voids" class="detail-strip__img" loading="lazy" decoding="async">
-        </div>
-        <div class="detail-strip__item reveal">
-          <img src="terra_04_closeup_edge.webp"
-               alt="Natural stone edge — organic profile, unworked perimeter" class="detail-strip__img" loading="lazy" decoding="async">
-        </div>
-        <div class="detail-strip__item reveal">
-          <img src="terra_06_closeup_joint.webp"
-               alt="Table leg and slab junction — stone to stone seating, no adhesive visible" class="detail-strip__img" loading="lazy" decoding="async">
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="section-divider"></div>
 
-  <!-- ============================================
-       MATERIALS — Image + content split
-  ============================================ -->
+  <!-- MATERIALS — stone selection + swatch selector -->
   <section class="materials-section">
     <div class="container">
       <div class="materials__inner">
         <div class="materials__media reveal">
           <img src="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_03 PM.webp"
-               alt="Terra table in Calacatta Viola marble"
+               alt="Terra Coffee Table in Calacatta Viola"
+               id="materialsMainImg"
                loading="lazy" decoding="async">
         </div>
         <div class="materials__content reveal">
           <span class="materials__label">Available in six stones</span>
-          <h2 class="materials__title">Stone &amp; Finish</h2>
+          <h2 class="materials__title">Stone Selection</h2>
           <p class="materials__text">
-            The Terra is offered in six stones, each with a different character of veining and texture. Every piece is available honed — our preferred finish for this form, which emphasises the stone's natural depth — or brushed for a more aged, elemental quality.
+            While Travertino Romano is the Terra's native material, it is offered across six stone families. Each changes the character of the table entirely — from the fossil warmth of Travertine to the cool drama of Noir Aziza. Stone is hand-selected for void pattern and veining density.
           </p>
           <div class="materials__swatches" id="materialSelector">
-            <div class="swatch is-active" data-material="calacatta-viola" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_03 PM.webp">
+            <div class="swatch is-active" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_03 PM.webp">
               <img src="../../../Stone types/Calacatta Viola.webp" alt="Calacatta Viola" class="swatch__img">
               <span class="swatch__name">Calacatta Viola</span>
             </div>
-            <div class="swatch" data-material="fendy-grey" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_04 PM.webp">
+            <div class="swatch" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_06 PM.webp">
               <img src="../../../Stone types/Fendy-Grey.webp" alt="Fendy Grey" class="swatch__img">
               <span class="swatch__name">Fendy Grey</span>
             </div>
-            <div class="swatch" data-material="ice-age-onyx" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_07 PM.webp">
+            <div class="swatch" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_08 PM.webp">
               <img src="../../../Stone types/Ice-Age-Onyx-Texture.webp" alt="Ice Age Onyx" class="swatch__img">
               <span class="swatch__name">Ice Age Onyx</span>
             </div>
-            <div class="swatch" data-material="noir-aziza" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_08 PM.webp">
+            <div class="swatch" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_09 PM.webp">
               <img src="../../../Stone types/Noir-Aziza Texture.webp" alt="Noir Aziza" class="swatch__img">
               <span class="swatch__name">Noir Aziza</span>
             </div>
-            <div class="swatch" data-material="roso-levanto" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_10 PM.webp">
+            <div class="swatch" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_11 PM.webp">
               <img src="../../../Stone types/Roso-Levanto-texture.webp" alt="Roso Levanto" class="swatch__img">
               <span class="swatch__name">Roso Levanto</span>
             </div>
-            <div class="swatch" data-material="verde-patricia" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_12 PM.webp">
+            <div class="swatch" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_09_12 PM.webp">
               <img src="../../../Stone types/Verde-Patricia-Texture.webp" alt="Verde Patricia" class="swatch__img">
               <span class="swatch__name">Verde Patricia</span>
             </div>
           </div>
+          <a href="#inquiry" class="btn-primary">Begin Your Project</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================
-       TECHNICAL SPECIFICATIONS
-  ============================================ -->
+  <div class="section-divider"></div>
+
+  <!-- TECHNICAL SPECIFICATIONS -->
   <section class="specs-section" id="specs">
     <div class="container">
       <div class="specs__header reveal">
+        <span class="specs__label">Construction</span>
         <h2 class="specs__title">Technical Specifications</h2>
       </div>
       <div class="specs__grid">
         <div class="specs__drawing reveal">
           <img src="terra_11_technical.webp"
-               alt="Terra coffee table technical drawing — top view and elevation">
+               alt="Terra coffee table technical drawing — top view 1300 × 750 mm, side elevation 320 mm height"
+               loading="lazy" decoding="async">
         </div>
         <div class="specs__table-wrap reveal">
           <table class="specs__table">
             <tr><td>Dimensions</td><td>130 × 75 × 32 cm (L × W × H)</td></tr>
             <tr><td>Weight</td><td>Approx. 115 kg</td></tr>
-            <tr><td>Tabletop</td><td>4 cm solid travertine slab, natural edge</td></tr>
-            <tr><td>Base</td><td>Two solid stone legs, same material as top</td></tr>
-            <tr><td>Materials</td><td>Calacatta Viola, Fendy Grey, Ice Age Onyx, Noir Aziza, Roso Levanto, Verde Patricia</td></tr>
-            <tr><td>Finish</td><td>Honed or brushed; natural edge (unfilled)</td></tr>
-            <tr><td>Installation</td><td>Freestanding — no anchoring required</td></tr>
-            <tr><td>Custom Sizing</td><td>Available on request</td></tr>
+            <tr><td>Stone options</td><td>Calacatta Viola, Fendy Grey, Ice Age Onyx, Noir Aziza, Roso Levanto, Verde Patricia</td></tr>
+            <tr><td>Finish</td><td>Honed or brushed — client's choice</td></tr>
+            <tr><td>Edge</td><td>Natural edge (unfilled voids, unground perimeter)</td></tr>
+            <tr><td>Lead time</td><td>10–14 weeks from confirmed order</td></tr>
+            <tr><td>Custom sizing</td><td>Available on request</td></tr>
           </table>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================
-       LIFESTYLE — Full-bleed image
-  ============================================ -->
-  <div class="lifestyle-section">
-    <img src="terra_02_human.webp"
-         alt="Terra coffee table in aspirational living room interior"
-         loading="lazy" decoding="async">
-  </div>
+  <!-- ADVICE BANNER -->
+  <section class="advice-banner">
+    <div class="container text-center">
+      <p class="advice-banner__text reveal">
+        <em>Stone chosen from a quarry in Tivoli, shaped by hand, delivered as a singular object — the Terra is not manufactured, it is found.</em>
+      </p>
+    </div>
+  </section>
 
-  <div class="section-divider"></div>
-
-  <!-- ============================================
-       FAQ
-  ============================================ -->
+  <!-- FAQ -->
   <section class="faq-section">
     <div class="container">
-      <div class="faq__header reveal">
-        <h2 class="faq__title">You have questions? Contact us</h2>
-      </div>
-      <div class="faq__list reveal">
-        <div class="faq-item">
-          <button class="faq-item__question">
-            <span>Can the natural voids in the travertine be filled?</span>
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <p>They can, but we recommend against it for the Terra. The voids are part of what makes the stone geological rather than decorative — they hold shadow and depth in a way a filled surface cannot. For clients who prefer a smoother surface, we suggest considering Pietra di Vicenza, which has a finer, more uniform texture while retaining the same warm, earthy character.</p>
-          </div>
+      <div class="faq__inner">
+        <div class="faq__heading-col reveal">
+          <span class="faq__label">Questions</span>
+          <h2 class="faq__title">You have questions?<br>We have answers.</h2>
+          <a href="/contact" class="btn-secondary">Or speak with us &rarr;</a>
         </div>
-        <div class="faq-item">
-          <button class="faq-item__question">
-            <span>What is the difference between honed and brushed finishes?</span>
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <p>A honed surface is smooth and matte — it reveals the stone's colour and structure with clarity without any reflectivity. Brushed is treated with wire wheels that open the grain further, creating a slightly rougher, more rustic texture. For the Terra, honed is the quieter of the two; brushed gives the stone a more ancient, excavated quality. Both are beautiful and depend entirely on the room they are entering.</p>
+        <div class="faq__list reveal">
+          <div class="faq-item">
+            <button class="faq-item__question">
+              <span>Are the natural voids in the travertine filled?</span>
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>No. The Terra is designed around the integrity of the stone as it was quarried. Voids are left open and unfilled — they are part of the surface character, not a defect to be corrected. If you prefer a filled surface, we can discuss alternatives from our other coffee table designs.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-item__question">
-            <span>How is the stone selected?</span>
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <p>Travertino Romano is quarried in the hills near Tivoli, east of Rome — the same source used for the Colosseum. We select slabs in person, looking for a particular warmth and consistency of void pattern. For the Terra, we look for slabs with a flowing, directional void pattern — not randomly distributed, but with a sense of geological movement. We share the shortlisted slabs with clients so the final choice is always made together.</p>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              <span>What is the difference between honed and brushed finish?</span>
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Honed produces a smooth, matte surface that is warm and touchable — it diffuses light evenly and shows the stone's natural colour at full depth. Brushed uses wire brushes across the surface to open the stone slightly, giving a more textured, antiqued feel that emphasises the fossils and mineral variation in Travertino Romano. Both are equally durable.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-item__question">
-            <span>What are the lead times?</span>
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <p>Standard pieces are produced in 12–16 weeks from order confirmation. Custom dimensions or alternative stone selections may require additional lead time depending on slab availability at the quarry. We will advise precise timelines at the inquiry stage.</p>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              <span>Can I select the specific void pattern for my table?</span>
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Yes. Tiba Stone works directly with our Tivoli quarry partners to hand-select slabs for each commission. During your project consultation, you can review photographs of available slabs and choose the void density and veining character that suits your space. No two Terra tables are alike.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-item__question">
-            <span>Do you offer installation and white-glove delivery?</span>
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <p>Yes. Every Terra is delivered and placed by our specialist handling team. At approximately 115 kg, the piece requires careful positioning — we do not courier our work. Delivery is always supervised and we operate worldwide through certified specialist logistics partners who handle stone furniture exclusively.</p>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              <span>How is the stone maintained?</span>
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Travertino Romano requires minimal care. We recommend a light sealer applied every two to three years, and wiping spills promptly with a soft cloth and pH-neutral cleaner. The brushed and honed finishes are more forgiving than polished surfaces. We provide a full care guide with every commission.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              <span>Is custom sizing available?</span>
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Yes. While the standard Terra is 130 × 75 × 32 cm, the form is available in custom lengths and widths. Height adjustments are also possible within structural limits. Please include your preferred dimensions in your inquiry and our team will advise on feasibility and lead time.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1728,86 +1162,108 @@
 
   <div class="section-divider"></div>
 
-  <!-- ============================================
-       RELATED PRODUCTS
-  ============================================ -->
+  <!-- RELATED PRODUCTS -->
   <section class="related-section">
     <div class="container">
       <div class="related__header reveal">
-        <h2 class="related__title">Discover other Tiba Stone pieces</h2>
-        <div class="related__filters">
-          <button class="filter-btn is-active">All</button>
-          <button class="filter-btn">Coffee Tables</button>
-        </div>
+        <span class="related__label">Also from Tiba Stone</span>
+        <h2 class="related__title">More Coffee Tables</h2>
       </div>
-      <div class="related__grid reveal">
-        <a href="/Products/coffee tables/morphe/" class="product-card">
-          <div class="product-card__media">
-            <img src="../morphe/morphe_12_catalogue.webp"
-                 alt="Morphe Coffee Table" class="product-card__img" loading="lazy" decoding="async">
+      <div class="related__grid reveal-stagger">
+        <a href="/Products/Coffee Tables/morphe/" class="creation-card reveal">
+          <div class="creation-card__media">
+            <img src="../morphe/morphe_12_catalogue.webp" alt="Morphe Coffee Table" class="creation-card__img" loading="lazy" decoding="async">
           </div>
-          <h3 class="product-card__name">Morphe</h3>
-          <span class="product-card__type">Marble Coffee Table</span>
+          <h3 class="creation-card__name">Morphe</h3>
+          <span class="creation-card__type">Coffee Table</span>
+          <span class="btn-secondary">Discover More &rarr;</span>
         </a>
-        <a href="/Products/coffee tables/lavanche/" class="product-card">
-          <div class="product-card__media">
-            <img src="../lavanche/lavanche_12_catalogue.webp"
-                 alt="Lavanche Coffee Table" class="product-card__img" loading="lazy" decoding="async">
+        <a href="/Products/Coffee Tables/lavanche/" class="creation-card reveal">
+          <div class="creation-card__media">
+            <img src="../lavanche/lavanche_12_catalogue.webp" alt="Lavanche Coffee Table" class="creation-card__img" loading="lazy" decoding="async">
           </div>
-          <h3 class="product-card__name">Lavanche</h3>
-          <span class="product-card__type">Marble Coffee Table</span>
+          <h3 class="creation-card__name">Lavanche</h3>
+          <span class="creation-card__type">Coffee Table</span>
+          <span class="btn-secondary">Discover More &rarr;</span>
+        </a>
+        <a href="/Products/Coffee Tables/gesto/" class="creation-card reveal">
+          <div class="creation-card__media">
+            <img src="../gesto/gesto_12_catalogue.webp" alt="Gesto Coffee Table" class="creation-card__img" loading="lazy" decoding="async">
+          </div>
+          <h3 class="creation-card__name">Gesto</h3>
+          <span class="creation-card__type">Coffee Table</span>
+          <span class="btn-secondary">Discover More &rarr;</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ============================================
-       INQUIRY
-  ============================================ -->
+  <!-- INQUIRY -->
   <section class="inquiry-section" id="inquiry">
     <div class="container">
-      <div class="inquiry__inner reveal">
-        <p class="inquiry__label">Made to Order</p>
-        <h2 class="inquiry__heading">Commission your Terra</h2>
-        <p class="inquiry__text">
-          Every Terra is made to order. Begin a conversation about stone selection, void pattern, dimensions, and delivery — we will guide you from quarry to room.
-        </p>
-        <form class="inquiry__form" id="inquiryForm">
-          <input type="hidden" name="product" value="Terra Coffee Table">
-          <div class="form-row">
-            <div class="form-group">
-              <input type="text" name="firstName" class="form-input" placeholder="First Name" required>
-            </div>
-            <div class="form-group">
-              <input type="text" name="lastName" class="form-input" placeholder="Last Name" required>
-            </div>
+      <div class="inquiry__inner">
+
+        <!-- Left: sticky image preview -->
+        <div class="inquiry__media-col reveal">
+          <span class="inquiry__media-label">Your selected view</span>
+          <div class="inquiry__img-wrap">
+            <img src="terra_02_human.webp"
+                 alt="Selected Terra view"
+                 class="inquiry__preview-img"
+                 id="inquiryPreviewImg">
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <input type="email" name="email" class="form-input" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-              <input type="tel" name="phone" class="form-input" placeholder="Phone">
-            </div>
+          <div class="inquiry__thumbs">
+            <img src="terra_02_human.webp"            alt="Scale reference"   class="hero-thumb is-active" data-index="0" loading="lazy">
+            <img src="terra_01_editorial.webp"         alt="Interior setting"  class="hero-thumb"           data-index="1" loading="lazy">
+            <img src="terra_12_catalogue.webp"         alt="Studio view"       class="hero-thumb"           data-index="2" loading="lazy">
+            <img src="terra_03_closeup_veining.webp"   alt="Surface detail"    class="hero-thumb"           data-index="3" loading="lazy">
+            <img src="terra_04_closeup_edge.webp"      alt="Natural edge"      class="hero-thumb"           data-index="4" loading="lazy">
           </div>
-          <div class="form-row">
-            <div class="form-group form-group--full">
-              <textarea name="message" class="form-textarea" placeholder="Your message..." rows="4"></textarea>
+        </div>
+
+        <!-- Right: inquiry form -->
+        <div class="inquiry__form-col reveal">
+          <span class="inquiry__label">Made to Order</span>
+          <h2 class="inquiry__heading">Commission your Terra</h2>
+          <p class="inquiry__text">
+            Every Terra is made to order. Begin a conversation about stone selection, void pattern, dimensions, and delivery — we will guide you from quarry to room.
+          </p>
+          <form class="inquiry__form" id="inquiryForm">
+            <input type="hidden" name="product" value="Terra Coffee Table">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" name="firstName" class="form-input" placeholder="First Name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="lastName" class="form-input" placeholder="Last Name" required>
+              </div>
             </div>
-          </div>
-          <div class="form-consent">
-            <input type="checkbox" id="consent" name="consent" required>
-            <label for="consent">I agree to the <a href="#">Privacy Policy</a> and consent to being contacted about my inquiry.</label>
-          </div>
-          <button type="submit" class="btn-primary">Send Inquiry</button>
-        </form>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="email" name="email" class="form-input" placeholder="Email" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" name="phone" class="form-input" placeholder="Phone">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group form-group--full">
+                <textarea name="message" class="form-textarea" placeholder="Your message — stone preference, void pattern, dimensions, project details…" rows="4"></textarea>
+              </div>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">I agree to the <a href="#">Privacy Policy</a> and consent to being contacted about my inquiry.</label>
+            </div>
+            <button type="submit" class="btn-primary">Send Inquiry</button>
+          </form>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ============================================
-       FOOTER
-  ============================================ -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer__grid">
@@ -1826,7 +1282,7 @@
             </a>
           </div>
         </div>
-                <div class="footer__sitemap">
+        <div class="footer__sitemap">
           <h4 class="footer__col-title">Navigate</h4>
           <a href="/" class="footer__link">Home</a>
           <a href="/craft" class="footer__link">Craft</a>
@@ -1859,20 +1315,18 @@
     </div>
   </footer>
 
-  <!-- ============================================
-       JAVASCRIPT
-  ============================================ -->
+  <!-- JAVASCRIPT -->
   <script>
     (function () {
       'use strict';
 
-      // Header scroll
+      /* ---- Header scroll ---- */
       var header = document.getElementById('siteHeader');
       window.addEventListener('scroll', function () {
-        header.classList.toggle('is-scrolled', window.scrollY > 50);
+        header.classList.toggle('is-scrolled', window.scrollY > 60);
       }, { passive: true });
 
-      // Mobile menu
+      /* ---- Mobile menu ---- */
       var hamburger = document.getElementById('hamburgerBtn');
       var mobileMenu = document.getElementById('mobileMenu');
       var mobileClose = document.getElementById('mobileMenuClose');
@@ -1888,11 +1342,10 @@
       }
 
       mobileClose.addEventListener('click', closeMobile);
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeMobile();
-      });
+      mobileMenu.querySelectorAll('.mobile-menu__link').forEach(function (l) { l.addEventListener('click', closeMobile); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobile(); });
 
-      // Scroll reveal
+      /* ---- Scroll reveal ---- */
       var revealEls = document.querySelectorAll('.reveal');
       var revealObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
@@ -1902,28 +1355,46 @@
           }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
       revealEls.forEach(function (el) { revealObserver.observe(el); });
 
-      // Hero image switcher
-      var heroImg = document.getElementById('heroMainImg');
-      var thumbs = document.querySelectorAll('.hero-thumb');
+      /* ---- Hero image thumbnail switcher ---- */
+      var heroImages = [
+        'terra_02_human.webp',
+        'terra_01_editorial.webp',
+        'terra_12_catalogue.webp',
+        'terra_03_closeup_veining.webp',
+        'terra_04_closeup_edge.webp'
+      ];
 
-      thumbs.forEach(function (thumb) {
+      var heroMainImg = document.getElementById('heroMainImg');
+      var inquiryPreviewImg = document.getElementById('inquiryPreviewImg');
+
+      function switchImage(idx) {
+        var src = heroImages[idx];
+        heroMainImg.style.opacity = '0';
+        inquiryPreviewImg.style.opacity = '0';
+        setTimeout(function () {
+          heroMainImg.src = src;
+          inquiryPreviewImg.src = src;
+          heroMainImg.onload = function () { heroMainImg.style.opacity = '1'; };
+          inquiryPreviewImg.onload = function () { inquiryPreviewImg.style.opacity = '1'; };
+        }, 200);
+      }
+
+      document.querySelectorAll('.hero-thumb').forEach(function (thumb) {
         thumb.addEventListener('click', function () {
-          thumbs.forEach(function (t) { t.classList.remove('is-active'); });
-          thumb.classList.add('is-active');
-          heroImg.style.opacity = '0';
-          setTimeout(function () {
-            heroImg.src = thumb.src;
-            heroImg.style.opacity = '1';
-          }, 200);
+          document.querySelectorAll('.hero-thumb').forEach(function (t) { t.classList.remove('is-active'); });
+          this.classList.add('is-active');
+          var idx = parseInt(this.dataset.index, 10);
+          document.querySelectorAll('.hero-thumb[data-index="' + idx + '"]').forEach(function (t) { t.classList.add('is-active'); });
+          switchImage(idx);
         });
       });
 
-      // Material swatch selector
+      /* ---- Material swatch selector ---- */
       var swatches = document.querySelectorAll('.swatch');
-      var materialsMainImg = document.querySelector('.materials__media img');
+      var materialsMainImg = document.getElementById('materialsMainImg');
+
       swatches.forEach(function (s) {
         s.addEventListener('click', function () {
           swatches.forEach(function (sw) { sw.classList.remove('is-active'); });
@@ -1939,29 +1410,90 @@
         });
       });
 
-      // FAQ accordion
-      var faqItems = document.querySelectorAll('.faq-item');
-      faqItems.forEach(function (item) {
-        var btn = item.querySelector('.faq-item__question');
-        btn.addEventListener('click', function () {
+      /* ---- FAQ accordion ---- */
+      document.querySelectorAll('.faq-item').forEach(function (item) {
+        item.querySelector('.faq-item__question').addEventListener('click', function () {
           var isOpen = item.classList.contains('is-open');
-          faqItems.forEach(function (i) { i.classList.remove('is-open'); });
+          document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('is-open'); });
           if (!isOpen) item.classList.add('is-open');
         });
       });
 
-      // Inquiry form
-      var form = document.getElementById('inquiryForm');
-      form.addEventListener('submit', function (e) {
+      /* ---- Inquiry form ---- */
+      document.getElementById('inquiryForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        var btn = form.querySelector('.btn-primary');
-        btn.textContent = 'Inquiry Sent';
-        btn.style.background = 'var(--color-stone)';
-        btn.style.color = 'var(--color-ivory)';
+        var btn = this.querySelector('button[type="submit"]');
+        var original = btn.textContent;
+        btn.textContent = 'Sending\u2026';
         btn.disabled = true;
+        setTimeout(function () {
+          btn.textContent = 'Thank You';
+          setTimeout(function () {
+            e.target.reset();
+            btn.textContent = original;
+            btn.disabled = false;
+          }, 2000);
+        }, 1000);
       });
 
-    }());
+      /* ---- Footer form ---- */
+      document.getElementById('footerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = this.querySelector('button[type="submit"]');
+        var original = btn.textContent;
+        btn.textContent = 'Thank You';
+        btn.disabled = true;
+        setTimeout(function () {
+          e.target.reset();
+          btn.textContent = original;
+          btn.disabled = false;
+        }, 3000);
+      });
+
+      /* ---- Progressive image fade ---- */
+      document.querySelectorAll('.product-hero__img, .gallery-strip__img, .editorial-split__img, .materials__media img, .creation-card__img, .specs__drawing img').forEach(function (img) {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.7s ease';
+        function show() { img.style.opacity = '1'; }
+        if (img.complete && img.naturalHeight !== 0) show();
+        else img.addEventListener('load', show);
+      });
+
+      /* ---- Custom cursor ---- */
+      (function () {
+        var dot  = document.getElementById('cursorDot');
+        var ring = document.getElementById('cursorRing');
+        if (!dot || !ring) return;
+
+        var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener('mousemove', function (e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          dot.style.left = mouseX + 'px';
+          dot.style.top  = mouseY + 'px';
+        });
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        (function animateRing() {
+          ringX = lerp(ringX, mouseX, 0.1);
+          ringY = lerp(ringY, mouseY, 0.1);
+          ring.style.left = ringX + 'px';
+          ring.style.top  = ringY + 'px';
+          requestAnimationFrame(animateRing);
+        })();
+
+        document.querySelectorAll('a, button, input, textarea, label, .swatch, .hero-thumb').forEach(function (el) {
+          el.addEventListener('mouseenter', function () { dot.classList.add('is-hovering'); ring.classList.add('is-hovering'); });
+          el.addEventListener('mouseleave', function () { dot.classList.remove('is-hovering'); ring.classList.remove('is-hovering'); });
+        });
+
+        document.addEventListener('mouseleave', function () { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+        document.addEventListener('mouseenter', function () { dot.style.opacity = '1'; ring.style.opacity = '1'; });
+      })();
+
+    })();
   </script>
 
 </body>
