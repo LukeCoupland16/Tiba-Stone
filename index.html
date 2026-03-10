@@ -55,9 +55,9 @@
       --space-3xl: 10rem;
 
       /* Layout */
-      --container-max: 1320px;
+      --container-max: 1600px;
       --container-narrow: 780px;
-      --container-pad: clamp(1.5rem, 4vw, 3rem);
+      --container-pad: clamp(1.5rem, 5vw, 5rem);
       --grid-gap: clamp(1.5rem, 3vw, 2.5rem);
 
       /* Transitions */
@@ -737,11 +737,54 @@
     }
 
     /* ============================================
+       9b. FULL-BLEED EDITORIAL VARIANT
+       Image bleeds to viewport edge; text fills opposite side
+    ============================================ */
+    .editorial-split--full-bleed {
+      grid-template-columns: 58vw 1fr;
+      gap: 0;
+      min-height: 88vh;
+      align-items: stretch;
+    }
+
+    .editorial-split--full-bleed .editorial-split__media {
+      overflow: hidden;
+    }
+
+    .editorial-split--full-bleed .editorial-split__img {
+      aspect-ratio: unset;
+      height: 100%;
+      min-height: 88vh;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .editorial-split--full-bleed .editorial-split__content {
+      padding: clamp(4rem, 8vw, 9rem) clamp(3rem, 5vw, 7rem);
+      padding-top: clamp(5rem, 10vw, 11rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Full-bleed, image on right */
+    .editorial-split--full-bleed.editorial-split--img-right {
+      grid-template-columns: 1fr 58vw;
+    }
+
+    .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content {
+      padding-left: clamp(4rem, 7vw, 10rem);
+      padding-right: clamp(2rem, 3vw, 4rem);
+      padding-top: clamp(5rem, 10vw, 11rem);
+      padding-bottom: clamp(4rem, 8vw, 9rem);
+    }
+
+    /* ============================================
        10. GALLERY TEASER
     ============================================ */
     .gallery-teaser {
       background: var(--color-sand);
-      padding: var(--space-2xl) 0;
+      padding: 0;
     }
 
     /* ============================================
@@ -822,13 +865,13 @@
        12. CATEGORY TEASERS
     ============================================ */
     .category-teasers {
-      padding: var(--space-2xl) 0;
+      padding: 0;
     }
 
     .category-teasers__grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: var(--grid-gap);
+      gap: 2px;
     }
 
     .category-card {
@@ -901,14 +944,14 @@
        13. CRAFTSMANSHIP TEASER
     ============================================ */
     .craft-teaser {
-      padding: var(--space-2xl) 0;
+      padding: 0;
     }
 
     /* ============================================
        14. CUSTOMIZATION CALLOUT
     ============================================ */
     .custom-callout {
-      padding: var(--space-2xl) 0;
+      padding: 0 0 var(--space-2xl);
       background: var(--color-sand);
     }
 
@@ -1127,6 +1170,23 @@
         grid-template-columns: 1fr 1fr;
       }
 
+      .editorial-split--full-bleed,
+      .editorial-split--full-bleed.editorial-split--img-right {
+        grid-template-columns: 1fr 1fr;
+        min-height: auto;
+      }
+
+      .editorial-split--full-bleed .editorial-split__img {
+        min-height: auto;
+        aspect-ratio: 4 / 5;
+      }
+
+      .editorial-split--full-bleed .editorial-split__content,
+      .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content {
+        padding: clamp(2rem, 4vw, 3.5rem);
+        padding-top: clamp(2.5rem, 5vw, 4rem);
+      }
+
       .editorial-split__content {
         padding-top: clamp(2rem, 5vw, 4rem);
       }
@@ -1168,14 +1228,22 @@
       }
 
       .editorial-split,
-      .editorial-split--img-right {
+      .editorial-split--img-right,
+      .editorial-split--full-bleed,
+      .editorial-split--full-bleed.editorial-split--img-right {
         grid-template-columns: 1fr;
+        min-height: auto;
       }
 
       .editorial-split__content {
         padding-top: 2rem;
         padding-left: 0;
         padding-right: 0;
+      }
+
+      .editorial-split--full-bleed .editorial-split__content,
+      .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content {
+        padding: 2rem var(--container-pad);
       }
 
       .editorial-split--img-right .editorial-split__media {
@@ -1187,8 +1255,14 @@
         padding-right: 0;
       }
 
-      .editorial-split__img {
+      .editorial-split--full-bleed.editorial-split--img-right .editorial-split__media {
+        order: 0;
+      }
+
+      .editorial-split__img,
+      .editorial-split--full-bleed .editorial-split__img {
         aspect-ratio: 3 / 4;
+        min-height: auto;
       }
 
       .creations-grid {
@@ -1350,20 +1424,18 @@
        GALLERY / SHOWROOM TEASER
   ============================================ -->
   <section class="gallery-teaser">
-    <div class="container">
-      <div class="editorial-split editorial-split--img-left">
-        <div class="editorial-split__media reveal">
-          <img src="Products/coffee tables/lavanche/lavanche_02_human.webp"
-               alt="Lavanche coffee table in architectural interior — stone in context"
-               class="editorial-split__img"
-               loading="lazy" decoding="async">
-        </div>
-        <div class="editorial-split__content reveal">
-          <span class="editorial-split__label">The Showroom</span>
-          <h2 class="editorial-split__heading">A Curated<br>Experience in Stone</h2>
-          <p class="editorial-split__text">Step into our atelier and discover marble in its most refined expressions. Each piece is presented in context &mdash; not as inventory, but as architecture in miniature, inviting contemplation and touch.</p>
-          <a href="/catalog" class="btn-secondary">Visit the Gallery &rarr;</a>
-        </div>
+    <div class="editorial-split editorial-split--full-bleed">
+      <div class="editorial-split__media reveal">
+        <img src="Products/coffee tables/lavanche/lavanche_02_human.webp"
+             alt="Lavanche coffee table in architectural interior — stone in context"
+             class="editorial-split__img"
+             loading="lazy" decoding="async">
+      </div>
+      <div class="editorial-split__content reveal">
+        <span class="editorial-split__label">The Showroom</span>
+        <h2 class="editorial-split__heading">A Curated<br>Experience in Stone</h2>
+        <p class="editorial-split__text">Step into our atelier and discover marble in its most refined expressions. Each piece is presented in context &mdash; not as inventory, but as architecture in miniature, inviting contemplation and touch.</p>
+        <a href="/catalog" class="btn-secondary">Visit the Gallery &rarr;</a>
       </div>
     </div>
   </section>
@@ -1413,8 +1485,7 @@
        CATEGORY TEASERS
   ============================================ -->
   <section class="category-teasers">
-    <div class="container">
-      <div class="category-teasers__grid reveal-stagger">
+    <div class="category-teasers__grid reveal-stagger">
         <a href="/catalog" class="category-card reveal">
           <img src="Products/coffee tables/terra/terra_01_editorial.webp"
                alt="Terra Coffee Table — monolithic stone slab in a refined interior"
@@ -1459,7 +1530,6 @@
             <span class="btn-primary btn-primary--light">Explore</span>
           </div>
         </a>
-      </div>
     </div>
   </section>
 
@@ -1469,20 +1539,18 @@
        CRAFTSMANSHIP TEASER
   ============================================ -->
   <section class="craft-teaser">
-    <div class="container">
-      <div class="editorial-split editorial-split--img-right">
-        <div class="editorial-split__media reveal">
-          <img src="Products/coffee tables/gesto/gesto_03_closeup_veining.webp"
-               alt="Gesto coffee table — close detail of marble veining and surface quality"
-               class="editorial-split__img"
-               loading="lazy" decoding="async">
-        </div>
-        <div class="editorial-split__content reveal">
-          <span class="editorial-split__label">The Craft</span>
-          <h2 class="editorial-split__heading">From Quarry<br>to Masterpiece</h2>
-          <p class="editorial-split__text">Every Tiba Stone piece passes through the hands of master craftsmen whose families have shaped marble for generations. The process is unhurried, deliberate, and guided by a reverence for the material itself.</p>
-          <a href="/craft" class="btn-primary">Discover Our Craft</a>
-        </div>
+    <div class="editorial-split editorial-split--full-bleed editorial-split--img-right">
+      <div class="editorial-split__media reveal">
+        <img src="Products/coffee tables/gesto/gesto_03_closeup_veining.webp"
+             alt="Gesto coffee table — close detail of marble veining and surface quality"
+             class="editorial-split__img"
+             loading="lazy" decoding="async">
+      </div>
+      <div class="editorial-split__content reveal">
+        <span class="editorial-split__label">The Craft</span>
+        <h2 class="editorial-split__heading">From Quarry<br>to Masterpiece</h2>
+        <p class="editorial-split__text">Every Tiba Stone piece passes through the hands of master craftsmen whose families have shaped marble for generations. The process is unhurried, deliberate, and guided by a reverence for the material itself.</p>
+        <a href="/craft" class="btn-primary">Discover Our Craft</a>
       </div>
     </div>
   </section>
@@ -1493,21 +1561,21 @@
        CUSTOMIZATION CALLOUT
   ============================================ -->
   <section class="custom-callout">
-    <div class="container">
-      <div class="editorial-split editorial-split--img-left">
-        <div class="editorial-split__media reveal">
-          <img src="Products/coffee tables/empire/empire_07_studio_calacatta.webp"
-               alt="Empire coffee table in Calacatta — one of four bespoke marble selections"
-               class="editorial-split__img"
-               loading="lazy" decoding="async">
-        </div>
-        <div class="editorial-split__content reveal">
-          <span class="editorial-split__label">Bespoke Service</span>
-          <h2 class="editorial-split__heading">Made Entirely<br>for You</h2>
-          <p class="editorial-split__text">No two projects are alike. We work directly with architects and designers to realise pieces in custom dimensions, materials, and finishes &mdash; from initial sketch through installation.</p>
-          <a href="/contact" class="btn-primary">Begin Your Project</a>
-        </div>
+    <div class="editorial-split editorial-split--full-bleed">
+      <div class="editorial-split__media reveal">
+        <img src="Products/coffee tables/empire/empire_07_studio_calacatta.webp"
+             alt="Empire coffee table in Calacatta — one of four bespoke marble selections"
+             class="editorial-split__img"
+             loading="lazy" decoding="async">
       </div>
+      <div class="editorial-split__content reveal">
+        <span class="editorial-split__label">Bespoke Service</span>
+        <h2 class="editorial-split__heading">Made Entirely<br>for You</h2>
+        <p class="editorial-split__text">No two projects are alike. We work directly with architects and designers to realise pieces in custom dimensions, materials, and finishes &mdash; from initial sketch through installation.</p>
+        <a href="/contact" class="btn-primary">Begin Your Project</a>
+      </div>
+    </div>
+    <div class="container">
       <div class="marble-strip reveal">
         <div class="marble-strip__item">
           <img src="Products/coffee tables/gesto/gesto_07_studio_calacatta.webp"
