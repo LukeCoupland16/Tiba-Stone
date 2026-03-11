@@ -2078,7 +2078,7 @@
   <!-- ============================================
        FULL PRODUCT GRID WITH FILTERS
   ============================================ -->
-  <section class="full-product-grid">
+  <section class="full-product-grid" id="collection-grid">
     <div class="container">
 
       <div class="full-product-grid__header reveal">
@@ -3166,6 +3166,12 @@
           var target = document.querySelector('.filter-tabs__btn[data-filter="' + hash + '"]');
           if (target) {
             target.click();
+            var grid = document.getElementById('collection-grid');
+            if (grid) {
+              setTimeout(function () {
+                grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 80);
+            }
           }
         }
       })();
