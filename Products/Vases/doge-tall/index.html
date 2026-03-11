@@ -29,11 +29,6 @@
     .accent-rule{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--color-sunset) 15%,var(--color-sunset) 85%,transparent);}
     .section-divider{max-width:var(--container-max);margin:0 auto;height:1px;background:rgba(34,35,35,0.1);}
     @media(hover:hover) and (pointer:fine){html,html *{cursor:none !important;}}
-    .cursor-dot{width:5px;height:5px;background:var(--color-stone);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width 0.22s ease,height 0.22s ease,opacity 0.2s ease;will-change:left,top;}
-    .cursor-ring{width:30px;height:30px;border:1px solid rgba(34,35,35,0.28);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width 0.35s var(--ease-spring),height 0.35s var(--ease-spring),border-color 0.3s ease,opacity 0.2s ease;will-change:left,top;}
-    .cursor-dot.is-hovering{width:7px;height:7px;}
-    .cursor-ring.is-hovering{width:46px;height:46px;border-color:rgba(34,35,35,0.12);}
-    @media(pointer:coarse){.cursor-dot,.cursor-ring{display:none;}}
     .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.85s var(--ease-spring),transform 0.85s var(--ease-spring);}
     .reveal.is-visible{opacity:1;transform:translateY(0);}
     .reveal-stagger>.reveal:nth-child(1){transition-delay:0s;}
@@ -246,8 +241,6 @@
 </head>
 <body>
 
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
 
   <header class="site-header" id="siteHeader">
     <div class="header__inner container">
@@ -701,7 +694,6 @@
         if (img.complete && img.naturalHeight !== 0) show(); else img.addEventListener('load', show);
       });
       (function () {
-        var dot = document.getElementById('cursorDot'); var ring = document.getElementById('cursorRing');
         if (!dot || !ring) return;
         var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
         document.addEventListener('mousemove', function (e) { mouseX = e.clientX; mouseY = e.clientY; dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px'; });

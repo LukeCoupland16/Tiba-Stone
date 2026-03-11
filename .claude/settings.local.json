@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(for f in \"Products/Vases/deau/index.html\" \"Products/Vases/doge-small/index.html\" \"Products/Vases/doge-tall/index.html\")",
+      "Bash(do)",
+      "Bash(echo \"Updating $f...\")",
+      "Bash(sed -i '' -e 's/--text-hero: clamp\\(2\\\\.25rem, 4vw, 3\\\\.5rem\\);/--text-hero: clamp\\(2.75rem, 5vw, 4.5rem\\);/' -e 's/--text-h1: clamp\\(1\\\\.875rem, 3vw, 2\\\\.75rem\\);/--text-h1: clamp\\(2rem, 3.5vw, 3.25rem\\);/' -e 's/--text-h2: clamp\\(1\\\\.5rem, 2\\\\.25vw, 2rem\\);/--text-h2: clamp\\(1.625rem, 2.5vw, 2.25rem\\);/' -e 's/--text-h3: clamp\\(1\\\\.125rem, 1\\\\.5vw, 1\\\\.375rem\\);/--text-h3: clamp\\(1.25rem, 1.8vw, 1.5rem\\);/' -e 's/--text-subtitle: clamp\\(0\\\\.8125rem, 0\\\\.85vw, 0\\\\.875rem\\);/--text-subtitle: clamp\\(0.8125rem, 0.9vw, 0.875rem\\);/' -e 's/--text-body: clamp\\(1rem, 1\\\\.1vw, 1\\\\.125rem\\);/--text-body: clamp\\(1rem, 1.15vw, 1.125rem\\);/' -e 's/--lh-heading: 1\\\\.25;/--lh-heading: 1.2;/' -e 's/--lh-body: 1\\\\.85;/--lh-body: 1.8;/' -e 's/--space-3xl: 12rem;/--space-3xl: 10rem;/' -e 's/--container-max: 1400px;/--container-max: 1600px;/' -e 's/--container-narrow: 800px;/--container-narrow: 780px;/' -e 's/--container-pad: clamp\\(1\\\\.5rem, 5vw, 4rem\\);/--container-pad: clamp\\(1.5rem, 5vw, 5rem\\);/' -e 's/--ease-smooth: cubic-bezier\\(0\\\\.25, 0\\\\.1, 0\\\\.25, 1\\);/--ease-smooth: cubic-bezier\\(0.25, 0.1, 0.25, 1\\);\\\\n      --ease-spring: cubic-bezier\\(0.16, 1, 0.3, 1\\);/' -e 's/--ls-medium: 0\\\\.12em;/--ls-medium: 0.12em;\\\\n      --ls-slight: 0.03em;/' \"$f\")",
+      "Bash(done)"
     ]
   }
 }
