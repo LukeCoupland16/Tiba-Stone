@@ -3156,6 +3156,19 @@
       });
 
       /* ------------------------------------------
+         FILTER FROM URL HASH
+      ------------------------------------------ */
+      (function () {
+        var hash = window.location.hash.replace('#', '');
+        if (hash) {
+          var target = document.querySelector('.filter-tabs__btn[data-filter="' + hash + '"]');
+          if (target) {
+            target.click();
+          }
+        }
+      })();
+
+      /* ------------------------------------------
          CUSTOM CURSOR
       ------------------------------------------ */
       (function () {
