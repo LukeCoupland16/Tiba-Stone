@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/Products/Washbasins/tosca-small/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tosca Small | Washbasins Collection | TIBA STONE</title>
+  <meta name="description" content="Tosca Small — a refined compact marble washbasin of Tuscan-inspired proportion. Bespoke stone basin by Tiba Stone.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="tosca-small_01_editorial.png" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-stone: #222323; --color-ivory: #FFFFFF; --color-sunset: #925638;
+      --color-river-green: #A3996A; --color-dusk-blue: #153647; --color-moss: #3E402B;
+      --color-sand: #F0EBE3; --color-warm-bg: #E8E2DA;
+      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
+      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      --text-hero: clamp(2.75rem, 5vw, 4.5rem); --text-h1: clamp(2rem, 3.5vw, 3.25rem);
+      --text-h2: clamp(1.625rem, 2.5vw, 2.25rem); --text-h3: clamp(1.25rem, 1.8vw, 1.5rem);
+      --text-subtitle: clamp(0.8125rem, 0.9vw, 0.875rem); --text-body: clamp(1rem, 1.15vw, 1.125rem);
+      --text-small: clamp(0.8125rem, 0.9vw, 0.875rem); --text-xs: clamp(0.6875rem, 0.75vw, 0.75rem);
+      --ls-wide: 0.16em; --ls-medium: 0.12em; --ls-slight: 0.03em;
+      --lh-heading: 1.2; --lh-body: 1.8;
+      --space-xs: 0.5rem; --space-sm: 1rem; --space-md: 2rem; --space-lg: 4rem;
+      --space-xl: 6rem; --space-2xl: 8rem; --space-3xl: 10rem;
+      --container-max: 1600px; --container-narrow: 780px;
+      --container-pad: clamp(1.5rem, 5vw, 5rem); --grid-gap: clamp(1.5rem, 3vw, 2.5rem);
+      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1); --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+      --duration-fast: 0.3s; --duration-medium: 0.6s; --duration-slow: 1s;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { background: var(--color-ivory); color: var(--color-stone); font-family: var(--font-body); font-weight: 400; line-height: var(--lh-body); font-size: var(--text-body); overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9998; opacity: 0.032; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E"); background-repeat: repeat; background-size: 200px 200px; }
+    img { max-width: 100%; height: auto; display: block; }
+    h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); font-weight: 400; line-height: var(--lh-heading); }
+    a { color: var(--color-stone); text-decoration: none; }
+    button { font-family: var(--font-body); border: none; background: none; cursor: pointer; }
+    input, textarea { font-family: var(--font-body); }
+    .container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-pad); }
+    .text-center { text-align: center; }
+    .section-divider { max-width: var(--container-max); margin: 0 auto; height: 1px; background: rgba(34,35,35,0.1); }
+    @media (hover: hover) and (pointer: fine) { html, html * { cursor: none !important; } }
+    .cursor-dot { width: 5px; height: 5px; background: var(--color-stone); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999; transform: translate(-50%,-50%); transition: width 0.22s ease, height 0.22s ease, opacity 0.2s ease; will-change: left, top; }
+    .cursor-ring { width: 30px; height: 30px; border: 1px solid rgba(34,35,35,0.28); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99998; transform: translate(-50%,-50%); transition: width 0.35s var(--ease-spring), height 0.35s var(--ease-spring), border-color 0.3s ease, opacity 0.2s ease; will-change: left, top; }
+    .cursor-dot.is-hovering { width: 7px; height: 7px; }
+    .cursor-ring.is-hovering { width: 46px; height: 46px; border-color: rgba(34,35,35,0.12); }
+    @media (pointer: coarse) { .cursor-dot, .cursor-ring { display: none; } }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.85s var(--ease-spring), transform 0.85s var(--ease-spring); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+    .reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.15s; }
+    .reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.3s; }
+    .btn-primary { display: inline-block; padding: 1rem 2.5rem; border: 1px solid var(--color-stone); color: var(--color-stone); background: transparent; font-family: var(--font-body); font-size: var(--text-small); font-weight: 500; text-transform: uppercase; letter-spacing: var(--ls-medium); text-decoration: none; cursor: pointer; position: relative; overflow: hidden; isolation: isolate; transition: color 0.45s var(--ease-spring); }
+    .btn-primary::before { content: ''; position: absolute; inset: 0; background: var(--color-stone); z-index: -1; transform: scaleX(0); transform-origin: left center; transition: transform 0.45s var(--ease-spring); }
+    .btn-primary:hover { color: var(--color-ivory); }
+    .btn-primary:hover::before { transform: scaleX(1); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-size: var(--text-small); font-weight: 500; text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-stone); text-decoration: none; padding-bottom: 2px; position: relative; }
+    .btn-secondary::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: var(--color-stone); transition: background var(--duration-fast) var(--ease-smooth); }
+    .btn-secondary:hover { color: var(--color-sunset); }
+    .btn-secondary:hover::after { background: var(--color-sunset); }
+    .site-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1.625rem 0; background: rgba(255,255,255,0.96); border-bottom: 1px solid rgba(34,35,35,0.08); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: padding var(--duration-fast) var(--ease-smooth); }
+    .site-header.is-scrolled { padding: 1.125rem 0; }
+    .header__inner { display: flex; align-items: center; justify-content: space-between; }
+    .header__logo { position: relative; z-index: 2; flex-shrink: 0; }
+    .header__logo-img { height: 44px; width: auto; }
+    .header__nav { display: flex; align-items: center; gap: 2.75rem; }
+    .header__nav-link { font-family: var(--font-body); font-size: 0.9375rem; font-weight: 500; text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-stone); position: relative; padding: 0.25rem 0; transition: color var(--duration-fast) var(--ease-smooth); }
+    .header__nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 1px; background: var(--color-sunset); transform: scaleX(0); transform-origin: center; transition: transform var(--duration-fast) var(--ease-smooth); }
+    .header__nav-link:hover::after, .header__nav-link--active::after { transform: scaleX(1); }
+    .header__hamburger { display: none; flex-direction: column; gap: 6px; padding: 0.5rem; z-index: 2; }
+    .header__hamburger span { display: block; width: 24px; height: 1.5px; background: var(--color-stone); }
+    .mobile-menu { position: fixed; inset: 0; background: var(--color-ivory); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity var(--duration-fast) var(--ease-smooth); }
+    .mobile-menu.is-open { opacity: 1; pointer-events: all; }
+    .mobile-menu__close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; color: var(--color-stone); background: none; border: none; cursor: pointer; line-height: 1; padding: 0.5rem; }
+    .mobile-menu__nav { display: flex; flex-direction: column; align-items: center; gap: 2.5rem; }
+    .mobile-menu__link { font-family: var(--font-display); font-size: clamp(1.75rem, 5vw, 2.5rem); color: var(--color-stone); transition: color var(--duration-fast) var(--ease-smooth); }
+    .mobile-menu__link:hover { color: var(--color-sunset); }
+    .product-hero { padding-top: 80px; display: grid; grid-template-columns: 0.38fr 0.62fr; min-height: 100vh; }
+    .product-hero__info { background: var(--color-warm-bg); padding: clamp(2.5rem,5vh,4rem) clamp(2rem,3.5vw,3.5rem); display: flex; flex-direction: column; }
+    .product-hero__back { font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: var(--ls-medium); text-transform: uppercase; color: var(--color-river-green); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: color var(--duration-fast) var(--ease-smooth); }
+    .product-hero__back:hover { color: var(--color-stone); }
+    .product-hero__content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: clamp(3rem,8vh,6rem) 0 clamp(2rem,4vh,3rem); }
+    .product-hero__category { font-family: var(--font-body); font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); margin-bottom: 1.25rem; }
+    .product-hero__title { font-family: var(--font-display); font-size: clamp(3.5rem,6vw,5.5rem); line-height: 1.0; color: var(--color-stone); letter-spacing: -0.01em; margin-bottom: 0.25rem; }
+    .product-hero__subtitle { font-family: var(--font-display); font-style: italic; font-size: var(--text-body); color: var(--color-river-green); }
+    .product-hero__rule { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--color-sunset) 15%, var(--color-sunset) 85%, transparent); margin: 1.75rem 0; }
+    .product-hero__description { font-size: var(--text-body); line-height: var(--lh-body); color: var(--color-stone); max-width: 340px; margin-bottom: 2.5rem; }
+    .hero-thumb { width: 56px; height: 56px; object-fit: cover; cursor: pointer; opacity: 0.45; transition: opacity var(--duration-fast) var(--ease-smooth), outline-color var(--duration-fast) var(--ease-smooth); outline: 1.5px solid transparent; outline-offset: 2px; }
+    .hero-thumb:hover { opacity: 0.8; }
+    .hero-thumb.is-active { opacity: 1; outline-color: var(--color-stone); }
+    .product-hero__media { position: relative; overflow: hidden; background: #D0CBC3; }
+    .product-hero__img { width: 100%; height: 100%; min-height: calc(100vh - 80px); object-fit: cover; object-position: center; transition: opacity 0.6s ease; }
+    .gallery-strip { background: var(--color-sand); padding: 0; }
+    .gallery-strip__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+    .gallery-strip__item { overflow: hidden; position: relative; }
+    .gallery-strip__img { width: 100%; aspect-ratio: 3/4; object-fit: cover; transition: transform var(--duration-slow) var(--ease-smooth); }
+    .gallery-strip__item:hover .gallery-strip__img { transform: scale(1.04); }
+    .editorial-split { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--grid-gap); align-items: start; }
+    .editorial-split__media { overflow: hidden; }
+    .editorial-split__img { width: 100%; aspect-ratio: 4/5; object-fit: cover; transition: transform var(--duration-slow) var(--ease-smooth); }
+    .editorial-split__media:hover .editorial-split__img { transform: scale(1.03); }
+    .editorial-split__content { padding-top: clamp(3rem,8vw,7rem); padding-left: clamp(1rem,3vw,2.5rem); }
+    .editorial-split__label { font-family: var(--font-body); font-size: var(--text-small); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); display: block; margin-bottom: 1.25rem; }
+    .editorial-split__heading { font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-heading); margin-bottom: 1.5rem; }
+    .editorial-split__text { font-weight: 400; line-height: var(--lh-body); margin-bottom: 2rem; max-width: 420px; }
+    .editorial-split--img-right { grid-template-columns: 0.85fr 1.15fr; }
+    .editorial-split--img-right .editorial-split__media { order: 2; }
+    .editorial-split--img-right .editorial-split__content { order: 1; padding-left: 0; padding-right: clamp(1rem,3vw,2.5rem); }
+    .editorial-split--full-bleed { grid-template-columns: 56vw 1fr; gap: 0; min-height: 72vh; align-items: stretch; }
+    .editorial-split--full-bleed .editorial-split__img { aspect-ratio: unset; height: 100%; min-height: 72vh; width: 100%; object-fit: cover; }
+    .editorial-split--full-bleed .editorial-split__content { padding: clamp(3rem,5vw,5.5rem) clamp(2.5rem,4vw,5rem); display: flex; flex-direction: column; justify-content: center; }
+    .editorial-split--full-bleed .editorial-split__content .btn-primary, .editorial-split--full-bleed .editorial-split__content .btn-secondary { align-self: flex-start; }
+    .editorial-split--full-bleed.editorial-split--img-right { grid-template-columns: 1fr 56vw; }
+    .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content { padding: clamp(3rem,5vw,5.5rem) clamp(2.5rem,4vw,5rem); padding-left: clamp(3rem,5vw,6rem); }
+    .materials-section { padding: var(--space-2xl) 0; background: var(--color-sand); }
+    .materials__inner { display: grid; grid-template-columns: 0.55fr 0.45fr; gap: var(--space-xl); align-items: center; }
+    .materials__media { overflow: hidden; }
+    .materials__media img { width: 100%; aspect-ratio: 3/4; object-fit: cover; transition: transform var(--duration-slow) var(--ease-smooth); }
+    .materials__media:hover img { transform: scale(1.03); }
+    .materials__content { padding: var(--space-md) 0; }
+    .materials__label { font-family: var(--font-body); font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); display: block; margin-bottom: 0.75rem; }
+    .materials__title { font-family: var(--font-display); font-size: var(--text-h2); margin-bottom: 1.25rem; }
+    .materials__text { font-weight: 400; line-height: var(--lh-body); margin-bottom: var(--space-md); max-width: 400px; }
+    .materials__swatches { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-bottom: var(--space-md); }
+    .swatch { text-align: center; cursor: pointer; transition: opacity var(--duration-fast); }
+    .swatch:hover { opacity: 0.8; }
+    .swatch.is-active .swatch__img { outline: 2px solid var(--color-stone); outline-offset: 3px; }
+    .swatch__img { width: 64px; height: 64px; object-fit: cover; margin-bottom: 0.375rem; }
+    .swatch__name { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-stone); }
+    .specs-section { padding: var(--space-2xl) 0; }
+    .specs__header { text-align: center; margin-bottom: var(--space-xl); }
+    .specs__label { font-family: var(--font-body); font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); display: block; margin-bottom: 0.5rem; }
+    .specs__title { font-family: var(--font-display); font-size: var(--text-h2); }
+    .specs__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: start; }
+    .specs__drawing { display: flex; justify-content: center; align-items: flex-start; padding: var(--space-md); }
+    .specs__drawing img { width: 100%; max-width: 480px; height: auto; }
+    .specs__table { width: 100%; border-collapse: collapse; }
+    .specs__table tr { border-bottom: 1px solid rgba(34,35,35,0.1); }
+    .specs__table td { padding: 1rem 0; font-weight: 400; font-size: var(--text-body); line-height: 1.5; }
+    .specs__table td:first-child { font-family: var(--font-body); font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-river-green); font-weight: 500; width: 170px; padding-right: 1.5rem; }
+    .advice-banner { background: var(--color-dusk-blue); padding: clamp(3.5rem,6vw,5.5rem) 0; }
+    .advice-banner__text { font-family: var(--font-display); font-style: italic; font-size: clamp(1.5rem,2.5vw,2.25rem); color: var(--color-ivory); line-height: 1.5; max-width: 820px; margin: 0 auto; letter-spacing: 0.01em; }
+    .faq-section { padding: var(--space-2xl) 0; }
+    .faq__inner { display: grid; grid-template-columns: 1fr 1.5fr; gap: var(--space-2xl); align-items: start; }
+    .faq__label { font-family: var(--font-body); font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); display: block; margin-bottom: 1rem; }
+    .faq__title { font-family: var(--font-display); font-size: var(--text-h2); line-height: 1.3; margin-bottom: 2rem; }
+    .faq-item { border-bottom: 1px solid rgba(34,35,35,0.08); }
+    .faq-item__question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; font-family: var(--font-body); font-size: var(--text-body); font-weight: 400; text-align: left; cursor: pointer; transition: color var(--duration-fast); }
+    .faq-item__question:hover { color: var(--color-sunset); }
+    .faq-item__icon { font-size: 1.25rem; font-weight: 300; transition: transform var(--duration-fast); flex-shrink: 0; margin-left: 1rem; }
+    .faq-item.is-open .faq-item__icon { transform: rotate(45deg); }
+    .faq-item__answer { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-spring), padding var(--duration-fast); }
+    .faq-item.is-open .faq-item__answer { max-height: 400px; padding-bottom: 1.25rem; }
+    .faq-item__answer p { font-weight: 400; line-height: var(--lh-body); color: var(--color-river-green); }
+    .related-section { padding: var(--space-2xl) 0; background: var(--color-sand); }
+    .related__header { margin-bottom: clamp(2rem,4vw,3rem); }
+    .related__label { font-family: var(--font-body); font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); display: block; margin-bottom: 0.5rem; }
+    .related__title { font-family: var(--font-display); font-size: var(--text-h1); }
+    .related__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--grid-gap); }
+    .creation-card { text-decoration: none; color: var(--color-stone); display: block; }
+    .creation-card__media { overflow: hidden; margin-bottom: 1.5rem; }
+    .creation-card__img { width: 100%; aspect-ratio: 5/4; object-fit: cover; transition: transform var(--duration-slow) var(--ease-smooth); }
+    .creation-card:hover .creation-card__img { transform: scale(1.03); }
+    .creation-card__name { font-family: var(--font-display); font-size: var(--text-h3); margin-bottom: 0.375rem; }
+    .creation-card__type { font-family: var(--font-body); font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-river-green); display: block; margin-bottom: 1rem; font-weight: 400; }
+    .inquiry-section { padding: var(--space-2xl) 0; }
+    .inquiry__inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start; }
+    .inquiry__media-col { position: sticky; top: 120px; }
+    .inquiry__media-label { font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); display: block; margin-bottom: 1rem; }
+    .inquiry__img-wrap { overflow: hidden; margin-bottom: 0.75rem; }
+    .inquiry__preview-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; transition: opacity 0.25s ease; }
+    .inquiry__thumbs { display: flex; gap: 0.5rem; }
+    .inquiry__label { font-family: var(--font-body); font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); display: block; margin-bottom: 0.75rem; }
+    .inquiry__heading { font-family: var(--font-display); font-size: var(--text-h2); margin-bottom: 1rem; line-height: 1.3; }
+    .inquiry__text { font-weight: 400; line-height: var(--lh-body); margin-bottom: var(--space-lg); max-width: 440px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+    .form-group--full { grid-column: span 2; }
+    .form-input, .form-textarea { width: 100%; padding: 0.875rem 0; border: none; border-bottom: 1px solid rgba(163,153,106,0.5); background: transparent; font-family: var(--font-body); font-size: var(--text-body); font-weight: 400; color: var(--color-stone); outline: none; transition: border-color var(--duration-fast); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--color-river-green); }
+    .form-input:focus, .form-textarea:focus { border-bottom-color: var(--color-stone); }
+    .form-textarea { resize: none; min-height: 100px; }
+    .form-consent { display: flex; align-items: flex-start; gap: 0.75rem; margin: 1.5rem 0; }
+    .form-consent input { width: 16px; height: 16px; margin-top: 3px; accent-color: var(--color-stone); flex-shrink: 0; }
+    .form-consent label { font-size: var(--text-small); color: var(--color-river-green); line-height: 1.5; }
+    .form-consent a { color: var(--color-stone); text-decoration: underline; }
+    .inquiry__form .btn-primary { width: 100%; text-align: center; margin-top: 0.5rem; }
+    .site-footer { background: var(--color-ivory); color: var(--color-stone); padding: clamp(3rem,5vw,5rem) 0 var(--space-lg); border-top: 1px solid rgba(34,35,35,0.1); }
+    .footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: var(--grid-gap); }
+    .footer__logo { height: 70px; width: auto; margin-bottom: 1rem; }
+    .footer__tagline { font-family: var(--font-body); font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--ls-medium); color: var(--color-river-green); font-weight: 400; margin-bottom: 1.5rem; }
+    .footer__social { display: flex; gap: 1.25rem; }
+    .footer__social a { color: var(--color-river-green); transition: color var(--duration-fast) var(--ease-smooth); }
+    .footer__social a:hover { color: var(--color-stone); }
+    .footer__social svg { width: 18px; height: 18px; fill: currentColor; }
+    .footer__col-title { font-family: var(--font-body); font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--ls-wide); font-weight: 500; margin-bottom: 1.5rem; color: var(--color-stone); }
+    .footer__link { display: block; color: var(--color-river-green); font-size: var(--text-body); font-weight: 400; margin-bottom: 0.75rem; transition: color var(--duration-fast) var(--ease-smooth); }
+    .footer__link:hover { color: var(--color-stone); }
+    .footer__contact-info p { color: var(--color-river-green); font-size: var(--text-body); font-weight: 400; margin-bottom: 0.75rem; line-height: 1.6; }
+    .footer__contact-info a { color: var(--color-river-green); transition: color var(--duration-fast) var(--ease-smooth); }
+    .footer__contact-info a:hover { color: var(--color-stone); }
+    .footer-form__input, .footer-form__textarea { background: transparent; border: none; border-bottom: 1px solid var(--color-river-green); color: var(--color-stone); padding: 0.75rem 0; width: 100%; font-family: var(--font-body); font-size: var(--text-small); font-weight: 400; margin-bottom: 1rem; transition: border-color var(--duration-fast); outline: none; resize: none; }
+    .footer-form__input::placeholder, .footer-form__textarea::placeholder { color: var(--color-river-green); font-weight: 400; }
+    .footer-form__input:focus, .footer-form__textarea:focus { border-color: var(--color-stone); }
+    .footer-form .btn-primary { width: 100%; text-align: center; margin-top: 0.5rem; }
+    .footer__bottom { margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid rgba(34,35,35,0.1); display: flex; justify-content: space-between; align-items: center; font-size: var(--text-small); color: var(--color-river-green); }
+    .footer__legal { display: flex; gap: 1.5rem; }
+    .footer__legal a { color: var(--color-river-green); font-size: var(--text-small); transition: color var(--duration-fast) var(--ease-smooth); }
+    .footer__legal a:hover { color: var(--color-stone); }
+    @media (max-width: 1023px) {
+      .product-hero { grid-template-columns: 1fr; min-height: auto; }
+      .product-hero__info { order: 2; padding: var(--space-lg) var(--container-pad); }
+      .product-hero__content { padding: var(--space-md) 0; justify-content: flex-start; }
+      .product-hero__media { order: 1; }
+      .product-hero__img { min-height: 60vh; }
+      .gallery-strip__grid { grid-template-columns: repeat(2,1fr); }
+      .gallery-strip__img { aspect-ratio: 16/9; }
+      .editorial-split--full-bleed, .editorial-split--full-bleed.editorial-split--img-right { grid-template-columns: 1fr 1fr; min-height: auto; }
+      .editorial-split--full-bleed .editorial-split__img { min-height: auto; aspect-ratio: 4/5; }
+      .editorial-split--full-bleed .editorial-split__content, .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content { padding: clamp(2rem,4vw,3.5rem); }
+      .materials__inner { grid-template-columns: 1fr; gap: var(--space-lg); }
+      .specs__grid { grid-template-columns: 1fr; }
+      .faq__inner { grid-template-columns: 1fr; gap: var(--space-lg); }
+      .related__grid { grid-template-columns: repeat(2,1fr); }
+      .inquiry__inner { grid-template-columns: 1fr; gap: var(--space-lg); }
+      .inquiry__media-col { position: static; }
+      .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+    }
+    @media (max-width: 767px) {
+      .header__nav { display: none; } .header__hamburger { display: flex; }
+      .product-hero__img { min-height: 50vh; } .hero-thumb { width: 48px; height: 48px; }
+      .gallery-strip__grid { grid-template-columns: repeat(2,1fr); }
+      .editorial-split--full-bleed, .editorial-split--full-bleed.editorial-split--img-right { grid-template-columns: 1fr; min-height: auto; }
+      .editorial-split--full-bleed .editorial-split__media { order: 1; }
+      .editorial-split--full-bleed .editorial-split__img { aspect-ratio: 4/3; min-height: auto; }
+      .editorial-split--full-bleed .editorial-split__content { order: 2; padding: 2rem var(--container-pad); }
+      .editorial-split--full-bleed.editorial-split--img-right .editorial-split__media { order: 1; }
+      .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content { padding: 2rem var(--container-pad); }
+      .materials__swatches { gap: 0.75rem; } .swatch__img { width: 52px; height: 52px; }
+      .form-row { grid-template-columns: 1fr; } .form-group--full { grid-column: span 1; }
+      .related__grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .footer__grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+      .footer__bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header__inner container">
+      <a href="/" class="header__logo"><img src="../../../TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img"></a>
+      <nav class="header__nav">
+        <a href="/" class="header__nav-link">Home</a>
+        <a href="/craft" class="header__nav-link">Craft</a>
+        <a href="/catalog" class="header__nav-link header__nav-link--active">Catalog</a>
+        <a href="/contact" class="header__nav-link">Contact</a>
+      </nav>
+      <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <nav class="mobile-menu__nav">
+      <a href="/" class="mobile-menu__link">Home</a>
+      <a href="/craft" class="mobile-menu__link">Craft</a>
+      <a href="/catalog" class="mobile-menu__link">Catalog</a>
+      <a href="/contact" class="mobile-menu__link">Contact</a>
+    </nav>
+  </div>
+
+  <section class="product-hero">
+    <div class="product-hero__info">
+      <a href="/catalog" class="product-hero__back">&#8592;&ensp;Collection</a>
+      <div class="product-hero__content">
+        <p class="product-hero__category">Washbasins Collection</p>
+        <h1 class="product-hero__title">Tosca Small</h1>
+        <p class="product-hero__subtitle">countertop washbasin</p>
+        <div class="product-hero__rule"></div>
+        <p class="product-hero__description">Tosca Small carries the memory of Tuscan architecture — the low, considered proportion, the respect for material, the sense that nothing needs to be larger than it needs to be. A compact washbasin of complete refinement.</p>
+        <a href="#inquiry" class="btn-primary">Request a Quote</a>
+      </div>
+    </div>
+    <div class="product-hero__media">
+      <img src="tosca-small_01_editorial.png" alt="Tosca Small countertop washbasin" class="product-hero__img" id="heroMainImg" loading="eager" fetchpriority="high">
+    </div>
+  </section>
+
+  <section class="gallery-strip">
+    <div class="gallery-strip__grid">
+      <div class="gallery-strip__item"><img src="tosca-small_01_editorial.png" alt="Tosca Small in interior" class="gallery-strip__img" loading="lazy" decoding="async"></div>
+      <div class="gallery-strip__item"><img src="tosca-small_03_closeup_veining.png" alt="Tosca Small marble veining" class="gallery-strip__img" loading="lazy" decoding="async"></div>
+      <div class="gallery-strip__item"><img src="tosca-small_04_closeup_edge.png" alt="Tosca Small edge profile" class="gallery-strip__img" loading="lazy" decoding="async"></div>
+      <div class="gallery-strip__item"><img src="tosca-small_06_closeup_joint.png" alt="Tosca Small surface detail" class="gallery-strip__img" loading="lazy" decoding="async"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="editorial-split editorial-split--full-bleed">
+      <div class="editorial-split__media reveal">
+        <img src="tosca-small_01_editorial.png" alt="Tosca Small marble washbasin" class="editorial-split__img" loading="lazy" decoding="async">
+      </div>
+      <div class="editorial-split__content reveal">
+        <span class="editorial-split__label">The Form</span>
+        <h2 class="editorial-split__heading">Tuscan Proportion,<br><em>Compact Form</em></h2>
+        <p class="editorial-split__text">Tosca draws from the architectural tradition that gave the world some of its finest rooms — the tradition that understood proportion as the primary discipline. Tosca Small is the concentrated form of this understanding: all the considered detail of its larger precedents held in a compact, daily-use basin.</p>
+        <a href="#inquiry" class="btn-secondary">Commission Yours &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="editorial-split editorial-split--full-bleed editorial-split--img-right">
+      <div class="editorial-split__content reveal">
+        <span class="editorial-split__label">Refinement &amp; Scale</span>
+        <h2 class="editorial-split__heading">Small in Scale,<br>Complete in Character</h2>
+        <p class="editorial-split__text">Tosca Small is not a reduced version of a larger idea. It is a design resolved specifically at this scale — the rim profile, the interior depth, the exterior silhouette all calibrated for the small basin's particular requirements. What reads as restraint at first is, on closer study, precision.</p>
+        <a href="/craft" class="btn-secondary">Discover Our Craft &rarr;</a>
+      </div>
+      <div class="editorial-split__media reveal">
+        <img src="tosca-small_02_human.png" alt="Tosca Small at human scale" class="editorial-split__img" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="materials-section">
+    <div class="container">
+      <div class="materials__inner">
+        <div class="materials__media reveal">
+          <img src="tosca-small_01_editorial.png" alt="Tosca Small stone selection" id="materialsMainImg" loading="lazy" decoding="async">
+        </div>
+        <div class="materials__content reveal">
+          <span class="materials__label">Available in six stones</span>
+          <h2 class="materials__title">Stone &amp; Surface</h2>
+          <p class="materials__text">Tosca Small's refined proportions reward stones of particular surface quality. Calacatta Viola's fine veining reads beautifully at this scale. Fendy Grey achieves an almost mineral delicacy — the stone's crystalline texture visible to the touch. The choice of a quieter stone is the right choice here; drama would overpower the precision.</p>
+          <div class="materials__swatches" id="materialSelector">
+            <div class="swatch is-active">
+              <img src="../../../Stone types/Calacatta Viola.webp" alt="Calacatta Viola" class="swatch__img">
+              <span class="swatch__name">Calacatta Viola</span>
+            </div>
+            <div class="swatch">
+              <img src="../../../Stone types/Fendy-Grey.webp" alt="Fendy Grey" class="swatch__img">
+              <span class="swatch__name">Fendy Grey</span>
+            </div>
+            <div class="swatch">
+              <img src="../../../Stone types/Ice-Age-Onyx-Texture.webp" alt="Ice Age Onyx" class="swatch__img">
+              <span class="swatch__name">Ice Age Onyx</span>
+            </div>
+            <div class="swatch">
+              <img src="../../../Stone types/Noir-Aziza Texture.webp" alt="Noir Aziza" class="swatch__img">
+              <span class="swatch__name">Noir Aziza</span>
+            </div>
+            <div class="swatch">
+              <img src="../../../Stone types/Roso-Levanto-texture.webp" alt="Rosso Levanto" class="swatch__img">
+              <span class="swatch__name">Rosso Levanto</span>
+            </div>
+            <div class="swatch">
+              <img src="../../../Stone types/Verde-Patricia-Texture.webp" alt="Verde Patricia" class="swatch__img">
+              <span class="swatch__name">Verde Patricia</span>
+            </div>
+          </div>
+          <a href="#inquiry" class="btn-primary">Begin Your Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="specs-section" id="specs">
+    <div class="container">
+      <div class="specs__header reveal">
+        <span class="specs__label">Construction</span>
+        <h2 class="specs__title">Technical Specifications</h2>
+      </div>
+      <div class="specs__grid">
+        <div class="specs__drawing reveal">
+          <img src="tosca-small_11_technical.png" alt="Tosca Small technical drawing" loading="lazy" decoding="async">
+        </div>
+        <div class="specs__table-wrap reveal">
+          <table class="specs__table">
+            <tr><td>Dimensions</td><td>Custom sizing available; standard dimensions on request</td></tr>
+            <tr><td>Material</td><td>Six natural stones; enquire for the full palette</td></tr>
+            <tr><td>Finish</td><td>Honed; polished available on request</td></tr>
+            <tr><td>Installation</td><td>Countertop / freestanding; specify on inquiry</td></tr>
+            <tr><td>Lead time</td><td>8–12 weeks from confirmed order</td></tr>
+            <tr><td>Custom sizing</td><td>Available on request</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="advice-banner">
+    <div class="container text-center">
+      <p class="advice-banner__text reveal">
+        <em>Tosca Small proves that restraint is not a limitation. It is, in the right hands, the definition of luxury.</em>
+      </p>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq__inner">
+        <div class="faq__heading-col reveal">
+          <span class="faq__label">Questions</span>
+          <h2 class="faq__title">You have questions?<br>We have answers.</h2>
+          <a href="/contact" class="btn-secondary">Or speak with us &rarr;</a>
+        </div>
+        <div class="faq__list reveal">
+          <div class="faq-item">
+            <button class="faq-item__question"><span>What makes Tosca Small distinct from other compact basins?</span><span class="faq-item__icon">+</span></button>
+            <div class="faq-item__answer"><p>Tosca Small's proportions are derived from a specific architectural reference — the horizontal emphasis of Tuscan building. This gives it a settled, grounded quality that most compact basins lack.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question"><span>Is Tosca Small available in a larger version?</span><span class="faq-item__icon">+</span></button>
+            <div class="faq-item__answer"><p>Yes. Tosca is available in multiple scale specifications — inquire about Tosca Standard and Tosca Grande for larger applications.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question"><span>What installation is recommended?</span><span class="faq-item__icon">+</span></button>
+            <div class="faq-item__answer"><p>Countertop installation, sitting proud of the surface. The clean horizontal line of the basin rim should be visible above the counter for the proportional logic to read correctly.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question"><span>How should Tosca Small be maintained?</span><span class="faq-item__icon">+</span></button>
+            <div class="faq-item__answer"><p>Natural stone requires periodic sealing to resist water ingress. A honed finish is recommended for basin interiors — it is more forgiving than polished and ages gracefully. We provide maintenance guidance with every commission.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="related-section">
+    <div class="container">
+      <div class="related__header reveal">
+        <span class="related__label">Also from Tiba Stone</span>
+        <h2 class="related__title">From the Collection</h2>
+      </div>
+      <div class="related__grid reveal-stagger">
+        <a href="/Products/Washbasins/punta-high/" class="creation-card reveal">
+          <div class="creation-card__media"><img src="../punta-high/punta-high_12_catalogue.png" alt="Punta High" class="creation-card__img" loading="lazy" decoding="async"></div>
+          <h3 class="creation-card__name">Punta High</h3>
+          <span class="creation-card__type">Pedestal Washbasin</span>
+          <span class="btn-secondary">Discover More &rarr;</span>
+        </a>
+        <a href="/Products/Washbasins/roll-ball/" class="creation-card reveal">
+          <div class="creation-card__media"><img src="../roll-ball/roll-ball_12_catalogue.png" alt="Roll Ball" class="creation-card__img" loading="lazy" decoding="async"></div>
+          <h3 class="creation-card__name">Roll Ball</h3>
+          <span class="creation-card__type">Sculptural Washbasin</span>
+          <span class="btn-secondary">Discover More &rarr;</span>
+        </a>
+        <a href="/Products/Washbasins/cup/" class="creation-card reveal">
+          <div class="creation-card__media"><img src="../cup/cup_12_catalogue.png" alt="Cup" class="creation-card__img" loading="lazy" decoding="async"></div>
+          <h3 class="creation-card__name">Cup</h3>
+          <span class="creation-card__type">Vessel Washbasin</span>
+          <span class="btn-secondary">Discover More &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="inquiry-section" id="inquiry">
+    <div class="container">
+      <div class="inquiry__inner">
+        <div class="inquiry__media-col reveal">
+          <span class="inquiry__media-label">Your selected view</span>
+          <div class="inquiry__img-wrap">
+            <img src="tosca-small_02_human.png" alt="Selected Tosca Small view" class="inquiry__preview-img" id="inquiryPreviewImg">
+          </div>
+          <div class="inquiry__thumbs">
+            <img src="tosca-small_02_human.png"              alt="Scale reference"  class="hero-thumb is-active" data-index="0" loading="lazy">
+            <img src="tosca-small_01_editorial.png"          alt="Interior"         class="hero-thumb"           data-index="1" loading="lazy">
+            <img src="tosca-small_12_catalogue.png"          alt="Studio view"      class="hero-thumb"           data-index="2" loading="lazy">
+            <img src="tosca-small_03_closeup_veining.png"   alt="Veining"          class="hero-thumb"           data-index="3" loading="lazy">
+            <img src="tosca-small_04_closeup_edge.png"      alt="Edge"             class="hero-thumb"           data-index="4" loading="lazy">
+          </div>
+        </div>
+        <div class="inquiry__form-col reveal">
+          <span class="inquiry__label">Made to Order</span>
+          <h2 class="inquiry__heading">Commission your Tosca Small</h2>
+          <p class="inquiry__text">Every Tosca Small begins with a stone selection. Inquire to begin a conversation about material, configuration, and countertop integration.</p>
+          <form class="inquiry__form" id="inquiryForm">
+            <input type="hidden" name="product" value="Tosca Small Marble Washbasin">
+            <div class="form-row">
+              <div class="form-group"><input type="text" name="firstName" class="form-input" placeholder="First Name" required></div>
+              <div class="form-group"><input type="text" name="lastName" class="form-input" placeholder="Last Name" required></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><input type="email" name="email" class="form-input" placeholder="Email" required></div>
+              <div class="form-group"><input type="tel" name="phone" class="form-input" placeholder="Phone"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group form-group--full"><textarea name="message" class="form-textarea" placeholder="Your message — stone preference, dimensions, project details…" rows="4"></textarea></div>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">I agree to the <a href="#">Privacy Policy</a> and consent to being contacted about my inquiry.</label>
+            </div>
+            <button type="submit" class="btn-primary">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo">
+          <p class="footer__tagline">Bespoke Marble Atelier</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.2 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__sitemap">
+          <h4 class="footer__col-title">Navigate</h4>
+          <a href="/" class="footer__link">Home</a>
+          <a href="/craft" class="footer__link">Craft</a>
+          <a href="/catalog" class="footer__link">Catalog</a>
+          <a href="/contact" class="footer__link">Contact</a>
+        </div>
+        <div class="footer__contact-info">
+          <h4 class="footer__col-title">Visit</h4>
+          <p>Tiba Stone Atelier</p>
+          <p><a href="mailto:info@tibastone.com">info@tibastone.com</a></p>
+          <p><a href="tel:+6281239442648">+62 81239442648</a></p>
+        </div>
+        <div class="footer__form">
+          <h4 class="footer__col-title">Inquire</h4>
+          <form class="footer-form" id="footerForm">
+            <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+            <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+            <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+            <button type="submit" class="btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+        <div class="footer__legal"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      'use strict';
+      var header=document.getElementById('siteHeader');
+      window.addEventListener('scroll',function(){header.classList.toggle('is-scrolled',window.scrollY>60);},{passive:true});
+      var hamburger=document.getElementById('hamburgerBtn'),mobileMenu=document.getElementById('mobileMenu'),mobileClose=document.getElementById('mobileMenuClose');
+      hamburger.addEventListener('click',function(){mobileMenu.classList.add('is-open');document.body.style.overflow='hidden';});
+      function closeMobile(){mobileMenu.classList.remove('is-open');document.body.style.overflow='';}
+      mobileClose.addEventListener('click',closeMobile);
+      mobileMenu.querySelectorAll('.mobile-menu__link').forEach(function(l){l.addEventListener('click',closeMobile);});
+      document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobile();});
+      var revealEls=document.querySelectorAll('.reveal');
+      var revealObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+      revealEls.forEach(function(el){revealObserver.observe(el);});
+      var heroImages=['tosca-small_02_human.png','tosca-small_01_editorial.png','tosca-small_12_catalogue.png','tosca-small_03_closeup_veining.png','tosca-small_04_closeup_edge.png'];
+      var heroMainImg=document.getElementById('heroMainImg'),inquiryPreviewImg=document.getElementById('inquiryPreviewImg');
+      function switchImage(idx){var src=heroImages[idx];heroMainImg.style.opacity='0';inquiryPreviewImg.style.opacity='0';setTimeout(function(){heroMainImg.src=src;inquiryPreviewImg.src=src;heroMainImg.onload=function(){heroMainImg.style.opacity='1';};inquiryPreviewImg.onload=function(){inquiryPreviewImg.style.opacity='1';};},200);}
+      document.querySelectorAll('.hero-thumb').forEach(function(thumb){thumb.addEventListener('click',function(){document.querySelectorAll('.hero-thumb').forEach(function(t){t.classList.remove('is-active');});this.classList.add('is-active');var idx=parseInt(this.dataset.index,10);switchImage(idx);});});
+      var swatches=document.querySelectorAll('.swatch');
+      swatches.forEach(function(s){s.addEventListener('click',function(){swatches.forEach(function(sw){sw.classList.remove('is-active');});this.classList.add('is-active');});});
+      document.querySelectorAll('.faq-item').forEach(function(item){item.querySelector('.faq-item__question').addEventListener('click',function(){var isOpen=item.classList.contains('is-open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('is-open');});if(!isOpen)item.classList.add('is-open');});});
+      document.getElementById('inquiryForm').addEventListener('submit',function(e){e.preventDefault();var btn=this.querySelector('button[type="submit"]'),orig=btn.textContent;btn.textContent='Sending\u2026';btn.disabled=true;setTimeout(function(){btn.textContent='Thank You';setTimeout(function(){e.target.reset();btn.textContent=orig;btn.disabled=false;},2000);},1000);});
+      document.getElementById('footerForm').addEventListener('submit',function(e){e.preventDefault();var btn=this.querySelector('button[type="submit"]'),orig=btn.textContent;btn.textContent='Thank You';btn.disabled=true;setTimeout(function(){e.target.reset();btn.textContent=orig;btn.disabled=false;},3000);});
+      document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.materials__media img,.creation-card__img,.specs__drawing img').forEach(function(img){img.style.opacity='0';img.style.transition='opacity 0.7s ease';function show(){img.style.opacity='1';}if(img.complete&&img.naturalHeight!==0)show();else img.addEventListener('load',show);});
+      (function(){var dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');if(!dot||!ring)return;var mouseX=0,mouseY=0,ringX=0,ringY=0;document.addEventListener('mousemove',function(e){mouseX=e.clientX;mouseY=e.clientY;dot.style.left=mouseX+'px';dot.style.top=mouseY+'px';});function lerp(a,b,t){return a+(b-a)*t;}(function animateRing(){ringX=lerp(ringX,mouseX,0.1);ringY=lerp(ringY,mouseY,0.1);ring.style.left=ringX+'px';ring.style.top=ringY+'px';requestAnimationFrame(animateRing);})();document.querySelectorAll('a,button,input,textarea,label,.swatch,.hero-thumb').forEach(function(el){el.addEventListener('mouseenter',function(){dot.classList.add('is-hovering');ring.classList.add('is-hovering');});el.addEventListener('mouseleave',function(){dot.classList.remove('is-hovering');ring.classList.remove('is-hovering');});});document.addEventListener('mouseleave',function(){dot.style.opacity='0';ring.style.opacity='0';});document.addEventListener('mouseenter',function(){dot.style.opacity='1';ring.style.opacity='1';});})();
+    })();
+  </script>
+</body>
+</html>
