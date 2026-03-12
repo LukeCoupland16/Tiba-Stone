@@ -571,7 +571,6 @@
       document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.materials__media img,.creation-card__img,.specs__drawing img').forEach(function(img){img.style.opacity='0';img.style.transition='opacity 0.7s ease';function show(){img.style.opacity='1';}if(img.complete&&img.naturalHeight!==0)show();else img.addEventListener('load',show);});
       var swatches=document.querySelectorAll('.swatch');var materialsMainImg=document.getElementById('materialsMainImg');swatches.forEach(function(s){s.addEventListener('click',function(){swatches.forEach(function(sw){sw.classList.remove('is-active');});this.classList.add('is-active');var variantImg=this.getAttribute('data-variant-img');if(variantImg&&materialsMainImg){materialsMainImg.style.opacity='0';setTimeout(function(){materialsMainImg.src=variantImg;materialsMainImg.style.opacity='1';},300);}var nameEl=document.getElementById('selectedStoneName');if(nameEl){nameEl.style.opacity='0';nameEl.style.transition='opacity 0.25s ease';setTimeout(function(){nameEl.textContent=this.querySelector('.swatch__name').textContent;nameEl.style.opacity='1';}.bind(this),150);}}.bind(this));});
 })();
-    })();
   </script>
 </body>
 </html>
