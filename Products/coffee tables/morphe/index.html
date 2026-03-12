@@ -428,8 +428,8 @@
               <span class="swatch__name">Noir Aziza</span>
             </div>
             <div class="swatch" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_02_49 PM.webp">
-              <img src="../../../Stone types/Roso-Levanto-texture.webp" alt="Roso Levanto" class="swatch__img">
-              <span class="swatch__name">Roso Levanto</span>
+              <img src="../../../Stone types/Roso-Levanto-texture.webp" alt="Rosso Levanto" class="swatch__img">
+              <span class="swatch__name">Rosso Levanto</span>
             </div>
             <div class="swatch" data-variant-img="Product Variations/ChatGPT Image Mar 9, 2026, 04_02_48 PM.webp">
               <img src="../../../Stone types/Verde-Patricia-Texture.webp" alt="Verde Patricia" class="swatch__img">
@@ -461,7 +461,7 @@
           <table class="specs__table">
             <tr><td>Dimensions</td><td>120 × 70 × 37 cm (L × W × H)</td></tr>
             <tr><td>Weight</td><td>Approx. 175 kg</td></tr>
-            <tr><td>Stone options</td><td>Calacatta Viola, Fendy Grey, Ice Age Onyx, Noir Aziza, Roso Levanto, Verde Patricia</td></tr>
+            <tr><td>Stone options</td><td>Calacatta Viola, Fendy Grey, Ice Age Onyx, Noir Aziza, Rosso Levanto, Verde Patricia</td></tr>
             <tr><td>Surface finish</td><td>Polished / Honed / Leathered</td></tr>
             <tr><td>Edge treatment</td><td>Soft sculpted profile, hand-finished</td></tr>
             <tr><td>Lead time</td><td>8–14 weeks from confirmed order</td></tr>
@@ -793,20 +793,6 @@
         if (img.complete && img.naturalHeight !== 0) show();
         else img.addEventListener('load', show);
       });
-
-      (function () {
-        if (!dot || !ring) return;
-        var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-        document.addEventListener('mousemove', function (e) { mouseX = e.clientX; mouseY = e.clientY; dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px'; });
-        function lerp(a, b, t) { return a + (b - a) * t; }
-        (function animateRing() { ringX = lerp(ringX, mouseX, 0.1); ringY = lerp(ringY, mouseY, 0.1); ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px'; requestAnimationFrame(animateRing); })();
-        document.querySelectorAll('a, button, input, textarea, label, .swatch, .hero-thumb').forEach(function (el) {
-          el.addEventListener('mouseenter', function () { dot.classList.add('is-hovering'); ring.classList.add('is-hovering'); });
-          el.addEventListener('mouseleave', function () { dot.classList.remove('is-hovering'); ring.classList.remove('is-hovering'); });
-        });
-        document.addEventListener('mouseleave', function () { dot.style.opacity = '0'; ring.style.opacity = '0'; });
-        document.addEventListener('mouseenter', function () { dot.style.opacity = '1'; ring.style.opacity = '1'; });
-      })();
 
     })();
   </script>

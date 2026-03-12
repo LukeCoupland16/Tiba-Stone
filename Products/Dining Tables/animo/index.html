@@ -1365,7 +1365,7 @@
   ============================================ -->
   <section class="product-hero">
     <div class="product-hero__info">
-      <a href="/catalog" class="product-hero__back">&#8592;&ensp;Collection</a>
+      <a href="/catalog" class="product-hero__back">&#8592;&ensp;Dining Tables</a>
       <div class="product-hero__content">
         <p class="product-hero__category">Dining Tables</p>
         <h1 class="product-hero__title">Animo</h1>
@@ -1915,50 +1915,6 @@
         if (img.complete && img.naturalHeight !== 0) show();
         else img.addEventListener('load', show);
       });
-
-      /* ---- Custom cursor ---- */
-      (function () {
-        if (!dot || !ring) return;
-
-        var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-
-        document.addEventListener('mousemove', function (e) {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-          dot.style.left = mouseX + 'px';
-          dot.style.top  = mouseY + 'px';
-        });
-
-        function lerp(a, b, t) { return a + (b - a) * t; }
-
-        (function animateRing() {
-          ringX = lerp(ringX, mouseX, 0.1);
-          ringY = lerp(ringY, mouseY, 0.1);
-          ring.style.left = ringX + 'px';
-          ring.style.top  = ringY + 'px';
-          requestAnimationFrame(animateRing);
-        })();
-
-        document.querySelectorAll('a, button, input, textarea, label, .swatch, .hero-thumb').forEach(function (el) {
-          el.addEventListener('mouseenter', function () {
-            dot.classList.add('is-hovering');
-            ring.classList.add('is-hovering');
-          });
-          el.addEventListener('mouseleave', function () {
-            dot.classList.remove('is-hovering');
-            ring.classList.remove('is-hovering');
-          });
-        });
-
-        document.addEventListener('mouseleave', function () {
-          dot.style.opacity = '0';
-          ring.style.opacity = '0';
-        });
-        document.addEventListener('mouseenter', function () {
-          dot.style.opacity = '1';
-          ring.style.opacity = '1';
-        });
-      })();
 
     })();
   </script>

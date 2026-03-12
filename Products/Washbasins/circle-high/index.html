@@ -337,27 +337,27 @@
           <p class="materials__text">Circle High's tall, slender profile rewards stones with strong vertical veining. Noir Aziza creates a particularly dramatic reading — the column appears almost monolithic. Calacatta Viola's horizontal movement softens the verticality; Ice Age Onyx adds luminosity at any height.</p>
           <p class="materials__stone-name" id="selectedStoneName">Calacatta Viola</p>
           <div class="materials__swatches" id="materialSelector">
-            <div class="swatch is-active">
+            <div class="swatch is-active" data-variant-img="Product Variations/circle-high_calacatta-viola.png">
               <img src="../../../Stone types/Calacatta Viola.webp" alt="Calacatta Viola" class="swatch__img">
               <span class="swatch__name">Calacatta Viola</span>
             </div>
-            <div class="swatch">
+            <div class="swatch" data-variant-img="Product Variations/circle-high_fendy-grey.png">
               <img src="../../../Stone types/Fendy-Grey.webp" alt="Fendy Grey" class="swatch__img">
               <span class="swatch__name">Fendy Grey</span>
             </div>
-            <div class="swatch">
+            <div class="swatch" data-variant-img="Product Variations/circle-high_ice-age-onyx.png">
               <img src="../../../Stone types/Ice-Age-Onyx-Texture.webp" alt="Ice Age Onyx" class="swatch__img">
               <span class="swatch__name">Ice Age Onyx</span>
             </div>
-            <div class="swatch">
+            <div class="swatch" data-variant-img="Product Variations/circle-high_noir-aziza.png">
               <img src="../../../Stone types/Noir-Aziza Texture.webp" alt="Noir Aziza" class="swatch__img">
               <span class="swatch__name">Noir Aziza</span>
             </div>
-            <div class="swatch">
+            <div class="swatch" data-variant-img="Product Variations/circle-high_rosso-levanto.png">
               <img src="../../../Stone types/Roso-Levanto-texture.webp" alt="Rosso Levanto" class="swatch__img">
               <span class="swatch__name">Rosso Levanto</span>
             </div>
-            <div class="swatch">
+            <div class="swatch" data-variant-img="Product Variations/circle-high_verde-patricia.png">
               <img src="../../../Stone types/Verde-Patricia-Texture.webp" alt="Verde Patricia" class="swatch__img">
               <span class="swatch__name">Verde Patricia</span>
             </div>
@@ -453,9 +453,9 @@
           <span class="creation-card__type">Marble Washbasin</span>
           <span class="btn-secondary">Discover More &rarr;</span>
         </a>
-        <a href="/Products/Washbasins/palladio/" class="creation-card reveal">
-          <div class="creation-card__media"><img src="../palladio/palladio_12_catalogue.png" alt="Palladio" class="creation-card__img" loading="lazy" decoding="async"></div>
-          <h3 class="creation-card__name">Palladio</h3>
+        <a href="/Products/Washbasins/boris/" class="creation-card reveal">
+          <div class="creation-card__media"><img src="../boris/boris_12_catalogue.png" alt="Boris" class="creation-card__img" loading="lazy" decoding="async"></div>
+          <h3 class="creation-card__name">Boris</h3>
           <span class="creation-card__type">Marble Washbasin</span>
           <span class="btn-secondary">Discover More &rarr;</span>
         </a>
@@ -568,7 +568,8 @@
       function switchImage(idx){var src=heroImages[idx];heroMainImg.style.opacity='0';inquiryPreviewImg.style.opacity='0';setTimeout(function(){heroMainImg.src=src;inquiryPreviewImg.src=src;heroMainImg.onload=function(){heroMainImg.style.opacity='1';};inquiryPreviewImg.onload=function(){inquiryPreviewImg.style.opacity='1';};},200);}
       document.querySelectorAll('.hero-thumb').forEach(function(thumb){thumb.addEventListener('click',function(){document.querySelectorAll('.hero-thumb').forEach(function(t){t.classList.remove('is-active');});this.classList.add('is-active');var idx=parseInt(this.dataset.index,10);switchImage(idx);});});
       var swatches=document.querySelectorAll('.swatch');
-      swatches.forEach(function(s){s.addEventListener('click',function(){swatches.forEach(function(sw){sw.classList.remove('is-active');});this.classList.add('is-active'); var nameEl = document.getElementById('selectedStoneName'); if (nameEl) { nameEl.style.opacity = '0'; nameEl.style.transition = 'opacity 0.25s ease'; setTimeout(function() { nameEl.textContent = this.querySelector('.swatch__name').textContent; nameEl.style.opacity = '1'; }.bind(this), 150); }});}));
+      var materialsMainImg=document.getElementById('materialsMainImg');
+      swatches.forEach(function(s){s.addEventListener('click',function(){swatches.forEach(function(sw){sw.classList.remove('is-active');});this.classList.add('is-active');var variantImg=this.getAttribute('data-variant-img');if(variantImg&&materialsMainImg){materialsMainImg.style.opacity='0';setTimeout(function(){materialsMainImg.src=variantImg;materialsMainImg.style.opacity='1';},300);}var nameEl=document.getElementById('selectedStoneName');if(nameEl){nameEl.style.opacity='0';nameEl.style.transition='opacity 0.25s ease';setTimeout(function(){nameEl.textContent=this.querySelector('.swatch__name').textContent;nameEl.style.opacity='1';}.bind(this),150);}}.bind(this));});
       document.querySelectorAll('.faq-item').forEach(function(item){item.querySelector('.faq-item__question').addEventListener('click',function(){var isOpen=item.classList.contains('is-open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('is-open');});if(!isOpen)item.classList.add('is-open');});});
       document.getElementById('inquiryForm').addEventListener('submit',function(e){e.preventDefault();var btn=this.querySelector('button[type="submit"]'),orig=btn.textContent;btn.textContent='Sending\u2026';btn.disabled=true;setTimeout(function(){btn.textContent='Thank You';setTimeout(function(){e.target.reset();btn.textContent=orig;btn.disabled=false;},2000);},1000);});
       document.getElementById('footerForm').addEventListener('submit',function(e){e.preventDefault();var btn=this.querySelector('button[type="submit"]'),orig=btn.textContent;btn.textContent='Thank You';btn.disabled=true;setTimeout(function(){e.target.reset();btn.textContent=orig;btn.disabled=false;},3000);});

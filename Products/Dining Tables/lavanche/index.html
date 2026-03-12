@@ -637,7 +637,7 @@
     }
 
     /* ============================================
-       10. MATERIALS SECTION — simplified, no swatches
+       10. MATERIALS SECTION
     ============================================ */
     .materials-section {
       padding: var(--space-2xl) 0;
@@ -657,7 +657,7 @@
       width: 100%;
       aspect-ratio: 3 / 4;
       object-fit: cover;
-      transition: transform var(--duration-slow) var(--ease-smooth);
+      transition: transform var(--duration-slow) var(--ease-smooth), opacity 0.3s ease;
     }
 
     .materials__media:hover img { transform: scale(1.03); }
@@ -687,6 +687,15 @@
       margin-bottom: var(--space-md);
       max-width: 400px;
     }
+
+    .materials__stone-name { font-family: var(--font-display); font-style: italic; font-size: var(--text-body); color: var(--color-stone); margin-bottom: 1rem; letter-spacing: 0.01em; }
+    .materials__swatches { display: flex; gap: 1.25rem 0.875rem; flex-wrap: wrap; margin-bottom: var(--space-md); align-items: flex-start; }
+    .swatch { cursor: pointer; }
+    .swatch:hover .swatch__img { filter: brightness(0.94) saturate(0.9); }
+    .swatch.is-active .swatch__img { filter: brightness(1) saturate(1); box-shadow: 0 3px 0 0 var(--color-sunset); outline: none; }
+    .swatch__img { width: 72px; height: 96px; object-fit: cover; margin-bottom: 0; display: block; filter: brightness(0.75) saturate(0.6); transition: filter 0.45s ease, box-shadow 0.35s var(--ease-spring); }
+    .swatch__name { font-size: 0.5625rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--color-river-green); line-height: 1.3; font-weight: 500; transition: color 0.3s ease; max-width: 72px; }
+    .swatch.is-active .swatch__name { color: var(--color-stone); }
 
     /* ============================================
        11. TECHNICAL SPECIFICATIONS
@@ -1238,6 +1247,9 @@
         gap: var(--space-lg);
       }
 
+      .materials__swatches { gap: 0.75rem 0.625rem; }
+      .swatch__img { width: 60px; height: 80px; }
+
       .specs__grid { grid-template-columns: 1fr; }
 
       .faq__inner {
@@ -1436,22 +1448,50 @@
   <div class="section-divider"></div>
 
   <!-- ============================================
-       MATERIALS — simplified, static image, no swatches
+       MATERIALS
   ============================================ -->
   <section class="materials-section">
     <div class="container">
       <div class="materials__inner">
         <div class="materials__media reveal">
-          <img src="lavanche_03_closeup_veining.png"
-               alt="Lavanche — marble veining closeup, the stone's inherent character"
+          <img src="Product Variations/lavanche_calacatta-viola.png"
+               alt="Lavanche Dining Table in Calacatta Viola marble"
+               id="materialsMainImg"
                loading="lazy" decoding="async">
         </div>
         <div class="materials__content reveal">
-          <span class="materials__label">Bespoke stone selection</span>
+          <span class="materials__label">Available in six stones</span>
           <h2 class="materials__title">Stone &amp; Surface</h2>
           <p class="materials__text">
             Lavanche is available in the full Tiba Stone stone palette. Stone selection is made during the commission process — we present options suited to your space and let the material guide the final decision. Each stone brings a different kind of weight to the table.
           </p>
+          <p class="materials__stone-name" id="selectedStoneName">Calacatta Viola</p>
+          <div class="materials__swatches" id="materialSelector">
+            <div class="swatch is-active" data-variant-img="Product Variations/lavanche_calacatta-viola.png">
+              <img src="../../../Stone types/Calacatta Viola.webp" alt="Calacatta Viola" class="swatch__img">
+              <span class="swatch__name">Calacatta Viola</span>
+            </div>
+            <div class="swatch" data-variant-img="Product Variations/lavanche_fendy-grey.png">
+              <img src="../../../Stone types/Fendy-Grey.webp" alt="Fendy Grey" class="swatch__img">
+              <span class="swatch__name">Fendy Grey</span>
+            </div>
+            <div class="swatch" data-variant-img="Product Variations/lavanche_ice-age-onyx.png">
+              <img src="../../../Stone types/Ice-Age-Onyx-Texture.webp" alt="Ice Age Onyx" class="swatch__img">
+              <span class="swatch__name">Ice Age Onyx</span>
+            </div>
+            <div class="swatch" data-variant-img="Product Variations/lavanche_noir-aziza.png">
+              <img src="../../../Stone types/Noir-Aziza Texture.webp" alt="Noir Aziza" class="swatch__img">
+              <span class="swatch__name">Noir Aziza</span>
+            </div>
+            <div class="swatch" data-variant-img="Product Variations/lavanche_rosso-levanto.png">
+              <img src="../../../Stone types/Roso-Levanto-texture.webp" alt="Rosso Levanto" class="swatch__img">
+              <span class="swatch__name">Rosso Levanto</span>
+            </div>
+            <div class="swatch" data-variant-img="Product Variations/lavanche_verde-patricia.png">
+              <img src="../../../Stone types/Verde-Patricia-Texture.webp" alt="Verde Patricia" class="swatch__img">
+              <span class="swatch__name">Verde Patricia</span>
+            </div>
+          </div>
           <a href="#inquiry" class="btn-primary">Begin Your Project</a>
         </div>
       </div>
@@ -1795,6 +1835,11 @@
         });
       });
 
+      /* ---- Swatch variant selector ---- */
+      var swatches=document.querySelectorAll('.swatch');
+      var materialsMainImg=document.getElementById('materialsMainImg');
+      swatches.forEach(function(s){s.addEventListener('click',function(){swatches.forEach(function(sw){sw.classList.remove('is-active');});this.classList.add('is-active');var variantImg=this.getAttribute('data-variant-img');if(variantImg&&materialsMainImg){materialsMainImg.style.opacity='0';setTimeout(function(){materialsMainImg.src=variantImg;materialsMainImg.style.opacity='1';},300);}var nameEl=document.getElementById('selectedStoneName');if(nameEl){nameEl.style.opacity='0';nameEl.style.transition='opacity 0.25s ease';setTimeout(function(){nameEl.textContent=this.querySelector('.swatch__name').textContent;nameEl.style.opacity='1';}.bind(this),150);}}.bind(this));});
+
       /* ---- FAQ accordion ---- */
       document.querySelectorAll('.faq-item').forEach(function (item) {
         item.querySelector('.faq-item__question').addEventListener('click', function () {
@@ -1843,50 +1888,6 @@
         if (img.complete && img.naturalHeight !== 0) show();
         else img.addEventListener('load', show);
       });
-
-      /* ---- Custom cursor ---- */
-      (function () {
-        if (!dot || !ring) return;
-
-        var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-
-        document.addEventListener('mousemove', function (e) {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-          dot.style.left = mouseX + 'px';
-          dot.style.top  = mouseY + 'px';
-        });
-
-        function lerp(a, b, t) { return a + (b - a) * t; }
-
-        (function animateRing() {
-          ringX = lerp(ringX, mouseX, 0.1);
-          ringY = lerp(ringY, mouseY, 0.1);
-          ring.style.left = ringX + 'px';
-          ring.style.top  = ringY + 'px';
-          requestAnimationFrame(animateRing);
-        })();
-
-        document.querySelectorAll('a, button, input, textarea, label, .hero-thumb').forEach(function (el) {
-          el.addEventListener('mouseenter', function () {
-            dot.classList.add('is-hovering');
-            ring.classList.add('is-hovering');
-          });
-          el.addEventListener('mouseleave', function () {
-            dot.classList.remove('is-hovering');
-            ring.classList.remove('is-hovering');
-          });
-        });
-
-        document.addEventListener('mouseleave', function () {
-          dot.style.opacity = '0';
-          ring.style.opacity = '0';
-        });
-        document.addEventListener('mouseenter', function () {
-          dot.style.opacity = '1';
-          ring.style.opacity = '1';
-        });
-      })();
 
     })();
   </script>

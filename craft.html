@@ -2004,26 +2004,6 @@
         }
       });
 
-
-        document.querySelectorAll('a, button, [role="tab"], input, textarea, label').forEach(function (el) {
-          el.addEventListener('mouseenter', function () {
-            dot.classList.add('is-hovering');
-            ring.classList.add('is-hovering');
-          });
-          el.addEventListener('mouseleave', function () {
-            dot.classList.remove('is-hovering');
-            ring.classList.remove('is-hovering');
-          });
-        });
-
-        document.addEventListener('mouseleave', function () {
-          dot.style.opacity  = '0';
-          ring.style.opacity = '0';
-        });
-        document.addEventListener('mouseenter', function () {
-          dot.style.opacity  = '1';
-          ring.style.opacity = '1';
-        });
       })();
 
       /* ------------------------------------------
