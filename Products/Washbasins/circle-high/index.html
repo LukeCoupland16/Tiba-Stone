@@ -10,8 +10,11 @@
   <meta name="description" content="Circle High — a tall pedestal marble washbasin of pure circular form. Bespoke stone basin by Tiba Stone.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preload" as="image" href="circle-high_01_editorial.png" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <style>
     :root {
       --color-stone: #222323; --color-ivory: #FFFFFF; --color-sunset: #925638;
@@ -35,7 +38,16 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     body { background: var(--color-ivory); color: var(--color-stone); font-family: var(--font-body); font-weight: 400; line-height: var(--lh-body); font-size: var(--text-body); overflow-x: hidden; }
-    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9998; opacity: 0.032; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E"); background-repeat: repeat; background-size: 200px 200px; }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9998; will-change: transform; backface-visibility: hidden; opacity: 0.032; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E"); background-repeat: repeat; background-size: 200px 200px; }
+    
+    /* Performance: skip rendering of off-screen sections */
+    .brand-intro, .gallery-teaser, .exclusive-creations, .category-teasers, 
+    .marble-strip, .advice-banner, .site-footer,
+    .featured-collection, .catalog-grid-section,
+    .editorial-split-section, .materials-section, .specs-section, .faq-section, .related-section, .inquiry-section {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
+    }
     img { max-width: 100%; height: auto; display: block; }
     h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); font-weight: 400; line-height: var(--lh-heading); }
     a { color: var(--color-stone); text-decoration: none; }
@@ -553,7 +565,7 @@
     (function(){
       'use strict';
       var header=document.getElementById('siteHeader');
-      window.addEventListener('scroll',function(){header.classList.toggle('is-scrolled',window.scrollY>60);},{passive:true});
+      var _raf=false;window.addEventListener('scroll',function(){if(!_raf){_raf=true;requestAnimationFrame(function(){header.classList.toggle('is-scrolled',window.scrollY>60);_raf=false;});}},{passive:true});
       var hamburger=document.getElementById('hamburgerBtn'),mobileMenu=document.getElementById('mobileMenu'),mobileClose=document.getElementById('mobileMenuClose');
       hamburger.addEventListener('click',function(){mobileMenu.classList.add('is-open');document.body.style.overflow='hidden';});
       function closeMobile(){mobileMenu.classList.remove('is-open');document.body.style.overflow='';}

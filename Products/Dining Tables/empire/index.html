@@ -10,8 +10,11 @@
   <meta name="description" content="Empire — a stone dining table of grand proportions and imperial presence. Bespoke dining tables by Tiba Stone.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preload" as="image" href="empire_01_editorial.webp" type="image/webp" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <style>
     /* ============================================
        1. CUSTOM PROPERTIES
@@ -98,10 +101,22 @@
       inset: 0;
       pointer-events: none;
       z-index: 9998;
+      will-change: transform;
+      backface-visibility: hidden;
       opacity: 0.032;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E");
       background-repeat: repeat;
       background-size: 200px 200px;
+    }
+
+    
+    /* Performance: skip rendering of off-screen sections */
+    .brand-intro, .gallery-teaser, .exclusive-creations, .category-teasers, 
+    .marble-strip, .advice-banner, .site-footer,
+    .featured-collection, .catalog-grid-section,
+    .editorial-split-section, .materials-section, .specs-section, .faq-section, .related-section, .inquiry-section {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
     }
 
     img {
