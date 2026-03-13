@@ -3,8 +3,8 @@
 <head>
   <base href="/Products/Dining Tables/wedge/">
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
-  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
+  <link rel="icon" type="image/webp" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedge | Dining Tables | TIBA STONE</title>
   <meta name="description" content="Wedge — geometry made dining table. Bespoke marble dining tables by Tiba Stone, crafted from the world's finest natural stone.">
@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link rel="preload" as="image" href="wedge_01_editorial.png" type="image/png" fetchpriority="high">
+  <link rel="preload" as="image" href="wedge_01_editorial.webp" type="image/png" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <style>
@@ -697,7 +697,7 @@
 
     .materials__stone-name { font-family: var(--font-display); font-style: italic; font-size: var(--text-body); color: var(--color-stone); margin-bottom: 1rem; letter-spacing: 0.01em; }
     .materials__swatches { display: flex; gap: 1.25rem 0.875rem; flex-wrap: wrap; margin-bottom: var(--space-md); align-items: flex-start; }
-    .swatch { cursor: pointer; }
+    .swatch { text-align: center; cursor: pointer; display: inline-flex; flex-direction: column; align-items: center; gap: 0.5rem; }
     .swatch:hover .swatch__img { filter: brightness(0.94) saturate(0.9); }
     .swatch.is-active .swatch__img { filter: brightness(1) saturate(1); box-shadow: 0 3px 0 0 var(--color-sunset); outline: none; }
     .swatch__img { width: 72px; height: 96px; object-fit: cover; margin-bottom: 0; display: block; filter: brightness(0.75) saturate(0.6); transition: filter 0.45s ease, box-shadow 0.35s var(--ease-spring); }
@@ -1808,11 +1808,11 @@
 
       /* ---- Hero image thumbnail switcher ---- */
       var heroImages = [
-        'wedge_02_human.png',
-        'wedge_01_editorial.png',
-        'wedge_12_catalogue.png',
-        'wedge_03_closeup_veining.png',
-        'wedge_05_closeup_surface.png'
+        'wedge_02_human.webp',
+        'wedge_01_editorial.webp',
+        'wedge_12_catalogue.webp',
+        'wedge_03_closeup_veining.webp',
+        'wedge_05_closeup_surface.webp'
       ];
 
       var heroMainImg = document.getElementById('heroMainImg');
@@ -1843,7 +1843,7 @@
       /* ---- Swatch variant selector ---- */
       var swatches=document.querySelectorAll('.swatch');
       var materialsMainImg=document.getElementById('materialsMainImg');
-      swatches.forEach(function(s){s.addEventListener('click',function(){swatches.forEach(function(sw){sw.classList.remove('is-active');});this.classList.add('is-active');var variantImg=this.getAttribute('data-variant-img');if(variantImg&&materialsMainImg){materialsMainImg.style.opacity='0';setTimeout(function(){materialsMainImg.src=variantImg;materialsMainImg.style.opacity='1';},300);}var nameEl=document.getElementById('selectedStoneName');if(nameEl){nameEl.style.opacity='0';nameEl.style.transition='opacity 0.25s ease';setTimeout(function(){nameEl.textContent=this.querySelector('.swatch__name').textContent;nameEl.style.opacity='1';}.bind(this),150);}}.bind(this));});
+      swatches.forEach(function(s){s.addEventListener('click',function(){swatches.forEach(function(sw){sw.classList.remove('is-active');});this.classList.add('is-active');var variantImg=this.getAttribute('data-variant-img');if(variantImg&&materialsMainImg){materialsMainImg.style.opacity='0';setTimeout(function(){materialsMainImg.src=variantImg;materialsMainImg.style.opacity='1';},300);}var nameEl=document.getElementById('selectedStoneName');if(nameEl){nameEl.style.opacity='0';nameEl.style.transition='opacity 0.25s ease';setTimeout(function(){nameEl.textContent=this.querySelector('.swatch__name').textContent;nameEl.style.opacity='1';}.bind(this),150);}});});
 
       /* ---- FAQ accordion ---- */
       document.querySelectorAll('.faq-item').forEach(function (item) {
@@ -1912,6 +1912,27 @@
 
     })();
   </script>
+
+<!-- Lightbox -->
+<style>
+  .ts-lb-trigger{cursor:zoom-in}
+  .ts-lb{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.92);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;cursor:zoom-out}
+  .ts-lb.is-open{opacity:1;visibility:visible}
+  .ts-lb img{max-width:90vw;max-height:90vh;object-fit:contain}
+</style>
+<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('tsLb'),img=lb.querySelector('img');
+  function close(){lb.classList.remove('is-open');document.body.style.overflow='';}
+  document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.specs__drawing img,.materials__media img,.inquiry__preview-img,.hero__slide-img,.hero__bg-img,.source-card__img').forEach(function(el){
+    el.classList.add('ts-lb-trigger');
+    el.addEventListener('click',function(){img.src=this.currentSrc||this.src;img.alt=this.alt;lb.classList.add('is-open');document.body.style.overflow='hidden';});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 
 </body>
 </html>

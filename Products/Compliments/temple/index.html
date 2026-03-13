@@ -3,8 +3,8 @@
 <head>
   <base href="/Products/Compliments/temple/">
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
-  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
+  <link rel="icon" type="image/webp" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Temple | Compliments Collection | TIBA STONE</title>
   <meta name="description" content="Temple — sacred geometry made permanent in marble. A sculptural object from the Compliments Collection by Tiba Stone.">
@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link rel="preload" as="image" href="temple_01_editorial.png" fetchpriority="high">
+  <link rel="preload" as="image" href="temple_01_editorial.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <style>
@@ -561,7 +561,7 @@
       var revealEls=document.querySelectorAll('.reveal');
       var revealObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
       revealEls.forEach(function(el){revealObserver.observe(el);});
-      var heroImages=['temple_02_human.png','temple_01_editorial.png','temple_12_catalogue.png','temple_03_closeup_veining.png','temple_05_closeup_surface.png'];
+      var heroImages=['temple_02_human.webp','temple_01_editorial.webp','temple_12_catalogue.webp','temple_03_closeup_veining.webp','temple_05_closeup_surface.webp'];
       var heroMainImg=document.getElementById('heroMainImg'),inquiryPreviewImg=document.getElementById('inquiryPreviewImg');
       function switchImage(idx){var src=heroImages[idx];heroMainImg.style.opacity='0';inquiryPreviewImg.style.opacity='0';setTimeout(function(){heroMainImg.src=src;inquiryPreviewImg.src=src;heroMainImg.onload=function(){heroMainImg.style.opacity='1';};inquiryPreviewImg.onload=function(){inquiryPreviewImg.style.opacity='1';};},200);}
       document.querySelectorAll('.hero-thumb').forEach(function(thumb){thumb.addEventListener('click',function(){document.querySelectorAll('.hero-thumb').forEach(function(t){t.classList.remove('is-active');});this.classList.add('is-active');var idx=parseInt(this.dataset.index,10);switchImage(idx);});});
@@ -573,5 +573,26 @@
       document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.materials__media img,.creation-card__img,.specs__drawing img').forEach(function(img){img.style.opacity='0';img.style.transition='opacity 0.7s ease';function show(){img.style.opacity='1';}if(img.complete&&img.naturalHeight!==0)show();else img.addEventListener('load',show);});
     })();
   </script>
+<!-- Lightbox -->
+<style>
+  .ts-lb-trigger{cursor:zoom-in}
+  .ts-lb{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.92);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;cursor:zoom-out}
+  .ts-lb.is-open{opacity:1;visibility:visible}
+  .ts-lb img{max-width:90vw;max-height:90vh;object-fit:contain}
+</style>
+<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('tsLb'),img=lb.querySelector('img');
+  function close(){lb.classList.remove('is-open');document.body.style.overflow='';}
+  document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.specs__drawing img,.materials__media img,.inquiry__preview-img,.hero__slide-img,.hero__bg-img,.source-card__img').forEach(function(el){
+    el.classList.add('ts-lb-trigger');
+    el.addEventListener('click',function(){img.src=this.currentSrc||this.src;img.alt=this.alt;lb.classList.add('is-open');document.body.style.overflow='hidden';});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+
 </body>
 </html>

@@ -1416,26 +1416,26 @@
         <h2 class="exclusive-creations__title reveal">Signature Pieces</h2>
       </div>
       <div class="creations-grid reveal-stagger">
-        <a href="/Products/coffee tables/terra/" class="creation-card reveal">
+        <a href="/Products/Consoles/voluta/" class="creation-card reveal">
           <div class="creation-card__media">
-            <img src="Products/coffee tables/terra/terra_01_editorial.webp"
-                 alt="Terra Coffee Table — monolithic Travertino Romano slab on solid stone legs"
+            <img src="Products/Consoles/voluta/voluta_01_editorial.webp"
+                 alt="Voluta Console — sculptural marble console with sweeping curved form"
                  class="creation-card__img"
                  loading="lazy" decoding="async">
           </div>
-          <h3 class="creation-card__name">Terra</h3>
-          <span class="creation-card__type">Coffee Table</span>
+          <h3 class="creation-card__name">Voluta</h3>
+          <span class="creation-card__type">Console</span>
           <span class="btn-secondary">Discover More &rarr;</span>
         </a>
-        <a href="/Products/cabinets/aida/" class="creation-card reveal">
+        <a href="/Products/Consoles/arcata/" class="creation-card reveal">
           <div class="creation-card__media">
-            <img src="Products/cabinets/aida/aida_12_catalogue.webp"
-                 alt="Aida Cabinet — bookmatched marble panels on brushed brass frame"
+            <img src="Products/Consoles/arcata/arcata_01_editorial.webp"
+                 alt="Arcata Console — arched marble console with architectural presence"
                  class="creation-card__img"
                  loading="lazy" decoding="async">
           </div>
-          <h3 class="creation-card__name">Aida</h3>
-          <span class="creation-card__type">Cabinet</span>
+          <h3 class="creation-card__name">Arcata</h3>
+          <span class="creation-card__type">Console</span>
           <span class="btn-secondary">Discover More &rarr;</span>
         </a>
       </div>
@@ -1882,6 +1882,27 @@
 
     })();
   </script>
+
+<!-- Lightbox -->
+<style>
+  .ts-lb-trigger{cursor:zoom-in}
+  .ts-lb{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.92);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;cursor:zoom-out}
+  .ts-lb.is-open{opacity:1;visibility:visible}
+  .ts-lb img{max-width:90vw;max-height:90vh;object-fit:contain}
+</style>
+<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('tsLb'),img=lb.querySelector('img');
+  function close(){lb.classList.remove('is-open');document.body.style.overflow='';}
+  document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.specs__drawing img,.materials__media img,.inquiry__preview-img,.hero__slide-img,.hero__bg-img,.source-card__img').forEach(function(el){
+    el.classList.add('ts-lb-trigger');
+    el.addEventListener('click',function(){img.src=this.currentSrc||this.src;img.alt=this.alt;lb.classList.add('is-open');document.body.style.overflow='hidden';});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 
 </body>
 </html>

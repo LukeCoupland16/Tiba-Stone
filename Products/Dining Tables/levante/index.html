@@ -3,8 +3,8 @@
 <head>
   <base href="/Products/Dining Tables/levante/">
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
-  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
+  <link rel="icon" type="image/webp" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Levante Dining Table | TIBA STONE</title>
   <meta name="description" content="Levante — a bespoke marble dining table. Named for the eastern wind. Warmth, clarity, and intent in stone. Handcrafted by Tiba Stone.">
@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link rel="preload" as="image" href="levante_01_editorial.png" type="image/png" fetchpriority="high">
+  <link rel="preload" as="image" href="levante_01_editorial.webp" type="image/png" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <style>
@@ -1816,11 +1816,11 @@
 
       /* ---- Hero image thumbnail switcher ---- */
       var heroImages = [
-        'levante_02_human.png',
-        'levante_01_editorial.png',
-        'levante_12_catalogue.png',
-        'levante_03_closeup_veining.png',
-        'levante_04_closeup_edge.png'
+        'levante_02_human.webp',
+        'levante_01_editorial.webp',
+        'levante_12_catalogue.webp',
+        'levante_03_closeup_veining.webp',
+        'levante_04_closeup_edge.webp'
       ];
 
       var heroMainImg = document.getElementById('heroMainImg');
@@ -1934,6 +1934,27 @@
 
     })();
   </script>
+
+<!-- Lightbox -->
+<style>
+  .ts-lb-trigger{cursor:zoom-in}
+  .ts-lb{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.92);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;cursor:zoom-out}
+  .ts-lb.is-open{opacity:1;visibility:visible}
+  .ts-lb img{max-width:90vw;max-height:90vh;object-fit:contain}
+</style>
+<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('tsLb'),img=lb.querySelector('img');
+  function close(){lb.classList.remove('is-open');document.body.style.overflow='';}
+  document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.specs__drawing img,.materials__media img,.inquiry__preview-img,.hero__slide-img,.hero__bg-img,.source-card__img').forEach(function(el){
+    el.classList.add('ts-lb-trigger');
+    el.addEventListener('click',function(){img.src=this.currentSrc||this.src;img.alt=this.alt;lb.classList.add('is-open');document.body.style.overflow='hidden';});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 
 </body>
 </html>

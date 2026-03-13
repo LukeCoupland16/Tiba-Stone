@@ -1258,50 +1258,50 @@
 
       <div class="featured-gallery__grid">
 
-        <a href="/Products/coffee tables/terra/" class="featured-gallery__card reveal">
+        <a href="/Products/Consoles/voluta/" class="featured-gallery__card reveal">
           <div class="featured-gallery__img-wrap">
-            <img src="Products/coffee tables/terra/terra_01_editorial.webp"
-                 alt="Terra Coffee Table" class="featured-gallery__img" loading="lazy" decoding="async">
+            <img src="Products/Consoles/voluta/voluta_01_editorial.webp"
+                 alt="Voluta Console" class="featured-gallery__img" loading="lazy" decoding="async">
           </div>
           <div class="featured-gallery__info">
-            <span class="featured-gallery__label">Coffee Tables</span>
-            <h3 class="featured-gallery__name">Terra</h3>
+            <span class="featured-gallery__label">Consoles</span>
+            <h3 class="featured-gallery__name">Voluta</h3>
             <span class="featured-gallery__cta">Discover <span class="featured-gallery__cta-line"></span></span>
           </div>
         </a>
 
-        <a href="/Products/cabinets/aida/" class="featured-gallery__card reveal">
+        <a href="/Products/Consoles/portale/" class="featured-gallery__card reveal">
           <div class="featured-gallery__img-wrap">
-            <img src="Products/cabinets/aida/aida_02_human.webp"
-                 alt="Aida Cabinet" class="featured-gallery__img" loading="lazy" decoding="async">
+            <img src="Products/Consoles/portale/portale_01_editorial.webp"
+                 alt="Portale Console" class="featured-gallery__img" loading="lazy" decoding="async">
           </div>
           <div class="featured-gallery__info">
-            <span class="featured-gallery__label">Cabinets</span>
-            <h3 class="featured-gallery__name">Aida</h3>
+            <span class="featured-gallery__label">Consoles</span>
+            <h3 class="featured-gallery__name">Portale</h3>
             <span class="featured-gallery__cta">Discover <span class="featured-gallery__cta-line"></span></span>
           </div>
         </a>
 
-        <a href="/Products/Dining Tables/eclipse/" class="featured-gallery__card reveal">
+        <a href="/Products/Benches/gioco/" class="featured-gallery__card reveal">
           <div class="featured-gallery__img-wrap">
-            <img src="Products/Dining Tables/eclipse/eclipse_01_editorial.webp"
-                 alt="Eclipse Dining Table" class="featured-gallery__img" loading="lazy" decoding="async">
+            <img src="Products/Benches/gioco/gioco_01_editorial.webp"
+                 alt="Gioco Bench" class="featured-gallery__img" loading="lazy" decoding="async">
           </div>
           <div class="featured-gallery__info">
-            <span class="featured-gallery__label">Dining Tables</span>
-            <h3 class="featured-gallery__name">Eclipse</h3>
+            <span class="featured-gallery__label">Benches</span>
+            <h3 class="featured-gallery__name">Gioco</h3>
             <span class="featured-gallery__cta">Discover <span class="featured-gallery__cta-line"></span></span>
           </div>
         </a>
 
-        <a href="/Products/Credenzas/linea/" class="featured-gallery__card reveal">
+        <a href="/Products/Consoles/arcata/" class="featured-gallery__card reveal">
           <div class="featured-gallery__img-wrap">
-            <img src="Products/Credenzas/linea/linea_01_editorial.webp"
-                 alt="Linea Credenza" class="featured-gallery__img" loading="lazy" decoding="async">
+            <img src="Products/Consoles/arcata/arcata_01_editorial.webp"
+                 alt="Arcata Console" class="featured-gallery__img" loading="lazy" decoding="async">
           </div>
           <div class="featured-gallery__info">
-            <span class="featured-gallery__label">Credenzas</span>
-            <h3 class="featured-gallery__name">Linea</h3>
+            <span class="featured-gallery__label">Consoles</span>
+            <h3 class="featured-gallery__name">Arcata</h3>
             <span class="featured-gallery__cta">Discover <span class="featured-gallery__cta-line"></span></span>
           </div>
         </a>
@@ -3939,6 +3939,27 @@
 
     })();
   </script>
+
+<!-- Lightbox -->
+<style>
+  .ts-lb-trigger{cursor:zoom-in}
+  .ts-lb{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.92);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;cursor:zoom-out}
+  .ts-lb.is-open{opacity:1;visibility:visible}
+  .ts-lb img{max-width:90vw;max-height:90vh;object-fit:contain}
+</style>
+<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('tsLb'),img=lb.querySelector('img');
+  function close(){lb.classList.remove('is-open');document.body.style.overflow='';}
+  document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.specs__drawing img,.materials__media img,.inquiry__preview-img,.hero__slide-img,.hero__bg-img,.source-card__img').forEach(function(el){
+    el.classList.add('ts-lb-trigger');
+    el.addEventListener('click',function(){img.src=this.currentSrc||this.src;img.alt=this.alt;lb.classList.add('is-open');document.body.style.overflow='hidden';});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 
 </body>
 </html>

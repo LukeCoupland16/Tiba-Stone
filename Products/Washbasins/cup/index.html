@@ -3,8 +3,8 @@
 <head>
   <base href="/Products/Washbasins/cup/">
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
-  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
+  <link rel="icon" type="image/webp" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cup | Washbasins Collection | TIBA STONE</title>
   <meta name="description" content="Cup — a bespoke marble washbasin in the form of a perfect vessel. Handcrafted stone basin by Tiba Stone.">
@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link rel="preload" as="image" href="cup_01_editorial.png" fetchpriority="high">
+  <link rel="preload" as="image" href="cup_01_editorial.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <style>
@@ -559,18 +559,39 @@
       var revealEls=document.querySelectorAll('.reveal');
       var revealObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
       revealEls.forEach(function(el){revealObserver.observe(el);});
-      var heroImages=['cup_02_human.png','cup_01_editorial.png','cup_12_catalogue.png','cup_03_closeup_veining.png','cup_04_closeup_edge.png'];
+      var heroImages=['cup_02_human.webp','cup_01_editorial.webp','cup_12_catalogue.webp','cup_03_closeup_veining.webp','cup_04_closeup_edge.webp'];
       var heroMainImg=document.getElementById('heroMainImg'),inquiryPreviewImg=document.getElementById('inquiryPreviewImg');
       function switchImage(idx){var src=heroImages[idx];heroMainImg.style.opacity='0';inquiryPreviewImg.style.opacity='0';setTimeout(function(){heroMainImg.src=src;inquiryPreviewImg.src=src;heroMainImg.onload=function(){heroMainImg.style.opacity='1';};inquiryPreviewImg.onload=function(){inquiryPreviewImg.style.opacity='1';};},200);}
       document.querySelectorAll('.hero-thumb').forEach(function(thumb){thumb.addEventListener('click',function(){document.querySelectorAll('.hero-thumb').forEach(function(t){t.classList.remove('is-active');});this.classList.add('is-active');var idx=parseInt(this.dataset.index,10);switchImage(idx);});});
       var swatches=document.querySelectorAll('.swatch');
       var materialsMainImg=document.getElementById('materialsMainImg');
-      swatches.forEach(function(s){s.addEventListener('click',function(){swatches.forEach(function(sw){sw.classList.remove('is-active');});this.classList.add('is-active');var variantImg=this.getAttribute('data-variant-img');if(variantImg&&materialsMainImg){materialsMainImg.style.opacity='0';setTimeout(function(){materialsMainImg.src=variantImg;materialsMainImg.style.opacity='1';},300);}var nameEl=document.getElementById('selectedStoneName');if(nameEl){nameEl.style.opacity='0';nameEl.style.transition='opacity 0.25s ease';setTimeout(function(){nameEl.textContent=this.querySelector('.swatch__name').textContent;nameEl.style.opacity='1';}.bind(this),150);}}.bind(this));});
+      swatches.forEach(function(s){s.addEventListener('click',function(){swatches.forEach(function(sw){sw.classList.remove('is-active');});this.classList.add('is-active');var variantImg=this.getAttribute('data-variant-img');if(variantImg&&materialsMainImg){materialsMainImg.style.opacity='0';setTimeout(function(){materialsMainImg.src=variantImg;materialsMainImg.style.opacity='1';},300);}var nameEl=document.getElementById('selectedStoneName');if(nameEl){nameEl.style.opacity='0';nameEl.style.transition='opacity 0.25s ease';setTimeout(function(){nameEl.textContent=this.querySelector('.swatch__name').textContent;nameEl.style.opacity='1';}.bind(this),150);}});});
       document.querySelectorAll('.faq-item').forEach(function(item){item.querySelector('.faq-item__question').addEventListener('click',function(){var isOpen=item.classList.contains('is-open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('is-open');});if(!isOpen)item.classList.add('is-open');});});
       document.getElementById('inquiryForm').addEventListener('submit',function(e){e.preventDefault();var form=e.target,btn=form.querySelector('button[type="submit"]'),orig=btn.textContent;btn.textContent='Sending\u2026';btn.disabled=true;fetch('https://formspree.io/f/luke@tibaliving.com',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).then(function(r){if(r.ok){btn.textContent='Thank You';setTimeout(function(){form.reset();btn.textContent=orig;btn.disabled=false;},2500);}else{btn.textContent='Error \u2014 Try Again';btn.disabled=false;}}).catch(function(){btn.textContent='Error \u2014 Try Again';btn.disabled=false;});});
       document.getElementById('footerForm').addEventListener('submit',function(e){e.preventDefault();var form=e.target,btn=form.querySelector('button[type="submit"]'),orig=btn.textContent;btn.textContent='Sending\u2026';btn.disabled=true;fetch('https://formspree.io/f/luke@tibaliving.com',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).then(function(r){if(r.ok){btn.textContent='Thank You';setTimeout(function(){form.reset();btn.textContent=orig;btn.disabled=false;},3000);}else{btn.textContent='Error';btn.disabled=false;}}).catch(function(){btn.textContent='Error';btn.disabled=false;});});
       document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.materials__media img,.creation-card__img,.specs__drawing img').forEach(function(img){img.style.opacity='0';img.style.transition='opacity 0.7s ease';function show(){img.style.opacity='1';}if(img.complete&&img.naturalHeight!==0)show();else img.addEventListener('load',show);});
     })();
   </script>
+<!-- Lightbox -->
+<style>
+  .ts-lb-trigger{cursor:zoom-in}
+  .ts-lb{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.92);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;cursor:zoom-out}
+  .ts-lb.is-open{opacity:1;visibility:visible}
+  .ts-lb img{max-width:90vw;max-height:90vh;object-fit:contain}
+</style>
+<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('tsLb'),img=lb.querySelector('img');
+  function close(){lb.classList.remove('is-open');document.body.style.overflow='';}
+  document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.specs__drawing img,.materials__media img,.inquiry__preview-img,.hero__slide-img,.hero__bg-img,.source-card__img').forEach(function(el){
+    el.classList.add('ts-lb-trigger');
+    el.addEventListener('click',function(){img.src=this.currentSrc||this.src;img.alt=this.alt;lb.classList.add('is-open');document.body.style.overflow='hidden';});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+
 </body>
 </html>

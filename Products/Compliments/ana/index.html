@@ -3,8 +3,8 @@
 <head>
   <base href="/Products/Compliments/ana/">
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
-  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
+  <link rel="icon" type="image/webp" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ana Chair | TIBA STONE</title>
   <meta name="description" content="The Ana Chair — two marble monoliths joined by a leather sling and solid brass rod. Stone reimagined as seating. Bespoke marble furniture by Tiba Stone.">
@@ -1888,6 +1888,27 @@
 
     })();
   </script>
+
+<!-- Lightbox -->
+<style>
+  .ts-lb-trigger{cursor:zoom-in}
+  .ts-lb{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.92);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;cursor:zoom-out}
+  .ts-lb.is-open{opacity:1;visibility:visible}
+  .ts-lb img{max-width:90vw;max-height:90vh;object-fit:contain}
+</style>
+<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('tsLb'),img=lb.querySelector('img');
+  function close(){lb.classList.remove('is-open');document.body.style.overflow='';}
+  document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.specs__drawing img,.materials__media img,.inquiry__preview-img,.hero__slide-img,.hero__bg-img,.source-card__img').forEach(function(el){
+    el.classList.add('ts-lb-trigger');
+    el.addEventListener('click',function(){img.src=this.currentSrc||this.src;img.alt=this.alt;lb.classList.add('is-open');document.body.style.overflow='hidden';});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 
 </body>
 </html>

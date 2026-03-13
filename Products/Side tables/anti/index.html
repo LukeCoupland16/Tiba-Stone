@@ -3,8 +3,8 @@
 <head>
   <base href="/Products/Side tables/anti/">
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
-  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).png">
+  <link rel="icon" type="image/webp" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <link rel="apple-touch-icon" href="../../../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anti Side Table | TIBA STONE</title>
   <meta name="description" content="The Anti Side Table — a monolithic marble slab that appears to hover, held by a single hand-forged iron pin. Stone reduced to its elemental. Bespoke marble furniture by Tiba Stone.">
@@ -148,7 +148,7 @@
     .materials-section { padding: var(--space-2xl) 0; background: var(--color-sand); }
     .materials__inner { display: grid; grid-template-columns: 0.55fr 0.45fr; gap: var(--space-xl); align-items: center; }
     .materials__media { overflow: hidden; }
-    .materials__media img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform var(--duration-slow) var(--ease-smooth); }
+    .materials__media img { width: 100%; aspect-ratio: 3 / 2; object-fit: contain; background: #F0EBE3; transition: transform var(--duration-slow) var(--ease-smooth); }
     .materials__media:hover img { transform: scale(1.03); }
     .materials__content { padding: var(--space-md) 0; }
     .materials__label { font-family: var(--font-body); font-size: var(--text-subtitle); font-weight: 500; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-river-green); display: block; margin-bottom: 0.75rem; }
@@ -398,7 +398,7 @@
     <div class="container">
       <div class="materials__inner">
         <div class="materials__media reveal">
-          <img src="Product variations/ChatGPT Image Mar 9, 2026, 04_23_14 PM.webp"
+          <img src="Product Variations/anti_calacatta-viola.webp"
                alt="Anti Side Table in Calacatta Viola marble"
                id="materialsMainImg"
                loading="lazy" decoding="async">
@@ -411,27 +411,27 @@
           </p>
           <p class="materials__stone-name" id="selectedStoneName">Calacatta Viola</p>
           <div class="materials__swatches" id="materialSelector">
-            <div class="swatch is-active" data-variant-img="Product variations/ChatGPT Image Mar 9, 2026, 04_23_14 PM.webp">
+            <div class="swatch is-active" data-variant-img="Product Variations/anti_calacatta-viola.webp">
               <img src="../../../Stone types/Calacatta Viola.webp" alt="Calacatta Viola" class="swatch__img">
               <span class="swatch__name">Calacatta Viola</span>
             </div>
-            <div class="swatch" data-variant-img="Product variations/ChatGPT Image Mar 9, 2026, 04_23_23 PM.webp">
+            <div class="swatch" data-variant-img="Product Variations/anti_fendy-grey.webp">
               <img src="../../../Stone types/Fendy-Grey.webp" alt="Fendy Grey" class="swatch__img">
               <span class="swatch__name">Fendy Grey</span>
             </div>
-            <div class="swatch" data-variant-img="Product variations/ChatGPT Image Mar 9, 2026, 04_23_17 PM.webp">
+            <div class="swatch" data-variant-img="Product Variations/anti_ice-age-onyx.webp">
               <img src="../../../Stone types/Ice-Age-Onyx-Texture.webp" alt="Ice Age Onyx" class="swatch__img">
               <span class="swatch__name">Ice Age Onyx</span>
             </div>
-            <div class="swatch" data-variant-img="Product variations/ChatGPT Image Mar 9, 2026, 04_23_16 PM.webp">
+            <div class="swatch" data-variant-img="Product Variations/anti_noir-aziza.webp">
               <img src="../../../Stone types/Noir-Aziza Texture.webp" alt="Noir Aziza" class="swatch__img">
               <span class="swatch__name">Noir Aziza</span>
             </div>
-            <div class="swatch" data-variant-img="Product variations/ChatGPT Image Mar 9, 2026, 04_23_19 PM.webp">
+            <div class="swatch" data-variant-img="Product Variations/anti_rosso-levanto.webp">
               <img src="../../../Stone types/Roso-Levanto-texture.webp" alt="Rosso Levanto" class="swatch__img">
               <span class="swatch__name">Rosso Levanto</span>
             </div>
-            <div class="swatch" data-variant-img="Product variations/ChatGPT Image Mar 9, 2026, 04_23_22 PM.webp">
+            <div class="swatch" data-variant-img="Product Variations/anti_verde-patricia.webp">
               <img src="../../../Stone types/Verde-Patricia-Texture.webp" alt="Verde Patricia" class="swatch__img">
               <span class="swatch__name">Verde Patricia</span>
             </div>
@@ -772,6 +772,27 @@
       });
     })();
   </script>
+
+<!-- Lightbox -->
+<style>
+  .ts-lb-trigger{cursor:zoom-in}
+  .ts-lb{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.92);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;cursor:zoom-out}
+  .ts-lb.is-open{opacity:1;visibility:visible}
+  .ts-lb img{max-width:90vw;max-height:90vh;object-fit:contain}
+</style>
+<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('tsLb'),img=lb.querySelector('img');
+  function close(){lb.classList.remove('is-open');document.body.style.overflow='';}
+  document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.specs__drawing img,.materials__media img,.inquiry__preview-img,.hero__slide-img,.hero__bg-img,.source-card__img').forEach(function(el){
+    el.classList.add('ts-lb-trigger');
+    el.addEventListener('click',function(){img.src=this.currentSrc||this.src;img.alt=this.alt;lb.classList.add('is-open');document.body.style.overflow='hidden';});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 
 </body>
 </html>
