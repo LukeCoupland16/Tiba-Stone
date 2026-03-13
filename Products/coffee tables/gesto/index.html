@@ -1885,15 +1885,31 @@
       /* ---- Footer form ---- */
       document.getElementById('footerForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        var btn = this.querySelector('button[type="submit"]');
+        var form = e.target;
+        var btn = form.querySelector('button[type="submit"]');
         var original = btn.textContent;
-        btn.textContent = 'Thank You';
+        btn.textContent = 'Sending…';
         btn.disabled = true;
-        setTimeout(function () {
-          e.target.reset();
-          btn.textContent = original;
+        fetch('https://formspree.io/f/luke@tibaliving.com', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (r) {
+          if (r.ok) {
+            btn.textContent = 'Sent';
+            setTimeout(function () {
+              form.reset();
+              btn.textContent = original;
+              btn.disabled = false;
+            }, 3000);
+          } else {
+            btn.textContent = 'Error';
+            btn.disabled = false;
+          }
+        }).catch(function () {
+          btn.textContent = 'Error';
           btn.disabled = false;
-        }, 3000);
+        });
       });
 
       /* ---- Progressive image fade ---- */

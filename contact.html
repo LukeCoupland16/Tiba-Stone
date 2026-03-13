@@ -1280,15 +1280,33 @@
             return;
           }
 
-          // Success — fade form out, show thank you
-          form.style.transition = 'opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)';
-          form.style.opacity = '0';
+          // Submit to Formspree
+          var submitBtn = form.querySelector('button[type="submit"]');
+          var origText = submitBtn.textContent;
+          submitBtn.textContent = 'Sending…';
+          submitBtn.disabled = true;
 
-          setTimeout(function () {
-            form.style.display = 'none';
-            successEl.classList.add('is-visible');
-            successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 600);
+          fetch('https://formspree.io/f/luke@tibaliving.com', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          }).then(function (r) {
+            if (r.ok) {
+              form.style.transition = 'opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)';
+              form.style.opacity = '0';
+              setTimeout(function () {
+                form.style.display = 'none';
+                successEl.classList.add('is-visible');
+                successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }, 600);
+            } else {
+              submitBtn.textContent = 'Error — Try Again';
+              submitBtn.disabled = false;
+            }
+          }).catch(function () {
+            submitBtn.textContent = 'Error — Try Again';
+            submitBtn.disabled = false;
+          });
         });
 
         // Clear individual field errors on input
@@ -1320,13 +1338,28 @@
         footerForm.addEventListener('submit', function (e) {
           e.preventDefault();
           var btn = footerForm.querySelector('.btn-primary');
-          btn.textContent = 'Sent';
+          btn.textContent = 'Sending…';
           btn.disabled = true;
-          setTimeout(function () {
-            footerForm.reset();
-            btn.textContent = 'Send';
+          fetch('https://formspree.io/f/luke@tibaliving.com', {
+            method: 'POST',
+            body: new FormData(footerForm),
+            headers: { 'Accept': 'application/json' }
+          }).then(function (r) {
+            if (r.ok) {
+              btn.textContent = 'Sent';
+              setTimeout(function () {
+                footerForm.reset();
+                btn.textContent = 'Send';
+                btn.disabled = false;
+              }, 3000);
+            } else {
+              btn.textContent = 'Error — Try Again';
+              btn.disabled = false;
+            }
+          }).catch(function () {
+            btn.textContent = 'Error — Try Again';
             btn.disabled = false;
-          }, 3000);
+          });
         });
       }
 

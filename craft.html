@@ -2023,15 +2023,32 @@
         var form = e.target;
         var btn = form.querySelector('button[type="submit"]');
         var originalText = btn.textContent;
-        btn.textContent = 'Thank You';
+        btn.textContent = 'Sending\u2026';
         btn.disabled = true;
         btn.style.opacity = '0.7';
-        setTimeout(function () {
-          form.reset();
-          btn.textContent = originalText;
+        fetch('https://formspree.io/f/luke@tibaliving.com', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (r) {
+          if (r.ok) {
+            btn.textContent = 'Sent';
+            setTimeout(function () {
+              form.reset();
+              btn.textContent = originalText;
+              btn.disabled = false;
+              btn.style.opacity = '1';
+            }, 3000);
+          } else {
+            btn.textContent = 'Error \u2014 Try Again';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+          }
+        }).catch(function () {
+          btn.textContent = 'Error \u2014 Try Again';
           btn.disabled = false;
           btn.style.opacity = '1';
-        }, 3000);
+        });
       });
 
     })();

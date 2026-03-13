@@ -1516,7 +1516,7 @@
           </div>
         </a>
         <a href="/catalog#consoles" class="category-card reveal">
-          <img src="Products/Consoles/curves/curves_01_editorial.png"
+          <img src="Products/Consoles/curves/curves_01_editorial.webp"
                alt="Curves Console — sculpted marble console with sinuous silhouette"
                class="category-card__bg"
                loading="lazy" decoding="async">
@@ -1527,7 +1527,7 @@
           </div>
         </a>
         <a href="/catalog#washbasins" class="category-card reveal">
-          <img src="Products/Washbasins/circle-high/circle-high_01_editorial.png"
+          <img src="Products/Washbasins/circle-high/circle-high_01_editorial.webp"
                alt="Circle High Washbasin — monolithic stone basin as sculptural centrepiece"
                class="category-card__bg"
                loading="lazy" decoding="async">
@@ -1846,15 +1846,32 @@
         var form = e.target;
         var btn = form.querySelector('button[type="submit"]');
         var originalText = btn.textContent;
-        btn.textContent = 'Thank You';
+        btn.textContent = 'Sending\u2026';
         btn.disabled = true;
         btn.style.opacity = '0.7';
-        setTimeout(function () {
-          form.reset();
-          btn.textContent = originalText;
+        fetch('https://formspree.io/f/luke@tibaliving.com', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (r) {
+          if (r.ok) {
+            btn.textContent = 'Sent';
+            setTimeout(function () {
+              form.reset();
+              btn.textContent = originalText;
+              btn.disabled = false;
+              btn.style.opacity = '1';
+            }, 3000);
+          } else {
+            btn.textContent = 'Error \u2014 Try Again';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+          }
+        }).catch(function () {
+          btn.textContent = 'Error \u2014 Try Again';
           btn.disabled = false;
           btn.style.opacity = '1';
-        }, 3000);
+        });
       });
 
     })();
