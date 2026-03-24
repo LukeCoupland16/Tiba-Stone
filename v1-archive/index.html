@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/webp" href="TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <link rel="apple-touch-icon" href="TIBA_FINAL_LOGO_PORTRAIT (2).png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIBA STONE | Bespoke Marble Atelier</title>
+  <meta name="description" content="Tiba Stone is a bespoke marble atelier crafting handmade washbasins, bathtubs, and furniture from the world's finest stone.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preload" as="image" href="Products/coffee tables/terra/terra_12_catalogue.webp" type="image/webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/shared.css">
+  <style>
+    /* ============================================
+       6. HEADER
+    ============================================ */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.625rem 0;
+      transition: background var(--duration-fast) var(--ease-smooth),
+                  border-color var(--duration-fast) var(--ease-smooth),
+                  padding var(--duration-fast) var(--ease-smooth);
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom-color: rgba(34, 35, 35, 0.08);
+      padding: 1.125rem 0;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .header__logo-img {
+      height: 44px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      transition: filter var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__logo-img {
+      filter: none;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 2.75rem;
+    }
+
+    .header__nav-link {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-ivory);
+      text-decoration: none;
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__nav-link {
+      color: var(--color-stone);
+    }
+
+    .header__nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-sunset);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .header__nav-link:hover::after,
+    .header__nav-link--active::after {
+      transform: scaleX(1);
+    }
+
+    /* Hamburger */
+    .header__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0.5rem;
+      z-index: 2;
+    }
+
+    .header__hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--color-ivory);
+      transition: background var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__hamburger span {
+      background: var(--color-stone);
+    }
+
+    /* Mobile Menu Overlay */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--color-ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--duration-fast) var(--ease-smooth);
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: var(--color-stone);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0.5rem;
+    }
+
+    .mobile-menu__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .mobile-menu__link {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      color: var(--color-stone);
+      text-decoration: none;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .mobile-menu__link:hover {
+      color: var(--color-sunset);
+    }
+
+    /* ============================================
+       7. HERO
+    ============================================ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Hero Slideshow */
+    .hero__slides {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero__slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero__slide.is-active {
+      opacity: 1;
+    }
+
+    .hero__slide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      will-change: transform;
+    }
+
+    .hero__slide.is-active .hero__slide-img {
+      animation: heroKenBurns 8s ease-out forwards;
+    }
+
+    @keyframes heroKenBurns {
+      from { transform: scale(1.0); }
+      to   { transform: scale(1.08); }
+    }
+
+    .hero__dots {
+      position: absolute;
+      bottom: 9rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 3;
+    }
+
+    .hero__dot {
+      width: 20px;
+      height: 2px;
+      border-radius: 1px;
+      background: rgba(255, 255, 255, 0.35);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.4s ease, width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero__dot.is-active {
+      background: var(--color-ivory);
+      width: 38px;
+    }
+
+    .hero__dot:hover {
+      background: rgba(255, 255, 255, 0.65);
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(34, 35, 35, 0.2) 0%,
+        rgba(34, 35, 35, 0.45) 100%
+      );
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 var(--container-pad);
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      color: var(--color-ivory);
+      letter-spacing: 0.03em;
+      line-height: 1.15;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    .hero__scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 2;
+    }
+
+    .hero__scroll-text {
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--color-ivory);
+      font-weight: 400;
+    }
+
+    .hero__scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--color-ivory);
+      opacity: 0.6;
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
+      50% { opacity: 0.8; transform: scaleY(1); transform-origin: top; }
+    }
+
+    /* ============================================
+       8. BRAND INTRODUCTION
+    ============================================ */
+    .brand-intro {
+      padding: clamp(4.5rem, 7vw, 6.5rem) 0;
+    }
+
+    .brand-intro__name {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .brand-intro__subtitle {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+    }
+
+    .brand-intro__body p {
+      font-size: var(--text-body);
+      line-height: var(--lh-body);
+      font-weight: 400;
+      max-width: 580px;
+      margin: 0 auto 1.5rem;
+      color: var(--color-stone);
+    }
+
+    .brand-intro__body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ============================================
+       9. EDITORIAL SPLIT (Asymmetric Layout)
+    ============================================ */
+    .editorial-split {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--grid-gap);
+      align-items: start;
+    }
+
+    .editorial-split__media {
+      overflow: hidden;
+    }
+
+    .editorial-split__img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .editorial-split__media:hover .editorial-split__img {
+      transform: scale(1.03);
+    }
+
+    .editorial-split__content {
+      padding-top: clamp(3rem, 8vw, 7rem);
+      padding-left: clamp(1rem, 3vw, 2.5rem);
+    }
+
+    .editorial-split__label {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    .editorial-split__heading {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      line-height: var(--lh-heading);
+      margin-bottom: 1.5rem;
+    }
+
+    .editorial-split__text {
+      font-weight: 400;
+      line-height: var(--lh-body);
+      margin-bottom: 2rem;
+      max-width: 420px;
+    }
+
+    /* Reversed: image right, text left */
+    .editorial-split--img-right {
+      grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .editorial-split--img-right .editorial-split__media {
+      order: 2;
+    }
+
+    .editorial-split--img-right .editorial-split__content {
+      order: 1;
+      padding-left: 0;
+      padding-right: clamp(1rem, 3vw, 2.5rem);
+    }
+
+    /* ============================================
+       9b. FULL-BLEED EDITORIAL VARIANT
+       Image bleeds to viewport edge; text fills opposite side
+    ============================================ */
+    .editorial-split--full-bleed {
+      grid-template-columns: 56vw 1fr;
+      gap: 0;
+      min-height: 72vh;
+      align-items: stretch;
+    }
+
+    .editorial-split--full-bleed .editorial-split__media {
+      overflow: hidden;
+    }
+
+    .editorial-split--full-bleed .editorial-split__img {
+      aspect-ratio: unset;
+      height: 100%;
+      min-height: 72vh;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .editorial-split--full-bleed .editorial-split__content {
+      padding: clamp(3rem, 5vw, 5.5rem) clamp(2.5rem, 4vw, 5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .editorial-split--full-bleed .editorial-split__content .btn-primary {
+      padding: 0.65rem 1.75rem;
+      font-size: clamp(0.7rem, 0.75vw, 0.8rem);
+      align-self: flex-start;
+    }
+
+    /* Full-bleed, image on right */
+    .editorial-split--full-bleed.editorial-split--img-right {
+      grid-template-columns: 1fr 56vw;
+    }
+
+    .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content {
+      padding: clamp(3rem, 5vw, 5.5rem) clamp(2.5rem, 4vw, 5rem);
+      padding-left: clamp(3rem, 5vw, 6rem);
+    }
+
+    /* ============================================
+       10. GALLERY TEASER
+    ============================================ */
+    .gallery-teaser {
+      background: var(--color-sand);
+      padding: 0;
+    }
+
+    /* ============================================
+       11. EXCLUSIVE CREATIONS
+    ============================================ */
+    .exclusive-creations {
+      padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+    }
+
+    .exclusive-creations__header {
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .exclusive-creations__label {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .exclusive-creations__title {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .creations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--grid-gap);
+    }
+
+    .creation-card {
+      text-decoration: none;
+      color: var(--color-stone);
+      display: block;
+    }
+
+    .creation-card__media {
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .creation-card__img {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .creation-card:hover .creation-card__img {
+      transform: scale(1.03);
+    }
+
+    .creation-card__name {
+      font-family: var(--font-display);
+      font-size: var(--text-h3);
+      margin-bottom: 0.375rem;
+    }
+
+    .creation-card__type {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    /* ============================================
+       12. CATEGORY TEASERS
+    ============================================ */
+    .category-teasers {
+      padding: 0;
+    }
+
+    .category-teasers__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .category-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .category-card__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .category-card:hover .category-card__bg {
+      transform: scale(1.05);
+    }
+
+    .category-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(34, 35, 35, 0.3);
+      transition: background var(--duration-fast) var(--ease-smooth);
+    }
+
+    .category-card:hover .category-card__overlay {
+      background: rgba(34, 35, 35, 0.42);
+    }
+
+    .category-card::before {
+      content: '';
+      position: absolute;
+      inset: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      z-index: 3;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.97);
+      transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .category-card:hover::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .category-card__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .category-card__title {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      color: var(--color-ivory);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ============================================
+       13. CRAFTSMANSHIP TEASER
+    ============================================ */
+    .craft-teaser {
+      padding: 0;
+    }
+
+    /* ============================================
+       14. CUSTOMIZATION CALLOUT
+    ============================================ */
+    .custom-callout {
+      padding: 0 0 clamp(3rem, 5vw, 5rem);
+      background: var(--color-sand);
+    }
+
+    .marble-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: clamp(1rem, 2vw, 2rem);
+      margin-top: clamp(2.5rem, 4vw, 4rem);
+    }
+
+    .marble-strip__item {
+      text-align: center;
+    }
+
+    .marble-strip__item img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 2px;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .marble-strip__item:hover img {
+      transform: scale(1.05);
+    }
+
+    .marble-strip__item span {
+      display: block;
+      margin-top: 0.75rem;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      font-weight: 400;
+    }
+
+    /* ============================================
+       15. EXPERT ADVICE BANNER
+    ============================================ */
+    .advice-banner {
+      background: var(--color-dusk-blue);
+      padding: clamp(3rem, 5vw, 4.5rem) 0;
+    }
+
+    .advice-banner__text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+      color: var(--color-ivory);
+      line-height: 1.5;
+      max-width: 760px;
+      margin: 0 auto;
+      letter-spacing: 0.01em;
+    }
+
+    /* ============================================
+       16. FOOTER (overrides — base in shared.css)
+    ============================================ */
+    .site-footer {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+      padding: var(--space-2xl) 0 var(--space-lg);
+    }
+
+    /* ============================================
+       17. RESPONSIVE — TABLET
+    ============================================ */
+    @media (max-width: 1023px) {
+      .editorial-split {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .editorial-split--img-right {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .editorial-split--full-bleed,
+      .editorial-split--full-bleed.editorial-split--img-right {
+        grid-template-columns: 1fr 1fr;
+        min-height: auto;
+      }
+
+      .editorial-split--full-bleed .editorial-split__img {
+        min-height: auto;
+        aspect-ratio: 4 / 5;
+      }
+
+      .editorial-split--full-bleed .editorial-split__content,
+      .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content {
+        padding: clamp(2rem, 4vw, 3.5rem);
+        padding-top: clamp(2.5rem, 5vw, 4rem);
+      }
+
+      .editorial-split__content {
+        padding-top: clamp(2rem, 5vw, 4rem);
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg) var(--grid-gap);
+      }
+
+      .brand-intro {
+        padding: clamp(3rem, 5vw, 5rem) 0;
+      }
+
+      .marble-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* ============================================
+       18. RESPONSIVE — MOBILE
+    ============================================ */
+    @media (max-width: 767px) {
+      .header__nav {
+        display: none;
+      }
+
+      .header__hamburger {
+        display: flex;
+      }
+
+      .hero {
+        height: 85vh;
+        min-height: 500px;
+      }
+
+      .brand-intro {
+        padding: var(--space-xl) 0;
+      }
+
+      .editorial-split,
+      .editorial-split--img-right,
+      .editorial-split--full-bleed,
+      .editorial-split--full-bleed.editorial-split--img-right {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .editorial-split__content {
+        padding-top: 2rem;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .editorial-split--full-bleed .editorial-split__content,
+      .editorial-split--full-bleed.editorial-split--img-right .editorial-split__content {
+        padding: 2rem var(--container-pad);
+      }
+
+      .editorial-split--img-right .editorial-split__media {
+        order: 0;
+      }
+
+      .editorial-split--img-right .editorial-split__content {
+        order: 0;
+        padding-right: 0;
+      }
+
+      .editorial-split--full-bleed.editorial-split--img-right .editorial-split__media {
+        order: 0;
+      }
+
+      .editorial-split__img,
+      .editorial-split--full-bleed .editorial-split__img {
+        aspect-ratio: 4 / 3;
+        min-height: auto;
+      }
+
+      .creations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-teasers__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        aspect-ratio: 16 / 10;
+      }
+
+      .marble-strip {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .gallery-teaser,
+      .craft-teaser,
+      .custom-callout,
+      .exclusive-creations,
+      .category-teasers {
+        padding: var(--space-lg) 0;
+      }
+
+      .advice-banner {
+        padding: var(--space-lg) 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header__inner container">
+      <a href="/" class="header__logo">
+        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img" loading="lazy" decoding="async">
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="/" class="header__nav-link header__nav-link--active">Home</a>
+        <a href="/craft" class="header__nav-link">Craft</a>
+        <a href="/catalog" class="header__nav-link">Catalog</a>
+        <a href="/contact" class="header__nav-link">Contact</a>
+      </nav>
+      <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <nav class="mobile-menu__nav">
+      <a href="/" class="mobile-menu__link">Home</a>
+      <a href="/craft" class="mobile-menu__link">Craft</a>
+      <a href="/catalog" class="mobile-menu__link">Catalog</a>
+      <a href="/contact" class="mobile-menu__link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ============================================
+       HERO
+  ============================================ -->
+  <section class="hero" id="hero">
+    <div class="hero__slides">
+      <div class="hero__slide is-active">
+        <img src="Products/coffee tables/terra/terra_12_catalogue.webp"
+             alt="Terra coffee table — sculptural marble form in warm studio light"
+             class="hero__slide-img"
+             loading="eager"
+             fetchpriority="high">
+      </div>
+      <div class="hero__slide">
+        <img src="Products/cabinets/aida/aida_12_catalogue.webp"
+             alt="Aida cabinet — four bookmatched marble panels framed in brushed brass"
+             class="hero__slide-img"
+             loading="lazy" decoding="async">
+      </div>
+      <div class="hero__slide">
+        <img src="Products/Side tables/icaro/icaro_01_editorial.webp"
+             alt="Icaro side table — marble disc balanced on a slender stone column"
+             class="hero__slide-img"
+             loading="lazy" decoding="async">
+      </div>
+      <div class="hero__slide">
+        <img src="Products/Vases/doge-tall/doge-tall_12_catalogue.webp"
+             alt="Doge Tall vase — classical vessel silhouette in pure white stone"
+             class="hero__slide-img"
+             loading="lazy" decoding="async">
+      </div>
+      <div class="hero__slide">
+        <img src="Products/coffee tables/gesto/gesto_12_catalogue.webp"
+             alt="Gesto coffee table — monolithic dark stone with brass ring detail"
+             class="hero__slide-img"
+             loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1 class="hero__title">Sculpted by Nature,<br>Shaped by Hand</h1>
+      <a href="/catalog" class="btn-primary btn-primary--light">Explore the Collection</a>
+    </div>
+    <div class="hero__dots" role="tablist" aria-label="Slideshow navigation">
+      <button class="hero__dot is-active" aria-label="Slide 1" aria-selected="true" role="tab"></button>
+      <button class="hero__dot" aria-label="Slide 2" aria-selected="false" role="tab"></button>
+      <button class="hero__dot" aria-label="Slide 3" aria-selected="false" role="tab"></button>
+      <button class="hero__dot" aria-label="Slide 4" aria-selected="false" role="tab"></button>
+      <button class="hero__dot" aria-label="Slide 5" aria-selected="false" role="tab"></button>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span class="hero__scroll-text">Scroll</span>
+      <span class="hero__scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       BRAND INTRODUCTION
+  ============================================ -->
+  <section class="brand-intro">
+    <div class="container--narrow text-center">
+      <div class="accent-rule reveal"></div>
+      <h2 class="brand-intro__name reveal">TIBA STONE</h2>
+      <p class="brand-intro__subtitle reveal">Bespoke Marble Atelier</p>
+      <div class="brand-intro__body reveal">
+        <p>For over two decades, Tiba Stone has transformed the world's most extraordinary marble into objects of enduring beauty. Each piece begins as a conversation &mdash; between client and artisan, between vision and stone.</p>
+        <p>We believe that marble is not merely a material but a living record of the earth's memory. Our atelier honours this legacy through patient handcraft, bespoke design, and an unwavering commitment to the singular.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       GALLERY / SHOWROOM TEASER
+  ============================================ -->
+  <section class="gallery-teaser">
+    <div class="editorial-split editorial-split--full-bleed">
+      <div class="editorial-split__media reveal">
+        <img src="Products/coffee tables/terra/terra_02_human.webp"
+             alt="Terra coffee table in architectural interior — stone in context"
+             class="editorial-split__img"
+             loading="lazy" decoding="async">
+      </div>
+      <div class="editorial-split__content reveal">
+        <span class="editorial-split__label">The Showroom</span>
+        <h2 class="editorial-split__heading">A Curated<br>Experience in Stone</h2>
+        <p class="editorial-split__text">Step into our atelier and discover marble in its most refined expressions. Each piece is presented in context &mdash; not as inventory, but as architecture in miniature, inviting contemplation and touch.</p>
+        <a href="/catalog" class="btn-secondary">Visit the Gallery &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       EXCLUSIVE CREATIONS
+  ============================================ -->
+  <section class="exclusive-creations">
+    <div class="container">
+      <div class="exclusive-creations__header text-center">
+        <span class="exclusive-creations__label reveal">Exclusive Creations</span>
+        <div class="accent-rule reveal"></div>
+        <h2 class="exclusive-creations__title reveal">Signature Pieces</h2>
+      </div>
+      <div class="creations-grid reveal-stagger">
+
+        <a href="/Products/Consoles/onda/" class="creation-card reveal">
+          <div class="creation-card__media">
+            <img src="Products/Consoles/onda/onda_01_editorial.webp"
+                 alt="Onda Console — flowing marble console with sculptural wave form"
+                 class="creation-card__img"
+                 style="object-position: center bottom;"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="creation-card__name">Onda</h3>
+          <span class="creation-card__type">Console</span>
+          <span class="btn-secondary">Discover More &rarr;</span>
+        </a>
+
+        <a href="/Products/coffee tables/morphe/" class="creation-card reveal">
+          <div class="creation-card__media">
+            <img src="Products/coffee tables/morphe/morphe_01_editorial.webp"
+                 alt="Morphe Coffee Table — sculptural marble coffee table with organic flowing form"
+                 class="creation-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="creation-card__name">Morphe</h3>
+          <span class="creation-card__type">Coffee Table</span>
+          <span class="btn-secondary">Discover More &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       CATEGORY TEASERS
+  ============================================ -->
+  <section class="category-teasers">
+    <div class="category-teasers__grid reveal-stagger">
+        <a href="/catalog#coffee-tables" class="category-card reveal">
+          <img src="Products/coffee tables/terra/terra_01_editorial.webp"
+               alt="Terra Coffee Table — monolithic stone slab in a refined interior"
+               class="category-card__bg"
+               loading="lazy" decoding="async">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Coffee Tables</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+        <a href="/catalog#side-tables" class="category-card reveal">
+          <img src="Products/Side tables/icaro/icaro_01_editorial.webp"
+               alt="Icaro Side Table — marble disc balanced on a slender stone column"
+               class="category-card__bg"
+               style="object-position: center 80%;"
+               loading="lazy" decoding="async">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Side Tables</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+        <a href="/catalog#cabinets" class="category-card reveal">
+          <img src="Products/cabinets/aida/aida_01_editorial.webp"
+               alt="Aida Cabinet — bookmatched marble panels on brushed brass frame"
+               class="category-card__bg"
+               style="object-position: 35% 45%;"
+               loading="lazy" decoding="async">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Cabinets</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+        <a href="/catalog#vases" class="category-card reveal">
+          <img src="Products/Vases/deau/deau_01_editorial.webp"
+               alt="Deau Vase — sculptural marble vessel with flared rim on a walnut desk"
+               class="category-card__bg"
+               style="object-position: center 55%;"
+               loading="lazy" decoding="async">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Vases</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+        <a href="/catalog#dining-tables" class="category-card reveal">
+          <img src="Products/Dining Tables/bronze/bronze_01_editorial.webp"
+               alt="Bronze Dining Table — sculptural stone form as the centrepiece of a dining room"
+               class="category-card__bg"
+               loading="lazy" decoding="async">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Dining Tables</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+        <a href="/catalog#compliments" class="category-card reveal">
+          <img src="Products/Compliments/aime/aime_01_editorial.webp"
+               alt="Aime — refined stone complement object for considered interiors"
+               class="category-card__bg"
+               style="object-position: center bottom;"
+               loading="lazy" decoding="async">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Complements</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+        <a href="/catalog#consoles" class="category-card reveal">
+          <img src="Products/Consoles/curves/curves_01_editorial.webp"
+               alt="Curves Console — sculpted marble console with sinuous silhouette"
+               class="category-card__bg"
+               style="object-position: center 85%;"
+               loading="lazy" decoding="async">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Consoles</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+        <a href="/catalog#washbasins" class="category-card reveal">
+          <img src="Products/Washbasins/circle-high/circle-high_02_human.webp"
+               alt="Circle High Washbasin — monolithic stone basin in a dramatic dark bathroom"
+               class="category-card__bg"
+               style="object-position: center 55%;"
+               loading="lazy" decoding="async">
+          <div class="category-card__overlay"></div>
+          <div class="category-card__content">
+            <h2 class="category-card__title">Washbasins</h2>
+            <span class="btn-primary btn-primary--light">Explore</span>
+          </div>
+        </a>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       CRAFTSMANSHIP TEASER
+  ============================================ -->
+  <section class="craft-teaser">
+    <div class="editorial-split editorial-split--full-bleed editorial-split--img-right">
+      <div class="editorial-split__media reveal">
+        <img src="Products/coffee tables/gesto/gesto_03_closeup_veining.webp"
+             alt="Gesto coffee table — close detail of marble veining and surface quality"
+             class="editorial-split__img"
+             loading="lazy" decoding="async">
+      </div>
+      <div class="editorial-split__content reveal">
+        <span class="editorial-split__label">The Craft</span>
+        <h2 class="editorial-split__heading">From Quarry<br>to Masterpiece</h2>
+        <p class="editorial-split__text">Every Tiba Stone piece passes through the hands of master craftsmen whose families have shaped marble for generations. The process is unhurried, deliberate, and guided by a reverence for the material itself.</p>
+        <a href="/craft" class="btn-primary">Discover Our Craft</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       CUSTOMIZATION CALLOUT
+  ============================================ -->
+  <section class="custom-callout">
+    <div class="editorial-split editorial-split--full-bleed">
+      <div class="editorial-split__media reveal">
+        <img src="Products/coffee tables/gesto/gesto_07_studio_calacatta.webp"
+             alt="Gesto coffee table in Calacatta — one of four bespoke marble selections"
+             class="editorial-split__img"
+             loading="lazy" decoding="async">
+      </div>
+      <div class="editorial-split__content reveal">
+        <span class="editorial-split__label">Bespoke Service</span>
+        <h2 class="editorial-split__heading">Made Entirely<br>for You</h2>
+        <p class="editorial-split__text">No two projects are alike. We work directly with architects and designers to realise pieces in custom dimensions, materials, and finishes &mdash; from initial sketch through installation.</p>
+        <a href="/contact" class="btn-primary">Begin Your Project</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="marble-strip reveal">
+        <div class="marble-strip__item">
+          <img src="Stone types/Calacatta Viola.webp"
+               alt="Calacatta Viola — warm white marble with violet and gold veining"
+               loading="lazy" decoding="async">
+          <span>Calacatta Viola</span>
+        </div>
+        <div class="marble-strip__item">
+          <img src="Stone types/Fendy-Grey.webp"
+               alt="Fendy Grey — cool grey marble with subtle linear veining"
+               loading="lazy" decoding="async">
+          <span>Fendy Grey</span>
+        </div>
+        <div class="marble-strip__item">
+          <img src="Stone types/Ice-Age-Onyx-Texture.webp"
+               alt="Ice Age Onyx — translucent onyx with warm amber and white layers"
+               loading="lazy" decoding="async">
+          <span>Ice Age Onyx</span>
+        </div>
+        <div class="marble-strip__item">
+          <img src="Stone types/Noir-Aziza Texture.webp"
+               alt="Noir Aziza — deep black marble with dramatic white veining"
+               loading="lazy" decoding="async">
+          <span>Noir Aziza</span>
+        </div>
+        <div class="marble-strip__item">
+          <img src="Stone types/Roso-Levanto-texture.webp"
+               alt="Roso Levanto — rich burgundy marble with cream and white veins"
+               loading="lazy" decoding="async">
+          <span>Roso Levanto</span>
+        </div>
+        <div class="marble-strip__item">
+          <img src="Stone types/Verde-Patricia-Texture.webp"
+               alt="Verde Patricia — deep green marble with white crystalline veining"
+               loading="lazy" decoding="async">
+          <span>Verde Patricia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       EXPERT ADVICE BANNER
+  ============================================ -->
+  <section class="advice-banner">
+    <div class="container text-center">
+      <p class="advice-banner__text reveal">
+        <em>The right stone transforms a space. Let us help you find it.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand Column -->
+        <div class="footer__brand">
+          <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
+          <p class="footer__tagline">Bespoke Marble Atelier</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sitemap Column -->
+        <div class="footer__sitemap">
+          <h4 class="footer__col-title">Navigate</h4>
+          <a href="/" class="footer__link">Home</a>
+          <a href="/craft" class="footer__link">Craft</a>
+          <a href="/catalog" class="footer__link">Catalog</a>
+          <a href="/contact" class="footer__link">Contact</a>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="footer__contact-info">
+          <h4 class="footer__col-title">Visit</h4>
+          <p>Tiba Stone Atelier</p>
+          <p><a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a></p>
+          <p><a href="tel:+6281239442648">+62 81239442648</a></p>
+        </div>
+
+        <!-- Compact Inquiry Form Column -->
+        <div class="footer__form">
+          <h4 class="footer__col-title">Inquire</h4>
+          <form class="footer-form" id="footerForm">
+            <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+            <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+            <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+            <button type="submit" class="btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ------------------------------------------
+         1. HEADER SCROLL TRANSITION
+      ------------------------------------------ */
+      const header = document.getElementById('siteHeader');
+      const hero = document.getElementById('hero');
+
+      function updateHeader() {
+        const threshold = hero.offsetHeight * 0.12;
+        if (window.scrollY > threshold) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
+        }
+      }
+
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() { updateHeader(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      updateHeader();
+
+      /* ------------------------------------------
+         2. MOBILE MENU
+      ------------------------------------------ */
+      const hamburger = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileClose = document.getElementById('mobileMenuClose');
+
+      function openMenu() {
+        mobileMenu.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openMenu);
+      mobileClose.addEventListener('click', closeMenu);
+
+      mobileMenu.querySelectorAll('.mobile-menu__link').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      /* ------------------------------------------
+         3. SCROLL REVEAL (Intersection Observer)
+      ------------------------------------------ */
+      var revealElements = document.querySelectorAll('.reveal');
+
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(function (el) {
+        revealObserver.observe(el);
+      });
+
+      /* ------------------------------------------
+         4. HERO SLIDESHOW
+      ------------------------------------------ */
+      (function () {
+        var slides = document.querySelectorAll('.hero__slide');
+        var dots   = document.querySelectorAll('.hero__dot');
+        var current = 0;
+        var timer;
+        var INTERVAL = 6000; // 5 s hold + 1.2 s crossfade
+
+        function resetKenBurns(slide) {
+          var img = slide.querySelector('.hero__slide-img');
+          img.style.animation = 'none';
+          void img.offsetHeight; // force reflow
+          img.style.animation = '';
+        }
+
+        function goTo(index) {
+          slides[current].classList.remove('is-active');
+          dots[current].classList.remove('is-active');
+          dots[current].setAttribute('aria-selected', 'false');
+          current = index;
+          resetKenBurns(slides[current]);
+          slides[current].classList.add('is-active');
+          dots[current].classList.add('is-active');
+          dots[current].setAttribute('aria-selected', 'true');
+        }
+
+        function startTimer() {
+          clearInterval(timer);
+          timer = setInterval(function () { goTo((current + 1) % slides.length); }, INTERVAL);
+        }
+
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function () { goTo(i); startTimer(); });
+        });
+
+        /* Fade in first slide on load */
+        var firstImg = slides[0].querySelector('.hero__slide-img');
+        firstImg.style.opacity = '0';
+        firstImg.style.transition = 'opacity 1.4s ease';
+        function showFirstSlide() { firstImg.style.opacity = '1'; }
+        if (firstImg.complete && firstImg.naturalHeight !== 0) {
+          showFirstSlide();
+        } else {
+          firstImg.addEventListener('load', showFirstSlide);
+        }
+
+        startTimer();
+      })();
+
+      /* ------------------------------------------
+         5. PROGRESSIVE IMAGE FADE-IN
+      ------------------------------------------ */
+      var fadeImages = document.querySelectorAll(
+        '.editorial-split__img, .creation-card__img, .category-card__bg, .marble-strip__item img'
+      );
+
+      fadeImages.forEach(function (img) {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.8s ease';
+
+        function showImage() {
+          img.style.opacity = '1';
+        }
+
+        if (img.complete && img.naturalHeight !== 0) {
+          showImage();
+        } else {
+          img.addEventListener('load', showImage);
+        }
+      });
+
+      /* ------------------------------------------
+         7. FOOTER FORM HANDLER
+      ------------------------------------------ */
+      document.getElementById('footerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = e.target;
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn.textContent;
+        btn.textContent = 'Sending\u2026';
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+        fetch('https://formspree.io/f/luke@tibaliving.com', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (r) {
+          if (r.ok) {
+            btn.textContent = 'Sent';
+            setTimeout(function () {
+              form.reset();
+              btn.textContent = originalText;
+              btn.disabled = false;
+              btn.style.opacity = '1';
+            }, 3000);
+          } else {
+            btn.textContent = 'Error \u2014 Try Again';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+          }
+        }).catch(function () {
+          btn.textContent = 'Error \u2014 Try Again';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        });
+      });
+
+    })();
+  </script>
+<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
+
+</body>
+</html>

@@ -1,0 +1,2997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/webp" href="TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <link rel="apple-touch-icon" href="TIBA_FINAL_LOGO_PORTRAIT (2).png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection | TIBA STONE</title>
+  <meta name="description" content="Explore the Tiba Stone collection of bespoke marble washbasins, bathtubs, furniture, and accessories. Each piece is handcrafted from the world's finest stone.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preload" as="image" href="Products/coffee tables/terra/terra_01_editorial.webp" type="image/webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/shared.css">
+  <style>
+    /* ============================================
+       6. HEADER
+    ============================================ */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.625rem 0;
+      transition: background var(--duration-fast) var(--ease-smooth),
+                  border-color var(--duration-fast) var(--ease-smooth),
+                  padding var(--duration-fast) var(--ease-smooth);
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom-color: rgba(34, 35, 35, 0.08);
+      padding: 1.125rem 0;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .header__logo-img {
+      height: 44px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      transition: filter var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__logo-img {
+      filter: none;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 2.75rem;
+    }
+
+    .header__nav-link {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-ivory);
+      text-decoration: none;
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__nav-link {
+      color: var(--color-stone);
+    }
+
+    .header__nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-sunset);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .header__nav-link:hover::after,
+    .header__nav-link--active::after {
+      transform: scaleX(1);
+    }
+
+    /* Hamburger */
+    .header__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0.5rem;
+      z-index: 2;
+    }
+
+    .header__hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--color-ivory);
+      transition: background var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__hamburger span {
+      background: var(--color-stone);
+    }
+
+    /* Mobile Menu — base styles in shared.css */
+
+    /* ============================================
+       7. CATALOG HERO
+    ============================================ */
+    .catalog-hero {
+      position: relative;
+      height: 60vh;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .catalog-hero__bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .catalog-hero__bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+      will-change: transform;
+    }
+
+    .catalog-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(34, 35, 35, 0.25) 0%,
+        rgba(34, 35, 35, 0.5) 100%
+      );
+    }
+
+    .catalog-hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 var(--container-pad);
+    }
+
+    .catalog-hero__title {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      color: var(--color-ivory);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .catalog-hero__subtitle {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 400;
+    }
+
+    /* ============================================
+       9. FEATURED GALLERY
+    ============================================ */
+    .featured-gallery {
+      padding: var(--space-xl) 0 var(--space-lg);
+    }
+
+    .featured-gallery__header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    .featured-gallery__title {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .featured-gallery__subtitle {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      color: var(--color-river-green);
+      margin-top: 0.75rem;
+      font-weight: 400;
+    }
+
+    .featured-gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .featured-gallery__card {
+      display: block;
+      text-decoration: none;
+      color: var(--color-stone);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-gallery__img-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .featured-gallery__img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(34,35,35,0.45) 0%, rgba(34,35,35,0) 55%);
+      transition: opacity var(--duration-fast) var(--ease-smooth);
+      pointer-events: none;
+    }
+
+    .featured-gallery__card:hover .featured-gallery__img-wrap::after {
+      opacity: 0.7;
+    }
+
+    .featured-gallery__img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .featured-gallery__card:hover .featured-gallery__img {
+      transform: scale(1.04);
+    }
+
+    .featured-gallery__info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.25rem;
+      z-index: 1;
+      transform: translateY(0);
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .featured-gallery__label {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      color: rgba(255,255,255,0.7);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .featured-gallery__name {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.4vw, 1.25rem);
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .featured-gallery__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: rgba(255,255,255,0.85);
+      margin-top: 0.625rem;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity var(--duration-fast) var(--ease-smooth),
+                  transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .featured-gallery__card:hover .featured-gallery__cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .featured-gallery__cta-line {
+      display: inline-block;
+      width: 16px;
+      height: 1px;
+      background: rgba(255,255,255,0.6);
+      transition: width var(--duration-fast) var(--ease-smooth);
+    }
+
+    .featured-gallery__card:hover .featured-gallery__cta-line {
+      width: 24px;
+    }
+
+    /* ============================================
+       10. FEATURED COLLECTIONS
+    ============================================ */
+    .featured-collections {
+      padding: var(--space-2xl) 0;
+    }
+
+    .featured-collection {
+      margin-bottom: var(--space-xl);
+    }
+
+    .featured-collection:last-child {
+      margin-bottom: 0;
+    }
+
+    .featured-collection__header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    .featured-collection__title {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+
+    .featured-collection__description {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      font-weight: 400;
+      line-height: var(--lh-body);
+      color: var(--color-river-green);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* ============================================
+       11. PRODUCT CARDS
+    ============================================ */
+    .product-card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--grid-gap);
+    }
+
+    .product-card-grid > .product-card {
+      width: calc((100% - var(--grid-gap) * 2) / 3);
+    }
+
+    .product-card {
+      text-decoration: none;
+      color: var(--color-stone);
+      display: block;
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .product-card__media {
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-card__img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .product-card:hover .product-card__img {
+      transform: scale(1.03);
+    }
+
+    .product-card__info {
+      padding-top: 0;
+    }
+
+    .product-card__name {
+      font-family: var(--font-display);
+      font-size: var(--text-h3);
+      margin-bottom: 0.375rem;
+    }
+
+    .product-card__category {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .product-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-stone);
+      text-decoration: none;
+      padding-bottom: 2px;
+      position: relative;
+    }
+
+    .product-card__cta::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-stone);
+      transform: scaleX(1);
+      transition: background var(--duration-fast) var(--ease-smooth);
+    }
+
+    .product-card:hover .product-card__cta {
+      color: var(--color-sunset);
+    }
+
+    .product-card:hover .product-card__cta::after {
+      background: var(--color-sunset);
+    }
+
+    .product-card.is-hidden {
+      display: none;
+    }
+
+    /* ============================================
+       12. FILTER TABS
+    ============================================ */
+    .full-product-grid {
+      padding: var(--space-2xl) 0;
+      background: var(--color-sand);
+    }
+
+    .full-product-grid__header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    .filter-tabs__btn {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .filter-tabs__btn::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-sunset);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .filter-tabs__btn--active,
+    .filter-tabs__btn:hover {
+      color: var(--color-stone);
+    }
+
+    .filter-tabs__btn--active::after,
+    .filter-tabs__btn:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* ============================================
+       13. TAILOR-MADE CTA
+    ============================================ */
+    .tailor-made-cta {
+      padding: var(--space-2xl) 0;
+    }
+
+    .tailor-made-cta__content {
+      text-align: center;
+      max-width: var(--container-narrow);
+      margin: 0 auto;
+    }
+
+    .tailor-made-cta__text {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      font-weight: 400;
+      line-height: var(--lh-body);
+      color: var(--color-stone);
+      max-width: 580px;
+      margin: 0 auto 2rem;
+    }
+
+    /* ============================================
+       14. THREE PILLARS
+    ============================================ */
+    .three-pillars {
+      padding: var(--space-2xl) 0;
+      background: var(--color-sand);
+    }
+
+    .three-pillars__header {
+      margin-bottom: var(--space-lg);
+    }
+
+    .three-pillars__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--grid-gap);
+    }
+
+    .pillar-card {
+      text-align: center;
+    }
+
+    .pillar-card__media {
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .pillar-card__img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .pillar-card:hover .pillar-card__img {
+      transform: scale(1.03);
+    }
+
+    .pillar-card__heading {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1rem;
+    }
+
+    .pillar-card__text {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      font-weight: 400;
+      line-height: var(--lh-body);
+      color: var(--color-stone);
+      margin-bottom: 2rem;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Footer (base in shared.css) */
+    .site-footer {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+    }
+
+    /* ============================================
+       16. RESPONSIVE — TABLET
+    ============================================ */
+    @media (max-width: 1023px) {
+      .featured-gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-card-grid > .product-card {
+        width: calc((100% - var(--grid-gap)) / 2);
+      }
+
+      .three-pillars__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .three-pillars__grid .pillar-card:last-child {
+        grid-column: span 2;
+        max-width: 50%;
+        margin: 0 auto;
+      }
+
+      .catalog-hero {
+        height: 70vh;
+      }
+    }
+
+    /* ============================================
+       17. RESPONSIVE — MOBILE
+    ============================================ */
+    @media (max-width: 767px) {
+      .catalog-hero {
+        height: 60vh;
+        min-height: 400px;
+      }
+
+      .featured-gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .featured-gallery__name {
+        font-size: 1rem;
+      }
+
+      .product-card-grid > .product-card {
+        width: 100%;
+      }
+
+      .filter-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .three-pillars__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .three-pillars__grid .pillar-card:last-child {
+        grid-column: auto;
+        max-width: 100%;
+      }
+
+      .featured-gallery,
+      .featured-collections,
+      .full-product-grid,
+      .tailor-made-cta,
+      .three-pillars {
+        padding: var(--space-xl) 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header__inner container">
+      <a href="/" class="header__logo">
+        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img" loading="lazy" decoding="async">
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="/" class="header__nav-link">Home</a>
+        <a href="/craft" class="header__nav-link">Craft</a>
+        <a href="/catalog" class="header__nav-link header__nav-link--active">Catalog</a>
+        <a href="/contact" class="header__nav-link">Contact</a>
+      </nav>
+      <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <nav class="mobile-menu__nav">
+      <a href="/" class="mobile-menu__link">Home</a>
+      <a href="/craft" class="mobile-menu__link">Craft</a>
+      <a href="/catalog" class="mobile-menu__link">Catalog</a>
+      <a href="/contact" class="mobile-menu__link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ============================================
+       CATALOG HERO
+  ============================================ -->
+  <section class="catalog-hero" id="catalogHero">
+    <div class="catalog-hero__bg">
+      <img src="Products/coffee tables/terra/terra_01_editorial.webp"
+           alt="Terra coffee table — monolithic Travertino Romano in a sunlit interior"
+           class="catalog-hero__bg-img"
+           loading="eager"
+           fetchpriority="high">
+    </div>
+    <div class="catalog-hero__overlay"></div>
+    <div class="catalog-hero__content">
+      <h1 class="catalog-hero__title">Tiba Stone Collection</h1>
+      <p class="catalog-hero__subtitle">Bespoke Marble for Discerning Spaces</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FEATURED GALLERY — One Per Collection
+  ============================================ -->
+  <section class="featured-gallery">
+    <div class="container">
+      <div class="featured-gallery__header reveal">
+        <div class="accent-rule"></div>
+        <h2 class="featured-gallery__title">Featured Pieces</h2>
+        <p class="featured-gallery__subtitle">A curated selection from the atelier</p>
+      </div>
+
+      <div class="featured-gallery__grid">
+
+
+        <a href="/Products/Consoles/portale/" class="featured-gallery__card reveal">
+          <div class="featured-gallery__img-wrap">
+            <img src="Products/Consoles/portale/portale_01_editorial.webp"
+                 alt="Portale Console" class="featured-gallery__img" loading="lazy" decoding="async">
+          </div>
+          <div class="featured-gallery__info">
+            <span class="featured-gallery__label">Consoles</span>
+            <h3 class="featured-gallery__name">Portale</h3>
+            <span class="featured-gallery__cta">Discover <span class="featured-gallery__cta-line"></span></span>
+          </div>
+        </a>
+
+        <a href="/Products/Benches/cascata/" class="featured-gallery__card reveal">
+          <div class="featured-gallery__img-wrap">
+            <img src="Products/Benches/cascata/cascata_01_editorial.webp"
+                 alt="Cascata Bench" class="featured-gallery__img" loading="lazy" decoding="async">
+          </div>
+          <div class="featured-gallery__info">
+            <span class="featured-gallery__label">Benches</span>
+            <h3 class="featured-gallery__name">Cascata</h3>
+            <span class="featured-gallery__cta">Discover <span class="featured-gallery__cta-line"></span></span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/onda/" class="featured-gallery__card reveal">
+          <div class="featured-gallery__img-wrap">
+            <img src="Products/Consoles/onda/onda_01_editorial.webp"
+                 alt="Onda Console" class="featured-gallery__img" loading="lazy" decoding="async">
+          </div>
+          <div class="featured-gallery__info">
+            <span class="featured-gallery__label">Consoles</span>
+            <h3 class="featured-gallery__name">Onda</h3>
+            <span class="featured-gallery__cta">Discover <span class="featured-gallery__cta-line"></span></span>
+          </div>
+        </a>
+
+        <a href="/Products/coffee tables/morphe/" class="featured-gallery__card reveal">
+          <div class="featured-gallery__img-wrap">
+            <img src="Products/coffee tables/morphe/morphe_01_editorial.webp"
+                 alt="Morphe Coffee Table" class="featured-gallery__img" loading="lazy" decoding="async">
+          </div>
+          <div class="featured-gallery__info">
+            <span class="featured-gallery__label">Coffee Tables</span>
+            <h3 class="featured-gallery__name">Morphe</h3>
+            <span class="featured-gallery__cta">Discover <span class="featured-gallery__cta-line"></span></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       THE ELEVEN COLLECTIONS
+  ============================================ -->
+  <section class="featured-collections">
+    <div class="container">
+
+      <!-- Coffee Tables (11 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Coffee Tables</h2>
+          <p class="featured-collection__description">Six distinct table designs carved from a single vision — that the floor is never merely a surface.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+          <a href="/Products/coffee tables/terra/" class="product-card reveal" data-collection="coffee-tables">
+            <div class="product-card__media">
+              <img src="Products/coffee tables/terra/terra_12_catalogue.webp"
+                   alt="Terra Coffee Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Terra</h3>
+              <span class="product-card__category">Coffee Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/coffee tables/gesto/" class="product-card reveal" data-collection="coffee-tables">
+            <div class="product-card__media">
+              <img src="Products/coffee tables/gesto/gesto_12_catalogue.webp"
+                   alt="Gesto Coffee Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Gesto</h3>
+              <span class="product-card__category">Coffee Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/coffee tables/morphe/" class="product-card reveal" data-collection="coffee-tables">
+            <div class="product-card__media">
+              <img src="Products/coffee tables/morphe/morphe_12_catalogue.webp"
+                   alt="Morphe Coffee Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Morphe</h3>
+              <span class="product-card__category">Coffee Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/coffee tables/quadro/" class="product-card reveal" data-collection="coffee-tables">
+            <div class="product-card__media">
+              <img src="Products/coffee tables/quadro/quadro_12_catalogue.webp"
+                   alt="Quadro Coffee Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Quadro</h3>
+              <span class="product-card__category">Coffee Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/coffee tables/eclisse/" class="product-card reveal" data-collection="coffee-tables">
+            <div class="product-card__media">
+              <img src="Products/coffee tables/eclisse/eclisse_12_catalogue.webp"
+                   alt="Eclisse Coffee Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Eclisse</h3>
+              <span class="product-card__category">Coffee Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/coffee tables/duale/" class="product-card reveal" data-collection="coffee-tables">
+            <div class="product-card__media">
+              <img src="Products/coffee tables/duale/duale_12_catalogue.webp"
+                   alt="Duale Coffee Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Duale</h3>
+              <span class="product-card__category">Coffee Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Side Tables (8 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Side Tables</h2>
+          <p class="featured-collection__description">Compact in scale, uncompromising in presence. Each piece earns its place beside you.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+          <a href="/Products/Side tables/anti/" class="product-card reveal" data-collection="side-tables">
+            <div class="product-card__media">
+              <img src="Products/Side tables/anti/anti_12_catalogue.webp"
+                   alt="Anti Side Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Anti</h3>
+              <span class="product-card__category">Side Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Side tables/arthur/" class="product-card reveal" data-collection="side-tables">
+            <div class="product-card__media">
+              <img src="Products/Side tables/arthur/arthur_12_catalogue.webp"
+                   alt="Arthur Side Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Arthur</h3>
+              <span class="product-card__category">Side Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Side tables/cut-and-fold/" class="product-card reveal" data-collection="side-tables">
+            <div class="product-card__media">
+              <img src="Products/Side tables/cut-and-fold/cut-and-fold_12_catalogue.webp"
+                   alt="Cut &amp; Fold Side Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Cut &amp; Fold</h3>
+              <span class="product-card__category">Side Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/Side tables/icaro/" class="product-card reveal" data-collection="side-tables">
+            <div class="product-card__media">
+              <img src="Products/Side tables/icaro/icaro_12_catalogue.webp"
+                   alt="Icaro Side Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Icaro</h3>
+              <span class="product-card__category">Side Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Side tables/morphe/" class="product-card reveal" data-collection="side-tables">
+            <div class="product-card__media">
+              <img src="Products/Side tables/morphe/morphe_12_catalogue.webp"
+                   alt="Morphe Side Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Morphe</h3>
+              <span class="product-card__category">Side Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Side tables/rosa/" class="product-card reveal" data-collection="side-tables">
+            <div class="product-card__media">
+              <img src="Products/Side tables/rosa/rosa_12_catalogue.webp"
+                   alt="Rosa Side Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Rosa</h3>
+              <span class="product-card__category">Side Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Side tables/vertebra/" class="product-card reveal" data-collection="side-tables">
+            <div class="product-card__media">
+              <img src="Products/Side tables/vertebra/vertebra_12_catalogue.webp"
+                   alt="Vertebra Side Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Vertebra</h3>
+              <span class="product-card__category">Side Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Cabinets (4 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Cabinets</h2>
+          <p class="featured-collection__description">Storage elevated to sculpture. Stone frontage, considered proportion, and the quiet authority of material used with intention.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+          <a href="/Products/cabinets/aida/" class="product-card reveal" data-collection="cabinets">
+            <div class="product-card__media">
+              <img src="Products/cabinets/aida/aida_12_catalogue.webp"
+                   alt="Aida Cabinet" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Aida</h3>
+              <span class="product-card__category">Cabinet</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/cabinets/punta/" class="product-card reveal" data-collection="cabinets">
+            <div class="product-card__media">
+              <img src="Products/cabinets/punta/punta_12_catalogue.webp"
+                   alt="Punta Cabinet" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Punta</h3>
+              <span class="product-card__category">Cabinet</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/cabinets/punta-due/" class="product-card reveal" data-collection="cabinets">
+            <div class="product-card__media">
+              <img src="Products/cabinets/punta-due/punta-due_12_catalogue.webp"
+                   alt="Punta Due Cabinet" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Punta Due</h3>
+              <span class="product-card__category">Cabinet</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/cabinets/priamo/" class="product-card reveal" data-collection="cabinets">
+            <div class="product-card__media">
+              <img src="Products/cabinets/priamo/priamo_12_catalogue.webp"
+                   alt="Priamo Sideboard" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Priamo</h3>
+              <span class="product-card__category">Sideboard</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Vases (3 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Vases</h2>
+          <p class="featured-collection__description">Objects that hold light as readily as stems. Pure form, shaped from the finest stone.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+          <a href="/Products/Vases/deau/" class="product-card reveal" data-collection="vases">
+            <div class="product-card__media">
+              <img src="Products/Vases/deau/deau_12_catalogue.webp"
+                   alt="Deau Vase" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Deau</h3>
+              <span class="product-card__category">Vase</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Vases/doge-small/" class="product-card reveal" data-collection="vases">
+            <div class="product-card__media">
+              <img src="Products/Vases/doge-small/doge-small_12_catalogue.webp"
+                   alt="Doge Small Vase" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Doge Small</h3>
+              <span class="product-card__category">Vase</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Vases/doge-tall/" class="product-card reveal" data-collection="vases">
+            <div class="product-card__media">
+              <img src="Products/Vases/doge-tall/doge-tall_12_catalogue.webp"
+                   alt="Doge Tall Vase" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Doge Tall</h3>
+              <span class="product-card__category">Vase</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Compliments (6 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Compliments</h2>
+          <p class="featured-collection__description">Small marble objects — not quite sculpture, not quite vessel. The Compliments Collection brings stone to the scale of the hand and the surface.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+          <a href="/Products/Compliments/aime/" class="product-card reveal" data-collection="compliments">
+            <div class="product-card__media">
+              <img src="Products/Compliments/aime/aime_12_catalogue.webp"
+                   alt="Aime — Compliments Collection" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Aime</h3>
+              <span class="product-card__category">Marble Accent</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Compliments/ana/" class="product-card reveal" data-collection="compliments">
+            <div class="product-card__media">
+              <img src="Products/Compliments/ana/ana_12_catalogue.webp"
+                   alt="Ana — Compliments Collection" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Ana</h3>
+              <span class="product-card__category">Marble Accent</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Compliments/cono/" class="product-card reveal" data-collection="compliments">
+            <div class="product-card__media">
+              <img src="Products/Compliments/cono/cono_12_catalogue.webp"
+                   alt="Cono — Compliments Collection" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Cono</h3>
+              <span class="product-card__category">Marble Accent</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/Compliments/gesto/" class="product-card reveal" data-collection="compliments">
+            <div class="product-card__media">
+              <img src="Products/Compliments/gesto/gesto_12_catalogue.webp"
+                   alt="Gesto — Compliments Collection" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Gesto</h3>
+              <span class="product-card__category">Marble Accent</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Compliments/morphe/" class="product-card reveal" data-collection="compliments">
+            <div class="product-card__media">
+              <img src="Products/Compliments/morphe/morphe_12_catalogue.webp"
+                   alt="Morphe — Compliments Collection" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Morphe</h3>
+              <span class="product-card__category">Marble Accent</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Compliments/palladio/" class="product-card reveal" data-collection="compliments">
+            <div class="product-card__media">
+              <img src="Products/Compliments/palladio/palladio_12_catalogue.webp"
+                   alt="Palladio — Compliments Collection" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Palladio</h3>
+              <span class="product-card__category">Marble Accent</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Compliments/samaveta/" class="product-card reveal" data-collection="compliments">
+            <div class="product-card__media">
+              <img src="Products/Compliments/samaveta/samaveta_12_catalogue.webp"
+                   alt="Samaveta — Compliments Collection" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Samaveta</h3>
+              <span class="product-card__category">Marble Accent</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Compliments/temple/" class="product-card reveal" data-collection="compliments">
+            <div class="product-card__media">
+              <img src="Products/Compliments/temple/temple_12_catalogue.webp"
+                   alt="Temple — Compliments Collection" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Temple</h3>
+              <span class="product-card__category">Marble Accent</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Dining Tables (8 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Dining Tables</h2>
+          <p class="featured-collection__description">Tables conceived for long evenings and unhurried conversation. Each one a slab of pure intent — stone as the centrepiece of domestic life.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+
+          <a href="/Products/Dining Tables/bronze/" class="product-card reveal" data-collection="dining-tables">
+            <div class="product-card__media">
+              <img src="Products/Dining Tables/bronze/bronze_12_catalogue.webp"
+                   alt="Bronze Dining Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Bronze</h3>
+              <span class="product-card__category">Dining Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Dining Tables/eclipse/" class="product-card reveal" data-collection="dining-tables">
+            <div class="product-card__media">
+              <img src="Products/Dining Tables/eclipse/eclipse_12_catalogue.webp"
+                   alt="Eclipse Dining Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Eclipse</h3>
+              <span class="product-card__category">Dining Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/Dining Tables/juni/" class="product-card reveal" data-collection="dining-tables">
+            <div class="product-card__media">
+              <img src="Products/Dining Tables/juni/juni_12_catalogue.webp"
+                   alt="Juni Dining Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Juni</h3>
+              <span class="product-card__category">Dining Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Dining Tables/lavanche/" class="product-card reveal" data-collection="dining-tables">
+            <div class="product-card__media">
+              <img src="Products/Dining Tables/lavanche/lavanche_12_catalogue.webp"
+                   alt="Lavanche Dining Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Lavanche</h3>
+              <span class="product-card__category">Dining Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Dining Tables/levante/" class="product-card reveal" data-collection="dining-tables">
+            <div class="product-card__media">
+              <img src="Products/Dining Tables/levante/levante_12_catalogue.webp"
+                   alt="Levante Dining Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Levante</h3>
+              <span class="product-card__category">Dining Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Dining Tables/wedge/" class="product-card reveal" data-collection="dining-tables">
+            <div class="product-card__media">
+              <img src="Products/Dining Tables/wedge/wedge_12_catalogue.webp"
+                   alt="Wedge Dining Table" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Wedge</h3>
+              <span class="product-card__category">Dining Table</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Consoles (22 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Consoles</h2>
+          <p class="featured-collection__description">Twenty-two marble consoles conceived as architectural objects — pieces that define the wall they occupy as surely as the wall defines the room. Each one a complete statement in stone.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+          <a href="/Products/Consoles/anti/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/anti/anti_12_catalogue.webp"
+                   alt="Anti Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Anti</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/curves/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/curves/curves_12_catalogue.webp"
+                   alt="Curves Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Curves</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/cut-and-fold/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/cut-and-fold/cut-and-fold_12_catalogue.webp"
+                   alt="Cut and Fold Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Cut and Fold</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/empire/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/empire/empire_12_catalogue.webp"
+                   alt="Empire Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Empire</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/lamarck/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/lamarck/lamarck_12_catalogue.webp"
+                   alt="Lamarck Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Lamarck</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/levante/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/levante/levante_12_catalogue.webp"
+                   alt="Levante Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Levante</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/malibu/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/malibu/malibu_12_catalogue.webp"
+                   alt="Malibu Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Malibu</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/morphe/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/morphe/morphe_12_catalogue.webp"
+                   alt="Morphe Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Morphe</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/onda/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/onda/onda_12_catalogue.webp"
+                   alt="Onda Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Onda</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/relica/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/relica/relica_12_catalogue.webp"
+                   alt="Relica Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Relica</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/shan/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/shan/shan_12_catalogue.webp"
+                   alt="Shan Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Shan</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/t-02/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/t-02/t-02_12_catalogue.webp"
+                   alt="T-02 Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">T-02</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/Consoles/cascara/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/cascara/cascara_12_catalogue.webp"
+                   alt="Cascara Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Cascara</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/fiamma/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/fiamma/fiamma_12_catalogue.webp"
+                   alt="Fiamma Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Fiamma</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/elisse/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/elisse/elisse_12_catalogue.webp"
+                   alt="Elisse Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Elisse</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/falda/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/falda/falda_12_catalogue.webp"
+                   alt="Falda Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Falda</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/scanalato/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/scanalato/scanalato_12_catalogue.webp"
+                   alt="Scanalato Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Scanalato</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/serpente/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/serpente/serpente_12_catalogue.webp"
+                   alt="Serpente Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Serpente</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/Consoles/lucerna/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/lucerna/lucerna_12_catalogue.webp"
+                   alt="Lucerna Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Lucerna</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Consoles/portale/" class="product-card reveal" data-collection="consoles">
+            <div class="product-card__media">
+              <img src="Products/Consoles/portale/portale_12_catalogue.webp"
+                   alt="Portale Console" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Portale</h3>
+              <span class="product-card__category">Marble Console</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Washbasins (16 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Washbasins</h2>
+          <p class="featured-collection__description">Water meets stone. Each washbasin is sculpted to transform the ritual of washing into an encounter with pure material — form shaped by the gesture of use.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+
+          <a href="/Products/Washbasins/bronze/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/bronze/bronze_12_catalogue.webp"
+                   alt="Bronze Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Bronze</h3>
+              <span class="product-card__category">Countertop Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Washbasins/circle-high/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/circle-high/circle-high_12_catalogue.webp"
+                   alt="Circle High Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Circle High</h3>
+              <span class="product-card__category">Pedestal Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Washbasins/circle-medium/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/circle-medium/circle-medium_12_catalogue.webp"
+                   alt="Circle Medium Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Circle Medium</h3>
+              <span class="product-card__category">Freestanding Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Washbasins/circle-small/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/circle-small/circle-small_12_catalogue.webp"
+                   alt="Circle Small Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Circle Small</h3>
+              <span class="product-card__category">Countertop Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Washbasins/cono-high/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/cono-high/cono-high_12_catalogue.webp"
+                   alt="Cono High Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Cono High</h3>
+              <span class="product-card__category">Pedestal Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/Washbasins/marble-colors/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/marble-colors/marble-colors_12_catalogue.webp"
+                   alt="Marble Colors Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Marble Colors</h3>
+              <span class="product-card__category">Marble Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Washbasins/punta-high/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/punta-high/punta-high_12_catalogue.webp"
+                   alt="Punta High Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Punta High</h3>
+              <span class="product-card__category">Pedestal Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/Washbasins/barile/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/barile/barile_12_catalogue.webp"
+                   alt="Barile Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Barile</h3>
+              <span class="product-card__category">Vessel Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Washbasins/calice/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/calice/calice_12_catalogue.webp"
+                   alt="Calice Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Calice</h3>
+              <span class="product-card__category">Pedestal Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Washbasins/blocco/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/blocco/blocco_12_catalogue.webp"
+                   alt="Blocco Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Blocco</h3>
+              <span class="product-card__category">Monolithic Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Washbasins/frammento/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/frammento/frammento_12_catalogue.webp"
+                   alt="Frammento Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Frammento</h3>
+              <span class="product-card__category">Sculptural Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+          <a href="/Products/Washbasins/selva/" class="product-card reveal" data-collection="washbasins">
+            <div class="product-card__media">
+              <img src="Products/Washbasins/selva/selva_12_catalogue.webp"
+                   alt="Selva Washbasin" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Selva</h3>
+              <span class="product-card__category">Freestanding Washbasin</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Benches (6 products) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Benches</h2>
+          <p class="featured-collection__description">Seating sculpted from stone. Each bench is an invitation to pause — where the architecture of rest meets the permanence of marble.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+
+          <a href="/Products/Benches/cascata/" class="product-card reveal" data-collection="benches">
+            <div class="product-card__media">
+              <img src="Products/Benches/cascata/cascata_12_catalogue.webp"
+                   alt="Cascata Bench" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Cascata</h3>
+              <span class="product-card__category">Stone Bench</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+          <a href="/Products/Benches/colonna/" class="product-card reveal" data-collection="benches">
+            <div class="product-card__media">
+              <img src="Products/Benches/colonna/colonna_12_catalogue.webp"
+                   alt="Colonna Bench" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Colonna</h3>
+              <span class="product-card__category">Stone Bench</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+
+        </div>
+      </div>
+
+      <!-- Credenzas (1 product) -->
+      <div class="featured-collection reveal">
+        <div class="featured-collection__header">
+          <div class="accent-rule"></div>
+          <h2 class="featured-collection__title">Credenzas</h2>
+          <p class="featured-collection__description">Horizontal architecture in stone. The credenza reimagined as a monolithic canvas — storage dissolves into sculpture.</p>
+        </div>
+        <div class="product-card-grid reveal-stagger">
+
+          <a href="/Products/Credenzas/linea/" class="product-card reveal" data-collection="credenzas">
+            <div class="product-card__media">
+              <img src="Products/Credenzas/linea/linea_12_catalogue.webp"
+                   alt="Linea Credenza" class="product-card__img" loading="lazy" decoding="async">
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Linea</h3>
+              <span class="product-card__category">Marble Credenza</span>
+              <span class="product-card__cta">Discover More &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       FULL PRODUCT GRID WITH FILTERS
+  ============================================ -->
+  <section class="full-product-grid" id="collection-grid">
+    <div class="container">
+
+      <div class="full-product-grid__header reveal">
+        <div class="accent-rule"></div>
+        <h2 class="section-title">Complete Collection</h2>
+      </div>
+
+      <div class="filter-tabs reveal">
+        <button class="filter-tabs__btn filter-tabs__btn--active" data-filter="all">All</button>
+        <button class="filter-tabs__btn" data-filter="coffee-tables">Coffee Tables</button>
+        <button class="filter-tabs__btn" data-filter="side-tables">Side Tables</button>
+        <button class="filter-tabs__btn" data-filter="cabinets">Cabinets</button>
+        <button class="filter-tabs__btn" data-filter="vases">Vases</button>
+        <button class="filter-tabs__btn" data-filter="compliments">Compliments</button>
+        <button class="filter-tabs__btn" data-filter="dining-tables">Dining Tables</button>
+        <button class="filter-tabs__btn" data-filter="consoles">Consoles</button>
+        <button class="filter-tabs__btn" data-filter="washbasins">Washbasins</button>
+        <button class="filter-tabs__btn" data-filter="benches">Benches</button>
+        <button class="filter-tabs__btn" data-filter="credenzas">Credenzas</button>
+      </div>
+
+      <div class="product-card-grid reveal-stagger" id="productGrid">
+
+        <!-- COFFEE TABLES (11) -->
+        <a href="/Products/coffee tables/terra/" class="product-card reveal" data-collection="coffee-tables">
+          <div class="product-card__media">
+            <img src="Products/coffee tables/terra/terra_12_catalogue.webp"
+                 alt="Terra Coffee Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Terra</h3>
+            <span class="product-card__category">Coffee Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/coffee tables/gesto/" class="product-card reveal" data-collection="coffee-tables">
+          <div class="product-card__media">
+            <img src="Products/coffee tables/gesto/gesto_12_catalogue.webp"
+                 alt="Gesto Coffee Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Gesto</h3>
+            <span class="product-card__category">Coffee Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/coffee tables/morphe/" class="product-card reveal" data-collection="coffee-tables">
+          <div class="product-card__media">
+            <img src="Products/coffee tables/morphe/morphe_12_catalogue.webp"
+                 alt="Morphe Coffee Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Morphe</h3>
+            <span class="product-card__category">Coffee Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/coffee tables/quadro/" class="product-card reveal" data-collection="coffee-tables">
+          <div class="product-card__media">
+            <img src="Products/coffee tables/quadro/quadro_12_catalogue.webp" alt="Quadro Coffee Table" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Quadro</h3>
+            <span class="product-card__category">Coffee Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/coffee tables/eclisse/" class="product-card reveal" data-collection="coffee-tables">
+          <div class="product-card__media">
+            <img src="Products/coffee tables/eclisse/eclisse_12_catalogue.webp" alt="Eclisse Coffee Table" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Eclisse</h3>
+            <span class="product-card__category">Coffee Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/coffee tables/duale/" class="product-card reveal" data-collection="coffee-tables">
+          <div class="product-card__media">
+            <img src="Products/coffee tables/duale/duale_12_catalogue.webp" alt="Duale Coffee Table" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Duale</h3>
+            <span class="product-card__category">Coffee Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <!-- SIDE TABLES (8) -->
+        <a href="/Products/Side tables/anti/" class="product-card reveal" data-collection="side-tables">
+          <div class="product-card__media">
+            <img src="Products/Side tables/anti/anti_12_catalogue.webp"
+                 alt="Anti Side Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Anti</h3>
+            <span class="product-card__category">Side Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Side tables/arthur/" class="product-card reveal" data-collection="side-tables">
+          <div class="product-card__media">
+            <img src="Products/Side tables/arthur/arthur_12_catalogue.webp"
+                 alt="Arthur Side Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Arthur</h3>
+            <span class="product-card__category">Side Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Side tables/cut-and-fold/" class="product-card reveal" data-collection="side-tables">
+          <div class="product-card__media">
+            <img src="Products/Side tables/cut-and-fold/cut-and-fold_12_catalogue.webp"
+                 alt="Cut &amp; Fold Side Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Cut &amp; Fold</h3>
+            <span class="product-card__category">Side Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Side tables/icaro/" class="product-card reveal" data-collection="side-tables">
+          <div class="product-card__media">
+            <img src="Products/Side tables/icaro/icaro_12_catalogue.webp"
+                 alt="Icaro Side Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Icaro</h3>
+            <span class="product-card__category">Side Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Side tables/morphe/" class="product-card reveal" data-collection="side-tables">
+          <div class="product-card__media">
+            <img src="Products/Side tables/morphe/morphe_12_catalogue.webp"
+                 alt="Morphe Side Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Morphe</h3>
+            <span class="product-card__category">Side Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Side tables/rosa/" class="product-card reveal" data-collection="side-tables">
+          <div class="product-card__media">
+            <img src="Products/Side tables/rosa/rosa_12_catalogue.webp" alt="Rosa Side Table" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Rosa</h3>
+            <span class="product-card__category">Side Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Side tables/vertebra/" class="product-card reveal" data-collection="side-tables">
+          <div class="product-card__media">
+            <img src="Products/Side tables/vertebra/vertebra_12_catalogue.webp" alt="Vertebra Side Table" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Vertebra</h3>
+            <span class="product-card__category">Side Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <!-- CABINETS (4) -->
+        <a href="/Products/cabinets/aida/" class="product-card reveal" data-collection="cabinets">
+          <div class="product-card__media">
+            <img src="Products/cabinets/aida/aida_12_catalogue.webp"
+                 alt="Aida Cabinet"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Aida</h3>
+            <span class="product-card__category">Cabinet</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/cabinets/punta/" class="product-card reveal" data-collection="cabinets">
+          <div class="product-card__media">
+            <img src="Products/cabinets/punta/punta_12_catalogue.webp"
+                 alt="Punta Cabinet"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Punta</h3>
+            <span class="product-card__category">Cabinet</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/cabinets/punta-due/" class="product-card reveal" data-collection="cabinets">
+          <div class="product-card__media">
+            <img src="Products/cabinets/punta-due/punta-due_12_catalogue.webp"
+                 alt="Punta Due Cabinet"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Punta Due</h3>
+            <span class="product-card__category">Cabinet</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/cabinets/priamo/" class="product-card reveal" data-collection="cabinets">
+          <div class="product-card__media">
+            <img src="Products/cabinets/priamo/priamo_12_catalogue.webp"
+                 alt="Priamo Sideboard"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Priamo</h3>
+            <span class="product-card__category">Sideboard</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <!-- VASES (3) -->
+        <a href="/Products/Vases/deau/" class="product-card reveal" data-collection="vases">
+          <div class="product-card__media">
+            <img src="Products/Vases/deau/deau_12_catalogue.webp"
+                 alt="Deau Vase"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Deau</h3>
+            <span class="product-card__category">Vase</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Vases/doge-small/" class="product-card reveal" data-collection="vases">
+          <div class="product-card__media">
+            <img src="Products/Vases/doge-small/doge-small_12_catalogue.webp"
+                 alt="Doge Small Vase"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Doge Small</h3>
+            <span class="product-card__category">Vase</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Vases/doge-tall/" class="product-card reveal" data-collection="vases">
+          <div class="product-card__media">
+            <img src="Products/Vases/doge-tall/doge-tall_12_catalogue.webp"
+                 alt="Doge Tall Vase"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Doge Tall</h3>
+            <span class="product-card__category">Vase</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <!-- COMPLIMENTS (6) -->
+        <a href="/Products/Compliments/aime/" class="product-card reveal" data-collection="compliments">
+          <div class="product-card__media">
+            <img src="Products/Compliments/aime/aime_12_catalogue.webp"
+                 alt="Aime — Compliments Collection"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Aime</h3>
+            <span class="product-card__category">Marble Accent</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Compliments/ana/" class="product-card reveal" data-collection="compliments">
+          <div class="product-card__media">
+            <img src="Products/Compliments/ana/ana_12_catalogue.webp"
+                 alt="Ana — Compliments Collection"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Ana</h3>
+            <span class="product-card__category">Marble Accent</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Compliments/cono/" class="product-card reveal" data-collection="compliments">
+          <div class="product-card__media">
+            <img src="Products/Compliments/cono/cono_12_catalogue.webp"
+                 alt="Cono — Compliments Collection"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Cono</h3>
+            <span class="product-card__category">Marble Accent</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Compliments/gesto/" class="product-card reveal" data-collection="compliments">
+          <div class="product-card__media">
+            <img src="Products/Compliments/gesto/gesto_12_catalogue.webp"
+                 alt="Gesto — Compliments Collection"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Gesto</h3>
+            <span class="product-card__category">Marble Accent</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Compliments/morphe/" class="product-card reveal" data-collection="compliments">
+          <div class="product-card__media">
+            <img src="Products/Compliments/morphe/morphe_12_catalogue.webp"
+                 alt="Morphe — Compliments Collection"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Morphe</h3>
+            <span class="product-card__category">Marble Accent</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Compliments/palladio/" class="product-card reveal" data-collection="compliments">
+          <div class="product-card__media">
+            <img src="Products/Compliments/palladio/palladio_12_catalogue.webp"
+                 alt="Palladio — Compliments Collection"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Palladio</h3>
+            <span class="product-card__category">Marble Accent</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Compliments/samaveta/" class="product-card reveal" data-collection="compliments">
+          <div class="product-card__media">
+            <img src="Products/Compliments/samaveta/samaveta_12_catalogue.webp"
+                 alt="Samaveta — Compliments Collection"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Samaveta</h3>
+            <span class="product-card__category">Marble Accent</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Compliments/temple/" class="product-card reveal" data-collection="compliments">
+          <div class="product-card__media">
+            <img src="Products/Compliments/temple/temple_12_catalogue.webp"
+                 alt="Temple — Compliments Collection"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Temple</h3>
+            <span class="product-card__category">Marble Accent</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <!-- DINING TABLES -->
+        <a href="/Products/Dining Tables/bronze/" class="product-card reveal" data-collection="dining-tables">
+          <div class="product-card__media">
+            <img src="Products/Dining Tables/bronze/bronze_12_catalogue.webp"
+                 alt="Bronze Dining Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Bronze</h3>
+            <span class="product-card__category">Dining Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Dining Tables/eclipse/" class="product-card reveal" data-collection="dining-tables">
+          <div class="product-card__media">
+            <img src="Products/Dining Tables/eclipse/eclipse_12_catalogue.webp"
+                 alt="Eclipse Dining Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Eclipse</h3>
+            <span class="product-card__category">Dining Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Dining Tables/juni/" class="product-card reveal" data-collection="dining-tables">
+          <div class="product-card__media">
+            <img src="Products/Dining Tables/juni/juni_12_catalogue.webp"
+                 alt="Juni Dining Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Juni</h3>
+            <span class="product-card__category">Dining Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Dining Tables/lavanche/" class="product-card reveal" data-collection="dining-tables">
+          <div class="product-card__media">
+            <img src="Products/Dining Tables/lavanche/lavanche_12_catalogue.webp"
+                 alt="Lavanche Dining Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Lavanche</h3>
+            <span class="product-card__category">Dining Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Dining Tables/levante/" class="product-card reveal" data-collection="dining-tables">
+          <div class="product-card__media">
+            <img src="Products/Dining Tables/levante/levante_12_catalogue.webp"
+                 alt="Levante Dining Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Levante</h3>
+            <span class="product-card__category">Dining Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Dining Tables/wedge/" class="product-card reveal" data-collection="dining-tables">
+          <div class="product-card__media">
+            <img src="Products/Dining Tables/wedge/wedge_12_catalogue.webp"
+                 alt="Wedge Dining Table"
+                 class="product-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Wedge</h3>
+            <span class="product-card__category">Dining Table</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+
+        <!-- CONSOLES (22) -->
+        <a href="/Products/Consoles/anti/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/anti/anti_12_catalogue.webp" alt="Anti Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Anti</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/curves/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/curves/curves_12_catalogue.webp" alt="Curves Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Curves</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/cut-and-fold/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/cut-and-fold/cut-and-fold_12_catalogue.webp" alt="Cut and Fold Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Cut and Fold</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/empire/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/empire/empire_12_catalogue.webp" alt="Empire Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Empire</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/lamarck/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/lamarck/lamarck_12_catalogue.webp" alt="Lamarck Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Lamarck</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/levante/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/levante/levante_12_catalogue.webp" alt="Levante Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Levante</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/malibu/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/malibu/malibu_12_catalogue.webp" alt="Malibu Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Malibu</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/morphe/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/morphe/morphe_12_catalogue.webp" alt="Morphe Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Morphe</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/onda/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/onda/onda_12_catalogue.webp" alt="Onda Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Onda</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/relica/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/relica/relica_12_catalogue.webp" alt="Relica Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Relica</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/shan/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/shan/shan_12_catalogue.webp" alt="Shan Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Shan</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Consoles/t-02/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/t-02/t-02_12_catalogue.webp" alt="T-02 Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">T-02</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+
+        <a href="/Products/Consoles/cascara/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/cascara/cascara_12_catalogue.webp" alt="Cascara Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Cascara</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Consoles/fiamma/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/fiamma/fiamma_12_catalogue.webp" alt="Fiamma Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Fiamma</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Consoles/elisse/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/elisse/elisse_12_catalogue.webp" alt="Elisse Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Elisse</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Consoles/falda/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/falda/falda_12_catalogue.webp" alt="Falda Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Falda</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Consoles/scanalato/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/scanalato/scanalato_12_catalogue.webp" alt="Scanalato Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Scanalato</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Consoles/serpente/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/serpente/serpente_12_catalogue.webp" alt="Serpente Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Serpente</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Consoles/lucerna/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/lucerna/lucerna_12_catalogue.webp" alt="Lucerna Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Lucerna</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Consoles/portale/" class="product-card reveal" data-collection="consoles">
+          <div class="product-card__media">
+            <img src="Products/Consoles/portale/portale_12_catalogue.webp" alt="Portale Console" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Portale</h3>
+            <span class="product-card__category">Marble Console</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <!-- WASHBASINS -->
+        <a href="/Products/Washbasins/bronze/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/bronze/bronze_12_catalogue.webp" alt="Bronze Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Bronze</h3>
+            <span class="product-card__category">Countertop Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Washbasins/circle-high/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/circle-high/circle-high_12_catalogue.webp" alt="Circle High Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Circle High</h3>
+            <span class="product-card__category">Pedestal Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Washbasins/circle-medium/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/circle-medium/circle-medium_12_catalogue.webp" alt="Circle Medium Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Circle Medium</h3>
+            <span class="product-card__category">Freestanding Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Washbasins/circle-small/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/circle-small/circle-small_12_catalogue.webp" alt="Circle Small Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Circle Small</h3>
+            <span class="product-card__category">Countertop Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Washbasins/cono-high/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/cono-high/cono-high_12_catalogue.webp" alt="Cono High Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Cono High</h3>
+            <span class="product-card__category">Pedestal Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Washbasins/marble-colors/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/marble-colors/marble-colors_12_catalogue.webp" alt="Marble Colors Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Marble Colors</h3>
+            <span class="product-card__category">Marble Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Washbasins/punta-high/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/punta-high/punta-high_12_catalogue.webp" alt="Punta High Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Punta High</h3>
+            <span class="product-card__category">Pedestal Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/Products/Washbasins/barile/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/barile/barile_12_catalogue.webp" alt="Barile Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Barile</h3>
+            <span class="product-card__category">Vessel Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Washbasins/calice/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/calice/calice_12_catalogue.webp" alt="Calice Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Calice</h3>
+            <span class="product-card__category">Pedestal Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Washbasins/blocco/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/blocco/blocco_12_catalogue.webp" alt="Blocco Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Blocco</h3>
+            <span class="product-card__category">Monolithic Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Washbasins/frammento/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/frammento/frammento_12_catalogue.webp" alt="Frammento Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Frammento</h3>
+            <span class="product-card__category">Sculptural Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Washbasins/selva/" class="product-card reveal" data-collection="washbasins">
+          <div class="product-card__media">
+            <img src="Products/Washbasins/selva/selva_12_catalogue.webp" alt="Selva Washbasin" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Selva</h3>
+            <span class="product-card__category">Freestanding Washbasin</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <!-- BENCHES -->
+        <a href="/Products/Benches/cascata/" class="product-card reveal" data-collection="benches">
+          <div class="product-card__media">
+            <img src="Products/Benches/cascata/cascata_12_catalogue.webp" alt="Cascata Bench" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Cascata</h3>
+            <span class="product-card__category">Stone Bench</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <a href="/Products/Benches/colonna/" class="product-card reveal" data-collection="benches">
+          <div class="product-card__media">
+            <img src="Products/Benches/colonna/colonna_12_catalogue.webp" alt="Colonna Bench" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Colonna</h3>
+            <span class="product-card__category">Stone Bench</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+        <!-- CREDENZAS (1) -->
+        <a href="/Products/Credenzas/linea/" class="product-card reveal" data-collection="credenzas">
+          <div class="product-card__media">
+            <img src="Products/Credenzas/linea/linea_12_catalogue.webp" alt="Linea Credenza" class="product-card__img" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Linea</h3>
+            <span class="product-card__category">Marble Credenza</span>
+            <span class="product-card__cta">Discover More &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       TAILOR-MADE CTA
+  ============================================ -->
+  <section class="tailor-made-cta">
+    <div class="container">
+      <div class="tailor-made-cta__content reveal">
+        <span class="section-label">Bespoke Service</span>
+        <div class="accent-rule"></div>
+        <h2 class="section-title">Made Entirely for You</h2>
+        <p class="tailor-made-cta__text">Every dimension, material, and finish can be customized. We work directly with architects and designers to realize pieces that are uniquely yours &mdash; from initial sketch through installation.</p>
+        <a href="/contact" class="btn-primary">Begin Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       THREE PILLARS
+  ============================================ -->
+  <section class="three-pillars">
+    <div class="container">
+      <div class="three-pillars__header text-center">
+        <div class="accent-rule reveal"></div>
+        <h2 class="section-title reveal">What Defines Us</h2>
+      </div>
+      <div class="three-pillars__grid reveal-stagger">
+
+        <div class="pillar-card reveal">
+          <div class="pillar-card__media">
+            <img src="Products/coffee tables/gesto/gesto_11_technical.webp"
+                 alt="Gesto coffee table — technical drawing showing precise proportions"
+                 class="pillar-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="pillar-card__heading">Design</h3>
+          <p class="pillar-card__text">Every line, curve, and proportion is considered &mdash; conceived in dialogue with the space it will inhabit and the stone from which it will emerge.</p>
+          <a href="/catalog" class="btn-primary">Explore the Collection</a>
+        </div>
+
+        <div class="pillar-card reveal">
+          <div class="pillar-card__media">
+            <img src="Products/coffee tables/terra/terra_06_closeup_joint.webp"
+                 alt="Hand-finished marble joinery"
+                 class="pillar-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="pillar-card__heading">Craftsmanship</h3>
+          <p class="pillar-card__text">Generations of knowledge guide every cut and polish. Our artisans work with a patience that honours the material and a precision that defines our standard.</p>
+          <a href="/contact" class="btn-primary">Begin Your Project</a>
+        </div>
+
+        <div class="pillar-card reveal">
+          <div class="pillar-card__media">
+            <img src="Products/coffee tables/gesto/gesto_05_closeup_surface.webp"
+                 alt="Natural marble surface detail"
+                 class="pillar-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="pillar-card__heading">Materiality</h3>
+          <p class="pillar-card__text">We source only stone of extraordinary character &mdash; each block selected for the uniqueness of its veining, the warmth of its tone, and the depth of its surface.</p>
+          <a href="/craft" class="btn-primary">Discover More</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand Column -->
+        <div class="footer__brand">
+          <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
+          <p class="footer__tagline">Bespoke Marble Atelier</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sitemap Column -->
+        <div class="footer__sitemap">
+          <h4 class="footer__col-title">Navigate</h4>
+          <a href="/" class="footer__link">Home</a>
+          <a href="/craft" class="footer__link">Craft</a>
+          <a href="/catalog" class="footer__link">Catalog</a>
+          <a href="/contact" class="footer__link">Contact</a>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="footer__contact-info">
+          <h4 class="footer__col-title">Visit</h4>
+          <p>Tiba Stone Atelier</p>
+          <p><a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a></p>
+          <p><a href="tel:+6281239442648">+62 81239442648</a></p>
+        </div>
+
+        <!-- Compact Inquiry Form Column -->
+        <div class="footer__form">
+          <h4 class="footer__col-title">Inquire</h4>
+          <form class="footer-form" id="footerForm">
+            <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+            <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+            <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+            <button type="submit" class="btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ------------------------------------------
+         1. HEADER SCROLL TRANSITION
+      ------------------------------------------ */
+      var header = document.getElementById('siteHeader');
+      var catalogHero = document.getElementById('catalogHero');
+
+      function updateHeader() {
+        var threshold = catalogHero.offsetHeight * 0.12;
+        if (window.scrollY > threshold) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
+        }
+      }
+
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() { updateHeader(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      updateHeader();
+
+      /* ------------------------------------------
+         2. MOBILE MENU
+      ------------------------------------------ */
+      var hamburger = document.getElementById('hamburgerBtn');
+      var mobileMenu = document.getElementById('mobileMenu');
+      var mobileClose = document.getElementById('mobileMenuClose');
+
+      function openMenu() {
+        mobileMenu.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openMenu);
+      mobileClose.addEventListener('click', closeMenu);
+
+      mobileMenu.querySelectorAll('.mobile-menu__link').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      /* ------------------------------------------
+         3. SCROLL REVEAL (Intersection Observer)
+      ------------------------------------------ */
+      var revealElements = document.querySelectorAll('.reveal');
+
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(function (el) {
+        revealObserver.observe(el);
+      });
+
+      /* ------------------------------------------
+         4. HERO PARALLAX (subtle)
+      ------------------------------------------ */
+      var heroBgImg = document.querySelector('.catalog-hero__bg-img');
+
+      function heroParallax() {
+        var scrollY = window.scrollY;
+        var heroHeight = catalogHero.offsetHeight;
+        if (scrollY <= heroHeight) {
+          var offset = scrollY * 0.2;
+          heroBgImg.style.transform = 'translateY(' + offset + 'px) scale(1.05)';
+        }
+      }
+
+      window.addEventListener('scroll', heroParallax, { passive: true });
+
+      /* ------------------------------------------
+         5. PROGRESSIVE IMAGE FADE-IN
+      ------------------------------------------ */
+      var fadeImages = document.querySelectorAll(
+        '.editorial-split__img, .product-card__img, .pillar-card__img'
+      );
+
+      fadeImages.forEach(function (img) {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.8s ease';
+
+        function showImage() {
+          img.style.opacity = '1';
+        }
+
+        if (img.complete && img.naturalHeight !== 0) {
+          showImage();
+        } else {
+          img.addEventListener('load', showImage);
+        }
+      });
+
+      /* Hero image separate — always eager loaded */
+      var heroImg = document.querySelector('.catalog-hero__bg-img');
+      heroImg.style.opacity = '0';
+      heroImg.style.transition = 'opacity 1.2s ease';
+
+      function showHero() {
+        heroImg.style.opacity = '1';
+      }
+
+      if (heroImg.complete && heroImg.naturalHeight !== 0) {
+        showHero();
+      } else {
+        heroImg.addEventListener('load', showHero);
+      }
+
+      /* ------------------------------------------
+         6. FILTER TABS
+      ------------------------------------------ */
+      var filterBtns = document.querySelectorAll('.filter-tabs__btn');
+      var productCards = document.querySelectorAll('#productGrid .product-card');
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var filter = this.getAttribute('data-filter');
+
+          // Update active button
+          filterBtns.forEach(function (b) {
+            b.classList.remove('filter-tabs__btn--active');
+          });
+          this.classList.add('filter-tabs__btn--active');
+
+          // Show/hide products
+          productCards.forEach(function (card) {
+            var cardCollection = card.getAttribute('data-collection');
+            if (filter === 'all' || cardCollection === filter) {
+              card.classList.remove('is-hidden');
+            } else {
+              card.classList.add('is-hidden');
+            }
+          });
+        });
+      });
+
+      /* ------------------------------------------
+         FILTER FROM URL HASH
+      ------------------------------------------ */
+      (function () {
+        var hash = window.location.hash.replace('#', '');
+        if (hash) {
+          var target = document.querySelector('.filter-tabs__btn[data-filter="' + hash + '"]');
+          if (target) {
+            target.click();
+            var grid = document.getElementById('collection-grid');
+            if (grid) {
+              setTimeout(function () {
+                grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 80);
+            }
+          }
+        }
+      })();
+
+      /* ------------------------------------------
+         7. FOOTER FORM HANDLER
+      ------------------------------------------ */
+      document.getElementById('footerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = e.target;
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn.textContent;
+        btn.textContent = 'Sending\u2026';
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+        fetch('https://formspree.io/f/luke@tibaliving.com', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (r) {
+          if (r.ok) {
+            btn.textContent = 'Sent';
+            setTimeout(function () {
+              form.reset();
+              btn.textContent = originalText;
+              btn.disabled = false;
+              btn.style.opacity = '1';
+            }, 3000);
+          } else {
+            btn.textContent = 'Error \u2014 Try Again';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+          }
+        }).catch(function () {
+          btn.textContent = 'Error \u2014 Try Again';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        });
+      });
+
+    })();
+  </script>
+<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
+
+</body>
+</html>

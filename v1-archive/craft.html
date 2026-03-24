@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/webp" href="TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <link rel="apple-touch-icon" href="TIBA_FINAL_LOGO_PORTRAIT (2).png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIBA STONE | The Craft</title>
+  <meta name="description" content="Discover the art behind every Tiba Stone creation — from quarry to atelier, each piece is shaped by hand with reverence for the material.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preload" as="image" href="Products/cabinets/aida/aida_01_editorial.webp" type="image/webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/shared.css">
+  <style>
+    /* ============================================
+       6. HEADER
+    ============================================ */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.625rem 0;
+      transition: background var(--duration-fast) var(--ease-smooth),
+                  border-color var(--duration-fast) var(--ease-smooth),
+                  padding var(--duration-fast) var(--ease-smooth);
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom-color: rgba(34, 35, 35, 0.08);
+      padding: 1.125rem 0;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .header__logo-img {
+      height: 44px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      transition: filter var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__logo-img {
+      filter: none;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 2.75rem;
+    }
+
+    .header__nav-link {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-ivory);
+      text-decoration: none;
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__nav-link {
+      color: var(--color-stone);
+    }
+
+    .header__nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-sunset);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .header__nav-link:hover::after,
+    .header__nav-link--active::after {
+      transform: scaleX(1);
+    }
+
+    /* Hamburger */
+    .header__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0.5rem;
+      z-index: 2;
+    }
+
+    .header__hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--color-ivory);
+      transition: background var(--duration-fast) var(--ease-smooth);
+    }
+
+    .site-header.is-scrolled .header__hamburger span {
+      background: var(--color-stone);
+    }
+
+    /* Mobile Menu — base styles in shared.css */
+
+    /* ============================================
+       7. HERO
+    ============================================ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero__bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.1);
+      will-change: transform;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(34, 35, 35, 0.2) 0%,
+        rgba(34, 35, 35, 0.45) 100%
+      );
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 var(--container-pad);
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      color: var(--color-ivory);
+      letter-spacing: 0.03em;
+      line-height: 1.15;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    .hero__scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 2;
+    }
+
+    .hero__scroll-text {
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--color-ivory);
+      font-weight: 400;
+    }
+
+    .hero__scroll-line {
+      width: 1px;
+      height: 40px;
+      background: var(--color-ivory);
+      opacity: 0.6;
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
+      50% { opacity: 0.8; transform: scaleY(1); transform-origin: top; }
+    }
+
+    /* ============================================
+       8. BRAND INTRODUCTION
+    ============================================ */
+    .brand-intro {
+      padding: var(--space-3xl) 0;
+    }
+
+    .brand-intro__name {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .brand-intro__subtitle {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+    }
+
+    .brand-intro__body p {
+      font-size: var(--text-body);
+      line-height: var(--lh-body);
+      font-weight: 400;
+      max-width: 580px;
+      margin: 0 auto 1.5rem;
+      color: var(--color-stone);
+    }
+
+    .brand-intro__body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ============================================
+       9. EDITORIAL SPLIT (Asymmetric Layout)
+    ============================================ */
+    .editorial-split {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--grid-gap);
+      align-items: start;
+    }
+
+    .editorial-split__media {
+      overflow: hidden;
+    }
+
+    .editorial-split__img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: top;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .editorial-split__media:hover .editorial-split__img {
+      transform: scale(1.03);
+    }
+
+    .editorial-split__content {
+      padding-top: clamp(3rem, 8vw, 7rem);
+      padding-left: clamp(1rem, 3vw, 2.5rem);
+    }
+
+    .editorial-split__label {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    .editorial-split__heading {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      line-height: var(--lh-heading);
+      margin-bottom: 1.5rem;
+    }
+
+    .editorial-split__text {
+      font-weight: 400;
+      line-height: var(--lh-body);
+      margin-bottom: 2rem;
+      max-width: 420px;
+    }
+
+    /* Reversed: image right, text left */
+    .editorial-split--img-right {
+      grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .editorial-split--img-right .editorial-split__media {
+      order: 2;
+    }
+
+    .editorial-split--img-right .editorial-split__content {
+      order: 1;
+      padding-left: 0;
+      padding-right: clamp(1rem, 3vw, 2.5rem);
+    }
+
+    /* ============================================
+       10. CRAFT PAGE — PHILOSOPHY
+    ============================================ */
+    .craft-philosophy {
+      padding: var(--space-3xl) 0;
+    }
+
+    /* ============================================
+       11. CRAFT PAGE — PROCESS
+    ============================================ */
+    .craft-process {
+      padding: var(--space-2xl) 0;
+    }
+
+    .craft-process__header {
+      margin-bottom: var(--space-xl);
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: var(--text-subtitle);
+      font-weight: 500;
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-river-green);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .craft-process__stage {
+      margin-bottom: var(--space-2xl);
+    }
+
+    .craft-process__stage:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ============================================
+       12. CRAFT PAGE — GLOBAL SOURCING
+    ============================================ */
+    .sourcing {
+      background: var(--color-sand);
+      padding: var(--space-2xl) 0 var(--space-lg);
+    }
+
+    .sourcing__header {
+      margin-bottom: var(--space-lg);
+    }
+
+    .sourcing__intro {
+      max-width: 620px;
+      margin: 0 auto var(--space-lg);
+      font-weight: 400;
+      line-height: var(--lh-body);
+    }
+
+    .sourcing__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--grid-gap);
+    }
+
+    .source-card {
+      text-align: center;
+    }
+
+    .source-card__media {
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+
+    .source-card__img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .source-card:hover .source-card__img {
+      transform: scale(1.03);
+    }
+
+    .source-card__name {
+      font-family: var(--font-display);
+      font-size: var(--text-h3);
+      margin-bottom: 0.25rem;
+    }
+
+    .source-card__region {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .source-card__text {
+      font-weight: 400;
+      font-size: var(--text-small);
+      line-height: 1.6;
+      max-width: 320px;
+      margin: 0 auto;
+      color: var(--color-stone);
+    }
+
+    /* ============================================
+       13. CRAFT PAGE — MATERIALS SHOWCASE
+    ============================================ */
+    .materials-showcase {
+      padding: var(--space-2xl) 0;
+      overflow: hidden;
+    }
+
+    .materials-showcase__header {
+      margin-bottom: var(--space-lg);
+    }
+
+    .materials-showcase__track-wrapper {
+      position: relative;
+    }
+
+    .materials-showcase__track {
+      display: flex;
+      gap: clamp(0.75rem, 1.5vw, 1.25rem);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 1rem;
+      cursor: grab;
+    }
+
+    .materials-showcase__track:active {
+      cursor: grabbing;
+    }
+
+    .materials-showcase__track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .material-card {
+      flex: 0 0 clamp(220px, 22vw, 300px);
+      scroll-snap-align: start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .material-card__media {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3 / 5;
+    }
+
+    .material-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .material-card:hover .material-card__img {
+      transform: scale(1.05);
+    }
+
+    .material-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(34, 35, 35, 0.65) 0%,
+        rgba(34, 35, 35, 0.08) 40%,
+        transparent 100%
+      );
+      transition: background var(--duration-fast) var(--ease-smooth);
+    }
+
+    .material-card:hover .material-card__overlay {
+      background: linear-gradient(
+        to top,
+        rgba(34, 35, 35, 0.75) 0%,
+        rgba(34, 35, 35, 0.15) 50%,
+        transparent 100%
+      );
+    }
+
+    .material-card__info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.75rem 1.25rem;
+      z-index: 2;
+    }
+
+    .material-card__name {
+      font-family: var(--font-display);
+      font-size: clamp(1.125rem, 1.4vw, 1.375rem);
+      color: var(--color-ivory);
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .material-card__origin {
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      color: rgba(255, 255, 255, 0.65);
+      font-weight: 400;
+    }
+
+    /* Scroll progress bar */
+    .materials-showcase__progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .materials-showcase__progress-track {
+      width: 120px;
+      height: 1px;
+      background: rgba(34, 35, 35, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .materials-showcase__progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 30%;
+      background: var(--color-sunset);
+      transition: transform 0.15s ease-out;
+      transform-origin: left;
+    }
+
+    .materials-showcase__nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(34, 35, 35, 0.2);
+      background: transparent;
+      cursor: pointer;
+      transition: border-color var(--duration-fast) var(--ease-smooth),
+                  background var(--duration-fast) var(--ease-smooth);
+    }
+
+    .materials-showcase__nav-btn:hover {
+      border-color: var(--color-stone);
+      background: var(--color-stone);
+    }
+
+    .materials-showcase__nav-btn:hover svg {
+      stroke: var(--color-ivory);
+    }
+
+    .materials-showcase__nav-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--color-stone);
+      stroke-width: 1.5;
+      fill: none;
+      transition: stroke var(--duration-fast) var(--ease-smooth);
+    }
+
+    /* ============================================
+       14. CRAFT PAGE — THREE PILLARS
+    ============================================ */
+    .three-pillars {
+      background: var(--color-sand);
+      padding: var(--space-lg) 0 var(--space-2xl);
+    }
+
+    .three-pillars__header {
+      margin-bottom: var(--space-lg);
+    }
+
+    .three-pillars__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--grid-gap);
+    }
+
+    .pillar-card {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pillar-card .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: auto;
+      box-sizing: border-box;
+      width: 260px;
+      height: 52px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pillar-card__media {
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .pillar-card__img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: top;
+      transition: transform var(--duration-slow) var(--ease-smooth);
+    }
+
+    .pillar-card:hover .pillar-card__img {
+      transform: scale(1.03);
+    }
+
+    .pillar-card__heading {
+      font-family: var(--font-display);
+      font-size: var(--text-h3);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      margin-bottom: 1rem;
+    }
+
+    .pillar-card__text {
+      font-weight: 400;
+      line-height: var(--lh-body);
+      margin-bottom: 1.5rem;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============================================
+       15. CRAFT PAGE — CLOSE CTA
+    ============================================ */
+    .close-cta {
+      padding: var(--space-2xl) 0;
+    }
+
+    .close-cta__heading {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      margin-bottom: 2rem;
+    }
+
+    /* Footer (base in shared.css) */
+    .site-footer {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+    }
+
+    /* ============================================
+       17. RESPONSIVE — TABLET
+    ============================================ */
+    @media (max-width: 1023px) {
+      .editorial-split {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .editorial-split--img-right {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .editorial-split__content {
+        padding-top: clamp(2rem, 5vw, 4rem);
+      }
+
+      .brand-intro,
+      .craft-philosophy {
+        padding: var(--space-2xl) 0;
+      }
+
+      .material-card {
+        flex: 0 0 clamp(200px, 30vw, 260px);
+      }
+
+      .three-pillars__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(1rem, 2vw, 2rem);
+      }
+
+      .sourcing__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(1rem, 2vw, 2rem);
+      }
+    }
+
+    /* ============================================
+       18. RESPONSIVE — MOBILE
+    ============================================ */
+    @media (max-width: 767px) {
+      .hero {
+        height: 85vh;
+        min-height: 500px;
+      }
+
+      .brand-intro,
+      .craft-philosophy {
+        padding: var(--space-xl) 0;
+      }
+
+      .editorial-split,
+      .editorial-split--img-right {
+        grid-template-columns: 1fr;
+      }
+
+      .editorial-split__content {
+        padding-top: 2rem;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .editorial-split--img-right .editorial-split__media {
+        order: 0;
+      }
+
+      .editorial-split--img-right .editorial-split__content {
+        order: 0;
+        padding-right: 0;
+      }
+
+      .editorial-split__img {
+        aspect-ratio: 3 / 4;
+      }
+
+      .craft-process,
+      .materials-showcase,
+      .three-pillars,
+      .sourcing,
+      .close-cta {
+        padding: var(--space-xl) 0;
+      }
+
+      .craft-process__stage {
+        margin-bottom: var(--space-xl);
+      }
+
+      .material-card {
+        flex: 0 0 clamp(160px, 42vw, 200px);
+      }
+
+      .material-card__info {
+        padding: 1.25rem 1rem;
+      }
+
+      .three-pillars__grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .sourcing__grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+
+  <!-- ============================================
+       HEADER
+  ============================================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header__inner container">
+      <a href="/" class="header__logo">
+        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img" loading="lazy" decoding="async">
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="/" class="header__nav-link">Home</a>
+        <a href="/craft" class="header__nav-link header__nav-link--active">Craft</a>
+        <a href="/catalog" class="header__nav-link">Catalog</a>
+        <a href="/contact" class="header__nav-link">Contact</a>
+      </nav>
+      <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <nav class="mobile-menu__nav">
+      <a href="/" class="mobile-menu__link">Home</a>
+      <a href="/craft" class="mobile-menu__link">Craft</a>
+      <a href="/catalog" class="mobile-menu__link">Catalog</a>
+      <a href="/contact" class="mobile-menu__link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ============================================
+       HERO
+  ============================================ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="Products/cabinets/aida/aida_01_editorial.webp"
+           alt="Raw marble blocks in a sunlit quarry, dramatic light revealing natural veining"
+           class="hero__bg-img"
+           loading="eager"
+           fetchpriority="high">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1 class="hero__title">The Art of Stone</h1>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span class="hero__scroll-text">Scroll</span>
+      <span class="hero__scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PHILOSOPHY STATEMENT
+  ============================================ -->
+  <section class="craft-philosophy">
+    <div class="container--narrow text-center">
+      <div class="accent-rule reveal"></div>
+      <h2 class="brand-intro__name reveal">Our Philosophy</h2>
+      <p class="brand-intro__subtitle reveal">Where Nature Meets Intention</p>
+      <div class="brand-intro__body reveal">
+        <p>At Tiba Stone, we believe that marble is not merely a building material &mdash; it is a testament to geological time, a record of pressure, heat, and patience written across millennia. Our role is not to impose upon it, but to listen.</p>
+        <p>Every block that enters our atelier carries its own character: veining that cannot be replicated, colour shifts that belong to one quarry and one moment alone. We honour this singularity through unhurried craft, bespoke collaboration, and a refusal to treat any two commissions alike.</p>
+        <p>The result is stone that feels inevitable &mdash; as though it was always meant to take this form.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       THE PROCESS
+  ============================================ -->
+  <section class="craft-process">
+    <div class="container">
+      <div class="craft-process__header text-center">
+        <span class="section-label reveal">The Process</span>
+        <div class="accent-rule reveal"></div>
+        <h2 class="section-title reveal">From Quarry to Masterpiece</h2>
+      </div>
+
+      <!-- Stage 1: Material Selection (image LEFT) -->
+      <div class="craft-process__stage">
+        <div class="editorial-split">
+          <div class="editorial-split__media reveal">
+            <img src="Products/coffee tables/terra/terra_03_closeup_veining.webp"
+                 alt="Master craftsman inspecting raw marble blocks at the quarry face"
+                 class="editorial-split__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="editorial-split__content reveal">
+            <span class="editorial-split__label">01 &mdash; Material Selection</span>
+            <h3 class="editorial-split__heading">Chosen at<br>the Source</h3>
+            <p class="editorial-split__text">Every Tiba Stone commission begins at the quarry. Our master selectors travel to extraction sites across Italy, Greece, and beyond, reading the face of each block for veining character, structural integrity, and tonal warmth. Only stone that meets our standard of singularity is chosen &mdash; material worthy of the hands that will shape it.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 2: Design (image RIGHT) -->
+      <div class="craft-process__stage">
+        <div class="editorial-split editorial-split--img-right">
+          <div class="editorial-split__media reveal">
+            <img src="Products/coffee tables/morphe/morphe_11_technical.webp"
+                 alt="Technical drawing of the Morphe marble coffee table showing elegant curved form and stone veining"
+                 class="editorial-split__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="editorial-split__content reveal">
+            <span class="editorial-split__label">02 &mdash; Design</span>
+            <h3 class="editorial-split__heading">Drawn from<br>Dialogue</h3>
+            <p class="editorial-split__text">Each piece is conceived in close conversation with the client &mdash; architect, designer, or homeowner. We translate spatial requirements and aesthetic vision into precise technical drawings, always respecting the natural geometry of the chosen stone. The design honours what the marble wants to become.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 3: Cutting & Shaping (image LEFT) -->
+      <div class="craft-process__stage">
+        <div class="editorial-split">
+          <div class="editorial-split__media reveal">
+            <img src="Products/Compliments/ana/ana_04_closeup_edge.webp"
+                 alt="Precision-cut curved marble edge revealing the stone's natural veining"
+                 class="editorial-split__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="editorial-split__content reveal">
+            <span class="editorial-split__label">03 &mdash; Cutting &amp; Shaping</span>
+            <h3 class="editorial-split__heading">Precision<br>Meets Patience</h3>
+            <p class="editorial-split__text">Modern diamond-wire technology and traditional hand tools work in concert. Our artisans rough-cut each block to within millimetres of the final form, then refine by hand &mdash; a process that cannot be rushed. The stone reveals its deepest character only as material is slowly, deliberately removed.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 4: Hand Finishing (image RIGHT) -->
+      <div class="craft-process__stage">
+        <div class="editorial-split editorial-split--img-right">
+          <div class="editorial-split__media reveal">
+            <img src="Products/Dining Tables/eclipse/eclipse_05_closeup_surface.webp"
+                 alt="Luminous polished marble surface catching warm natural light"
+                 class="editorial-split__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="editorial-split__content reveal">
+            <span class="editorial-split__label">04 &mdash; Hand Finishing</span>
+            <h3 class="editorial-split__heading">The Touch<br>That Defines</h3>
+            <p class="editorial-split__text">Finishing is where craft becomes art. Through successive stages of honing, sanding, and polishing, our artisans coax a luminous depth from the stone&rsquo;s surface. Whether the brief calls for a mirror polish, a soft hone, or a textured brushed finish, every pass is made by hand and judged by eye.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 5: Quality & Inspection (image LEFT) -->
+      <div class="craft-process__stage">
+        <div class="editorial-split">
+          <div class="editorial-split__media reveal">
+            <img src="Products/Vases/doge-tall/doge-tall_02_human.webp"
+                 alt="Artisan carefully examining a finished marble vase under natural studio light"
+                 class="editorial-split__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="editorial-split__content reveal">
+            <span class="editorial-split__label">05 &mdash; Quality &amp; Inspection</span>
+            <h3 class="editorial-split__heading">Nothing<br>Leaves Unseen</h3>
+            <p class="editorial-split__text">Before any piece departs our atelier, it undergoes a meticulous inspection under natural light. Surfaces are examined for uniformity, edges for precision, and the overall form for fidelity to the original design. We sign our name only to work that meets the standard we would accept in our own homes.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       GLOBAL SOURCING
+  ============================================ -->
+  <section class="sourcing">
+    <div class="container">
+      <div class="sourcing__header text-center">
+        <span class="section-label reveal">Our Stones</span>
+        <div class="accent-rule reveal"></div>
+        <h2 class="section-title reveal">Stone Without Borders</h2>
+        <p class="sourcing__intro text-center reveal">Six noble stones, each chosen for its singular character. We source from the world&rsquo;s most celebrated quarries &mdash; selecting only slabs that meet our standard for veining, depth, and sculptural potential.</p>
+      </div>
+      <div class="sourcing__grid reveal-stagger">
+
+        <div class="source-card reveal">
+          <div class="source-card__media">
+            <img src="Products/Consoles/serpente/Product Variations/serpente_calacatta-viola.png"
+                 alt="Serpente console in Calacatta Viola marble with dramatic violet veining"
+                 class="source-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="source-card__name">Calacatta Viola</h3>
+          <span class="source-card__region">Tuscany, Italy</span>
+          <p class="source-card__text">A luminous white ground fractured by dramatic violet and burgundy veining &mdash; each slab a unique composition of movement and contrast.</p>
+        </div>
+
+        <div class="source-card reveal">
+          <div class="source-card__media">
+            <img src="Products/Dining Tables/eclipse/Product Variations/eclipse_fendy-grey.webp"
+                 alt="Eclipse dining table in Fendy Grey marble with soft silver tones"
+                 class="source-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="source-card__name">Fendy Grey</h3>
+          <span class="source-card__region">Anatolia, Turkey</span>
+          <p class="source-card__text">Soft silver-grey with a quiet, cloud-like depth. Its understated veining brings calm sophistication to any interior.</p>
+        </div>
+
+        <div class="source-card reveal">
+          <div class="source-card__media">
+            <img src="Products/Vases/doge-tall/Product Variations/doge-tall_ice-age-onyx.webp"
+                 alt="Doge Tall vase in Ice Age Onyx with translucent crystalline texture"
+                 class="source-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="source-card__name">Ice Age Onyx</h3>
+          <span class="source-card__region">Iran</span>
+          <p class="source-card__text">Translucent and ethereal &mdash; crystalline whites and pale blues that capture light from within, lending a sculptural, otherworldly quality.</p>
+        </div>
+
+        <div class="source-card reveal">
+          <div class="source-card__media">
+            <img src="Products/Consoles/onda/Product Variations/onda_noir-aziza.webp"
+                 alt="Onda console in Noir Aziza marble with striking gold veining on black"
+                 class="source-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="source-card__name">Noir Aziza</h3>
+          <span class="source-card__region">Tunisia</span>
+          <p class="source-card__text">An absolute black pierced by fine gold and white veins &mdash; bold, dramatic, and unmistakable. Reserved for moments that demand presence.</p>
+        </div>
+
+        <div class="source-card reveal">
+          <div class="source-card__media">
+            <img src="Products/Compliments/ana/Product Variations/ana_rosso-levanto.webp"
+                 alt="Ana chair in Rosso Levanto marble with rich burgundy veining"
+                 class="source-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="source-card__name">Rosso Levanto</h3>
+          <span class="source-card__region">Liguria, Italy</span>
+          <p class="source-card__text">Deep burgundy alive with networks of white veining &mdash; warm, rich, and full of movement. A stone that commands attention without raising its voice.</p>
+        </div>
+
+        <div class="source-card reveal">
+          <div class="source-card__media">
+            <img src="Products/Consoles/levante/Product Variations/levante_verde-patricia.webp"
+                 alt="Levante console in Verde Patricia marble with deep forest green tones"
+                 class="source-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="source-card__name">Verde Patricia</h3>
+          <span class="source-card__region">Rajasthan, India</span>
+          <p class="source-card__text">A deep, forest green with gentle tonal shifts &mdash; natural, grounding, and unmistakably luxurious. It brings the depth of the earth indoors.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       THREE PILLARS
+  ============================================ -->
+  <section class="three-pillars">
+    <div class="container">
+      <div class="three-pillars__header text-center">
+        <div class="accent-rule reveal"></div>
+        <h2 class="section-title reveal">What Defines Us</h2>
+      </div>
+      <div class="three-pillars__grid reveal-stagger">
+
+        <div class="pillar-card reveal">
+          <div class="pillar-card__media">
+            <img src="Products/coffee tables/morphe/morphe_11_technical.webp"
+                 alt="Technical drawing of the Morphe marble coffee table with refined proportions"
+                 class="pillar-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="pillar-card__heading">Design</h3>
+          <p class="pillar-card__text">Every line, curve, and proportion is considered &mdash; conceived in dialogue with the space it will inhabit and the stone from which it will emerge.</p>
+          <a href="/catalog" class="btn-primary">Explore the Collection</a>
+        </div>
+
+        <div class="pillar-card reveal">
+          <div class="pillar-card__media">
+            <img src="Products/coffee tables/terra/terra_06_closeup_joint.webp"
+                 alt="Artisan hands shaping marble with traditional tools"
+                 class="pillar-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="pillar-card__heading">Craftsmanship</h3>
+          <p class="pillar-card__text">Generations of knowledge guide every cut and polish. Our artisans work with a patience that honours the material and a precision that defines our standard.</p>
+          <a href="/contact" class="btn-primary">Begin Your Project</a>
+        </div>
+
+        <div class="pillar-card reveal">
+          <div class="pillar-card__media">
+            <img src="Products/coffee tables/gesto/gesto_07_studio_calacatta.webp"
+                 alt="Close-up of raw marble revealing natural veining and warm tones"
+                 class="pillar-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="pillar-card__heading">Materiality</h3>
+          <p class="pillar-card__text">We source only stone of extraordinary character &mdash; each block selected for the uniqueness of its veining, the warmth of its tone, and the depth of its surface.</p>
+          <a href="/craft" class="btn-primary">Discover More</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================
+       CLOSE CTA
+  ============================================ -->
+  <section class="close-cta">
+    <div class="container--narrow text-center">
+      <div class="accent-rule reveal"></div>
+      <h2 class="close-cta__heading reveal">Begin Your Story in Stone</h2>
+      <a href="/contact" class="btn-primary reveal">Inquire</a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand Column -->
+        <div class="footer__brand">
+          <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
+          <p class="footer__tagline">Bespoke Marble Atelier</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sitemap Column -->
+        <div class="footer__sitemap">
+          <h4 class="footer__col-title">Navigate</h4>
+          <a href="/" class="footer__link">Home</a>
+          <a href="/craft" class="footer__link">Craft</a>
+          <a href="/catalog" class="footer__link">Catalog</a>
+          <a href="/contact" class="footer__link">Contact</a>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div class="footer__contact-info">
+          <h4 class="footer__col-title">Visit</h4>
+          <p>Tiba Stone Atelier</p>
+          <p><a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a></p>
+          <p><a href="tel:+6281239442648">+62 81239442648</a></p>
+        </div>
+
+        <!-- Compact Inquiry Form Column -->
+        <div class="footer__form">
+          <h4 class="footer__col-title">Inquire</h4>
+          <form class="footer-form" id="footerForm">
+            <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+            <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+            <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+            <button type="submit" class="btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ------------------------------------------
+         1. HEADER SCROLL TRANSITION
+      ------------------------------------------ */
+      const header = document.getElementById('siteHeader');
+      const hero = document.getElementById('hero');
+
+      function updateHeader() {
+        const threshold = hero.offsetHeight * 0.12;
+        if (window.scrollY > threshold) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
+        }
+      }
+
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() { updateHeader(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      updateHeader();
+
+      /* ------------------------------------------
+         2. MOBILE MENU
+      ------------------------------------------ */
+      const hamburger = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileClose = document.getElementById('mobileMenuClose');
+
+      function openMenu() {
+        mobileMenu.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openMenu);
+      mobileClose.addEventListener('click', closeMenu);
+
+      mobileMenu.querySelectorAll('.mobile-menu__link').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      /* ------------------------------------------
+         3. SCROLL REVEAL (Intersection Observer)
+      ------------------------------------------ */
+      var revealElements = document.querySelectorAll('.reveal');
+
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(function (el) {
+        revealObserver.observe(el);
+      });
+
+      /* ------------------------------------------
+         4. HERO PARALLAX (subtle)
+      ------------------------------------------ */
+      var heroBgImg = document.querySelector('.hero__bg-img');
+
+      function heroParallax() {
+        var scrollY = window.scrollY;
+        var heroHeight = hero.offsetHeight;
+        if (scrollY <= heroHeight) {
+          var offset = scrollY * 0.25;
+          heroBgImg.style.transform = 'translateY(' + offset + 'px) scale(1.1)';
+        }
+      }
+
+      window.addEventListener('scroll', heroParallax, { passive: true });
+
+      /* ------------------------------------------
+         5. PROGRESSIVE IMAGE FADE-IN
+      ------------------------------------------ */
+      var fadeImages = document.querySelectorAll(
+        '.editorial-split__img, .material-card__img, .pillar-card__img, .source-card__img'
+      );
+
+      fadeImages.forEach(function (img) {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.8s ease';
+
+        function showImage() {
+          img.style.opacity = '1';
+        }
+
+        if (img.complete && img.naturalHeight !== 0) {
+          showImage();
+        } else {
+          img.addEventListener('load', showImage);
+        }
+      });
+
+      /* Hero image separate — always eager loaded */
+      var heroImg = document.querySelector('.hero__bg-img');
+      heroImg.style.opacity = '0';
+      heroImg.style.transition = 'opacity 1.2s ease';
+
+      function showHero() {
+        heroImg.style.opacity = '1';
+      }
+
+      if (heroImg.complete && heroImg.naturalHeight !== 0) {
+        showHero();
+      } else {
+        heroImg.addEventListener('load', showHero);
+      }
+
+      /* ------------------------------------------
+         6. MATERIALS HORIZONTAL SCROLL
+      ------------------------------------------ */
+      var matTrack = document.getElementById('materialsTrack');
+      var matPrev = document.getElementById('matPrev');
+      var matNext = document.getElementById('matNext');
+      var matFill = document.getElementById('matProgressFill');
+
+      matTrack.addEventListener('scroll', function () {
+        var maxScroll = matTrack.scrollWidth - matTrack.clientWidth;
+        if (maxScroll <= 0) return;
+        var pct = matTrack.scrollLeft / maxScroll;
+        var fillWidth = 30; // percentage
+        var maxTranslate = (100 - fillWidth) / fillWidth * 100;
+        matFill.style.width = fillWidth + '%';
+        matFill.style.transform = 'translateX(' + (pct * maxTranslate) + '%)';
+      }, { passive: true });
+
+      var matCardWidth = function () {
+        var card = matTrack.querySelector('.material-card');
+        return card ? card.offsetWidth + parseFloat(getComputedStyle(matTrack).gap) : 300;
+      };
+
+      matPrev.addEventListener('click', function () {
+        matTrack.scrollBy({ left: -matCardWidth() * 2, behavior: 'smooth' });
+      });
+
+      matNext.addEventListener('click', function () {
+        matTrack.scrollBy({ left: matCardWidth() * 2, behavior: 'smooth' });
+      });
+
+      // Drag to scroll
+      var matDragging = false;
+      var matStartX = 0;
+      var matScrollStart = 0;
+
+      matTrack.addEventListener('mousedown', function (e) {
+        matDragging = true;
+        matStartX = e.pageX;
+        matScrollStart = matTrack.scrollLeft;
+        matTrack.style.scrollBehavior = 'auto';
+      });
+
+      window.addEventListener('mousemove', function (e) {
+        if (!matDragging) return;
+        e.preventDefault();
+        var dx = e.pageX - matStartX;
+        matTrack.scrollLeft = matScrollStart - dx;
+      });
+
+      window.addEventListener('mouseup', function () {
+        if (matDragging) {
+          matDragging = false;
+          matTrack.style.scrollBehavior = 'smooth';
+        }
+      });
+
+      /* ------------------------------------------
+         7. FOOTER FORM HANDLER
+      ------------------------------------------ */
+      document.getElementById('footerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = e.target;
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn.textContent;
+        btn.textContent = 'Sending\u2026';
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+        fetch('https://formspree.io/f/luke@tibaliving.com', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (r) {
+          if (r.ok) {
+            btn.textContent = 'Sent';
+            setTimeout(function () {
+              form.reset();
+              btn.textContent = originalText;
+              btn.disabled = false;
+              btn.style.opacity = '1';
+            }, 3000);
+          } else {
+            btn.textContent = 'Error \u2014 Try Again';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+          }
+        }).catch(function () {
+          btn.textContent = 'Error \u2014 Try Again';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        });
+      });
+
+    })();
+  </script>
+<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
+
+</body>
+</html>

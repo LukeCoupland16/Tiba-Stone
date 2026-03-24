@@ -3,502 +3,647 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/webp" href="TIBA_FINAL_LOGO_PORTRAIT (2).webp">
-  <link rel="apple-touch-icon" href="TIBA_FINAL_LOGO_PORTRAIT (2).png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | TIBA STONE</title>
-  <meta name="description" content="Begin your bespoke marble project with Tiba Stone. Inquire about custom washbasins, bathtubs, and furniture crafted from the world's finest stone.">
+  <meta name="description" content="Get in touch with Tiba Stone — bespoke marble atelier. Inquire about commissions, trade partnerships, or begin your project with a conversation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="preload" as="image" href="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" type="image/webp" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="/css/shared.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* ============================================
-       6. HEADER
+       V2 CONTACT — DESIGN TOKENS
     ============================================ */
-    .site-header {
+    :root {
+      --color-stone: #222323;
+      --color-ivory: #FFFFFF;
+      --color-sunset: #925638;
+      --color-river-green: #A3996A;
+      --color-dusk-blue: #153647;
+      --color-moss: #3E402B;
+      --color-sand: #F0EBE3;
+      --color-warm-bg: #E8E2DA;
+      --color-charcoal: #1A1A1B;
+      --color-off-black: #111111;
+
+      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
+      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-dramatic: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* RESET */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: var(--font-body); border: none; background: none; cursor: pointer; }
+
+    /* ============================================
+       HEADER — Solid white with blur
+    ============================================ */
+    .header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      padding: 1.625rem 0;
-      transition: background var(--duration-fast) var(--ease-smooth),
-                  border-color var(--duration-fast) var(--ease-smooth),
-                  padding var(--duration-fast) var(--ease-smooth);
-      border-bottom: 1px solid transparent;
+      padding: 1.25rem 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(34, 35, 35, 0.06);
+      transition: padding 0.3s ease;
     }
 
-    .site-header.is-scrolled {
-      background: rgba(255, 255, 255, 0.94);
-      border-bottom-color: rgba(34, 35, 35, 0.08);
-      padding: 1.125rem 0;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
+    .header.is-scrolled { padding: 0.875rem 0; }
 
     .header__inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 4rem);
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .header__logo {
-      position: relative;
-      z-index: 2;
-      flex-shrink: 0;
-    }
-
-    .header__logo-img {
-      height: 44px;
-      width: auto;
-      filter: brightness(0) invert(1);
-      transition: filter var(--duration-fast) var(--ease-smooth);
-    }
-
-    .site-header.is-scrolled .header__logo-img {
-      filter: none;
-    }
+    .header__logo { z-index: 2; }
+    .header__logo-img { height: 22px; width: auto; }
 
     .header__nav {
       display: flex;
-      align-items: center;
-      gap: 2.75rem;
-    }
-
-    .header__nav-link {
+      gap: 2.5rem;
       font-family: var(--font-body);
-      font-size: 0.9375rem;
-      font-weight: 500;
+      font-size: 0.625rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: var(--ls-medium);
-      color: var(--color-ivory);
-      text-decoration: none;
-      position: relative;
-      padding: 0.25rem 0;
-      transition: color var(--duration-fast) var(--ease-smooth);
+      letter-spacing: 0.2em;
     }
 
-    .site-header.is-scrolled .header__nav-link {
-      color: var(--color-stone);
-    }
+    .header__nav a { opacity: 0.55; transition: opacity 0.3s ease; }
+    .header__nav a:hover, .header__nav a.is-active { opacity: 1; }
 
-    .header__nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: var(--color-sunset);
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform var(--duration-fast) var(--ease-smooth);
-    }
-
-    .header__nav-link:hover::after,
-    .header__nav-link--active::after {
-      transform: scaleX(1);
-    }
-
-    /* Hamburger */
     .header__hamburger {
       display: none;
       flex-direction: column;
       gap: 6px;
-      padding: 0.5rem;
+      width: 24px;
+      padding: 0;
+      cursor: pointer;
       z-index: 2;
     }
 
     .header__hamburger span {
       display: block;
-      width: 24px;
       height: 1.5px;
-      background: var(--color-ivory);
-      transition: background var(--duration-fast) var(--ease-smooth);
-    }
-
-    .site-header.is-scrolled .header__hamburger span {
       background: var(--color-stone);
+      width: 100%;
     }
 
-    /* Mobile Menu — base styles in shared.css */
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--color-stone);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .mobile-menu.is-open { opacity: 1; pointer-events: all; }
+
+    .mobile-menu__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: var(--color-ivory);
+    }
+
+    .mobile-menu__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .mobile-menu__nav a {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      color: var(--color-ivory);
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-menu__nav a:hover { opacity: 1; }
 
     /* ============================================
-       7. CONTACT HERO
+       UTILITIES
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       BUTTONS
+    ============================================ */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.45s var(--ease-smooth), border-color 0.45s var(--ease-smooth);
+    }
+
+    .btn--dark {
+      border: 1px solid var(--color-stone);
+      color: var(--color-stone);
+    }
+
+    .btn--dark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-stone);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .btn--dark:hover { color: var(--color-ivory); }
+    .btn--dark:hover::before { transform: scaleX(1); transform-origin: left; }
+
+    .btn--light {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: var(--color-ivory);
+    }
+
+    .btn--light::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-ivory);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .btn--light:hover { color: var(--color-stone); border-color: var(--color-ivory); }
+    .btn--light:hover::before { transform: scaleX(1); transform-origin: left; }
+
+    /* ============================================
+       CONTACT HERO
     ============================================ */
     .contact-hero {
-      padding-top: calc(var(--space-3xl) + 80px);
-      padding-bottom: var(--space-xl);
-      background: var(--color-ivory);
+      padding: clamp(10rem, 16vw, 14rem) clamp(1.5rem, 4vw, 4rem) clamp(3rem, 6vw, 5rem);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .contact-hero__logo {
-      height: 70px;
+      height: 60px;
       width: auto;
-      margin: 0 auto 2.5rem;
-      opacity: 0.9;
+      margin-bottom: 2.5rem;
+      opacity: 0.12;
+    }
+
+    .contact-hero__rule {
+      width: 50px;
+      height: 2px;
+      background: var(--color-sunset);
+      margin-bottom: 2rem;
     }
 
     .contact-hero__heading {
       font-family: var(--font-display);
-      font-size: var(--text-h1);
-      color: var(--color-stone);
-      letter-spacing: var(--ls-slight);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 400;
+      letter-spacing: 0.01em;
       margin-bottom: 1.25rem;
     }
 
-    .contact-hero__subline {
-      font-family: var(--font-body);
-      font-size: var(--text-body);
-      font-weight: 400;
-      line-height: var(--lh-body);
-      color: var(--color-river-green);
+    .contact-hero__sub {
+      font-size: clamp(0.825rem, 1.1vw, 0.95rem);
+      line-height: 1.8;
+      color: rgba(34, 35, 35, 0.5);
       max-width: 480px;
-      margin: 0 auto;
     }
 
     /* ============================================
-       8. INQUIRY FORM
+       CONTACT FORM
     ============================================ */
     .contact-form-section {
-      padding-bottom: var(--space-2xl);
+      padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 4rem) clamp(4rem, 8vw, 6rem);
+      display: flex;
+      justify-content: center;
     }
 
-    .inquiry-form__row {
+    .contact-form-wrap {
+      width: 100%;
+      max-width: 680px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: var(--grid-gap);
-      margin-bottom: var(--space-md);
+      gap: 1.25rem;
     }
 
-    .inquiry-form__row--full {
-      grid-template-columns: 1fr;
-    }
-
-    .inquiry-form__row--submit {
-      margin-top: var(--space-lg);
-      margin-bottom: 0;
-    }
-
-    /* Field Container */
-    .inquiry-form__field {
+    .form-group {
       position: relative;
-      padding-top: 1.25rem;
     }
 
-    /* Input & Textarea & Select Base */
-    .inquiry-form__input,
-    .inquiry-form__textarea,
-    .inquiry-form__select {
-      display: block;
+    .form-group--full {
+      grid-column: 1 / -1;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
       width: 100%;
-      background: var(--color-sand);
-      border: 1px solid rgba(163, 153, 106, 0.3);
+      padding: 0.875rem 0;
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgba(34, 35, 35, 0.15);
       color: var(--color-stone);
       font-family: var(--font-body);
-      font-size: var(--text-body);
-      font-weight: 400;
-      padding: 0.875rem 1rem;
+      font-size: 0.8rem;
+      transition: border-color 0.3s ease;
       outline: none;
-      transition: all var(--duration-fast) var(--ease-smooth);
-      -webkit-appearance: none;
-      appearance: none;
       border-radius: 0;
     }
 
-    .inquiry-form__textarea {
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      border-color: rgba(34, 35, 35, 0.5);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: rgba(34, 35, 35, 0.35);
+    }
+
+    .form-textarea {
       resize: vertical;
-      min-height: 120px;
-      line-height: var(--lh-body);
+      min-height: 100px;
+      line-height: 1.7;
     }
 
-    .inquiry-form__select {
-      cursor: pointer;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A3996A' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+    /* Select dropdown */
+    .form-select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23222323' stroke-opacity='0.35' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: right 1rem center;
-      background-color: var(--color-sand);
-      padding-right: 2.5rem;
+      background-position: right 0 center;
+      background-size: 10px;
+      padding-right: 20px;
+      cursor: pointer;
     }
 
-    .inquiry-form__select:focus {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23222323' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
-    }
-
-    /* Floating Label */
-    .inquiry-form__label {
-      position: absolute;
-      top: 1.25rem;
-      left: 1rem;
+    .form-select option {
       font-family: var(--font-body);
-      font-size: var(--text-body);
-      font-weight: 400;
-      color: var(--color-river-green);
-      pointer-events: none;
-      transform: translateY(0.875rem);
-      transform-origin: left top;
-      transition: transform var(--duration-fast) var(--ease-smooth),
-                  font-size var(--duration-fast) var(--ease-smooth),
-                  color var(--duration-fast) var(--ease-smooth);
-    }
-
-    /* Label floats up on focus OR when input has content */
-    .inquiry-form__input:focus ~ .inquiry-form__label,
-    .inquiry-form__input:not(:placeholder-shown) ~ .inquiry-form__label,
-    .inquiry-form__textarea:focus ~ .inquiry-form__label,
-    .inquiry-form__textarea:not(:placeholder-shown) ~ .inquiry-form__label {
-      transform: translateY(0);
-      font-size: var(--text-small);
       color: var(--color-stone);
     }
 
-    /* Select floating label — driven by JS .has-value class */
-    .inquiry-form__field--select .inquiry-form__label {
-      transition: transform var(--duration-fast) var(--ease-smooth),
-                  font-size var(--duration-fast) var(--ease-smooth),
-                  color var(--duration-fast) var(--ease-smooth);
+    .form-select option[value=""] {
+      color: rgba(34, 35, 35, 0.35);
     }
 
-    .inquiry-form__select:focus ~ .inquiry-form__label,
-    .inquiry-form__field--select.has-value .inquiry-form__label {
-      transform: translateY(0);
-      font-size: var(--text-small);
-      color: var(--color-stone);
+    /* Error states */
+    .form-input.is-error,
+    .form-textarea.is-error,
+    .form-select.is-error {
+      border-color: #b33a3a;
     }
 
-    /* Autofill handling */
-    .inquiry-form__input:-webkit-autofill ~ .inquiry-form__label {
-      transform: translateY(0);
-      font-size: var(--text-small);
-      color: var(--color-stone);
-    }
-
-    .inquiry-form__input:-webkit-autofill {
-      -webkit-text-fill-color: var(--color-stone);
-      -webkit-box-shadow: 0 0 0 1000px var(--color-sand) inset;
-    }
-
-    /* Focus State */
-    .inquiry-form__input:focus,
-    .inquiry-form__textarea:focus,
-    .inquiry-form__select:focus {
-      border-color: var(--color-stone);
-      background: var(--color-ivory);
-    }
-
-    /* Error State */
-    .inquiry-form__error {
+    .form-error {
       display: none;
-      font-family: var(--font-body);
-      font-size: var(--text-small);
-      color: var(--color-sunset);
-      margin-top: 0.375rem;
+      font-size: 0.65rem;
+      color: #b33a3a;
+      margin-top: 0.35rem;
+      letter-spacing: 0.02em;
     }
 
-    .inquiry-form__field--error .inquiry-form__input,
-    .inquiry-form__field--error .inquiry-form__textarea,
-    .inquiry-form__field--error .inquiry-form__select {
-      border-color: var(--color-sunset);
-      background: rgba(146, 86, 56, 0.05);
-    }
-
-    .inquiry-form__field--error .inquiry-form__label {
-      color: var(--color-sunset);
-    }
-
-    .inquiry-form__field--error .inquiry-form__error {
+    .form-group.has-error .form-error {
       display: block;
     }
 
-    /* Checkbox */
-    .inquiry-form__checkbox {
+    /* Consent */
+    .form-consent {
       display: flex;
-      align-items: flex-start;
       gap: 0.75rem;
-      cursor: pointer;
-      font-size: var(--text-small);
-      font-weight: 400;
-      color: var(--color-stone);
-      line-height: 1.6;
+      align-items: flex-start;
+      margin-top: 0.5rem;
     }
 
-    .inquiry-form__checkbox-input {
-      position: absolute;
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .inquiry-form__checkbox-mark {
+    .form-consent input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: var(--color-sunset);
       flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      border: 2px solid var(--color-river-green);
-      background: var(--color-sand);
-      margin-top: 2px;
-      position: relative;
-      transition: border-color var(--duration-fast) var(--ease-smooth),
-                  background var(--duration-fast) var(--ease-smooth);
     }
 
-    .inquiry-form__checkbox-input:checked ~ .inquiry-form__checkbox-mark {
-      background: var(--color-stone);
-      border-color: var(--color-stone);
+    .form-consent label {
+      font-size: 0.7rem;
+      line-height: 1.6;
+      color: rgba(34, 35, 35, 0.45);
     }
 
-    .inquiry-form__checkbox-input:checked ~ .inquiry-form__checkbox-mark::after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      left: 5px;
-      width: 5px;
-      height: 9px;
-      border: solid var(--color-ivory);
-      border-width: 0 1.5px 1.5px 0;
-      transform: rotate(45deg);
-    }
-
-    .inquiry-form__checkbox-link {
-      color: var(--color-sunset);
+    .form-consent a {
       text-decoration: underline;
-      text-underline-offset: 2px;
+      color: rgba(34, 35, 35, 0.6);
+      transition: color 0.3s ease;
     }
 
-    .inquiry-form__checkbox-link:hover {
+    .form-consent a:hover {
       color: var(--color-stone);
     }
 
-    .inquiry-form__error--checkbox {
+    .form-consent.has-error label {
+      color: #b33a3a;
+    }
+
+    .form-consent .form-error {
       display: none;
-      padding-left: calc(18px + 0.75rem);
-      font-family: var(--font-body);
-      font-size: var(--text-small);
-      color: var(--color-sunset);
-      margin-top: 0.375rem;
     }
 
-    .inquiry-form__row--full.has-error .inquiry-form__error--checkbox {
+    .form-consent.has-error .form-error {
       display: block;
+      margin-top: 0.25rem;
     }
 
-    .inquiry-form__row--full.has-error .inquiry-form__checkbox-mark {
-      border-color: var(--color-sunset);
-    }
-
-    /* Submit Button — Filled Stone by default (inverted from btn-primary) */
-    .inquiry-form__submit {
-      background: var(--color-stone);
-      color: var(--color-ivory);
-      border: 1px solid var(--color-stone);
-      padding: 1.125rem 3rem;
-      font-family: var(--font-body);
-      font-size: var(--text-small);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: var(--ls-medium);
+    /* Submit */
+    .contact-form .btn {
+      align-self: flex-start;
+      margin-top: 1rem;
       cursor: pointer;
-      transition: background var(--duration-fast) var(--ease-smooth),
-                  color var(--duration-fast) var(--ease-smooth);
-      min-width: 200px;
     }
 
-    .inquiry-form__submit:hover {
-      background: transparent;
-      color: var(--color-stone);
+    .contact-form .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
-    /* Success State */
-    .inquiry-form__success {
+    /* Success state */
+    .form-success {
       display: none;
       text-align: center;
-      padding: var(--space-xl) 0;
+      padding: clamp(4rem, 8vw, 6rem) 0;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    .inquiry-form__success.is-visible {
-      display: block;
-      animation: fadeInUp 0.8s var(--ease-smooth) forwards;
+    .form-success.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .inquiry-form__success-heading {
+    .form-success__heading {
       font-family: var(--font-display);
-      font-size: var(--text-h1);
-      font-style: italic;
-      color: var(--color-stone);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 400;
       margin-bottom: 1rem;
     }
 
-    .inquiry-form__success-text {
-      font-family: var(--font-body);
-      font-size: var(--text-body);
-      font-weight: 400;
-      color: var(--color-river-green);
-      line-height: var(--lh-body);
+    .form-success__text {
+      font-size: clamp(0.8rem, 1vw, 0.875rem);
+      line-height: 1.8;
+      color: rgba(34, 35, 35, 0.5);
       max-width: 420px;
       margin: 0 auto;
     }
 
-    /* Footer (base in shared.css) */
-    .site-footer {
-      background: var(--color-ivory);
-      color: var(--color-stone);
+    .form-success__rule {
+      width: 40px;
+      height: 2px;
+      background: var(--color-sunset);
+      margin: 0 auto 2rem;
     }
 
     /* ============================================
-       10. RESPONSIVE — TABLET
+       CONTACT INFO
     ============================================ */
+    .contact-info {
+      padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 4rem) clamp(5rem, 10vw, 8rem);
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact-info__inner {
+      display: flex;
+      gap: clamp(3rem, 6vw, 5rem);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-info__divider {
+      width: 1px;
+      height: 32px;
+      background: rgba(34, 35, 35, 0.1);
+    }
+
+    .contact-info__item {
+      text-align: center;
+    }
+
+    .contact-info__label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: rgba(34, 35, 35, 0.3);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info__value a {
+      font-size: 0.85rem;
+      color: var(--color-stone);
+      transition: color 0.3s ease;
+    }
+
+    .contact-info__value a:hover {
+      color: var(--color-sunset);
+    }
+
     /* ============================================
-       11. RESPONSIVE — MOBILE
+       FOOTER
     ============================================ */
+    .footer {
+      background: var(--color-off-black);
+      color: rgba(255, 255, 255, 0.55);
+      padding: clamp(4rem, 8vw, 6rem) clamp(2rem, 5vw, 5rem) 2rem;
+    }
+
+    .footer__grid {
+      max-width: 1320px;
+      margin: 0 auto 3rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+    }
+
+    .footer__logo { height: 40px; width: auto; opacity: 0.6; margin-bottom: 1rem; }
+    .footer__tagline { font-size: 0.75rem; font-style: italic; margin-bottom: 1.5rem; }
+
+    .footer__social { display: flex; gap: 1rem; }
+    .footer__social a svg { width: 18px; height: 18px; fill: rgba(255, 255, 255, 0.4); transition: fill 0.3s ease; }
+    .footer__social a:hover svg { fill: rgba(255, 255, 255, 0.8); }
+
+    .footer__col-title {
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer__link {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer__link:hover { color: rgba(255, 255, 255, 0.9); }
+
+    .footer__contact p {
+      font-size: 0.8rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-form { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .footer-form__input, .footer-form__textarea {
+      width: 100%;
+      padding: 0.6rem 0;
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--color-ivory);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      outline: none;
+    }
+
+    .footer-form__input::placeholder, .footer-form__textarea::placeholder { color: rgba(255, 255, 255, 0.25); }
+    .footer-form__textarea { resize: none; }
+
+    .footer__bottom {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.65rem;
+    }
+
+    .footer__legal { display: flex; gap: 1.5rem; }
+    .footer__legal a { opacity: 0.5; transition: opacity 0.3s ease; }
+    .footer__legal a:hover { opacity: 1; }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 1023px) {
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+    }
+
     @media (max-width: 767px) {
-      .contact-hero {
-        padding-top: calc(var(--space-2xl) + 70px);
-        padding-bottom: var(--space-lg);
+      .header__nav { display: none; }
+      .header__hamburger { display: flex; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .contact-info__inner {
+        flex-direction: column;
+        gap: 2rem;
       }
 
-      .inquiry-form__row {
-        grid-template-columns: 1fr;
-        gap: 0;
+      .contact-info__divider {
+        width: 40px;
+        height: 1px;
       }
 
-      .inquiry-form__submit {
-        width: 100%;
-      }
-
+      .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer__bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Custom Cursor -->
-
-  <!-- ============================================
-       HEADER
-  ============================================ -->
-  <header class="site-header is-scrolled" id="siteHeader">
-    <div class="header__inner container">
+  <!-- HEADER -->
+  <header class="header" id="siteHeader">
+    <div class="header__inner">
       <a href="/" class="header__logo">
-        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img" loading="lazy" decoding="async">
+        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img">
       </a>
-      <nav class="header__nav" id="mainNav">
-        <a href="/" class="header__nav-link">Home</a>
-        <a href="/craft" class="header__nav-link">Craft</a>
-        <a href="/catalog" class="header__nav-link">Catalog</a>
-        <a href="/contact" class="header__nav-link header__nav-link--active">Contact</a>
+      <nav class="header__nav">
+        <a href="/">Home</a>
+        <a href="/craft">Craft</a>
+        <a href="/catalog">Catalog</a>
+        <a href="/contact" class="is-active">Contact</a>
       </nav>
       <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu">
         <span></span><span></span>
@@ -506,369 +651,318 @@
     </div>
   </header>
 
-  <!-- Mobile Menu Overlay -->
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
     <nav class="mobile-menu__nav">
-      <a href="/" class="mobile-menu__link">Home</a>
-      <a href="/craft" class="mobile-menu__link">Craft</a>
-      <a href="/catalog" class="mobile-menu__link">Catalog</a>
-      <a href="/contact" class="mobile-menu__link">Contact</a>
+      <a href="/">Home</a>
+      <a href="/craft">Craft</a>
+      <a href="/catalog">Catalog</a>
+      <a href="/contact">Contact</a>
     </nav>
   </div>
 
-  <!-- ============================================
-       CONTACT HERO
-  ============================================ -->
-  <section class="contact-hero">
-    <div class="container--narrow text-center">
-      <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="contact-hero__logo reveal">
-      <div class="accent-rule reveal"></div>
-      <h1 class="contact-hero__heading reveal">Get in Touch</h1>
-      <p class="contact-hero__subline reveal">Every piece begins with a conversation. We would be delighted to hear from you.</p>
-    </div>
+  <!-- CONTACT HERO -->
+  <section class="contact-hero reveal">
+    <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="contact-hero__logo" loading="eager">
+    <div class="contact-hero__rule"></div>
+    <h1 class="contact-hero__heading">Get in Touch</h1>
+    <p class="contact-hero__sub">Every piece begins with a conversation. We would be delighted to hear from you.</p>
   </section>
 
-  <!-- ============================================
-       INQUIRY FORM
-  ============================================ -->
+  <!-- CONTACT FORM -->
   <section class="contact-form-section">
-    <div class="container--narrow">
-      <form class="inquiry-form reveal-stagger" id="inquiryForm" novalidate>
+    <div class="contact-form-wrap reveal">
+      <form class="contact-form" id="contactForm" novalidate>
 
-        <!-- Row 1: Name + Surname -->
-        <div class="inquiry-form__row reveal">
-          <div class="inquiry-form__field">
-            <input type="text" id="firstName" name="firstName" required
-                   class="inquiry-form__input" autocomplete="given-name" placeholder=" ">
-            <label for="firstName" class="inquiry-form__label">Name</label>
-            <span class="inquiry-form__error">Please enter your name</span>
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" name="name" class="form-input" placeholder="Name" required autocomplete="given-name">
+            <p class="form-error">Please enter your name.</p>
           </div>
-          <div class="inquiry-form__field">
-            <input type="text" id="lastName" name="lastName" required
-                   class="inquiry-form__input" autocomplete="family-name" placeholder=" ">
-            <label for="lastName" class="inquiry-form__label">Surname</label>
-            <span class="inquiry-form__error">Please enter your surname</span>
+          <div class="form-group">
+            <input type="text" name="surname" class="form-input" placeholder="Surname" required autocomplete="family-name">
+            <p class="form-error">Please enter your surname.</p>
           </div>
         </div>
 
-        <!-- Row 2: Email + Phone -->
-        <div class="inquiry-form__row reveal">
-          <div class="inquiry-form__field">
-            <input type="email" id="email" name="email" required
-                   class="inquiry-form__input" autocomplete="email" placeholder=" ">
-            <label for="email" class="inquiry-form__label">Email</label>
-            <span class="inquiry-form__error">Please enter a valid email</span>
+        <div class="form-row">
+          <div class="form-group">
+            <input type="email" name="email" class="form-input" placeholder="Email" required autocomplete="email">
+            <p class="form-error">Please enter a valid email address.</p>
           </div>
-          <div class="inquiry-form__field">
-            <input type="tel" id="phone" name="phone"
-                   class="inquiry-form__input" autocomplete="tel" placeholder=" ">
-            <label for="phone" class="inquiry-form__label">Phone</label>
+          <div class="form-group">
+            <input type="tel" name="phone" class="form-input" placeholder="Phone (optional)" autocomplete="tel">
           </div>
         </div>
 
-        <!-- Row 3: Subject Dropdown -->
-        <div class="inquiry-form__row inquiry-form__row--full reveal">
-          <div class="inquiry-form__field inquiry-form__field--select">
-            <select id="subject" name="subject" required class="inquiry-form__select">
-              <option value="" disabled selected></option>
-              <option value="general">General Inquiry</option>
-              <option value="bespoke">Bespoke Commission</option>
-              <option value="architect">Architect / Designer</option>
-              <option value="trade">Trade Partnership</option>
-              <option value="press">Press</option>
-              <option value="other">Other</option>
+        <div class="form-row">
+          <div class="form-group form-group--full">
+            <select name="subject" class="form-select" required>
+              <option value="">Select a subject</option>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Bespoke Commission">Bespoke Commission</option>
+              <option value="Architect / Designer">Architect / Designer</option>
+              <option value="Trade Partnership">Trade Partnership</option>
+              <option value="Press">Press</option>
+              <option value="Other">Other</option>
             </select>
-            <label for="subject" class="inquiry-form__label">Subject</label>
-            <span class="inquiry-form__error">Please select a subject</span>
+            <p class="form-error">Please select a subject.</p>
           </div>
         </div>
 
-        <!-- Row 4: Message -->
-        <div class="inquiry-form__row inquiry-form__row--full reveal">
-          <div class="inquiry-form__field">
-            <textarea id="message" name="message" rows="5" required
-                      class="inquiry-form__textarea" placeholder=" "></textarea>
-            <label for="message" class="inquiry-form__label">Message</label>
-            <span class="inquiry-form__error">Please enter your message</span>
+        <div class="form-row">
+          <div class="form-group form-group--full">
+            <textarea name="message" class="form-textarea" placeholder="Your message" rows="5" required></textarea>
+            <p class="form-error">Please enter your message.</p>
           </div>
         </div>
 
-        <!-- Row 5: Privacy Consent -->
-        <div class="inquiry-form__row inquiry-form__row--full reveal">
-          <label class="inquiry-form__checkbox">
-            <input type="checkbox" name="privacy" required class="inquiry-form__checkbox-input">
-            <span class="inquiry-form__checkbox-mark"></span>
-            <span class="inquiry-form__checkbox-text">
-              I consent to Tiba Stone processing my data in accordance with the
-              <a href="#" class="inquiry-form__checkbox-link">Privacy Policy</a>.
-            </span>
-          </label>
-          <span class="inquiry-form__error--checkbox">Please accept the privacy policy</span>
+        <div class="form-consent" id="consentGroup">
+          <input type="checkbox" id="consent" name="consent" required>
+          <div>
+            <label for="consent">I agree to the <a href="/privacy">Privacy Policy</a> and consent to being contacted about my inquiry.</label>
+            <p class="form-error">You must accept the privacy policy to proceed.</p>
+          </div>
         </div>
 
-        <!-- Row 6: Submit -->
-        <div class="inquiry-form__row inquiry-form__row--full inquiry-form__row--submit reveal">
-          <button type="submit" class="inquiry-form__submit">Send Inquiry</button>
-        </div>
+        <button type="submit" class="btn btn--dark" id="contactSubmitBtn">Send Inquiry</button>
 
       </form>
 
-      <!-- Success State -->
-      <div class="inquiry-form__success" id="formSuccess">
-        <div class="accent-rule"></div>
-        <h2 class="inquiry-form__success-heading">Thank You</h2>
-        <p class="inquiry-form__success-text">Your message has been received. A member of our team will be in touch shortly.</p>
+      <div class="form-success" id="formSuccess">
+        <div class="form-success__rule"></div>
+        <h2 class="form-success__heading">Thank You</h2>
+        <p class="form-success__text">Your message has been received. A member of our team will be in touch shortly.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============================================
-       FOOTER
-  ============================================ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer__grid">
-        <!-- Brand Column -->
-        <div class="footer__brand">
-          <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
-          <p class="footer__tagline">Bespoke Marble Atelier</p>
-          <div class="footer__social">
-            <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-          </div>
-        </div>
+  <!-- CONTACT INFO -->
+  <section class="contact-info reveal">
+    <div class="contact-info__inner">
+      <div class="contact-info__item">
+        <p class="contact-info__label">Email</p>
+        <p class="contact-info__value"><a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a></p>
+      </div>
+      <div class="contact-info__divider"></div>
+      <div class="contact-info__item">
+        <p class="contact-info__label">Phone</p>
+        <p class="contact-info__value"><a href="tel:+6281239442648">+62 81239442648</a></p>
+      </div>
+    </div>
+  </section>
 
-        <!-- Sitemap Column -->
-        <div class="footer__sitemap">
-          <h4 class="footer__col-title">Navigate</h4>
-          <a href="/" class="footer__link">Home</a>
-          <a href="/craft" class="footer__link">Craft</a>
-          <a href="/catalog" class="footer__link">Catalog</a>
-          <a href="/contact" class="footer__link">Contact</a>
-        </div>
-
-        <!-- Contact Info Column -->
-        <div class="footer__contact-info">
-          <h4 class="footer__col-title">Visit</h4>
-          <p>Tiba Stone Atelier</p>
-          <p><a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a></p>
-          <p><a href="tel:+6281239442648">+62 81239442648</a></p>
-        </div>
-
-        <!-- Compact Inquiry Form Column -->
-        <div class="footer__form">
-          <h4 class="footer__col-title">Inquire</h4>
-          <form class="footer-form" id="footerForm">
-            <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
-            <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
-            <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
-            <button type="submit" class="btn-primary">Send</button>
-          </form>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div>
+        <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
+        <p class="footer__tagline">Bespoke Marble Atelier</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
         </div>
       </div>
-
-      <div class="footer__bottom">
-        <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
-        <div class="footer__legal">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms</a>
-        </div>
+      <div>
+        <h4 class="footer__col-title">Navigate</h4>
+        <a href="/" class="footer__link">Home</a>
+        <a href="/craft" class="footer__link">Craft</a>
+        <a href="/catalog" class="footer__link">Catalog</a>
+        <a href="/contact" class="footer__link">Contact</a>
+      </div>
+      <div class="footer__contact">
+        <h4 class="footer__col-title">Visit</h4>
+        <p>Tiba Stone Atelier</p>
+        <p><a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a></p>
+        <p><a href="tel:+6281239442648">+62 81239442648</a></p>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Inquire</h4>
+        <form class="footer-form" id="footerForm">
+          <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+          <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+          <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+          <button type="submit" class="btn btn--light">Send</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms</a>
       </div>
     </div>
   </footer>
 
-  <!-- ============================================
-       JAVASCRIPT
-  ============================================ -->
+  <!-- JAVASCRIPT -->
   <script>
     (function () {
       'use strict';
 
-      /* ------------------------------------------
-         1. MOBILE MENU
-      ------------------------------------------ */
-      var hamburger = document.getElementById('hamburgerBtn');
-      var mobileMenu = document.getElementById('mobileMenu');
-      var mobileClose = document.getElementById('mobileMenuClose');
+      /* ── Header scroll ── */
+      var header = document.getElementById('siteHeader');
+      var ticking = false;
 
-      function openMenu() {
-        mobileMenu.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeMenu() {
-        mobileMenu.classList.remove('is-open');
-        document.body.style.overflow = '';
-      }
-
-      hamburger.addEventListener('click', openMenu);
-      mobileClose.addEventListener('click', closeMenu);
-
-      mobileMenu.querySelectorAll('.mobile-menu__link').forEach(function (link) {
-        link.addEventListener('click', closeMenu);
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeMenu();
-      });
-
-      /* ------------------------------------------
-         2. SCROLL REVEAL (Intersection Observer)
-      ------------------------------------------ */
-      var revealElements = document.querySelectorAll('.reveal');
-
-      var revealObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      revealElements.forEach(function (el) {
-        revealObserver.observe(el);
-      });
-
-      /* ------------------------------------------
-         3. SELECT FLOATING LABEL HELPER
-      ------------------------------------------ */
-      var subjectSelect = document.getElementById('subject');
-      if (subjectSelect) {
-        subjectSelect.addEventListener('change', function () {
-          var field = this.closest('.inquiry-form__field--select');
-          if (this.value) {
-            field.classList.add('has-value');
-          } else {
-            field.classList.remove('has-value');
-          }
-        });
-      }
-
-      /* ------------------------------------------
-         4. INQUIRY FORM VALIDATION & SUBMISSION
-      ------------------------------------------ */
-      var form = document.getElementById('inquiryForm');
-      var successEl = document.getElementById('formSuccess');
-
-      if (form) {
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-
-          // Clear previous errors
-          form.querySelectorAll('.inquiry-form__field--error').forEach(function (el) {
-            el.classList.remove('inquiry-form__field--error');
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(function () {
+            header.classList.toggle('is-scrolled', window.scrollY > 60);
+            ticking = false;
           });
-          form.querySelectorAll('.has-error').forEach(function (el) {
-            el.classList.remove('has-error');
-          });
-
-          var isValid = true;
-
-          // Validate required text/email/tel inputs
-          form.querySelectorAll('.inquiry-form__input[required], .inquiry-form__textarea[required]').forEach(function (input) {
-            var field = input.closest('.inquiry-form__field');
-            if (!input.value.trim()) {
-              field.classList.add('inquiry-form__field--error');
-              isValid = false;
-            }
-            // Email format check
-            if (input.type === 'email' && input.value.trim()) {
-              var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-              if (!emailPattern.test(input.value.trim())) {
-                field.classList.add('inquiry-form__field--error');
-                isValid = false;
-              }
-            }
-          });
-
-          // Validate select
-          var select = form.querySelector('.inquiry-form__select[required]');
-          if (select && !select.value) {
-            select.closest('.inquiry-form__field').classList.add('inquiry-form__field--error');
-            isValid = false;
-          }
-
-          // Validate checkbox
-          var checkbox = form.querySelector('.inquiry-form__checkbox-input[required]');
-          if (checkbox && !checkbox.checked) {
-            checkbox.closest('.inquiry-form__row').classList.add('has-error');
-            isValid = false;
-          }
-
-          if (!isValid) {
-            var firstError = form.querySelector('.inquiry-form__field--error, .has-error');
-            if (firstError) {
-              firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-            return;
-          }
-
-          // Submit to Formspree
-          var submitBtn = form.querySelector('button[type="submit"]');
-          var origText = submitBtn.textContent;
-          submitBtn.textContent = 'Sending…';
-          submitBtn.disabled = true;
-
-          fetch('https://formspree.io/f/luke@tibaliving.com', {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          }).then(function (r) {
-            if (r.ok) {
-              form.style.transition = 'opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)';
-              form.style.opacity = '0';
-              setTimeout(function () {
-                form.style.display = 'none';
-                successEl.classList.add('is-visible');
-                successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              }, 600);
-            } else {
-              submitBtn.textContent = 'Error — Try Again';
-              submitBtn.disabled = false;
-            }
-          }).catch(function () {
-            submitBtn.textContent = 'Error — Try Again';
-            submitBtn.disabled = false;
-          });
-        });
-
-        // Clear individual field errors on input
-        form.querySelectorAll('.inquiry-form__input, .inquiry-form__textarea, .inquiry-form__select').forEach(function (input) {
-          input.addEventListener('input', function () {
-            var field = this.closest('.inquiry-form__field');
-            if (field) field.classList.remove('inquiry-form__field--error');
-          });
-          input.addEventListener('change', function () {
-            var field = this.closest('.inquiry-form__field');
-            if (field) field.classList.remove('inquiry-form__field--error');
-          });
-        });
-
-        // Clear checkbox error on change
-        var privacyCheckbox = form.querySelector('.inquiry-form__checkbox-input');
-        if (privacyCheckbox) {
-          privacyCheckbox.addEventListener('change', function () {
-            this.closest('.inquiry-form__row').classList.remove('has-error');
-          });
+          ticking = true;
         }
+      }, { passive: true });
+
+      /* ── Mobile menu ── */
+      var hamburger = document.getElementById('hamburgerBtn');
+      var menu = document.getElementById('mobileMenu');
+      var menuClose = document.getElementById('mobileMenuClose');
+
+      hamburger.addEventListener('click', function () { menu.classList.add('is-open'); document.body.style.overflow = 'hidden'; });
+      menuClose.addEventListener('click', function () { menu.classList.remove('is-open'); document.body.style.overflow = ''; });
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.classList.remove('is-open'); document.body.style.overflow = ''; }); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { menu.classList.remove('is-open'); document.body.style.overflow = ''; } });
+
+      /* ── Scroll reveal ── */
+      var reveals = document.querySelectorAll('.reveal');
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+      reveals.forEach(function (el) { obs.observe(el); });
+
+      /* ── Contact form validation & submission ── */
+      var contactForm = document.getElementById('contactForm');
+      var submitBtn = document.getElementById('contactSubmitBtn');
+      var formSuccess = document.getElementById('formSuccess');
+
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function clearError(group) {
+        group.classList.remove('has-error');
+        var input = group.querySelector('.form-input, .form-textarea, .form-select');
+        if (input) input.classList.remove('is-error');
       }
 
-      /* ------------------------------------------
-         5. FOOTER FORM
-      ------------------------------------------ */
+      function setError(group) {
+        group.classList.add('has-error');
+        var input = group.querySelector('.form-input, .form-textarea, .form-select');
+        if (input) input.classList.add('is-error');
+      }
+
+      /* Clear errors on input */
+      contactForm.querySelectorAll('.form-input, .form-textarea, .form-select').forEach(function (el) {
+        var eventName = el.tagName === 'SELECT' ? 'change' : 'input';
+        el.addEventListener(eventName, function () {
+          var group = el.closest('.form-group');
+          if (group) clearError(group);
+        });
+      });
+
+      var consentCheckbox = document.getElementById('consent');
+      var consentGroup = document.getElementById('consentGroup');
+
+      consentCheckbox.addEventListener('change', function () {
+        consentGroup.classList.remove('has-error');
+      });
+
+      function validateForm() {
+        var isValid = true;
+        var firstErrorEl = null;
+
+        /* Required text/email inputs */
+        contactForm.querySelectorAll('.form-input[required], .form-textarea[required]').forEach(function (input) {
+          var group = input.closest('.form-group');
+          clearError(group);
+
+          var val = input.value.trim();
+          if (!val) {
+            setError(group);
+            isValid = false;
+            if (!firstErrorEl) firstErrorEl = input;
+          } else if (input.type === 'email' && !emailRegex.test(val)) {
+            setError(group);
+            isValid = false;
+            if (!firstErrorEl) firstErrorEl = input;
+          }
+        });
+
+        /* Required select */
+        var subjectSelect = contactForm.querySelector('.form-select[required]');
+        if (subjectSelect) {
+          var selectGroup = subjectSelect.closest('.form-group');
+          clearError(selectGroup);
+          if (!subjectSelect.value) {
+            setError(selectGroup);
+            isValid = false;
+            if (!firstErrorEl) firstErrorEl = subjectSelect;
+          }
+        }
+
+        /* Consent checkbox */
+        consentGroup.classList.remove('has-error');
+        if (!consentCheckbox.checked) {
+          consentGroup.classList.add('has-error');
+          isValid = false;
+          if (!firstErrorEl) firstErrorEl = consentCheckbox;
+        }
+
+        /* Scroll to first error */
+        if (firstErrorEl) {
+          firstErrorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          if (firstErrorEl.focus) firstErrorEl.focus({ preventScroll: true });
+        }
+
+        return isValid;
+      }
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (!validateForm()) return;
+
+        var origText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending\u2026';
+        submitBtn.disabled = true;
+
+        fetch('https://formspree.io/f/luke@tibaliving.com', {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (r) {
+          if (r.ok) {
+            contactForm.style.display = 'none';
+            formSuccess.style.display = 'block';
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                formSuccess.classList.add('is-visible');
+              });
+            });
+          } else {
+            submitBtn.textContent = 'Something went wrong';
+            submitBtn.disabled = false;
+            setTimeout(function () { submitBtn.textContent = origText; }, 3000);
+          }
+        }).catch(function () {
+          submitBtn.textContent = 'Connection error';
+          submitBtn.disabled = false;
+          setTimeout(function () { submitBtn.textContent = origText; }, 3000);
+        });
+      });
+
+      /* ── Footer form handler ── */
       var footerForm = document.getElementById('footerForm');
       if (footerForm) {
         footerForm.addEventListener('submit', function (e) {
           e.preventDefault();
-          var btn = footerForm.querySelector('.btn-primary');
-          btn.textContent = 'Sending…';
+          var btn = footerForm.querySelector('button[type="submit"]');
+          var orig = btn.textContent;
+          btn.textContent = 'Sending\u2026';
           btn.disabled = true;
+          btn.style.opacity = '0.6';
           fetch('https://formspree.io/f/luke@tibaliving.com', {
             method: 'POST',
             body: new FormData(footerForm),
@@ -876,25 +970,14 @@
           }).then(function (r) {
             if (r.ok) {
               btn.textContent = 'Sent';
-              setTimeout(function () {
-                footerForm.reset();
-                btn.textContent = 'Send';
-                btn.disabled = false;
-              }, 3000);
-            } else {
-              btn.textContent = 'Error — Try Again';
-              btn.disabled = false;
-            }
-          }).catch(function () {
-            btn.textContent = 'Error — Try Again';
-            btn.disabled = false;
-          });
+              setTimeout(function () { footerForm.reset(); btn.textContent = orig; btn.disabled = false; btn.style.opacity = '1'; }, 3000);
+            } else { btn.textContent = 'Error'; btn.disabled = false; btn.style.opacity = '1'; }
+          }).catch(function () { btn.textContent = 'Error'; btn.disabled = false; btn.style.opacity = '1'; });
         });
       }
 
     })();
   </script>
-<div class="ts-lb" id="tsLb"><img src="" alt=""></div>
 
 </body>
 </html>
