@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/webp" href="../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIBA STONE | Bespoke Marble Atelier</title>
+  <meta name="description" content="Tiba Stone is a bespoke marble atelier crafting handmade washbasins, bathtubs, and furniture from the world's finest stone.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="../Products/coffee tables/terra/terra_12_catalogue.webp" type="image/webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       V2 DESIGN TOKENS
+    ============================================ */
+    :root {
+      --color-stone: #222323;
+      --color-ivory: #FFFFFF;
+      --color-sunset: #925638;
+      --color-river-green: #A3996A;
+      --color-dusk-blue: #153647;
+      --color-moss: #3E402B;
+      --color-sand: #F0EBE3;
+      --color-warm-bg: #E8E2DA;
+      --color-charcoal: #1A1A1B;
+      --color-off-black: #111111;
+
+      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
+      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-dramatic: cubic-bezier(0.22, 1, 0.36, 1);
+      --duration-fast: 0.3s;
+      --duration-medium: 0.6s;
+    }
+
+    /* ============================================
+       RESET & BASE
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: var(--font-body); border: none; background: none; cursor: pointer; }
+
+    /* ============================================
+       HEADER — Minimal floating bar
+    ============================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: background 0.4s ease, padding 0.4s ease, backdrop-filter 0.4s ease;
+    }
+
+    .header.is-scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1rem 0;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .header__inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo { z-index: 2; }
+
+    .header__logo-img {
+      height: 38px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      transition: filter 0.4s ease;
+    }
+
+    .header.is-scrolled .header__logo-img { filter: none; }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .header__nav a {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.85);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .header.is-scrolled .header__nav a { color: var(--color-stone); }
+
+    .header__nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-sunset);
+      transition: width 0.4s var(--ease-dramatic);
+    }
+
+    .header__nav a:hover::after { width: 100%; }
+
+    .header__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 0.5rem;
+      z-index: 2;
+    }
+
+    .header__hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--color-ivory);
+      transition: background 0.3s ease;
+    }
+
+    .header.is-scrolled .header__hamburger span { background: var(--color-stone); }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--color-charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .mobile-menu.is-open { opacity: 1; pointer-events: all; }
+
+    .mobile-menu__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 1.75rem;
+      color: var(--color-ivory);
+      line-height: 1;
+      padding: 0.5rem;
+    }
+
+    .mobile-menu__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .mobile-menu__nav a {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--color-ivory);
+      transition: color 0.3s ease;
+    }
+
+    .mobile-menu__nav a:hover { color: var(--color-sunset); }
+
+    /* ============================================
+       HERO — Full viewport cinematic
+    ============================================ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background: var(--color-off-black);
+    }
+
+    .hero__slides {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero__slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.4s ease;
+    }
+
+    .hero__slide.is-active { opacity: 1; }
+
+    .hero__slide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      will-change: transform;
+    }
+
+    .hero__slide.is-active .hero__slide-img {
+      animation: slowZoom 10s ease-out forwards;
+    }
+
+    @keyframes slowZoom {
+      from { transform: scale(1.0); }
+      to { transform: scale(1.06); }
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.25) 100%
+      );
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      padding: 0 clamp(2rem, 5vw, 6rem) clamp(4rem, 8vh, 7rem);
+      max-width: 900px;
+    }
+
+    .hero__tagline {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--color-river-green);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s 0.3s var(--ease-dramatic) forwards;
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6.5vw, 5.5rem);
+      font-weight: 400;
+      color: var(--color-ivory);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1.2s 0.5s var(--ease-dramatic) forwards;
+    }
+
+    .hero__cta {
+      display: inline-block;
+      padding: 1rem 2.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: var(--color-ivory);
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transition: color 0.5s var(--ease-spring), border-color 0.5s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s 0.8s var(--ease-dramatic) forwards;
+    }
+
+    .hero__cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-ivory);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s var(--ease-spring);
+    }
+
+    .hero__cta:hover { color: var(--color-stone); border-color: var(--color-ivory); }
+    .hero__cta:hover::before { transform: scaleX(1); }
+
+    .hero__dots {
+      position: absolute;
+      bottom: clamp(2rem, 4vh, 4rem);
+      right: clamp(2rem, 5vw, 6rem);
+      display: flex;
+      gap: 0.625rem;
+      z-index: 3;
+    }
+
+    .hero__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.4s ease, border-color 0.4s ease;
+    }
+
+    .hero__dot.is-active {
+      background: var(--color-ivory);
+      border-color: var(--color-ivory);
+    }
+
+    .hero__dot:hover { border-color: var(--color-ivory); }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================
+       EDITORIAL MOSAIC — ELTE-inspired grid blocks
+    ============================================ */
+    .mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .mosaic__block {
+      position: relative;
+      overflow: hidden;
+      min-height: 55vh;
+    }
+
+    .mosaic__block--tall { min-height: 75vh; }
+    .mosaic__block--full { grid-column: 1 / -1; min-height: 60vh; }
+
+    .mosaic__block--dark { background: var(--color-charcoal); }
+    .mosaic__block--sand { background: var(--color-sand); }
+    .mosaic__block--moss { background: var(--color-moss); }
+    .mosaic__block--dusk { background: var(--color-dusk-blue); }
+    .mosaic__block--warm { background: var(--color-warm-bg); }
+
+    .mosaic__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s var(--ease-smooth);
+    }
+
+    .mosaic__block:hover .mosaic__img { transform: scale(1.04); }
+
+    .mosaic__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.05) 60%
+      );
+    }
+
+    .mosaic__overlay--heavy {
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      );
+    }
+
+    .mosaic__content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .mosaic__content--center {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mosaic__label {
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--color-river-green);
+      margin-bottom: 1rem;
+    }
+
+    .mosaic__label--light { color: rgba(255, 255, 255, 0.6); }
+
+    .mosaic__heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3.25rem);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.005em;
+      color: var(--color-ivory);
+      margin-bottom: 1rem;
+    }
+
+    .mosaic__heading--dark { color: var(--color-stone); }
+
+    .mosaic__heading--xl {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+    }
+
+    .mosaic__text {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      max-width: 440px;
+      margin-bottom: 2rem;
+    }
+
+    .mosaic__text--light { color: rgba(255, 255, 255, 0.75); }
+    .mosaic__text--muted { color: var(--color-river-green); }
+
+    /* Block link overlay */
+    .mosaic__link {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+    }
+
+    /* CTA buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.875rem 2.25rem;
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transition: color 0.5s var(--ease-spring), border-color 0.4s ease;
+    }
+
+    .btn--outline-light {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: var(--color-ivory);
+    }
+
+    .btn--outline-light::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-ivory);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s var(--ease-spring);
+    }
+
+    .btn--outline-light:hover { color: var(--color-stone); border-color: var(--color-ivory); }
+    .btn--outline-light:hover::before { transform: scaleX(1); }
+
+    .btn--outline-dark {
+      border: 1px solid var(--color-stone);
+      color: var(--color-stone);
+    }
+
+    .btn--outline-dark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-stone);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s var(--ease-spring);
+    }
+
+    .btn--outline-dark:hover { color: var(--color-ivory); }
+    .btn--outline-dark:hover::before { transform: scaleX(1); }
+
+    .btn--text {
+      padding: 0;
+      border: none;
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-ivory);
+      position: relative;
+    }
+
+    .btn--text::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease-spring);
+    }
+
+    .btn--text:hover::after { transform: scaleX(1); }
+
+    .btn--text-dark { color: var(--color-stone); }
+
+    /* ============================================
+       BRAND STATEMENT — Cinematic text panel
+    ============================================ */
+    .statement {
+      padding: clamp(5rem, 10vh, 9rem) clamp(2rem, 8vw, 10rem);
+      text-align: center;
+    }
+
+    .statement__label {
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      color: var(--color-river-green);
+      margin-bottom: 2rem;
+    }
+
+    .statement__heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.45;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      color: var(--color-stone);
+    }
+
+    .statement__body {
+      font-size: 0.9375rem;
+      line-height: 1.85;
+      max-width: 540px;
+      margin: 0 auto;
+      color: var(--color-river-green);
+    }
+
+    /* ============================================
+       CATEGORY GRID — Clean product browsing
+    ============================================ */
+    .categories {
+      padding: clamp(3rem, 6vh, 6rem) clamp(2rem, 5vw, 5rem);
+    }
+
+    .categories__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: clamp(2rem, 4vw, 3.5rem);
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(34, 35, 35, 0.08);
+    }
+
+    .categories__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 400;
+    }
+
+    .categories__link {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-river-green);
+      transition: color 0.3s ease;
+    }
+
+    .categories__link:hover { color: var(--color-stone); }
+
+    .categories__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 2rem);
+    }
+
+    .cat-card {
+      display: block;
+      text-decoration: none;
+      color: var(--color-stone);
+    }
+
+    .cat-card__media {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      background: var(--color-sand);
+      margin-bottom: 1.25rem;
+    }
+
+    .cat-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s var(--ease-smooth);
+    }
+
+    .cat-card:hover .cat-card__img { transform: scale(1.05); }
+
+    .cat-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0);
+      transition: background 0.5s ease;
+    }
+
+    .cat-card:hover .cat-card__overlay { background: rgba(0, 0, 0, 0.08); }
+
+    .cat-card__name {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+    }
+
+    .cat-card__count {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-river-green);
+    }
+
+    /* ============================================
+       STONE PALETTE — Horizontal strip
+    ============================================ */
+    .stones {
+      background: var(--color-charcoal);
+      padding: clamp(4rem, 7vh, 7rem) clamp(2rem, 5vw, 5rem);
+    }
+
+    .stones__header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: clamp(2.5rem, 4vw, 4rem);
+    }
+
+    .stones__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 400;
+      color: var(--color-ivory);
+    }
+
+    .stones__subtitle {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .stones__grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: clamp(1rem, 2vw, 2rem);
+    }
+
+    .stone-card { text-align: center; cursor: pointer; }
+
+    .stone-card__img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      filter: brightness(0.85);
+      transition: filter 0.5s ease, transform 0.6s var(--ease-smooth);
+    }
+
+    .stone-card:hover .stone-card__img {
+      filter: brightness(1);
+      transform: scale(1.03);
+    }
+
+    .stone-card__name {
+      font-size: 0.5625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.3s ease;
+    }
+
+    .stone-card:hover .stone-card__name { color: var(--color-ivory); }
+
+    /* ============================================
+       QUOTE BANNER
+    ============================================ */
+    .quote-banner {
+      background: var(--color-dusk-blue);
+      padding: clamp(4rem, 8vh, 8rem) clamp(2rem, 8vw, 10rem);
+      text-align: center;
+    }
+
+    .quote-banner__text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+      color: var(--color-ivory);
+      line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .footer {
+      background: var(--color-off-black);
+      color: var(--color-ivory);
+      padding: clamp(4rem, 7vh, 6rem) clamp(2rem, 5vw, 5rem) clamp(2rem, 3vh, 3rem);
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      margin-bottom: 4rem;
+    }
+
+    .footer__logo {
+      height: 60px;
+      width: auto;
+      margin-bottom: 1.25rem;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer__tagline {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__social { display: flex; gap: 1rem; }
+
+    .footer__social a {
+      color: rgba(255, 255, 255, 0.4);
+      transition: color 0.3s ease;
+    }
+
+    .footer__social a:hover { color: var(--color-ivory); }
+    .footer__social svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .footer__col-title {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 1.75rem;
+    }
+
+    .footer__link {
+      display: block;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.9375rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer__link:hover { color: var(--color-ivory); }
+
+    .footer__contact p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9375rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .footer__contact a {
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.3s ease;
+    }
+
+    .footer__contact a:hover { color: var(--color-ivory); }
+
+    /* Footer form */
+    .footer-form__input,
+    .footer-form__textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--color-ivory);
+      padding: 0.75rem 0;
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s;
+      outline: none;
+      resize: none;
+    }
+
+    .footer-form__input::placeholder,
+    .footer-form__textarea::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+    .footer-form__input:focus,
+    .footer-form__textarea:focus { border-color: rgba(255, 255, 255, 0.45); }
+
+    .footer-form .btn {
+      width: 100%;
+      text-align: center;
+      margin-top: 0.5rem;
+      border-color: rgba(255, 255, 255, 0.2);
+      color: var(--color-ivory);
+    }
+
+    .footer-form .btn::before { background: var(--color-ivory); }
+    .footer-form .btn:hover { color: var(--color-stone); border-color: var(--color-ivory); }
+
+    .footer__bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .footer__legal { display: flex; gap: 1.5rem; }
+
+    .footer__legal a {
+      color: rgba(255, 255, 255, 0.25);
+      font-size: 0.75rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer__legal a:hover { color: rgba(255, 255, 255, 0.6); }
+
+    /* ============================================
+       SCROLL REVEAL
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.9s var(--ease-dramatic), transform 0.9s var(--ease-dramatic);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       RESPONSIVE — TABLET
+    ============================================ */
+    @media (max-width: 1023px) {
+      .mosaic { grid-template-columns: 1fr; }
+      .mosaic__block { min-height: 50vh; }
+      .mosaic__block--tall { min-height: 60vh; }
+      .mosaic__block--full { min-height: 50vh; }
+
+      .categories__grid { grid-template-columns: repeat(2, 1fr); }
+
+      .stones__grid { grid-template-columns: repeat(3, 1fr); }
+
+      .footer__grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+
+    /* ============================================
+       RESPONSIVE — MOBILE
+    ============================================ */
+    @media (max-width: 767px) {
+      .header__nav { display: none; }
+      .header__hamburger { display: flex; }
+
+      .hero { min-height: 600px; height: 90vh; }
+
+      .hero__title { font-size: clamp(2.25rem, 8vw, 3.5rem); }
+
+      .mosaic__block { min-height: 45vh; }
+      .mosaic__block--tall { min-height: 55vh; }
+
+      .mosaic__heading { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+      .mosaic__heading--xl { font-size: clamp(2rem, 7vw, 3rem); }
+
+      .categories__grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+      .stones__grid { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+
+      .footer__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="siteHeader">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <img src="../TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img">
+      </a>
+      <nav class="header__nav">
+        <a href="/">Home</a>
+        <a href="/craft">Craft</a>
+        <a href="/catalog">Catalog</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <nav class="mobile-menu__nav">
+      <a href="/">Home</a>
+      <a href="/craft">Craft</a>
+      <a href="/catalog">Catalog</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__slides">
+      <div class="hero__slide is-active">
+        <img src="../Products/coffee tables/terra/terra_12_catalogue.webp"
+             alt="Terra coffee table — sculptural marble form"
+             class="hero__slide-img" loading="eager" fetchpriority="high">
+      </div>
+      <div class="hero__slide">
+        <img src="../Products/cabinets/aida/aida_12_catalogue.webp"
+             alt="Aida cabinet — bookmatched marble panels"
+             class="hero__slide-img" loading="lazy" decoding="async">
+      </div>
+      <div class="hero__slide">
+        <img src="../Products/Side tables/icaro/icaro_01_editorial.webp"
+             alt="Icaro side table — marble disc on stone column"
+             class="hero__slide-img" loading="lazy" decoding="async">
+      </div>
+      <div class="hero__slide">
+        <img src="../Products/Consoles/onda/onda_01_editorial.webp"
+             alt="Onda console — flowing marble wave form"
+             class="hero__slide-img" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__tagline">Bespoke Marble Atelier</p>
+      <h1 class="hero__title">Sculpted by Nature,<br>Shaped by Hand</h1>
+      <a href="/catalog" class="hero__cta">Explore the Collection</a>
+    </div>
+    <div class="hero__dots" role="tablist" aria-label="Slideshow">
+      <button class="hero__dot is-active" aria-label="Slide 1" role="tab"></button>
+      <button class="hero__dot" aria-label="Slide 2" role="tab"></button>
+      <button class="hero__dot" aria-label="Slide 3" role="tab"></button>
+      <button class="hero__dot" aria-label="Slide 4" role="tab"></button>
+    </div>
+  </section>
+
+  <!-- BRAND STATEMENT -->
+  <section class="statement reveal">
+    <p class="statement__label">Tiba Stone</p>
+    <h2 class="statement__heading">For over two decades, we have transformed the world's most extraordinary marble into objects of enduring beauty</h2>
+    <p class="statement__body">Each piece begins as a conversation between client and artisan, between vision and stone. We believe marble is not merely a material but a living record of the earth's memory.</p>
+  </section>
+
+  <!-- EDITORIAL MOSAIC -->
+  <div class="mosaic">
+
+    <!-- Block 1: Showroom — large image left -->
+    <div class="mosaic__block mosaic__block--tall">
+      <img src="../Products/coffee tables/terra/terra_02_human.webp"
+           alt="Terra coffee table in architectural interior"
+           class="mosaic__img" loading="lazy" decoding="async">
+      <div class="mosaic__overlay"></div>
+      <div class="mosaic__content reveal">
+        <span class="mosaic__label mosaic__label--light">The Showroom</span>
+        <h2 class="mosaic__heading">A Curated Experience<br>in Stone</h2>
+        <a href="/catalog" class="btn btn--text">Visit the Gallery</a>
+      </div>
+    </div>
+
+    <!-- Block 2: Signature piece — Onda -->
+    <div class="mosaic__block mosaic__block--tall">
+      <img src="../Products/Consoles/onda/onda_01_editorial.webp"
+           alt="Onda Console — flowing sculptural form"
+           class="mosaic__img" loading="lazy" decoding="async"
+           style="object-position: center bottom;">
+      <div class="mosaic__overlay"></div>
+      <div class="mosaic__content reveal">
+        <span class="mosaic__label mosaic__label--light">Signature Piece</span>
+        <h2 class="mosaic__heading">Onda</h2>
+        <p class="mosaic__text mosaic__text--light">A console sculpted from a single block, where the wave of the stone itself becomes the form.</p>
+        <a href="/Products/Consoles/onda/" class="btn btn--outline-light">Discover More</a>
+      </div>
+      <a href="/Products/Consoles/onda/" class="mosaic__link" aria-label="View Onda Console"></a>
+    </div>
+
+    <!-- Block 3: Bespoke text panel -->
+    <div class="mosaic__block mosaic__block--dark">
+      <div class="mosaic__content mosaic__content--center">
+        <span class="mosaic__label mosaic__label--light reveal">Bespoke Service</span>
+        <h2 class="mosaic__heading mosaic__heading--xl reveal" style="max-width: 500px;">Made Entirely<br>for You</h2>
+        <p class="mosaic__text mosaic__text--light reveal" style="text-align: center;">We work directly with architects and designers to realise pieces in custom dimensions, materials, and finishes.</p>
+        <a href="/contact" class="btn btn--outline-light reveal">Begin Your Project</a>
+      </div>
+    </div>
+
+    <!-- Block 4: Morphe coffee table -->
+    <div class="mosaic__block">
+      <img src="../Products/coffee tables/morphe/morphe_01_editorial.webp"
+           alt="Morphe Coffee Table — organic flowing form"
+           class="mosaic__img" loading="lazy" decoding="async">
+      <div class="mosaic__overlay"></div>
+      <div class="mosaic__content reveal">
+        <span class="mosaic__label mosaic__label--light">Signature Piece</span>
+        <h2 class="mosaic__heading">Morphe</h2>
+        <a href="/Products/coffee tables/morphe/" class="btn btn--text">Discover More</a>
+      </div>
+      <a href="/Products/coffee tables/morphe/" class="mosaic__link" aria-label="View Morphe Coffee Table"></a>
+    </div>
+
+    <!-- Block 5: Craftsmanship — full width -->
+    <div class="mosaic__block mosaic__block--full">
+      <img src="../Products/coffee tables/gesto/gesto_03_closeup_veining.webp"
+           alt="Marble veining close-up — handcraft detail"
+           class="mosaic__img" loading="lazy" decoding="async">
+      <div class="mosaic__overlay mosaic__overlay--heavy"></div>
+      <div class="mosaic__content reveal" style="max-width: 600px;">
+        <span class="mosaic__label mosaic__label--light">The Craft</span>
+        <h2 class="mosaic__heading mosaic__heading--xl">From Quarry<br>to Masterpiece</h2>
+        <p class="mosaic__text mosaic__text--light">Every piece passes through the hands of master craftsmen whose families have shaped marble for generations. The process is unhurried, deliberate, and guided by reverence for the material.</p>
+        <a href="/craft" class="btn btn--outline-light">Discover Our Craft</a>
+      </div>
+    </div>
+
+    <!-- Block 6: Aida cabinet -->
+    <div class="mosaic__block">
+      <img src="../Products/cabinets/aida/aida_01_editorial.webp"
+           alt="Aida Cabinet — bookmatched marble on brass"
+           class="mosaic__img" loading="lazy" decoding="async"
+           style="object-position: 35% 45%;">
+      <div class="mosaic__overlay"></div>
+      <div class="mosaic__content reveal">
+        <span class="mosaic__label mosaic__label--light">Cabinets</span>
+        <h2 class="mosaic__heading">Aida</h2>
+        <a href="/Products/cabinets/aida/" class="btn btn--text">Discover More</a>
+      </div>
+      <a href="/Products/cabinets/aida/" class="mosaic__link" aria-label="View Aida Cabinet"></a>
+    </div>
+
+    <!-- Block 7: Washbasin -->
+    <div class="mosaic__block">
+      <img src="../Products/Washbasins/circle-high/circle-high_02_human.webp"
+           alt="Circle High Washbasin — monolithic stone basin"
+           class="mosaic__img" loading="lazy" decoding="async"
+           style="object-position: center 55%;">
+      <div class="mosaic__overlay"></div>
+      <div class="mosaic__content reveal">
+        <span class="mosaic__label mosaic__label--light">Washbasins</span>
+        <h2 class="mosaic__heading">Circle High</h2>
+        <a href="/Products/Washbasins/circle-high/" class="btn btn--text">Discover More</a>
+      </div>
+      <a href="/Products/Washbasins/circle-high/" class="mosaic__link" aria-label="View Circle High Washbasin"></a>
+    </div>
+
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <div class="categories__header reveal">
+      <h2 class="categories__title">Browse by Category</h2>
+      <a href="/catalog" class="categories__link">View All</a>
+    </div>
+    <div class="categories__grid">
+      <a href="/catalog#coffee-tables" class="cat-card reveal">
+        <div class="cat-card__media">
+          <img src="../Products/coffee tables/terra/terra_01_editorial.webp"
+               alt="Coffee Tables" class="cat-card__img" loading="lazy" decoding="async">
+          <div class="cat-card__overlay"></div>
+        </div>
+        <h3 class="cat-card__name">Coffee Tables</h3>
+        <span class="cat-card__count">6 Pieces</span>
+      </a>
+      <a href="/catalog#consoles" class="cat-card reveal">
+        <div class="cat-card__media">
+          <img src="../Products/Consoles/curves/curves_01_editorial.webp"
+               alt="Consoles" class="cat-card__img" loading="lazy" decoding="async"
+               style="object-position: center 85%;">
+          <div class="cat-card__overlay"></div>
+        </div>
+        <h3 class="cat-card__name">Consoles</h3>
+        <span class="cat-card__count">18 Pieces</span>
+      </a>
+      <a href="/catalog#dining-tables" class="cat-card reveal">
+        <div class="cat-card__media">
+          <img src="../Products/Dining Tables/bronze/bronze_01_editorial.webp"
+               alt="Dining Tables" class="cat-card__img" loading="lazy" decoding="async">
+          <div class="cat-card__overlay"></div>
+        </div>
+        <h3 class="cat-card__name">Dining Tables</h3>
+        <span class="cat-card__count">6 Pieces</span>
+      </a>
+      <a href="/catalog#washbasins" class="cat-card reveal">
+        <div class="cat-card__media">
+          <img src="../Products/Washbasins/calice/calice_12_catalogue.webp"
+               alt="Washbasins" class="cat-card__img" loading="lazy" decoding="async">
+          <div class="cat-card__overlay"></div>
+        </div>
+        <h3 class="cat-card__name">Washbasins</h3>
+        <span class="cat-card__count">13 Pieces</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- STONE PALETTE -->
+  <section class="stones">
+    <div class="stones__header reveal">
+      <h2 class="stones__title">Our Stone Palette</h2>
+      <span class="stones__subtitle">Six Noble Stones</span>
+    </div>
+    <div class="stones__grid">
+      <div class="stone-card reveal">
+        <img src="../Stone types/Calacatta Viola.webp" alt="Calacatta Viola" class="stone-card__img" loading="lazy" decoding="async">
+        <span class="stone-card__name">Calacatta Viola</span>
+      </div>
+      <div class="stone-card reveal">
+        <img src="../Stone types/Fendy-Grey.webp" alt="Fendy Grey" class="stone-card__img" loading="lazy" decoding="async">
+        <span class="stone-card__name">Fendy Grey</span>
+      </div>
+      <div class="stone-card reveal">
+        <img src="../Stone types/Ice-Age-Onyx-Texture.webp" alt="Ice Age Onyx" class="stone-card__img" loading="lazy" decoding="async">
+        <span class="stone-card__name">Ice Age Onyx</span>
+      </div>
+      <div class="stone-card reveal">
+        <img src="../Stone types/Noir-Aziza Texture.webp" alt="Noir Aziza" class="stone-card__img" loading="lazy" decoding="async">
+        <span class="stone-card__name">Noir Aziza</span>
+      </div>
+      <div class="stone-card reveal">
+        <img src="../Stone types/Roso-Levanto-texture.webp" alt="Roso Levanto" class="stone-card__img" loading="lazy" decoding="async">
+        <span class="stone-card__name">Roso Levanto</span>
+      </div>
+      <div class="stone-card reveal">
+        <img src="../Stone types/Verde-Patricia-Texture.webp" alt="Verde Patricia" class="stone-card__img" loading="lazy" decoding="async">
+        <span class="stone-card__name">Verde Patricia</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE BANNER -->
+  <section class="quote-banner">
+    <p class="quote-banner__text reveal">
+      <em>The right stone transforms a space. Let us help you find it.</em>
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div>
+        <img src="../TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
+        <p class="footer__tagline">Bespoke Marble Atelier</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Navigate</h4>
+        <a href="/" class="footer__link">Home</a>
+        <a href="/craft" class="footer__link">Craft</a>
+        <a href="/catalog" class="footer__link">Catalog</a>
+        <a href="/contact" class="footer__link">Contact</a>
+      </div>
+      <div class="footer__contact">
+        <h4 class="footer__col-title">Visit</h4>
+        <p>Tiba Stone Atelier</p>
+        <p><a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a></p>
+        <p><a href="tel:+6281239442648">+62 81239442648</a></p>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Inquire</h4>
+        <form class="footer-form" id="footerForm">
+          <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+          <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+          <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+          <button type="submit" class="btn btn--outline-light">Send</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* Header scroll */
+      var header = document.getElementById('siteHeader');
+      var hero = document.getElementById('hero');
+      var ticking = false;
+
+      function updateHeader() {
+        if (window.scrollY > hero.offsetHeight * 0.1) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(function () { updateHeader(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      updateHeader();
+
+      /* Mobile menu */
+      var hamburger = document.getElementById('hamburgerBtn');
+      var mobileMenu = document.getElementById('mobileMenu');
+      var mobileClose = document.getElementById('mobileMenuClose');
+
+      hamburger.addEventListener('click', function () {
+        mobileMenu.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      mobileClose.addEventListener('click', function () {
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileMenu.classList.remove('is-open');
+          document.body.style.overflow = '';
+        });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          mobileMenu.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      /* Scroll reveal */
+      var reveals = document.querySelectorAll('.reveal');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      reveals.forEach(function (el) { observer.observe(el); });
+
+      /* Hero slideshow */
+      (function () {
+        var slides = document.querySelectorAll('.hero__slide');
+        var dots = document.querySelectorAll('.hero__dot');
+        var current = 0;
+        var timer;
+
+        function resetAnim(slide) {
+          var img = slide.querySelector('.hero__slide-img');
+          img.style.animation = 'none';
+          void img.offsetHeight;
+          img.style.animation = '';
+        }
+
+        function goTo(i) {
+          slides[current].classList.remove('is-active');
+          dots[current].classList.remove('is-active');
+          current = i;
+          resetAnim(slides[current]);
+          slides[current].classList.add('is-active');
+          dots[current].classList.add('is-active');
+        }
+
+        function start() {
+          clearInterval(timer);
+          timer = setInterval(function () { goTo((current + 1) % slides.length); }, 6000);
+        }
+
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function () { goTo(i); start(); });
+        });
+
+        /* Fade in first image */
+        var first = slides[0].querySelector('.hero__slide-img');
+        first.style.opacity = '0';
+        first.style.transition = 'opacity 1.4s ease';
+        function show() { first.style.opacity = '1'; }
+        if (first.complete && first.naturalHeight !== 0) show();
+        else first.addEventListener('load', show);
+
+        start();
+      })();
+
+      /* Progressive image fade */
+      document.querySelectorAll('.mosaic__img, .cat-card__img, .stone-card__img').forEach(function (img) {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.8s ease';
+        function show() { img.style.opacity = '1'; }
+        if (img.complete && img.naturalHeight !== 0) show();
+        else img.addEventListener('load', show);
+      });
+
+      /* Footer form */
+      document.getElementById('footerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = e.target;
+        var btn = form.querySelector('button[type="submit"]');
+        var orig = btn.textContent;
+        btn.textContent = 'Sending\u2026';
+        btn.disabled = true;
+        btn.style.opacity = '0.6';
+        fetch('https://formspree.io/f/luke@tibaliving.com', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (r) {
+          if (r.ok) {
+            btn.textContent = 'Sent';
+            setTimeout(function () { form.reset(); btn.textContent = orig; btn.disabled = false; btn.style.opacity = '1'; }, 3000);
+          } else { btn.textContent = 'Error'; btn.disabled = false; btn.style.opacity = '1'; }
+        }).catch(function () { btn.textContent = 'Error'; btn.disabled = false; btn.style.opacity = '1'; });
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
