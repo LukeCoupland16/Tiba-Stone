@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/webp" href="../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection | TIBA STONE</title>
+  <meta name="description" content="Explore the Tiba Stone collection — bespoke marble furniture crafted for architects, interior designers, and discerning spaces. Coffee tables, consoles, dining tables, washbasins, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="../Products/coffee tables/terra/terra_01_editorial.webp" type="image/webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       V2 CATALOG — DESIGN TOKENS
+    ============================================ */
+    :root {
+      --color-stone: #222323;
+      --color-ivory: #FFFFFF;
+      --color-sunset: #925638;
+      --color-river-green: #A3996A;
+      --color-dusk-blue: #153647;
+      --color-moss: #3E402B;
+      --color-sand: #F0EBE3;
+      --color-warm-bg: #E8E2DA;
+      --color-charcoal: #1A1A1B;
+      --color-off-black: #111111;
+
+      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
+      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-dramatic: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* RESET */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: var(--font-body); border: none; background: none; cursor: pointer; }
+
+    /* ============================================
+       HEADER
+    ============================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.25rem 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(34, 35, 35, 0.06);
+      transition: padding 0.3s ease;
+    }
+
+    .header.is-scrolled { padding: 0.875rem 0; }
+
+    .header__inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo { z-index: 2; }
+    .header__logo-img { height: 22px; width: auto; }
+
+    .header__nav { display: flex; align-items: center; gap: 3rem; }
+
+    .header__nav a {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-stone);
+      position: relative;
+    }
+
+    .header__nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-sunset);
+      transition: width 0.4s var(--ease-dramatic);
+    }
+
+    .header__nav a:hover::after,
+    .header__nav a.is-active::after { width: 100%; }
+
+    .header__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 0.5rem;
+      z-index: 2;
+    }
+
+    .header__hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--color-stone);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--color-charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .mobile-menu.is-open { opacity: 1; pointer-events: all; }
+
+    .mobile-menu__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 1.75rem;
+      color: var(--color-ivory);
+      padding: 0.5rem;
+    }
+
+    .mobile-menu__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .mobile-menu__nav a {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--color-ivory);
+      transition: color 0.3s ease;
+    }
+
+    .mobile-menu__nav a:hover { color: var(--color-sunset); }
+
+    /* ============================================
+       CATALOG HERO
+    ============================================ */
+    .catalog-hero {
+      position: relative;
+      height: 60vh;
+      min-height: 400px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .catalog-hero__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      will-change: transform;
+    }
+
+    .catalog-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0.45) 100%
+      );
+    }
+
+    .catalog-hero__content {
+      position: relative;
+      z-index: 2;
+      color: var(--color-ivory);
+      padding: 0 2rem;
+    }
+
+    .catalog-hero__label {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .catalog-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .catalog-hero__subtitle {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ============================================
+       FEATURED GALLERY — 4 overlay cards
+    ============================================ */
+    .featured {
+      padding: clamp(4rem, 7vh, 6rem) clamp(1.5rem, 4vw, 4rem);
+    }
+
+    .featured__header {
+      text-align: center;
+      margin-bottom: clamp(2.5rem, 4vh, 4rem);
+    }
+
+    .featured__label {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--color-river-green);
+      margin-bottom: 1rem;
+    }
+
+    .featured__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .featured__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .featured__card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+    }
+
+    .featured__card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-dramatic);
+    }
+
+    .featured__card:hover .featured__card-img {
+      transform: scale(1.04);
+    }
+
+    .featured__card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        transparent 50%,
+        rgba(0, 0, 0, 0.55) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(1.25rem, 2vw, 2rem);
+      transition: background 0.4s ease;
+    }
+
+    .featured__card:hover .featured__card-overlay {
+      background: linear-gradient(
+        180deg,
+        transparent 40%,
+        rgba(0, 0, 0, 0.65) 100%
+      );
+    }
+
+    .featured__card-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+      color: var(--color-ivory);
+      margin-bottom: 0.25rem;
+    }
+
+    .featured__card-type {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* ============================================
+       FILTER TABS
+    ============================================ */
+    .filters {
+      padding: clamp(3rem, 5vh, 5rem) clamp(1.5rem, 4vw, 4rem) 0;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .filters__tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: clamp(3rem, 5vh, 4rem);
+    }
+
+    .filter-tab {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 0.625rem 1.25rem;
+      color: var(--color-river-green);
+      border: 1px solid rgba(163, 153, 106, 0.25);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.35s var(--ease-smooth);
+      white-space: nowrap;
+    }
+
+    .filter-tab:hover {
+      color: var(--color-stone);
+      border-color: var(--color-stone);
+    }
+
+    .filter-tab.is-active {
+      color: var(--color-ivory);
+      background: var(--color-stone);
+      border-color: var(--color-stone);
+    }
+
+    /* ============================================
+       COLLECTION SECTIONS
+    ============================================ */
+    .collection-section {
+      padding: 0 clamp(1.5rem, 4vw, 4rem) clamp(4rem, 6vh, 6rem);
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .collection-section__header {
+      margin-bottom: clamp(2rem, 3vh, 3rem);
+      max-width: 680px;
+    }
+
+    .collection-section__name {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+
+    .collection-section__desc {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.9375rem;
+      color: var(--color-river-green);
+      line-height: 1.7;
+    }
+
+    .collection-section__rule {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--color-sunset), transparent);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Product grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .product-card {
+      text-decoration: none;
+      color: var(--color-stone);
+      display: block;
+    }
+
+    .product-card__img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--color-sand);
+      margin-bottom: 1rem;
+    }
+
+    .product-card__img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      transition: transform 0.7s var(--ease-dramatic), opacity 0.8s ease;
+      opacity: 0;
+    }
+
+    .product-card__img.is-loaded { opacity: 1; }
+
+    .product-card:hover .product-card__img {
+      transform: scale(1.04);
+    }
+
+    .product-card__name {
+      font-family: var(--font-display);
+      font-size: clamp(0.875rem, 1.2vw, 1.0625rem);
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+      transition: color 0.3s ease;
+    }
+
+    .product-card:hover .product-card__name {
+      color: var(--color-sunset);
+    }
+
+    .product-card__type {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-river-green);
+    }
+
+    /* ============================================
+       BESPOKE CTA
+    ============================================ */
+    .bespoke {
+      background: var(--color-sand);
+      padding: clamp(5rem, 9vh, 8rem) clamp(2rem, 5vw, 5rem);
+      text-align: center;
+    }
+
+    .bespoke__inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .bespoke__label {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--color-river-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .bespoke__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      line-height: 1.15;
+    }
+
+    .bespoke__rule {
+      width: 40px;
+      height: 1px;
+      background: var(--color-sunset);
+      margin: 0 auto 1.5rem;
+    }
+
+    .bespoke__text {
+      font-size: 0.9375rem;
+      line-height: 1.85;
+      color: rgba(34, 35, 35, 0.7);
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============================================
+       THREE PILLARS
+    ============================================ */
+    .pillars {
+      padding: clamp(5rem, 8vh, 7rem) clamp(1.5rem, 4vw, 4rem);
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .pillars__header {
+      text-align: center;
+      margin-bottom: clamp(3rem, 5vh, 5rem);
+    }
+
+    .pillars__label {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--color-river-green);
+      margin-bottom: 1rem;
+    }
+
+    .pillars__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .pillars__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    .pillar-card {
+      text-align: center;
+    }
+
+    .pillar-card__img-wrap {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .pillar-card__img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      transition: transform 0.7s var(--ease-dramatic);
+    }
+
+    .pillar-card:hover .pillar-card__img {
+      transform: scale(1.03);
+    }
+
+    .pillar-card__name {
+      font-family: var(--font-display);
+      font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-card__text {
+      font-size: 0.875rem;
+      line-height: 1.8;
+      color: rgba(34, 35, 35, 0.65);
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* ============================================
+       BUTTONS
+    ============================================ */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transition: color 0.45s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .btn--dark {
+      border: 1px solid var(--color-stone);
+      color: var(--color-stone);
+    }
+
+    .btn--dark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-stone);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .btn--dark:hover { color: var(--color-ivory); }
+    .btn--dark:hover::before { transform: scaleX(1); transform-origin: left; }
+
+    .btn--light {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: var(--color-ivory);
+    }
+
+    .btn--light::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-ivory);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .btn--light:hover { color: var(--color-stone); border-color: var(--color-ivory); }
+    .btn--light:hover::before { transform: scaleX(1); transform-origin: left; }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .footer {
+      background: var(--color-off-black);
+      color: var(--color-ivory);
+      padding: clamp(4rem, 7vh, 6rem) clamp(2rem, 5vw, 5rem) clamp(2rem, 3vh, 3rem);
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      margin-bottom: 4rem;
+    }
+
+    .footer__logo { height: 60px; width: auto; margin-bottom: 1.25rem; filter: brightness(0) invert(1); }
+
+    .footer__tagline {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__social { display: flex; gap: 1rem; }
+    .footer__social a { color: rgba(255, 255, 255, 0.4); transition: color 0.3s ease; }
+    .footer__social a:hover { color: var(--color-ivory); }
+    .footer__social svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .footer__col-title {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 1.75rem;
+    }
+
+    .footer__link {
+      display: block;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.9375rem;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer__link:hover { color: var(--color-ivory); }
+
+    .footer__contact p { color: rgba(255, 255, 255, 0.5); font-size: 0.9375rem; margin-bottom: 0.5rem; line-height: 1.6; }
+    .footer__contact a { color: rgba(255, 255, 255, 0.5); transition: color 0.3s ease; }
+    .footer__contact a:hover { color: var(--color-ivory); }
+
+    .footer-form__input,
+    .footer-form__textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--color-ivory);
+      padding: 0.75rem 0;
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s;
+      outline: none;
+      resize: none;
+    }
+
+    .footer-form__input::placeholder,
+    .footer-form__textarea::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+    .footer-form__input:focus,
+    .footer-form__textarea:focus { border-color: rgba(255, 255, 255, 0.45); }
+
+    .footer-form .btn { width: 100%; text-align: center; margin-top: 0.5rem; }
+
+    .footer__bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .footer__legal { display: flex; gap: 1.5rem; }
+    .footer__legal a { color: rgba(255, 255, 255, 0.25); font-size: 0.75rem; transition: color 0.3s ease; }
+    .footer__legal a:hover { color: rgba(255, 255, 255, 0.6); }
+
+    /* ============================================
+       SCROLL REVEAL
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s var(--ease-dramatic), transform 0.85s var(--ease-dramatic);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       RESPONSIVE — TABLET
+    ============================================ */
+    @media (max-width: 1023px) {
+      .featured__grid { grid-template-columns: repeat(2, 1fr); }
+
+      .product-grid { grid-template-columns: repeat(3, 1fr); }
+
+      .pillars__grid { grid-template-columns: repeat(3, 1fr); }
+
+      .footer__grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+
+    /* ============================================
+       RESPONSIVE — MOBILE
+    ============================================ */
+    @media (max-width: 767px) {
+      .header__nav { display: none; }
+      .header__hamburger { display: flex; }
+
+      .catalog-hero { height: 50vh; min-height: 350px; }
+
+      .featured__grid { grid-template-columns: repeat(2, 1fr); }
+      .featured__card { aspect-ratio: 3 / 4; }
+
+      .filters__tabs { gap: 0.375rem; }
+      .filter-tab { padding: 0.5rem 0.875rem; font-size: 0.5625rem; }
+
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
+      .product-card__name { font-size: 0.8125rem; }
+
+      .pillars__grid { grid-template-columns: 1fr; gap: 3rem; }
+
+      .footer__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer__bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="siteHeader">
+    <div class="header__inner">
+      <a href="/v2/" class="header__logo">
+        <img src="../TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img">
+      </a>
+      <nav class="header__nav">
+        <a href="/v2/">Home</a>
+        <a href="/v2/craft">Craft</a>
+        <a href="/v2/catalog" class="is-active">Catalog</a>
+        <a href="/v2/contact">Contact</a>
+      </nav>
+      <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <nav class="mobile-menu__nav">
+      <a href="/v2/">Home</a>
+      <a href="/v2/craft">Craft</a>
+      <a href="/v2/catalog">Catalog</a>
+      <a href="/v2/contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="catalog-hero">
+    <img src="../Products/coffee tables/terra/terra_01_editorial.webp"
+         alt="Tiba Stone Collection"
+         class="catalog-hero__img"
+         id="heroImg">
+    <div class="catalog-hero__overlay"></div>
+    <div class="catalog-hero__content">
+      <p class="catalog-hero__label">The Collection</p>
+      <h1 class="catalog-hero__title">Tiba Stone Collection</h1>
+      <p class="catalog-hero__subtitle">Bespoke Marble for Discerning Spaces</p>
+    </div>
+  </section>
+
+  <!-- FEATURED GALLERY -->
+  <section class="featured reveal">
+    <div class="featured__header">
+      <p class="featured__label">Selected Pieces</p>
+      <h2 class="featured__title">From the Atelier</h2>
+    </div>
+    <div class="featured__grid">
+      <a href="/v2/product-portale.html" class="featured__card">
+        <img src="../Products/Consoles/portale/portale_01_editorial.webp" alt="Portale Console" class="featured__card-img" loading="lazy">
+        <div class="featured__card-overlay">
+          <h3 class="featured__card-name">Portale</h3>
+          <span class="featured__card-type">Console</span>
+        </div>
+      </a>
+      <a href="/v2/product-cascata.html" class="featured__card">
+        <img src="../Products/Benches/cascata/cascata_01_editorial.webp" alt="Cascata Bench" class="featured__card-img" loading="lazy">
+        <div class="featured__card-overlay">
+          <h3 class="featured__card-name">Cascata</h3>
+          <span class="featured__card-type">Bench</span>
+        </div>
+      </a>
+      <a href="/v2/product-onda.html" class="featured__card">
+        <img src="../Products/Consoles/onda/onda_01_editorial.webp" alt="Onda Console" class="featured__card-img" loading="lazy">
+        <div class="featured__card-overlay">
+          <h3 class="featured__card-name">Onda</h3>
+          <span class="featured__card-type">Console</span>
+        </div>
+      </a>
+      <a href="/v2/product-morphe.html" class="featured__card">
+        <img src="../Products/coffee tables/morphe/morphe_01_editorial.webp" alt="Morphe Coffee Table" class="featured__card-img" loading="lazy">
+        <div class="featured__card-overlay">
+          <h3 class="featured__card-name">Morphe</h3>
+          <span class="featured__card-type">Coffee Table</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <div class="filters" id="filterSection">
+    <div class="filters__tabs" id="filterTabs">
+      <button class="filter-tab is-active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="coffee-tables">Coffee Tables</button>
+      <button class="filter-tab" data-filter="side-tables">Side Tables</button>
+      <button class="filter-tab" data-filter="cabinets">Cabinets</button>
+      <button class="filter-tab" data-filter="vases">Vases</button>
+      <button class="filter-tab" data-filter="compliments">Compliments</button>
+      <button class="filter-tab" data-filter="dining-tables">Dining Tables</button>
+      <button class="filter-tab" data-filter="consoles">Consoles</button>
+      <button class="filter-tab" data-filter="washbasins">Washbasins</button>
+      <button class="filter-tab" data-filter="benches">Benches</button>
+      <button class="filter-tab" data-filter="credenzas">Credenzas</button>
+    </div>
+  </div>
+
+  <!-- ===================== COFFEE TABLES ===================== -->
+  <section class="collection-section" data-collection="coffee-tables">
+    <div class="collection-section__header reveal">
+      <div class="collection-section__rule"></div>
+      <h2 class="collection-section__name">Coffee Tables</h2>
+      <p class="collection-section__desc">Six distinct table designs carved from a single vision &mdash; that the floor is never merely a surface.</p>
+    </div>
+    <div class="product-grid">
+      <a href="/v2/product-terra.html" class="product-card reveal" data-collection="coffee-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/coffee tables/terra/terra_12_catalogue.webp" alt="Terra" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Terra</h3>
+        <span class="product-card__type">Coffee Table</span>
+      </a>
+      <a href="/v2/product-gesto.html" class="product-card reveal" data-collection="coffee-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/coffee tables/gesto/gesto_12_catalogue.webp" alt="Gesto" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Gesto</h3>
+        <span class="product-card__type">Coffee Table</span>
+      </a>
+      <a href="/v2/product-morphe.html" class="product-card reveal" data-collection="coffee-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/coffee tables/morphe/morphe_12_catalogue.webp" alt="Morphe" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Morphe</h3>
+        <span class="product-card__type">Coffee Table</span>
+      </a>
+      <a href="/v2/product-quadro.html" class="product-card reveal" data-collection="coffee-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/coffee tables/quadro/quadro_12_catalogue.webp" alt="Quadro" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Quadro</h3>
+        <span class="product-card__type">Coffee Table</span>
+      </a>
+      <a href="/v2/product-eclisse.html" class="product-card reveal" data-collection="coffee-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/coffee tables/eclisse/eclisse_12_catalogue.webp" alt="Eclisse" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Eclisse</h3>
+        <span class="product-card__type">Coffee Table</span>
+      </a>
+      <a href="/v2/product-duale.html" class="product-card reveal" data-collection="coffee-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/coffee tables/duale/duale_12_catalogue.webp" alt="Duale" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Duale</h3>
+        <span class="product-card__type">Coffee Table</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== SIDE TABLES ===================== -->
+  <section class="collection-section" data-collection="side-tables">
+    <div class="collection-section__header reveal">
+      <div class="collection-section__rule"></div>
+      <h2 class="collection-section__name">Side Tables</h2>
+      <p class="collection-section__desc">Compact in scale, uncompromising in presence.</p>
+    </div>
+    <div class="product-grid">
+      <a href="/v2/product-anti.html" class="product-card reveal" data-collection="side-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Side tables/anti/anti_12_catalogue.webp" alt="Anti" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Anti</h3>
+        <span class="product-card__type">Side Table</span>
+      </a>
+      <a href="/v2/product-arthur.html" class="product-card reveal" data-collection="side-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Side tables/arthur/arthur_12_catalogue.webp" alt="Arthur" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Arthur</h3>
+        <span class="product-card__type">Side Table</span>
+      </a>
+      <a href="/v2/product-cut-and-fold.html" class="product-card reveal" data-collection="side-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Side tables/cut-and-fold/cut-and-fold_12_catalogue.webp" alt="Cut &amp; Fold" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Cut &amp; Fold</h3>
+        <span class="product-card__type">Side Table</span>
+      </a>
+      <a href="/v2/product-icaro.html" class="product-card reveal" data-collection="side-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Side tables/icaro/icaro_12_catalogue.webp" alt="Icaro" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Icaro</h3>
+        <span class="product-card__type">Side Table</span>
+      </a>
+      <a href="/v2/product-sinua.html" class="product-card reveal" data-collection="side-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Side tables/morphe/morphe_12_catalogue.webp" alt="Sinua" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Sinua</h3>
+        <span class="product-card__type">Side Table</span>
+      </a>
+      <a href="/v2/product-rosa.html" class="product-card reveal" data-collection="side-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Side tables/rosa/rosa_12_catalogue.webp" alt="Rosa" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Rosa</h3>
+        <span class="product-card__type">Side Table</span>
+      </a>
+      <a href="/v2/product-vertebra.html" class="product-card reveal" data-collection="side-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Side tables/vertebra/vertebra_12_catalogue.webp" alt="Vertebra" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Vertebra</h3>
+        <span class="product-card__type">Side Table</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== CABINETS ===================== -->
+  <section class="collection-section" data-collection="cabinets">
+    <div class="collection-section__header reveal">
+      <div class="collection-section__rule"></div>
+      <h2 class="collection-section__name">Cabinets</h2>
+      <p class="collection-section__desc">Storage elevated to sculpture.</p>
+    </div>
+    <div class="product-grid">
+      <a href="/v2/product-aida.html" class="product-card reveal" data-collection="cabinets">
+        <div class="product-card__img-wrap">
+          <img src="../Products/cabinets/aida/aida_12_catalogue.webp" alt="Aida" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Aida</h3>
+        <span class="product-card__type">Cabinet</span>
+      </a>
+      <a href="/v2/product-punta.html" class="product-card reveal" data-collection="cabinets">
+        <div class="product-card__img-wrap">
+          <img src="../Products/cabinets/punta/punta_12_catalogue.webp" alt="Punta" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Punta</h3>
+        <span class="product-card__type">Cabinet</span>
+      </a>
+      <a href="/v2/product-punta-due.html" class="product-card reveal" data-collection="cabinets">
+        <div class="product-card__img-wrap">
+          <img src="../Products/cabinets/punta-due/punta-due_12_catalogue.webp" alt="Punta Due" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Punta Due</h3>
+        <span class="product-card__type">Cabinet</span>
+      </a>
+      <a href="/v2/product-priamo.html" class="product-card reveal" data-collection="cabinets">
+        <div class="product-card__img-wrap">
+          <img src="../Products/cabinets/priamo/priamo_12_catalogue.webp" alt="Priamo" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Priamo</h3>
+        <span class="product-card__type">Cabinet</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== VASES ===================== -->
+  <section class="collection-section" data-collection="vases">
+    <div class="collection-section__header reveal">
+      <div class="collection-section__rule"></div>
+      <h2 class="collection-section__name">Vases</h2>
+      <p class="collection-section__desc">Objects that hold light as readily as stems.</p>
+    </div>
+    <div class="product-grid">
+      <a href="/v2/product-deau.html" class="product-card reveal" data-collection="vases">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Vases/deau/deau_12_catalogue.webp" alt="Deau" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Deau</h3>
+        <span class="product-card__type">Vase</span>
+      </a>
+      <a href="/v2/product-doge-small.html" class="product-card reveal" data-collection="vases">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Vases/doge-small/doge-small_12_catalogue.webp" alt="Doge Small" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Doge Small</h3>
+        <span class="product-card__type">Vase</span>
+      </a>
+      <a href="/v2/product-doge-tall.html" class="product-card reveal" data-collection="vases">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Vases/doge-tall/doge-tall_12_catalogue.webp" alt="Doge Tall" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Doge Tall</h3>
+        <span class="product-card__type">Vase</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== COMPLIMENTS ===================== -->
+  <section class="collection-section" data-collection="compliments">
+    <div class="collection-section__header reveal">
+      <div class="collection-section__rule"></div>
+      <h2 class="collection-section__name">Compliments</h2>
+      <p class="collection-section__desc">Small marble objects &mdash; not quite sculpture, not quite vessel.</p>
+    </div>
+    <div class="product-grid">
+      <a href="/v2/product-aime.html" class="product-card reveal" data-collection="compliments">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Compliments/aime/aime_12_catalogue.webp" alt="Aime" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Aime</h3>
+        <span class="product-card__type">Compliment</span>
+      </a>
+      <a href="/v2/product-ana.html" class="product-card reveal" data-collection="compliments">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Compliments/ana/ana_12_catalogue.webp" alt="Ana" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Ana</h3>
+        <span class="product-card__type">Compliment</span>
+      </a>
+      <a href="/v2/product-cono.html" class="product-card reveal" data-collection="compliments">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Compliments/cono/cono_12_catalogue.webp" alt="Cono" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Cono</h3>
+        <span class="product-card__type">Compliment</span>
+      </a>
+      <a href="/v2/product-segno.html" class="product-card reveal" data-collection="compliments">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Compliments/gesto/gesto_12_catalogue.webp" alt="Segno" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Segno</h3>
+        <span class="product-card__type">Compliment</span>
+      </a>
+      <a href="/v2/product-forma.html" class="product-card reveal" data-collection="compliments">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Compliments/morphe/morphe_12_catalogue.webp" alt="Forma" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Forma</h3>
+        <span class="product-card__type">Compliment</span>
+      </a>
+      <a href="/v2/product-palladio.html" class="product-card reveal" data-collection="compliments">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Compliments/palladio/palladio_12_catalogue.webp" alt="Palladio" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Palladio</h3>
+        <span class="product-card__type">Compliment</span>
+      </a>
+      <a href="/v2/product-samaveta.html" class="product-card reveal" data-collection="compliments">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Compliments/samaveta/samaveta_12_catalogue.webp" alt="Samaveta" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Samaveta</h3>
+        <span class="product-card__type">Compliment</span>
+      </a>
+      <a href="/v2/product-temple.html" class="product-card reveal" data-collection="compliments">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Compliments/temple/temple_12_catalogue.webp" alt="Temple" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Temple</h3>
+        <span class="product-card__type">Compliment</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== DINING TABLES ===================== -->
+  <section class="collection-section" data-collection="dining-tables">
+    <div class="collection-section__header reveal">
+      <div class="collection-section__rule"></div>
+      <h2 class="collection-section__name">Dining Tables</h2>
+      <p class="collection-section__desc">Tables conceived for long evenings and unhurried conversation.</p>
+    </div>
+    <div class="product-grid">
+      <a href="/v2/product-bronze.html" class="product-card reveal" data-collection="dining-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Dining Tables/bronze/bronze_12_catalogue.webp" alt="Bronze" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Bronze</h3>
+        <span class="product-card__type">Dining Table</span>
+      </a>
+      <a href="/v2/product-eclipse.html" class="product-card reveal" data-collection="dining-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Dining Tables/eclipse/eclipse_12_catalogue.webp" alt="Eclipse" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Eclipse</h3>
+        <span class="product-card__type">Dining Table</span>
+      </a>
+      <a href="/v2/product-juni.html" class="product-card reveal" data-collection="dining-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Dining Tables/juni/juni_12_catalogue.webp" alt="Juni" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Juni</h3>
+        <span class="product-card__type">Dining Table</span>
+      </a>
+      <a href="/v2/product-lavanche.html" class="product-card reveal" data-collection="dining-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Dining Tables/lavanche/lavanche_12_catalogue.webp" alt="Lavanche" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Lavanche</h3>
+        <span class="product-card__type">Dining Table</span>
+      </a>
+      <a href="/v2/product-levante.html" class="product-card reveal" data-collection="dining-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Dining Tables/levante/levante_12_catalogue.webp" alt="Levante" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Levante</h3>
+        <span class="product-card__type">Dining Table</span>
+      </a>
+      <a href="/v2/product-wedge.html" class="product-card reveal" data-collection="dining-tables">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Dining Tables/wedge/wedge_12_catalogue.webp" alt="Wedge" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Wedge</h3>
+        <span class="product-card__type">Dining Table</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== CONSOLES ===================== -->
+  <section class="collection-section" data-collection="consoles">
+    <div class="collection-section__header reveal">
+      <div class="collection-section__rule"></div>
+      <h2 class="collection-section__name">Consoles</h2>
+      <p class="collection-section__desc">Twenty marble consoles conceived as architectural objects.</p>
+    </div>
+    <div class="product-grid">
+      <a href="/v2/product-inverso.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/anti/anti_12_catalogue.webp" alt="Inverso" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Inverso</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-curves.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/curves/curves_12_catalogue.webp" alt="Curves" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Curves</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-piega.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/cut-and-fold/cut-and-fold_12_catalogue.webp" alt="Piega" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Piega</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-empire.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/empire/empire_12_catalogue.webp" alt="Empire" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Empire</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-lamarck.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/lamarck/lamarck_12_catalogue.webp" alt="Lamarck" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Lamarck</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-oriente.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/levante/levante_12_catalogue.webp" alt="Oriente" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Oriente</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-malibu.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/malibu/malibu_12_catalogue.webp" alt="Malibu" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Malibu</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-voluta.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/morphe/morphe_12_catalogue.webp" alt="Voluta" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Voluta</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-onda.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/onda/onda_12_catalogue.webp" alt="Onda" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Onda</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-relica.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/relica/relica_12_catalogue.webp" alt="Relica" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Relica</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-shan.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/shan/shan_12_catalogue.webp" alt="Shan" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Shan</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-t-02.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/t-02/t-02_12_catalogue.webp" alt="T-02" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">T-02</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-cascara.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/cascara/cascara_12_catalogue.webp" alt="Cascara" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Cascara</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-fiamma.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/fiamma/fiamma_12_catalogue.webp" alt="Fiamma" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Fiamma</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-elisse.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/elisse/elisse_12_catalogue.webp" alt="Elisse" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Elisse</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-falda.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/falda/falda_12_catalogue.webp" alt="Falda" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Falda</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-scanalato.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/scanalato/scanalato_12_catalogue.webp" alt="Scanalato" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Scanalato</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-serpente.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/serpente/serpente_12_catalogue.webp" alt="Serpente" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Serpente</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-lucerna.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/lucerna/lucerna_12_catalogue.webp" alt="Lucerna" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Lucerna</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+      <a href="/v2/product-portale.html" class="product-card reveal" data-collection="consoles">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Consoles/portale/portale_12_catalogue.webp" alt="Portale" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Portale</h3>
+        <span class="product-card__type">Console</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== WASHBASINS ===================== -->
+  <section class="collection-section" data-collection="washbasins">
+    <div class="collection-section__header reveal">
+      <div class="collection-section__rule"></div>
+      <h2 class="collection-section__name">Washbasins</h2>
+      <p class="collection-section__desc">Water meets stone.</p>
+    </div>
+    <div class="product-grid">
+      <a href="/v2/product-bronzo.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/bronze/bronze_12_catalogue.webp" alt="Bronzo" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Bronzo</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+      <a href="/v2/product-circle-high.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/circle-high/circle-high_12_catalogue.webp" alt="Circle High" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Circle High</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+      <a href="/v2/product-circle-medium.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/circle-medium/circle-medium_12_catalogue.webp" alt="Circle Medium" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Circle Medium</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+      <a href="/v2/product-circle-small.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/circle-small/circle-small_12_catalogue.webp" alt="Circle Small" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Circle Small</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+      <a href="/v2/product-cono-high.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/cono-high/cono-high_12_catalogue.webp" alt="Cono High" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Cono High</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+      <a href="/v2/product-marble-colors.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/marble-colors/marble-colors_12_catalogue.webp" alt="Marble Colors" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Marble Colors</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+      <a href="/v2/product-punta-high.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/punta-high/punta-high_12_catalogue.webp" alt="Punta High" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Punta High</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+      <a href="/v2/product-barile.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/barile/barile_12_catalogue.webp" alt="Barile" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Barile</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+      <a href="/v2/product-calice.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/calice/calice_12_catalogue.webp" alt="Calice" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Calice</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+      <a href="/v2/product-blocco.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/blocco/blocco_12_catalogue.webp" alt="Blocco" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Blocco</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+      <a href="/v2/product-frammento.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/frammento/frammento_12_catalogue.webp" alt="Frammento" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Frammento</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+      <a href="/v2/product-selva.html" class="product-card reveal" data-collection="washbasins">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Washbasins/selva/selva_12_catalogue.webp" alt="Selva" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Selva</h3>
+        <span class="product-card__type">Washbasin</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== BENCHES ===================== -->
+  <section class="collection-section" data-collection="benches">
+    <div class="collection-section__header reveal">
+      <div class="collection-section__rule"></div>
+      <h2 class="collection-section__name">Benches</h2>
+      <p class="collection-section__desc">Seating sculpted from stone.</p>
+    </div>
+    <div class="product-grid">
+      <a href="/v2/product-cascata.html" class="product-card reveal" data-collection="benches">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Benches/cascata/cascata_12_catalogue.webp" alt="Cascata" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Cascata</h3>
+        <span class="product-card__type">Bench</span>
+      </a>
+      <a href="/v2/product-colonna.html" class="product-card reveal" data-collection="benches">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Benches/colonna/colonna_12_catalogue.webp" alt="Colonna" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Colonna</h3>
+        <span class="product-card__type">Bench</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== CREDENZAS ===================== -->
+  <section class="collection-section" data-collection="credenzas">
+    <div class="collection-section__header reveal">
+      <div class="collection-section__rule"></div>
+      <h2 class="collection-section__name">Credenzas</h2>
+      <p class="collection-section__desc">Horizontal architecture in stone.</p>
+    </div>
+    <div class="product-grid">
+      <a href="/v2/product-linea.html" class="product-card reveal" data-collection="credenzas">
+        <div class="product-card__img-wrap">
+          <img src="../Products/Credenzas/linea/linea_12_catalogue.webp" alt="Linea" class="product-card__img" loading="lazy">
+        </div>
+        <h3 class="product-card__name">Linea</h3>
+        <span class="product-card__type">Credenza</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- BESPOKE CTA -->
+  <section class="bespoke reveal">
+    <div class="bespoke__inner">
+      <p class="bespoke__label">Bespoke Service</p>
+      <h2 class="bespoke__title">Made Entirely for You</h2>
+      <div class="bespoke__rule"></div>
+      <p class="bespoke__text">Every dimension, material, and finish can be customized. We work directly with architects and designers to realize pieces that belong only to their intended space.</p>
+      <a href="/v2/contact" class="btn btn--dark">Begin Your Project</a>
+    </div>
+  </section>
+
+  <!-- THREE PILLARS -->
+  <section class="pillars">
+    <div class="pillars__header reveal">
+      <p class="pillars__label">Our Practice</p>
+      <h2 class="pillars__title">Three Pillars</h2>
+    </div>
+    <div class="pillars__grid">
+      <div class="pillar-card reveal">
+        <div class="pillar-card__img-wrap">
+          <img src="../Products/coffee tables/gesto/gesto_11_technical.webp" alt="Design" class="pillar-card__img" loading="lazy">
+        </div>
+        <h3 class="pillar-card__name">Design</h3>
+        <p class="pillar-card__text">Every form begins as a conversation between geometry and the natural character of stone.</p>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-card__img-wrap">
+          <img src="../Products/coffee tables/terra/terra_06_closeup_joint.webp" alt="Craftsmanship" class="pillar-card__img" loading="lazy">
+        </div>
+        <h3 class="pillar-card__name">Craftsmanship</h3>
+        <p class="pillar-card__text">Precision cutting, hand finishing, and patient assembly &mdash; the invisible work that defines visible quality.</p>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-card__img-wrap">
+          <img src="../Products/coffee tables/gesto/gesto_05_closeup_surface.webp" alt="Materiality" class="pillar-card__img" loading="lazy">
+        </div>
+        <h3 class="pillar-card__name">Materiality</h3>
+        <p class="pillar-card__text">Six curated marbles, each chosen for depth of veining, warmth of tone, and structural integrity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div>
+        <img src="../TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
+        <p class="footer__tagline">Bespoke Marble Atelier</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Navigate</h4>
+        <a href="/v2/" class="footer__link">Home</a>
+        <a href="/v2/craft" class="footer__link">Craft</a>
+        <a href="/v2/catalog" class="footer__link">Catalog</a>
+        <a href="/v2/contact" class="footer__link">Contact</a>
+      </div>
+      <div class="footer__contact">
+        <h4 class="footer__col-title">Visit</h4>
+        <p>Tiba Stone Atelier</p>
+        <p><a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a></p>
+        <p><a href="tel:+6281239442648">+62 81239442648</a></p>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Inquire</h4>
+        <form class="footer-form" id="footerForm">
+          <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+          <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+          <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+          <button type="submit" class="btn btn--light">Send</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* Header scroll */
+      var header = document.getElementById('siteHeader');
+      var ticking = false;
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(function () {
+            header.classList.toggle('is-scrolled', window.scrollY > 60);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      /* Hero parallax */
+      var heroImg = document.getElementById('heroImg');
+      window.addEventListener('scroll', function () {
+        if (!heroImg) return;
+        var scrolled = window.scrollY;
+        var heroHeight = heroImg.parentElement.offsetHeight;
+        if (scrolled < heroHeight) {
+          heroImg.style.transform = 'translateY(' + (scrolled * 0.3) + 'px) scale(1.05)';
+        }
+      }, { passive: true });
+
+      /* Mobile menu */
+      var hamburger = document.getElementById('hamburgerBtn');
+      var menu = document.getElementById('mobileMenu');
+      var menuClose = document.getElementById('mobileMenuClose');
+
+      hamburger.addEventListener('click', function () { menu.classList.add('is-open'); document.body.style.overflow = 'hidden'; });
+      menuClose.addEventListener('click', function () { menu.classList.remove('is-open'); document.body.style.overflow = ''; });
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.classList.remove('is-open'); document.body.style.overflow = ''; }); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { menu.classList.remove('is-open'); document.body.style.overflow = ''; } });
+
+      /* Scroll reveal */
+      var reveals = document.querySelectorAll('.reveal');
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+      reveals.forEach(function (el) { obs.observe(el); });
+
+      /* Progressive image fade-in */
+      document.querySelectorAll('.product-card__img, .featured__card-img, .pillar-card__img').forEach(function (img) {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.8s ease';
+        function show() { img.style.opacity = '1'; img.classList.add('is-loaded'); }
+        if (img.complete && img.naturalHeight !== 0) show();
+        else img.addEventListener('load', show);
+      });
+
+      /* Filter tabs */
+      var tabs = document.querySelectorAll('.filter-tab');
+      var sections = document.querySelectorAll('.collection-section');
+      var cards = document.querySelectorAll('.product-card');
+
+      function setFilter(filter) {
+        /* Update active tab */
+        tabs.forEach(function (t) {
+          t.classList.toggle('is-active', t.dataset.filter === filter);
+        });
+
+        if (filter === 'all') {
+          sections.forEach(function (s) { s.style.display = ''; });
+          cards.forEach(function (c) { c.style.display = ''; });
+        } else {
+          sections.forEach(function (s) {
+            var match = s.dataset.collection === filter;
+            s.style.display = match ? '' : 'none';
+          });
+          cards.forEach(function (c) {
+            var match = c.dataset.collection === filter;
+            c.style.display = match ? '' : 'none';
+          });
+        }
+
+        /* Re-trigger reveals for newly visible cards */
+        var visibleReveals = document.querySelectorAll('.collection-section:not([style*="display: none"]) .reveal:not(.is-visible)');
+        visibleReveals.forEach(function (el) { obs.observe(el); });
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var filter = tab.dataset.filter;
+          setFilter(filter);
+          /* Update URL hash without scrolling */
+          if (filter === 'all') {
+            history.replaceState(null, '', window.location.pathname);
+          } else {
+            history.replaceState(null, '', '#' + filter);
+          }
+        });
+      });
+
+      /* Read filter from URL hash on load */
+      function applyHashFilter() {
+        var hash = window.location.hash.replace('#', '');
+        if (hash) {
+          setFilter(hash);
+          /* Scroll to filter section */
+          var filterSection = document.getElementById('filterSection');
+          if (filterSection) {
+            setTimeout(function () {
+              filterSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
+          }
+        }
+      }
+
+      applyHashFilter();
+      window.addEventListener('hashchange', applyHashFilter);
+
+      /* Footer form handler */
+      var footerForm = document.getElementById('footerForm');
+      if (footerForm) {
+        footerForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var btn = footerForm.querySelector('button[type="submit"]');
+          var orig = btn.textContent;
+          btn.textContent = 'Sending\u2026';
+          btn.disabled = true;
+          btn.style.opacity = '0.6';
+          fetch('https://formspree.io/f/luke@tibaliving.com', {
+            method: 'POST',
+            body: new FormData(footerForm),
+            headers: { 'Accept': 'application/json' }
+          }).then(function (r) {
+            if (r.ok) {
+              btn.textContent = 'Sent';
+              setTimeout(function () { footerForm.reset(); btn.textContent = orig; btn.disabled = false; btn.style.opacity = '1'; }, 3000);
+            } else { btn.textContent = 'Error'; btn.disabled = false; btn.style.opacity = '1'; }
+          }).catch(function () { btn.textContent = 'Error'; btn.disabled = false; btn.style.opacity = '1'; });
+        });
+      }
+
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/webp" href="../TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | TIBA STONE</title>
+  <meta name="description" content="Privacy Policy for Tiba Stone — how we collect, use, and protect your personal information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       V2 DESIGN TOKENS
+    ============================================ */
+    :root {
+      --color-stone: #222323;
+      --color-ivory: #FFFFFF;
+      --color-sunset: #925638;
+      --color-river-green: #A3996A;
+      --color-dusk-blue: #153647;
+      --color-moss: #3E402B;
+      --color-sand: #F0EBE3;
+      --color-warm-bg: #E8E2DA;
+      --color-charcoal: #1A1A1B;
+      --color-off-black: #111111;
+
+      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
+      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-dramatic: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* RESET */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: var(--font-body); border: none; background: none; cursor: pointer; }
+
+    /* ============================================
+       HEADER — Solid for legal pages
+    ============================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.25rem 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(34, 35, 35, 0.06);
+      transition: padding 0.3s ease;
+    }
+
+    .header.is-scrolled { padding: 0.875rem 0; }
+
+    .header__inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 4vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo { z-index: 2; }
+    .header__logo-img { height: 22px; width: auto; }
+
+    .header__nav {
+      display: flex;
+      gap: 2.5rem;
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    .header__nav a { opacity: 0.55; transition: opacity 0.3s ease; }
+    .header__nav a:hover, .header__nav a.is-active { opacity: 1; }
+
+    .header__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      width: 24px;
+      padding: 0;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .header__hamburger span {
+      display: block;
+      height: 1.5px;
+      background: var(--color-stone);
+      width: 100%;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--color-stone);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .mobile-menu.is-open { opacity: 1; pointer-events: all; }
+
+    .mobile-menu__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: var(--color-ivory);
+    }
+
+    .mobile-menu__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .mobile-menu__nav a {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      color: var(--color-ivory);
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-menu__nav a:hover { opacity: 1; }
+
+    /* ============================================
+       UTILITIES
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       LEGAL PAGE
+    ============================================ */
+    .legal {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 180px clamp(1.5rem, 4vw, 3rem) 6rem;
+    }
+
+    .legal__label {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-river-green);
+      margin-bottom: 1.25rem;
+    }
+
+    .legal__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .legal__rule {
+      width: 50px;
+      height: 2px;
+      background: var(--color-sunset);
+      border: none;
+      margin-bottom: 1rem;
+    }
+
+    .legal__updated {
+      font-size: 0.75rem;
+      color: var(--color-river-green);
+      margin-bottom: 3.5rem;
+    }
+
+    .legal__section {
+      margin-bottom: 2.5rem;
+    }
+
+    .legal__section h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: 0.875rem;
+    }
+
+    .legal__section p {
+      font-size: 0.875rem;
+      line-height: 1.85;
+      color: rgba(34, 35, 35, 0.75);
+      margin-bottom: 0.75rem;
+    }
+
+    .legal__section ul {
+      list-style: none;
+      padding-left: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .legal__section ul li {
+      font-size: 0.875rem;
+      line-height: 1.85;
+      color: rgba(34, 35, 35, 0.75);
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .legal__section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--color-river-green);
+    }
+
+    .legal__section a {
+      color: var(--color-sunset);
+      transition: opacity 0.3s ease;
+    }
+
+    .legal__section a:hover {
+      opacity: 0.7;
+    }
+
+    /* ============================================
+       BUTTONS
+    ============================================ */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transition: color 0.45s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .btn--light {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: var(--color-ivory);
+    }
+
+    .btn--light::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-ivory);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .btn--light:hover { color: var(--color-stone); border-color: var(--color-ivory); }
+    .btn--light:hover::before { transform: scaleX(1); transform-origin: left; }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .footer {
+      background: var(--color-off-black);
+      color: rgba(255, 255, 255, 0.55);
+      padding: clamp(4rem, 8vw, 6rem) clamp(2rem, 5vw, 5rem) 2rem;
+    }
+
+    .footer__grid {
+      max-width: 1320px;
+      margin: 0 auto 3rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+    }
+
+    .footer__logo { height: 40px; width: auto; opacity: 0.6; margin-bottom: 1rem; }
+    .footer__tagline { font-size: 0.75rem; font-style: italic; margin-bottom: 1.5rem; }
+
+    .footer__social { display: flex; gap: 1rem; }
+    .footer__social a svg { width: 18px; height: 18px; fill: rgba(255, 255, 255, 0.4); transition: fill 0.3s ease; }
+    .footer__social a:hover svg { fill: rgba(255, 255, 255, 0.8); }
+
+    .footer__col-title {
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer__link {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.6rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer__link:hover { color: rgba(255, 255, 255, 0.9); }
+
+    .footer__contact p {
+      font-size: 0.8rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-form { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .footer-form__input, .footer-form__textarea {
+      width: 100%;
+      padding: 0.6rem 0;
+      background: none;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--color-ivory);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      outline: none;
+    }
+
+    .footer-form__input::placeholder, .footer-form__textarea::placeholder { color: rgba(255, 255, 255, 0.25); }
+    .footer-form__textarea { resize: none; }
+
+    .footer__bottom {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.65rem;
+    }
+
+    .footer__legal { display: flex; gap: 1.5rem; }
+    .footer__legal a { opacity: 0.5; transition: opacity 0.3s ease; }
+    .footer__legal a:hover { opacity: 1; }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 1023px) {
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 767px) {
+      .header__nav { display: none; }
+      .header__hamburger { display: flex; }
+
+      .legal { padding-top: 120px; }
+
+      .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer__bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="siteHeader">
+    <div class="header__inner">
+      <a href="/v2/" class="header__logo">
+        <img src="../TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img">
+      </a>
+      <nav class="header__nav">
+        <a href="/v2/">Home</a>
+        <a href="/v2/craft">Craft</a>
+        <a href="/v2/catalog">Catalog</a>
+        <a href="/v2/contact">Contact</a>
+      </nav>
+      <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <nav class="mobile-menu__nav">
+      <a href="/v2/">Home</a>
+      <a href="/v2/craft">Craft</a>
+      <a href="/v2/catalog">Catalog</a>
+      <a href="/v2/contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- LEGAL CONTENT -->
+  <main class="legal">
+    <span class="legal__label reveal">Legal</span>
+    <h1 class="legal__title reveal">Privacy Policy</h1>
+    <hr class="legal__rule reveal">
+    <p class="legal__updated reveal">Last updated &mdash; March 2026</p>
+
+    <div class="legal__section reveal">
+      <h2>Introduction</h2>
+      <p>Tiba Stone (&ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) respects your privacy. This policy explains how we collect, use, and protect your personal information when you visit tibastone.com or inquire about our services.</p>
+    </div>
+
+    <div class="legal__section reveal">
+      <h2>Information We Collect</h2>
+      <p>We may collect:</p>
+      <ul>
+        <li>Name, email address, and phone number when you submit an inquiry</li>
+        <li>Project details and preferences you share with us</li>
+        <li>Technical data such as browser type, IP address, and cookies</li>
+        <li>Usage data including pages visited and time spent on site</li>
+      </ul>
+    </div>
+
+    <div class="legal__section reveal">
+      <h2>How We Use Your Information</h2>
+      <p>We use your information to:</p>
+      <ul>
+        <li>Respond to your inquiries and provide consultations</li>
+        <li>Provide accurate quotations for bespoke commissions</li>
+        <li>Improve our website and services</li>
+        <li>Send occasional updates about new collections, only with your explicit consent</li>
+      </ul>
+    </div>
+
+    <div class="legal__section reveal">
+      <h2>Information Sharing</h2>
+      <p>We do not sell, trade, or rent your personal information. We may share data with trusted service providers who assist in operating our website or conducting business, provided they agree to keep this information confidential.</p>
+    </div>
+
+    <div class="legal__section reveal">
+      <h2>Data Security</h2>
+      <p>We implement appropriate security measures to protect your personal information. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+    </div>
+
+    <div class="legal__section reveal">
+      <h2>Cookies</h2>
+      <p>Our website uses cookies &mdash; small text files stored on your device &mdash; to enhance your browsing experience. You may disable cookies through your browser settings, though this may affect site functionality.</p>
+    </div>
+
+    <div class="legal__section reveal">
+      <h2>Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you</li>
+        <li>Request correction of inaccurate information</li>
+        <li>Request deletion of your data</li>
+        <li>Withdraw consent for marketing communications</li>
+      </ul>
+    </div>
+
+    <div class="legal__section reveal">
+      <h2>Contact</h2>
+      <p>For privacy-related inquiries, contact us at <a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a>.</p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div>
+        <img src="../TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
+        <p class="footer__tagline">Bespoke Marble Atelier</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Navigate</h4>
+        <a href="/v2/" class="footer__link">Home</a>
+        <a href="/v2/craft" class="footer__link">Craft</a>
+        <a href="/v2/catalog" class="footer__link">Catalog</a>
+        <a href="/v2/contact" class="footer__link">Contact</a>
+      </div>
+      <div class="footer__contact">
+        <h4 class="footer__col-title">Visit</h4>
+        <p>Tiba Stone Atelier</p>
+        <p><a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a></p>
+        <p><a href="tel:+6281239442648">+62 81239442648</a></p>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Inquire</h4>
+        <form class="footer-form" id="footerForm">
+          <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+          <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+          <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+          <button type="submit" class="btn btn--light">Send</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="/v2/privacy">Privacy Policy</a>
+        <a href="/v2/terms">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* Header scroll */
+      var header = document.getElementById('siteHeader');
+      var ticking = false;
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(function () {
+            header.classList.toggle('is-scrolled', window.scrollY > 60);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      /* Mobile menu */
+      var hamburger = document.getElementById('hamburgerBtn');
+      var menu = document.getElementById('mobileMenu');
+      var menuClose = document.getElementById('mobileMenuClose');
+
+      hamburger.addEventListener('click', function () { menu.classList.add('is-open'); document.body.style.overflow = 'hidden'; });
+      menuClose.addEventListener('click', function () { menu.classList.remove('is-open'); document.body.style.overflow = ''; });
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.classList.remove('is-open'); document.body.style.overflow = ''; }); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { menu.classList.remove('is-open'); document.body.style.overflow = ''; } });
+
+      /* Scroll reveal */
+      var reveals = document.querySelectorAll('.reveal');
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+      reveals.forEach(function (el) { obs.observe(el); });
+
+      /* Footer form */
+      var form = document.getElementById('footerForm');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var btn = form.querySelector('button[type="submit"]');
+          var orig = btn.textContent;
+          btn.textContent = 'Sending\u2026';
+          btn.disabled = true;
+          btn.style.opacity = '0.6';
+          fetch('https://formspree.io/f/luke@tibaliving.com', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          }).then(function (r) {
+            if (r.ok) {
+              btn.textContent = 'Sent';
+              setTimeout(function () { form.reset(); btn.textContent = orig; btn.disabled = false; btn.style.opacity = '1'; }, 3000);
+            } else { btn.textContent = 'Error'; btn.disabled = false; btn.style.opacity = '1'; }
+          }).catch(function () { btn.textContent = 'Error'; btn.disabled = false; btn.style.opacity = '1'; });
+        });
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
