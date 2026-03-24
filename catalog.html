@@ -714,9 +714,14 @@
        11. PRODUCT CARDS
     ============================================ */
     .product-card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: var(--grid-gap);
+    }
+
+    .product-card-grid > .product-card {
+      width: calc((100% - var(--grid-gap) * 2) / 3);
     }
 
     .product-card {
@@ -1105,8 +1110,8 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .product-card-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .product-card-grid > .product-card {
+        width: calc((100% - var(--grid-gap)) / 2);
       }
 
       .three-pillars__grid {
@@ -1154,8 +1159,8 @@
         font-size: 1rem;
       }
 
-      .product-card-grid {
-        grid-template-columns: 1fr;
+      .product-card-grid > .product-card {
+        width: 100%;
       }
 
       .filter-tabs {
@@ -1293,6 +1298,18 @@
           <div class="featured-gallery__info">
             <span class="featured-gallery__label">Consoles</span>
             <h3 class="featured-gallery__name">Onda</h3>
+            <span class="featured-gallery__cta">Discover <span class="featured-gallery__cta-line"></span></span>
+          </div>
+        </a>
+
+        <a href="/Products/coffee tables/morphe/" class="featured-gallery__card reveal">
+          <div class="featured-gallery__img-wrap">
+            <img src="Products/coffee tables/morphe/morphe_01_editorial.webp"
+                 alt="Morphe Coffee Table" class="featured-gallery__img" loading="lazy" decoding="async">
+          </div>
+          <div class="featured-gallery__info">
+            <span class="featured-gallery__label">Coffee Tables</span>
+            <h3 class="featured-gallery__name">Morphe</h3>
             <span class="featured-gallery__cta">Discover <span class="featured-gallery__cta-line"></span></span>
           </div>
         </a>
@@ -3275,8 +3292,8 @@
       <div class="footer__bottom">
         <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
         <div class="footer__legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms</a>
         </div>
       </div>
     </div>

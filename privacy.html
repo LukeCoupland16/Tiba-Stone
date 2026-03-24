@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/webp" href="TIBA_FINAL_LOGO_PORTRAIT (2).webp">
+  <link rel="apple-touch-icon" href="TIBA_FINAL_LOGO_PORTRAIT (2).png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIBA STONE | Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for Tiba Stone — how we collect, use, and protect your personal information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <style>
+    /* ============================================
+       1. CUSTOM PROPERTIES
+    ============================================ */
+    :root {
+      --color-stone: #222323;
+      --color-ivory: #FFFFFF;
+      --color-sunset: #925638;
+      --color-river-green: #A3996A;
+      --color-dusk-blue: #153647;
+      --color-moss: #3E402B;
+      --color-sand: #F0EBE3;
+
+      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
+      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+      --text-hero: clamp(2.75rem, 5vw, 4.5rem);
+      --text-h1: clamp(2rem, 3.5vw, 3.25rem);
+      --text-h2: clamp(1.625rem, 2.5vw, 2.25rem);
+      --text-h3: clamp(1.25rem, 1.8vw, 1.5rem);
+      --text-subtitle: clamp(0.8125rem, 0.9vw, 0.875rem);
+      --text-body: clamp(1rem, 1.15vw, 1.125rem);
+      --text-small: clamp(0.8125rem, 0.9vw, 0.875rem);
+
+      --ls-wide: 0.16em;
+      --ls-medium: 0.12em;
+      --ls-slight: 0.03em;
+
+      --lh-heading: 1.2;
+      --lh-body: 1.8;
+
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 4rem;
+      --space-xl: 6rem;
+      --space-2xl: 8rem;
+      --space-3xl: 10rem;
+
+      --container-max: 1600px;
+      --container-narrow: 780px;
+      --container-pad: clamp(1.5rem, 5vw, 5rem);
+      --grid-gap: clamp(1.5rem, 3vw, 2.5rem);
+
+      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --duration-fast: 0.3s;
+      --duration-medium: 0.6s;
+      --duration-slow: 1s;
+    }
+
+    /* ============================================
+       2. RESET & BASE
+    ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: var(--lh-body);
+      font-size: var(--text-body);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      will-change: transform;
+      backface-visibility: hidden;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      line-height: var(--lh-heading);
+    }
+
+    a {
+      color: var(--color-stone);
+      text-decoration: none;
+    }
+
+    button {
+      font-family: var(--font-body);
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    input, textarea {
+      font-family: var(--font-body);
+    }
+
+    /* ============================================
+       3. UTILITIES
+    ============================================ */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .container--narrow {
+      max-width: var(--container-narrow);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .accent-rule {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-sunset) 15%, var(--color-sunset) 85%, transparent);
+      margin: 1.75rem auto;
+    }
+
+    /* ============================================
+       4. SCROLL REVEAL
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       5. BUTTONS
+    ============================================ */
+    .btn-primary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      border: 1px solid var(--color-stone);
+      color: var(--color-stone);
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-stone);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-primary:hover {
+      color: var(--color-ivory);
+    }
+
+    .btn-primary:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* ============================================
+       6. HEADER
+    ============================================ */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.125rem 0;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid rgba(34, 35, 35, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .header__logo-img {
+      height: 44px;
+      width: auto;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 2.75rem;
+    }
+
+    .header__nav-link {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-stone);
+      text-decoration: none;
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .header__nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--color-sunset);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--duration-fast) var(--ease-smooth);
+    }
+
+    .header__nav-link:hover::after,
+    .header__nav-link--active::after {
+      transform: scaleX(1);
+    }
+
+    .header__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0.5rem;
+      z-index: 2;
+    }
+
+    .header__hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--color-stone);
+    }
+
+    /* Mobile Menu Overlay */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--color-ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--duration-fast) var(--ease-smooth);
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: var(--color-stone);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0.5rem;
+    }
+
+    .mobile-menu__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .mobile-menu__link {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      color: var(--color-stone);
+      text-decoration: none;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .mobile-menu__link:hover {
+      color: var(--color-sunset);
+    }
+
+    /* ============================================
+       7. LEGAL PAGE CONTENT
+    ============================================ */
+    .legal-page {
+      padding: calc(var(--space-2xl) + 80px) 0 var(--space-2xl);
+    }
+
+    .legal-page__label {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      color: var(--color-river-green);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-page__title {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      margin-bottom: 1rem;
+    }
+
+    .legal-page__updated {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--color-river-green);
+      margin-bottom: var(--space-lg);
+    }
+
+    .legal-page__section {
+      margin-bottom: var(--space-lg);
+    }
+
+    .legal-page__section h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-h3);
+      margin-bottom: 1rem;
+    }
+
+    .legal-page__section p {
+      color: var(--color-stone);
+      line-height: var(--lh-body);
+      margin-bottom: 1rem;
+    }
+
+    .legal-page__section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-page__section ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+
+    .legal-page__section li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+      line-height: var(--lh-body);
+    }
+
+    .legal-page__section li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75em;
+      width: 4px;
+      height: 1px;
+      background: var(--color-sunset);
+    }
+
+    .legal-page__section a {
+      color: var(--color-sunset);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .legal-page__section a:hover {
+      color: var(--color-stone);
+    }
+
+    /* ============================================
+       8. FOOTER
+    ============================================ */
+    .site-footer {
+      background: var(--color-ivory);
+      color: var(--color-stone);
+      padding: var(--space-2xl) 0 var(--space-lg);
+      border-top: 1px solid rgba(34, 35, 35, 0.1);
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: var(--grid-gap);
+    }
+
+    .footer__logo {
+      height: 70px;
+      width: auto;
+      margin-bottom: 1rem;
+    }
+
+    .footer__tagline {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-medium);
+      color: var(--color-river-green);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer__social a {
+      color: var(--color-river-green);
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .footer__social a:hover {
+      color: var(--color-stone);
+    }
+
+    .footer__social svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .footer__col-title {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      letter-spacing: var(--ls-wide);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: var(--color-stone);
+    }
+
+    .footer__link {
+      display: block;
+      color: var(--color-river-green);
+      font-size: var(--text-body);
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+      text-decoration: none;
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .footer__link:hover {
+      color: var(--color-stone);
+    }
+
+    .footer__contact-info p {
+      color: var(--color-river-green);
+      font-size: var(--text-body);
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+
+    .footer__contact-info a {
+      color: var(--color-river-green);
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .footer__contact-info a:hover {
+      color: var(--color-stone);
+    }
+
+    .footer-form__input,
+    .footer-form__textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--color-river-green);
+      color: var(--color-stone);
+      padding: 0.75rem 0;
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      font-weight: 400;
+      margin-bottom: 1rem;
+      transition: border-color var(--duration-fast) var(--ease-smooth);
+      outline: none;
+      resize: none;
+    }
+
+    .footer-form__input::placeholder,
+    .footer-form__textarea::placeholder {
+      color: var(--color-river-green);
+      font-weight: 400;
+    }
+
+    .footer-form__input:focus,
+    .footer-form__textarea:focus {
+      border-color: var(--color-stone);
+    }
+
+    .footer-form .btn-primary {
+      width: 100%;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .footer__bottom {
+      margin-top: var(--space-xl);
+      padding-top: var(--space-md);
+      border-top: 1px solid rgba(34, 35, 35, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: var(--text-small);
+      color: var(--color-river-green);
+    }
+
+    .footer__legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer__legal a {
+      color: var(--color-river-green);
+      text-decoration: none;
+      font-size: var(--text-small);
+      transition: color var(--duration-fast) var(--ease-smooth);
+    }
+
+    .footer__legal a:hover {
+      color: var(--color-stone);
+    }
+
+    /* ============================================
+       9. RESPONSIVE
+    ============================================ */
+    @media (max-width: 1023px) {
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg) var(--grid-gap);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .header__nav {
+        display: none;
+      }
+
+      .header__hamburger {
+        display: flex;
+      }
+
+      .legal-page {
+        padding: calc(var(--space-xl) + 80px) 0 var(--space-xl);
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header__inner container">
+      <a href="/" class="header__logo">
+        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img">
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="/" class="header__nav-link">Home</a>
+        <a href="/craft" class="header__nav-link">Craft</a>
+        <a href="/catalog" class="header__nav-link">Catalog</a>
+        <a href="/contact" class="header__nav-link">Contact</a>
+      </nav>
+      <button class="header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <nav class="mobile-menu__nav">
+      <a href="/" class="mobile-menu__link">Home</a>
+      <a href="/craft" class="mobile-menu__link">Craft</a>
+      <a href="/catalog" class="mobile-menu__link">Catalog</a>
+      <a href="/contact" class="mobile-menu__link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ============================================
+       PRIVACY POLICY
+  ============================================ -->
+  <main class="legal-page">
+    <div class="container--narrow">
+      <span class="legal-page__label reveal">Legal</span>
+      <div class="accent-rule reveal"></div>
+      <h1 class="legal-page__title reveal">Privacy Policy</h1>
+      <p class="legal-page__updated reveal">Last updated &mdash; March 2026</p>
+
+      <div class="legal-page__section reveal">
+        <h2>Introduction</h2>
+        <p>Tiba Stone (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or engage with our atelier.</p>
+      </div>
+
+      <div class="legal-page__section reveal">
+        <h2>Information We Collect</h2>
+        <p>We may collect the following types of information:</p>
+        <ul>
+          <li>Name, email address, and phone number when you submit an inquiry or contact form</li>
+          <li>Project details and design preferences you share during consultations</li>
+          <li>Technical data such as browser type, device information, and IP address collected automatically through cookies and similar technologies</li>
+          <li>Usage data including pages visited, time spent on site, and navigation patterns</li>
+        </ul>
+      </div>
+
+      <div class="legal-page__section reveal">
+        <h2>How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Respond to your inquiries and facilitate project consultations</li>
+          <li>Provide quotes and communicate about bespoke commissions</li>
+          <li>Improve our website experience and understand how visitors engage with our content</li>
+          <li>Send occasional updates about new collections or atelier news, only with your consent</li>
+        </ul>
+      </div>
+
+      <div class="legal-page__section reveal">
+        <h2>Information Sharing</h2>
+        <p>We do not sell, trade, or rent your personal information to third parties. We may share information with trusted service providers who assist us in operating our website and conducting our business, provided they agree to keep your information confidential.</p>
+      </div>
+
+      <div class="legal-page__section reveal">
+        <h2>Data Security</h2>
+        <p>We implement appropriate technical and organisational measures to protect your personal information against unauthorised access, alteration, disclosure, or destruction. However, no method of transmission over the internet is entirely secure, and we cannot guarantee absolute security.</p>
+      </div>
+
+      <div class="legal-page__section reveal">
+        <h2>Cookies</h2>
+        <p>Our website uses cookies to enhance your browsing experience. Cookies are small text files stored on your device that help us analyse site traffic and customise content. You may choose to disable cookies through your browser settings, though this may affect certain features of the site.</p>
+      </div>
+
+      <div class="legal-page__section reveal">
+        <h2>Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access the personal data we hold about you</li>
+          <li>Request correction of inaccurate information</li>
+          <li>Request deletion of your personal data</li>
+          <li>Withdraw consent for marketing communications at any time</li>
+        </ul>
+      </div>
+
+      <div class="legal-page__section reveal">
+        <h2>Contact</h2>
+        <p>If you have questions about this Privacy Policy or wish to exercise your rights, please contact us at <a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo">
+          <p class="footer__tagline">Bespoke Marble Atelier</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__sitemap">
+          <h4 class="footer__col-title">Navigate</h4>
+          <a href="/" class="footer__link">Home</a>
+          <a href="/craft" class="footer__link">Craft</a>
+          <a href="/catalog" class="footer__link">Catalog</a>
+          <a href="/contact" class="footer__link">Contact</a>
+        </div>
+
+        <div class="footer__contact-info">
+          <h4 class="footer__col-title">Visit</h4>
+          <p>Tiba Stone Atelier</p>
+          <p><a href="mailto:contact@tibaliving.com">contact@tibaliving.com</a></p>
+          <p><a href="tel:+6281239442648">+62 81239442648</a></p>
+        </div>
+
+        <div class="footer__form">
+          <h4 class="footer__col-title">Inquire</h4>
+          <form class="footer-form" id="footerForm">
+            <input type="text" name="name" placeholder="Name" class="footer-form__input" required>
+            <input type="email" name="email" placeholder="Email" class="footer-form__input" required>
+            <textarea name="message" placeholder="Message" class="footer-form__textarea" rows="3" required></textarea>
+            <button type="submit" class="btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* Mobile Menu */
+      var hamburger = document.getElementById('hamburgerBtn');
+      var mobileMenu = document.getElementById('mobileMenu');
+      var mobileClose = document.getElementById('mobileMenuClose');
+
+      function openMenu() {
+        mobileMenu.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openMenu);
+      mobileClose.addEventListener('click', closeMenu);
+
+      mobileMenu.querySelectorAll('.mobile-menu__link').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+      });
+
+      /* Scroll Reveal */
+      var revealElements = document.querySelectorAll('.reveal');
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(function (el) {
+        revealObserver.observe(el);
+      });
+
+      /* Footer Form */
+      document.getElementById('footerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = e.target;
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn.textContent;
+        btn.textContent = 'Sending\u2026';
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+        fetch('https://formspree.io/f/luke@tibaliving.com', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (r) {
+          if (r.ok) {
+            btn.textContent = 'Sent';
+            setTimeout(function () {
+              form.reset();
+              btn.textContent = originalText;
+              btn.disabled = false;
+              btn.style.opacity = '1';
+            }, 3000);
+          } else {
+            btn.textContent = 'Error \u2014 Try Again';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+          }
+        }).catch(function () {
+          btn.textContent = 'Error \u2014 Try Again';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -599,6 +599,7 @@
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
+      object-position: top;
       transition: transform var(--duration-slow) var(--ease-smooth);
     }
 
@@ -700,7 +701,7 @@
     ============================================ */
     .sourcing {
       background: var(--color-sand);
-      padding: var(--space-2xl) 0;
+      padding: var(--space-2xl) 0 var(--space-lg);
     }
 
     .sourcing__header {
@@ -731,8 +732,9 @@
 
     .source-card__img {
       width: 100%;
-      aspect-ratio: 3 / 2;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
+      object-position: center;
       transition: transform var(--duration-slow) var(--ease-smooth);
     }
 
@@ -937,7 +939,7 @@
     ============================================ */
     .three-pillars {
       background: var(--color-sand);
-      padding: var(--space-2xl) 0;
+      padding: var(--space-lg) 0 var(--space-2xl);
     }
 
     .three-pillars__header {
@@ -952,6 +954,20 @@
 
     .pillar-card {
       text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pillar-card .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: auto;
+      box-sizing: border-box;
+      width: 260px;
+      height: 52px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .pillar-card__media {
@@ -963,6 +979,7 @@
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
+      object-position: top;
       transition: transform var(--duration-slow) var(--ease-smooth);
     }
 
@@ -1395,8 +1412,8 @@
       <div class="craft-process__stage">
         <div class="editorial-split editorial-split--img-right">
           <div class="editorial-split__media reveal">
-            <img src="Products/coffee tables/gesto/gesto_11_technical.webp"
-                 alt="Architectural drawings and marble samples laid across a designer's worktable"
+            <img src="Products/coffee tables/morphe/morphe_11_technical.webp"
+                 alt="Technical drawing of the Morphe marble coffee table showing elegant curved form and stone veining"
                  class="editorial-split__img"
                  loading="lazy" decoding="async">
           </div>
@@ -1412,8 +1429,8 @@
       <div class="craft-process__stage">
         <div class="editorial-split">
           <div class="editorial-split__media reveal">
-            <img src="Products/coffee tables/terra/terra_04_closeup_edge.webp"
-                 alt="Precision cutting of a marble slab in the Tiba Stone workshop"
+            <img src="Products/Compliments/ana/ana_04_closeup_edge.webp"
+                 alt="Precision-cut curved marble edge revealing the stone's natural veining"
                  class="editorial-split__img"
                  loading="lazy" decoding="async">
           </div>
@@ -1429,8 +1446,8 @@
       <div class="craft-process__stage">
         <div class="editorial-split editorial-split--img-right">
           <div class="editorial-split__media reveal">
-            <img src="Products/coffee tables/gesto/gesto_05_closeup_surface.webp"
-                 alt="Artisan hands polishing marble surface to a luminous finish"
+            <img src="Products/Dining Tables/eclipse/eclipse_05_closeup_surface.webp"
+                 alt="Luminous polished marble surface catching warm natural light"
                  class="editorial-split__img"
                  loading="lazy" decoding="async">
           </div>
@@ -1446,8 +1463,8 @@
       <div class="craft-process__stage">
         <div class="editorial-split">
           <div class="editorial-split__media reveal">
-            <img src="Products/coffee tables/gesto/gesto_01_editorial.webp"
-                 alt="Detailed inspection of a finished marble piece under natural studio light"
+            <img src="Products/Vases/doge-tall/doge-tall_02_human.webp"
+                 alt="Artisan carefully examining a finished marble vase under natural studio light"
                  class="editorial-split__img"
                  loading="lazy" decoding="async">
           </div>
@@ -1470,236 +1487,88 @@
   <section class="sourcing">
     <div class="container">
       <div class="sourcing__header text-center">
-        <span class="section-label reveal">Our Sources</span>
+        <span class="section-label reveal">Our Stones</span>
         <div class="accent-rule reveal"></div>
         <h2 class="section-title reveal">Stone Without Borders</h2>
-        <p class="sourcing__intro text-center reveal">We seek the finest stone the earth has to offer &mdash; travelling to quarries across continents, building lasting relationships with extraction partners who share our reverence for the material.</p>
+        <p class="sourcing__intro text-center reveal">Six noble stones, each chosen for its singular character. We source from the world&rsquo;s most celebrated quarries &mdash; selecting only slabs that meet our standard for veining, depth, and sculptural potential.</p>
       </div>
       <div class="sourcing__grid reveal-stagger">
 
         <div class="source-card reveal">
           <div class="source-card__media">
-            <img src="Products/coffee tables/quadro/quadro_05_closeup_surface.webp"
-                 alt="Carrara marble quarry nestled in the Apuan Alps of Tuscany"
+            <img src="Products/Consoles/serpente/Product Variations/serpente_calacatta-viola.png"
+                 alt="Serpente console in Calacatta Viola marble with dramatic violet veining"
                  class="source-card__img"
                  loading="lazy" decoding="async">
           </div>
-          <h3 class="source-card__name">Carrara</h3>
+          <h3 class="source-card__name">Calacatta Viola</h3>
           <span class="source-card__region">Tuscany, Italy</span>
-          <p class="source-card__text">The storied quarries of the Apuan Alps, yielding marble prized since antiquity for its luminous white ground and delicate grey veining.</p>
+          <p class="source-card__text">A luminous white ground fractured by dramatic violet and burgundy veining &mdash; each slab a unique composition of movement and contrast.</p>
         </div>
 
         <div class="source-card reveal">
           <div class="source-card__media">
-            <img src="Products/coffee tables/morphe/morphe_05_closeup_surface.webp"
-                 alt="Sun-bleached stone quarry on the Greek island of Thassos"
+            <img src="Products/Dining Tables/eclipse/Product Variations/eclipse_fendy-grey.webp"
+                 alt="Eclipse dining table in Fendy Grey marble with soft silver tones"
                  class="source-card__img"
                  loading="lazy" decoding="async">
           </div>
-          <h3 class="source-card__name">Thassos</h3>
-          <span class="source-card__region">Macedonia, Greece</span>
-          <p class="source-card__text">An Aegean island renowned for its crystalline white marble &mdash; pure, translucent, and untouched by veining, ideal for sculptural forms.</p>
-        </div>
-
-        <div class="source-card reveal">
-          <div class="source-card__media">
-            <img src="Products/coffee tables/terra/terra_05_closeup_surface.webp"
-                 alt="Warm-toned stone blocks in an Anatolian quarry at golden hour"
-                 class="source-card__img"
-                 loading="lazy" decoding="async">
-          </div>
-          <h3 class="source-card__name">Afyon</h3>
+          <h3 class="source-card__name">Fendy Grey</h3>
           <span class="source-card__region">Anatolia, Turkey</span>
-          <p class="source-card__text">Rich cream and honey-toned marbles from the heart of Anatolia, prized for their warmth and depth of colour in interior settings.</p>
+          <p class="source-card__text">Soft silver-grey with a quiet, cloud-like depth. Its understated veining brings calm sophistication to any interior.</p>
         </div>
 
         <div class="source-card reveal">
           <div class="source-card__media">
-            <img src="Products/cabinets/aida/aida_05_closeup_surface.webp"
-                 alt="Dramatic limestone cliff face in a Spanish quarry"
+            <img src="Products/Vases/doge-tall/Product Variations/doge-tall_ice-age-onyx.webp"
+                 alt="Doge Tall vase in Ice Age Onyx with translucent crystalline texture"
                  class="source-card__img"
                  loading="lazy" decoding="async">
           </div>
-          <h3 class="source-card__name">Markina</h3>
-          <span class="source-card__region">Basque Country, Spain</span>
-          <p class="source-card__text">Home to the legendary Nero Marquina &mdash; a deep black marble veined with white, offering dramatic contrast and timeless sophistication.</p>
+          <h3 class="source-card__name">Ice Age Onyx</h3>
+          <span class="source-card__region">Iran</span>
+          <p class="source-card__text">Translucent and ethereal &mdash; crystalline whites and pale blues that capture light from within, lending a sculptural, otherworldly quality.</p>
         </div>
 
         <div class="source-card reveal">
           <div class="source-card__media">
-            <img src="Products/coffee tables/morphe/morphe_10_studio_travertine.webp"
-                 alt="Travertine quarry terraces bathed in warm Mediterranean light"
+            <img src="Products/Consoles/onda/Product Variations/onda_noir-aziza.webp"
+                 alt="Onda console in Noir Aziza marble with striking gold veining on black"
                  class="source-card__img"
                  loading="lazy" decoding="async">
           </div>
-          <h3 class="source-card__name">Tivoli</h3>
-          <span class="source-card__region">Lazio, Italy</span>
-          <p class="source-card__text">The ancient travertine quarries near Rome, yielding stone with warm, earthy tones and a natural texture that ages with extraordinary grace.</p>
+          <h3 class="source-card__name">Noir Aziza</h3>
+          <span class="source-card__region">Tunisia</span>
+          <p class="source-card__text">An absolute black pierced by fine gold and white veins &mdash; bold, dramatic, and unmistakable. Reserved for moments that demand presence.</p>
         </div>
 
         <div class="source-card reveal">
           <div class="source-card__media">
-            <img src="Products/coffee tables/terra/terra_04_closeup_edge.webp"
-                 alt="Rich brown marble blocks in an Alicante quarry"
+            <img src="Products/Compliments/ana/Product Variations/ana_rosso-levanto.webp"
+                 alt="Ana chair in Rosso Levanto marble with rich burgundy veining"
                  class="source-card__img"
                  loading="lazy" decoding="async">
           </div>
-          <h3 class="source-card__name">Alicante</h3>
-          <span class="source-card__region">Valencia, Spain</span>
-          <p class="source-card__text">Source of the celebrated Emperador and Crema Marfil &mdash; warm, versatile stones that bring understated richness to every application.</p>
+          <h3 class="source-card__name">Rosso Levanto</h3>
+          <span class="source-card__region">Liguria, Italy</span>
+          <p class="source-card__text">Deep burgundy alive with networks of white veining &mdash; warm, rich, and full of movement. A stone that commands attention without raising its voice.</p>
+        </div>
+
+        <div class="source-card reveal">
+          <div class="source-card__media">
+            <img src="Products/Consoles/levante/Product Variations/levante_verde-patricia.webp"
+                 alt="Levante console in Verde Patricia marble with deep forest green tones"
+                 class="source-card__img"
+                 loading="lazy" decoding="async">
+          </div>
+          <h3 class="source-card__name">Verde Patricia</h3>
+          <span class="source-card__region">Rajasthan, India</span>
+          <p class="source-card__text">A deep, forest green with gentle tonal shifts &mdash; natural, grounding, and unmistakably luxurious. It brings the depth of the earth indoors.</p>
         </div>
 
       </div>
     </div>
   </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ============================================
-       MATERIALS SHOWCASE
-  ============================================ -->
-  <section class="materials-showcase">
-    <div class="container">
-      <div class="materials-showcase__header text-center">
-        <span class="section-label reveal">Our Materials</span>
-        <div class="accent-rule reveal"></div>
-        <h2 class="section-title reveal">Noble Stone</h2>
-      </div>
-    </div>
-    <div class="container">
-      <div class="materials-showcase__track-wrapper reveal">
-        <div class="materials-showcase__track" id="materialsTrack">
-
-          <div class="material-card">
-            <div class="material-card__media">
-              <img src="Products/coffee tables/gesto/gesto_07_studio_calacatta.webp"
-                   alt="Calacatta Oro marble with warm gold veining on white ground"
-                   class="material-card__img"
-                   loading="lazy" decoding="async">
-              <div class="material-card__overlay"></div>
-              <div class="material-card__info">
-                <h3 class="material-card__name">Calacatta Oro</h3>
-                <span class="material-card__origin">Carrara, Italy</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="material-card">
-            <div class="material-card__media">
-              <img src="Products/coffee tables/morphe/morphe_03_closeup_veining.webp"
-                   alt="Statuario marble with fine grey veining"
-                   class="material-card__img"
-                   loading="lazy" decoding="async">
-              <div class="material-card__overlay"></div>
-              <div class="material-card__info">
-                <h3 class="material-card__name">Statuario</h3>
-                <span class="material-card__origin">Carrara, Italy</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="material-card">
-            <div class="material-card__media">
-              <img src="Products/coffee tables/gesto/gesto_08_studio_noir.webp"
-                   alt="Nero Marquina marble with dramatic white veining on deep black"
-                   class="material-card__img"
-                   loading="lazy" decoding="async">
-              <div class="material-card__overlay"></div>
-              <div class="material-card__info">
-                <h3 class="material-card__name">Nero Marquina</h3>
-                <span class="material-card__origin">Markina, Spain</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="material-card">
-            <div class="material-card__media">
-              <img src="Products/coffee tables/morphe/morphe_10_studio_travertine.webp"
-                   alt="Travertine with warm beige tones and natural pitting"
-                   class="material-card__img"
-                   loading="lazy" decoding="async">
-              <div class="material-card__overlay"></div>
-              <div class="material-card__info">
-                <h3 class="material-card__name">Travertine</h3>
-                <span class="material-card__origin">Tivoli, Italy</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="material-card">
-            <div class="material-card__media">
-              <img src="Products/coffee tables/terra/terra_05_closeup_surface.webp"
-                   alt="Emperador Dark marble with rich brown and cream veining"
-                   class="material-card__img"
-                   loading="lazy" decoding="async">
-              <div class="material-card__overlay"></div>
-              <div class="material-card__info">
-                <h3 class="material-card__name">Emperador Dark</h3>
-                <span class="material-card__origin">Alicante, Spain</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="material-card">
-            <div class="material-card__media">
-              <img src="Products/coffee tables/quadro/quadro_03_closeup_veining.webp"
-                   alt="Bianco Carrara marble with classic grey veining"
-                   class="material-card__img"
-                   loading="lazy" decoding="async">
-              <div class="material-card__overlay"></div>
-              <div class="material-card__info">
-                <h3 class="material-card__name">Bianco Carrara</h3>
-                <span class="material-card__origin">Carrara, Italy</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="material-card">
-            <div class="material-card__media">
-              <img src="Products/cabinets/priamo/priamo_03_closeup_veining.webp"
-                   alt="Arabescato marble with flowing grey and gold veining"
-                   class="material-card__img"
-                   loading="lazy" decoding="async">
-              <div class="material-card__overlay"></div>
-              <div class="material-card__info">
-                <h3 class="material-card__name">Arabescato</h3>
-                <span class="material-card__origin">Versilia, Italy</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="material-card">
-            <div class="material-card__media">
-              <img src="Products/coffee tables/terra/terra_05_closeup_surface.webp"
-                   alt="Crema Marfil marble with warm ivory tones"
-                   class="material-card__img"
-                   loading="lazy" decoding="async">
-              <div class="material-card__overlay"></div>
-              <div class="material-card__info">
-                <h3 class="material-card__name">Crema Marfil</h3>
-                <span class="material-card__origin">Alicante, Spain</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="materials-showcase__progress">
-          <button class="materials-showcase__nav-btn" id="matPrev" aria-label="Previous">
-            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <div class="materials-showcase__progress-track">
-            <div class="materials-showcase__progress-fill" id="matProgressFill"></div>
-          </div>
-          <button class="materials-showcase__nav-btn" id="matNext" aria-label="Next">
-            <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
 
   <!-- ============================================
        THREE PILLARS
@@ -1714,8 +1583,8 @@
 
         <div class="pillar-card reveal">
           <div class="pillar-card__media">
-            <img src="Products/coffee tables/gesto/gesto_11_technical.webp"
-                 alt="Architectural marble design drawings in warm studio light"
+            <img src="Products/coffee tables/morphe/morphe_11_technical.webp"
+                 alt="Technical drawing of the Morphe marble coffee table with refined proportions"
                  class="pillar-card__img"
                  loading="lazy" decoding="async">
           </div>
@@ -1814,8 +1683,8 @@
       <div class="footer__bottom">
         <p>&copy; 2026 Tiba Stone. All rights reserved.</p>
         <div class="footer__legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms</a>
         </div>
       </div>
     </div>
