@@ -11,204 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/shared.css">
   <style>
-    /* ============================================
-       1. CUSTOM PROPERTIES
-    ============================================ */
-    :root {
-      --color-stone: #222323;
-      --color-ivory: #FFFFFF;
-      --color-sunset: #925638;
-      --color-river-green: #A3996A;
-      --color-dusk-blue: #153647;
-      --color-moss: #3E402B;
-      --color-sand: #F0EBE3;
-
-      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
-      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
-
-      --text-hero: clamp(2.75rem, 5vw, 4.5rem);
-      --text-h1: clamp(2rem, 3.5vw, 3.25rem);
-      --text-h2: clamp(1.625rem, 2.5vw, 2.25rem);
-      --text-h3: clamp(1.25rem, 1.8vw, 1.5rem);
-      --text-subtitle: clamp(0.8125rem, 0.9vw, 0.875rem);
-      --text-body: clamp(1rem, 1.15vw, 1.125rem);
-      --text-small: clamp(0.8125rem, 0.9vw, 0.875rem);
-
-      --ls-wide: 0.16em;
-      --ls-medium: 0.12em;
-      --ls-slight: 0.03em;
-
-      --lh-heading: 1.2;
-      --lh-body: 1.8;
-
-      --space-xs: 0.5rem;
-      --space-sm: 1rem;
-      --space-md: 2rem;
-      --space-lg: 4rem;
-      --space-xl: 6rem;
-      --space-2xl: 8rem;
-      --space-3xl: 10rem;
-
-      --container-max: 1600px;
-      --container-narrow: 780px;
-      --container-pad: clamp(1.5rem, 5vw, 5rem);
-      --grid-gap: clamp(1.5rem, 3vw, 2.5rem);
-
-      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
-      --duration-fast: 0.3s;
-      --duration-medium: 0.6s;
-      --duration-slow: 1s;
-    }
-
-    /* ============================================
-       2. RESET & BASE
-    ============================================ */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      background: var(--color-ivory);
-      color: var(--color-stone);
-      font-family: var(--font-body);
-      font-weight: 400;
-      line-height: var(--lh-body);
-      font-size: var(--text-body);
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9998;
-      will-change: transform;
-      backface-visibility: hidden;
-      opacity: 0.032;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      background-size: 200px 200px;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      line-height: var(--lh-heading);
-    }
-
-    a {
-      color: var(--color-stone);
-      text-decoration: none;
-    }
-
-    button {
-      font-family: var(--font-body);
-      border: none;
-      background: none;
-      cursor: pointer;
-    }
-
-    input, textarea {
-      font-family: var(--font-body);
-    }
-
-    /* ============================================
-       3. UTILITIES
-    ============================================ */
-    .container {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      padding: 0 var(--container-pad);
-    }
-
-    .container--narrow {
-      max-width: var(--container-narrow);
-      margin: 0 auto;
-      padding: 0 var(--container-pad);
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .accent-rule {
-      width: 48px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-sunset) 15%, var(--color-sunset) 85%, transparent);
-      margin: 1.75rem auto;
-    }
-
-    /* ============================================
-       4. SCROLL REVEAL
-    ============================================ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ============================================
-       5. BUTTONS
-    ============================================ */
-    .btn-primary {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      border: 1px solid var(--color-stone);
-      color: var(--color-stone);
-      background: transparent;
-      font-family: var(--font-body);
-      font-size: var(--text-small);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: var(--ls-medium);
-      text-decoration: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: color var(--duration-fast) var(--ease-smooth);
-    }
-
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--color-stone);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .btn-primary:hover {
-      color: var(--color-ivory);
-    }
-
-    .btn-primary:hover::before {
-      transform: scaleX(1);
-    }
-
     /* ============================================
        6. HEADER
     ============================================ */
@@ -625,7 +429,7 @@
   <header class="site-header" id="siteHeader">
     <div class="header__inner container">
       <a href="/" class="header__logo">
-        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img">
+        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img" loading="lazy" decoding="async">
       </a>
       <nav class="header__nav" id="mainNav">
         <a href="/" class="header__nav-link">Home</a>
@@ -723,7 +527,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo">
+          <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
           <p class="footer__tagline">Bespoke Marble Atelier</p>
           <div class="footer__social">
             <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -768,89 +572,8 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      'use strict';
+  <script src="/js/shared.js" defer></script>
 
-      /* Mobile Menu */
-      var hamburger = document.getElementById('hamburgerBtn');
-      var mobileMenu = document.getElementById('mobileMenu');
-      var mobileClose = document.getElementById('mobileMenuClose');
-
-      function openMenu() {
-        mobileMenu.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeMenu() {
-        mobileMenu.classList.remove('is-open');
-        document.body.style.overflow = '';
-      }
-
-      hamburger.addEventListener('click', openMenu);
-      mobileClose.addEventListener('click', closeMenu);
-
-      mobileMenu.querySelectorAll('.mobile-menu__link').forEach(function (link) {
-        link.addEventListener('click', closeMenu);
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeMenu();
-      });
-
-      /* Scroll Reveal */
-      var revealElements = document.querySelectorAll('.reveal');
-      var revealObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      revealElements.forEach(function (el) {
-        revealObserver.observe(el);
-      });
-
-      /* Footer Form */
-      document.getElementById('footerForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var form = e.target;
-        var btn = form.querySelector('button[type="submit"]');
-        var originalText = btn.textContent;
-        btn.textContent = 'Sending\u2026';
-        btn.disabled = true;
-        btn.style.opacity = '0.7';
-        fetch('https://formspree.io/f/luke@tibaliving.com', {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        }).then(function (r) {
-          if (r.ok) {
-            btn.textContent = 'Sent';
-            setTimeout(function () {
-              form.reset();
-              btn.textContent = originalText;
-              btn.disabled = false;
-              btn.style.opacity = '1';
-            }, 3000);
-          } else {
-            btn.textContent = 'Error \u2014 Try Again';
-            btn.disabled = false;
-            btn.style.opacity = '1';
-          }
-        }).catch(function () {
-          btn.textContent = 'Error \u2014 Try Again';
-          btn.disabled = false;
-          btn.style.opacity = '1';
-        });
-      });
-    })();
-  </script>
-
+  <div class="ts-lb" id="tsLb"><img src="" alt=""></div>
 </body>
 </html>

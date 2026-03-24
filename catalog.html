@@ -14,309 +14,8 @@
     <link rel="preload" as="image" href="Products/coffee tables/terra/terra_01_editorial.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/shared.css">
   <style>
-    /* ============================================
-       1. CUSTOM PROPERTIES
-    ============================================ */
-    :root {
-      /* Brand Colors */
-      --color-stone: #222323;
-      --color-ivory: #FFFFFF;
-      --color-sunset: #925638;
-      --color-river-green: #A3996A;
-      --color-dusk-blue: #153647;
-      --color-moss: #3E402B;
-      --color-sand: #F0EBE3;
-
-      /* Typography */
-      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
-      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
-
-      /* Type Scale */
-      --text-hero: clamp(2.75rem, 5vw, 4.5rem);
-      --text-h1: clamp(2rem, 3.5vw, 3.25rem);
-      --text-h2: clamp(1.625rem, 2.5vw, 2.25rem);
-      --text-h3: clamp(1.25rem, 1.8vw, 1.5rem);
-      --text-subtitle: clamp(0.8125rem, 0.9vw, 0.875rem);
-      --text-body: clamp(1rem, 1.15vw, 1.125rem);
-      --text-small: clamp(0.8125rem, 0.9vw, 0.875rem);
-
-      /* Letter Spacing */
-      --ls-wide: 0.16em;
-      --ls-medium: 0.12em;
-      --ls-slight: 0.03em;
-
-      /* Line Heights */
-      --lh-heading: 1.2;
-      --lh-body: 1.8;
-
-      /* Spacing */
-      --space-xs: 0.5rem;
-      --space-sm: 1rem;
-      --space-md: 2rem;
-      --space-lg: 4rem;
-      --space-xl: 6rem;
-      --space-2xl: 8rem;
-      --space-3xl: 10rem;
-
-      /* Layout */
-      --container-max: 1600px;
-      --container-narrow: 780px;
-      --container-pad: clamp(1.5rem, 5vw, 5rem);
-      --grid-gap: clamp(1.5rem, 3vw, 2.5rem);
-
-      /* Transitions */
-      --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
-      --duration-fast: 0.3s;
-      --duration-medium: 0.6s;
-      --duration-slow: 1s;
-    }
-
-    /* ============================================
-       2. RESET & BASE
-    ============================================ */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      background: var(--color-ivory);
-      color: var(--color-stone);
-      font-family: var(--font-body);
-      font-weight: 400;
-      line-height: var(--lh-body);
-      font-size: var(--text-body);
-      overflow-x: hidden;
-    }
-
-    /* Grain texture overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9998;
-      will-change: transform;
-      backface-visibility: hidden;
-      opacity: 0.032;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23g)'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      background-size: 200px 200px;
-    }
-
-    
-    
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      line-height: var(--lh-heading);
-    }
-
-    a {
-      color: var(--color-stone);
-      text-decoration: none;
-    }
-
-    button {
-      font-family: var(--font-body);
-      border: none;
-      background: none;
-      cursor: pointer;
-    }
-
-    input, textarea {
-      font-family: var(--font-body);
-    }
-
-    /* ============================================
-       3. UTILITIES
-    ============================================ */
-    .container {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      padding: 0 var(--container-pad);
-    }
-
-    .container--narrow {
-      max-width: var(--container-narrow);
-      margin: 0 auto;
-      padding: 0 var(--container-pad);
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .uppercase {
-      text-transform: uppercase;
-      letter-spacing: var(--ls-wide);
-    }
-
-    .accent-rule {
-      width: 48px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-sunset) 15%, var(--color-sunset) 85%, transparent);
-      margin: 1.75rem auto;
-    }
-
-    .section-divider {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      height: 1px;
-      background: rgba(34, 35, 35, 0.1);
-    }
-
-    .section-label {
-      font-family: var(--font-body);
-      font-size: var(--text-subtitle);
-      font-weight: 500;
-      letter-spacing: var(--ls-wide);
-      text-transform: uppercase;
-      color: var(--color-river-green);
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: var(--text-h1);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    /* ============================================
-       4. SCROLL REVEAL
-    ============================================ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0s; }
-    .reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
-    .reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.2s; }
-    .reveal-stagger > .reveal:nth-child(4) { transition-delay: 0.3s; }
-    .reveal-stagger > .reveal:nth-child(5) { transition-delay: 0.4s; }
-    .reveal-stagger > .reveal:nth-child(6) { transition-delay: 0.5s; }
-    .reveal-stagger > .reveal:nth-child(7) { transition-delay: 0.6s; }
-    .reveal-stagger > .reveal:nth-child(8) { transition-delay: 0.7s; }
-    .reveal-stagger > .reveal:nth-child(9) { transition-delay: 0.8s; }
-    .reveal-stagger > .reveal:nth-child(10) { transition-delay: 0.9s; }
-    .reveal-stagger > .reveal:nth-child(n+11) { transition-delay: 1s; }
-
-    /* ============================================
-       5. BUTTONS
-    ============================================ */
-    .btn-primary {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      border: 1px solid var(--color-stone);
-      color: var(--color-stone);
-      background: transparent;
-      font-family: var(--font-body);
-      font-size: var(--text-small);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: var(--ls-medium);
-      text-decoration: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-      transition: color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--color-stone);
-      z-index: -1;
-      transform: scaleX(0);
-      transform-origin: left center;
-      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .btn-primary:hover {
-      color: var(--color-ivory);
-      background: transparent;
-    }
-
-    .btn-primary:hover::before {
-      transform: scaleX(1);
-    }
-
-    .btn-primary--light {
-      border-color: var(--color-ivory);
-      color: var(--color-ivory);
-    }
-
-    .btn-primary--light::before {
-      background: var(--color-ivory);
-    }
-
-    .btn-primary--light:hover {
-      background: transparent;
-      color: var(--color-stone);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-body);
-      font-size: var(--text-small);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: var(--ls-medium);
-      color: var(--color-stone);
-      text-decoration: none;
-      padding-bottom: 2px;
-      position: relative;
-    }
-
-    .btn-secondary::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: var(--color-stone);
-      transform: scaleX(1);
-      transition: background var(--duration-fast) var(--ease-smooth);
-    }
-
-    .btn-secondary:hover {
-      color: var(--color-sunset);
-    }
-
-    .btn-secondary:hover::after {
-      background: var(--color-sunset);
-    }
-
     /* ============================================
        6. HEADER
     ============================================ */
@@ -426,56 +125,7 @@
       background: var(--color-stone);
     }
 
-    /* Mobile Menu Overlay */
-    .mobile-menu {
-      position: fixed;
-      inset: 0;
-      background: var(--color-ivory);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity var(--duration-fast) var(--ease-smooth);
-    }
-
-    .mobile-menu.is-open {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .mobile-menu__close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      font-size: 2rem;
-      color: var(--color-stone);
-      background: none;
-      border: none;
-      cursor: pointer;
-      line-height: 1;
-      padding: 0.5rem;
-    }
-
-    .mobile-menu__nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2.5rem;
-    }
-
-    .mobile-menu__link {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 5vw, 2.5rem);
-      color: var(--color-stone);
-      text-decoration: none;
-      transition: color var(--duration-fast) var(--ease-smooth);
-    }
-
-    .mobile-menu__link:hover {
-      color: var(--color-sunset);
-    }
+    /* Mobile Menu — base styles in shared.css */
 
     /* ============================================
        7. CATALOG HERO
@@ -947,158 +597,9 @@
       margin-right: auto;
     }
 
-    /* ============================================
-       15. FOOTER
-    ============================================ */
+    /* Footer (base in shared.css) */
     .site-footer {
       background: var(--color-ivory);
-      color: var(--color-stone);
-      padding: var(--space-2xl) 0 var(--space-lg);
-      border-top: 1px solid rgba(34, 35, 35, 0.1);
-    }
-
-    .footer__grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
-      gap: var(--grid-gap);
-    }
-
-    .footer__logo {
-      height: 70px;
-      width: auto;
-      margin-bottom: 1rem;
-    }
-
-    .footer__tagline {
-      font-family: var(--font-body);
-      font-size: var(--text-small);
-      text-transform: uppercase;
-      letter-spacing: var(--ls-medium);
-      color: var(--color-river-green);
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer__social {
-      display: flex;
-      gap: 1.25rem;
-    }
-
-    .footer__social a {
-      color: var(--color-river-green);
-      transition: color var(--duration-fast) var(--ease-smooth);
-    }
-
-    .footer__social a:hover {
-      color: var(--color-stone);
-    }
-
-    .footer__social svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-
-    .footer__col-title {
-      font-family: var(--font-body);
-      font-size: var(--text-small);
-      text-transform: uppercase;
-      letter-spacing: var(--ls-wide);
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-      color: var(--color-stone);
-    }
-
-    .footer__link {
-      display: block;
-      color: var(--color-river-green);
-      font-size: var(--text-body);
-      font-weight: 400;
-      margin-bottom: 0.75rem;
-      text-decoration: none;
-      transition: color var(--duration-fast) var(--ease-smooth);
-    }
-
-    .footer__link:hover {
-      color: var(--color-stone);
-    }
-
-    .footer__contact-info p {
-      color: var(--color-river-green);
-      font-size: var(--text-body);
-      font-weight: 400;
-      margin-bottom: 0.75rem;
-      line-height: 1.6;
-    }
-
-    .footer__contact-info a {
-      color: var(--color-river-green);
-      transition: color var(--duration-fast) var(--ease-smooth);
-    }
-
-    .footer__contact-info a:hover {
-      color: var(--color-stone);
-    }
-
-    /* Footer Form */
-    .footer-form__input,
-    .footer-form__textarea {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--color-river-green);
-      color: var(--color-stone);
-      padding: 0.75rem 0;
-      width: 100%;
-      font-family: var(--font-body);
-      font-size: var(--text-small);
-      font-weight: 400;
-      margin-bottom: 1rem;
-      transition: border-color var(--duration-fast) var(--ease-smooth);
-      outline: none;
-      resize: none;
-    }
-
-    .footer-form__input::placeholder,
-    .footer-form__textarea::placeholder {
-      color: var(--color-river-green);
-      font-weight: 400;
-    }
-
-    .footer-form__input:focus,
-    .footer-form__textarea:focus {
-      border-color: var(--color-stone);
-    }
-
-    .footer-form .btn-primary {
-      width: 100%;
-      text-align: center;
-      margin-top: 0.5rem;
-    }
-
-    .footer__bottom {
-      margin-top: var(--space-xl);
-      padding-top: var(--space-md);
-      border-top: 1px solid rgba(34, 35, 35, 0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: var(--text-small);
-      color: var(--color-river-green);
-    }
-
-    .footer__legal {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer__legal a {
-      color: var(--color-river-green);
-      text-decoration: none;
-      font-size: var(--text-small);
-      transition: color var(--duration-fast) var(--ease-smooth);
-    }
-
-    .footer__legal a:hover {
       color: var(--color-stone);
     }
 
@@ -1124,11 +625,6 @@
         margin: 0 auto;
       }
 
-      .footer__grid {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-lg) var(--grid-gap);
-      }
-
       .catalog-hero {
         height: 70vh;
       }
@@ -1138,14 +634,6 @@
        17. RESPONSIVE — MOBILE
     ============================================ */
     @media (max-width: 767px) {
-      .header__nav {
-        display: none;
-      }
-
-      .header__hamburger {
-        display: flex;
-      }
-
       .catalog-hero {
         height: 60vh;
         min-height: 400px;
@@ -1178,17 +666,6 @@
         max-width: 100%;
       }
 
-      .footer__grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-      }
-
-      .footer__bottom {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
-
       .featured-gallery,
       .featured-collections,
       .full-product-grid,
@@ -1209,7 +686,7 @@
   <header class="site-header" id="siteHeader">
     <div class="header__inner container">
       <a href="/" class="header__logo">
-        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img">
+        <img src="TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img" loading="lazy" decoding="async">
       </a>
       <nav class="header__nav" id="mainNav">
         <a href="/" class="header__nav-link">Home</a>
@@ -1397,7 +874,6 @@
               <span class="product-card__cta">Discover More &rarr;</span>
             </div>
           </a>
-
 
 
           <a href="/Products/coffee tables/duale/" class="product-card reveal" data-collection="coffee-tables">
@@ -2165,7 +1641,6 @@
           </a>
 
 
-
           <a href="/Products/Washbasins/barile/" class="product-card reveal" data-collection="washbasins">
             <div class="product-card__media">
               <img src="Products/Washbasins/barile/barile_12_catalogue.webp"
@@ -2263,7 +1738,6 @@
               <span class="product-card__cta">Discover More &rarr;</span>
             </div>
           </a>
-
 
 
         </div>
@@ -3251,7 +2725,7 @@
       <div class="footer__grid">
         <!-- Brand Column -->
         <div class="footer__brand">
-          <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo">
+          <img src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
           <p class="footer__tagline">Bespoke Marble Atelier</p>
           <div class="footer__social">
             <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -3517,27 +2991,7 @@
 
     })();
   </script>
-
-<!-- Lightbox -->
-<style>
-  .ts-lb-trigger{cursor:zoom-in}
-  .ts-lb{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.92);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;cursor:zoom-out}
-  .ts-lb.is-open{opacity:1;visibility:visible}
-  .ts-lb img{max-width:90vw;max-height:90vh;object-fit:contain}
-</style>
 <div class="ts-lb" id="tsLb"><img src="" alt=""></div>
-<script>
-(function(){
-  var lb=document.getElementById('tsLb'),img=lb.querySelector('img');
-  function close(){lb.classList.remove('is-open');document.body.style.overflow='';}
-  document.querySelectorAll('.product-hero__img,.gallery-strip__img,.editorial-split__img,.specs__drawing img,.materials__media img,.inquiry__preview-img,.hero__slide-img,.hero__bg-img,.source-card__img').forEach(function(el){
-    el.classList.add('ts-lb-trigger');
-    el.addEventListener('click',function(){img.src=this.currentSrc||this.src;img.alt=this.alt;lb.classList.add('is-open');document.body.style.overflow='hidden';});
-  });
-  lb.addEventListener('click',close);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-})();
-</script>
 
 </body>
 </html>
