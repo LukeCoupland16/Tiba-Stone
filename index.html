@@ -451,7 +451,7 @@
     .mosaic__heading--dark { color: var(--color-stone); }
 
     .mosaic__heading--xl {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
     }
 
     .mosaic__text {
@@ -639,7 +639,6 @@
       overflow: hidden;
       aspect-ratio: 3 / 4;
       background: var(--color-sand);
-      margin-bottom: 1.25rem;
     }
 
     .cat-card__img {
@@ -654,42 +653,26 @@
     .cat-card__overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0);
+      background: rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: background 0.5s ease;
     }
 
-    .cat-card:hover .cat-card__overlay { background: rgba(0, 0, 0, 0.08); }
-
-    .cat-card__footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    .cat-card:hover .cat-card__overlay { background: rgba(0, 0, 0, 0.35); }
 
     .cat-card__name {
       font-family: var(--font-display);
-      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      font-size: clamp(1.25rem, 2vw, 1.75rem);
       font-weight: 400;
-      margin-bottom: 0;
+      color: var(--color-ivory);
+      letter-spacing: 0.02em;
+      text-align: center;
     }
 
-    .cat-card__arrow {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--color-river-green);
-      transition: color 0.4s ease, gap 0.4s ease;
-    }
-
-    .cat-card__arrow svg {
-      width: 16px;
-      height: 16px;
-      stroke: currentColor;
-      transition: transform 0.4s var(--ease-smooth);
+    .cat-card__footer {
+      display: none;
     }
 
     .cat-card:hover .cat-card__arrow {
@@ -1116,7 +1099,7 @@
       <div class="mosaic__overlay mosaic__overlay--heavy"></div>
       <div class="mosaic__content reveal" style="max-width: 800px;">
         <span class="mosaic__label mosaic__label--light">The Craft</span>
-        <h2 class="mosaic__heading mosaic__heading--xl">From Quarry to Masterpiece</h2>
+        <h2 class="mosaic__heading mosaic__heading--xl">From Quarry<br>to Masterpiece</h2>
         <p class="mosaic__text mosaic__text--light">Every piece passes through the hands of master craftsmen whose families have shaped marble for generations. The process is unhurried, deliberate, and guided by reverence for the material.</p>
         <a href="/craft" class="btn btn--outline-light">Discover Our Craft</a>
       </div>
@@ -1165,11 +1148,9 @@
         <div class="cat-card__media">
           <img src="Products/coffee tables/terra/terra_01_editorial.webp"
                alt="Coffee Tables" class="cat-card__img" loading="lazy" decoding="async">
-          <div class="cat-card__overlay"></div>
-        </div>
-        <div class="cat-card__footer">
-          <span class="cat-card__arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <h3 class="cat-card__name">Coffee Tables</h3>
+          <div class="cat-card__overlay">
+            <h3 class="cat-card__name">Coffee Tables</h3>
+          </div>
         </div>
       </a>
       <a href="/catalog#consoles" class="cat-card reveal">
@@ -1177,33 +1158,27 @@
           <img src="Products/Consoles/curves/curves_01_editorial.webp"
                alt="Consoles" class="cat-card__img" loading="lazy" decoding="async"
                style="object-position: center 85%;">
-          <div class="cat-card__overlay"></div>
-        </div>
-        <div class="cat-card__footer">
-          <span class="cat-card__arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <h3 class="cat-card__name">Consoles</h3>
+          <div class="cat-card__overlay">
+            <h3 class="cat-card__name">Consoles</h3>
+          </div>
         </div>
       </a>
       <a href="/catalog#dining-tables" class="cat-card reveal">
         <div class="cat-card__media">
           <img src="Products/Dining Tables/bronze/bronze_01_editorial.webp"
                alt="Dining Tables" class="cat-card__img" loading="lazy" decoding="async">
-          <div class="cat-card__overlay"></div>
-        </div>
-        <div class="cat-card__footer">
-          <span class="cat-card__arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <h3 class="cat-card__name">Dining Tables</h3>
+          <div class="cat-card__overlay">
+            <h3 class="cat-card__name">Dining Tables</h3>
+          </div>
         </div>
       </a>
       <a href="/catalog#washbasins" class="cat-card reveal">
         <div class="cat-card__media">
           <img src="Products/Washbasins/calice/calice_12_catalogue.webp"
                alt="Washbasins" class="cat-card__img" loading="lazy" decoding="async">
-          <div class="cat-card__overlay"></div>
-        </div>
-        <div class="cat-card__footer">
-          <span class="cat-card__arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <h3 class="cat-card__name">Washbasins</h3>
+          <div class="cat-card__overlay">
+            <h3 class="cat-card__name">Washbasins</h3>
+          </div>
         </div>
       </a>
     </div>
