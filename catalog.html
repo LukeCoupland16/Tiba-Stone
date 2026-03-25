@@ -8,7 +8,7 @@
   <meta name="description" content="Explore the Tiba Stone collection — bespoke marble furniture crafted for architects, interior designers, and discerning spaces. Coffee tables, consoles, dining tables, washbasins, and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="Products/coffee tables/terra/terra_01_editorial.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="Products/Dining Tables/levante/levante_01_editorial.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* ============================================
@@ -521,78 +521,6 @@
     }
 
     /* ============================================
-       THREE PILLARS
-    ============================================ */
-    .pillars {
-      padding: clamp(5rem, 8vh, 7rem) clamp(1.5rem, 4vw, 4rem);
-      max-width: 1600px;
-      margin: 0 auto;
-    }
-
-    .pillars__header {
-      text-align: center;
-      margin-bottom: clamp(3rem, 5vh, 5rem);
-    }
-
-    .pillars__label {
-      font-size: 0.625rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.3em;
-      color: var(--color-river-green);
-      margin-bottom: 1rem;
-    }
-
-    .pillars__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3vw, 2.5rem);
-      font-weight: 400;
-      letter-spacing: -0.01em;
-    }
-
-    .pillars__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(1.5rem, 3vw, 2.5rem);
-    }
-
-    .pillar-card {
-      text-align: center;
-    }
-
-    .pillar-card__img-wrap {
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 2rem;
-    }
-
-    .pillar-card__img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      transition: transform 0.7s var(--ease-dramatic);
-    }
-
-    .pillar-card:hover .pillar-card__img {
-      transform: scale(1.03);
-    }
-
-    .pillar-card__name {
-      font-family: var(--font-display);
-      font-size: clamp(1.125rem, 1.5vw, 1.375rem);
-      font-weight: 400;
-      margin-bottom: 0.75rem;
-    }
-
-    .pillar-card__text {
-      font-size: 0.875rem;
-      line-height: 1.8;
-      color: rgba(34, 35, 35, 0.65);
-      max-width: 280px;
-      margin: 0 auto;
-    }
-
-    /* ============================================
        BUTTONS
     ============================================ */
     .btn {
@@ -761,8 +689,6 @@
 
       .product-grid { grid-template-columns: repeat(3, 1fr); }
 
-      .pillars__grid { grid-template-columns: repeat(3, 1fr); }
-
       .footer__grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
     }
 
@@ -783,8 +709,6 @@
 
       .product-grid { grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
       .product-card__name { font-size: 0.8125rem; }
-
-      .pillars__grid { grid-template-columns: 1fr; gap: 3rem; }
 
       .footer__grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer__bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
@@ -823,8 +747,8 @@
 
   <!-- HERO -->
   <section class="catalog-hero">
-    <img src="Products/coffee tables/terra/terra_01_editorial.webp"
-         alt="Tiba Stone Collection"
+    <img src="Products/Dining Tables/levante/levante_01_editorial.webp"
+         alt="Tiba Stone Collection — marble dining table in a sunlit interior"
          class="catalog-hero__img"
          id="heroImg">
     <div class="catalog-hero__overlay"></div>
@@ -1494,37 +1418,6 @@
     </div>
   </section>
 
-  <!-- THREE PILLARS -->
-  <section class="pillars">
-    <div class="pillars__header reveal">
-      <p class="pillars__label">Our Practice</p>
-      <h2 class="pillars__title">Three Pillars</h2>
-    </div>
-    <div class="pillars__grid">
-      <div class="pillar-card reveal">
-        <div class="pillar-card__img-wrap">
-          <img src="Products/coffee tables/gesto/gesto_11_technical.webp" alt="Design" class="pillar-card__img" loading="lazy">
-        </div>
-        <h3 class="pillar-card__name">Design</h3>
-        <p class="pillar-card__text">Every form begins as a conversation between geometry and the natural character of stone.</p>
-      </div>
-      <div class="pillar-card reveal">
-        <div class="pillar-card__img-wrap">
-          <img src="Products/coffee tables/terra/terra_06_closeup_joint.webp" alt="Craftsmanship" class="pillar-card__img" loading="lazy">
-        </div>
-        <h3 class="pillar-card__name">Craftsmanship</h3>
-        <p class="pillar-card__text">Precision cutting, hand finishing, and patient assembly &mdash; the invisible work that defines visible quality.</p>
-      </div>
-      <div class="pillar-card reveal">
-        <div class="pillar-card__img-wrap">
-          <img src="Products/coffee tables/gesto/gesto_05_closeup_surface.webp" alt="Materiality" class="pillar-card__img" loading="lazy">
-        </div>
-        <h3 class="pillar-card__name">Materiality</h3>
-        <p class="pillar-card__text">Six curated marbles, each chosen for depth of veining, warmth of tone, and structural integrity.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__grid">
@@ -1619,7 +1512,7 @@
       reveals.forEach(function (el) { obs.observe(el); });
 
       /* Progressive image fade-in */
-      document.querySelectorAll('.product-card__img, .featured__card-img, .pillar-card__img').forEach(function (img) {
+      document.querySelectorAll('.product-card__img, .featured__card-img').forEach(function (img) {
         img.style.opacity = '0';
         img.style.transition = 'opacity 0.8s ease';
         function show() { img.style.opacity = '1'; img.classList.add('is-loaded'); }

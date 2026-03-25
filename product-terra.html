@@ -283,16 +283,17 @@
     /* Buttons */
     .btn {
       display: inline-block;
-      padding: 1rem 2.5rem;
+      padding: 1.1rem 3rem;
       font-family: var(--font-body);
-      font-size: 0.625rem;
-      font-weight: 600;
+      font-size: 0.6875rem;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       position: relative;
       overflow: hidden;
       isolation: isolate;
-      transition: color 0.45s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+      cursor: pointer;
+      transition: color 0.6s var(--ease-dramatic), border-color 0.5s var(--ease-smooth);
     }
 
     .btn--dark {
@@ -307,15 +308,30 @@
       background: var(--color-stone);
       z-index: -1;
       transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+      transform-origin: left;
+      transition: transform 0.7s var(--ease-dramatic);
+    }
+
+    .btn--dark::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--color-sunset);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.55s var(--ease-spring);
+      z-index: 2;
     }
 
     .btn--dark:hover { color: var(--color-ivory); }
-    .btn--dark:hover::before { transform: scaleX(1); transform-origin: left; }
+    .btn--dark:hover::before { transform: scaleX(1); }
+    .btn--dark:hover::after { transform: scaleX(1); transition-delay: 0.12s; }
 
     .btn--light {
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       color: var(--color-ivory);
     }
 
@@ -326,17 +342,35 @@
       background: var(--color-ivory);
       z-index: -1;
       transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+      transform-origin: left;
+      transition: transform 0.7s var(--ease-dramatic);
+    }
+
+    .btn--light::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--color-sunset);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.55s var(--ease-spring);
+      z-index: 2;
     }
 
     .btn--light:hover { color: var(--color-stone); border-color: var(--color-ivory); }
-    .btn--light:hover::before { transform: scaleX(1); transform-origin: left; }
+    .btn--light:hover::before { transform: scaleX(1); }
+    .btn--light:hover::after { transform: scaleX(1); transition-delay: 0.12s; }
 
     .btn--text {
       padding: 0;
       border: none !important;
       position: relative;
+      color: var(--color-stone);
+      font-weight: 500;
+      transition: color 0.5s var(--ease-smooth);
     }
 
     .btn--text::before { display: none; }
@@ -344,17 +378,18 @@
     .btn--text::after {
       content: '';
       position: absolute;
-      bottom: -2px;
+      bottom: -5px;
       left: 0;
       width: 100%;
       height: 1px;
-      background: currentColor;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+      background: var(--color-sunset);
+      transform: scaleX(0.2);
+      transform-origin: left;
+      transition: transform 0.6s var(--ease-spring);
     }
 
-    .btn--text:hover::after { transform: scaleX(1); transform-origin: left; }
+    .btn--text:hover { color: var(--color-sunset); }
+    .btn--text:hover::after { transform: scaleX(1); }
 
     /* ============================================
        GALLERY STRIP — Horizontal image row
@@ -472,7 +507,7 @@
 
     .materials__media img {
       width: 100%;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       transition: transform 1s var(--ease-smooth);
     }
@@ -512,30 +547,34 @@
     }
 
     .materials__swatches {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
       gap: 1.25rem;
-      flex-wrap: wrap;
       margin-bottom: 2.5rem;
+      max-width: 480px;
     }
 
     .swatch {
-      text-align: center;
       cursor: pointer;
-      display: inline-flex;
+      text-align: center;
+      display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
     }
 
     .swatch__img {
-      width: 68px;
-      height: 90px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
-      filter: brightness(0.85) saturate(0.75);
-      transition: filter 0.4s ease, box-shadow 0.3s var(--ease-spring);
+      border-radius: 2px;
+      filter: brightness(0.82) saturate(0.7);
+      transition: filter 0.4s ease, box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .swatch:hover .swatch__img { filter: brightness(0.92) saturate(0.85); }
+    .swatch:hover .swatch__img {
+      filter: brightness(0.93) saturate(0.88);
+    }
 
     .swatch.is-active .swatch__img {
       filter: brightness(1) saturate(1);
@@ -543,17 +582,18 @@
     }
 
     .swatch__name {
-      font-size: 0.5rem;
+      font-size: 0.55rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       color: var(--color-river-green);
-      max-width: 68px;
-      line-height: 1.3;
       transition: color 0.3s ease;
+      line-height: 1.3;
     }
 
-    .swatch.is-active .swatch__name { color: var(--color-stone); }
+    .swatch.is-active .swatch__name {
+      color: var(--color-stone);
+    }
 
     /* ============================================
        SPECS
@@ -1088,8 +1128,7 @@
 
       .editorial__img { min-height: 40vh; }
 
-      .materials__swatches { gap: 0.75rem; }
-      .swatch__img { width: 56px; height: 74px; }
+      .materials__swatches { grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 260px; }
 
       .form-row { grid-template-columns: 1fr; }
       .form-group--full { grid-column: span 1; }
@@ -1199,7 +1238,7 @@
       <span class="editorial__label">Form &amp; Mass</span>
       <h2 class="editorial__heading">The Architecture<br>of Weight</h2>
       <p class="editorial__text">A single slab rests on two solid stone legs &mdash; no adhesive, no hidden hardware. The weight of the stone holds everything in place, as it has for centuries in the buildings of ancient Rome.</p>
-      <a href="/craft" class="btn btn--text" style="align-self: flex-start; color: var(--color-stone);">Discover Our Craft</a>
+      <a href="/craft" class="btn btn--text" style="align-self: flex-start;">Discover Our Craft</a>
     </div>
   </section>
 
@@ -1283,7 +1322,7 @@
       <div>
         <span class="faq__label">Questions</span>
         <h2 class="faq__title">You have questions?<br>We have answers.</h2>
-        <a href="/contact" class="btn btn--text" style="color: var(--color-stone);">Or speak with us</a>
+        <a href="/contact" class="btn btn--text">Or speak with us</a>
       </div>
       <div>
         <div class="faq-item">

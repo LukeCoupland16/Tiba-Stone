@@ -631,6 +631,7 @@
       display: block;
       text-decoration: none;
       color: var(--color-stone);
+      cursor: pointer;
     }
 
     .cat-card__media {
@@ -659,19 +660,45 @@
 
     .cat-card:hover .cat-card__overlay { background: rgba(0, 0, 0, 0.08); }
 
+    .cat-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     .cat-card__name {
       font-family: var(--font-display);
       font-size: clamp(1rem, 1.5vw, 1.25rem);
       font-weight: 400;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0;
     }
 
-    .cat-card__count {
-      font-size: 0.6875rem;
-      font-weight: 500;
+    .cat-card__arrow {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.625rem;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       color: var(--color-river-green);
+      transition: color 0.4s ease, gap 0.4s ease;
+    }
+
+    .cat-card__arrow svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      transition: transform 0.4s var(--ease-smooth);
+    }
+
+    .cat-card:hover .cat-card__arrow {
+      color: var(--color-sunset);
+      gap: 0.65rem;
+    }
+
+    .cat-card:hover .cat-card__arrow svg {
+      transform: translateX(3px);
     }
 
     /* ============================================
@@ -714,7 +741,7 @@
 
     .stone-card__img {
       width: 100%;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       margin-bottom: 1rem;
       filter: brightness(0.85);
@@ -1036,7 +1063,8 @@
       <div class="mosaic__content reveal">
         <span class="mosaic__label mosaic__label--light">The Showroom</span>
         <h2 class="mosaic__heading">A Curated Experience<br>in Stone</h2>
-        <a href="/catalog" class="btn btn--text">Visit the Gallery</a>
+        <p class="mosaic__text mosaic__text--light">Explore our full collection of tables, consoles, cabinets, and sculptural objects — each carved from the finest marble.</p>
+        <a href="/catalog" class="btn btn--outline-light">Visit the Gallery</a>
       </div>
     </div>
 
@@ -1139,8 +1167,10 @@
                alt="Coffee Tables" class="cat-card__img" loading="lazy" decoding="async">
           <div class="cat-card__overlay"></div>
         </div>
-        <h3 class="cat-card__name">Coffee Tables</h3>
-        <span class="cat-card__count">6 Pieces</span>
+        <div class="cat-card__footer">
+          <span class="cat-card__arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <h3 class="cat-card__name">Coffee Tables</h3>
+        </div>
       </a>
       <a href="/catalog#consoles" class="cat-card reveal">
         <div class="cat-card__media">
@@ -1149,8 +1179,10 @@
                style="object-position: center 85%;">
           <div class="cat-card__overlay"></div>
         </div>
-        <h3 class="cat-card__name">Consoles</h3>
-        <span class="cat-card__count">18 Pieces</span>
+        <div class="cat-card__footer">
+          <span class="cat-card__arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <h3 class="cat-card__name">Consoles</h3>
+        </div>
       </a>
       <a href="/catalog#dining-tables" class="cat-card reveal">
         <div class="cat-card__media">
@@ -1158,8 +1190,10 @@
                alt="Dining Tables" class="cat-card__img" loading="lazy" decoding="async">
           <div class="cat-card__overlay"></div>
         </div>
-        <h3 class="cat-card__name">Dining Tables</h3>
-        <span class="cat-card__count">6 Pieces</span>
+        <div class="cat-card__footer">
+          <span class="cat-card__arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <h3 class="cat-card__name">Dining Tables</h3>
+        </div>
       </a>
       <a href="/catalog#washbasins" class="cat-card reveal">
         <div class="cat-card__media">
@@ -1167,8 +1201,10 @@
                alt="Washbasins" class="cat-card__img" loading="lazy" decoding="async">
           <div class="cat-card__overlay"></div>
         </div>
-        <h3 class="cat-card__name">Washbasins</h3>
-        <span class="cat-card__count">13 Pieces</span>
+        <div class="cat-card__footer">
+          <span class="cat-card__arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <h3 class="cat-card__name">Washbasins</h3>
+        </div>
       </a>
     </div>
   </section>
