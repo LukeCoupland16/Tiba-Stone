@@ -38,7 +38,7 @@
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px;
+      font-size: 17px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -184,89 +184,6 @@
     .mobile-menu__nav a:hover { color: var(--color-sunset); }
 
     /* ============================================
-       HERO
-    ============================================ */
-    .slabs-hero {
-      position: relative;
-      height: 55vh;
-      min-height: 420px;
-      max-height: 640px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .slabs-hero__bg {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg,
-          rgba(17, 17, 17, 0.25) 0%,
-          rgba(17, 17, 17, 0.5) 100%
-        ),
-        url('https://images.unsplash.com/photo-1618220179428-22790b461013?w=1800&q=80');
-      background-size: cover;
-      background-position: center 40%;
-      transform: scale(1.05);
-      transition: transform 8s ease-out;
-    }
-
-    .slabs-hero.is-loaded .slabs-hero__bg {
-      transform: scale(1);
-    }
-
-    .slabs-hero__content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      color: var(--color-ivory);
-      padding: 0 2rem;
-    }
-
-    .slabs-hero__label {
-      font-family: var(--font-body);
-      font-size: 0.6875rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.35em;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      transform: translateY(16px);
-      animation: heroFadeUp 0.8s 0.3s forwards;
-    }
-
-    .slabs-hero__title {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      line-height: 1.15;
-      margin-bottom: 1rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: heroFadeUp 0.8s 0.5s forwards;
-    }
-
-    .slabs-hero__subtitle {
-      font-family: var(--font-body);
-      font-size: clamp(0.875rem, 1.1vw, 1.0625rem);
-      font-weight: 300;
-      letter-spacing: 0.04em;
-      color: rgba(255, 255, 255, 0.7);
-      max-width: 540px;
-      margin: 0 auto;
-      opacity: 0;
-      transform: translateY(16px);
-      animation: heroFadeUp 0.8s 0.7s forwards;
-    }
-
-    @keyframes heroFadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ============================================
        FILTER BAR
     ============================================ */
     .filter-bar {
@@ -295,13 +212,22 @@
       padding: 0 clamp(1.5rem, 4vw, 4rem);
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .filter-bar__pills {
+      display: flex;
+      align-items: center;
       gap: 0;
       overflow-x: auto;
       scrollbar-width: none;
       -ms-overflow-style: none;
+      flex: 1;
+      min-width: 0;
     }
 
-    .filter-bar__inner::-webkit-scrollbar { display: none; }
+    .filter-bar__pills::-webkit-scrollbar { display: none; }
 
     .filter-bar__count {
       font-family: var(--font-body);
@@ -361,6 +287,20 @@
       position: relative;
     }
 
+    @media (max-width: 767px) {
+      .colour-select-wrap {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 0 0.875rem;
+        border-top: 1px solid rgba(34, 35, 35, 0.06);
+        padding-top: 0.75rem;
+      }
+
+      .colour-select-wrap .colour-select {
+        width: 100%;
+      }
+    }
+
     .colour-select {
       font-family: var(--font-body);
       font-size: 0.6875rem;
@@ -397,14 +337,14 @@
     }
 
     @media (max-width: 767px) {
-      .colour-select { min-width: 120px; font-size: 0.625rem; }
+      .colour-select { min-width: unset; font-size: 0.6875rem; }
     }
 
     /* ============================================
        GRID
     ============================================ */
     .slabs-section {
-      padding: clamp(2.5rem, 4vw, 4rem) clamp(1.5rem, 4vw, 4rem);
+      padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 4vw, 4rem);
       max-width: 1600px;
       margin: 0 auto;
     }
@@ -1021,29 +961,21 @@
     </nav>
   </div>
 
-  <!-- HERO -->
-  <section class="slabs-hero" id="slabsHero">
-    <div class="slabs-hero__bg"></div>
-    <div class="slabs-hero__content">
-      <p class="slabs-hero__label">Natural Stone</p>
-      <h1 class="slabs-hero__title">Stone Library</h1>
-      <p class="slabs-hero__subtitle">Over 300 slabs curated from the world's finest quarries. Marble, granite, quartzite, onyx, and rare stones for bespoke projects.</p>
-    </div>
-  </section>
-
   <!-- FILTER BAR -->
   <div class="filter-bar" id="filterBar">
     <div class="filter-bar__inner">
-      <span class="filter-bar__count" id="filterCount">318 stones</span>
-      <button class="filter-pill is-active" data-category="all">All</button>
-      <button class="filter-pill" data-category="marble">Marble</button>
-      <button class="filter-pill" data-category="granite">Granite</button>
-      <button class="filter-pill" data-category="quartzite">Quartzite</button>
-      <button class="filter-pill" data-category="onyx">Onyx</button>
-      <button class="filter-pill" data-category="travertine">Travertine</button>
-      <button class="filter-pill" data-category="limestone">Limestone</button>
-      <button class="filter-pill" data-category="neolith">Neolith</button>
-      <button class="filter-pill" data-category="sandstone">Sandstone</button>
+      <div class="filter-bar__pills">
+        <span class="filter-bar__count" id="filterCount">318 stones</span>
+        <button class="filter-pill is-active" data-category="all">All</button>
+        <button class="filter-pill" data-category="marble">Marble</button>
+        <button class="filter-pill" data-category="granite">Granite</button>
+        <button class="filter-pill" data-category="quartzite">Quartzite</button>
+        <button class="filter-pill" data-category="onyx">Onyx</button>
+        <button class="filter-pill" data-category="travertine">Travertine</button>
+        <button class="filter-pill" data-category="limestone">Limestone</button>
+        <button class="filter-pill" data-category="neolith">Neolith</button>
+        <button class="filter-pill" data-category="sandstone">Sandstone</button>
+      </div>
       <div class="colour-select-wrap">
         <select class="colour-select" id="colourSelect">
           <option value="all">All Colours</option>
@@ -1162,8 +1094,6 @@
       var filterBar = document.getElementById('filterBar');
       var filterCount = document.getElementById('filterCount');
       var pills = document.querySelectorAll('.filter-pill');
-      var hero = document.getElementById('slabsHero');
-
       var currentCategory = 'all';
       var currentColour = 'all';
       var colourSelect = document.getElementById('colourSelect');
@@ -1185,9 +1115,6 @@
           scrollTicking = true;
         }
       }, { passive: true });
-
-      /* ---- Hero load animation ---- */
-      setTimeout(function () { hero.classList.add('is-loaded'); }, 100);
 
       /* ---- Mobile menu ---- */
       var hamburger = document.getElementById('hamburgerBtn');
