@@ -1298,10 +1298,22 @@
         if (slab) openModal(slab);
       });
 
-      /* ---- Update colour dropdown ---- */
+      /* ---- Update colour dropdown (marble only) ---- */
+      var colourWrap = document.querySelector('.colour-select-wrap');
+
       function updateColourOptions(category) {
+        /* Only show colour filter for marble */
+        var showColour = (category === 'marble');
+        colourWrap.style.display = showColour ? '' : 'none';
+
+        if (!showColour) {
+          colourSelect.value = 'all';
+          currentColour = 'all';
+          return;
+        }
+
         var data = window.SLABS_DATA || [];
-        var pool = category === 'all' ? data : data.filter(function (s) { return s.category === category; });
+        var pool = data.filter(function (s) { return s.category === 'marble'; });
         var available = {};
         pool.forEach(function (s) { if (s.color) available[s.color] = true; });
 
