@@ -208,7 +208,7 @@
 
     .filter-bar__inner {
       margin: 0 auto;
-      padding: 0 clamp(1.25rem, 2.5vw, 2.5rem);
+      padding: 0 clamp(2rem, 4vw, 5rem);
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -343,13 +343,13 @@
        GRID
     ============================================ */
     .slabs-section {
-      padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 2.5vw, 2.5rem);
+      padding: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 5rem);
     }
 
     .slabs-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: clamp(0.75rem, 1.5vw, 1.25rem);
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 1.5vw, 1.5rem);
     }
 
     /* ---- Slab Card ---- */
@@ -891,11 +891,7 @@
     /* ============================================
        RESPONSIVE
     ============================================ */
-    @media (max-width: 1200px) {
-      .slabs-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: 1023px) {
       .slabs-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
