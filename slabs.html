@@ -1430,7 +1430,7 @@
       }
 
       if (window.SLABS_DATA) { init(); }
-      else { window.addEventListener('load', init); }
+      else { document.addEventListener('DOMContentLoaded', init); }
 
     })();
   </script>
