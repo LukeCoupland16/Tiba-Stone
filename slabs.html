@@ -207,67 +207,76 @@
     }
 
     .filter-bar__inner {
-      margin: 0 auto;
       padding: 0 clamp(2rem, 4vw, 5rem);
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0;
     }
 
-    .filter-bar__pills {
+    /* Top row: title + colour selector */
+    .filter-bar__top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 1.5rem 0 0.75rem;
+    }
+
+    .filter-bar__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2vw, 1.625rem);
+      font-weight: 400;
+      color: var(--color-stone);
+    }
+
+    .filter-bar__count {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--color-river-green);
+      margin-left: 0.625rem;
+    }
+
+    /* Bottom row: category tabs */
+    .filter-bar__tabs {
       display: flex;
       align-items: center;
       gap: 0;
       overflow-x: auto;
       scrollbar-width: none;
       -ms-overflow-style: none;
-      flex: 1;
-      min-width: 0;
+      margin: 0 -0.25rem;
     }
 
-    .filter-bar__pills::-webkit-scrollbar { display: none; }
-
-    .filter-bar__count {
-      font-family: var(--font-body);
-      font-size: 0.6875rem;
-      font-weight: 500;
-      color: var(--color-river-green);
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-      padding: 1.125rem 2rem 1.125rem 0;
-      border-right: 1px solid rgba(34, 35, 35, 0.08);
-      margin-right: 0.25rem;
-      min-width: fit-content;
-    }
+    .filter-bar__tabs::-webkit-scrollbar { display: none; }
 
     .filter-pill {
       font-family: var(--font-body);
-      font-size: 0.6875rem;
+      font-size: 0.8125rem;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.14em;
       color: var(--color-river-green);
       background: none;
       border: none;
-      padding: 1.125rem 1.25rem;
+      padding: 0.875rem 1.125rem;
       cursor: pointer;
       white-space: nowrap;
       position: relative;
       transition: color 0.3s ease;
     }
 
+    .filter-pill:first-child { padding-left: 0.25rem; }
+
     .filter-pill::after {
       content: '';
       position: absolute;
       bottom: 0;
-      left: 1.25rem;
-      right: 1.25rem;
+      left: 1.125rem;
+      right: 1.125rem;
       height: 2px;
       background: var(--color-sunset);
       transform: scaleX(0);
       transition: transform 0.3s var(--ease-spring);
     }
+
+    .filter-pill:first-child::after { left: 0.25rem; }
 
     .filter-pill:hover { color: var(--color-stone); }
 
@@ -280,32 +289,15 @@
 
     /* ---- Colour Selector ---- */
     .colour-select-wrap {
-      margin-left: auto;
-      padding: 0.75rem 0;
       flex-shrink: 0;
-      position: relative;
-    }
-
-    @media (max-width: 767px) {
-      .colour-select-wrap {
-        width: 100%;
-        margin-left: 0;
-        padding: 0 0 0.875rem;
-        border-top: 1px solid rgba(34, 35, 35, 0.06);
-        padding-top: 0.75rem;
-      }
-
-      .colour-select-wrap .colour-select {
-        width: 100%;
-      }
     }
 
     .colour-select {
       font-family: var(--font-body);
-      font-size: 0.6875rem;
+      font-size: 0.75rem;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       color: var(--color-stone);
       background: transparent;
       border: 1px solid rgba(34, 35, 35, 0.15);
@@ -318,7 +310,7 @@
       background-repeat: no-repeat;
       background-position: right 0.75rem center;
       transition: border-color 0.3s ease;
-      min-width: 140px;
+      min-width: 150px;
     }
 
     .colour-select:hover,
@@ -329,14 +321,22 @@
 
     .colour-select option {
       font-family: var(--font-body);
-      font-size: 0.8125rem;
+      font-size: 0.875rem;
       text-transform: none;
       letter-spacing: 0;
-      padding: 0.5rem;
     }
 
     @media (max-width: 767px) {
-      .colour-select { min-width: unset; font-size: 0.6875rem; }
+      .filter-bar__top {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1.25rem 0 0.625rem;
+      }
+
+      .colour-select-wrap { width: 100%; }
+      .colour-select { width: 100%; min-width: unset; }
+
+      .filter-pill { font-size: 0.75rem; padding: 0.75rem 1rem; }
     }
 
     /* ============================================
@@ -922,7 +922,6 @@
       .footer__grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer__bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
 
-      .filter-bar__count { display: none; }
     }
   </style>
 </head>
@@ -961,8 +960,25 @@
   <!-- FILTER BAR -->
   <div class="filter-bar" id="filterBar">
     <div class="filter-bar__inner">
-      <div class="filter-bar__pills">
-        <span class="filter-bar__count" id="filterCount">318 stones</span>
+      <div class="filter-bar__top">
+        <h1 class="filter-bar__title">Stone Library <span class="filter-bar__count" id="filterCount">318 stones</span></h1>
+        <div class="colour-select-wrap">
+          <select class="colour-select" id="colourSelect">
+            <option value="all">All Colours</option>
+            <option value="White">White</option>
+            <option value="Black">Black</option>
+            <option value="Beige">Beige</option>
+            <option value="Grey">Grey</option>
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Brown">Brown</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Green">Green</option>
+            <option value="Multicolour">Multicolour</option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-bar__tabs">
         <button class="filter-pill is-active" data-category="all">All</button>
         <button class="filter-pill" data-category="marble">Marble</button>
         <button class="filter-pill" data-category="granite">Granite</button>
@@ -972,21 +988,6 @@
         <button class="filter-pill" data-category="limestone">Limestone</button>
         <button class="filter-pill" data-category="neolith">Neolith</button>
         <button class="filter-pill" data-category="sandstone">Sandstone</button>
-      </div>
-      <div class="colour-select-wrap">
-        <select class="colour-select" id="colourSelect">
-          <option value="all">All Colours</option>
-          <option value="White">White</option>
-          <option value="Black">Black</option>
-          <option value="Beige">Beige</option>
-          <option value="Grey">Grey</option>
-          <option value="Red">Red</option>
-          <option value="Blue">Blue</option>
-          <option value="Brown">Brown</option>
-          <option value="Yellow">Yellow</option>
-          <option value="Green">Green</option>
-          <option value="Multicolour">Multicolour</option>
-        </select>
       </div>
     </div>
   </div>
