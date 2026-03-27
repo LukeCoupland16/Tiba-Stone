@@ -1,0 +1,2949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIBA STONE — Product Catalogue 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --stone: #222323;
+      --ivory: #FFFFFF;
+      --sunset: #925638;
+      --river: #A3996A;
+      --sand: #F0EBE3;
+      --warm-bg: #E8E2DA;
+      --dusk: #153647;
+      --moss: #3E402B;
+      --font-display: 'Libre Baskerville', 'Baskerville', Georgia, serif;
+      --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 10.5pt;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--stone);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    @page { size: A4 portrait; margin: 0; }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      padding: 0;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      background: var(--ivory);
+    }
+    .page:last-child { page-break-after: auto; break-after: auto; }
+
+    /* ── COVER ── */
+    .cover {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      background: var(--stone); color: var(--ivory);
+    }
+    .cover__logo { width: 80mm; margin-bottom: 12mm; filter: invert(1); }
+    .cover__rule { width: 40mm; height: 0.3mm; background: linear-gradient(90deg, transparent, var(--river), transparent); margin-bottom: 10mm; }
+    .cover__title { font-family: var(--font-display); font-size: 14pt; font-weight: 400; letter-spacing: 0.45em; text-transform: uppercase; margin-bottom: 4mm; }
+    .cover__subtitle { font-family: var(--font-body); font-size: 7.5pt; font-weight: 300; letter-spacing: 0.35em; text-transform: uppercase; color: var(--river); }
+    .cover__year { position: absolute; bottom: 18mm; font-family: var(--font-body); font-size: 7pt; font-weight: 300; letter-spacing: 0.5em; color: var(--river); opacity: 0.6; }
+
+    /* ── INTRO ── */
+    .intro { display: flex; flex-direction: column; justify-content: center; padding: 30mm 28mm; }
+    .intro__eyebrow { font-family: var(--font-body); font-size: 6.5pt; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: var(--river); margin-bottom: 8mm; }
+    .intro__heading { font-family: var(--font-display); font-size: 22pt; font-weight: 400; line-height: 1.35; margin-bottom: 10mm; max-width: 120mm; }
+    .intro__rule { width: 24mm; height: 0.3mm; background: var(--sunset); margin-bottom: 10mm; }
+    .intro__body { font-size: 9pt; font-weight: 300; line-height: 1.85; color: #555; max-width: 130mm; margin-bottom: 8mm; }
+    .intro__contact { font-size: 7pt; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sunset); margin-top: 4mm; }
+
+    /* ── CONTENTS ── */
+    .contents { padding: 30mm 28mm; display: flex; flex-direction: column; justify-content: center; }
+    .contents__title { font-family: var(--font-display); font-size: 18pt; font-weight: 400; margin-bottom: 14mm; }
+    .contents__list { list-style: none; }
+    .contents__item { display: flex; align-items: baseline; justify-content: space-between; padding: 3.5mm 0; border-bottom: 0.2mm solid var(--sand); }
+    .contents__item:last-child { border-bottom: none; }
+    .contents__cat-name { font-family: var(--font-display); font-size: 11pt; font-weight: 400; }
+    .contents__cat-count { font-family: var(--font-body); font-size: 7.5pt; font-weight: 300; letter-spacing: 0.15em; color: var(--river); }
+
+    /* ── CATEGORY DIVIDER ── */
+    .divider { display: flex; align-items: center; justify-content: center; text-align: center; background: var(--sand); }
+    .divider__inner { display: flex; flex-direction: column; align-items: center; }
+    .divider__number { font-family: var(--font-body); font-size: 7pt; font-weight: 400; letter-spacing: 0.5em; color: var(--river); margin-bottom: 6mm; }
+    .divider__title { font-family: var(--font-display); font-size: 28pt; font-weight: 400; letter-spacing: 0.08em; margin-bottom: 5mm; }
+    .divider__rule { width: 20mm; height: 0.3mm; background: var(--sunset); margin-bottom: 5mm; }
+    .divider__count { font-family: var(--font-body); font-size: 7pt; font-weight: 300; letter-spacing: 0.35em; text-transform: uppercase; color: var(--river); }
+
+    /* ── PRODUCT PAGE ── */
+    .product {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      height: 297mm;
+    }
+
+    .product__gallery {
+      display: flex;
+      flex-direction: column;
+      background: var(--sand);
+      overflow: hidden;
+    }
+
+    .product__hero-img {
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .product__hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product__thumbs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--ivory);
+      flex-shrink: 0;
+    }
+
+    .product__thumb {
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--sand);
+    }
+
+    .product__thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product__info {
+      display: flex;
+      flex-direction: column;
+      padding: 14mm 16mm 14mm 14mm;
+      overflow: hidden;
+    }
+
+    .product__cat {
+      font-family: var(--font-body);
+      font-size: 6pt;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--river);
+      margin-bottom: 3mm;
+    }
+
+    .product__name {
+      font-family: var(--font-display);
+      font-size: 20pt;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 4mm;
+    }
+
+    .product__rule {
+      width: 14mm;
+      height: 0.25mm;
+      background: var(--sunset);
+      margin-bottom: 4mm;
+    }
+
+    .product__desc {
+      font-size: 7.5pt;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #555;
+      margin-bottom: 5mm;
+    }
+
+    /* Specs table */
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 5mm;
+    }
+
+    .specs-table tr {
+      border-bottom: 0.15mm solid var(--sand);
+    }
+
+    .specs-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .specs-table td {
+      padding: 1.8mm 0;
+      vertical-align: top;
+      font-size: 6.8pt;
+      line-height: 1.5;
+    }
+
+    .specs-table .spec-label {
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--river);
+      width: 28mm;
+      padding-right: 3mm;
+      white-space: nowrap;
+      font-size: 5.5pt;
+    }
+
+    .specs-table .spec-value {
+      font-weight: 300;
+      color: var(--stone);
+    }
+
+    /* Technical drawing area */
+    .product__technical {
+      margin-top: auto;
+      display: flex;
+      align-items: flex-end;
+      gap: 3mm;
+    }
+
+    .product__drawing {
+      flex: 1;
+      max-height: 55mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product__drawing img {
+      max-height: 48mm;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      opacity: 0.75;
+    }
+
+    .product__drawing-label {
+      font-size: 5pt;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--river);
+      margin-top: 2mm;
+    }
+
+    .product__cta {
+      font-family: var(--font-body);
+      font-size: 6pt;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--sunset);
+      margin-top: 4mm;
+    }
+
+    /* Page footer */
+    .page-foot {
+      position: absolute;
+      bottom: 6mm;
+      left: 0; right: 0;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 5.5pt;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--river);
+      opacity: 0.45;
+    }
+
+    /* ── STONES PAGE ── */
+    .stones-page { padding: 28mm; display: flex; flex-direction: column; justify-content: center; }
+    .stones-page__title { font-family: var(--font-display); font-size: 18pt; font-weight: 400; margin-bottom: 4mm; }
+    .stones-page__subtitle { font-family: var(--font-body); font-size: 8pt; font-weight: 300; color: #777; margin-bottom: 14mm; max-width: 120mm; line-height: 1.7; }
+    .stones-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8mm; }
+    .stone-swatch { text-align: center; }
+    .stone-swatch__img { width: 100%; aspect-ratio: 1; object-fit: cover; margin-bottom: 4mm; }
+    .stone-swatch__name { font-family: var(--font-display); font-size: 8.5pt; font-weight: 400; margin-bottom: 1mm; }
+    .stone-swatch__origin { font-family: var(--font-body); font-size: 6pt; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--river); }
+
+    /* ── BACK COVER ── */
+    .back-cover {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      background: var(--stone); color: var(--ivory);
+    }
+    .back-cover__logo { width: 50mm; margin-bottom: 14mm; filter: invert(1); }
+    .back-cover__rule { width: 30mm; height: 0.3mm; background: linear-gradient(90deg, transparent, var(--river), transparent); margin-bottom: 14mm; }
+    .back-cover__line { font-family: var(--font-body); font-size: 7.5pt; font-weight: 300; letter-spacing: 0.2em; color: rgba(255,255,255,0.5); margin-bottom: 2mm; }
+    .back-cover__line--accent { color: var(--river); letter-spacing: 0.35em; text-transform: uppercase; font-size: 6.5pt; font-weight: 400; margin-top: 8mm; }
+    .back-cover__year { position: absolute; bottom: 14mm; font-family: var(--font-body); font-size: 6pt; font-weight: 300; letter-spacing: 0.5em; color: rgba(255,255,255,0.25); }
+
+    /* ── SCREEN PREVIEW ── */
+    @media screen {
+      body { background: #d8d4cf; padding: 20mm 0; }
+      .page { box-shadow: 0 2px 20px rgba(0,0,0,0.12); margin-bottom: 8mm; }
+    }
+
+    @media print {
+      body { background: white; padding: 0; margin: 0; }
+      .page { box-shadow: none; margin: 0; width: 100%; height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page cover">
+    <img class="cover__logo" src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="Tiba Stone">
+    <div class="cover__rule"></div>
+    <h1 class="cover__title">Product Catalogue</h1>
+    <p class="cover__subtitle">Bespoke Marble Atelier</p>
+    <span class="cover__year">MMXXVI</span>
+  </div>
+  <div class="page intro">
+    <p class="intro__eyebrow">The Atelier</p>
+    <h2 class="intro__heading">Stone, shaped by intention.</h2>
+    <div class="intro__rule"></div>
+    <p class="intro__body">Tiba Stone is a bespoke marble atelier. Each piece in this catalogue is carved from a single block of stone &mdash; selected for its veining, its density, its character. We do not mass-produce. We do not stock. Every commission begins with a conversation and ends with something permanent.</p>
+    <p class="intro__body">This catalogue presents our current collection across ten categories. Every piece can be commissioned in your choice of marble, scaled to your specifications, and finished to your preference.</p>
+    <p class="intro__body">All pieces are handmade to order. Dimensions and weights are approximate. Custom sizing and stone selection available on all products.</p>
+    <p class="intro__contact">Inquiries &mdash; info@tibastone.com &nbsp;&middot;&nbsp; tibastone.com</p>
+    <span class="page-foot">02</span>
+  </div>
+  <div class="page contents">
+    <h2 class="contents__title">Collection</h2>
+    <ul class="contents__list">
+      <li class="contents__item"><span class="contents__cat-name">Coffee Tables</span><span class="contents__cat-count">6 PIECES</span></li>
+      <li class="contents__item"><span class="contents__cat-name">Dining Tables</span><span class="contents__cat-count">6 PIECES</span></li>
+      <li class="contents__item"><span class="contents__cat-name">Consoles</span><span class="contents__cat-count">20 PIECES</span></li>
+      <li class="contents__item"><span class="contents__cat-name">Side Tables</span><span class="contents__cat-count">7 PIECES</span></li>
+      <li class="contents__item"><span class="contents__cat-name">Cabinets</span><span class="contents__cat-count">4 PIECES</span></li>
+      <li class="contents__item"><span class="contents__cat-name">Credenzas</span><span class="contents__cat-count">1 PIECE</span></li>
+      <li class="contents__item"><span class="contents__cat-name">Benches</span><span class="contents__cat-count">2 PIECES</span></li>
+      <li class="contents__item"><span class="contents__cat-name">Washbasins</span><span class="contents__cat-count">12 PIECES</span></li>
+      <li class="contents__item"><span class="contents__cat-name">Vases</span><span class="contents__cat-count">3 PIECES</span></li>
+      <li class="contents__item"><span class="contents__cat-name">Compliments</span><span class="contents__cat-count">8 PIECES</span></li>
+      <li class="contents__item" style="border-bottom:none"><span class="contents__cat-name" style="color:var(--river);font-family:var(--font-body);font-size:9pt">Stone Selection</span><span class="contents__cat-count">6 MARBLES</span></li>
+    </ul>
+    <span class="page-foot">03</span>
+  </div>
+
+  <div class="page divider">
+    <div class="divider__inner">
+      <span class="divider__number">01</span>
+      <h2 class="divider__title">Coffee Tables</h2>
+      <div class="divider__rule"></div>
+      <span class="divider__count">6 PIECES</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/coffee tables/duale/duale_01_editorial.webp" alt="Duale">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/coffee tables/duale/duale_02_human.webp" alt="Duale detail"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/duale/duale_03_closeup_veining.webp" alt="Duale veining"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/duale/duale_04_closeup_edge.webp" alt="Duale edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Coffee Tables</span>
+        <h2 class="product__name">Duale</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Duale — a split-circle coffee table combining translucent crystal and patinated bronze.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">130 × 75 × 36 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 175 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/coffee tables/duale/duale_11_technical.webp" alt="Duale technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">05</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/coffee tables/eclisse/eclisse_01_editorial.webp" alt="Eclisse">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/coffee tables/eclisse/eclisse_02_human.webp" alt="Eclisse detail"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/eclisse/eclisse_03_closeup_veining.webp" alt="Eclisse veining"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/eclisse/eclisse_04_closeup_edge.webp" alt="Eclisse edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Coffee Tables</span>
+        <h2 class="product__name">Eclisse</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Eclisse — a dark marble organic-form coffee table on clustered cylinder bases.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">140 × 70 × 34 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 100 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/coffee tables/eclisse/eclisse_11_technical.webp" alt="Eclisse technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">06</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/coffee tables/gesto/gesto_01_editorial.webp" alt="Gesto">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/coffee tables/gesto/gesto_02_human.webp" alt="Gesto detail"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/gesto/gesto_03_closeup_veining.webp" alt="Gesto veining"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/gesto/gesto_04_closeup_edge.webp" alt="Gesto edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Coffee Tables</span>
+        <h2 class="product__name">Gesto</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Gesto coffee table — a single sweeping gesture in stone.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">45 cm diameter × 45 cm height</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 38 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Silver Travertine, Beige Travertine, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/coffee tables/gesto/gesto_11_technical.webp" alt="Gesto technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">07</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/coffee tables/morphe/morphe_01_editorial.webp" alt="Morphe">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/coffee tables/morphe/morphe_02_human.webp" alt="Morphe detail"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/morphe/morphe_03_closeup_veining.webp" alt="Morphe veining"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/morphe/morphe_04_closeup_edge.webp" alt="Morphe edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Coffee Tables</span>
+        <h2 class="product__name">Morphe</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Morphe coffee table — stone caught mid-transformation.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">140 × 70 × 38 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 125 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/coffee tables/morphe/morphe_11_technical.webp" alt="Morphe technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">08</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/coffee tables/quadro/quadro_01_editorial.webp" alt="Quadro">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/coffee tables/quadro/quadro_02_human.webp" alt="Quadro detail"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/quadro/quadro_03_closeup_veining.webp" alt="Quadro veining"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/quadro/quadro_04_closeup_edge.webp" alt="Quadro edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Coffee Tables</span>
+        <h2 class="product__name">Quadro</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Quadro — a monumental pink onyx square coffee table with four block legs that rise above the surface.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">130 × 80 × 36 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 155 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; edge profiles on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/coffee tables/quadro/quadro_11_technical.webp" alt="Quadro technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">09</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/coffee tables/terra/terra_01_editorial.webp" alt="Terra">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/coffee tables/terra/terra_02_human.webp" alt="Terra detail"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/terra/terra_03_closeup_veining.webp" alt="Terra veining"></div>
+          <div class="product__thumb"><img src="Products/coffee tables/terra/terra_04_closeup_edge.webp" alt="Terra edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Coffee Tables</span>
+        <h2 class="product__name">Terra</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Terra Coffee Table — quarried from Travertino Romano, its warm ivory surface marked by natural voids and fossil traces the earth left behind.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">50 cm diameter × 45 cm height</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 22 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Silver Travertine, Beige Travertine, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or brushed — client&#x27;s choice</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/coffee tables/terra/terra_11_technical.webp" alt="Terra technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">10</span>
+  </div>
+
+  <div class="page divider">
+    <div class="divider__inner">
+      <span class="divider__number">02</span>
+      <h2 class="divider__title">Dining Tables</h2>
+      <div class="divider__rule"></div>
+      <span class="divider__count">6 PIECES</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Dining Tables/bronze/bronze_01_editorial.webp" alt="Bronze">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Dining Tables/bronze/bronze_02_human.webp" alt="Bronze detail"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/bronze/bronze_03_closeup_veining.webp" alt="Bronze veining"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/bronze/bronze_04_closeup_edge.webp" alt="Bronze edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Dining Tables</span>
+        <h2 class="product__name">Bronze</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Bronze — a stone dining table of mineral depth and warm authority.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">130 cm diameter × 75 cm height</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 235 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Silver Travertine, Beige Travertine, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed (standard); polished on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Dining Tables/bronze/bronze_11_technical.webp" alt="Bronze technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">12</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Dining Tables/eclipse/eclipse_01_editorial.webp" alt="Eclipse">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Dining Tables/eclipse/eclipse_02_human.webp" alt="Eclipse detail"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/eclipse/eclipse_03_closeup_veining.webp" alt="Eclipse veining"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/eclipse/eclipse_04_closeup_edge.webp" alt="Eclipse edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Dining Tables</span>
+        <h2 class="product__name">Eclipse</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Eclipse — a circular stone dining table.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">260 × 110 × 75 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 435 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed (standard); polished on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Dining Tables/eclipse/eclipse_11_technical.webp" alt="Eclipse technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">13</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Dining Tables/juni/juni_01_editorial.webp" alt="Juni">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Dining Tables/juni/juni_02_human.webp" alt="Juni detail"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/juni/juni_03_closeup_veining.webp" alt="Juni veining"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/juni/juni_04_closeup_edge.webp" alt="Juni edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Dining Tables</span>
+        <h2 class="product__name">Juni</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Juni — a marble dining table whose form captures the clarity of summer.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">150 cm diameter × 75 cm height</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 220 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Dining Tables/juni/juni_11_technical.webp" alt="Juni technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">14</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Dining Tables/lavanche/lavanche_01_editorial.webp" alt="Lavanche">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Dining Tables/lavanche/lavanche_02_human.webp" alt="Lavanche detail"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/lavanche/lavanche_03_closeup_veining.webp" alt="Lavanche veining"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/lavanche/lavanche_04_closeup_edge.webp" alt="Lavanche edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Dining Tables</span>
+        <h2 class="product__name">Lavanche</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Lavanche — a bespoke marble dining table.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">280 × 120 × 75 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 350 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Dining Tables/lavanche/lavanche_11_technical.webp" alt="Lavanche technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">15</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Dining Tables/levante/levante_01_editorial.webp" alt="Levante">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Dining Tables/levante/levante_02_human.webp" alt="Levante detail"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/levante/levante_03_closeup_veining.webp" alt="Levante veining"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/levante/levante_04_closeup_edge.webp" alt="Levante edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Dining Tables</span>
+        <h2 class="product__name">Levante</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Levante — a bespoke marble dining table.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">200 × 100 × 75 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 250 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Dining Tables/levante/levante_11_technical.webp" alt="Levante technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">16</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Dining Tables/wedge/wedge_01_editorial.webp" alt="Wedge">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Dining Tables/wedge/wedge_02_human.webp" alt="Wedge detail"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/wedge/wedge_03_closeup_veining.webp" alt="Wedge veining"></div>
+          <div class="product__thumb"><img src="Products/Dining Tables/wedge/wedge_04_closeup_edge.webp" alt="Wedge edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Dining Tables</span>
+        <h2 class="product__name">Wedge</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Wedge — geometry made dining table.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">130 cm diameter × 75 cm height</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 165 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Dining Tables/wedge/wedge_11_technical.webp" alt="Wedge technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">17</span>
+  </div>
+
+  <div class="page divider">
+    <div class="divider__inner">
+      <span class="divider__number">03</span>
+      <h2 class="divider__title">Consoles</h2>
+      <div class="divider__rule"></div>
+      <span class="divider__count">20 PIECES</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/cascara/cascara_01_editorial.webp" alt="Cascara">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/cascara/cascara_02_human.webp" alt="Cascara detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/cascara/cascara_03_closeup_veining.webp" alt="Cascara veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/cascara/cascara_04_closeup_edge.webp" alt="Cascara edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Cascara</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Cascara — a green-veined white marble waterfall console in a clean angular U-shape.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">130 × 42 × 80 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 145 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/cascara/cascara_11_technical.webp" alt="Cascara technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">19</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/curves/curves_01_editorial.webp" alt="Curves">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/curves/curves_02_human.webp" alt="Curves detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/curves/curves_03_closeup_veining.webp" alt="Curves veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/curves/curves_04_closeup_edge.webp" alt="Curves edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Curves</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Curves — an organic marble console.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">140 × 40 × 88 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 185 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/curves/curves_11_technical.webp" alt="Curves technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">20</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/elisse/elisse_01_editorial.webp" alt="Elisse">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/elisse/elisse_02_human.webp" alt="Elisse detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/elisse/elisse_03_closeup_veining.webp" alt="Elisse veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/elisse/elisse_04_closeup_edge.webp" alt="Elisse edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Elisse</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Elisse — a Calacatta Viola console with an elongated oval top on twin cylindrical pedestals.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">130 × 60 × 80 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 115 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/elisse/elisse_11_technical.webp" alt="Elisse technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">21</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/empire/empire_01_editorial.webp" alt="Empire">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/empire/empire_02_human.webp" alt="Empire detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/empire/empire_03_closeup_veining.webp" alt="Empire veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/empire/empire_04_closeup_edge.webp" alt="Empire edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Empire</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Empire — a monumental marble console.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">140 × 45 × 80 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 81 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/empire/empire_11_technical.webp" alt="Empire technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">22</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/falda/falda_01_editorial.webp" alt="Falda">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/falda/falda_02_human.webp" alt="Falda detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/falda/falda_03_closeup_veining.webp" alt="Falda veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/falda/falda_04_closeup_edge.webp" alt="Falda edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Falda</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Falda — a breccia marble console with an asymmetric cantilevered top on a single sculptural pedestal.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">100 × 40 × 82 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 120 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/falda/falda_11_technical.webp" alt="Falda technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">23</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/fiamma/fiamma_01_editorial.webp" alt="Fiamma">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/fiamma/fiamma_02_human.webp" alt="Fiamma detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/fiamma/fiamma_03_closeup_veining.webp" alt="Fiamma veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/fiamma/fiamma_04_closeup_edge.webp" alt="Fiamma edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Fiamma</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Fiamma — a white marble console with undulating sculptural legs that ripple like flame.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">120 × 40 × 82 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 125 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/fiamma/fiamma_11_technical.webp" alt="Fiamma technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">24</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/anti/anti_01_editorial.webp" alt="Inverso">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/anti/anti_02_human.webp" alt="Inverso detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/anti/anti_03_closeup_veining.webp" alt="Inverso veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/anti/anti_04_closeup_edge.webp" alt="Inverso edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Inverso</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Inverso — a console stripped to intention.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">140 × 42 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 84 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/anti/anti_11_technical.webp" alt="Inverso technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">25</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/lamarck/lamarck_01_editorial.webp" alt="Lamarck">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/lamarck/lamarck_02_human.webp" alt="Lamarck detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/lamarck/lamarck_03_closeup_veining.webp" alt="Lamarck veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/lamarck/lamarck_04_closeup_edge.webp" alt="Lamarck edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Lamarck</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Lamarck — a naturalist marble console.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">150 × 40 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 195 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/lamarck/lamarck_11_technical.webp" alt="Lamarck technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">26</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/lucerna/lucerna_01_editorial.webp" alt="Lucerna">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/lucerna/lucerna_02_human.webp" alt="Lucerna detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/lucerna/lucerna_03_closeup_veining.webp" alt="Lucerna veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/lucerna/lucerna_04_closeup_edge.webp" alt="Lucerna edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Lucerna</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Lucerna — a translucent crystal console framed in burnished brass with art deco proportions.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">160 × 50 × 82 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 190 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/lucerna/lucerna_11_technical.webp" alt="Lucerna technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">27</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/malibu/malibu_01_editorial.webp" alt="Malibu">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/malibu/malibu_02_human.webp" alt="Malibu detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/malibu/malibu_03_closeup_veining.webp" alt="Malibu veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/malibu/malibu_04_closeup_edge.webp" alt="Malibu edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Malibu</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Malibu — a sun-bleached marble console.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">120 × 38 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 105 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/malibu/malibu_11_technical.webp" alt="Malibu technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">28</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/onda/onda_01_editorial.webp" alt="Onda">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/onda/onda_02_human.webp" alt="Onda detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/onda/onda_03_closeup_veining.webp" alt="Onda veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/onda/onda_04_closeup_edge.webp" alt="Onda edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Onda</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Onda — an undulating marble console.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">150 × 42 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 160 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/onda/onda_11_technical.webp" alt="Onda technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">29</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/levante/levante_01_editorial.webp" alt="Oriente">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/levante/levante_02_human.webp" alt="Oriente detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/levante/levante_03_closeup_veining.webp" alt="Oriente veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/levante/levante_04_closeup_edge.webp" alt="Oriente edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Oriente</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Oriente — a coastal marble console.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">120 × 40 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 135 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/levante/levante_11_technical.webp" alt="Oriente technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">30</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/cut-and-fold/cut-and-fold_01_editorial.webp" alt="Piega">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/cut-and-fold/cut-and-fold_02_human.webp" alt="Piega detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/cut-and-fold/cut-and-fold_03_closeup_veining.webp" alt="Piega veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/cut-and-fold/cut-and-fold_04_closeup_edge.webp" alt="Piega edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Piega</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Piega — a geometric marble console.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">160 × 40 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 115 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/cut-and-fold/cut-and-fold_11_technical.webp" alt="Piega technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">31</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/portale/portale_01_editorial.webp" alt="Portale">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/portale/portale_02_human.webp" alt="Portale detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/portale/portale_03_closeup_veining.webp" alt="Portale veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/portale/portale_04_closeup_edge.webp" alt="Portale edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Portale</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Portale — a Rosso Levanto marble console with twin U-shaped portal cutouts in the base.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">150 × 45 × 80 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 205 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/portale/portale_11_technical.webp" alt="Portale technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">32</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/relica/relica_01_editorial.webp" alt="Relica">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/relica/relica_02_human.webp" alt="Relica detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/relica/relica_03_closeup_veining.webp" alt="Relica veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/relica/relica_04_closeup_edge.webp" alt="Relica edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Relica</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Relica — a monolithic marble console.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">120 × 40 × 80 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 270 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/relica/relica_11_technical.webp" alt="Relica technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">33</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/scanalato/scanalato_01_editorial.webp" alt="Scanalato">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/scanalato/scanalato_02_human.webp" alt="Scanalato detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/scanalato/scanalato_03_closeup_veining.webp" alt="Scanalato veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/scanalato/scanalato_04_closeup_edge.webp" alt="Scanalato edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Scanalato</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Scanalato — a fluted pedestal console carved from pink marble.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">120 × 42 × 80 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 125 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed exterior; polished top surface</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/scanalato/scanalato_11_technical.webp" alt="Scanalato technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">34</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/serpente/serpente_01_editorial.webp" alt="Serpente">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/serpente/serpente_02_human.webp" alt="Serpente detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/serpente/serpente_03_closeup_veining.webp" alt="Serpente veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/serpente/serpente_04_closeup_edge.webp" alt="Serpente edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Serpente</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Serpente — a Calacatta Viola marble console with two sinuous sculpted legs.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">150 × 45 × 80 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 160 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/serpente/serpente_11_technical.webp" alt="Serpente technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">35</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/shan/shan_01_editorial.webp" alt="Shan">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/shan/shan_02_human.webp" alt="Shan detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/shan/shan_03_closeup_veining.webp" alt="Shan veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/shan/shan_04_closeup_edge.webp" alt="Shan edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Shan</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Shan — a sculptural marble console.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">130 × 40 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 185 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/shan/shan_11_technical.webp" alt="Shan technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">36</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/t-02/t-02_01_editorial.webp" alt="T-02">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/t-02/t-02_02_human.webp" alt="T-02 detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/t-02/t-02_03_closeup_veining.webp" alt="T-02 veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/t-02/t-02_04_closeup_edge.webp" alt="T-02 edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">T-02</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">T-02 — a precision marble console.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">100 × 38 × 82 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 170 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/t-02/t-02_11_technical.webp" alt="T-02 technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">37</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Consoles/morphe/morphe_01_editorial.webp" alt="Voluta">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Consoles/morphe/morphe_02_human.webp" alt="Voluta detail"></div>
+          <div class="product__thumb"><img src="Products/Consoles/morphe/morphe_03_closeup_veining.webp" alt="Voluta veining"></div>
+          <div class="product__thumb"><img src="Products/Consoles/morphe/morphe_04_closeup_edge.webp" alt="Voluta edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Consoles</span>
+        <h2 class="product__name">Voluta</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Voluta — a metamorphic marble console.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">100 × 40 × 80 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 125 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Consoles/morphe/morphe_11_technical.webp" alt="Voluta technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">38</span>
+  </div>
+
+  <div class="page divider">
+    <div class="divider__inner">
+      <span class="divider__number">04</span>
+      <h2 class="divider__title">Side Tables</h2>
+      <div class="divider__rule"></div>
+      <span class="divider__count">7 PIECES</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Side tables/anti/anti_01_editorial.webp" alt="Anti">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Side tables/anti/anti_02_human.webp" alt="Anti detail"></div>
+          <div class="product__thumb"><img src="Products/Side tables/anti/anti_03_closeup_veining.webp" alt="Anti veining"></div>
+          <div class="product__thumb"><img src="Products/Side tables/anti/anti_04_closeup_edge.webp" alt="Anti edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Side Tables</span>
+        <h2 class="product__name">Anti</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Anti Side Table — a monolithic marble slab that appears to hover, held by a single hand-forged iron pin.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">60 cm diameter × 25 cm height</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 34 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Polished top, raw iron stem (standard)</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Side tables/anti/anti_11_technical.webp" alt="Anti technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">40</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Side tables/arthur/arthur_01_editorial.webp" alt="Arthur">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Side tables/arthur/arthur_02_human.webp" alt="Arthur detail"></div>
+          <div class="product__thumb"><img src="Products/Side tables/arthur/arthur_03_closeup_veining.webp" alt="Arthur veining"></div>
+          <div class="product__thumb"><img src="Products/Side tables/arthur/arthur_04_closeup_edge.webp" alt="Arthur edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Side Tables</span>
+        <h2 class="product__name">Arthur</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Arthur Side Table — carved from a single block of marble with continuous veining from surface to floor.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">60 × 30 × 20 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 98 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Polished or honed (standard)</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Side tables/arthur/arthur_11_technical.webp" alt="Arthur technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">41</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Side tables/cut-and-fold/cut-and-fold_01_editorial.webp" alt="Cut &amp;amp; Fold">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Side tables/cut-and-fold/cut-and-fold_02_human.webp" alt="Cut &amp;amp; Fold detail"></div>
+          <div class="product__thumb"><img src="Products/Side tables/cut-and-fold/cut-and-fold_03_closeup_veining.webp" alt="Cut &amp;amp; Fold veining"></div>
+          <div class="product__thumb"><img src="Products/Side tables/cut-and-fold/cut-and-fold_04_closeup_edge.webp" alt="Cut &amp;amp; Fold edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Side Tables</span>
+        <h2 class="product__name">Cut &amp;amp; Fold</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Cut &amp;amp; Fold Side Table — marble in the posture of folded sheet.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">55 × 35 × 45 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 37 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Silver Travertine, Beige Travertine, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed matte (standard)</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Side tables/cut-and-fold/cut-and-fold_11_technical.webp" alt="Cut &amp;amp; Fold technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">42</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Side tables/icaro/icaro_01_editorial.webp" alt="Icaro">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Side tables/icaro/icaro_02_human.webp" alt="Icaro detail"></div>
+          <div class="product__thumb"><img src="Products/Side tables/icaro/icaro_03_closeup_veining.webp" alt="Icaro veining"></div>
+          <div class="product__thumb"><img src="Products/Side tables/icaro/icaro_04_closeup_edge.webp" alt="Icaro edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Side Tables</span>
+        <h2 class="product__name">Icaro</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Icaro Side Table — stone reaching for lightness.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">60 × 40 × 30 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 30 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Silver Travertine, Beige Travertine, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Polished top, honed legs (standard)</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Side tables/icaro/icaro_11_technical.webp" alt="Icaro technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">43</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Side tables/rosa/rosa_01_editorial.webp" alt="Rosa">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Side tables/rosa/rosa_02_human.webp" alt="Rosa detail"></div>
+          <div class="product__thumb"><img src="Products/Side tables/rosa/rosa_03_closeup_veining.webp" alt="Rosa veining"></div>
+          <div class="product__thumb"><img src="Products/Side tables/rosa/rosa_04_closeup_edge.webp" alt="Rosa edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Side Tables</span>
+        <h2 class="product__name">Rosa</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Rosa — a pink onyx round pedestal side table with cylindrical base.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">40 cm diameter × 55 cm height</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 40 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Polished; sealed for daily use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Side tables/rosa/rosa_11_technical.webp" alt="Rosa technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">44</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Side tables/morphe/morphe_01_editorial.webp" alt="Sinua">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Side tables/morphe/morphe_02_human.webp" alt="Sinua detail"></div>
+          <div class="product__thumb"><img src="Products/Side tables/morphe/morphe_03_closeup_veining.webp" alt="Sinua veining"></div>
+          <div class="product__thumb"><img src="Products/Side tables/morphe/morphe_04_closeup_edge.webp" alt="Sinua edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Side Tables</span>
+        <h2 class="product__name">Sinua</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Sinua Side Table — form held mid-becoming.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">50 × 50 × 50 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 100 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Hand-honed matte (standard)</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Side tables/morphe/morphe_11_technical.webp" alt="Sinua technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">45</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Side tables/vertebra/vertebra_01_editorial.webp" alt="Vertebra">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Side tables/vertebra/vertebra_02_human.webp" alt="Vertebra detail"></div>
+          <div class="product__thumb"><img src="Products/Side tables/vertebra/vertebra_03_closeup_veining.webp" alt="Vertebra veining"></div>
+          <div class="product__thumb"><img src="Products/Side tables/vertebra/vertebra_04_closeup_edge.webp" alt="Vertebra edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Side Tables</span>
+        <h2 class="product__name">Vertebra</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Vertebra — marble discs stacked and offset to form a spiraling column side table.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">28 cm diameter × 65 cm height</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 43 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Polished; sealed for daily use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Side tables/vertebra/vertebra_11_technical.webp" alt="Vertebra technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">46</span>
+  </div>
+
+  <div class="page divider">
+    <div class="divider__inner">
+      <span class="divider__number">05</span>
+      <h2 class="divider__title">Cabinets</h2>
+      <div class="divider__rule"></div>
+      <span class="divider__count">4 PIECES</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/cabinets/aida/aida_01_editorial.webp" alt="Aida">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/cabinets/aida/aida_02_human.webp" alt="Aida detail"></div>
+          <div class="product__thumb"><img src="Products/cabinets/aida/aida_03_closeup_veining.webp" alt="Aida veining"></div>
+          <div class="product__thumb"><img src="Products/cabinets/aida/aida_04_closeup_edge.webp" alt="Aida edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Cabinets</span>
+        <h2 class="product__name">Aida</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Aida Cabinet — four bookmatched marble panels set in a hand-brushed brass frame.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">100 × 45 × 95 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 155 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Silver Travertine, Beige Travertine, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/cabinets/aida/aida_11_technical.webp" alt="Aida technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">48</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/cabinets/priamo/priamo_01_editorial.webp" alt="Priamo">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/cabinets/priamo/priamo_02_human.webp" alt="Priamo detail"></div>
+          <div class="product__thumb"><img src="Products/cabinets/priamo/priamo_03_closeup_veining.webp" alt="Priamo veining"></div>
+          <div class="product__thumb"><img src="Products/cabinets/priamo/priamo_04_closeup_edge.webp" alt="Priamo edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Cabinets</span>
+        <h2 class="product__name">Priamo</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Priamo Sideboard — three sequentially-cut marble panels set in a patinated dark bronze frame.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">200 × 50 × 80 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 180 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/cabinets/priamo/priamo_11_technical.webp" alt="Priamo technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">49</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/cabinets/punta/punta_01_editorial.webp" alt="Punta">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/cabinets/punta/punta_02_human.webp" alt="Punta detail"></div>
+          <div class="product__thumb"><img src="Products/cabinets/punta/punta_03_closeup_veining.webp" alt="Punta veining"></div>
+          <div class="product__thumb"><img src="Products/cabinets/punta/punta_04_closeup_edge.webp" alt="Punta edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Cabinets</span>
+        <h2 class="product__name">Punta</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Punta Cabinet — geometric faceted marble panels in a hand-brushed brass frame.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">180 × 45 × 80 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 195 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Silver Travertine, Beige Travertine, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/cabinets/punta/punta_11_technical.webp" alt="Punta technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">50</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/cabinets/punta-due/punta-due_01_editorial.webp" alt="Punta Due">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/cabinets/punta-due/punta-due_02_human.webp" alt="Punta Due detail"></div>
+          <div class="product__thumb"><img src="Products/cabinets/punta-due/punta-due_03_closeup_veining.webp" alt="Punta Due veining"></div>
+          <div class="product__thumb"><img src="Products/cabinets/punta-due/punta-due_04_closeup_edge.webp" alt="Punta Due edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Cabinets</span>
+        <h2 class="product__name">Punta Due</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Punta Due Cabinet — fluted marble doors in a hand-forged blackened steel frame.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">180 × 45 × 40 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 75 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Calacatta Viola, Fendy Grey, Rosso Levanto, Verde Patricia</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/cabinets/punta-due/punta-due_11_technical.webp" alt="Punta Due technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">51</span>
+  </div>
+
+  <div class="page divider">
+    <div class="divider__inner">
+      <span class="divider__number">06</span>
+      <h2 class="divider__title">Credenzas</h2>
+      <div class="divider__rule"></div>
+      <span class="divider__count">1 PIECE</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Credenzas/linea/linea_01_editorial.webp" alt="Linea">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Credenzas/linea/linea_02_human.webp" alt="Linea detail"></div>
+          <div class="product__thumb"><img src="Products/Credenzas/linea/linea_03_closeup_veining.webp" alt="Linea veining"></div>
+          <div class="product__thumb"><img src="Products/Credenzas/linea/linea_04_closeup_edge.webp" alt="Linea edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Credenzas</span>
+        <h2 class="product__name">Linea</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Linea — an impossibly long, low marble credenza with concealed storage.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">230 × 50 × 75 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 355 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for daily use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Credenzas/linea/linea_11_technical.webp" alt="Linea technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">53</span>
+  </div>
+
+  <div class="page divider">
+    <div class="divider__inner">
+      <span class="divider__number">07</span>
+      <h2 class="divider__title">Benches</h2>
+      <div class="divider__rule"></div>
+      <span class="divider__count">2 PIECES</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Benches/cascata/cascata_01_editorial.webp" alt="Cascata">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Benches/cascata/cascata_02_human.webp" alt="Cascata detail"></div>
+          <div class="product__thumb"><img src="Products/Benches/cascata/cascata_03_closeup_veining.webp" alt="Cascata veining"></div>
+          <div class="product__thumb"><img src="Products/Benches/cascata/cascata_04_closeup_edge.webp" alt="Cascata edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Benches</span>
+        <h2 class="product__name">Cascata</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Cascata — a Calacatta marble waterfall bench where a continuous slab forms seat and legs in one unbroken piece.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">120 × 45 × 42 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 105 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Benches/cascata/cascata_11_technical.webp" alt="Cascata technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">55</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Benches/colonna/colonna_01_editorial.webp" alt="Colonna">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Benches/colonna/colonna_02_human.webp" alt="Colonna detail"></div>
+          <div class="product__thumb"><img src="Products/Benches/colonna/colonna_03_closeup_veining.webp" alt="Colonna veining"></div>
+          <div class="product__thumb"><img src="Products/Benches/colonna/colonna_04_closeup_edge.webp" alt="Colonna edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Benches</span>
+        <h2 class="product__name">Colonna</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Colonna — a honey onyx bench with two monumental cylindrical column legs and an organic wavy seat edge.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">130 × 42 × 82 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 110 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Polished; sealed for residential and hospitality use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Benches/colonna/colonna_11_technical.webp" alt="Colonna technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">56</span>
+  </div>
+
+  <div class="page divider">
+    <div class="divider__inner">
+      <span class="divider__number">08</span>
+      <h2 class="divider__title">Washbasins</h2>
+      <div class="divider__rule"></div>
+      <span class="divider__count">12 PIECES</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/barile/barile_01_editorial.webp" alt="Barile">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/barile/barile_02_human.webp" alt="Barile detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/barile/barile_03_closeup_veining.webp" alt="Barile veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/barile/barile_04_closeup_edge.webp" alt="Barile edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Barile</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Barile — a barrel form hollowed from a single grey marble block.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">48 cm diameter × 87 cm height</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 100 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Exterior honed; interior polished; sealed</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/barile/barile_11_technical.webp" alt="Barile technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">58</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/blocco/blocco_01_editorial.webp" alt="Blocco">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/blocco/blocco_02_human.webp" alt="Blocco detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/blocco/blocco_03_closeup_veining.webp" alt="Blocco veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/blocco/blocco_04_closeup_edge.webp" alt="Blocco edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Blocco</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Blocco — a monolithic travertine block with a precisely carved basin.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">60 × 50 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 180 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed exterior; polished basin interior; sealed</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/blocco/blocco_11_technical.webp" alt="Blocco technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">59</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/bronze/bronze_01_editorial.webp" alt="Bronzo">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/bronze/bronze_02_human.webp" alt="Bronzo detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/bronze/bronze_03_closeup_veining.webp" alt="Bronzo veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/bronze/bronze_04_closeup_edge.webp" alt="Bronzo edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Bronzo</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Bronzo — a bespoke marble washbasin with the warmth of precious metals rendered in stone.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">42 cm diameter × 85 cm height</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 110 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/bronze/bronze_11_technical.webp" alt="Bronzo technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">60</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/calice/calice_01_editorial.webp" alt="Calice">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/calice/calice_02_human.webp" alt="Calice detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/calice/calice_03_closeup_veining.webp" alt="Calice veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/calice/calice_04_closeup_edge.webp" alt="Calice edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Calice</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Calice — wider at the rim, tapering toward the base.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">50–30 cm diameter × 90 cm height</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 85 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Polished throughout; sealed for wet environments</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/calice/calice_11_technical.webp" alt="Calice technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">61</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/circle-high/circle-high_01_editorial.webp" alt="Circle High">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/circle-high/circle-high_02_human.webp" alt="Circle High detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/circle-high/circle-high_03_closeup_veining.webp" alt="Circle High veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/circle-high/circle-high_04_closeup_edge.webp" alt="Circle High edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Circle High</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Circle High — a tall pedestal marble washbasin of pure circular form.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">45 × 45 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 125 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/circle-high/circle-high_11_technical.webp" alt="Circle High technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">62</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/circle-medium/circle-medium_01_editorial.webp" alt="Circle Medium">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/circle-medium/circle-medium_02_human.webp" alt="Circle Medium detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/circle-medium/circle-medium_03_closeup_veining.webp" alt="Circle Medium veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/circle-medium/circle-medium_04_closeup_edge.webp" alt="Circle Medium edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Circle Medium</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Circle Medium — a freestanding marble washbasin in pure circular form at counter height.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">42 × 42 × 15 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 10 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/circle-medium/circle-medium_11_technical.webp" alt="Circle Medium technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">63</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/circle-small/circle-small_01_editorial.webp" alt="Circle Small">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/circle-small/circle-small_02_human.webp" alt="Circle Small detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/circle-small/circle-small_03_closeup_veining.webp" alt="Circle Small veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/circle-small/circle-small_04_closeup_edge.webp" alt="Circle Small edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Circle Small</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Circle Small — a compact circular marble washbasin for countertop installation.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">35 × 35 × 12 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 7 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/circle-small/circle-small_11_technical.webp" alt="Circle Small technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">64</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/cono-high/cono-high_01_editorial.webp" alt="Cono High">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/cono-high/cono-high_02_human.webp" alt="Cono High detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/cono-high/cono-high_03_closeup_veining.webp" alt="Cono High veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/cono-high/cono-high_04_closeup_edge.webp" alt="Cono High edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Cono High</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Cono High — a tall conical marble washbasin of singular geometric authority.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">45 × 40 × 90 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 145 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/cono-high/cono-high_11_technical.webp" alt="Cono High technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">65</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/frammento/frammento_01_editorial.webp" alt="Frammento">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/frammento/frammento_02_human.webp" alt="Frammento detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/frammento/frammento_03_closeup_veining.webp" alt="Frammento veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/frammento/frammento_04_closeup_edge.webp" alt="Frammento edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Frammento</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Frammento — a terrazzo wall-mounted washbasin with integrated basin.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">80 × 45 × 35 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 38 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/frammento/frammento_11_technical.webp" alt="Frammento technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">66</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/marble-colors/marble-colors_01_editorial.webp" alt="Marble Colors">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/marble-colors/marble-colors_02_human.webp" alt="Marble Colors detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/marble-colors/marble-colors_03_closeup_veining.webp" alt="Marble Colors veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/marble-colors/marble-colors_04_closeup_edge.webp" alt="Marble Colors edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Marble Colors</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Marble Colors — a bespoke marble washbasin that celebrates the spectrum of natural stone.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">45 × 45 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 78 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/marble-colors/marble-colors_11_technical.webp" alt="Marble Colors technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">67</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/punta-high/punta-high_01_editorial.webp" alt="Punta High">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/punta-high/punta-high_02_human.webp" alt="Punta High detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/punta-high/punta-high_03_closeup_veining.webp" alt="Punta High veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/punta-high/punta-high_04_closeup_edge.webp" alt="Punta High edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Punta High</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Punta High — a tall angular marble washbasin of pointed geometric authority.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">45 × 40 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 145 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/punta-high/punta-high_11_technical.webp" alt="Punta High technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">68</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Washbasins/selva/selva_01_editorial.webp" alt="Selva">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Washbasins/selva/selva_02_human.webp" alt="Selva detail"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/selva/selva_03_closeup_veining.webp" alt="Selva veining"></div>
+          <div class="product__thumb"><img src="Products/Washbasins/selva/selva_04_closeup_edge.webp" alt="Selva edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Washbasins</span>
+        <h2 class="product__name">Selva</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Selva — a deep green marble vanity unit with brass-framed drawers and integrated basin.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">90 × 55 × 85 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 270 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed or polished; sealed for residential use</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Washbasins/selva/selva_11_technical.webp" alt="Selva technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">69</span>
+  </div>
+
+  <div class="page divider">
+    <div class="divider__inner">
+      <span class="divider__number">09</span>
+      <h2 class="divider__title">Vases</h2>
+      <div class="divider__rule"></div>
+      <span class="divider__count">3 PIECES</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Vases/deau/deau_01_editorial.webp" alt="Deau">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Vases/deau/deau_02_human.webp" alt="Deau detail"></div>
+          <div class="product__thumb"><img src="Products/Vases/deau/deau_03_closeup_veining.webp" alt="Deau veining"></div>
+          <div class="product__thumb"><img src="Products/Vases/deau/deau_04_closeup_edge.webp" alt="Deau edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Vases</span>
+        <h2 class="product__name">Deau</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Deau Vase — a marble vessel carved to hold water, stems, and bloom.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">28 × 28 × 25 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 3 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Bianco Carrara, Calacatta, Nero Marquina, Travertino</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Vases/deau/deau_11_technical.webp" alt="Deau technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">71</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Vases/doge-small/doge-small_01_editorial.webp" alt="Doge Small">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Vases/doge-small/doge-small_02_human.webp" alt="Doge Small detail"></div>
+          <div class="product__thumb"><img src="Products/Vases/doge-small/doge-small_03_closeup_veining.webp" alt="Doge Small veining"></div>
+          <div class="product__thumb"><img src="Products/Vases/doge-small/doge-small_04_closeup_edge.webp" alt="Doge Small edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Vases</span>
+        <h2 class="product__name">Doge Small</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Doge Small — a lathe-turned marble vessel, compact and precise.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">15 × 15 × 22 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 4 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Bianco Carrara, Calacatta Gold, Verde Guatemala, Rosso Levanto</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Vases/doge-small/doge-small_11_technical.webp" alt="Doge Small technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">72</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Vases/doge-tall/doge-tall_01_editorial.webp" alt="Doge Tall">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Vases/doge-tall/doge-tall_02_human.webp" alt="Doge Tall detail"></div>
+          <div class="product__thumb"><img src="Products/Vases/doge-tall/doge-tall_03_closeup_veining.webp" alt="Doge Tall veining"></div>
+          <div class="product__thumb"><img src="Products/Vases/doge-tall/doge-tall_04_closeup_edge.webp" alt="Doge Tall edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Vases</span>
+        <h2 class="product__name">Doge Tall</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Doge Tall — a monolithic marble vase of commanding height, carved from a single block.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">15 × 15 × 35 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 6 kg</td></tr>
+        <tr><td class="spec-label">Stone Options</td><td class="spec-value">Bianco Carrara, Calacatta, Verde Guatemala, Nero Marquina</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Vases/doge-tall/doge-tall_11_technical.webp" alt="Doge Tall technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">73</span>
+  </div>
+
+  <div class="page divider">
+    <div class="divider__inner">
+      <span class="divider__number">10</span>
+      <h2 class="divider__title">Compliments</h2>
+      <div class="divider__rule"></div>
+      <span class="divider__count">8 PIECES</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Compliments/aime/aime_01_editorial.webp" alt="Aime">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Compliments/aime/aime_02_human.webp" alt="Aime detail"></div>
+          <div class="product__thumb"><img src="Products/Compliments/aime/aime_03_closeup_veining.webp" alt="Aime veining"></div>
+          <div class="product__thumb"><img src="Products/Compliments/aime/aime_04_closeup_edge.webp" alt="Aime edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Compliments</span>
+        <h2 class="product__name">Aime</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Aime — a small marble object from the Compliments Collection.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">110 × 40 × 45 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 185 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Compliments/aime/aime_11_technical.webp" alt="Aime technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">75</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Compliments/ana/ana_01_editorial.webp" alt="Ana">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Compliments/ana/ana_02_human.webp" alt="Ana detail"></div>
+          <div class="product__thumb"><img src="Products/Compliments/ana/ana_03_closeup_veining.webp" alt="Ana veining"></div>
+          <div class="product__thumb"><img src="Products/Compliments/ana/ana_04_closeup_edge.webp" alt="Ana edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Compliments</span>
+        <h2 class="product__name">Ana</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">The Ana Chair — two marble monoliths joined by a leather sling and solid brass rod.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">60 × 50 × 70 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 100 kg</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Compliments/ana/ana_11_technical.webp" alt="Ana technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">76</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Compliments/cono/cono_01_editorial.webp" alt="Cono">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Compliments/cono/cono_02_human.webp" alt="Cono detail"></div>
+          <div class="product__thumb"><img src="Products/Compliments/cono/cono_03_closeup_veining.webp" alt="Cono veining"></div>
+          <div class="product__thumb"><img src="Products/Compliments/cono/cono_04_closeup_edge.webp" alt="Cono edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Compliments</span>
+        <h2 class="product__name">Cono</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Cono — a lathe-turned marble cone.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">40 × 40 × 45 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 110 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Full polish</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Compliments/cono/cono_11_technical.webp" alt="Cono technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">77</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Compliments/morphe/morphe_01_editorial.webp" alt="Forma">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Compliments/morphe/morphe_02_human.webp" alt="Forma detail"></div>
+          <div class="product__thumb"><img src="Products/Compliments/morphe/morphe_03_closeup_veining.webp" alt="Forma veining"></div>
+          <div class="product__thumb"><img src="Products/Compliments/morphe/morphe_04_closeup_edge.webp" alt="Forma edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Compliments</span>
+        <h2 class="product__name">Forma</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Forma — two pieces of stone, met and fixed in permanent relationship.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">45 × 45 × 75 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 125 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Compliments/morphe/morphe_11_technical.webp" alt="Forma technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">78</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Compliments/palladio/palladio_01_editorial.webp" alt="Palladio">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Compliments/palladio/palladio_02_human.webp" alt="Palladio detail"></div>
+          <div class="product__thumb"><img src="Products/Compliments/palladio/palladio_03_closeup_veining.webp" alt="Palladio veining"></div>
+          <div class="product__thumb"><img src="Products/Compliments/palladio/palladio_04_closeup_edge.webp" alt="Palladio edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Compliments</span>
+        <h2 class="product__name">Palladio</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Palladio — classical proportion made permanent in marble.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">130 × 40 × 45 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 225 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Compliments/palladio/palladio_11_technical.webp" alt="Palladio technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">79</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Compliments/samaveta/samaveta_01_editorial.webp" alt="Samaveta">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Compliments/samaveta/samaveta_02_human.webp" alt="Samaveta detail"></div>
+          <div class="product__thumb"><img src="Products/Compliments/samaveta/samaveta_03_closeup_veining.webp" alt="Samaveta veining"></div>
+          <div class="product__thumb"><img src="Products/Compliments/samaveta/samaveta_04_closeup_edge.webp" alt="Samaveta edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Compliments</span>
+        <h2 class="product__name">Samaveta</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Samaveta — convergent forms made permanent in marble.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">120 × 40 × 40 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 150 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Compliments/samaveta/samaveta_11_technical.webp" alt="Samaveta technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">80</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Compliments/gesto/gesto_01_editorial.webp" alt="Segno">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Compliments/gesto/gesto_02_human.webp" alt="Segno detail"></div>
+          <div class="product__thumb"><img src="Products/Compliments/gesto/gesto_03_closeup_veining.webp" alt="Segno veining"></div>
+          <div class="product__thumb"><img src="Products/Compliments/gesto/gesto_04_closeup_edge.webp" alt="Segno edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Compliments</span>
+        <h2 class="product__name">Segno</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Segno — a gesture made permanent in marble.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">80 × 75 × 60 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 145 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Compliments/gesto/gesto_11_technical.webp" alt="Segno technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">81</span>
+  </div>
+
+  <div class="page">
+    <div class="product">
+      <div class="product__gallery">
+        <div class="product__hero-img">
+          <img src="Products/Compliments/temple/temple_01_editorial.webp" alt="Temple">
+        </div>
+        <div class="product__thumbs">
+          <div class="product__thumb"><img src="Products/Compliments/temple/temple_02_human.webp" alt="Temple detail"></div>
+          <div class="product__thumb"><img src="Products/Compliments/temple/temple_03_closeup_veining.webp" alt="Temple veining"></div>
+          <div class="product__thumb"><img src="Products/Compliments/temple/temple_04_closeup_edge.webp" alt="Temple edge"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <span class="product__cat">Compliments</span>
+        <h2 class="product__name">Temple</h2>
+        <div class="product__rule"></div>
+        <p class="product__desc">Temple — sacred geometry made permanent in marble.</p>
+        <table class="specs-table">
+        <tr><td class="spec-label">Dimensions</td><td class="spec-value">40 × 35 × 45 cm</td></tr>
+        <tr><td class="spec-label">Weight</td><td class="spec-value">Approx. 54 kg</td></tr>
+        <tr><td class="spec-label">Finish</td><td class="spec-value">Honed; polished available on request</td></tr>
+        <tr><td class="spec-label">Lead Time</td><td class="spec-value">4–6 weeks from confirmed order</td></tr>
+        <tr><td class="spec-label">Custom Sizing</td><td class="spec-value">Available on request</td></tr>
+        </table>
+        <div class="product__technical">
+          <div class="product__drawing">
+            <img src="Products/Compliments/temple/temple_11_technical.webp" alt="Temple technical drawing">
+            <span class="product__drawing-label">Technical Drawing</span>
+          </div>
+        </div>
+        <span class="product__cta">Request a Quote &rarr;</span>
+      </div>
+    </div>
+    <span class="page-foot">82</span>
+  </div>
+
+  <div class="page divider" style="background:var(--stone);color:var(--ivory)">
+    <div class="divider__inner">
+      <span class="divider__number" style="color:var(--river)">11</span>
+      <h2 class="divider__title">Stone Selection</h2>
+      <div class="divider__rule"></div>
+      <span class="divider__count" style="color:rgba(255,255,255,0.45)">OUR MARBLE PALETTE</span>
+    </div>
+  </div>
+  <div class="page stones-page">
+    <h2 class="stones-page__title">Our Marbles</h2>
+    <p class="stones-page__subtitle">Each stone is selected from quarries across Italy, Turkey, Iran, Morocco, and Brazil. Every block is assessed for its veining, density, and mineral character before being accepted into the atelier.</p>
+    <div class="stones-grid">
+      <div class="stone-swatch">
+        <img class="stone-swatch__img" src="Stone types/Calacatta Viola.webp" alt="Calacatta Viola">
+        <h3 class="stone-swatch__name">Calacatta Viola</h3>
+        <span class="stone-swatch__origin">Italy</span>
+      </div>
+      <div class="stone-swatch">
+        <img class="stone-swatch__img" src="Stone types/Fendy-Grey.webp" alt="Fendy Grey">
+        <h3 class="stone-swatch__name">Fendy Grey</h3>
+        <span class="stone-swatch__origin">Turkey</span>
+      </div>
+      <div class="stone-swatch">
+        <img class="stone-swatch__img" src="Stone types/Ice-Age-Onyx-Texture.webp" alt="Ice Age Onyx">
+        <h3 class="stone-swatch__name">Ice Age Onyx</h3>
+        <span class="stone-swatch__origin">Iran</span>
+      </div>
+      <div class="stone-swatch">
+        <img class="stone-swatch__img" src="Stone types/Noir-Aziza Texture.webp" alt="Noir Aziza">
+        <h3 class="stone-swatch__name">Noir Aziza</h3>
+        <span class="stone-swatch__origin">Morocco</span>
+      </div>
+      <div class="stone-swatch">
+        <img class="stone-swatch__img" src="Stone types/Roso-Levanto-texture.webp" alt="Rosso Levanto">
+        <h3 class="stone-swatch__name">Rosso Levanto</h3>
+        <span class="stone-swatch__origin">Italy</span>
+      </div>
+      <div class="stone-swatch">
+        <img class="stone-swatch__img" src="Stone types/Verde-Patricia-Texture.webp" alt="Verde Patricia">
+        <h3 class="stone-swatch__name">Verde Patricia</h3>
+        <span class="stone-swatch__origin">Brazil</span>
+      </div>
+    </div>
+    <span class="page-foot">84</span>
+  </div>
+  <div class="page back-cover">
+    <img class="back-cover__logo" src="TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="Tiba Stone">
+    <div class="back-cover__rule"></div>
+    <p class="back-cover__line">Every piece begins with a conversation.</p>
+    <p class="back-cover__line">Every commission is singular.</p>
+    <p class="back-cover__line--accent">Inquiries &mdash; info@tibastone.com</p>
+    <span class="back-cover__year">TIBA STONE &middot; MMXXVI</span>
+  </div>
+
+</body>
+</html>
