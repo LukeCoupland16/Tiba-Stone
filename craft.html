@@ -7,6 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Craft | TIBA STONE</title>
   <meta name="description" content="From quarry to masterpiece — discover the philosophy, process, and craft behind every piece of bespoke marble furniture by Tiba Stone.">
+  <meta property="og:title" content="The Craft | TIBA STONE">
+  <meta property="og:description" content="From quarry to masterpiece — discover the philosophy, process, and craft behind every piece of bespoke marble furniture by Tiba Stone.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="Products/cabinets/aida/aida_01_editorial.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Craft | TIBA STONE">
+  <meta name="twitter:description" content="From quarry to masterpiece — discover the philosophy, process, and craft behind every piece of bespoke marble furniture by Tiba Stone.">
+  <meta name="twitter:image" content="Products/cabinets/aida/aida_01_editorial.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="Products/cabinets/aida/aida_01_editorial.webp" type="image/webp" fetchpriority="high">
@@ -875,6 +883,7 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- HEADER -->
   <header class="header" id="siteHeader">
@@ -907,6 +916,7 @@
   </div>
 
   <!-- HERO -->
+  <main id="main">
   <section class="hero" id="hero">
     <img src="Products/cabinets/aida/aida_01_editorial.webp"
          alt="Aida cabinet — bookmatched marble panels in architectural setting"
@@ -1129,6 +1139,8 @@
     <a href="/contact" class="btn btn--light reveal">Inquire</a>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__grid">
@@ -1213,25 +1225,28 @@
       var mobileMenu = document.getElementById('mobileMenu');
       var mobileClose = document.getElementById('mobileMenuClose');
 
-      hamburger.addEventListener('click', function () {
-        mobileMenu.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-      });
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function () {
+          mobileMenu.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+        });
+        mobileMenu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileMenu.classList.remove('is-open');
+            document.body.style.overflow = '';
+          });
+        });
+      }
 
-      mobileClose.addEventListener('click', function () {
-        mobileMenu.classList.remove('is-open');
-        document.body.style.overflow = '';
-      });
-
-      mobileMenu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
+      if (mobileClose && mobileMenu) {
+        mobileClose.addEventListener('click', function () {
           mobileMenu.classList.remove('is-open');
           document.body.style.overflow = '';
         });
-      });
+      }
 
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
+        if (e.key === 'Escape' && mobileMenu) {
           mobileMenu.classList.remove('is-open');
           document.body.style.overflow = '';
         }
