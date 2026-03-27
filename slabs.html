@@ -543,6 +543,47 @@
       opacity: 0;
     }
 
+    .slab-modal__scroll-hint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      padding: 0.875rem 0;
+      background: var(--color-stone);
+      color: rgba(255, 255, 255, 0.65);
+      cursor: pointer;
+      transition: opacity 0.4s ease, color 0.3s ease;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    .slab-modal__scroll-hint:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .slab-modal__scroll-hint.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .slab-modal__scroll-text {
+      font-family: var(--font-body);
+      font-size: 0.5625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+    }
+
+    .slab-modal__scroll-chevron {
+      animation: scrollBounce 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(3px); }
+    }
+
     .slab-modal__details {
       padding: clamp(1.75rem, 3vw, 2.5rem) clamp(2rem, 4vw, 3.5rem);
       display: grid;
@@ -1075,6 +1116,10 @@
         <img class="slab-modal__image" id="modalImage" src="" alt="">
         <span class="slab-modal__zoom-hint">Click to zoom</span>
       </div>
+      <div class="slab-modal__scroll-hint" id="modalScrollHint">
+        <span class="slab-modal__scroll-text">Slab Details</span>
+        <svg class="slab-modal__scroll-chevron" width="16" height="9" viewBox="0 0 16 9" fill="none"><path d="M1 1l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
       <div class="slab-modal__details">
         <div class="slab-modal__details-left">
           <p class="slab-modal__category" id="modalCategory"></p>
@@ -1163,6 +1208,8 @@
       var modalCategory = document.getElementById('modalCategory');
       var modalSpecs = document.getElementById('modalSpecs');
       var modalDesc = document.getElementById('modalDesc');
+      var modalScrollHint = document.getElementById('modalScrollHint');
+      var modalCard = document.querySelector('.slab-modal__card');
       var filterBar = document.getElementById('filterBar');
       var filterCount = document.getElementById('filterCount');
       var pills = document.querySelectorAll('.filter-pill');
@@ -1442,6 +1489,8 @@
 
         modal.classList.add('is-open');
         document.body.style.overflow = 'hidden';
+        modalScrollHint.classList.remove('is-hidden');
+        modalCard.scrollTop = 0;
       }
 
       function specRow(label, value) {
@@ -1472,6 +1521,21 @@
         var x = ((e.clientX - rect.left) / rect.width) * 100;
         var y = ((e.clientY - rect.top) / rect.height) * 100;
         modalImage.style.transformOrigin = x + '% ' + y + '%';
+      });
+
+      modalScrollHint.addEventListener('click', function () {
+        var details = modalCard.querySelector('.slab-modal__details');
+        if (details) {
+          details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      modalCard.addEventListener('scroll', function () {
+        if (modalCard.scrollTop > 30) {
+          modalScrollHint.classList.add('is-hidden');
+        } else {
+          modalScrollHint.classList.remove('is-hidden');
+        }
       });
 
       modalClose.addEventListener('click', closeModal);
