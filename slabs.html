@@ -481,13 +481,13 @@
 
     .slab-modal__card {
       background: var(--color-ivory);
-      max-width: 960px;
+      max-width: 1200px;
       width: 100%;
-      max-height: 88vh;
+      max-height: 92vh;
       overflow-y: auto;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      transform: scale(0.95) translateY(12px);
+      grid-template-columns: 1fr;
+      transform: scale(0.97) translateY(10px);
       opacity: 0;
       transition: transform 0.4s var(--ease-spring), opacity 0.35s ease;
     }
@@ -500,20 +500,65 @@
     .slab-modal__image-wrap {
       position: relative;
       background: var(--color-sand);
-      min-height: 360px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .slab-modal__image-wrap.is-zoomed {
+      cursor: zoom-out;
     }
 
     .slab-modal__image {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .slab-modal__image-wrap.is-zoomed .slab-modal__image {
+      transform: scale(2);
+      object-fit: contain;
+    }
+
+    .slab-modal__zoom-hint {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-family: var(--font-body);
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.7);
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+      padding: 0.5rem 0.875rem;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .slab-modal__image-wrap.is-zoomed .slab-modal__zoom-hint {
+      opacity: 0;
     }
 
     .slab-modal__details {
-      padding: clamp(2rem, 3vw, 3rem);
+      padding: clamp(1.75rem, 3vw, 2.5rem) clamp(2rem, 4vw, 3.5rem);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 clamp(2rem, 4vw, 4rem);
+      align-items: start;
+    }
+
+    .slab-modal__details-left {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+    }
+
+    .slab-modal__details-right {
+      display: flex;
+      flex-direction: column;
     }
 
     .slab-modal__category {
@@ -902,11 +947,12 @@
       .footer__grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
 
       .slab-modal__card {
-        grid-template-columns: 1fr;
-        max-height: 92vh;
+        max-height: 94vh;
       }
 
-      .slab-modal__image-wrap { min-height: 280px; max-height: 45vh; }
+      .slab-modal__details {
+        grid-template-columns: 1fr;
+      }
 
       .filter-bar__tabs {
         position: relative;
@@ -935,8 +981,8 @@
       .slab-card__name { font-size: 0.875rem; }
       .slab-card__material { font-size: 0.6875rem; letter-spacing: 0.12em; }
 
-      .slab-modal__details { padding: 1.5rem; }
-      .slab-modal__image-wrap { min-height: 220px; max-height: 40vh; }
+      .slab-modal__details { padding: 1.25rem; grid-template-columns: 1fr; }
+      .slab-modal__image-wrap { aspect-ratio: 3 / 2; }
 
       .footer__grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer__bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
@@ -1025,16 +1071,21 @@
   <div class="slab-modal" id="slabModal">
     <button class="slab-modal__close" id="slabModalClose" aria-label="Close">&times;</button>
     <div class="slab-modal__card">
-      <div class="slab-modal__image-wrap">
+      <div class="slab-modal__image-wrap" id="modalImageWrap">
         <img class="slab-modal__image" id="modalImage" src="" alt="">
+        <span class="slab-modal__zoom-hint">Click to zoom</span>
       </div>
       <div class="slab-modal__details">
-        <p class="slab-modal__category" id="modalCategory"></p>
-        <h2 class="slab-modal__name" id="modalName"></h2>
-        <div class="slab-modal__rule"></div>
-        <div class="slab-modal__specs" id="modalSpecs"></div>
-        <p class="slab-modal__desc" id="modalDesc"></p>
-        <a href="/contact" class="slab-modal__cta">Inquire About This Slab</a>
+        <div class="slab-modal__details-left">
+          <p class="slab-modal__category" id="modalCategory"></p>
+          <h2 class="slab-modal__name" id="modalName"></h2>
+          <div class="slab-modal__rule"></div>
+          <p class="slab-modal__desc" id="modalDesc"></p>
+        </div>
+        <div class="slab-modal__details-right">
+          <div class="slab-modal__specs" id="modalSpecs"></div>
+          <a href="/contact" class="slab-modal__cta">Inquire About This Slab</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1107,6 +1158,7 @@
       var modal = document.getElementById('slabModal');
       var modalClose = document.getElementById('slabModalClose');
       var modalImage = document.getElementById('modalImage');
+      var modalImageWrap = document.getElementById('modalImageWrap');
       var modalName = document.getElementById('modalName');
       var modalCategory = document.getElementById('modalCategory');
       var modalSpecs = document.getElementById('modalSpecs');
@@ -1398,8 +1450,29 @@
 
       function closeModal() {
         modal.classList.remove('is-open');
+        modalImageWrap.classList.remove('is-zoomed');
         document.body.style.overflow = '';
       }
+
+      /* ---- Zoom on click ---- */
+      modalImageWrap.addEventListener('click', function (e) {
+        var wrap = this;
+        var isZoomed = wrap.classList.toggle('is-zoomed');
+        if (isZoomed) {
+          var rect = wrap.getBoundingClientRect();
+          var x = ((e.clientX - rect.left) / rect.width) * 100;
+          var y = ((e.clientY - rect.top) / rect.height) * 100;
+          modalImage.style.transformOrigin = x + '% ' + y + '%';
+        }
+      });
+
+      modalImageWrap.addEventListener('mousemove', function (e) {
+        if (!this.classList.contains('is-zoomed')) return;
+        var rect = this.getBoundingClientRect();
+        var x = ((e.clientX - rect.left) / rect.width) * 100;
+        var y = ((e.clientY - rect.top) / rect.height) * 100;
+        modalImage.style.transformOrigin = x + '% ' + y + '%';
+      });
 
       modalClose.addEventListener('click', closeModal);
       modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
