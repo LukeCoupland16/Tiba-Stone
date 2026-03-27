@@ -897,9 +897,7 @@
     ============================================ */
     @media (max-width: 1023px) {
       .slabs-grid { grid-template-columns: repeat(3, 1fr); }
-    }
 
-    @media (max-width: 1023px) {
       .footer__grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
 
       .slab-modal__card {
@@ -908,6 +906,22 @@
       }
 
       .slab-modal__image-wrap { min-height: 280px; max-height: 45vh; }
+
+      .filter-bar__tabs {
+        position: relative;
+      }
+
+      .filter-bar__tabs::after {
+        content: '';
+        position: sticky;
+        right: 0;
+        flex-shrink: 0;
+        width: 3rem;
+        margin-left: -3rem;
+        background: linear-gradient(to right, transparent, #fff);
+        pointer-events: none;
+        align-self: stretch;
+      }
     }
 
     @media (max-width: 767px) {
@@ -1151,7 +1165,7 @@
             lazyObs.unobserve(img);
           }
         });
-      }, { rootMargin: '400px' });
+      }, { rootMargin: '200px' });
 
       /* ---- Colour / category constants ---- */
       var colourOrder = ['White', 'Black', 'Beige', 'Grey', 'Red', 'Blue', 'Brown', 'Yellow', 'Green', 'Multicolour'];
@@ -1226,7 +1240,7 @@
         card.innerHTML =
           '<div class="slab-card__img-wrap">' +
             (hasImage
-              ? '<img class="slab-card__img" data-src="' + slab.image + '" alt="' + slab.name + '">'
+              ? '<img class="slab-card__img" data-src="' + slab.image.replace('Slabs/', 'Slabs/thumbs/') + '" data-full="' + slab.image + '" alt="' + slab.name + '">'
               : '<div class="slab-card__placeholder"><span class="slab-card__placeholder-text">' + slab.name + '</span></div>'
             ) +
           '</div>' +
