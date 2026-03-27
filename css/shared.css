@@ -132,27 +132,6 @@ input, textarea {
 }
 
 /* ============================================
-   2b. SKIP LINK (Accessibility)
-============================================ */
-.skip-link {
-  position: absolute;
-  top: -100%;
-  left: 1rem;
-  z-index: 99999;
-  padding: 0.75rem 1.5rem;
-  background: var(--color-stone);
-  color: var(--color-ivory);
-  font-family: var(--font-body);
-  font-size: var(--text-small);
-  font-weight: 500;
-  text-decoration: none;
-  transition: top 0.2s ease;
-}
-
-.skip-link:focus {
-  top: 1rem;
-}
-
 /* ============================================
    3. UTILITIES
 ============================================ */
