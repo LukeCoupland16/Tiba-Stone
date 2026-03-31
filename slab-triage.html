@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Slab Triage — TIBA STONE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
@@ -10,228 +10,145 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:       #080808;
-    --surface:  #111111;
-    --border:   #1E1E1E;
-    --text:     #D8D5D0;
-    --muted:    #444;
-    --dim:      #2A2A2A;
-    --good:     #2DD496;
-    --bad:      #E84040;
-    --amber:    #D4972D;
-    --mono:     'JetBrains Mono', 'Courier New', monospace;
-    --display:  'Syne', sans-serif;
-  }
-
-  /* ── AUTH SCREEN ── */
-  #screen-auth {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--bg);
-    z-index: 999;
-  }
-  #screen-auth.hidden { display: none; }
-  .auth-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    width: 100%;
-    max-width: 340px;
-    padding: 2rem;
-  }
-  .auth-brand {
-    font-family: var(--display);
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.45em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .auth-title {
-    font-family: var(--display);
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--text);
-    text-align: center;
-    line-height: 1.2;
-  }
-  .auth-field {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .auth-field label {
-    font-size: 0.625rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .auth-field input {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 0.875rem;
-    letter-spacing: 0.12em;
-    outline: none;
-    transition: border-color 0.15s;
-  }
-  .auth-field input:focus { border-color: var(--muted); }
-  .auth-field input.error { border-color: var(--bad); animation: shake 0.3s ease; }
-  .auth-error {
-    font-size: 0.625rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--bad);
-    text-align: center;
-    min-height: 1em;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  .auth-error.visible { opacity: 1; }
-  @keyframes shake {
-    0%,100% { transform: translateX(0); }
-    25%      { transform: translateX(-6px); }
-    75%      { transform: translateX(6px); }
+    --bg:      #080808;
+    --surface: #111111;
+    --border:  #1E1E1E;
+    --text:    #D8D5D0;
+    --muted:   #444;
+    --dim:     #2A2A2A;
+    --good:    #2DD496;
+    --bad:     #E84040;
+    --amber:   #D4972D;
+    --mono:    'JetBrains Mono', 'Courier New', monospace;
+    --display: 'Syne', sans-serif;
   }
 
   html, body {
-    height: 100%;
+    height: 100%; height: 100dvh;
     background: var(--bg);
     color: var(--text);
     font-family: var(--mono);
     overflow: hidden;
     user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
   }
 
   /* ── SCREENS ── */
   .screen { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
   .screen.hidden { display: none; }
 
-  /* ── RESUME SCREEN ── */
-  #screen-resume {
-    flex-direction: column;
-    gap: 0;
-    background: var(--bg);
+  /* ────────────────────────────────────────────────
+     AUTH
+  ──────────────────────────────────────────────── */
+  #screen-auth {
+    position: fixed; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg); z-index: 999;
   }
+  #screen-auth.hidden { display: none; }
+
+  .auth-inner {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 2rem; width: 100%; max-width: 340px; padding: 2rem;
+  }
+  .auth-brand {
+    font-family: var(--display); font-size: 0.625rem; font-weight: 700;
+    letter-spacing: 0.45em; text-transform: uppercase; color: var(--muted);
+  }
+  .auth-title {
+    font-family: var(--display); font-size: 1.75rem; font-weight: 800;
+    color: var(--text); text-align: center; line-height: 1.2;
+  }
+  .auth-field { width: 100%; display: flex; flex-direction: column; gap: 0.5rem; }
+  .auth-field label {
+    font-size: 0.625rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .auth-field input {
+    width: 100%; padding: 0.875rem 1rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 3px; color: var(--text); font-family: var(--mono);
+    font-size: 1rem; letter-spacing: 0.12em; outline: none;
+    transition: border-color 0.15s; -webkit-appearance: none;
+  }
+  .auth-field input:focus { border-color: var(--muted); }
+  .auth-field input.error { border-color: var(--bad); animation: shake 0.3s ease; }
+  .auth-error {
+    font-size: 0.625rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--bad); text-align: center; min-height: 1em;
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .auth-error.visible { opacity: 1; }
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25%      { transform: translateX(-8px); }
+    75%      { transform: translateX(8px); }
+  }
+
+  /* ────────────────────────────────────────────────
+     SHARED BUTTON
+  ──────────────────────────────────────────────── */
+  .btn {
+    width: 100%; padding: 0.875rem 1.5rem;
+    font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: 1px solid var(--border); border-radius: 3px;
+    cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
+    background: transparent; color: var(--text);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:hover, .btn:active { background: var(--surface); border-color: var(--muted); }
+  .btn--primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn--primary:hover, .btn--primary:active { background: #fff; border-color: #fff; color: var(--bg); }
+  .btn--danger  { color: var(--bad); border-color: #2A1010; }
+  .btn--danger:hover, .btn--danger:active { background: #1A0808; border-color: var(--bad); }
+
+  /* ────────────────────────────────────────────────
+     RESUME
+  ──────────────────────────────────────────────── */
+  #screen-resume { flex-direction: column; background: var(--bg); }
   .resume-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-    max-width: 480px;
-    width: 100%;
-    padding: 2rem;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 2rem; max-width: 480px; width: 100%; padding: 2rem;
   }
   .resume-brand {
-    font-family: var(--display);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.45em;
-    text-transform: uppercase;
-    color: var(--muted);
+    font-family: var(--display); font-size: 0.6875rem; font-weight: 700;
+    letter-spacing: 0.45em; text-transform: uppercase; color: var(--muted);
   }
   .resume-title {
-    font-family: var(--display);
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
-    font-weight: 800;
-    text-align: center;
-    line-height: 1.2;
-    color: var(--text);
+    font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 800; text-align: center; line-height: 1.2; color: var(--text);
   }
-  .resume-stats {
-    display: flex;
-    gap: 2px;
-    width: 100%;
-  }
+  .resume-stats { display: flex; gap: 2px; width: 100%; }
   .resume-stat {
-    flex: 1;
-    padding: 1.25rem 1rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    text-align: center;
+    flex: 1; padding: 1.25rem 1rem;
+    background: var(--surface); border: 1px solid var(--border); text-align: center;
   }
   .resume-stat:first-child { border-radius: 4px 0 0 4px; }
   .resume-stat:last-child  { border-radius: 0 4px 4px 0; }
   .resume-stat__val {
-    font-family: var(--display);
-    font-size: 1.75rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 0.4rem;
+    font-family: var(--display); font-size: 1.75rem; font-weight: 800;
+    line-height: 1; margin-bottom: 0.4rem;
   }
   .resume-stat__val.green { color: var(--good); }
   .resume-stat__val.red   { color: var(--bad); }
   .resume-stat__val.amber { color: var(--amber); }
   .resume-stat__label {
-    font-size: 0.625rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
+    font-size: 0.625rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted);
   }
-  .resume-progress {
-    width: 100%;
-    height: 3px;
-    background: var(--dim);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .resume-progress__fill {
-    height: 100%;
-    background: var(--amber);
-    border-radius: 2px;
-    transition: width 0.4s;
-  }
-  .resume-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
-  }
-  .btn {
-    width: 100%;
-    padding: 0.875rem 1.5rem;
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s, border-color 0.15s;
-    background: transparent;
-    color: var(--text);
-  }
-  .btn:hover { background: var(--surface); border-color: var(--muted); }
-  .btn--primary {
-    background: var(--text);
-    color: var(--bg);
-    border-color: var(--text);
-  }
-  .btn--primary:hover { background: #fff; border-color: #fff; color: var(--bg); }
-  .btn--danger { color: var(--bad); border-color: #2A1010; }
-  .btn--danger:hover { background: #1A0808; border-color: var(--bad); }
+  .resume-progress { width: 100%; height: 3px; background: var(--dim); border-radius: 2px; overflow: hidden; }
+  .resume-progress__fill { height: 100%; background: var(--amber); border-radius: 2px; transition: width 0.4s; }
+  .resume-actions { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; }
 
-  /* ── TRIAGE SCREEN ── */
+  /* ────────────────────────────────────────────────
+     TRIAGE
+  ──────────────────────────────────────────────── */
   #screen-triage { flex-direction: column; }
 
   /* Progress bar */
-  #progress-bar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--dim);
-    z-index: 100;
-  }
+  #progress-bar { position: fixed; top: 0; left: 0; right: 0; height: 2px; background: var(--dim); z-index: 100; }
   #progress-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--amber), #E8B84B);
@@ -239,261 +156,215 @@
     border-radius: 0 2px 2px 0;
   }
 
-  /* Flash overlay */
-  #flash {
-    position: fixed;
-    inset: 0;
-    z-index: 90;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.08s ease;
-  }
-  #flash.flash-good  { background: var(--good); }
-  #flash.flash-bad   { background: var(--bad); }
-  #flash.flash-back  { background: var(--amber); }
-  #flash.active { opacity: 0.18; }
-
-  /* Image area */
-  #image-area {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 56px 0 96px;
-  }
-  #slab-img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    transition: opacity 0.18s ease;
-  }
-  #slab-img.loading { opacity: 0; }
-
-  /* No image fallback */
-  #no-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--muted);
-  }
-  #no-image svg { opacity: 0.3; }
-  #no-image span {
-    font-size: 0.6875rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-
   /* Top bar */
   #top-bar {
-    position: fixed;
-    top: 2px; left: 0; right: 0;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1.5rem;
-    z-index: 80;
+    position: fixed; top: 2px; left: 0; right: 0; height: 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 1.25rem; z-index: 80;
     background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent);
   }
   #brand {
-    font-family: var(--display);
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.45em;
-    text-transform: uppercase;
-    color: var(--muted);
+    font-family: var(--display); font-size: 0.625rem; font-weight: 700;
+    letter-spacing: 0.45em; text-transform: uppercase; color: var(--muted);
   }
-  #counter {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--text);
-    letter-spacing: 0.08em;
-  }
+  #counter { font-size: 0.75rem; font-weight: 500; color: var(--text); letter-spacing: 0.08em; }
   #counter span { color: var(--muted); }
-  #tally {
-    display: flex;
-    gap: 1.25rem;
-    font-size: 0.6875rem;
-    letter-spacing: 0.05em;
-  }
+  #tally { display: flex; gap: 1.25rem; font-size: 0.6875rem; letter-spacing: 0.05em; }
   #tally-good { color: var(--good); }
   #tally-bad  { color: var(--bad); }
 
-  /* Bottom HUD */
-  #bottom-hud {
+  /* Swipe card + image */
+  #swipe-card {
     position: fixed;
-    bottom: 0; left: 0; right: 0;
-    height: 88px;
-    padding: 0 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    padding: 52px 0 140px;
+    will-change: transform;
+    cursor: grab;
+  }
+  #swipe-card.is-dragging { cursor: grabbing; }
+
+  #slab-img {
+    max-width: 100%; max-height: 100%;
+    width: auto; height: auto;
+    object-fit: contain; display: block;
+    transition: opacity 0.18s ease;
+    pointer-events: none;
+  }
+  #slab-img.loading { opacity: 0; }
+
+  /* Swipe direction labels */
+  .swipe-label {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    font-family: var(--display); font-size: 1.5rem; font-weight: 800;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-width: 3px; border-style: solid; border-radius: 4px;
+    opacity: 0; transition: opacity 0.1s;
+    pointer-events: none;
+  }
+  .swipe-label.good { right: 2rem; color: var(--good); border-color: var(--good); }
+  .swipe-label.bad  { left:  2rem; color: var(--bad);  border-color: var(--bad); }
+
+  /* No image fallback */
+  #no-image {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.75rem; color: var(--muted);
+  }
+  #no-image svg { opacity: 0.3; }
+  #no-image span { font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; }
+
+  /* ────────────────────────────────────────────────
+     BOTTOM HUD — DESKTOP
+  ──────────────────────────────────────────────── */
+  #bottom-hud {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    height: 88px; padding: 0 1.5rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 2rem;
     z-index: 80;
     background: linear-gradient(to top, rgba(8,8,8,0.98) 60%, transparent);
   }
-
   #stone-info { flex: 1; min-width: 0; }
   #stone-name {
-    font-family: var(--display);
-    font-size: clamp(1rem, 2.5vw, 1.375rem);
-    font-weight: 700;
-    line-height: 1.2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: var(--text);
+    font-family: var(--display); font-size: clamp(1rem, 2.5vw, 1.375rem);
+    font-weight: 700; line-height: 1.2;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text);
   }
   #stone-meta {
-    font-size: 0.6875rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 0.2rem;
+    font-size: 0.6875rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted); margin-top: 0.2rem;
   }
+  .cat-tag { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .cat-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--amber); flex-shrink: 0; }
 
+  /* Desktop keyboard hints */
   #key-hints {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    flex-shrink: 0;
+    display: flex; gap: 0.5rem; align-items: center; flex-shrink: 0;
   }
   .hint {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.625rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.625rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted);
   }
   .key {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 22px;
-    height: 22px;
-    padding: 0 6px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-bottom-width: 2px;
-    border-radius: 3px;
-    font-size: 0.625rem;
-    font-weight: 500;
-    letter-spacing: 0;
-    color: var(--text);
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 22px; height: 22px; padding: 0 6px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-bottom-width: 2px; border-radius: 3px;
+    font-size: 0.625rem; font-weight: 500; letter-spacing: 0; color: var(--text);
   }
-  .hint-sep {
-    width: 1px;
-    height: 20px;
-    background: var(--border);
-    margin: 0 0.25rem;
-  }
+  .hint-sep { width: 1px; height: 20px; background: var(--border); margin: 0 0.25rem; }
   .hint .key.good-key { border-color: var(--good); color: var(--good); background: rgba(45,212,150,0.06); }
   .hint .key.bad-key  { border-color: var(--bad);  color: var(--bad);  background: rgba(232,64,64,0.06); }
 
-  #hud-actions { flex-shrink: 0; }
-
   #export-btn {
-    padding: 0.5rem 1rem;
-    font-family: var(--mono);
-    font-size: 0.625rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    background: transparent;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
+    padding: 0.5rem 1rem; font-family: var(--mono); font-size: 0.625rem;
+    font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+    background: transparent; color: var(--muted); border: 1px solid var(--border);
+    border-radius: 3px; cursor: pointer; transition: color 0.15s, border-color 0.15s;
+    flex-shrink: 0; -webkit-tap-highlight-color: transparent;
   }
-  #export-btn:hover { color: var(--text); border-color: var(--muted); }
+  #export-btn:hover, #export-btn:active { color: var(--text); border-color: var(--muted); }
 
-  /* ── DONE SCREEN ── */
-  #screen-done {
-    flex-direction: column;
-    gap: 2rem;
-    text-align: center;
-    background: var(--bg);
+  /* ────────────────────────────────────────────────
+     BOTTOM HUD — MOBILE BUTTONS
+  ──────────────────────────────────────────────── */
+  #mobile-actions { display: none; }
+
+  @media (max-width: 640px) {
+    #key-hints { display: none; }
+
+    #bottom-hud {
+      height: 130px;
+      padding: 0 1.25rem 0.5rem;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+
+    #stone-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    #stone-name { font-size: 1rem; }
+    #stone-meta { font-size: 0.625rem; }
+
+    #hud-actions { display: none; }
+
+    #mobile-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .mob-btn {
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; border: none; cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.12s, opacity 0.12s;
+      flex-shrink: 0;
+    }
+    .mob-btn:active { transform: scale(0.9); opacity: 0.8; }
+
+    .mob-btn--bad {
+      width: 64px; height: 64px;
+      background: rgba(232, 64, 64, 0.12);
+      border: 2px solid rgba(232, 64, 64, 0.5);
+      color: var(--bad);
+    }
+    .mob-btn--back {
+      width: 44px; height: 44px;
+      background: rgba(212, 151, 45, 0.08);
+      border: 1px solid rgba(212, 151, 45, 0.3);
+      color: var(--amber);
+    }
+    .mob-btn--good {
+      width: 64px; height: 64px;
+      background: rgba(45, 212, 150, 0.12);
+      border: 2px solid rgba(45, 212, 150, 0.5);
+      color: var(--good);
+    }
+
+    #swipe-card { padding: 52px 0 138px; }
   }
+
+  /* ────────────────────────────────────────────────
+     DONE
+  ──────────────────────────────────────────────── */
+  #screen-done { flex-direction: column; text-align: center; background: var(--bg); }
   .done-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    max-width: 520px;
-    padding: 2rem;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 2rem; max-width: 520px; padding: 2rem; width: 100%;
   }
   .done-tick {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: rgba(45,212,150,0.08);
-    border: 1px solid rgba(45,212,150,0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(45,212,150,0.08); border: 1px solid rgba(45,212,150,0.25);
+    display: flex; align-items: center; justify-content: center;
   }
   .done-tick svg { color: var(--good); }
-  .done-title {
-    font-family: var(--display);
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--text);
-  }
-  .done-subtitle {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-top: -1.25rem;
-  }
-  .done-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    width: 100%;
-  }
+  .done-title { font-family: var(--display); font-size: 2rem; font-weight: 800; color: var(--text); }
+  .done-subtitle { font-size: 0.75rem; letter-spacing: 0.1em; color: var(--muted); margin-top: -1.25rem; }
+  .done-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; width: 100%; }
   .done-stat {
-    padding: 1.25rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    text-align: center;
+    padding: 1.25rem; background: var(--surface);
+    border: 1px solid var(--border); text-align: center;
   }
   .done-stat:first-child { border-radius: 4px 0 0 4px; }
   .done-stat:last-child  { border-radius: 0 4px 4px 0; }
-  .done-stat__val {
-    font-family: var(--display);
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 0.4rem;
-  }
+  .done-stat__val { font-family: var(--display); font-size: 2.5rem; font-weight: 800; line-height: 1; margin-bottom: 0.4rem; }
   .done-stat__label { font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
   .done-actions { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; }
-
-  /* ── CATEGORY TAG ── */
-  .cat-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-  }
-  .cat-dot {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--amber);
-    flex-shrink: 0;
-  }
 </style>
 </head>
 <body>
 
-<!-- ── AUTH SCREEN ── -->
+<!-- ── AUTH ── -->
 <div id="screen-auth">
   <div class="auth-inner">
     <div class="auth-brand">Tiba Stone — Internal</div>
@@ -507,7 +378,7 @@
   </div>
 </div>
 
-<!-- ── RESUME SCREEN ── -->
+<!-- ── RESUME ── -->
 <div id="screen-resume" class="screen hidden">
   <div class="resume-inner">
     <div class="resume-brand">Tiba Stone — Internal</div>
@@ -536,14 +407,13 @@
   </div>
 </div>
 
-<!-- ── TRIAGE SCREEN ── -->
+<!-- ── TRIAGE ── -->
 <div id="screen-triage" class="screen hidden">
 
   <div id="progress-bar"><div id="progress-fill"></div></div>
-  <div id="flash"></div>
 
   <div id="top-bar">
-    <div id="brand">Tiba Stone / Triage</div>
+    <div id="brand">Tiba Stone</div>
     <div id="counter"><span id="idx-current">1</span><span> / </span><span id="idx-total">0</span></div>
     <div id="tally">
       <span id="tally-good">✓ 0</span>
@@ -551,7 +421,10 @@
     </div>
   </div>
 
-  <div id="image-area">
+  <!-- Swipeable card -->
+  <div id="swipe-card">
+    <div class="swipe-label good" id="label-good">GOOD</div>
+    <div class="swipe-label bad"  id="label-bad">SKIP</div>
     <img id="slab-img" src="" alt="" class="loading">
     <div id="no-image" style="display:none">
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -570,6 +443,8 @@
         &nbsp;·&nbsp;<span id="stone-origin"></span>
       </div>
     </div>
+
+    <!-- Desktop keyboard hints -->
     <div id="key-hints">
       <div class="hint">
         <span class="key good-key">G</span>
@@ -583,11 +458,31 @@
         <span>Needs work</span>
       </div>
       <div class="hint-sep"></div>
-      <div class="hint">
-        <span class="key">B</span>
-        <span>Back</span>
-      </div>
+      <div class="hint"><span class="key">B</span><span>Back</span></div>
     </div>
+
+    <!-- Mobile tap buttons -->
+    <div id="mobile-actions">
+      <!-- ✕ needs improving -->
+      <button class="mob-btn mob-btn--bad" id="mob-bad" aria-label="Needs improving">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <!-- ↩ back -->
+      <button class="mob-btn mob-btn--back" id="mob-back" aria-label="Go back">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 0 0-4-4H4"/>
+        </svg>
+      </button>
+      <!-- ✓ good -->
+      <button class="mob-btn mob-btn--good" id="mob-good" aria-label="Good">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </button>
+    </div>
+
     <div id="hud-actions">
       <button id="export-btn">Export CSV</button>
     </div>
@@ -595,7 +490,7 @@
 
 </div>
 
-<!-- ── DONE SCREEN ── -->
+<!-- ── DONE ── -->
 <div id="screen-done" class="screen hidden">
   <div class="done-inner">
     <div class="done-tick">
@@ -627,22 +522,15 @@
 
 <script src="js/slabs-data.js"></script>
 <script>
-(function() {
-  // ── Auth ──────────────────────────────────────────
-  const PASSPHRASE   = 'slabs2026';
-  const AUTH_KEY     = 'tiba_triage_auth';
-  const authScreen   = document.getElementById('screen-auth');
-  const authInput    = document.getElementById('auth-input');
-  const authSubmit   = document.getElementById('auth-submit');
-  const authError    = document.getElementById('auth-error');
+(function () {
+  /* ── Auth ─────────────────────────────────────── */
+  const PASSPHRASE = 'slabs2026';
+  const AUTH_KEY   = 'tiba_triage_auth';
 
-  function checkAuth() {
-    if (sessionStorage.getItem(AUTH_KEY) === '1') {
-      authScreen.classList.add('hidden');
-      return true;
-    }
-    return false;
-  }
+  const authScreen  = document.getElementById('screen-auth');
+  const authInput   = document.getElementById('auth-input');
+  const authSubmit  = document.getElementById('auth-submit');
+  const authError   = document.getElementById('auth-error');
 
   function attemptAuth() {
     if (authInput.value === PASSPHRASE) {
@@ -661,156 +549,103 @@
   authInput.addEventListener('keydown', e => { if (e.key === 'Enter') attemptAuth(); });
   authInput.addEventListener('input',   () => authError.classList.remove('visible'));
 
-  if (checkAuth()) { init(); }
+  if (sessionStorage.getItem(AUTH_KEY) === '1') {
+    authScreen.classList.add('hidden');
+    init();
+  }
 
+  /* ── State ────────────────────────────────────── */
   const STORAGE_KEY = 'tiba_triage_v1';
+  let slabs      = [];
+  let decisions  = {};
+  let queue      = [];
+  let queueIndex = 0;
 
-  // ── State ──────────────────────────────────────────
-  let slabs       = [];
-  let decisions   = {};   // id → 'good' | 'needs_improving'
-  let queue       = [];   // ordered list of slab ids still to decide
-  let queueIndex  = 0;    // current position in queue
-  let reviewMode  = false;
-
-  // ── DOM refs ───────────────────────────────────────
   const $ = id => document.getElementById(id);
 
-  const screens = {
-    resume: $('screen-resume'),
-    triage: $('screen-triage'),
-    done:   $('screen-done'),
-  };
+  const screens = { resume: $('screen-resume'), triage: $('screen-triage'), done: $('screen-done') };
 
-  // ── Load data ──────────────────────────────────────
+  /* ── Boot ─────────────────────────────────────── */
   function init() {
     if (!window.SLABS_DATA || !window.SLABS_DATA.length) {
-      document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:monospace;color:#666;">Could not load slabs-data.js — open this file from the project root.</div>';
+      document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:monospace;color:#666;padding:2rem;text-align:center;">Could not load slabs-data.js — open from the project root.</div>';
       return;
     }
     slabs = window.SLABS_DATA;
-
     const saved = loadDecisions();
-
     if (saved && Object.keys(saved).length > 0) {
       decisions = saved;
       showResumeScreen();
     } else {
       decisions = {};
-      startTriage();
+      startTriage(false);
     }
   }
 
-  // ── Persistence ────────────────────────────────────
-  function saveDecisions() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(decisions));
-  }
+  /* ── Persistence ──────────────────────────────── */
+  function saveDecisions()  { localStorage.setItem(STORAGE_KEY, JSON.stringify(decisions)); }
+  function loadDecisions()  { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || null; } catch { return null; } }
+  function clearDecisions() { decisions = {}; localStorage.removeItem(STORAGE_KEY); }
 
-  function loadDecisions() {
-    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || null; }
-    catch { return null; }
-  }
+  /* ── Counts ───────────────────────────────────── */
+  function countGood()  { return Object.values(decisions).filter(v => v === 'good').length; }
+  function countBad()   { return Object.values(decisions).filter(v => v === 'needs_improving').length; }
+  function countTotal() { return Object.keys(decisions).length; }
 
-  function clearDecisions() {
-    decisions = {};
-    localStorage.removeItem(STORAGE_KEY);
-  }
-
-  // ── Counts ────────────────────────────────────────
-  function countGood()    { return Object.values(decisions).filter(v => v === 'good').length; }
-  function countBad()     { return Object.values(decisions).filter(v => v === 'needs_improving').length; }
-  function countTotal()   { return Object.keys(decisions).length; }
-
-  // ── Resume screen ─────────────────────────────────
+  /* ── Resume screen ────────────────────────────── */
   function showResumeScreen() {
-    const total    = slabs.length;
-    const reviewed = countTotal();
-    const good     = countGood();
-    const bad      = countBad();
-
-    $('rs-reviewed').textContent = reviewed;
-    $('rs-good').textContent     = good;
-    $('rs-bad').textContent      = bad;
-    $('rs-fill').style.width     = ((reviewed / total) * 100) + '%';
-
+    $('rs-reviewed').textContent = countTotal();
+    $('rs-good').textContent     = countGood();
+    $('rs-bad').textContent      = countBad();
+    $('rs-fill').style.width     = ((countTotal() / slabs.length) * 100) + '%';
     showScreen('resume');
   }
 
-  $('btn-resume').addEventListener('click', () => {
-    startTriage(true);
-  });
+  $('btn-resume').addEventListener('click',  () => startTriage(true));
+  $('btn-restart').addEventListener('click', () => { clearDecisions(); startTriage(false); });
 
-  $('btn-restart').addEventListener('click', () => {
-    clearDecisions();
-    startTriage(false);
-  });
-
-  // ── Start triage ──────────────────────────────────
+  /* ── Start ────────────────────────────────────── */
   function startTriage(resume) {
-    reviewMode = false;
-    // Build queue: undecided slabs first, in original order
-    if (resume) {
-      queue = slabs.filter(s => !decisions[s.id]).map(s => s.id);
-    } else {
-      queue = slabs.map(s => s.id);
-    }
-
-    if (queue.length === 0) {
-      showDoneScreen();
-      return;
-    }
-
+    queue      = resume ? slabs.filter(s => !decisions[s.id]).map(s => s.id) : slabs.map(s => s.id);
     queueIndex = 0;
+    if (queue.length === 0) { showDoneScreen(); return; }
     showScreen('triage');
     renderCurrent();
   }
 
-  // ── Render current slab ───────────────────────────
+  /* ── Render ───────────────────────────────────── */
   function renderCurrent() {
-    if (queueIndex >= queue.length) {
-      showDoneScreen();
-      return;
-    }
+    if (queueIndex >= queue.length) { showDoneScreen(); return; }
 
-    const id   = queue[queueIndex];
-    const slab = slabs.find(s => s.id === id);
-    if (!slab) { advance(); return; }
+    const slab = slabs.find(s => s.id === queue[queueIndex]);
+    if (!slab) { queueIndex++; renderCurrent(); return; }
 
-    // Image
-    const img    = $('slab-img');
-    const noImg  = $('no-image');
+    const img   = $('slab-img');
+    const noImg = $('no-image');
     img.classList.add('loading');
 
     if (slab.image) {
       noImg.style.display = 'none';
       img.style.display   = 'block';
-      img.alt = slab.name;
+      img.alt    = slab.name;
       img.onload  = () => img.classList.remove('loading');
-      img.onerror = () => {
-        img.style.display   = 'none';
-        noImg.style.display = 'flex';
-      };
+      img.onerror = () => { img.style.display = 'none'; noImg.style.display = 'flex'; };
       img.src = slab.image;
     } else {
       img.style.display   = 'none';
       noImg.style.display = 'flex';
     }
 
-    // Info
     $('stone-name').textContent   = slab.name;
     $('stone-cat').textContent    = slab.category;
     $('stone-origin').textContent = slab.origin || '—';
-
-    // Counter
-    const globalIdx = slabs.indexOf(slab) + 1;
-    $('idx-current').textContent = globalIdx;
-    $('idx-total').textContent   = slabs.length;
-
-    // Progress
-    const pct = (countTotal() / slabs.length) * 100;
-    $('progress-fill').style.width = pct + '%';
-
-    // Tally
+    $('idx-current').textContent  = slabs.indexOf(slab) + 1;
+    $('idx-total').textContent    = slabs.length;
+    $('progress-fill').style.width = ((countTotal() / slabs.length) * 100) + '%';
     updateTally();
+
+    // Reset card position
+    resetCard();
   }
 
   function updateTally() {
@@ -818,11 +653,10 @@
     $('tally-bad').textContent  = '✗ ' + countBad();
   }
 
-  // ── Decision ──────────────────────────────────────
+  /* ── Decision ─────────────────────────────────── */
   function decide(status) {
     if (queueIndex >= queue.length) return;
-    const id = queue[queueIndex];
-    decisions[id] = status;
+    decisions[queue[queueIndex]] = status;
     saveDecisions();
     flashColor(status === 'good' ? 'good' : 'bad');
     queueIndex++;
@@ -832,96 +666,175 @@
   function goBack() {
     if (queueIndex === 0) return;
     queueIndex--;
-    // Remove the decision for the item we're going back to
-    const id = queue[queueIndex];
-    delete decisions[id];
+    delete decisions[queue[queueIndex]];
     saveDecisions();
     flashColor('back');
     renderCurrent();
   }
 
-  // ── Flash ─────────────────────────────────────────
+  /* ── Flash overlay ────────────────────────────── */
   let flashTimeout;
   function flashColor(type) {
-    const el = $('flash');
+    // Use a quick full-screen flash via the card background
+    const card = $('swipe-card');
+    card.style.transition = 'none';
     clearTimeout(flashTimeout);
-    el.className = 'flash-' + type;
-    el.classList.add('active');
+    // tiny CSS var trick: push a colored shadow
+    const colors = { good: 'rgba(45,212,150,0.18)', bad: 'rgba(232,64,64,0.18)', back: 'rgba(212,151,45,0.15)' };
+    document.body.style.backgroundColor = colors[type] || '';
     flashTimeout = setTimeout(() => {
-      el.classList.remove('active');
-    }, 180);
+      document.body.style.backgroundColor = '';
+    }, 160);
   }
 
-  // ── Keyboard ──────────────────────────────────────
-  document.addEventListener('keydown', e => {
-    if (!screens.triage.classList.contains('hidden')) {
-      if (e.key === 'g' || e.key === 'G' || e.key === 'ArrowRight') { e.preventDefault(); decide('good'); }
-      if (e.key === 'n' || e.key === 'N' || e.key === 'ArrowLeft')  { e.preventDefault(); decide('needs_improving'); }
-      if (e.key === 'b' || e.key === 'B')                           { e.preventDefault(); goBack(); }
+  /* ── Swipe gesture ────────────────────────────── */
+  const card       = $('swipe-card');
+  const labelGood  = $('label-good');
+  const labelBad   = $('label-bad');
+  const THRESHOLD  = 90;
+
+  let touchStartX  = 0;
+  let touchStartY  = 0;
+  let dragging     = false;
+  let currentDx    = 0;
+
+  function resetCard() {
+    card.style.transition = '';
+    card.style.transform  = '';
+    labelGood.style.opacity = '0';
+    labelBad.style.opacity  = '0';
+    card.classList.remove('is-dragging');
+  }
+
+  function onDragStart(x, y) {
+    touchStartX = x;
+    touchStartY = y;
+    dragging    = true;
+    currentDx   = 0;
+    card.style.transition = 'none';
+    card.classList.add('is-dragging');
+  }
+
+  function onDragMove(x, y) {
+    if (!dragging) return;
+    const dx = x - touchStartX;
+    const dy = y - touchStartY;
+
+    // Ignore mostly-vertical movement
+    if (!currentDx && Math.abs(dy) > Math.abs(dx) + 10) { dragging = false; resetCard(); return; }
+
+    currentDx = dx;
+    const rotate = Math.min(Math.max(dx * 0.06, -15), 15);
+    card.style.transform = `translateX(${dx}px) rotate(${rotate}deg)`;
+
+    // Labels
+    const ratio = Math.min(Math.abs(dx) / THRESHOLD, 1);
+    if (dx > 10) {
+      labelGood.style.opacity = String(ratio);
+      labelBad.style.opacity  = '0';
+    } else if (dx < -10) {
+      labelBad.style.opacity  = String(ratio);
+      labelGood.style.opacity = '0';
+    } else {
+      labelGood.style.opacity = '0';
+      labelBad.style.opacity  = '0';
     }
+  }
+
+  function onDragEnd() {
+    if (!dragging) return;
+    dragging = false;
+    card.classList.remove('is-dragging');
+
+    if (currentDx > THRESHOLD) {
+      // Fling right → good
+      card.style.transition = 'transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)';
+      card.style.transform  = `translateX(110vw) rotate(20deg)`;
+      setTimeout(() => decide('good'), 280);
+    } else if (currentDx < -THRESHOLD) {
+      // Fling left → needs improving
+      card.style.transition = 'transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)';
+      card.style.transform  = `translateX(-110vw) rotate(-20deg)`;
+      setTimeout(() => decide('needs_improving'), 280);
+    } else {
+      // Snap back
+      card.style.transition = 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
+      card.style.transform  = '';
+      labelGood.style.opacity = '0';
+      labelBad.style.opacity  = '0';
+    }
+  }
+
+  // Touch
+  card.addEventListener('touchstart', e => {
+    onDragStart(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+
+  card.addEventListener('touchmove', e => {
+    e.preventDefault();
+    onDragMove(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: false });
+
+  card.addEventListener('touchend', () => onDragEnd());
+  card.addEventListener('touchcancel', () => { dragging = false; resetCard(); });
+
+  // Mouse (desktop)
+  let mouseDown = false;
+  card.addEventListener('mousedown', e => { mouseDown = true; onDragStart(e.clientX, e.clientY); });
+  window.addEventListener('mousemove', e => { if (mouseDown) onDragMove(e.clientX, e.clientY); });
+  window.addEventListener('mouseup',   () => { if (mouseDown) { mouseDown = false; onDragEnd(); } });
+
+  /* ── Mobile buttons ───────────────────────────── */
+  $('mob-good').addEventListener('click', () => decide('good'));
+  $('mob-bad').addEventListener('click',  () => decide('needs_improving'));
+  $('mob-back').addEventListener('click', () => goBack());
+
+  /* ── Keyboard ─────────────────────────────────── */
+  document.addEventListener('keydown', e => {
+    if (screens.triage.classList.contains('hidden')) return;
+    if (e.key === 'g' || e.key === 'G' || e.key === 'ArrowRight') { e.preventDefault(); decide('good'); }
+    if (e.key === 'n' || e.key === 'N' || e.key === 'ArrowLeft')  { e.preventDefault(); decide('needs_improving'); }
+    if (e.key === 'b' || e.key === 'B')                           { e.preventDefault(); goBack(); }
   });
 
-  // ── Export CSV ────────────────────────────────────
+  /* ── Export CSV ───────────────────────────────── */
   function exportCSV() {
-    const rows = [['id', 'name', 'category', 'color', 'origin', 'image', 'status']];
-    slabs.forEach(slab => {
-      const status = decisions[slab.id] || 'undecided';
+    const rows = [['id','name','category','color','origin','image','status']];
+    slabs.forEach(s => {
       rows.push([
-        slab.id,
-        '"' + (slab.name || '').replace(/"/g, '""') + '"',
-        slab.category || '',
-        slab.color    || '',
-        slab.origin   || '',
-        slab.image    || '',
-        status,
+        s.id,
+        '"' + (s.name || '').replace(/"/g, '""') + '"',
+        s.category || '', s.color || '', s.origin || '', s.image || '',
+        decisions[s.id] || 'undecided',
       ]);
     });
-    const csv  = rows.map(r => r.join(',')).join('\n');
-    const blob = new Blob([csv], { type: 'text/csv' });
+    const blob = new Blob([rows.map(r => r.join(',')).join('\n')], { type: 'text/csv' });
     const url  = URL.createObjectURL(blob);
     const a    = document.createElement('a');
-    a.href     = url;
-    a.download = 'tiba-slab-triage-' + new Date().toISOString().slice(0,10) + '.csv';
-    a.click();
-    URL.revokeObjectURL(url);
+    a.href = url; a.download = 'tiba-slab-triage-' + new Date().toISOString().slice(0,10) + '.csv';
+    a.click(); URL.revokeObjectURL(url);
   }
 
   $('export-btn').addEventListener('click', exportCSV);
 
-  // ── Done screen ───────────────────────────────────
+  /* ── Done screen ──────────────────────────────── */
   function showDoneScreen() {
-    const good  = countGood();
-    const bad   = countBad();
-    const total = slabs.length;
-
-    $('done-good').textContent    = good;
-    $('done-bad').textContent     = bad;
-    $('done-subtitle').textContent = total + ' slabs reviewed in full';
-
+    $('done-good').textContent    = countGood();
+    $('done-bad').textContent     = countBad();
+    $('done-subtitle').textContent = slabs.length + ' slabs reviewed in full';
     showScreen('done');
   }
 
   $('btn-export-done').addEventListener('click', exportCSV);
-
   $('btn-review').addEventListener('click', () => {
-    // Review mode: go back through ALL slabs (decided ones included)
-    reviewMode = true;
-    queue      = slabs.map(s => s.id);
-    queueIndex = 0;
-    showScreen('triage');
-    renderCurrent();
+    queue = slabs.map(s => s.id); queueIndex = 0;
+    showScreen('triage'); renderCurrent();
   });
+  $('btn-restart-done').addEventListener('click', () => { clearDecisions(); startTriage(false); });
 
-  $('btn-restart-done').addEventListener('click', () => {
-    clearDecisions();
-    startTriage(false);
-  });
-
-  // ── Screen switch ─────────────────────────────────
+  /* ── Screen switch ────────────────────────────── */
   function showScreen(name) {
-    Object.entries(screens).forEach(([k, el]) => {
-      el.classList.toggle('hidden', k !== name);
-    });
+    Object.entries(screens).forEach(([k, el]) => el.classList.toggle('hidden', k !== name));
   }
 
 })();
