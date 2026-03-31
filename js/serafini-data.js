@@ -56,9 +56,13 @@ window.SERAFINI_DATA = [
   { id: 43, name: "Sicily Brown",              slug: "sicily-brown",              range: "3",          color: "Brown",       image: "Slabs/serafini/b91e2f_e8d19f521fee4953a3ffee225541362b~mv2.jpg" },
   { id: 94, name: "Travertino Giallo",         slug: "travertino-giallo",         range: "3",          color: "Yellow",      image: "Slabs/serafini/b91e2f_d1cfc098bd874535bbd481f3e3734050~mv2.jpg" },
   { id: 95, name: "Travertino Noce",           slug: "travertino-noce",           range: "3",          color: "Beige",       image: "Slabs/serafini/b91e2f_472207f6b21a4f809cbfbb7c95c7cf69~mv2.jpg" },
-  { id: 96, name: "Travertino Romano Classico",slug: "travertino-romano-classico",range: "3",          color: "Beige",       image: "Slabs/serafini/travertino-romano-classico.png" },
+  { id: 96, name: "Travertino Romano Classico",slug: "travertino-romano-classico",range: "3",          color: "Beige",       image: "Slabs/serafini/travertino-romano-classico.jpg" },
   { id: 97, name: "Travertino Rosso",          slug: "travertino-rosso",          range: "3",          color: "Red",         image: "Slabs/serafini/b91e2f_c22f3e57315842d9becc30674355a9c9~mv2.jpg" },
   { id: 98, name: "Travertino Scabas",         slug: "travertino-scabas",         range: "3",          color: "Beige",       image: "Slabs/serafini/b91e2f_80ce2776bc14414e8408b2afc0a52711~mv2.jpg" },
+  { id: 132,name: "La Muralla Rouge Travertine",slug:"la-muralla-rouge-travertine",range: "3",          color: "Red",         image: "Slabs/serafini/la-muralla-rouge-travertine.jpg" },
+  { id: 133,name: "Travertine Blue",           slug: "travertine-blue",           range: "3",          color: "Blue",        image: "Slabs/serafini/travertine-blue.jpg" },
+  { id: 134,name: "Travertine Light Beige",    slug: "travertine-light-beige",    range: "3",          color: "Beige",       image: "Slabs/serafini/travertine-light-beige.jpg" },
+  { id: 135,name: "Cafe Brown Travertine",     slug: "cafe-brown-travertine",     range: "3",          color: "Brown",       image: "Slabs/serafini/cafe-brown-travertine.jpg" },
   { id: 131,name: "Verde Notte",               slug: "verde-notte",               range: "3",          color: "Green",       image: "Slabs/serafini/b91e2f_52ce4d843eae44e4b4f4dfaa86fbdd21~mv2.jpeg" },
 
   /* ─── COLLECTION 4 ─── */
