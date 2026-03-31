@@ -169,8 +169,8 @@ window.TIBA_DATA = [
   { id: 123,name: "Rose Quartz",                 slug: "rose-quartz",               range: "tiba-signature",  color: "Pink",        image: "Slabs/serafini/b91e2f_99354acb33e8491b84f78434759fe36f~mv2.jpg" },
   { id: 124,name: "Smokey Quartz",               slug: "smokey-quartz",             range: "tiba-signature",  color: "Brown",       image: "Slabs/serafini/b91e2f_a07f67d344134d5bac48dadb75dc1381~mv2.jpg" },
   { id: 125,name: "Tiger Eye Gold",              slug: "tiger-eye-gold",            range: "tiba-signature",  color: "Yellow",      image: "Slabs/serafini/b91e2f_786112b6b15e44518766c7b75067292e~mv2.jpg" },
-  { id: 126,name: "White Mother of Pearl Brick", slug:"white-mother-of-pearl-brick",range:"exclusive", color: "White",       image: "Slabs/serafini/b91e2f_e7a0803055c3493f8df63f4b4fe000dd~mv2.jpg" },
-  { id: 127,name: "White Mother of Pearl Random",slug:"white-mother-of-pearl-random",range:"exclusive",color: "White",      image: "Slabs/serafini/b91e2f_9b8bb85d4ad2432daaf0ebc5b017f5d5~mv2.jpg" },
+  { id: 126,name: "White Mother of Pearl Brick", slug:"white-mother-of-pearl-brick",range:"tiba-signature", color: "White",       image: "Slabs/serafini/b91e2f_e7a0803055c3493f8df63f4b4fe000dd~mv2.jpg" },
+  { id: 127,name: "White Mother of Pearl Random",slug:"white-mother-of-pearl-random",range:"tiba-signature",color: "White",      image: "Slabs/serafini/b91e2f_9b8bb85d4ad2432daaf0ebc5b017f5d5~mv2.jpg" },
   { id: 128,name: "White Quartz",                slug: "white-quartz",              range: "tiba-signature",  color: "White",       image: "Slabs/serafini/b91e2f_c49cfb1426ed40ada2694aefe1ac299e~mv2.jpg" },
 
   /* ─── ON DEMAND ─── */

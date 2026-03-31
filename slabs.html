@@ -450,23 +450,21 @@
     .slab-modal__image-wrap.is-zoomed .slab-modal__image { transform: scale(2.2); }
 
     .slab-modal__zoom-hint {
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
+      display: block;
+      text-align: right;
+      padding: 0.375rem 1.25rem;
       font-family: var(--font-body);
-      font-size: 0.625rem;
+      font-size: 0.5625rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      color: rgba(255, 255, 255, 0.7);
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(8px);
-      padding: 0.5rem 0.875rem;
+      color: rgba(34, 35, 35, 0.4);
+      background: var(--color-ivory);
       pointer-events: none;
       transition: opacity 0.3s ease;
     }
 
-    .slab-modal__image-wrap.is-zoomed .slab-modal__zoom-hint { opacity: 0; }
+    .slab-modal__zoom-hint.is-hidden { opacity: 0; }
 
     .slab-modal__scroll-hint {
       display: flex;
@@ -986,7 +984,6 @@
         <button class="filter-pill" data-range="9">Collection 9</button>
         <button class="filter-pill" data-range="10">Collection 10</button>
         <button class="filter-pill" data-range="tiba-signature">Tiba Signature Collection</button>
-        <button class="filter-pill" data-range="exclusive">Exclusive</button>
         <button class="filter-pill" data-range="on-demand">On Demand</button>
       </div>
     </div>
@@ -1005,8 +1002,8 @@
     <div class="slab-modal__card">
       <div class="slab-modal__image-wrap" id="modalImageWrap">
         <img class="slab-modal__image" id="modalImage" src="" alt="">
-        <span class="slab-modal__zoom-hint">Click to zoom</span>
       </div>
+      <div class="slab-modal__zoom-hint">Click to zoom</div>
       <div class="slab-modal__scroll-hint" id="modalScrollHint">
         <span class="slab-modal__scroll-text">Slab Details</span>
         <svg class="slab-modal__scroll-chevron" width="16" height="9" viewBox="0 0 16 9" fill="none"><path d="M1 1l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1111,9 +1108,10 @@
       var rendered    = 0;
       var isLoadingMore = false;
 
-      /* ---- Wix CDN image helpers ---- */
+      /* ---- Image helpers: thumbnail for grid, full for modal ---- */
       function wixThumb(url) {
-        return url || '';
+        if (!url) return '';
+        return url.replace(/^Slabs\//, 'Slabs/thumbs/').replace(/\.(jpg|jpeg|png)$/i, '.webp');
       }
 
       function wixFull(url) {
@@ -1166,7 +1164,7 @@
       }, { rootMargin: '600px' });
 
       /* ---- Collection / colour constants ---- */
-      var rangeOrder  = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'tiba-signature', 'exclusive', 'on-demand'];
+      var rangeOrder  = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'tiba-signature', 'on-demand'];
       var rangeLabels = {
         '1':         'Collection 1',
         '2':         'Collection 2',
@@ -1179,7 +1177,6 @@
         '9':         'Collection 9',
         '10':        'Collection 10',
         'tiba-signature': 'Tiba Signature Collection',
-        'exclusive':      'Exclusive',
         'on-demand': 'On Demand'
       };
 
@@ -1369,13 +1366,16 @@
         modal.classList.remove('is-open');
         modalImageWrap.classList.remove('is-zoomed');
         modalImageWrap.style.display = '';
+        if (zoomHint) zoomHint.classList.remove('is-hidden');
         document.body.style.overflow = '';
       }
 
       /* ---- Zoom on click ---- */
+      var zoomHint = document.querySelector('.slab-modal__zoom-hint');
       modalImageWrap.addEventListener('click', function (e) {
         var wrap   = this;
         var isZoomed = wrap.classList.toggle('is-zoomed');
+        if (zoomHint) zoomHint.classList.toggle('is-hidden', isZoomed);
         if (isZoomed) {
           var rect = wrap.getBoundingClientRect();
           var x = ((e.clientX - rect.left) / rect.width)  * 100;
