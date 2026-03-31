@@ -17,6 +17,7 @@ window.SERAFINI_DATA = [
   { id: 9,  name: "Pietra Serena",             slug: "pietra-serena",             range: "1",          color: "Grey",        image: "Slabs/serafini/b91e2f_1a64001fa8994c0199535a6e6074e52a~mv2.jpg" },
   { id: 10, name: "Rosa Corallo",              slug: "rosa-corallo",              range: "1",          color: "Pink",        image: "Slabs/serafini/b91e2f_06391ca4763a4726b49bd11b85285e45~mv2.jpg" },
   { id: 11, name: "Rosso Asiago",              slug: "rosso-asiago",              range: "1",          color: "Red",         image: "Slabs/serafini/b91e2f_a5fe05d9f66b4ef7b50c5619832e7c3d~mv2.jpg" },
+  { id: 131,name: "Pietra Lavica Nera",        slug: "pietra-lavica-nera",        range: "1",          color: "Black",       image: "" },
 
   /* ─── COLLECTION 2 ─── */
   { id: 12, name: "Breccia Damascata",         slug: "breccia-damascata",         range: "2",          color: "Brown",       image: "Slabs/serafini/b91e2f_6b59ef6d5a0a4a0cab5c0db89f8667f8~mv2.jpg" },
@@ -55,7 +56,7 @@ window.SERAFINI_DATA = [
   { id: 43, name: "Sicily Brown",              slug: "sicily-brown",              range: "3",          color: "Brown",       image: "Slabs/serafini/b91e2f_e8d19f521fee4953a3ffee225541362b~mv2.jpg" },
   { id: 94, name: "Travertino Giallo",         slug: "travertino-giallo",         range: "3",          color: "Yellow",      image: "Slabs/serafini/b91e2f_d1cfc098bd874535bbd481f3e3734050~mv2.jpg" },
   { id: 95, name: "Travertino Noce",           slug: "travertino-noce",           range: "3",          color: "Beige",       image: "Slabs/serafini/b91e2f_472207f6b21a4f809cbfbb7c95c7cf69~mv2.jpg" },
-  { id: 96, name: "Travertino Romano Classico",slug: "travertino-romano-classico",range: "3",          color: "Beige",       image: "" },
+  { id: 96, name: "Travertino Romano Classico",slug: "travertino-romano-classico",range: "3",          color: "Beige",       image: "Slabs/serafini/travertino-romano-classico.png" },
   { id: 97, name: "Travertino Rosso",          slug: "travertino-rosso",          range: "3",          color: "Red",         image: "Slabs/serafini/b91e2f_c22f3e57315842d9becc30674355a9c9~mv2.jpg" },
   { id: 98, name: "Travertino Scabas",         slug: "travertino-scabas",         range: "3",          color: "Beige",       image: "Slabs/serafini/b91e2f_80ce2776bc14414e8408b2afc0a52711~mv2.jpg" },
   { id: 131,name: "Verde Notte",               slug: "verde-notte",               range: "3",          color: "Green",       image: "Slabs/serafini/b91e2f_52ce4d843eae44e4b4f4dfaa86fbdd21~mv2.jpeg" },
