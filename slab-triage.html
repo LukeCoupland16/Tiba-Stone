@@ -808,11 +808,25 @@
         decisions[s.id] || 'undecided',
       ]);
     });
-    const blob = new Blob([rows.map(r => r.join(',')).join('\n')], { type: 'text/csv' });
+    const csv      = rows.map(r => r.join(',')).join('\n');
+    const filename = 'tiba-slab-triage-' + new Date().toISOString().slice(0,10) + '.csv';
+    const file     = new File([csv], filename, { type: 'text/csv' });
+
+    // Use native share sheet on mobile (iOS/Android) if available
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      navigator.share({ files: [file], title: filename }).catch(() => downloadCSV(csv, filename));
+      return;
+    }
+    downloadCSV(csv, filename);
+  }
+
+  function downloadCSV(csv, filename) {
+    const blob = new Blob([csv], { type: 'text/csv' });
     const url  = URL.createObjectURL(blob);
     const a    = document.createElement('a');
-    a.href = url; a.download = 'tiba-slab-triage-' + new Date().toISOString().slice(0,10) + '.csv';
-    a.click(); URL.revokeObjectURL(url);
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a); URL.revokeObjectURL(url);
   }
 
   $('export-btn').addEventListener('click', exportCSV);
