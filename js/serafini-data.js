@@ -49,7 +49,6 @@ window.SERAFINI_DATA = [
   { id: 36, name: "Picasso Brown",             slug: "picasso-brown",             range: "3",          color: "Brown",       image: "Slabs/serafini/b91e2f_5fc76a434edd4843847fcadb66ac8450~mv2.jpg" },
   { id: 37, name: "Picasso Green",             slug: "picasso-green",             range: "3",          color: "Green",       image: "Slabs/serafini/b91e2f_9e555d0932324f00be9f362f438b0aa5~mv2.jpg" },
   { id: 38, name: "Pierre Bleu",               slug: "pierre-bleu",               range: "3",          color: "Grey",        image: "Slabs/serafini/b91e2f_c44e60e3c25842209b92859f20ab9313~mv2.jpg" },
-  { id: 39, name: "Pietra Lavica Nera",        slug: "pietra-lavica-nera",        range: "3",          color: "Black",       image: "Slabs/serafini/pietra-lavica-nera.png" },
   { id: 40, name: "Pinta Verde",               slug: "pinta-verde",               range: "3",          color: "Green",       image: "Slabs/serafini/b91e2f_1ad7f8b939f248738a09a248fac520ea~mv2.jpg" },
   { id: 41, name: "Rosa Peralba",              slug: "rosa-peralba",              range: "3",          color: "Pink",        image: "Slabs/serafini/rosa-peralba.png" },
   { id: 42, name: "Salomè",                    slug: "salome",                    range: "3",          color: "Beige",       image: "Slabs/serafini/b91e2f_fc1d1fb408fe486e8df70ec71fb50660~mv2.jpg" },
