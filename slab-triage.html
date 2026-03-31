@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slab Triage — TIBA STONE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #080808;
+    --surface:  #111111;
+    --border:   #1E1E1E;
+    --text:     #D8D5D0;
+    --muted:    #444;
+    --dim:      #2A2A2A;
+    --good:     #2DD496;
+    --bad:      #E84040;
+    --amber:    #D4972D;
+    --mono:     'JetBrains Mono', 'Courier New', monospace;
+    --display:  'Syne', sans-serif;
+  }
+
+  /* ── AUTH SCREEN ── */
+  #screen-auth {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    z-index: 999;
+  }
+  #screen-auth.hidden { display: none; }
+  .auth-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 340px;
+    padding: 2rem;
+  }
+  .auth-brand {
+    font-family: var(--display);
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .auth-title {
+    font-family: var(--display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text);
+    text-align: center;
+    line-height: 1.2;
+  }
+  .auth-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .auth-field label {
+    font-size: 0.625rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .auth-field input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    letter-spacing: 0.12em;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .auth-field input:focus { border-color: var(--muted); }
+  .auth-field input.error { border-color: var(--bad); animation: shake 0.3s ease; }
+  .auth-error {
+    font-size: 0.625rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--bad);
+    text-align: center;
+    min-height: 1em;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .auth-error.visible { opacity: 1; }
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25%      { transform: translateX(-6px); }
+    75%      { transform: translateX(6px); }
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    overflow: hidden;
+    user-select: none;
+  }
+
+  /* ── SCREENS ── */
+  .screen { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .screen.hidden { display: none; }
+
+  /* ── RESUME SCREEN ── */
+  #screen-resume {
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg);
+  }
+  .resume-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 480px;
+    width: 100%;
+    padding: 2rem;
+  }
+  .resume-brand {
+    font-family: var(--display);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .resume-title {
+    font-family: var(--display);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+    color: var(--text);
+  }
+  .resume-stats {
+    display: flex;
+    gap: 2px;
+    width: 100%;
+  }
+  .resume-stat {
+    flex: 1;
+    padding: 1.25rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+  .resume-stat:first-child { border-radius: 4px 0 0 4px; }
+  .resume-stat:last-child  { border-radius: 0 4px 4px 0; }
+  .resume-stat__val {
+    font-family: var(--display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .resume-stat__val.green { color: var(--good); }
+  .resume-stat__val.red   { color: var(--bad); }
+  .resume-stat__val.amber { color: var(--amber); }
+  .resume-stat__label {
+    font-size: 0.625rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .resume-progress {
+    width: 100%;
+    height: 3px;
+    background: var(--dim);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .resume-progress__fill {
+    height: 100%;
+    background: var(--amber);
+    border-radius: 2px;
+    transition: width 0.4s;
+  }
+  .resume-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    background: transparent;
+    color: var(--text);
+  }
+  .btn:hover { background: var(--surface); border-color: var(--muted); }
+  .btn--primary {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+  .btn--primary:hover { background: #fff; border-color: #fff; color: var(--bg); }
+  .btn--danger { color: var(--bad); border-color: #2A1010; }
+  .btn--danger:hover { background: #1A0808; border-color: var(--bad); }
+
+  /* ── TRIAGE SCREEN ── */
+  #screen-triage { flex-direction: column; }
+
+  /* Progress bar */
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--dim);
+    z-index: 100;
+  }
+  #progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--amber), #E8B84B);
+    transition: width 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* Flash overlay */
+  #flash {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.08s ease;
+  }
+  #flash.flash-good  { background: var(--good); }
+  #flash.flash-bad   { background: var(--bad); }
+  #flash.flash-back  { background: var(--amber); }
+  #flash.active { opacity: 0.18; }
+
+  /* Image area */
+  #image-area {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 0 96px;
+  }
+  #slab-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: opacity 0.18s ease;
+  }
+  #slab-img.loading { opacity: 0; }
+
+  /* No image fallback */
+  #no-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--muted);
+  }
+  #no-image svg { opacity: 0.3; }
+  #no-image span {
+    font-size: 0.6875rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* Top bar */
+  #top-bar {
+    position: fixed;
+    top: 2px; left: 0; right: 0;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    z-index: 80;
+    background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent);
+  }
+  #brand {
+    font-family: var(--display);
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  #counter {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: 0.08em;
+  }
+  #counter span { color: var(--muted); }
+  #tally {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.05em;
+  }
+  #tally-good { color: var(--good); }
+  #tally-bad  { color: var(--bad); }
+
+  /* Bottom HUD */
+  #bottom-hud {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 88px;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    z-index: 80;
+    background: linear-gradient(to top, rgba(8,8,8,0.98) 60%, transparent);
+  }
+
+  #stone-info { flex: 1; min-width: 0; }
+  #stone-name {
+    font-family: var(--display);
+    font-size: clamp(1rem, 2.5vw, 1.375rem);
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text);
+  }
+  #stone-meta {
+    font-size: 0.6875rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+
+  #key-hints {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .hint {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.625rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-bottom-width: 2px;
+    border-radius: 3px;
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--text);
+  }
+  .hint-sep {
+    width: 1px;
+    height: 20px;
+    background: var(--border);
+    margin: 0 0.25rem;
+  }
+  .hint .key.good-key { border-color: var(--good); color: var(--good); background: rgba(45,212,150,0.06); }
+  .hint .key.bad-key  { border-color: var(--bad);  color: var(--bad);  background: rgba(232,64,64,0.06); }
+
+  #hud-actions { flex-shrink: 0; }
+
+  #export-btn {
+    padding: 0.5rem 1rem;
+    font-family: var(--mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #export-btn:hover { color: var(--text); border-color: var(--muted); }
+
+  /* ── DONE SCREEN ── */
+  #screen-done {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    background: var(--bg);
+  }
+  .done-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 520px;
+    padding: 2rem;
+  }
+  .done-tick {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(45,212,150,0.08);
+    border: 1px solid rgba(45,212,150,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .done-tick svg { color: var(--good); }
+  .done-title {
+    font-family: var(--display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text);
+  }
+  .done-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-top: -1.25rem;
+  }
+  .done-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    width: 100%;
+  }
+  .done-stat {
+    padding: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+  .done-stat:first-child { border-radius: 4px 0 0 4px; }
+  .done-stat:last-child  { border-radius: 0 4px 4px 0; }
+  .done-stat__val {
+    font-family: var(--display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .done-stat__label { font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .done-actions { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; }
+
+  /* ── CATEGORY TAG ── */
+  .cat-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .cat-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--amber);
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── AUTH SCREEN ── -->
+<div id="screen-auth">
+  <div class="auth-inner">
+    <div class="auth-brand">Tiba Stone — Internal</div>
+    <div class="auth-title">Slab<br>Triage</div>
+    <div class="auth-field">
+      <label for="auth-input">Passphrase</label>
+      <input id="auth-input" type="password" autocomplete="off" placeholder="Enter passphrase" autofocus>
+    </div>
+    <div class="auth-error" id="auth-error">Incorrect passphrase</div>
+    <button class="btn btn--primary" id="auth-submit" style="margin-top:-1rem">Enter</button>
+  </div>
+</div>
+
+<!-- ── RESUME SCREEN ── -->
+<div id="screen-resume" class="screen hidden">
+  <div class="resume-inner">
+    <div class="resume-brand">Tiba Stone — Internal</div>
+    <div class="resume-title">Slab<br>Triage</div>
+    <div class="resume-stats">
+      <div class="resume-stat">
+        <div class="resume-stat__val amber" id="rs-reviewed">0</div>
+        <div class="resume-stat__label">Reviewed</div>
+      </div>
+      <div class="resume-stat">
+        <div class="resume-stat__val green" id="rs-good">0</div>
+        <div class="resume-stat__label">Good</div>
+      </div>
+      <div class="resume-stat">
+        <div class="resume-stat__val red" id="rs-bad">0</div>
+        <div class="resume-stat__label">Needs Work</div>
+      </div>
+    </div>
+    <div class="resume-progress">
+      <div class="resume-progress__fill" id="rs-fill"></div>
+    </div>
+    <div class="resume-actions">
+      <button class="btn btn--primary" id="btn-resume">Resume — Continue where I left off</button>
+      <button class="btn btn--danger"  id="btn-restart">Start Over — Clear all decisions</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TRIAGE SCREEN ── -->
+<div id="screen-triage" class="screen hidden">
+
+  <div id="progress-bar"><div id="progress-fill"></div></div>
+  <div id="flash"></div>
+
+  <div id="top-bar">
+    <div id="brand">Tiba Stone / Triage</div>
+    <div id="counter"><span id="idx-current">1</span><span> / </span><span id="idx-total">0</span></div>
+    <div id="tally">
+      <span id="tally-good">✓ 0</span>
+      <span id="tally-bad">✗ 0</span>
+    </div>
+  </div>
+
+  <div id="image-area">
+    <img id="slab-img" src="" alt="" class="loading">
+    <div id="no-image" style="display:none">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+        <path d="M21 15l-5-5L5 21"/>
+      </svg>
+      <span>No image found</span>
+    </div>
+  </div>
+
+  <div id="bottom-hud">
+    <div id="stone-info">
+      <div id="stone-name"></div>
+      <div id="stone-meta">
+        <span class="cat-tag"><span class="cat-dot"></span><span id="stone-cat"></span></span>
+        &nbsp;·&nbsp;<span id="stone-origin"></span>
+      </div>
+    </div>
+    <div id="key-hints">
+      <div class="hint">
+        <span class="key good-key">G</span>
+        <span class="key good-key">→</span>
+        <span>Good</span>
+      </div>
+      <div class="hint-sep"></div>
+      <div class="hint">
+        <span class="key bad-key">N</span>
+        <span class="key bad-key">←</span>
+        <span>Needs work</span>
+      </div>
+      <div class="hint-sep"></div>
+      <div class="hint">
+        <span class="key">B</span>
+        <span>Back</span>
+      </div>
+    </div>
+    <div id="hud-actions">
+      <button id="export-btn">Export CSV</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── DONE SCREEN ── -->
+<div id="screen-done" class="screen hidden">
+  <div class="done-inner">
+    <div class="done-tick">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+    <div>
+      <div class="done-title">All done.</div>
+      <div class="done-subtitle" id="done-subtitle"></div>
+    </div>
+    <div class="done-stats">
+      <div class="done-stat">
+        <div class="done-stat__val" style="color:var(--good)" id="done-good">0</div>
+        <div class="done-stat__label">Good</div>
+      </div>
+      <div class="done-stat">
+        <div class="done-stat__val" style="color:var(--bad)" id="done-bad">0</div>
+        <div class="done-stat__label">Needs Improving</div>
+      </div>
+    </div>
+    <div class="done-actions">
+      <button class="btn btn--primary" id="btn-export-done">Download CSV</button>
+      <button class="btn" id="btn-review">Review decisions</button>
+      <button class="btn btn--danger" id="btn-restart-done">Start over</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/slabs-data.js"></script>
+<script>
+(function() {
+  // ── Auth ──────────────────────────────────────────
+  const PASSPHRASE   = 'slabs2026';
+  const AUTH_KEY     = 'tiba_triage_auth';
+  const authScreen   = document.getElementById('screen-auth');
+  const authInput    = document.getElementById('auth-input');
+  const authSubmit   = document.getElementById('auth-submit');
+  const authError    = document.getElementById('auth-error');
+
+  function checkAuth() {
+    if (sessionStorage.getItem(AUTH_KEY) === '1') {
+      authScreen.classList.add('hidden');
+      return true;
+    }
+    return false;
+  }
+
+  function attemptAuth() {
+    if (authInput.value === PASSPHRASE) {
+      sessionStorage.setItem(AUTH_KEY, '1');
+      authScreen.classList.add('hidden');
+      init();
+    } else {
+      authInput.classList.add('error');
+      authError.classList.add('visible');
+      authInput.value = '';
+      setTimeout(() => authInput.classList.remove('error'), 400);
+    }
+  }
+
+  authSubmit.addEventListener('click', attemptAuth);
+  authInput.addEventListener('keydown', e => { if (e.key === 'Enter') attemptAuth(); });
+  authInput.addEventListener('input',   () => authError.classList.remove('visible'));
+
+  if (checkAuth()) { init(); }
+
+  const STORAGE_KEY = 'tiba_triage_v1';
+
+  // ── State ──────────────────────────────────────────
+  let slabs       = [];
+  let decisions   = {};   // id → 'good' | 'needs_improving'
+  let queue       = [];   // ordered list of slab ids still to decide
+  let queueIndex  = 0;    // current position in queue
+  let reviewMode  = false;
+
+  // ── DOM refs ───────────────────────────────────────
+  const $ = id => document.getElementById(id);
+
+  const screens = {
+    resume: $('screen-resume'),
+    triage: $('screen-triage'),
+    done:   $('screen-done'),
+  };
+
+  // ── Load data ──────────────────────────────────────
+  function init() {
+    if (!window.SLABS_DATA || !window.SLABS_DATA.length) {
+      document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:monospace;color:#666;">Could not load slabs-data.js — open this file from the project root.</div>';
+      return;
+    }
+    slabs = window.SLABS_DATA;
+
+    const saved = loadDecisions();
+
+    if (saved && Object.keys(saved).length > 0) {
+      decisions = saved;
+      showResumeScreen();
+    } else {
+      decisions = {};
+      startTriage();
+    }
+  }
+
+  // ── Persistence ────────────────────────────────────
+  function saveDecisions() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(decisions));
+  }
+
+  function loadDecisions() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || null; }
+    catch { return null; }
+  }
+
+  function clearDecisions() {
+    decisions = {};
+    localStorage.removeItem(STORAGE_KEY);
+  }
+
+  // ── Counts ────────────────────────────────────────
+  function countGood()    { return Object.values(decisions).filter(v => v === 'good').length; }
+  function countBad()     { return Object.values(decisions).filter(v => v === 'needs_improving').length; }
+  function countTotal()   { return Object.keys(decisions).length; }
+
+  // ── Resume screen ─────────────────────────────────
+  function showResumeScreen() {
+    const total    = slabs.length;
+    const reviewed = countTotal();
+    const good     = countGood();
+    const bad      = countBad();
+
+    $('rs-reviewed').textContent = reviewed;
+    $('rs-good').textContent     = good;
+    $('rs-bad').textContent      = bad;
+    $('rs-fill').style.width     = ((reviewed / total) * 100) + '%';
+
+    showScreen('resume');
+  }
+
+  $('btn-resume').addEventListener('click', () => {
+    startTriage(true);
+  });
+
+  $('btn-restart').addEventListener('click', () => {
+    clearDecisions();
+    startTriage(false);
+  });
+
+  // ── Start triage ──────────────────────────────────
+  function startTriage(resume) {
+    reviewMode = false;
+    // Build queue: undecided slabs first, in original order
+    if (resume) {
+      queue = slabs.filter(s => !decisions[s.id]).map(s => s.id);
+    } else {
+      queue = slabs.map(s => s.id);
+    }
+
+    if (queue.length === 0) {
+      showDoneScreen();
+      return;
+    }
+
+    queueIndex = 0;
+    showScreen('triage');
+    renderCurrent();
+  }
+
+  // ── Render current slab ───────────────────────────
+  function renderCurrent() {
+    if (queueIndex >= queue.length) {
+      showDoneScreen();
+      return;
+    }
+
+    const id   = queue[queueIndex];
+    const slab = slabs.find(s => s.id === id);
+    if (!slab) { advance(); return; }
+
+    // Image
+    const img    = $('slab-img');
+    const noImg  = $('no-image');
+    img.classList.add('loading');
+
+    if (slab.image) {
+      noImg.style.display = 'none';
+      img.style.display   = 'block';
+      img.alt = slab.name;
+      img.onload  = () => img.classList.remove('loading');
+      img.onerror = () => {
+        img.style.display   = 'none';
+        noImg.style.display = 'flex';
+      };
+      img.src = slab.image;
+    } else {
+      img.style.display   = 'none';
+      noImg.style.display = 'flex';
+    }
+
+    // Info
+    $('stone-name').textContent   = slab.name;
+    $('stone-cat').textContent    = slab.category;
+    $('stone-origin').textContent = slab.origin || '—';
+
+    // Counter
+    const globalIdx = slabs.indexOf(slab) + 1;
+    $('idx-current').textContent = globalIdx;
+    $('idx-total').textContent   = slabs.length;
+
+    // Progress
+    const pct = (countTotal() / slabs.length) * 100;
+    $('progress-fill').style.width = pct + '%';
+
+    // Tally
+    updateTally();
+  }
+
+  function updateTally() {
+    $('tally-good').textContent = '✓ ' + countGood();
+    $('tally-bad').textContent  = '✗ ' + countBad();
+  }
+
+  // ── Decision ──────────────────────────────────────
+  function decide(status) {
+    if (queueIndex >= queue.length) return;
+    const id = queue[queueIndex];
+    decisions[id] = status;
+    saveDecisions();
+    flashColor(status === 'good' ? 'good' : 'bad');
+    queueIndex++;
+    renderCurrent();
+  }
+
+  function goBack() {
+    if (queueIndex === 0) return;
+    queueIndex--;
+    // Remove the decision for the item we're going back to
+    const id = queue[queueIndex];
+    delete decisions[id];
+    saveDecisions();
+    flashColor('back');
+    renderCurrent();
+  }
+
+  // ── Flash ─────────────────────────────────────────
+  let flashTimeout;
+  function flashColor(type) {
+    const el = $('flash');
+    clearTimeout(flashTimeout);
+    el.className = 'flash-' + type;
+    el.classList.add('active');
+    flashTimeout = setTimeout(() => {
+      el.classList.remove('active');
+    }, 180);
+  }
+
+  // ── Keyboard ──────────────────────────────────────
+  document.addEventListener('keydown', e => {
+    if (!screens.triage.classList.contains('hidden')) {
+      if (e.key === 'g' || e.key === 'G' || e.key === 'ArrowRight') { e.preventDefault(); decide('good'); }
+      if (e.key === 'n' || e.key === 'N' || e.key === 'ArrowLeft')  { e.preventDefault(); decide('needs_improving'); }
+      if (e.key === 'b' || e.key === 'B')                           { e.preventDefault(); goBack(); }
+    }
+  });
+
+  // ── Export CSV ────────────────────────────────────
+  function exportCSV() {
+    const rows = [['id', 'name', 'category', 'color', 'origin', 'image', 'status']];
+    slabs.forEach(slab => {
+      const status = decisions[slab.id] || 'undecided';
+      rows.push([
+        slab.id,
+        '"' + (slab.name || '').replace(/"/g, '""') + '"',
+        slab.category || '',
+        slab.color    || '',
+        slab.origin   || '',
+        slab.image    || '',
+        status,
+      ]);
+    });
+    const csv  = rows.map(r => r.join(',')).join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'tiba-slab-triage-' + new Date().toISOString().slice(0,10) + '.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  $('export-btn').addEventListener('click', exportCSV);
+
+  // ── Done screen ───────────────────────────────────
+  function showDoneScreen() {
+    const good  = countGood();
+    const bad   = countBad();
+    const total = slabs.length;
+
+    $('done-good').textContent    = good;
+    $('done-bad').textContent     = bad;
+    $('done-subtitle').textContent = total + ' slabs reviewed in full';
+
+    showScreen('done');
+  }
+
+  $('btn-export-done').addEventListener('click', exportCSV);
+
+  $('btn-review').addEventListener('click', () => {
+    // Review mode: go back through ALL slabs (decided ones included)
+    reviewMode = true;
+    queue      = slabs.map(s => s.id);
+    queueIndex = 0;
+    showScreen('triage');
+    renderCurrent();
+  });
+
+  $('btn-restart-done').addEventListener('click', () => {
+    clearDecisions();
+    startTriage(false);
+  });
+
+  // ── Screen switch ─────────────────────────────────
+  function showScreen(name) {
+    Object.entries(screens).forEach(([k, el]) => {
+      el.classList.toggle('hidden', k !== name);
+    });
+  }
+
+})();
+</script>
+</body>
+</html>
