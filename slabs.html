@@ -5,10 +5,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serafini Stone Library | TIBA STONE</title>
-  <meta name="description" content="Explore 131 curated Italian stones — marble, travertine, onyx, quartzite, limestone, and semiprecious slabs, sourced from the Serafini collection.">
-  <meta property="og:title" content="Serafini Stone Library | TIBA STONE">
-  <meta property="og:description" content="131 curated Italian stones sourced from the Serafini collection.">
+  <title>Tiba Stone Library | TIBA STONE</title>
+  <meta name="description" content="Explore 151 curated Italian stones — marble, travertine, onyx, quartzite, limestone, and semiprecious slabs, from the Tiba Stone collection.">
+  <meta property="og:title" content="Tiba Stone Library | TIBA STONE">
+  <meta property="og:description" content="131 curated Italian stones from the Tiba Stone collection.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -282,44 +282,9 @@
     .filter-pill.is-active { color: var(--color-ivory); font-weight: 600; }
     .filter-pill.is-active::after { transform: scaleX(1); }
 
-    /* Colour selector */
-    .colour-select-wrap { flex-shrink: 0; }
-
-    .colour-select {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: rgba(255, 255, 255, 0.8);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 0.5rem 2.25rem 0.5rem 0.875rem;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23ffffff' stroke-width='1.2'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.75rem center;
-      transition: border-color 0.3s ease;
-      min-width: 150px;
-    }
-
-    .colour-select:hover,
-    .colour-select:focus { border-color: var(--color-sunset); outline: none; }
-
-    .colour-select option {
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      text-transform: none;
-      letter-spacing: 0;
-    }
 
     @media (max-width: 767px) {
       .filter-bar__top { flex-direction: column; gap: 0.75rem; padding: 1.25rem 0 0.625rem; }
-      .colour-select-wrap { width: 100%; }
-      .colour-select { width: 100%; min-width: unset; }
       .filter-pill { font-size: 0.75rem; padding: 0.75rem 1rem; }
     }
 
@@ -973,7 +938,7 @@
   <header class="header" id="siteHeader">
     <div class="header__inner">
       <a href="/" class="header__logo">
-        <img src="assets/TIBA_FINAL_LOGO_LANDSCAPE (3) (13).webp" alt="TIBA Stone" class="header__logo-img">
+        <img src="assets/tiba-logo-landscape.webp" alt="TIBA Stone" class="header__logo-img">
       </a>
       <nav class="header__nav">
         <a href="/">Home</a>
@@ -1006,24 +971,7 @@
   <div class="filter-bar" id="filterBar">
     <div class="filter-bar__inner">
       <div class="filter-bar__top">
-        <h1 class="filter-bar__title">Serafini Collection <span class="filter-bar__count" id="filterCount">131 stones</span></h1>
-        <div class="colour-select-wrap">
-          <select class="colour-select" id="colourSelect">
-            <option value="all">All Colours</option>
-            <option value="White">White</option>
-            <option value="Black">Black</option>
-            <option value="Beige">Beige</option>
-            <option value="Grey">Grey</option>
-            <option value="Red">Red</option>
-            <option value="Pink">Pink</option>
-            <option value="Blue">Blue</option>
-            <option value="Brown">Brown</option>
-            <option value="Yellow">Yellow</option>
-            <option value="Green">Green</option>
-            <option value="Purple">Purple</option>
-            <option value="Multicolour">Multicolour</option>
-          </select>
-        </div>
+        <h1 class="filter-bar__title">Tiba Collection <span class="filter-bar__count" id="filterCount">131 stones</span></h1>
       </div>
       <div class="filter-bar__tabs">
         <button class="filter-pill is-active" data-range="all">All</button>
@@ -1037,6 +985,7 @@
         <button class="filter-pill" data-range="8">Collection 8</button>
         <button class="filter-pill" data-range="9">Collection 9</button>
         <button class="filter-pill" data-range="10">Collection 10</button>
+        <button class="filter-pill" data-range="tiba-signature">Tiba Signature Collection</button>
         <button class="filter-pill" data-range="exclusive">Exclusive</button>
         <button class="filter-pill" data-range="on-demand">On Demand</button>
       </div>
@@ -1067,7 +1016,7 @@
           <p class="slab-modal__category" id="modalCategory"></p>
           <h2 class="slab-modal__name" id="modalName"></h2>
           <div class="slab-modal__rule"></div>
-          <p class="slab-modal__source">Serafini Stone Collection &mdash; Italy</p>
+          <p class="slab-modal__source">Tiba Stone Collection &mdash; Italy</p>
         </div>
         <div class="slab-modal__details-right">
           <div class="slab-modal__specs" id="modalSpecs"></div>
@@ -1092,7 +1041,7 @@
   <footer class="footer">
     <div class="footer__grid">
       <div>
-        <img src="assets/TIBA_FINAL_LOGO_PORTRAIT (2).webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
+        <img src="assets/tiba-logo-portrait.webp" alt="TIBA Stone" class="footer__logo" loading="lazy" decoding="async">
         <p class="footer__tagline">Bespoke Marble Atelier</p>
         <div class="footer__social">
           <a href="https://instagram.com/tibaliving" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -1157,8 +1106,6 @@
       var filterCount = document.getElementById('filterCount');
       var pills       = document.querySelectorAll('.filter-pill');
       var currentRange  = 'all';
-      var currentColour = 'all';
-      var colourSelect    = document.getElementById('colourSelect');
 
       var renderQueue = [];
       var rendered    = 0;
@@ -1219,8 +1166,7 @@
       }, { rootMargin: '600px' });
 
       /* ---- Collection / colour constants ---- */
-      var colourOrder = ['White', 'Black', 'Beige', 'Grey', 'Red', 'Pink', 'Blue', 'Brown', 'Yellow', 'Green', 'Purple', 'Multicolour'];
-      var rangeOrder  = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'exclusive', 'on-demand'];
+      var rangeOrder  = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'tiba-signature', 'exclusive', 'on-demand'];
       var rangeLabels = {
         '1':         'Collection 1',
         '2':         'Collection 2',
@@ -1232,7 +1178,8 @@
         '8':         'Collection 8',
         '9':         'Collection 9',
         '10':        'Collection 10',
-        'exclusive': 'Exclusive',
+        'tiba-signature': 'Tiba Signature Collection',
+        'exclusive':      'Exclusive',
         'on-demand': 'On Demand'
       };
 
@@ -1241,7 +1188,7 @@
 
       /* ---- Build flat render queue ---- */
       function buildRenderQueue(range, colour) {
-        var data     = window.SERAFINI_DATA || [];
+        var data     = window.TIBA_DATA || [];
         var filtered = data;
         if (range  !== 'all') filtered = filtered.filter(function (s) { return s.range === range; });
         if (colour !== 'all') filtered = filtered.filter(function (s) { return s.color === colour; });
@@ -1336,10 +1283,9 @@
       }
 
       /* ---- Full render on filter change ---- */
-      function renderGrid(range, colour) {
-        colour = colour || currentColour;
+      function renderGrid(range) {
         slabMap = {};
-        renderQueue = buildRenderQueue(range, colour);
+        renderQueue = buildRenderQueue(range, 'all');
         rendered = 0;
         grid.innerHTML = '';
         renderBatch();
@@ -1378,43 +1324,14 @@
         if (slab) openModal(slab);
       });
 
-      /* ---- Colour dropdown ---- */
-      var colourWrap = document.querySelector('.colour-select-wrap');
-
-      function updateColourOptions(range) {
-        var data = window.SERAFINI_DATA || [];
-        var pool = range === 'all' ? data : data.filter(function (s) { return s.range === range; });
-        var available = {};
-        pool.forEach(function (s) { if (s.color) available[s.color] = true; });
-
-        var prev = colourSelect.value;
-        colourSelect.innerHTML = '<option value="all">All Colours</option>';
-        colourOrder.forEach(function (c) {
-          if (!available[c]) return;
-          var opt = document.createElement('option');
-          opt.value = c;
-          opt.textContent = c;
-          colourSelect.appendChild(opt);
-        });
-
-        if (available[prev]) { colourSelect.value = prev; currentColour = prev; }
-        else { colourSelect.value = 'all'; currentColour = 'all'; }
-      }
-
       /* ---- Filter pills ---- */
       pills.forEach(function (pill) {
         pill.addEventListener('click', function () {
           pills.forEach(function (p) { p.classList.remove('is-active'); });
           this.classList.add('is-active');
           currentRange = this.dataset.range;
-          updateColourOptions(currentRange);
-          renderGrid(currentRange, currentColour);
+          renderGrid(currentRange);
         });
-      });
-
-      colourSelect.addEventListener('change', function () {
-        currentColour = this.value;
-        renderGrid(currentRange, currentColour);
       });
 
       /* ---- Modal ---- */
@@ -1521,14 +1438,13 @@
 
       /* ---- Initial render ---- */
       function init() {
-        updateColourOptions('all');
         renderGrid('all');
         gridObs.observe(grid, { childList: true });
         sentinelObs.observe(scrollSentinel);
         grid.parentNode.insertBefore(scrollSentinel, grid.nextSibling);
       }
 
-      if (window.SERAFINI_DATA) { init(); }
+      if (window.TIBA_DATA) { init(); }
       else { document.addEventListener('DOMContentLoaded', init); }
 
     })();
