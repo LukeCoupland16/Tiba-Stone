@@ -34,7 +34,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/palissandro-regale.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "An extraordinary bookmatched marble in warm taupe and grey tones with flowing linear veins. The quintessence of classical Italian sophistication."
   },
@@ -47,8 +47,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/calacatta-sovrano.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A prestigious white marble with bold golden-grey veining that commands attention. Each slab tells a story of geological grandeur."
   },
   {
@@ -112,8 +112,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/bianco-ariston.webp",
     "material": "Marble",
     "origin": "Greece",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A crystalline white marble of remarkable purity with subtle grey wisps. Clean, luminous, and timelessly elegant."
   },
   {
@@ -125,8 +125,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/bianco-imperiale.webp",
     "material": "Marble",
     "origin": "North Macedonia",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "One of the world's purest white marbles with an almost translucent quality. A canvas of absolute serenity for minimalist spaces."
   },
   {
@@ -138,8 +138,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/bianco-gioia-pura.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A soft white marble with gentle grey veining that whispers rather than shouts. Brings quiet warmth to contemporary interiors."
   },
   {
@@ -151,8 +151,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/clara-bianca.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A pristine white marble with fine dove-grey veining creating a delicate filigree pattern. Understated beauty for refined surfaces."
   },
   {
@@ -164,8 +164,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/clara-candida.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A luminous white canvas with soft grey movement throughout. Versatile and refined for both classical and contemporary applications."
   },
   {
@@ -177,8 +177,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/rinoceronte-bianco.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A robust white marble with distinctive grey patterning that evokes raw natural power. Bold yet sophisticated in character."
   },
   {
@@ -190,8 +190,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/clarissa-neve.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A snow-white marble with the faintest silver threads running through its depths. Purity personified in natural stone."
   },
   {
@@ -203,8 +203,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/maya-bianca.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm white marble with flowing grey-beige veins that recall ancient civilizations. Rich in character with an archaeological mystique."
   },
   {
@@ -229,8 +229,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/marmara-perla.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A creamy white marble with soft grey banding that flows like gentle waves. The warmth of the Marmara Sea captured in stone."
   },
   {
@@ -242,7 +242,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/calacatta-specchio-alpino.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A mirror-matched masterpiece revealing symmetrical veining patterns of extraordinary drama. Two slabs united in perfect geological harmony."
   },
@@ -255,8 +255,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/dolomiti-candore.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A clean white marble with subtle grey undertones and fine crystalline structure. The embodiment of alpine purity."
   },
   {
@@ -268,8 +268,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/zebre-blanc.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "Striking parallel bands of white and grey create a rhythmic pattern of mesmerizing regularity. A bold choice for feature walls and statement surfaces."
   },
   {
@@ -281,8 +281,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/elisabetta-reale.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A regal white marble with graceful grey veining befitting its royal namesake. Timeless elegance for distinguished interiors."
   },
   {
@@ -294,8 +294,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/neve-eterna.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "An immaculate white marble as pure as fresh snowfall. Its crystalline surface catches light with a soft inner luminosity."
   },
   {
@@ -307,8 +307,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/lilla-bianca.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A delicate white marble kissed with the faintest lilac and mauve undertones. Feminine and ethereal with a romantic sensibility."
   },
   {
@@ -320,8 +320,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/perla-celeste.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A lustrous white marble with a pearlescent quality that shimmers under changing light. Soft grey veining adds depth without disruption."
   },
   {
@@ -333,8 +333,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/statuario-venatino-supremo.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "An exceptional Statuario with fine elongated veins of grey and gold on brilliant white. The most refined expression of Carrara's treasures."
   },
   {
@@ -346,8 +346,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/macedonia-luminosa.webp",
     "material": "Marble",
     "origin": "North Macedonia",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A bright white marble with clean aesthetic and minimal veining from the ancient quarries of Macedonia. Serene and contemplative."
   },
   {
@@ -372,7 +372,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/calacatta-nero-supremo.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "2cm",
     "description": "A dramatic inversion of the classic Calacatta with luminous white veining on deep black ground. Unapologetically bold and theatrically beautiful."
   },
@@ -385,8 +385,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/statuario-regio.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A premium grade Statuario with powerful grey veining that flows with architectural purpose. The marble of choice for grand entrances and feature walls."
   },
   {
@@ -398,8 +398,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/atena-divina.webp",
     "material": "Marble",
     "origin": "Greece",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A Grecian white marble of divine clarity with subtle silver threading. Carries the wisdom and beauty of its mythological namesake."
   },
   {
@@ -411,7 +411,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/colombia-bianca.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "2cm",
     "description": "A bright white marble with soft grey cloud-like formations drifting across its surface. Fresh and contemporary with natural grace."
   },
@@ -541,7 +541,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/isabella-davorio.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A warm ivory-white marble with gentle veining that recalls Renaissance portraiture. Soft and luminous with old-world charm."
   },
@@ -554,8 +554,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/calacatta-oscuro.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A bold black marble with signature Calacatta-style white veining. The dark twin of Italy's most celebrated marble family."
   },
   {
@@ -568,7 +568,7 @@ window.SLABS_DATA = [
     "material": "Marble",
     "origin": "Turkey",
     "dimensions": "\u00b1 2.69 x 1.89 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A bookmatched white marble creating perfect mirror symmetry with flowing grey veins. Architectural poetry written in stone."
   },
   {
@@ -658,8 +658,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/calacatta-corchia-puro.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A refined Calacatta from the Corchia quarries with elegant grey-gold veining. Pure Italian provenance with impeccable geological pedigree."
   },
   {
@@ -684,7 +684,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/marquina-dorata.webp",
     "material": "Marble",
     "origin": "Spain",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "2cm",
     "description": "A rare variant of the famed Marquina with golden calcite veins threading through jet-black depths. Opulent darkness illuminated by precious metallic light."
   },
@@ -710,8 +710,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/aziza-notte.webp",
     "material": "Marble",
     "origin": "Morocco",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A rich black marble from North Africa with subtle golden-brown veining. Mysterious and warm like a Marrakech evening."
   },
   {
@@ -723,8 +723,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/serpente-nero.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A dark marble with sinuous white veining that slithers across the surface like a silver serpent. Dynamic and alive with geological energy."
   },
   {
@@ -736,8 +736,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/neve-nera.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A deep black marble with scattered white crystalline formations like snowflakes on obsidian. Poetic contrast in mineral form."
   },
   {
@@ -749,8 +749,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/san-lorenzo-noir.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A luxurious black marble with dramatic gold veining that speaks of Parisian haute couture. The ultimate in dark sophistication."
   },
   {
@@ -775,8 +775,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/antico-nero.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A weathered black marble with warm brown and grey undertones suggesting centuries of patina. Ancient dignity in every surface."
   },
   {
@@ -788,8 +788,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/michelangelo-divino.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A marble worthy of the master sculptor with dramatic veining in grey and white on dark ground. Renaissance grandeur captured in natural stone."
   },
   {
@@ -801,8 +801,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/belgio-profondo.webp",
     "material": "Marble",
     "origin": "Belgium",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A dense jet-black marble of exceptional purity from Belgian quarries. The deepest black in natural stone with a polished mirror-like finish."
   },
   {
@@ -827,8 +827,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/marquina-nobile.webp",
     "material": "Marble",
     "origin": "Spain",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "Spain's most celebrated black marble with crisp white calcite veining. A timeless classic of the architectural stone world."
   },
   {
@@ -840,8 +840,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/nero-picasso.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A dark marble with abstract white brushstrokes worthy of its artistic namesake. Every slab a unique composition of natural abstraction."
   },
   {
@@ -879,8 +879,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/eramosa-seta.webp",
     "material": "Marble",
     "origin": "Canada",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A distinctive marble with fine linear striations in brown and grey creating a silk-like visual texture. Organic warmth with architectural precision."
   },
   {
@@ -892,8 +892,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/marquina-secondo.webp",
     "material": "Marble",
     "origin": "Spain",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A second selection from Spain's famed Marquina quarries with bolder white veining. Classic black marble with enhanced visual drama."
   },
   {
@@ -918,7 +918,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/serpeggiante-crema.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A warm cream marble with sinuous parallel veining in honey and taupe tones. Flowing linear beauty with Mediterranean warmth."
   },
@@ -957,7 +957,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/chiaro-di-luna.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A luminous cream marble with the soft glow of moonlight captured in stone. Pale and ethereal with gentle warmth."
   },
@@ -970,7 +970,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/sahara-dorato.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A warm beige marble with golden undertones evoking desert sands at golden hour. Timeless warmth for welcoming interiors."
   },
@@ -996,7 +996,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/crema-margherita-prima.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A premium cream marble with delicate golden veining and warm ivory ground. The finest expression of the Margaretta quarry."
   },
@@ -1009,7 +1009,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/crema-margherita-seconda.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A second premium selection with slightly warmer tones and bolder cream-gold patterning. Consistent quality with individual character."
   },
@@ -1022,7 +1022,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/sahara-miele.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A honey-toned beige marble with soft flowing veins recalling desert dunes. Warmth and tranquillity in every surface."
   },
@@ -1035,8 +1035,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/daino-imperatore.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm beige marble with rich fossil content and golden-brown veining. Ancient marine life preserved in stone of regal bearing."
   },
   {
@@ -1048,8 +1048,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/perla-nuova.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A luminous cream marble with soft pearlescent quality and gentle beige undertones. Like morning light on oyster shells."
   },
   {
@@ -1061,8 +1061,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/sofitel-dor.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A luxurious beige marble with golden veining suggesting five-star refinement. Warm hospitality expressed in natural stone."
   },
   {
@@ -1075,7 +1075,7 @@ window.SLABS_DATA = [
     "material": "Marble",
     "origin": "Turkey",
     "dimensions": "\u00b1 2.6 x 1.95 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A distinguished beige marble with fine gold threading on a warm cream canvas. Aristocratic restraint with natural warmth."
   },
   {
@@ -1100,8 +1100,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/impero-beige.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm beige marble with golden-brown veining of imperial grandeur. Classic Ottoman aesthetic meets contemporary design sensibility."
   },
   {
@@ -1113,8 +1113,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/crema-davorio.webp",
     "material": "Marble",
     "origin": "Spain",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "Spain's beloved cream marble with uniform warm colouring and subtle fossil textures. The world's most trusted beige stone for good reason."
   },
   {
@@ -1126,8 +1126,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/crema-liviana.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A light cream marble with gentle movement and warm undertones. Effortless elegance that complements rather than competes."
   },
   {
@@ -1139,8 +1139,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/cosmo-beige.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm beige marble with swirling cosmic patterns in cream and gold. The universe writ small in natural stone."
   },
   {
@@ -1152,8 +1152,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/botticino-classico.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "Italy's iconic warm beige marble with fine cream veining and subtle fossil detail. Timeless warmth used in masterworks for centuries."
   },
   {
@@ -1165,8 +1165,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/crema-naturale.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A versatile cream-beige marble of consistent warm tone and gentle texture. The foundation stone for harmonious interior palettes."
   },
   {
@@ -1179,7 +1179,7 @@ window.SLABS_DATA = [
     "material": "Marble",
     "origin": "Turkey",
     "dimensions": "\u00b1 2.6 x 1.95 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A sandy beige marble with refined veining and warm golden undertones. A second noble selection with slightly more pronounced character."
   },
   {
@@ -1191,8 +1191,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/serpeggiante-grigio-scuro.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A moody dark grey marble with sinuous parallel veining in charcoal and silver. Dramatic linear movement with brooding intensity."
   },
   {
@@ -1204,8 +1204,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/serpeggiante-grigio-chiaro.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A lighter expression of the Serpeggiante family with flowing grey-silver bands. Gentle movement and cool sophistication."
   },
   {
@@ -1217,8 +1217,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/bardiglio-imperiale.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A distinguished medium-grey marble with darker veining from the Carrara region. The aristocrat of grey Italian marbles."
   },
   {
@@ -1230,8 +1230,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/carnico-tempesta.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A dramatic dark grey marble from the Carnic Alps with white and silver veining like lightning through storm clouds. Raw alpine power."
   },
   {
@@ -1243,8 +1243,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/orobico-magnifico.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "An extraordinary marble with bold grey arabesques on a dark ground from the Bergamo region. One of Italy's most dramatic natural stones."
   },
   {
@@ -1256,7 +1256,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/astra-grigio.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A refined grey marble with celestial silver undertones and fine veining. Cool and contemporary with star-touched luminosity."
   },
@@ -1269,8 +1269,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/grigio-maesta.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A majestic grey marble with darker veining creating depth and dimension. Imperial bearing with modern versatility."
   },
   {
@@ -1295,8 +1295,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/grigio-classico.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A timeless medium-grey marble with balanced veining and consistent tone. The dependable foundation for sophisticated grey palettes."
   },
   {
@@ -1308,8 +1308,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/laurent-grigio.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A refined grey marble with elegant darker veining recalling Parisian limestone. Sophisticated and urbane with continental character."
   },
   {
@@ -1321,7 +1321,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/emperador-cenere.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A grey-brown marble with warm undertones from the Emperador family. Where the warmth of brown meets the coolness of grey."
   },
@@ -1360,8 +1360,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/tundra-grigia.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A cool grey marble with fine linear banding like frozen arctic strata. Clean Nordic aesthetic with natural warmth."
   },
   {
@@ -1373,8 +1373,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/tundra-argento.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A silver-toned grey marble with delicate banded patterning. Cool Scandinavian minimalism expressed in Turkish stone."
   },
   {
@@ -1386,8 +1386,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/volpe-argento.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A silver-grey marble with distinctive fossil patterns and warm undertones. Where prehistoric marine life becomes decorative art."
   },
   {
@@ -1464,8 +1464,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/wyndham-grigio.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A distinguished grey marble with flowing veins and warm silver tones. English manor aesthetics in Mediterranean stone."
   },
   {
@@ -1503,8 +1503,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/palissandro-grigio.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A grey marble with distinctive linear grain reminiscent of aged timber. Where stone mimics wood in the most elegant fashion."
   },
   {
@@ -1516,8 +1516,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/hermes-cendre.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A sophisticated grey marble with the refined aesthetic of a luxury fashion house. Ash-toned with impeccable natural patterning."
   },
   {
@@ -1529,8 +1529,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/grigio-toscano.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A classic Italian grey marble with warm undertones and gentle movement. The essence of Tuscan stone craft."
   },
   {
@@ -1556,7 +1556,7 @@ window.SLABS_DATA = [
     "material": "Marble",
     "origin": "Turkey",
     "dimensions": "\u00b1 1.22 x 10.0 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A steady medium grey marble with consistent tone and fine movement. Reliable elegance for architectural continuity."
   },
   {
@@ -1568,8 +1568,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/astana-argento.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A silver-toned grey marble with subtle crystalline sparkle. Cool Central Asian inspired elegance with metropolitan polish."
   },
   {
@@ -1581,8 +1581,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/grigio-romantico.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A soft grey marble with gentle flowing veins that whisper of tenderness. Where stone becomes poetry."
   },
   {
@@ -1594,8 +1594,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/grigio-biscotto.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A playful grey marble with contrasting dark and cream layers creating a distinctive banded pattern. Bold graphic appeal with natural charm."
   },
   {
@@ -1607,8 +1607,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/calacatta-grigio.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A grey interpretation of the Calacatta lineage with bold white veining on a grey canvas. Dramatic reversal of the classic white Calacatta."
   },
   {
@@ -1633,8 +1633,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/rosa-di-valencia.webp",
     "material": "Marble",
     "origin": "Spain",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm rose-pink marble from Valencia with coral and salmon undertones. Spanish passion expressed in the gentlest blush of colour."
   },
   {
@@ -1646,8 +1646,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/rosso-imperiale.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A deep red marble with rich burgundy tones and white veining. Bold and sanguine with the confidence of aged wine."
   },
   {
@@ -1672,8 +1672,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/rosa-primavera.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A delicate pink marble with the freshness of spring blossoms. Soft and feminine with gentle veining like flower petals."
   },
   {
@@ -1685,8 +1685,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/rosso-dalicante.webp",
     "material": "Marble",
     "origin": "Spain",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A vivid red marble from the Spanish coast with cream fossil fragments and white veining. The warmth of the Mediterranean sun in stone."
   },
   {
@@ -1698,8 +1698,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/rosa-del-te.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A soft rose marble with warm pink-beige tones reminiscent of Earl Grey afternoons. Refined and comforting with understated beauty."
   },
   {
@@ -1711,8 +1711,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/rosso-levanto-magnifico.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A magnificent deep red marble from the Italian Riviera with dramatic white and green veining. One of Italy's most passionate stones."
   },
   {
@@ -1750,7 +1750,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/blu-fendi.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A rich blue-grey marble with the sophistication of Italian high fashion. Deep tonal complexity with an unmistakable couture sensibility."
   },
@@ -1789,8 +1789,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/blu-reale.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A commanding blue marble of royal intensity with white veining. The sovereign of blue natural stones."
   },
   {
@@ -1802,8 +1802,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/palissandro-nuvola.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A cloud-like Palissandro marble with flowing blue-grey and brown tones. Gentle and atmospheric like an Italian mountain sky."
   },
   {
@@ -1815,8 +1815,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/palissandro-bronzato.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm bronze-toned Palissandro with linear veining in brown and gold. Rich metallic warmth with classical Italian lineage."
   },
   {
@@ -1828,8 +1828,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/oceano-blu.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A deep blue marble with swirling white veining like ocean waves cresting in sunlight. The vast Atlantic captured in polished stone."
   },
   {
@@ -1841,8 +1841,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/cristallo-blu.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A brilliant blue marble with crystalline clarity and white veining. Translucent depths that shimmer like a mountain glacier."
   },
   {
@@ -1893,8 +1893,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/ondulato-zaffiro.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A blue marble with distinctive undulating wave patterns creating rhythmic visual movement. The sea in perpetual motion frozen in stone."
   },
   {
@@ -1919,8 +1919,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/cielo-sereno.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A gentle sky-blue marble with soft white veining like cirrus clouds. Tranquil and uplifting with a meditative quality."
   },
   {
@@ -1932,8 +1932,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/blu-cristallino.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A clear blue marble with crystalline transparency and prismatic light play. Where water and stone become indistinguishable."
   },
   {
@@ -1945,8 +1945,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/palissandro-bronzo-secondo.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A second selection of the bronze Palissandro with slightly warmer metallic tones. Linear elegance with aged copper warmth."
   },
   {
@@ -1958,8 +1958,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/blu-denim.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A casual blue marble with the relaxed indigo tones of washed denim. Contemporary cool with natural stone authenticity."
   },
   {
@@ -1971,8 +1971,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/alcatraz-azzurro.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A dramatic blue marble with bold veining creating an island of colour. Captivating intensity that holds the eye prisoner."
   },
   {
@@ -1997,8 +1997,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/foresta-pluviale.webp",
     "material": "Marble",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A rich brown marble with dramatic green and gold veining like a tropical canopy viewed from above. Exotic and untamed natural beauty."
   },
   {
@@ -2023,8 +2023,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/portoro-dorato-orientale.webp",
     "material": "Marble",
     "origin": "China",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A dramatic black marble with bold golden veining inspired by the legendary Italian Portoro. Eastern interpretation of Western luxury."
   },
   {
@@ -2036,8 +2036,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/rosotika-ambra.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm amber-brown marble with pink and cream undertones creating a unique rosewood character. Rich and inviting with distinctive personality."
   },
   {
@@ -2062,8 +2062,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/dior-doro.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm golden marble with the refined elegance of haute couture. Honeyed tones with subtle movement create an atmosphere of exclusive luxury."
   },
   {
@@ -2075,8 +2075,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/bruno-antico.webp",
     "material": "Marble",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm brown marble with aged patina and cream veining suggesting centuries of history. Rustic nobility with artisanal character."
   },
   {
@@ -2101,8 +2101,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/siena-doro.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A vivid golden-yellow marble from the Tuscan hills of Siena. The warm amber glow of Italian sunset captured in stone."
   },
   {
@@ -2140,7 +2140,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/verde-di-venezia.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A deep green marble evoking the algae-kissed canals of Venice. Rich aquatic tones with white veining like sunlight on water."
   },
@@ -2154,7 +2154,7 @@ window.SLABS_DATA = [
     "material": "Marble",
     "origin": "India",
     "dimensions": "\u00b1 1.78 x 1.35 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A distinguished green marble with elegant white veining and a feminine grace. Where the forest meets the drawing room."
   },
   {
@@ -2166,7 +2166,7 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/long-island-verde.webp",
     "material": "Marble",
     "origin": "Brazil",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "2cm",
     "description": "A green marble with dramatic movement and warm brown undertones. The lush landscapes of the tropics compressed into stone."
   },
@@ -2179,8 +2179,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/verde-delle-alpi.webp",
     "material": "Marble",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A deep forest-green marble from the Italian Alps with white serpentine veining. Ancient alpine forests preserved in mineral form."
   },
   {
@@ -2192,8 +2192,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/verde-patricia-nobile.webp",
     "material": "Marble",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A rich emerald-green marble with dramatic white veining creating bold contrast. A noble stone of commanding natural presence."
   },
   {
@@ -2218,8 +2218,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/arizona-silvestre.webp",
     "material": "Marble",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A richly veined green-brown marble evoking wild desert forests. Raw natural beauty with untamed geological character."
   },
   {
@@ -2231,8 +2231,8 @@ window.SLABS_DATA = [
     "image": "Slabs/marble/foresta-verde.webp",
     "material": "Marble",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A vivid green marble with dramatic darker veining like aerial views of deep jungle. Lush tropical exuberance in polished stone."
   },
   {
@@ -2270,7 +2270,7 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/titanio-nero.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "An intensely dark granite with the metallic sheen of its industrial namesake. Virtually indestructible with a brooding sculptural presence."
   },
@@ -2348,7 +2348,7 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/angola-grigio.webp",
     "material": "Granite",
     "origin": "Angola",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A consistent medium-grey granite with fine even grain and subtle sparkle. African stone of quiet strength and reliable beauty."
   },
@@ -2361,7 +2361,7 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/titanio-oro.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A dramatic granite combining dark titanium base with golden mineral highlights. Where industrial strength meets precious metal opulence."
   },
@@ -2400,8 +2400,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/diamante-bianco.webp",
     "material": "Granite",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A luminous white granite with sparkling crystalline inclusions that catch the light. Diamond-like brilliance in natural stone form."
   },
   {
@@ -2413,8 +2413,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/cinazio-reale.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A distinctive granite with rich warm tones and bold mineral patterning. Unique character that defies easy categorization."
   },
   {
@@ -2426,8 +2426,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/bruno-antico-granito.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm brown granite with aged patina-like colouring and varied mineral content. Rustic warmth with enduring granite strength."
   },
   {
@@ -2439,8 +2439,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/rosso-multicolore-extra.webp",
     "material": "Granite",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "An extraordinary granite with vibrant red and multicoloured mineral formations. Bold and expressive for daring design statements."
   },
   {
@@ -2452,8 +2452,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/mare-nero.webp",
     "material": "Granite",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A deep black granite with subtle grey undertones evoking the depths of its namesake sea. Mysterious and profound."
   },
   {
@@ -2465,8 +2465,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/metallico-fuso.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A granite with striking metallic appearance and fused mineral formations. Industrial beauty forged in geological furnaces."
   },
   {
@@ -2478,8 +2478,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/beola-dargento.webp",
     "material": "Granite",
     "origin": "Italy",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A silver-grey Italian granite with fine foliated texture and subtle sparkle. Alpine elegance with Mediterranean warmth."
   },
   {
@@ -2491,8 +2491,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/lactea-nera.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A dramatic black granite with milky white and cream mineral formations floating like stars in dark space. Via Lactea in stone."
   },
   {
@@ -2504,8 +2504,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/solaris-aureo.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm golden granite with radiant crystalline structure evoking solar energy. The power and warmth of the sun in solid form."
   },
   {
@@ -2518,7 +2518,7 @@ window.SLABS_DATA = [
     "material": "Granite",
     "origin": "Brazil",
     "dimensions": "\u00b1 1.22 x 10.0 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A lustrous granite with a pearlescent nacreous quality and warm beige tones. Mother-of-pearl elegance in granite form."
   },
   {
@@ -2530,8 +2530,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/bordeaux-rubino.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A rich burgundy granite with the deep warm tones of fine Bordeaux wine. Sophisticated and intoxicating in its depth of colour."
   },
   {
@@ -2557,7 +2557,7 @@ window.SLABS_DATA = [
     "material": "Granite",
     "origin": "Brazil",
     "dimensions": "\u00b1 1.22 x 10.0 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A bold granite with interconnected mineral formations creating a cosmic web pattern. The building blocks of the universe made visible."
   },
   {
@@ -2569,8 +2569,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/bruno-elegante-lucido.webp",
     "material": "Granite",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A refined brown granite with warm chocolate tones and a mirror-polished finish. Understated luxury with natural depth."
   },
   {
@@ -2583,7 +2583,7 @@ window.SLABS_DATA = [
     "material": "Granite",
     "origin": "Brazil",
     "dimensions": "\u00b1 1.22 x 10.0 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A dramatic granite with golden and amber tones flowing like molten volcanic material. Primordial Earth energy captured in crystalline form."
   },
   {
@@ -2608,8 +2608,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/ormuz-antico.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A distinctive granite with warm brown and gold tones recalling ancient Persian trade routes. Exotic warmth with historical resonance."
   },
   {
@@ -2687,7 +2687,7 @@ window.SLABS_DATA = [
     "material": "Granite",
     "origin": "India",
     "dimensions": "\u00b1 1.22 x 10.0 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A gentle white granite with flowing grey and burgundy mineral rivers crossing its surface. Serene movement with subtle colour."
   },
   {
@@ -2699,8 +2699,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/alpinus-candido.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A bright white granite with clean crystalline structure evoking alpine snowfields. Pure and fresh with mountain clarity."
   },
   {
@@ -2713,7 +2713,7 @@ window.SLABS_DATA = [
     "material": "Granite",
     "origin": "India",
     "dimensions": "\u00b1 1.22 x 10.0 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A warm golden granite with rich amber and brown mineral formations. Old-world warmth with new-world exuberance."
   },
   {
@@ -2725,8 +2725,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/toro-nero.webp",
     "material": "Granite",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A powerful deep black granite with bull-like strength and presence. Absolute darkness with an imposing physicality."
   },
   {
@@ -2738,8 +2738,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/zaffiro-blu.webp",
     "material": "Granite",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A precious blue granite with sapphire-like crystal formations that shimmer in the light. Where the quarry yields gemstone beauty."
   },
   {
@@ -2751,8 +2751,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/california-gialla.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm golden-yellow granite with the sunny optimism of the California coast. Bright and energetic with natural exuberance."
   },
   {
@@ -2764,8 +2764,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/selva-nera.webp",
     "material": "Granite",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A deep green-black granite as dark and mysterious as the legendary forest. Ancient and primordial with hidden depth."
   },
   {
@@ -2777,8 +2777,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/fenicottero-rosso.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A vivid pink-red granite with the exotic warmth of tropical birds. Bold and expressive with passionate colour."
   },
   {
@@ -2790,8 +2790,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/splendore-bianco.webp",
     "material": "Granite",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A brilliant white granite of splendid clarity with fine grey mineral formations. Radiant purity with enduring strength."
   },
   {
@@ -2803,8 +2803,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/bruno-raffinato.webp",
     "material": "Granite",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A refined brown granite with warm chocolate and caramel tones. Sophisticated warmth for timeless interior palettes."
   },
   {
@@ -2816,8 +2816,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/bianco-antiquo.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm white granite with aged golden and grey mineral patches. Antique character with timeless appeal."
   },
   {
@@ -2829,8 +2829,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/amazzone-tropicale.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A bold green granite with dramatic movement evoking the Amazonian rainforest. Wild natural beauty channelled into architectural stone."
   },
   {
@@ -2868,8 +2868,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/visconte-bianco.webp",
     "material": "Granite",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A noble white granite with flowing grey and burgundy mineral rivers. Aristocratic bearing with natural geological artistry."
   },
   {
@@ -2881,8 +2881,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/farfalla-verde.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A vivid green granite with wing-like mineral formations in emerald and gold. Delicate beauty in robust stone form."
   },
   {
@@ -2907,8 +2907,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/splendore-argento.webp",
     "material": "Granite",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A luminous silver granite with fine crystalline sparkle across its surface. Moonlit elegance with enduring natural strength."
   },
   {
@@ -2920,8 +2920,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/splendore-oro.webp",
     "material": "Granite",
     "origin": "India",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A radiant golden granite with warm amber crystalline formations. Sunlit opulence in the most durable of natural stones."
   },
   {
@@ -2946,8 +2946,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/marinace-multicolore.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A spectacular conglomerate granite with rounded river stones in multiple colours embedded in a natural matrix. Geological art of extraordinary character."
   },
   {
@@ -2959,8 +2959,8 @@ window.SLABS_DATA = [
     "image": "Slabs/granite/matrice-corteccia.webp",
     "material": "Granite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A textured granite with bark-like mineral patterns in warm brown and grey tones. Where stone remembers the forest."
   },
   {
@@ -2972,7 +2972,7 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/patagonia-prismatica.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "2cm",
     "description": "A multicoloured quartzite with prismatic mineral formations in warm earth tones. The vast Patagonian landscape compressed into each slab."
   },
@@ -3037,7 +3037,7 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/lago-ghiacciato.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A cool white quartzite with icy blue-grey undertones evoking frozen alpine lakes. Crystal clarity with glacial serenity."
   },
@@ -3050,7 +3050,7 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/montebello-splendido.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A magnificent quartzite with warm golden tones and dramatic movement. Named for the beautiful mountain with matching grandeur."
   },
@@ -3193,7 +3193,7 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/patagonia-nera.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A dark dramatic quartzite with the wild intensity of Patagonian nights. Deep and powerful with untamed geological energy."
   },
@@ -3206,8 +3206,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/vetro-celeste.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A translucent quartzite with sky-blue clarity and glass-like luminosity. Where stone transcends its earthly nature."
   },
   {
@@ -3219,8 +3219,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/patagonia-bianca.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A bright white quartzite with the vastness of Patagonian snowfields. Clean and expansive with natural mineral warmth."
   },
   {
@@ -3245,8 +3245,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/bianco-supremo.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "An exceptionally white quartzite of supreme purity and clarity. The ultimate white stone for uncompromising design visions."
   },
   {
@@ -3258,8 +3258,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/nebbia-grigia.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A misty grey quartzite with soft atmospheric quality and gentle tonal variation. Like walking through morning fog."
   },
   {
@@ -3284,8 +3284,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/azzurrite-splendida.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A vivid blue quartzite with intense mineral coloration and dramatic depth. Semi-precious beauty at architectural scale."
   },
   {
@@ -3310,8 +3310,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/bianco-superiore.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A premium white quartzite of exceptional quality and consistent tone. Superior in name and nature for demanding installations."
   },
   {
@@ -3323,8 +3323,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/verde-botanico.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A lush green quartzite with organic patterns evoking tropical botanical gardens. Where geology and botany converge beautifully."
   },
   {
@@ -3349,8 +3349,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/malbec-profondo.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A deep burgundy quartzite with the rich intensity of Argentine Malbec wine. Intoxicating depth for bold interior statements."
   },
   {
@@ -3362,8 +3362,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/da-vinci-verde.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A green quartzite worthy of the Renaissance master with complex layered colouring. Genius-level geological composition."
   },
   {
@@ -3375,8 +3375,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/patagonia-naturale.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm earth-toned quartzite with the vast character of the South American wilderness. Raw and authentic with natural mineral beauty."
   },
   {
@@ -3401,8 +3401,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/cristallo-tropicale.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A sparkling quartzite with warm tropical colouring and crystalline clarity. Brazilian sunshine captured in geological splendour."
   },
   {
@@ -3414,8 +3414,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/thanos-titanico.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A powerful quartzite of extraordinary presence and dark intensity. Commanding and inevitable in its visual dominance."
   },
   {
@@ -3440,8 +3440,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/macaubas-bianco.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A luminous white quartzite from Brazil's Macaubas region with subtle grey veining. Pure Brazilian beauty with exceptional durability."
   },
   {
@@ -3479,8 +3479,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/tempesta-rossa.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A dramatic red quartzite with swirling tempestuous patterns in crimson and burgundy. Passionate intensity in the hardest of natural stones."
   },
   {
@@ -3506,7 +3506,7 @@ window.SLABS_DATA = [
     "material": "Quartzite",
     "origin": "Brazil",
     "dimensions": "\u00b1 1.22 x 10.0 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A dynamic quartzite where multiple mineral elements fuse into dramatic visual compositions. Geological alchemy at its most expressive."
   },
   {
@@ -3518,8 +3518,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/vibranio-eterno.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A powerful quartzite with extraordinary visual intensity and crystalline energy. Virtually indestructible with otherworldly presence."
   },
   {
@@ -3532,7 +3532,7 @@ window.SLABS_DATA = [
     "material": "Quartzite",
     "origin": "Brazil",
     "dimensions": "\u00b1 1.22 x 10.0 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A golden quartzite with dramatic black and gold patterning inspired by the legendary Portoro. New-world exuberance with old-world reference."
   },
   {
@@ -3545,7 +3545,7 @@ window.SLABS_DATA = [
     "material": "Quartzite",
     "origin": "Brazil",
     "dimensions": "\u00b1 1.22 x 10.0 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A cool silvery quartzite with platinum-like metallic undertones. Precious metal beauty with the permanence of natural stone."
   },
   {
@@ -3558,7 +3558,7 @@ window.SLABS_DATA = [
     "material": "Quartzite",
     "origin": "Brazil",
     "dimensions": "\u00b1 1.22 x 10.0 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A premium brown quartzite with leathered finish creating rich tactile warmth. Where stone becomes as inviting as aged leather."
   },
   {
@@ -3571,7 +3571,7 @@ window.SLABS_DATA = [
     "material": "Quartzite",
     "origin": "Brazil",
     "dimensions": "\u00b1 1.22 x 10.0 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A refined quartzite with Swiss precision in its mineral composition. Clean and dependable with understated alpine elegance."
   },
   {
@@ -3583,8 +3583,8 @@ window.SLABS_DATA = [
     "image": "Slabs/quartzite/sequoia-cuoio.webp",
     "material": "Quartzite",
     "origin": "Brazil",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A warm brown quartzite with leathered texture evoking ancient redwood forests. Timeless as the trees that inspire its name."
   },
   {
@@ -3596,8 +3596,8 @@ window.SLABS_DATA = [
     "image": "Slabs/onyx/glaciale-onice.webp",
     "material": "Onyx",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A translucent onyx with icy white and grey tones evoking prehistoric glacial landscapes. Ethereal and luminous when backlit."
   },
   {
@@ -3622,8 +3622,8 @@ window.SLABS_DATA = [
     "image": "Slabs/onyx/alabastro-onice.webp",
     "material": "Onyx",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A creamy white onyx with alabaster-like translucency and soft warm veining. Ancient Egyptian luxury in luminous stone."
   },
   {
@@ -3713,8 +3713,8 @@ window.SLABS_DATA = [
     "image": "Slabs/onyx/prisma-onice.webp",
     "material": "Onyx",
     "origin": "Pakistan",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A spectacular onyx displaying multiple colours in translucent layers like a geological prism. Every angle reveals new chromatic beauty."
   },
   {
@@ -3804,8 +3804,8 @@ window.SLABS_DATA = [
     "image": "Slabs/onyx/acqua-blu-onice.webp",
     "material": "Onyx",
     "origin": "Iran",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A translucent blue onyx with the clarity of Caribbean waters. Liquid beauty suspended in crystalline stone."
   },
   {
@@ -3817,8 +3817,8 @@ window.SLABS_DATA = [
     "image": "Slabs/onyx/giada-verde-onice.webp",
     "material": "Onyx",
     "origin": "Pakistan",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A rich green onyx with jade-like translucency and deep emerald tones. Eastern serenity in luminous Western form."
   },
   {
@@ -3843,8 +3843,8 @@ window.SLABS_DATA = [
     "image": "Slabs/onyx/perla-venata-onice.webp",
     "material": "Onyx",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A pearlescent onyx with elegant veining in cream and soft grey tones. Understated luxury with luminous inner glow."
   },
   {
@@ -3869,8 +3869,8 @@ window.SLABS_DATA = [
     "image": "Slabs/onyx/serenita-onice.webp",
     "material": "Onyx",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A calm onyx with peaceful cream and soft grey translucent layers. Meditative beauty that quiets the mind."
   },
   {
@@ -3883,7 +3883,7 @@ window.SLABS_DATA = [
     "material": "Onyx",
     "origin": "Turkey",
     "dimensions": "\u00b1 2.38 x 1.59 m",
-    "thickness": "",
+    "thickness": "Upon request",
     "description": "A pristine white onyx of remarkable purity and soft luminous translucency. The essence of light made solid in stone."
   },
   {
@@ -3960,8 +3960,8 @@ window.SLABS_DATA = [
     "image": "Slabs/travertine/travertino-neve.webp",
     "material": "Travertine",
     "origin": "Turkey",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A pristine white travertine of remarkable lightness and purity. Clean and bright with the organic texture that defines travertine."
   },
   {
@@ -3999,7 +3999,7 @@ window.SLABS_DATA = [
     "image": "Slabs/travertine/travertino-rosso.webp",
     "material": "Travertine",
     "origin": "Iran",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A rare red travertine with warm terracotta and crimson tones. Ancient Persian thermal deposits yielding stone of passionate warmth."
   },
@@ -4012,7 +4012,7 @@ window.SLABS_DATA = [
     "image": "Slabs/limestone/serpe-noce-fiorito.webp",
     "material": "Limestone",
     "origin": "Indonesia",
-    "dimensions": "",
+    "dimensions": "Upon request",
     "thickness": "\u00b1 2cm",
     "description": "A distinctive limestone with flowing walnut-brown veining and floral patterns. Indonesian craftsmanship in natural geological form."
   },
@@ -4090,8 +4090,8 @@ window.SLABS_DATA = [
     "image": "Slabs/neolith/laurent-bianco.webp",
     "material": "Neolith",
     "origin": "",
-    "dimensions": "",
-    "thickness": "",
+    "dimensions": "Upon request",
+    "thickness": "Upon request",
     "description": "A refined white sintered stone with elegant grey veining inspired by classic marble aesthetics. Contemporary engineering meets timeless design."
   },
   {
