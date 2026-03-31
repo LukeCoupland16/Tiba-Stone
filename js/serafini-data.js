@@ -1,0 +1,162 @@
+/* ============================================================
+   SERAFINI STONE LIBRARY — 131 curated slabs
+   Sourced from Serafini.com marble selection range
+   Images served via Wix CDN (static.wixstatic.com)
+   ============================================================ */
+
+window.SERAFINI_DATA = [
+  /* ─── COLLECTION 1 ─── */
+  { id: 1,  name: "Bianco Perlino",           slug: "bianco-perlino",            range: "1",          color: "White",       image: "Slabs/serafini/7e82a9_12272c157a8244839a8a46b709f6785c~mv2.jpg" },
+  { id: 2,  name: "Botticino Fiorito",         slug: "botticino-fiorito",         range: "1",          color: "Beige",       image: "Slabs/serafini/b91e2f_0c6211c1c9264d789cddd3befc62af86~mv2.jpg" },
+  { id: 3,  name: "Botticino Semiclassico",    slug: "botticino-semiclassico",    range: "1",          color: "Beige",       image: "Slabs/serafini/b91e2f_20ed5b14085941efba0386bd97800ce5~mv2.jpg" },
+  { id: 4,  name: "Fossil Green",              slug: "fossil-green",              range: "1",          color: "Green",       image: "Slabs/serafini/b91e2f_bbacb0bbf26447349cac22691e3061b3~mv2.jpg" },
+  { id: 5,  name: "Giallo Istria",             slug: "giallo-istria",             range: "1",          color: "Yellow",      image: "Slabs/serafini/b91e2f_c9adf89447a64ef4a40645f5288aa9cb~mv2.jpg" },
+  { id: 6,  name: "Giallo Reale Rosato",       slug: "giallo-reale-rosato",       range: "1",          color: "Yellow",      image: "Slabs/serafini/b91e2f_9bf58ee00b3b48c8bf25708a8f9d32de~mv2.jpg" },
+  { id: 7,  name: "Giallo Silvia Oro",         slug: "giallo-silvia-oro",         range: "1",          color: "Yellow",      image: "Slabs/serafini/b91e2f_9ccc0209e976469596d791ace96a92ea~mv2.jpg" },
+  { id: 8,  name: "Pietra Bianca di Vicenza",  slug: "pietra-bianca-di-vicenza",  range: "1",          color: "Beige",       image: "Slabs/serafini/b91e2f_7e26d9e6286c4c1299f4b9700db2b602~mv2.jpg" },
+  { id: 9,  name: "Pietra Serena",             slug: "pietra-serena",             range: "1",          color: "Grey",        image: "Slabs/serafini/b91e2f_1a64001fa8994c0199535a6e6074e52a~mv2.jpg" },
+  { id: 10, name: "Rosa Corallo",              slug: "rosa-corallo",              range: "1",          color: "Pink",        image: "Slabs/serafini/b91e2f_06391ca4763a4726b49bd11b85285e45~mv2.jpg" },
+  { id: 11, name: "Rosso Asiago",              slug: "rosso-asiago",              range: "1",          color: "Red",         image: "Slabs/serafini/b91e2f_a5fe05d9f66b4ef7b50c5619832e7c3d~mv2.jpg" },
+
+  /* ─── COLLECTION 2 ─── */
+  { id: 12, name: "Breccia Damascata",         slug: "breccia-damascata",         range: "2",          color: "Brown",       image: "Slabs/serafini/b91e2f_6b59ef6d5a0a4a0cab5c0db89f8667f8~mv2.jpg" },
+  { id: 13, name: "Breccia Sarda",             slug: "breccia-sarda",             range: "2",          color: "Brown",       image: "Slabs/serafini/b91e2f_9e8f391bee4e41f8b34bd0c2ce86bde2~mv2.jpg" },
+  { id: 14, name: "Breccia Aurora",            slug: "breccia-aurora",            range: "2",          color: "White",       image: "Slabs/serafini/b91e2f_049af4b439c8477cbe093f123f231db1~mv2.jpg" },
+  { id: 15, name: "Carrara CD",                slug: "carrara-cd",                range: "2",          color: "White",       image: "" },
+  { id: 16, name: "Crema Avorio",              slug: "crema-avorio",              range: "2",          color: "Beige",       image: "Slabs/serafini/b91e2f_acd154e7992b48a486712332ac57e354~mv2.jpg" },
+  { id: 17, name: "Ebano",                     slug: "ebano",                     range: "2",          color: "Beige",       image: "Slabs/serafini/b91e2f_8d13fa18b31145c78a1e2b134765e6d1~mv2.jpg" },
+  { id: 18, name: "Giallo Reale",              slug: "giallo-reale",              range: "2",          color: "Yellow",      image: "Slabs/serafini/b91e2f_4fe4121e0c204345af106017f2da84ae~mv2.jpg" },
+  { id: 19, name: "Jura Blue Gray",            slug: "jura-blue-gray",            range: "2",          color: "Grey",        image: "Slabs/serafini/b91e2f_e5e27de92f204e7c835759f612e65124~mv2.jpg" },
+  { id: 20, name: "Jura Golden Beige",         slug: "jura-golden-beige",         range: "2",          color: "Beige",       image: "Slabs/serafini/b91e2f_efef99118a1e47228aa1610fa0432e7e~mv2.jpg" },
+  { id: 21, name: "Pietra Senape",             slug: "pietra-senape",             range: "2",          color: "Beige",       image: "Slabs/serafini/b91e2f_9e3ed4d3c0924564b5eb0b5d8baef6d5~mv2.jpg" },
+  { id: 22, name: "Pietra Zen",                slug: "pietra-zen",                range: "2",          color: "Beige",       image: "Slabs/serafini/b91e2f_a460bf66dcc045148808eb2641f734a2~mv2.jpg" },
+  { id: 23, name: "Pietra di Farsena",         slug: "pietra-di-farsena",         range: "2",          color: "Beige",       image: "Slabs/serafini/b91e2f_9bfd12f8ae4341388459a253a0064fe6~mv2.jpg" },
+  { id: 24, name: "Verde Guatemala",           slug: "verde-guatemala",           range: "2",          color: "Green",       image: "Slabs/serafini/b91e2f_51571bcec37148bdb0d5f816f02d0338~mv2.jpg" },
+  { id: 25, name: "Veselye Unito",             slug: "veselye-unito",             range: "2",          color: "Beige",       image: "Slabs/serafini/b91e2f_1148d3ba16274092bd00aea70537266d~mv2.jpg" },
+
+  /* ─── COLLECTION 3 ─── */
+  { id: 26, name: "Adria Venato",              slug: "adria-venato",              range: "3",          color: "Beige",       image: "Slabs/serafini/b91e2f_59b73274103b447ebacd4a1ebb111659~mv2.jpg" },
+  { id: 27, name: "Fior di Bosco",             slug: "fior-di-bosco",             range: "3",          color: "Beige",       image: "Slabs/serafini/b91e2f_f715929eee3a43a29578de152a72210b~mv2.jpg" },
+  { id: 28, name: "Fior di Pesco Carnico",     slug: "fior-di-pesco-carnico",     range: "3",          color: "Pink",        image: "Slabs/serafini/b91e2f_4c911b3ad5e1461b94a828b82a7b6537~mv2.jpg" },
+  { id: 29, name: "Grafite",                   slug: "grafite",                   range: "3",          color: "Black",       image: "Slabs/serafini/b91e2f_e3c15dab5b1e4c6c8e90a268b79954a0~mv2.jpg" },
+  { id: 30, name: "Gray Saint Laurent",        slug: "gray-saint-laurent",        range: "3",          color: "Grey",        image: "Slabs/serafini/b91e2f_d5e4efe8cee84df28b18ab91bd580dbf~mv2.jpg" },
+  { id: 31, name: "Grigio Billemi",            slug: "grigio-billemi",            range: "3",          color: "Grey",        image: "Slabs/serafini/b91e2f_56ccf1df697c452ea6fe1a0e5bd1b447~mv2.jpg" },
+  { id: 32, name: "Grigio Carnico",            slug: "grigio-carnico",            range: "3",          color: "Grey",        image: "Slabs/serafini/b91e2f_c2bbee0df64643168ee49c7050fc155d~mv2.jpg" },
+  { id: 33, name: "Jolie Grey",                slug: "jolie-grey",                range: "3",          color: "Grey",        image: "Slabs/serafini/b91e2f_256ac5f09bee4468a5ff9b70e99083a2~mv2.jpg" },
+  { id: 34, name: "Nero Marquinia Unito",      slug: "nero-marquinia-unito",      range: "3",          color: "Black",       image: "Slabs/serafini/b91e2f_c778242b97624c64848cb77a30785271~mv2.jpg" },
+  { id: 35, name: "Nero Marquinia Venato",     slug: "nero-marquinia-venato",     range: "3",          color: "Black",       image: "Slabs/serafini/b91e2f_5656888b9f834839a06cbc4355996334~mv2.jpg" },
+  { id: 36, name: "Picasso Brown",             slug: "picasso-brown",             range: "3",          color: "Brown",       image: "Slabs/serafini/b91e2f_5fc76a434edd4843847fcadb66ac8450~mv2.jpg" },
+  { id: 37, name: "Picasso Green",             slug: "picasso-green",             range: "3",          color: "Green",       image: "Slabs/serafini/b91e2f_9e555d0932324f00be9f362f438b0aa5~mv2.jpg" },
+  { id: 38, name: "Pierre Bleu",               slug: "pierre-bleu",               range: "3",          color: "Grey",        image: "Slabs/serafini/b91e2f_c44e60e3c25842209b92859f20ab9313~mv2.jpg" },
+  { id: 39, name: "Pietra Lavica Nera",        slug: "pietra-lavica-nera",        range: "3",          color: "Black",       image: "Slabs/serafini/b91e2f_3bcafb089bc949baaae4e70a6f020e74~mv2.jpg" },
+  { id: 40, name: "Pinta Verde",               slug: "pinta-verde",               range: "3",          color: "Green",       image: "Slabs/serafini/b91e2f_1ad7f8b939f248738a09a248fac520ea~mv2.jpg" },
+  { id: 41, name: "Rosa Peralba",              slug: "rosa-peralba",              range: "3",          color: "Pink",        image: "" },
+  { id: 42, name: "Salomè",                    slug: "salome",                    range: "3",          color: "Beige",       image: "Slabs/serafini/b91e2f_fc1d1fb408fe486e8df70ec71fb50660~mv2.jpg" },
+  { id: 43, name: "Sicily Brown",              slug: "sicily-brown",              range: "3",          color: "Brown",       image: "Slabs/serafini/b91e2f_e8d19f521fee4953a3ffee225541362b~mv2.jpg" },
+  { id: 94, name: "Travertino Giallo",         slug: "travertino-giallo",         range: "3",          color: "Yellow",      image: "Slabs/serafini/b91e2f_d1cfc098bd874535bbd481f3e3734050~mv2.jpg" },
+  { id: 95, name: "Travertino Noce",           slug: "travertino-noce",           range: "3",          color: "Beige",       image: "Slabs/serafini/b91e2f_472207f6b21a4f809cbfbb7c95c7cf69~mv2.jpg" },
+  { id: 96, name: "Travertino Romano Classico",slug: "travertino-romano-classico",range: "3",          color: "Beige",       image: "" },
+  { id: 97, name: "Travertino Rosso",          slug: "travertino-rosso",          range: "3",          color: "Red",         image: "Slabs/serafini/b91e2f_c22f3e57315842d9becc30674355a9c9~mv2.jpg" },
+  { id: 98, name: "Travertino Scabas",         slug: "travertino-scabas",         range: "3",          color: "Beige",       image: "Slabs/serafini/b91e2f_80ce2776bc14414e8408b2afc0a52711~mv2.jpg" },
+  { id: 131,name: "Verde Notte",               slug: "verde-notte",               range: "3",          color: "Green",       image: "Slabs/serafini/b91e2f_52ce4d843eae44e4b4f4dfaa86fbdd21~mv2.jpeg" },
+
+  /* ─── COLLECTION 4 ─── */
+  { id: 44, name: "Arabescato Grigio Orobico", slug: "arabescato-grigio-orobico", range: "4",          color: "Grey",        image: "Slabs/serafini/b91e2f_379b10313415476d9f733fa861c54c88~mv2.jpg" },
+  { id: 45, name: "Arabescato Rosso Orobico",  slug: "arabescato-rosso-orobico",  range: "4",          color: "Red",         image: "Slabs/serafini/b91e2f_3bb81bf3685f4342ad8a1fca779c58c3~mv2.jpg" },
+  { id: 46, name: "Black and Gold",            slug: "black-and-gold",            range: "4",          color: "Black",       image: "Slabs/serafini/b91e2f_38582c03a29f4209b12b19c1d7901bcf~mv2.jpg" },
+  { id: 47, name: "Breccia Pernice",           slug: "breccia-pernice",           range: "4",          color: "Brown",       image: "Slabs/serafini/b91e2f_620bca14303245bba98cd5790981ea03~mv2.jpg" },
+  { id: 48, name: "Bronze Amani",              slug: "bronze-amani",              range: "4",          color: "Brown",       image: "Slabs/serafini/b91e2f_6d6430f9bdc3492ba596c9587ce6bc2f~mv2.jpg" },
+  { id: 49, name: "Carrara C",                 slug: "carrara-c",                 range: "4",          color: "White",       image: "Slabs/serafini/b91e2f_572dc78015ee41049fc56ba733536c5a~mv2.jpg" },
+  { id: 50, name: "Carrara Gioia",             slug: "carrara-gioia",             range: "4",          color: "White",       image: "Slabs/serafini/b91e2f_ecb1547a1c804acaa1caf0ef864cd11d~mv2.jpg" },
+  { id: 51, name: "Emperador Brown",           slug: "emperador-brown",           range: "4",          color: "Brown",       image: "Slabs/serafini/b91e2f_422209a8d73a4c16962bab5653496868~mv2.jpg" },
+  { id: 52, name: "Grey Collemandina",         slug: "grey-collemandina",         range: "4",          color: "Grey",        image: "Slabs/serafini/b91e2f_56325b96de574124b8745947a833a49b~mv2.jpg" },
+  { id: 53, name: "Marinace Black",            slug: "marinace-black",            range: "4",          color: "Black",       image: "Slabs/serafini/b91e2f_a3f82b7d60034990972304e849547cf6~mv2.jpg" },
+  { id: 54, name: "Marinace Red",              slug: "marinace-red",              range: "4",          color: "Red",         image: "Slabs/serafini/b91e2f_53ef66e97d7c451e9def5c0be7dcdf67~mv2.jpg" },
+  { id: 55, name: "Nero Cherry",               slug: "nero-cherry",               range: "4",          color: "Black",       image: "Slabs/serafini/3c10d6_588cc16dad0c44fab6c8c7f335f47705~mv2.jpeg" },
+  { id: 56, name: "Nero Pagoda",               slug: "nero-pagoda",               range: "4",          color: "Black",       image: "Slabs/serafini/b91e2f_8521d14b246843cca522f6e01a8e096a~mv2.jpg" },
+  { id: 57, name: "Noisette Fleury",           slug: "noisette-fleury",           range: "4",          color: "Beige",       image: "Slabs/serafini/b91e2f_30dad17e3dfb4af4add4e9a31c02951d~mv2.jpg" },
+  { id: 58, name: "Ombra del Caravaggio",      slug: "ombra-del-caravaggio",      range: "4",          color: "Brown",       image: "Slabs/serafini/b91e2f_133f90a8901248a6af0d2c88ec9fa3c4~mv2.jpg" },
+  { id: 59, name: "Port Saint Laurent",        slug: "port-saint-laurent",        range: "4",          color: "Brown",       image: "Slabs/serafini/b91e2f_753f89b8e5ee49229748967044e6c317~mv2.jpg" },
+  { id: 60, name: "Rosa Deserto",              slug: "rosa-deserto",              range: "4",          color: "Pink",        image: "Slabs/serafini/b91e2f_55768bc3c8af4164bc6a0621f8f42fa1~mv2.jpg" },
+  { id: 61, name: "Rosso Lepanto",             slug: "rosso-lepanto",             range: "4",          color: "Red",         image: "Slabs/serafini/b91e2f_44f22cb08eba475995f689a24c936ab3~mv2.jpg" },
+  { id: 62, name: "Rosso Levanto",             slug: "rosso-levanto",             range: "4",          color: "Red",         image: "Slabs/serafini/b91e2f_38d11730ba86458cbd5d56ea8d58e158~mv2.jpg" },
+  { id: 63, name: "Sahara Noir",               slug: "sahara-noir",               range: "4",          color: "Brown",       image: "Slabs/serafini/b91e2f_bb67e46af914473c91d6c6772c64980a~mv2.jpg" },
+  { id: 64, name: "Silver Wave",               slug: "silver-wave",               range: "4",          color: "Grey",        image: "Slabs/serafini/b91e2f_6b7aeacf9cb34684aafa59dc4067c95d~mv2.jpg" },
+  { id: 99, name: "Travertino Silver",         slug: "travertino-silver",         range: "4",          color: "Grey",        image: "Slabs/serafini/b91e2f_ebeff38709904790b29cb32261868321~mv2.jpg" },
+  { id: 65, name: "Verde Levanto",             slug: "verde-levanto",             range: "4",          color: "Green",       image: "Slabs/serafini/b91e2f_1cbbee50653b472cad10bd42a44f4386~mv2.jpg" },
+  { id: 66, name: "Verde Mosaico",             slug: "verde-mosaico",             range: "4",          color: "Green",       image: "Slabs/serafini/b91e2f_22aa1aa25f7748bfb1d44a5a51c4c986~mv2.png" },
+
+  /* ─── COLLECTION 5 ─── */
+  { id: 110,name: "Azul Cielo",                slug: "azul-cielo",                range: "5",          color: "Blue",        image: "Slabs/serafini/b91e2f_d8b11e241f0a486b84e0722251bc7635~mv2.jpg" },
+  { id: 67, name: "Bardiglio Imperiale",       slug: "bardiglio-imperiale",       range: "5",          color: "Grey",        image: "Slabs/serafini/b91e2f_a36d5c8e6e81454988c99dfde0e81f59~mv2.jpg" },
+  { id: 68, name: "Bianco Lasa",               slug: "bianco-lasa",               range: "5",          color: "White",       image: "Slabs/serafini/b91e2f_7f5fac81286148319089b239b658fc0d~mv2.jpg" },
+  { id: 69, name: "Bianco Namibia",            slug: "bianco-namibia",            range: "5",          color: "White",       image: "Slabs/serafini/b91e2f_5a88e69a764f4735b79b190b4b882ae4~mv2.jpg" },
+  { id: 70, name: "Oak Gray",                  slug: "oak-gray",                  range: "5",          color: "Grey",        image: "Slabs/serafini/b91e2f_ba1946c56ee04563aba75d27dc01a27c~mv2.jpg" },
+  { id: 71, name: "Verde Acquamarina",         slug: "verde-acquamarina",         range: "5",          color: "Green",       image: "Slabs/serafini/b91e2f_d187bb3510be40649cb1762c262c1829~mv2.jpg" },
+
+  /* ─── COLLECTION 6 ─── */
+  { id: 72, name: "Arabescato Carrara",        slug: "arabescato-carrara",        range: "6",          color: "White",       image: "Slabs/serafini/b91e2f_025ad1037b6f44f198e294c232bd42f9~mv2.jpg" },
+  { id: 113,name: "Ardesia",                   slug: "ardesia",                   range: "6",          color: "Grey",        image: "Slabs/serafini/b91e2f_9b3820cf04d942ff89ffa7f7a59ce533~mv2.jpg" },
+  { id: 73, name: "Eramosa al Contro",         slug: "eramosa-al-contro",         range: "6",          color: "Brown",       image: "Slabs/serafini/b91e2f_175725521d3f403a8475a6816137143b~mv2.jpg" },
+  { id: 74, name: "Eramosa al Verso",          slug: "eramosa-al-verso",          range: "6",          color: "Brown",       image: "Slabs/serafini/b91e2f_b1b37f17d70545df8a4f6ebdb5b75bd7~mv2.jpg" },
+  { id: 75, name: "Paonazzo",                  slug: "paonazzo",                  range: "6",          color: "White",       image: "Slabs/serafini/b91e2f_8feea2bbe48644ee98974b5976e91638~mv2.jpg" },
+  { id: 76, name: "Rosa Portogallo",           slug: "rosa-portogallo",           range: "6",          color: "Pink",        image: "Slabs/serafini/b91e2f_3c175c698e264161904d54d821dd9dbb~mv2.jpg" },
+  { id: 77, name: "Rosso Francia",             slug: "rosso-francia",             range: "6",          color: "Red",         image: "Slabs/serafini/b91e2f_66f9117063354ad2843e8377e31e37f1~mv2.jpg" },
+  { id: 100,name: "Travertino Navona",         slug: "travertino-navona",         range: "6",          color: "Beige",       image: "Slabs/serafini/b91e2f_af1c4ea1df62422c8fb5d96c55397d32~mv2.jpg" },
+
+  /* ─── COLLECTION 7 ─── */
+  { id: 78, name: "Calacatta Macchia Vecchia", slug: "calacatta-macchia-vecchia", range: "7",          color: "White",       image: "Slabs/serafini/b91e2f_dc54295ff993429298959f1330b72483~mv2.jpg" },
+  { id: 79, name: "Nero Assoluto",             slug: "nero-assoluto",             range: "7",          color: "Black",       image: "Slabs/serafini/b91e2f_aa7c258281e34a91b804be46017f9244~mv2.jpg" },
+  { id: 80, name: "Verde Giada",               slug: "verde-giada",               range: "7",          color: "Green",       image: "Slabs/serafini/b91e2f_12d6305134da41e89b7db30abf022d4f~mv2.jpg" },
+
+  /* ─── COLLECTION 8 ─── */
+  { id: 81, name: "Bianco Lasa Vena Oro",      slug: "bianco-lasa-vena-oro",      range: "8",          color: "White",       image: "Slabs/serafini/b91e2f_5469b0d3f4d14136b21d108c18655240~mv2.jpg" },
+  { id: 82, name: "Bianco Sivec",              slug: "bianco-sivec",              range: "8",          color: "White",       image: "Slabs/serafini/b91e2f_b4504476e4384bad97f8b1df1a575b12~mv2.jpg" },
+  { id: 83, name: "Calacatta Oro",             slug: "calacatta-oro",             range: "8",          color: "White",       image: "Slabs/serafini/b91e2f_ddd0797f11fd4b03b99014c6a639ab25~mv2.jpg" },
+  { id: 84, name: "Cosmos de Pierre",          slug: "cosmos-de-pierre",          range: "8",          color: "Multicolour", image: "Slabs/serafini/3c10d6_758b8a48bdbf4a49a4f82159916ac971~mv2.jpg" },
+  { id: 85, name: "Giallo Siena",              slug: "giallo-siena",              range: "8",          color: "Yellow",      image: "Slabs/serafini/b91e2f_cb8bd708b4d24062bcc2eef6e9227251~mv2.jpg" },
+  { id: 86, name: "Invisible Gray",            slug: "invisible-gray",            range: "8",          color: "Grey",        image: "Slabs/serafini/b91e2f_dbd0197e68274e00bfc042e407064bca~mv2.jpg" },
+  { id: 87, name: "Nero Antico",               slug: "nero-antico",               range: "8",          color: "Black",       image: "Slabs/serafini/b91e2f_f07b30d7fcd44c5097d93b483fb8efca~mv2.jpg" },
+  { id: 88, name: "Panda White",               slug: "panda-white",               range: "8",          color: "White",       image: "Slabs/serafini/b91e2f_8152199e2b5646ca998c06a6a06e1e10~mv2.jpg" },
+  { id: 89, name: "Statuarietto",              slug: "statuarietto",              range: "8",          color: "White",       image: "Slabs/serafini/b91e2f_5add5bc22cc24e8aac9508a19856d9a4~mv2.jpg" },
+
+  /* ─── COLLECTION 9 ─── */
+  { id: 101,name: "Onice Arancio",             slug: "onice-arancio",             range: "9",          color: "Beige",       image: "Slabs/serafini/b91e2f_d90e5cc5874542c999e6fad22d1b88a9~mv2.jpg" },
+  { id: 102,name: "Onice Fantastico",          slug: "onice-fantastico",          range: "9",          color: "Multicolour", image: "Slabs/serafini/b91e2f_0fac6a5ddef649b397794ec0d25f2c56~mv2.jpg" },
+  { id: 103,name: "Onice Marrone",             slug: "onice-marrone",             range: "9",          color: "Brown",       image: "Slabs/serafini/b91e2f_cd94757dc9724d75b812a2e66d75a2fb~mv2.jpg" },
+  { id: 104,name: "Onice Miele",               slug: "onice-miele",               range: "9",          color: "Beige",       image: "Slabs/serafini/b91e2f_17037df773704727b14275ec94bf5aad~mv2.jpg" },
+  { id: 105,name: "Onice Nero",                slug: "onice-nero",                range: "9",          color: "Black",       image: "Slabs/serafini/b91e2f_ecac750b2bf2403cb69a838ca50986fa~mv2.jpg" },
+  { id: 106,name: "Onice Rosso",               slug: "onice-rosso",               range: "9",          color: "Red",         image: "Slabs/serafini/b91e2f_1d7160ccdd3644ee933a6d6e55e433d1~mv2.jpg" },
+  { id: 107,name: "Onice Verde",               slug: "onice-verde",               range: "9",          color: "Green",       image: "Slabs/serafini/b91e2f_e92de0bc8daf4252833b2f5dd8e28b24~mv2.jpg" },
+
+  /* ─── COLLECTION 10 ─── */
+  { id: 111,name: "Azul Bahia",                slug: "azul-bahia",                range: "10",         color: "Blue",        image: "Slabs/serafini/b91e2f_5074d8bad9064ae5964fb20199f20a56~mv2.jpg" },
+  { id: 112,name: "Azul Macaubas",             slug: "azul-macaubas",             range: "10",         color: "Blue",        image: "Slabs/serafini/b91e2f_836d0831308e458fbb33c2ca05053625~mv2.jpg" },
+  { id: 90, name: "Nero Belgio",               slug: "nero-belgio",               range: "10",         color: "Black",       image: "Slabs/serafini/b91e2f_151eedde1eab4f0e826a723cce1d048e~mv2.jpg" },
+  { id: 108,name: "Onice Bianco",              slug: "onice-bianco",              range: "10",         color: "White",       image: "Slabs/serafini/b91e2f_ec2ec9746d964a7280828da9967e37ad~mv2.jpg" },
+  { id: 109,name: "Onice Rosa",                slug: "onice-rosa",                range: "10",         color: "Pink",        image: "Slabs/serafini/b91e2f_ead831b311ac49c4be49d0419d49bb08~mv2.jpg" },
+  { id: 91, name: "Statuario",                 slug: "statuario",                 range: "10",         color: "White",       image: "Slabs/serafini/b91e2f_a1fd9aacb2b641f08a0484caae816110~mv2.jpg" },
+
+  /* ─── EXCLUSIVE ─── */
+  { id: 114,name: "Amethist Viola",            slug: "amethist-viola",            range: "exclusive",  color: "Purple",      image: "Slabs/serafini/b91e2f_d6e4a4fea2bf48f9b7f5b852a948d505~mv2.jpg" },
+  { id: 115,name: "Black Wild Agate",          slug: "black-wild-agate",          range: "exclusive",  color: "Black",       image: "Slabs/serafini/b91e2f_f3f6aed905d14c5a9529424600df433b~mv2.jpg" },
+  { id: 116,name: "Blue Agate",                slug: "blue-agate",                range: "exclusive",  color: "Blue",        image: "Slabs/serafini/b91e2f_fde89e232e64419b841f648e2f2c61d1~mv2.jpg" },
+  { id: 117,name: "Brown Carnelian",           slug: "brown-carnelian",           range: "exclusive",  color: "Brown",       image: "Slabs/serafini/b91e2f_46053054dc7a4efd9f5eb73f4870ad45~mv2.jpg" },
+  { id: 118,name: "Classic Quartz",            slug: "classic-quartz",            range: "exclusive",  color: "White",       image: "Slabs/serafini/b91e2f_6722d815b5f24626af04091884c1e099~mv2.jpg" },
+  { id: 119,name: "Crystal Agate",             slug: "crystal-agate",             range: "exclusive",  color: "Multicolour", image: "Slabs/serafini/b91e2f_89836e2adadc4bec841d47642a58b2e6~mv2.jpg" },
+  { id: 120,name: "Lapis",                     slug: "lapis",                     range: "exclusive",  color: "Blue",        image: "Slabs/serafini/b91e2f_4946c811d24a496fb2e9a8b3ccfe7d26~mv2.jpg" },
+  { id: 121,name: "Malachite",                 slug: "malachite",                 range: "exclusive",  color: "Green",       image: "Slabs/serafini/b91e2f_f23c122d0ff24457a0954b199a09c68a~mv2.jpg" },
+  { id: 122,name: "Petrified Wood",            slug: "petrified-wood",            range: "exclusive",  color: "Brown",       image: "Slabs/serafini/b91e2f_f7581f61048b42bdbb118209c99b020a~mv2.jpg" },
+  { id: 123,name: "Rose Quartz",               slug: "rose-quartz",               range: "exclusive",  color: "Pink",        image: "Slabs/serafini/b91e2f_99354acb33e8491b84f78434759fe36f~mv2.jpg" },
+  { id: 124,name: "Smokey Quartz",             slug: "smokey-quartz",             range: "exclusive",  color: "Brown",       image: "Slabs/serafini/b91e2f_a07f67d344134d5bac48dadb75dc1381~mv2.jpg" },
+  { id: 125,name: "Tiger Eye Gold",            slug: "tiger-eye-gold",            range: "exclusive",  color: "Yellow",      image: "Slabs/serafini/b91e2f_786112b6b15e44518766c7b75067292e~mv2.jpg" },
+  { id: 126,name: "White Mother of Pearl Brick",slug:"white-mother-of-pearl-brick",range:"exclusive", color: "White",       image: "Slabs/serafini/b91e2f_e7a0803055c3493f8df63f4b4fe000dd~mv2.jpg" },
+  { id: 127,name: "White Mother of Pearl Random",slug:"white-mother-of-pearl-random",range:"exclusive",color: "White",      image: "Slabs/serafini/b91e2f_9b8bb85d4ad2432daaf0ebc5b017f5d5~mv2.jpg" },
+  { id: 128,name: "White Quartz",              slug: "white-quartz",              range: "exclusive",  color: "White",       image: "Slabs/serafini/b91e2f_c49cfb1426ed40ada2694aefe1ac299e~mv2.jpg" },
+
+  /* ─── ON DEMAND ─── */
+  { id: 92, name: "Calacatta Viola",           slug: "calacatta-viola",           range: "on-demand",  color: "White",       image: "Slabs/serafini/b91e2f_4ea34ca533d146b69f91ba598e7ed186~mv2.jpg" },
+  { id: 93, name: "Nero Portoro",              slug: "nero-portoro",              range: "on-demand",  color: "Black",       image: "Slabs/serafini/b91e2f_3b2355e9149345f19b928e2f9cd98f56~mv2.jpg" },
+  { id: 129,name: "Sodalite Blu Boliviana Dark",slug:"sodalite-blu-boliviana-dark",range:"on-demand",  color: "Blue",        image: "Slabs/serafini/b91e2f_05cb305803bb4821b171060be111c5c2~mv2.jpg" },
+  { id: 130,name: "Sodalite Blu Boliviana Light",slug:"sodalite-blu-boliviana-light",range:"on-demand",color: "Blue",       image: "Slabs/serafini/b91e2f_f9563a77a878473db19e1d97c28153a9~mv2.jpg" }
+];
