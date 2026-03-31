@@ -17,7 +17,7 @@ window.SERAFINI_DATA = [
   { id: 9,  name: "Pietra Serena",             slug: "pietra-serena",             range: "1",          color: "Grey",        image: "Slabs/serafini/b91e2f_1a64001fa8994c0199535a6e6074e52a~mv2.jpg" },
   { id: 10, name: "Rosa Corallo",              slug: "rosa-corallo",              range: "1",          color: "Pink",        image: "Slabs/serafini/b91e2f_06391ca4763a4726b49bd11b85285e45~mv2.jpg" },
   { id: 11, name: "Rosso Asiago",              slug: "rosso-asiago",              range: "1",          color: "Red",         image: "Slabs/serafini/b91e2f_a5fe05d9f66b4ef7b50c5619832e7c3d~mv2.jpg" },
-  { id: 131,name: "Pietra Lavica Nera",        slug: "pietra-lavica-nera",        range: "1",          color: "Black",       image: "" },
+  { id: 131,name: "Pietra Lavica Nera",        slug: "pietra-lavica-nera",        range: "1",          color: "Black",       image: "Slabs/serafini/b91e2f_3bcafb089bc949baaae4e70a6f020e74~mv2.jpg" },
 
   /* ─── COLLECTION 2 ─── */
   { id: 12, name: "Breccia Damascata",         slug: "breccia-damascata",         range: "2",          color: "Brown",       image: "Slabs/serafini/b91e2f_6b59ef6d5a0a4a0cab5c0db89f8667f8~mv2.jpg" },
