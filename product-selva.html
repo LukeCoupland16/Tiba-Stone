@@ -532,54 +532,14 @@
       min-height: 1.5em;
     }
 
-    .materials__swatches {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 2.5rem;
-      max-width: 480px;
-    }
-
-    .swatch {
-      cursor: pointer;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .swatch__img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 2px;
-      filter: brightness(0.82) saturate(0.7);
-      transition: filter 0.4s ease, box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .swatch:hover .swatch__img {
-      filter: none;
-    }
-
-    .swatch.is-active .swatch__img {
-      filter: brightness(1) saturate(1);
-      box-shadow: 0 3px 0 0 var(--color-sunset);
-    }
-
-    .swatch__name {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--color-river-green);
-      transition: color 0.3s ease;
-      line-height: 1.3;
-    }
-
-    .swatch.is-active .swatch__name {
-      color: var(--color-stone);
-    }
+    /* Stone variant selector */
+    .stone-variants { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin-top:10px; }
+    .stone-variant { border:none; padding:0; cursor:pointer; background:none; border-radius:2px; overflow:hidden; position:relative; aspect-ratio:4/5; }
+    .stone-variant img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s var(--ease-smooth); display:block; }
+    .stone-variant:hover img { transform:scale(1.04); }
+    .stone-variant::after { content:''; position:absolute; inset:0; border:2px solid transparent; border-radius:2px; transition:border-color 0.3s ease; pointer-events:none; }
+    .stone-variant.is-active::after { border-color:var(--color-sunset); }
+    .stone-variant__label { font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; color:var(--color-river-green); margin-top:10px; min-height:1.1em; }
 
     /* ============================================
        SPECS
@@ -1056,7 +1016,7 @@
     }
 
     @media (max-width: 767px) {
-      .materials__swatches { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .stone-variants { grid-template-columns: repeat(3, 1fr); }
 
       .header__nav { display: none; }
       .header__hamburger { display: flex; }
@@ -1181,42 +1141,21 @@
   <section class="materials reveal" id="materials">
     <div class="materials__inner">
       <div class="materials__media">
-        <img src="Products/Washbasins/selva/Product Variations/selva_calacatta-viola.webp"
-             alt="Selva in Calacatta Viola"
-             id="materialsMainImg"
-             loading="lazy" decoding="async">
+        <img src="Products/Washbasins/selva/selva_12_catalogue.webp" alt="Selva stone selection" id="materialsMainImg" loading="lazy" decoding="async">
+        <div class="stone-variants">
+          <button class="stone-variant is-active" data-img="Products/Washbasins/selva/Product Variations/selva_calacatta-viola.webp" data-name="Calacatta Viola"><img src="Products/Washbasins/selva/Product Variations/selva_calacatta-viola.webp" alt="Calacatta Viola" loading="lazy"></button>
+          <button class="stone-variant" data-img="Products/Washbasins/selva/Product Variations/selva_fendy-grey.webp" data-name="Fendy Grey"><img src="Products/Washbasins/selva/Product Variations/selva_fendy-grey.webp" alt="Fendy Grey" loading="lazy"></button>
+          <button class="stone-variant" data-img="Products/Washbasins/selva/Product Variations/selva_travertine-3.webp" data-name="Silver Travertine"><img src="Products/Washbasins/selva/Product Variations/selva_travertine-3.webp" alt="Silver Travertine" loading="lazy"></button>
+          <button class="stone-variant" data-img="Products/Washbasins/selva/Product Variations/selva_travertine-5.webp" data-name="Beige Travertine"><img src="Products/Washbasins/selva/Product Variations/selva_travertine-5.webp" alt="Beige Travertine" loading="lazy"></button>
+          <button class="stone-variant" data-img="Products/Washbasins/selva/Product Variations/selva_rosso-levanto.webp" data-name="Rosso Levanto"><img src="Products/Washbasins/selva/Product Variations/selva_rosso-levanto.webp" alt="Rosso Levanto" loading="lazy"></button>
+          <button class="stone-variant" data-img="Products/Washbasins/selva/Product Variations/selva_verde-patricia.webp" data-name="Verde Patricia"><img src="Products/Washbasins/selva/Product Variations/selva_verde-patricia.webp" alt="Verde Patricia" loading="lazy"></button>
+        </div>
+        <p class="stone-variant__label" id="stoneVariantLabel">Calacatta Viola</p>
       </div>
       <div>
         <span class="materials__label">Stone & Surface</span>
         <h2 class="materials__title">Stone Selection</h2>
-        <p class="materials__text">Because Cascata is pure stone — no upholstery, no metal, no distraction — the marble selection defines the entire character of the piece. Dramatic veining in Calacatta Viola creates rivers of purple across the falls; Fendy Grey offers quiet, mineral restraint.</p>
-        <p class="materials__stone-name" id="selectedStoneName">Calacatta Viola</p>
-        <div class="materials__swatches" id="materialSelector">
-          <div class="swatch is-active" data-img="Products/Washbasins/selva/Product Variations/selva_calacatta-viola.webp">
-            <img src="Stone types/Calacatta Viola.webp" alt="Calacatta Viola" class="swatch__img">
-            <span class="swatch__name">Calacatta Viola</span>
-          </div>
-          <div class="swatch" data-img="Products/Washbasins/selva/Product Variations/selva_fendy-grey.webp">
-            <img src="Stone types/Fendy-Grey.webp" alt="Fendy Grey" class="swatch__img">
-            <span class="swatch__name">Fendy Grey</span>
-          </div>
-          <div class="swatch" data-img="Products/Washbasins/selva/Product Variations/selva_travertine-3.webp">
-            <img src="Stone types/Travertine-3.webp" alt="Silver Travertine" class="swatch__img">
-            <span class="swatch__name">Silver Travertine</span>
-          </div>
-          <div class="swatch" data-img="Products/Washbasins/selva/Product Variations/selva_travertine-5.webp">
-            <img src="Stone types/Travertine-5.webp" alt="Beige Travertine" class="swatch__img">
-            <span class="swatch__name">Beige Travertine</span>
-          </div>
-          <div class="swatch" data-img="Products/Washbasins/selva/Product Variations/selva_rosso-levanto.webp">
-            <img src="Stone types/Roso-Levanto-texture.webp" alt="Rosso Levanto" class="swatch__img">
-            <span class="swatch__name">Rosso Levanto</span>
-          </div>
-          <div class="swatch" data-img="Products/Washbasins/selva/Product Variations/selva_verde-patricia.webp">
-            <img src="Stone types/Verde-Patricia-Texture.webp" alt="Verde Patricia" class="swatch__img">
-            <span class="swatch__name">Verde Patricia</span>
-          </div>
-        </div>
+        <p class="materials__text">Selva is available across a curated palette of natural stones — from the deep drama of Calacatta Viola and Rosso Levanto to the warm stillness of travertine and the quiet restraint of Fendy Grey. Every stone changes the character of the piece; every piece changes how you read the stone.</p>
         <a href="#inquiry" class="btn btn--dark">Begin Your Project</a>
       </div>
     </div>
@@ -1434,20 +1373,16 @@
       }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
       reveals.forEach(function (el) { obs.observe(el); });
 
-      /* Material swatch selector */
-      var matImg = document.getElementById('materialsMainImg');
-      var stoneName = document.getElementById('selectedStoneName');
-      document.querySelectorAll('.swatch').forEach(function (swatch) {
-        swatch.addEventListener('click', function () {
-          document.querySelector('.swatch.is-active').classList.remove('is-active');
-          swatch.classList.add('is-active');
-          stoneName.textContent = swatch.querySelector('.swatch__name').textContent;
-          matImg.style.opacity = '0';
-          matImg.style.transition = 'opacity 0.3s ease';
-          setTimeout(function () {
-            matImg.src = swatch.dataset.img;
-            matImg.style.opacity = '1';
-          }, 300);
+      /* Stone variant switcher */
+      var variantBtns=document.querySelectorAll('.stone-variant');
+      var variantLabel=document.getElementById('stoneVariantLabel');
+      var materialsImg=document.getElementById('materialsMainImg');
+      variantBtns.forEach(function(btn){
+        btn.addEventListener('click',function(){
+          document.querySelector('.stone-variant.is-active').classList.remove('is-active');
+          btn.classList.add('is-active');
+          if(materialsImg){materialsImg.style.opacity='0';setTimeout(function(){materialsImg.src=btn.dataset.img;materialsImg.style.opacity='1';},250);}
+          if(variantLabel)variantLabel.textContent=btn.dataset.name;
         });
       });
 
