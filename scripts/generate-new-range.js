@@ -350,15 +350,7 @@ const products = [
     desc:'Two interlocking L-shapes in rose quartz create a composition that changes character with each viewing angle. The abstract form doubles as surface; the surface is the sculpture.',
     quote:'Two angles, one form. The corner that became the piece.' },
 
-  { code:'tp-027', name:'Nucleo', slug:'nucleo', category:'side-tables',
-    subtitle:'a biomorphic side table in swirled marble',
-    desc:'A biomorphic void at its center — swirling grey marble carved into something simultaneously ancient and forward. The aperture is the piece\'s nucleus: everything else is in orbit around it.',
-    quote:'The core defined by its absence. Stone hollowed to its essential form.' },
 
-  { code:'tp-028', name:'Cupola', slug:'cupola', category:'side-tables',
-    subtitle:'a double-arch side table',
-    desc:'A square surface rests above twin arched apertures — the section of a cathedral made intimate. Dark variegated marble gives the arches the gravity of something structural and old.',
-    quote:'Two arches bearing one surface. The cathedral in miniature.' },
 
   { code:'tp-029', name:'Capitello', slug:'capitello', category:'side-tables',
     subtitle:'a ribbed-arch side table in mixed green',
@@ -416,20 +408,6 @@ const products = [
     desc:'A pure square of travertine reduced to its most essential form — the plinth before it became a pedestal, the die before it was cast. Confidence in geometry without decoration.',
     quote:'The square. The plinth. The travertine. Nothing else required.' },
 
-  { code:'tp-064', name:'Podio', slug:'podio', category:'coffee-tables',
-    subtitle:'a square coffee table on bronze pyramid feet',
-    desc:'A square of Calacatta Verde raised on four sharp bronze pyramidal feet — the podium form, the surface elevated by the precision of the material it stands on.',
-    quote:'Four pyramids and one surface. The podium without the speech.' },
-
-  { code:'tp-065', name:'Cuneo', slug:'cuneo', category:'coffee-tables',
-    subtitle:'a wedge-base coffee table in mixed marble',
-    desc:'A rectangular top rests on a single diagonal wedge of mixed marble — geometry subverting expectation. The wedge is not a compromise; it is the point.',
-    quote:'The wedge holds everything level. Asymmetry in the service of balance.' },
-
-  { code:'tp-066', name:'Piombo', slug:'piombo', category:'coffee-tables',
-    subtitle:'a solid block coffee table in Calacatta Viola',
-    desc:'A solid rectangular block in Calacatta Viola — weight, presence, and the quiet confidence of pure form. The table as monolith; nothing borrowed, nothing removed.',
-    quote:'Weight without excuse. The block as a complete statement.' },
 
   { code:'tp-067', name:'Ali', slug:'ali', category:'coffee-tables',
     subtitle:'a bilobed wing coffee table in travertine',
@@ -603,10 +581,6 @@ const products = [
     desc:'A long cream marble bench with a velvet cushion at one end — a place of rest between statement and comfort. The cushion acknowledges the body; the stone refuses to forget its nature.',
     quote:'Stone and velvet. The bench that holds both, without apology.' },
 
-  { code:'tp-037', name:'Travetto', slug:'travetto', category:'benches',
-    subtitle:'a marble and walnut beam bench',
-    desc:'A Calacatta marble beam rests on two dark walnut cylinders — the timber beneath, the stone above. The small beam of the craftsman\'s vocabulary made into something for a considered room.',
-    quote:'Timber holds stone. The builder\'s logic become the designer\'s statement.' },
 
   { code:'tp-038', name:'Riposo', slug:'riposo', category:'benches',
     subtitle:'a long bench in pink travertine',
