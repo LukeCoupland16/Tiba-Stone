@@ -1442,6 +1442,13 @@
         gridObs.observe(grid, { childList: true });
         sentinelObs.observe(scrollSentinel);
         grid.parentNode.insertBefore(scrollSentinel, grid.nextSibling);
+
+        /* Deep-link: slabs.html#slug auto-opens that slab's modal */
+        var hash = window.location.hash.slice(1);
+        if (hash && window.TIBA_DATA) {
+          var linked = window.TIBA_DATA.filter(function (s) { return s.slug === hash; })[0];
+          if (linked) openModal(linked);
+        }
       }
 
       if (window.TIBA_DATA) { init(); }
