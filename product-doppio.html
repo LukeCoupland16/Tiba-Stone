@@ -249,6 +249,14 @@
       .footer__grid { grid-template-columns:1fr; gap:2rem; }
       .footer__bottom { flex-direction:column; gap:0.75rem; text-align:center; }
     }
+      /* Stone variant selector */
+    .stone-variants { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin-top:10px; }
+    .stone-variant { border:none; padding:0; cursor:pointer; background:none; border-radius:2px; overflow:hidden; position:relative; aspect-ratio:4/5; }
+    .stone-variant img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s var(--ease-smooth); display:block; }
+    .stone-variant:hover img { transform:scale(1.04); }
+    .stone-variant::after { content:''; position:absolute; inset:0; border:2px solid transparent; border-radius:2px; transition:border-color 0.3s ease; pointer-events:none; }
+    .stone-variant.is-active::after { border-color:var(--color-sunset); }
+    .stone-variant__label { font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; color:var(--color-river-green); margin-top:10px; min-height:1.1em; }
   </style>
 </head>
 <body>
@@ -349,12 +357,20 @@
     <div class="materials__inner">
       <div class="materials__media">
         <img src="img-gen/tp-023/tp-023_12_catalogue.webp" alt="Doppio stone selection" id="materialsMainImg" loading="lazy" decoding="async">
+        <div class="stone-variants">
+          <button class="stone-variant is-active" data-img="img-gen/tp-023/tp-023_gray-saint-laurent.webp" data-name="Gray Saint Laurent"><img src="img-gen/tp-023/tp-023_gray-saint-laurent.webp" alt="Gray Saint Laurent" loading="lazy"></button>
+          <button class="stone-variant" data-img="img-gen/tp-023/tp-023_lepanto-red.webp" data-name="Lepanto Red"><img src="img-gen/tp-023/tp-023_lepanto-red.webp" alt="Lepanto Red" loading="lazy"></button>
+          <button class="stone-variant" data-img="img-gen/tp-023/tp-023_levanto-green.webp" data-name="Levanto Green"><img src="img-gen/tp-023/tp-023_levanto-green.webp" alt="Levanto Green" loading="lazy"></button>
+          <button class="stone-variant" data-img="img-gen/tp-023/tp-023_navona-travertine.webp" data-name="Navona Travertine"><img src="img-gen/tp-023/tp-023_navona-travertine.webp" alt="Navona Travertine" loading="lazy"></button>
+          <button class="stone-variant" data-img="img-gen/tp-023/tp-023_silver-travertine.webp" data-name="Silver Travertine"><img src="img-gen/tp-023/tp-023_silver-travertine.webp" alt="Silver Travertine" loading="lazy"></button>
+          <button class="stone-variant" data-img="img-gen/tp-023/tp-023_violet-calacatta.webp" data-name="Violet Calacatta"><img src="img-gen/tp-023/tp-023_violet-calacatta.webp" alt="Violet Calacatta" loading="lazy"></button>
+        </div>
+        <p class="stone-variant__label" id="stoneVariantLabel">Gray Saint Laurent</p>
       </div>
       <div>
         <span class="materials__label">Stone &amp; Surface</span>
         <h2 class="materials__title">Stone Selection</h2>
         <p class="materials__text">Doppio is available across our full palette of natural stones — from the deep drama of Rosso Levanto and Nero Marquina to the warm stillness of travertine and the luminous complexity of Calacatta Viola. Every stone changes the character of the piece; every piece changes how you read the stone.</p>
-        <p class="materials__note">Stone variants for this piece are in preparation. Contact us to discuss your preferred material.</p>
         <a href="#inquiry" class="btn btn--dark">Inquire About Stone</a>
       </div>
     </div>
@@ -557,6 +573,18 @@
             .then(function(r){btn.textContent=r.ok?'Sent':'Error';if(r.ok)form.reset();})
             .catch(function(){btn.textContent='Error';})
             .finally(function(){setTimeout(function(){btn.textContent=orig;btn.disabled=false;},3000);});
+        });
+      });
+      /* Stone variant switcher */
+      var variantBtns=document.querySelectorAll('.stone-variant');
+      var variantLabel=document.getElementById('stoneVariantLabel');
+      var materialsImg=document.getElementById('materialsMainImg');
+      variantBtns.forEach(function(btn){
+        btn.addEventListener('click',function(){
+          document.querySelector('.stone-variant.is-active').classList.remove('is-active');
+          btn.classList.add('is-active');
+          if(materialsImg){materialsImg.style.opacity='0';setTimeout(function(){materialsImg.src=btn.dataset.img;materialsImg.style.opacity='1';},250);}
+          if(variantLabel)variantLabel.textContent=btn.dataset.name;
         });
       });
     })();
