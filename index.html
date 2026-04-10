@@ -1078,8 +1078,8 @@
       </div>
     </div>
 
-    <!-- Block 6: Aida cabinet -->
-    <div class="mosaic__block">
+    <!-- Block 6: Cabinets rotator -->
+    <div class="mosaic__block" id="rotator-cabinets">
       <img src="Products/cabinets/aida/aida_01_editorial.webp"
            alt="Aida Cabinet — bookmatched marble on brass"
            class="mosaic__img" loading="lazy" decoding="async"
@@ -1093,8 +1093,8 @@
       <a href="/product-aida" class="mosaic__link" aria-label="View Aida Cabinet"></a>
     </div>
 
-    <!-- Block 7: Washbasin -->
-    <div class="mosaic__block">
+    <!-- Block 7: Washbasins rotator -->
+    <div class="mosaic__block" id="rotator-washbasins">
       <img src="Products/Washbasins/circle-high/circle-high_02_human.webp"
            alt="Circle High Washbasin — monolithic stone basin"
            class="mosaic__img" loading="lazy" decoding="async"
@@ -1362,6 +1362,80 @@
         if (img.complete && img.naturalHeight !== 0) show();
         else img.addEventListener('load', show);
       });
+
+      /* Mosaic block rotators */
+      (function () {
+        var rotators = [
+          {
+            id: 'rotator-cabinets',
+            interval: 4000,
+            products: [
+              { src: 'Products/cabinets/aida/aida_01_editorial.webp',           name: 'Aida',      href: '/product-aida',      pos: '35% 45%'     },
+              { src: 'Products/cabinets/priamo/priamo_01_editorial.webp',        name: 'Priamo',    href: '/product-priamo',    pos: 'center 70%'  },
+              { src: 'Products/cabinets/punta/punta_01_editorial.webp',          name: 'Punta',     href: '/product-punta',     pos: 'center 75%'  },
+              { src: 'Products/cabinets/punta-due/punta-due_01_editorial.webp',  name: 'Punta Due', href: '/product-punta-due', pos: 'center 50%'  }
+            ]
+          },
+          {
+            id: 'rotator-washbasins',
+            interval: 4500,
+            products: [
+              { src: 'Products/Washbasins/circle-high/circle-high_02_human.webp',  name: 'Circle High', href: '/product-circle-high', pos: 'center 55%'  },
+              { src: 'Products/Washbasins/calice/calice_01_editorial.webp',        name: 'Calice',      href: '/product-calice',      pos: 'center 78%'  },
+              { src: 'Products/Washbasins/barile/barile_01_editorial.webp',        name: 'Barile',      href: '/product-barile',      pos: 'center 80%'  },
+              { src: 'Products/Washbasins/blocco/blocco_01_editorial.webp',        name: 'Blocco',      href: '/product-blocco',      pos: 'center 85%'  },
+              { src: 'Products/Washbasins/frammento/frammento_01_editorial.webp',  name: 'Frammento',   href: '/product-frammento',   pos: 'center 50%'  },
+              { src: 'Products/Washbasins/selva/selva_01_editorial.webp',          name: 'Selva',       href: '/product-selva',       pos: 'center 50%'  }
+            ]
+          }
+        ];
+
+        rotators.forEach(function (cfg) {
+          var block = document.getElementById(cfg.id);
+          if (!block) return;
+          var img     = block.querySelector('.mosaic__img');
+          var nameEl  = block.querySelector('.mosaic__heading');
+          var btnEl   = block.querySelector('.btn--text');
+          var linkEl  = block.querySelector('.mosaic__link');
+          var idx     = 0;
+          var busy    = false;
+
+          /* Preload all images upfront */
+          cfg.products.forEach(function (p) { (new Image()).src = p.src; });
+
+          function advance() {
+            if (busy) return;
+            busy = true;
+            idx = (idx + 1) % cfg.products.length;
+            var p = cfg.products[idx];
+
+            img.style.transition = 'opacity 1.2s ease-in-out';
+            img.style.opacity = '0';
+
+            setTimeout(function () {
+              img.style.objectPosition = p.pos;
+              img.alt = p.name;
+              img.src = p.src;
+              nameEl.textContent = p.name;
+              btnEl.href = p.href;
+              linkEl.href = p.href;
+              linkEl.setAttribute('aria-label', 'View ' + p.name);
+
+              function reveal() {
+                img.style.opacity = '1';
+                busy = false;
+                img.removeEventListener('load', reveal);
+              }
+              if (img.complete && img.naturalHeight !== 0) reveal();
+              else img.addEventListener('load', reveal);
+            }, 1250);
+          }
+
+          var timer = setInterval(advance, cfg.interval);
+          block.addEventListener('mouseenter', function () { clearInterval(timer); });
+          block.addEventListener('mouseleave', function () { timer = setInterval(advance, cfg.interval); });
+        });
+      }());
 
       /* Footer form */
       document.getElementById('footerForm').addEventListener('submit', function (e) {
