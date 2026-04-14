@@ -258,7 +258,7 @@
       .footer__bottom { flex-direction:column; gap:0.75rem; text-align:center; }
     }
       /* Stone variant selector */
-    .stone-variants { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin-top:10px; }
+    .stone-variants { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:10px; }
     .stone-variant { border:none; padding:0; cursor:pointer; background:none; border-radius:2px; overflow:hidden; position:relative; aspect-ratio:4/5; }
     .stone-variant img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s var(--ease-smooth); display:block; }
     .stone-variant:hover img { transform:scale(1.04); }
@@ -324,10 +324,10 @@
 
   <div class="gallery-strip">
     <div class="gallery-strip__item">
-      <img src="img-gen/tp-096/tp-096_01_editorial.webp" alt="Canale editorial" class="gallery-strip__img" loading="lazy" decoding="async">
+      <img src="img-gen/tp-096/tp-096_canale-editorial.webp" alt="Canale overhead" class="gallery-strip__img" loading="lazy" decoding="async">
     </div>
     <div class="gallery-strip__item">
-      <img src="img-gen/tp-096/tp-096_03_closeup_veining.webp" alt="Canale veining" class="gallery-strip__img" loading="lazy" decoding="async">
+      <img src="img-gen/tp-096/tp-096_canale-other.webp" alt="Canale in context" class="gallery-strip__img" loading="lazy" decoding="async">
     </div>
     <div class="gallery-strip__item">
       <img src="img-gen/tp-096/tp-096_04_closeup_edge.webp" alt="Canale edge" class="gallery-strip__img" loading="lazy" decoding="async">
@@ -339,7 +339,7 @@
 
   <section class="editorial reveal">
     <div class="editorial__media">
-      <img src="img-gen/tp-096/tp-096_07_workshop.webp" alt="Canale in the atelier" class="editorial__img" loading="lazy" decoding="async">
+      <img src="img-gen/tp-096/tp-096_canale-other2.webp" alt="Canale in situ" class="editorial__img" loading="lazy" decoding="async">
     </div>
     <div class="editorial__content editorial__content--dark">
       <span class="editorial__label">Water & Stone</span>
@@ -364,12 +364,22 @@
   <section class="materials reveal" id="materials">
     <div class="materials__inner">
       <div class="materials__media">
-        <img src="img-gen/tp-096/tp-096_12_catalogue.webp" alt="Canale stone selection" id="materialsMainImg" loading="lazy" decoding="async">
+        <img src="img-gen/tp-096/tp-096_canale-variant.webp" alt="Canale stone selection" id="materialsMainImg" loading="lazy" decoding="async">
+        <div class="stone-variants">
+          <button class="stone-variant is-active" data-img="img-gen/tp-096/tp-096_canale-variant.webp" data-name="Calacatta Oro"><img src="img-gen/tp-096/tp-096_canale-variant.webp" alt="Calacatta Oro" loading="lazy"></button>
+          <button class="stone-variant" data-img="img-gen/tp-096/tp-096_gray-saint-laurent.webp" data-name="Gray Saint Laurent"><img src="img-gen/tp-096/tp-096_gray-saint-laurent.webp" alt="Gray Saint Laurent" loading="lazy"></button>
+          <button class="stone-variant" data-img="img-gen/tp-096/tp-096_lepanto-red.webp" data-name="Lepanto Red"><img src="img-gen/tp-096/tp-096_lepanto-red.webp" alt="Lepanto Red" loading="lazy"></button>
+          <button class="stone-variant" data-img="img-gen/tp-096/tp-096_levanto-green.webp" data-name="Levanto Green"><img src="img-gen/tp-096/tp-096_levanto-green.webp" alt="Levanto Green" loading="lazy"></button>
+          <button class="stone-variant" data-img="img-gen/tp-096/tp-096_navona-travertine.webp" data-name="Navona Travertine"><img src="img-gen/tp-096/tp-096_navona-travertine.webp" alt="Navona Travertine" loading="lazy"></button>
+          <button class="stone-variant" data-img="img-gen/tp-096/tp-096_silver-travertine.webp" data-name="Silver Travertine"><img src="img-gen/tp-096/tp-096_silver-travertine.webp" alt="Silver Travertine" loading="lazy"></button>
+          <button class="stone-variant" data-img="img-gen/tp-096/tp-096_violet-calacatta.webp" data-name="Violet Calacatta"><img src="img-gen/tp-096/tp-096_violet-calacatta.webp" alt="Violet Calacatta" loading="lazy"></button>
+        </div>
+        <p class="stone-variant__label" id="stoneVariantLabel">Calacatta Oro</p>
       </div>
       <div>
         <span class="materials__label">Stone &amp; Surface</span>
         <h2 class="materials__title">Stone Selection</h2>
-        <p class="materials__text">Canale is carved from Verde Patricia. The material is hand-selected for the quality of its veining, surface character, and geological depth. Contact us to begin your commission.</p>
+        <p class="materials__text">Canale is available across seven natural stone selections. A washbasin is among the most closely encountered objects in any interior — the choice of stone defines the entire experience of the space. Each material brings its own character to the channel form, from the warm luminosity of Calacatta Oro to the cool mineral precision of Gray Saint Laurent and Silver Travertine.</p>
         <a href="#inquiry" class="btn btn--dark">Inquire About Stone</a>
       </div>
     </div>
